@@ -1,0 +1,143 @@
+package com.kvc.joy.plugin.security.login.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.Expression;
+import javax.persistence.criteria.Path;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.domain.Sort.Order;
+import org.springframework.stereotype.Repository;
+
+import com.kvc.joy.commons.bean.Pair;
+import com.kvc.joy.commons.collections.ListTool;
+import com.kvc.joy.commons.lang.ArrayTool;
+import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.core.persistence.orm.jpa.BaseJpaDao;
+import com.kvc.joy.plugin.security.login.model.po.TLoginLog;
+import com.kvc.joy.plugin.security.login.model.po.TLoginLog_;
+import com.kvc.joy.plugin.security.login.support.enums.LoginFailReason;
+
+/**
+ * 
+ * @since 1.0.0
+ * @author 唐玮琳
+ * @time 2013年9月30日 上午12:04:47
+ */
+@Repository
+public class LoginLogDao extends BaseJpaDao<TLoginLog> {
+	
+	/**
+	 * 统计某帐号一段时间内密码错误次数
+	 * 
+	 * @param account 用户帐号
+	 * @param fromTime 统计时间起
+	 * @param toTime 统计时间止
+	 * @return 密码错误次数
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年9月30日 上午12:14:57
+	 */
+	public long statPasswordErrorCount(final String account, final String fromTime, final String toTime) {
+		return count(new JPACallBack<TLoginLog>() {
+			
+			@Override
+			public Expression<Boolean> getRestriction(CriteriaBuilder cb, Root<TLoginLog> root) {
+				return cb.and(
+						cb.equal(root.get(TLoginLog_.userAccount), account), 
+						cb.equal(root.get(TLoginLog_.loginFailReasonCode), LoginFailReason.PASSWORD_ERR.getCode()),
+						cb.greaterThan(root.get(TLoginLog_.loginTime), fromTime),
+						cb.lessThan(root.get(TLoginLog_.loginTime), toTime)
+						);
+			}
+		});
+	}
+	
+	/**
+	 * 检查某帐号一段时间内最近密码是否连续错误达指定的次数
+	 * 
+	 * @param account 用户帐号
+	 * @param fromTime 登陆时间起
+	 * @param toTime 登陆时间止
+	 * @param count 连续错误的次数
+	 * @return true: 连续错误达指定的次数, false: 未达到
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年10月1日 上午11:08:03
+	 */
+	public boolean isPasswordErrorFrequently(final String account, final String fromTime, final String toTime, final int count) {
+ 		List<TLoginLog> logList = doQuery(new JPACallBack<TLoginLog>() {
+			
+			@Override
+			public Expression<Boolean> getRestriction(CriteriaBuilder cb, Root<TLoginLog> root) {
+				return cb.and(
+						cb.equal(root.get(TLoginLog_.userAccount), account), 
+						cb.or(cb.equal(root.get(TLoginLog_.loginSuccess), true), 
+								cb.equal(root.get(TLoginLog_.loginFailReasonCode), LoginFailReason.PASSWORD_ERR.getCode())),
+						cb.between(root.get(TLoginLog_.loginTime), fromTime, toTime)
+						);
+			}
+			
+			@Override
+			public Pair<Integer, Integer> getPageRange() {
+				return new Pair<Integer, Integer>(0, count);
+			}
+			
+			@Override
+			public Order[] getOrders() {
+				return new Order[] {new Order(Direction.DESC, TLoginLog_.loginTime.getName())};
+			}
+			
+		});
+		
+		for (TLoginLog log : logList) {
+			if (log.isLoginSuccess()) {
+				return false;
+			}
+		}
+		
+		return logList.size() == count;
+	}
+	
+	/**
+	 * 取得当前日志的前一条登陆成功的日志
+	 * 
+	 * @param curLogId 当前日志id，为空时返回最近一条登陆成功的日志
+	 * @param userId 用户id
+	 * @return 前一条登陆成功的日志
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年10月15日 上午10:48:58
+	 */
+	public TLoginLog getPreLoginSuccessLog(final String curLogId, final String userId) {
+		List<TLoginLog> result = doQuery(new JPACallBack<TLoginLog>() {
+
+			@Override
+			public Expression<Boolean> getRestriction(CriteriaBuilder cb, Root<TLoginLog> root) {
+				List<Predicate> predicates = new ArrayList<Predicate>(4);
+				predicates.add(cb.equal(root.get(TLoginLog_.userId), userId));
+				predicates.add(cb.equal(root.get(TLoginLog_.loginSuccess), true));
+				if (StringTool.isNotBlank(curLogId)) {
+					predicates.add(cb.notEqual(root.get(TLoginLog_.id), curLogId));	
+				}
+				return cb.and(ArrayTool.cast(new Predicate[predicates.size()], predicates));
+			}
+			
+			@Override
+			public Pair<Integer, Integer> getPageRange() {
+				return new Pair<Integer, Integer>(0, 1);
+			}
+			
+			@Override
+			public Order[] getOrders() {
+				return new Order[] {new Order(Direction.DESC, TLoginLog_.loginTime.getName())};
+			}
+		});
+		return uniqueResult(result);
+	}
+
+}

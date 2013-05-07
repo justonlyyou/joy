@@ -1,0 +1,187 @@
+package com.kvc.joy.core.sysres.datasrc.model.po;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import com.kvc.joy.core.persistence.entity.UuidCrudEntity;
+import com.kvc.joy.core.persistence.jdbc.model.vo.IMdRdbConn;
+import com.kvc.joy.core.sysres.code.po.TSysCodeTable;
+
+/**
+ * 数据源
+ * 
+ * @author 唐玮琳
+ * @time 2012-6-8 下午9:26:10
+ */
+@Entity
+@Table(name = "T_SYS_DATA_SRC")
+public class TSysDataSrc extends UuidCrudEntity implements IMdRdbConn {
+
+	private String name;
+	private String dbAlias;
+	private String dbType;
+	private String dbName;
+	private String dbUrl;
+	private String jndiName;
+	private String username;
+	private String password;
+	private String parameter;
+	private String charset;
+	private String ipAddress;
+	private String serverPort;
+	private Integer maxConnCount;
+	private Integer minConnCount;
+	private Set<TSysCodeTable> codeDics = new HashSet<TSysCodeTable>(0);
+
+	@Column(length = 32)
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Column(length = 32)
+	public String getDbAlias() {
+		return dbAlias;
+	}
+
+	public void setDbAlias(String dbAlias) {
+		this.dbAlias = dbAlias;
+	}
+
+	@Column(length = 2)
+	public String getDbType() {
+		return dbType;
+	}
+
+	public void setDbType(String dbType) {
+		this.dbType = dbType;
+	}
+
+	@Column(length = 32)
+	public String getDbName() {
+		return dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+	}
+
+	@Column(length = 128)
+	public String getDbUrl() {
+		return dbUrl;
+	}
+
+	public void setDbUrl(String dbUrl) {
+		this.dbUrl = dbUrl;
+	}
+
+	@Column(length = 32)
+	public String getJndiName() {
+		return jndiName;
+	}
+
+	public void setJndiName(String jndiName) {
+		this.jndiName = jndiName;
+	}
+
+	@Column(length = 32)
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	@Column(length = 32)
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	@Column(length = 128)
+	public String getParameter() {
+		return parameter;
+	}
+
+	public void setParameter(String parameter) {
+		this.parameter = parameter;
+	}
+
+	@Column(length = 1)
+	public String getCharset() {
+		return charset;
+	}
+
+	public void setCharset(String charset) {
+		this.charset = charset;
+	}
+
+	@Column(length = 32)
+	public String getIpAddress() {
+		return ipAddress;
+	}
+
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
+	}
+
+	@Column(length = 5)
+	public String getServerPort() {
+		return serverPort;
+	}
+
+	public void setServerPort(String serverPort) {
+		this.serverPort = serverPort;
+	}
+
+	public Integer getMaxConnCount() {
+		return maxConnCount;
+	}
+
+	public void setMaxConnCount(Integer maxConnCount) {
+		this.maxConnCount = maxConnCount;
+	}
+
+	public Integer getMinConnCount() {
+		return minConnCount;
+	}
+
+	public void setMinConnCount(Integer minConnCount) {
+		this.minConnCount = minConnCount;
+	}
+
+	@OneToMany(mappedBy = "dataSrc", cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+	public Set<TSysCodeTable> getCodeDics() {
+		return codeDics;
+	}
+
+	public void setCodeDics(Set<TSysCodeTable> codeDics) {
+		this.codeDics = codeDics;
+	}
+
+	@Transient
+	public String getUrl() {
+		return dbUrl;
+	}
+
+	@Transient
+	public String getDatasourceId() {
+		return id;
+	}
+
+}

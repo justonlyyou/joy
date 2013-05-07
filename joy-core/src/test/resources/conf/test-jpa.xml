@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/context   http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                        http://www.springframework.org/schema/aop       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+                        http://www.springframework.org/schema/tx        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+                    	http://www.springframework.org/schema/util      http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<!-- 业务库JPA模版 -->
+	<bean id="jpaTemplate" class="org.springframework.orm.jpa.JpaTemplate">
+		<property name="entityManagerFactory">
+			<ref bean="entityManagerFactory" />
+		</property>
+	</bean>
+	
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="persistenceUnitManager" ref="persistenceUnitManager"/>
+		<property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
+<!-- 	<property name="jpaProperties">
+		<props>
+			<prop key="hibernate.ejb.naming_strategy">
+				org.hibernate.cfg.ImprovedNamingStrategy
+			</prop>
+		</props>
+    </property> -->
+	</bean>
+
+	<!-- supports: Hibernate、OpenJPA、TopLink、EclipseJPA -->
+	<bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+		<property name="showSql" value="true"></property>
+		<property name="generateDdl" value="true"></property>
+	</bean>
+	
+	 <bean id="persistenceUnitManager" class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">  
+         <property name="persistenceXmlLocations">  
+             <list>  
+                 <value>classpath*:/conf/jpa/persistence-hibernate.xml</value>
+             </list>  
+         </property>
+         <property name="defaultDataSource" ref="dataSource"></property>
+     </bean>
+	
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+	
+    <!-- 
+	<bean name="openEntityManagerInViewInterceptor"
+		class="org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor">
+		<property name="entityManagerFactory">
+			<ref bean="entityManagerFactory" />
+		</property>
+	</bean>
+	 -->
+
+</beans>
+ 

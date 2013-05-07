@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/data/jpa
+    http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+	<jpa:repositories base-package="com.kvc.joy.**.dao" factory-class="com.kvc.joy.core.persistence.orm.jpa.JpaEntityRepositoryFactoryBean">
+		<!-- <jpa:repository id="iErbacUserDao" custom-impl-ref="erbacUserRepository" /> --> <!-- ??? com.kvc.joy.**.dao.IErbacUserDao no found ??? -->
+	</jpa:repositories>
+
+	<!-- <jpa:repositories base-package="com.kvc.joy.core.security.erbac.dao" factory-class="com.kvc.joy.core.persistence.orm.jpa.JpaEntityRepositoryFactoryBean">
+		<jpa:repository id="iErbacUserDao" custom-impl-ref="erbacUserRepository" /> -->  <!-- ??? factory-class去掉会报 no propety or found for TErbacUser ??? -->
+	<!--</jpa:repositories>-->
+
+	<!-- 
+	<bean id="erbacUserRepository" class="com.kvc.joy.core.security.erbac.dao.impl.ErbacUserRepository" />
+ -->
+	<!-- <named-query name="User.findByLastname"> -->
+	<!-- <query>select u from User u where u.lastname = ?1</query> -->
+	<!-- </named-query> -->
+
+	<!-- Activating auditing -->
+	<!-- <jpa:auditing auditor-aware-ref="yourAuditorAwareBean" /> -->
+
+	<!-- Merging persistence units -->
+	<!-- <bean class="….LocalContainerEntityManagerFactoryBean"> -->
+	<!-- <property name="persistenceUnitManager"> -->
+	<!-- <bean class="….MergingPersistenceUnitManager" /> -->
+	<!-- </property -->
+	<!-- </bean> -->
+
+	<!-- get more detailed logging information on what methods are called inside JpaRepository -->
+	<!-- <bean id="customizableTraceInterceptor" class=" -->
+	<!-- org.springframework.aop.interceptor.CustomizableTraceInterceptor"> -->
+	<!-- <property name="enterMessage" value="Entering $[methodName]($[arguments])" /> -->
+	<!-- <property name="exitMessage" value="Leaving $[methodName](): $[returnValue]" /> -->
+	<!-- </bean> -->
+	<!-- <aop:config> -->
+	<!-- <aop:advisor advice-ref="customizableTraceInterceptor" pointcut="execution(public * org.sfw.data.jpa.repository.JpaRepository+.*(..))" /> -->
+	<!-- </aop:config> -->
+
+</beans>

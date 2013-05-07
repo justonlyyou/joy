@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd"
+	default-autowire="byName">
+
+	<!-- 系统菜单服务 -->
+	<bean id="sysMenuService" class="com.kvc.joy.core.sysres.menu.service.impl.SysMenuService" />
+	
+	<!-- 关系数据库表元数据加载服务 -->
+	<bean id="mdRdbTableService" class="com.kvc.joy.core.persistence.jdbc.service.impl.MdRdbTableService" />
+	
+	<!-- 关系数据库表元数据缓存服务 -->
+	<bean id="mdRdbTableCacheService" class="com.kvc.joy.core.persistence.jdbc.service.impl.MdRdbTableCacheService" 
+		p:mdRdbTableService-ref="mdRdbTableService" >
+	</bean>
+	
+	<!-- 关系数据库表字段元数据加载服务 -->
+	<bean id="mdRdbColumnService" class="com.kvc.joy.core.persistence.jdbc.service.impl.MdRdbColumnService" />
+	
+	<!-- 关系数据库表字段元数据缓存服务 -->
+	<bean id="mdRdbColumnCacheService" class="com.kvc.joy.core.persistence.jdbc.service.impl.MdRdbColumnCacheService" 
+		p:mdRdbColumnService-ref="mdRdbColumnService" >
+	</bean>
+	
+	<!-- 关系数据库表主键元数据加载服务 -->
+	<bean id="mdRdbPrimaryKeyService" class="com.kvc.joy.core.persistence.jdbc.service.impl.MdRdbPrimaryKeyService" />
+	
+	<!-- 关系数据库表主键元数据缓存服务 -->
+	<bean id="mdRdbPrimaryKeyCacheService" class="com.kvc.joy.core.persistence.jdbc.service.impl.MdRdbPrimaryKeyCacheService" 
+		p:mdRdbPrimaryKeyService-ref="mdRdbPrimaryKeyService" >
+	</bean>
+	
+</beans>

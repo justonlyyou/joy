@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+  version="2.0">
+    
+  <description>JSTL 1.1 functions library</description>
+  <display-name>JSTL JOY</display-name>
+  <tlib-version>1.1</tlib-version>
+  <short-name>joy</short-name>
+  <uri>http://java.sun.com/jsp/jstl/functionsc</uri>
+
+  <function>
+    <description>获取平台属性文件(joy.properties)参数值</description>
+    <name>getJoyProperty</name>
+    <function-class>com.kvc.joy.core.init.support.JoyPropeties</function-class>
+    <function-signature>java.lang.String property(java.lang.String)</function-signature>
+    <example>${joy:getJoyProperty(property)}</example>
+  </function>
+  
+  <function>
+    <description>获取应用属性文件(app.properties)参数值</description>
+    <name>getAppProperty</name>
+    <function-class>com.kvc.joy.core.init.support.AppPropeties</function-class>
+    <function-signature>java.lang.String property(java.lang.String)</function-signature>
+    <example>${joy:getAppProperty(property)}</example>
+  </function>
+  
+  <function>
+    <description>翻译代码</description>
+    <name>translateCode</name>
+    <function-class>com.kvc.joy.core.sysres.SysResUtils</function-class>
+    <function-signature>java.lang.String translateCode(java.lang.String,java.lang.String,java.lang.String)</function-signature>
+    <example>${joy:translateCode(code,tableId,enumClass)}</example>
+  </function>
+  
+  <function>
+    <description>返回所有代码及其翻译列表</description>
+    <name>getAllCodeAndTrans</name>
+    <function-class>com.kvc.joy.core.sysres.SysResUtils</function-class>
+    <function-signature>java.util.Map getAllCodeAndTrans(java.lang.String,java.lang.String)</function-signature>
+    <example>${joy:getAllCodeAndTrans(tableId,enumClass)}</example>
+  </function>
+  
+  <function>
+    <description>返回指定菜单的路径</description>
+    <name>getMenuPath</name>
+    <function-class>com.kvc.joy.core.sysres.SysResUtils</function-class>
+    <function-signature>com.kvc.joy.core.sysres.menu.po.TSysMenu getMenuPath(java.lang.String)</function-signature>
+    <example>${joy:getMenuPath(menuId)}</example>
+  </function>
+  
+  <function>
+    <description>格式化日期</description>
+    <name>formatDate</name>
+    <function-class>com.kvc.joy.commons.lang.DateTool</function-class>
+    <function-signature>java.lang.String formatDate(java.lang.String,java.lang.String,java.lang.String)</function-signature>
+    <example>${joy:formatDate(dateStr, inFmt, outFmt)}</example>
+  </function>
+  
+</taglib>

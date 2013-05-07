@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/util 
+		http://www.springframework.org/schema/util/spring-util.xsd">
+
+<!-- 	<bean id="reportViewResolver" class="org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView"> -->
+<!-- 		<property name="url" value="/pages/report/report1.jasper" /> //TODO -->
+<!-- 		<property name="jdbcDataSource" ref="dataSource" /> -->
+<!-- 	</bean> -->
+
+	<!-- Jasper Report -->
+	<bean id="jasperReportsViewResolver" class="org.springframework.web.servlet.view.jasperreports.JasperReportsViewResolver">
+		<property name="requestContextAttribute" value="rc" />
+		<property name="viewClass" value="com.kvc.joy.plugin.report.jasperreports.web.view.JasperReportsMultiFormatView"/>
+
+		<!-- 查找编译好的jasperReports文件 -->
+		<property name="prefix" value="/WEB-INF/report/jasper" />
+		<property name="suffix" value=".jasper" />
+
+		<!-- dataSources参数的key -->
+		<property name="reportDataKey">
+			<value>datasource</value>
+		</property>
+		<property name="exporterParameters">
+			<map>
+				<!-- 这个参数比较重要，对于生成html时，jasperReport查找图片的位置 -->
+				<entry key="net.sf.jasperreports.engine.export.JRHtmlExporterParameter.IMAGES_URI">
+					<value>/url/paht/to/your/images/dir</value> <!-- //TODO -->
+				</entry>
+				<entry key="net.sf.jasperreports.engine.export.JRHtmlExporterParameter.CHARACTER_ENCODING">
+					<value>UTF-8</value>
+				</entry>
+				<entry key="net.sf.jasperreports.engine.export.JRXlsExporterParameter.IS_ONE_PAGE_PER_SHEET">
+					<bean id="java.lang.Boolean.TRUE" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+</beans>

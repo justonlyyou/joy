@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context docBase="E:\WS\joy-bootstrap\web\" path="/joy"
+					reloadable="false">
+					<!-- oracle -->
+					<!-- <Resource name="JDBC/FRAME" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:frame" 
+						username="kevice" password="tangwl" driverClassName="oracle.jdbc.driver.OracleDriver" 
+						maxIdle="3" maxWait="-1" maxActive="50" /> -->
+
+					<!-- SQL Server -->
+					<!-- <Resource name="JDBC/FRAME" type="javax.sql.DataSource" url="jdbc:sqlserver://localhost:1433;database=frame" 
+						username="kevice" password="tangwl" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
+						maxIdle="3" maxWait="-1" maxActive="50" /> -->
+
+					<!-- MySQL -->
+					<Resource driverClassName="com.mysql.jdbc.Driver"
+						maxActive="50" maxIdle="3" maxWait="-1" name="JDBC/JOY" 
+						type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/joy"
+						username="root" password="tangwl"/>
+
+</Context>

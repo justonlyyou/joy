@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/util 
+		http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<context:property-placeholder location="classpath*:/conf/quartz.properties" ignore-unresolvable="true" />
+
+	<!-- 
+	<bean name="dfsMoveJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass" value="com.buybal.rxhuirr.scheduler.job.DfsMoveJob" />
+	</bean>
+	
+	<bean id="dfsMoveTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="dfsMoveJob" />
+		<property name="startDelay" value="${dfsMoveTrigger_startDelay}" />
+		<property name="repeatInterval" value="${dfsMoveTrigger_repeatInterval}" />
+	</bean>
+	 -->
+	
+	<bean id="schedulerFactory" class="org.springframework.scheduling.quartz.SchedulerFactoryBean"/>
+	
+	<bean id="quartzTriggersHolder" class="com.kvc.joy.plugin.schedule.quartz.service.impl.QuartzTriggersHolder"/>
+	
+	<bean id="quartzJobRegistry" class="com.kvc.joy.plugin.schedule.quartz.service.impl.QuartzJobRegistry">
+		<property name="quartzTriggersHolder">
+			<ref bean="quartzTriggersHolder"/>
+		</property>
+	</bean>
+
+</beans>

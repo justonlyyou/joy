@@ -1,0 +1,96 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ include file="/WEB-INF/joy/commons/include/inc-all.jsp"%>
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="登录页面">
+<meta name="author" content="Kevice">
+
+<title>JOY主页面</title>
+
+<style type="text/css">
+</style>
+
+<script type="text/javascript">
+	$(function() {
+		$("#accordion").accordion({
+			heightStyle : "fill"
+		});
+	});
+</script>
+
+
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="row">
+			<h1>Bootstrap Tree Menu Example</h1>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span3">
+			<div class="well">
+				<div>
+					<ul class="nav nav-list">
+						<li><label class="tree-toggle nav-header">Bootstrap</label>
+							<ul class="nav nav-list tree">
+								<li><a href="#">JavaScript</a></li>
+								<li><a href="#">CSS</a></li>
+								<li><label class="tree-toggle nav-header">Buttons</label>
+									<ul class="nav nav-list tree">
+										<li><a href="#">Colors</a></li>
+										<li><a href="#">Sizes</a></li>
+										<li><label class="tree-toggle nav-header">Forms</label>
+											<ul class="nav nav-list tree">
+												<li><a href="#">Horizontal</a></li>
+												<li><a href="#">Vertical</a></li>
+											</ul></li>
+									</ul></li>
+							</ul></li>
+						<li class="divider"></li>
+						<li><label class="tree-toggle nav-header">Responsive</label>
+							<ul class="nav nav-list tree">
+								<li><a href="#">Overview</a></li>
+								<li><a href="#">CSS</a></li>
+								<li><label class="tree-toggle nav-header">Media
+										Queries</label>
+									<ul class="nav nav-list tree">
+										<li><a href="#">Text</a></li>
+										<li><a href="#">Images</a></li>
+										<li><label class="tree-toggle nav-header">Mobile
+												Devices</label>
+											<ul class="nav nav-list tree">
+												<li><a href="#">iPhone</a></li>
+												<li><a href="#">Samsung</a></li>
+											</ul></li>
+									</ul></li>
+								<li><label class="tree-toggle nav-header">Coding</label>
+									<ul class="nav nav-list tree">
+										<li><a href="#">JavaScript</a></li>
+										<li><a href="#">jQuery</a></li>
+										<li><label class="tree-toggle nav-header">HTML
+												DOM</label>
+											<ul class="nav nav-list tree">
+												<li><a href="#">DOM Elements</a></li>
+												<li><a href="#">Recursive</a></li>
+											</ul></li>
+									</ul></li>
+							</ul></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$('.tree-toggle').click(function() {
+			$(this).parent().children('ul.tree').toggle(200);
+		});
+	</script>
+</body>
+</html>

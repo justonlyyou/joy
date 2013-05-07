@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5" metadata-complete="true"> <!-- 添加 metadata-complete="true" 属性,否则jetty会扫描代码中的注解 -->
+	
+	<display-name>JOY</display-name> <!-- #modify# -->
+	
+	<!-- session超时定义,单位为分钟 -->
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+
+	<!-- Jwebap
+	<context-param>
+		<param-name>jwebap-config</param-name>
+		<param-value>WEB-INF/classes/jwebap.xml</param-value>
+	</context-param> -->
+	<!-- 配置在所有 listener 之前，以保证 Jwebap 最先启动，这点对于类增强很重要。
+	<listener>
+		<listener-class>org.jwebap.startup.JwebapListener</listener-class>
+	</listener> -->
+	<!-- 配置 HttpComponent 的过滤器 
+	<filter>
+		<filter-name>PageDetectFilter</filter-name>
+		<filter-class>org.jwebap.plugin.tracer.http.DetectFilter</filter-class>
+		<init-param>
+			<param-name>excludeUrls</param-name>
+			<param-value>/detect;/detect/*;*.js;*.jpg;*.htm;*.html;*.gif;*.png;*.css;*.swf</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>PageDetectFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> 
+	-->
+	
+	<!-- 配置 Jwebap Console 视图Servlet 
+	<servlet>
+		<servlet-name>detect</servlet-name>
+		<servlet-class>org.jwebap.ui.controler.JwebapServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>detect</servlet-name>
+		<url-pattern>/detect/*</url-pattern>
+	</servlet-mapping>-->
+	
+	
+	<!-- openSessionInViewFilter 
+	<filter>
+		<filter-name>openSessionInViewFilter</filter-name>
+		<filter-class>
+			org.springframework.orm.hibernate4.support.OpenSessionInViewFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>openSessionInViewFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	-->
+	
+	
+	<!-- 定义spring配置  -->
+	<listener>  
+       <listener-class>com.kvc.joy.web.init.JoyWebInitializer</listener-class>  
+    </listener>  
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:/conf/applicationContext*.xml</param-value>
+	</context-param>
+	
+	<listener>
+	    <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+
+	<!-- spring mvc  -->
+	<servlet>
+		<servlet-name>springMVC</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath*:/conf/springMVC.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>springMVC</servlet-name>
+		<url-pattern>/</url-pattern> <!-- 配置成"/*"会导致访问jsp页面直接显示源码！ -->
+	</servlet-mapping>
+	
+	<error-page>  
+        <error-code>403</error-code>  
+        <location>/WEB-INF/joy/commons/jsp/error/403.jsp</location>  
+    </error-page>  
+    <error-page>  
+        <error-code>404</error-code>  
+        <location>/WEB-INF/joy/commons/jsp/error/404.jsp</location>  
+    </error-page>  
+    <error-page>  
+        <error-code>405</error-code>  
+        <location>/WEB-INF/joy/commons/jsp/error/405.jsp</location>  
+    </error-page>  
+    <error-page>  
+        <error-code>500</error-code>  
+        <location>/WEB-INF/joy/commons/jsp/error/500.jsp</location>  
+    </error-page>
+	 
+	<!-- encoding 
+	<filter>
+		<filter-name>encoding</filter-name>
+		<filter-class>com.kvc.joy.core.web.filter.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>ignore</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	-->
+	<filter>
+		<filter-name>jpaFilter</filter-name>
+		<filter-class>
+			org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter
+		</filter-class>
+		<init-param>
+			<param-name>excludeSuffixs</param-name>
+			<param-value>js,css,jpg,gif</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>jpaFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+    
+    <!-- Spring 刷新Introspector防止内存泄露 -->
+	<listener>
+		<listener-class>
+			org.springframework.web.util.IntrospectorCleanupListener
+		</listener-class>
+	</listener>
+    
+	<!-- shiro security filter --> 
+	<filter>
+<!--  		 这里的filter-name要和spring的applicationContext-shiro.xml里的 org.apache.shiro.spring.web.ShiroFilterFactoryBean的bean name相同  -->
+		 <filter-name>shiroSecurityFilter</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+		<init-param>
+			<param-name>targetFilterLifecycle</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>shiroSecurityFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+    
+	<!-- GZIPFilter 
+	<filter>
+		<filter-name>GZIPFilter</filter-name>
+		<filter-class>com.kvc.sys.web.filter.gzip.GZIPFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>GZIPFilter</filter-name>
+		<url-pattern>/components/extjs/ext-all-debug.js</url-pattern>
+	</filter-mapping>
+	-->
+	
+	<!-- loginfilter
+	<filter>
+		<filter-name>loginfilter</filter-name>
+		<filter-class>com.kvc.joy.core.security.login.support.LoginFilter</filter-class>
+		<init-param>
+			<param-name>ipZone</param-name>
+			<param-value>
+				127.0.0.1,192.*.*.*,10.*.*.*
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>loginPage</param-name>
+			<param-value>joy/extjs/security/login/jsp/login.jsp</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>loginfilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> -->
+	
+	<!-- nocacheFilter 
+	<filter>
+		<filter-name>nocacheFilter</filter-name>
+		<filter-class>com.kvc.joy.core.web.filter.NoCachingFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>nocacheFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	-->
+	
+
+	<!-- UrlRewriteFilter
+	<filter>
+		<filter-name>UrlRewriteFilter</filter-name>
+		<filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>UrlRewriteFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	 -->
+	
+	<!-- sitemesh 
+	<filter>
+		<filter-name>sitemesh</filter-name>
+		<filter-class>com.opensymphony.module.sitemesh.filter.PageFilter</filter-class>
+		<init-param>
+			<param-name>debug.pagewriter</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>sitemesh</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	-->
+	<!-- Axis 过滤器 
+	<filter>
+		<filter-name>Axis Filter</filter-name>
+		<filter-class>com.kvc.joy.core.web.filter.AxisFilter</filter-class>
+		<init-param>
+			<param-name>axisIP</param-name>
+			<param-value>
+				127.0.0.1,10.130.198.87,10.178.18.1-10.178.18.254,192.*.*.*
+			</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>Axis Filter</filter-name>
+		<url-pattern>/services/*</url-pattern>
+	</filter-mapping>
+	-->
+	
+	<!-- 
+	<servlet>
+		<servlet-name>context</servlet-name>
+		<servlet-class>org.springframework.web.context.ContextLoaderServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	 -->
+	 
+	 <!-- 
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>
+				/WEB-INF/struts-config.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>2</param-value>
+		</init-param>
+		<init-param>
+			<param-name>spring.autowire</param-name>
+			<param-value>byName</param-value>
+		</init-param>
+		<init-param>
+			<param-name>application</param-name>
+			<param-value>ApplicationResources</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	 -->
+	
+	<!-- 
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+		 -->
+		<!-- 自从Struts 2.1.3以后，下面的FilterDispatcher已经标注为过时 <filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class> -->
+		<!-- <init-param>
+			<param-name>config</param-name> 
+      		<param-value>struts-sys.xml</param-value> 
+		</init-param> -->
+		<!-- 
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> -->
+
+	<!-- 
+	<servlet>
+		<servlet-name>proxoolAdmin</servlet-name>
+		<servlet-class>org.logicalcobwebs.proxool.admin.servlet.AdminServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>proxoolAdmin</servlet-name>
+		<url-pattern>/proxoolAdmin</url-pattern>
+	</servlet-mapping>
+	 -->
+	
+	<!-- 
+	<servlet>
+		<servlet-name>DisplayChart</servlet-name>
+		<servlet-class>org.jfree.chart.servlet.DisplayChart</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DisplayChart</servlet-name>
+		<url-pattern>/servlet/DisplayChart</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<display-name>Apache-Axis Servlet</display-name>
+		<servlet-name>AxisServlet</servlet-name>
+		<servlet-class>org.apache.axis.transport.http.AxisServlet</servlet-class>
+	</servlet>
+	 -->
+	
+	<!-- 
+	<servlet>
+		<servlet-name>LicensesRequest</servlet-name>
+		<servlet-class>com.kvc.LicensesRequest</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LicensesRequest</servlet-name>
+		<url-pattern>/servlet/LicensesRequest</url-pattern>
+	</servlet-mapping>
+	 -->
+	
+	<!-- hessian配置 
+	<servlet>
+		<servlet-name>hessian</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:hessian-servlet.xml</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>hessian</servlet-name>
+		<url-pattern>/hessian/*</url-pattern>
+	</servlet-mapping>
+	-->
+
+	<!-- 
+	<servlet-mapping>
+		<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>/servlet/AxisServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>*.jws</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>/services/*</url-pattern>
+	</servlet-mapping>
+	
+	<mime-mapping>
+		<extension>wsdl</extension>
+		<mime-type>text/xml</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>xsd</extension>
+		<mime-type>text/xml</mime-type>
+	</mime-mapping>
+	
+	<mime-mapping>
+		<extension>kvc</extension>
+		<mime-type>application/octet-stream</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>xls</extension>
+		<mime-type>application/msexcel</mime-type>
+	</mime-mapping>
+	 -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<!-- 系统title 
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+		<param-value>ApplicationResources</param-value>
+	</context-param>-->
+	
+	<!-- urlCharsetConfig
+	<context-param>
+		<param-name>com.kvc.commons.web.util.urlCharsetConfig</param-name>
+		<param-value>UTF-8</param-value>
+	</context-param>
+	 -->
+	 
+	 <resource-ref> 
+        <description>Database</description> 
+        <res-ref-name>JDBC/JOY</res-ref-name> 
+        <res-type>javax.sql.DataSource</res-type> 
+        <res-auth>Container</res-auth> 
+     </resource-ref>
+	
+</web-app>

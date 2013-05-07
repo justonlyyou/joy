@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <timestamp key="byDay" datePattern="yyyyMMdd"/>
+    
+    <!-- Output to Console -->
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%date %level [%thread] %10logger [%file:%line] %msg%n</pattern>
+        </layout>
+<!--         <filter class="com.kvc.testlog.LogFilter">
+        	<param name="time" value="10"/> 
+        </filter> -->
+    </appender>
+
+    <!-- Output to File -->
+    <appender name="FileHtml" class="ch.qos.logback.core.FileAppender">
+        <file>logs/joy-${byDay}.log.html</file>
+        <layout class="ch.qos.logback.classic.html.HTMLLayout">
+            <pattern>%date%level%thread%10logger%file%line%msg</pattern>
+        </layout>
+    </appender>
+        
+    <!-- Output by Email -->
+    <!-- 
+    <appender name="Email" class="ch.qos.logback.classic.net.SMTPAppender">
+        <SMTPHost>stmp host name</SMTPHost>
+        <To>Email Address</To>
+        <To>Email Address</To> 
+        <From>Email Address</From>
+        <Subject>TESTING Email Function: %logger{20} - %m</Subject>
+        <layout class="ch.qos.logback.classic.html.HTMLLayout">
+            <pattern>%date%level%thread%10logger%file%line%msg</pattern>
+        </layout>       
+      </appender>
+       -->
+    
+	<appender name="SQL_MONITOR_APPENDER" class="com.kvc.joy.plugin.monitor.jdbc.SqlMonitorAppender">
+	</appender>
+    
+    <!-- Output to Database -->
+    <!-- 
+    <appender name="DB" class="ch.qos.logback.classic.db.DBAppender">
+        <connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource">
+          <driverClass>com.mysql.jdbc.Driver</driverClass>
+          <url>jdbc:mysql://localhost:3306/test</url>
+          <user>root</user>
+          <password>trend_dev</password>
+        </connectionSource>
+      </appender>
+     -->
+     
+     <logger name="com.kvc.joy" level="TRACE" />
+     <logger name="org.jwebap.plugin.tracer.jdbc.ProxyPreparedStatement" level="DEBUG" />
+     <logger name="org.jwebap.plugin.tracer.jdbc.ProxyStatement" level="DEBUG" />
+
+    <root level="ERROR">
+        <appender-ref ref="Console"/>
+        <appender-ref ref="FileHtml"/>
+        <appender-ref ref="SQL_MONITOR_APPENDER"/>
+        
+        <!-- 
+        <appender-ref ref="Email"/>
+        <appender-ref ref="DB"/> -->
+    </root>
+</configuration>
+
+
+<!-- <configuration>   
+  <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">   
+    <encoder  class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">   
+      <pattern>%d{yyyy/MM/dd-HH:mm:ss.SSS} %level [%thread] %class:%line>>%msg%n</pattern>   
+    </encoder >   
+  </appender>   
+   
+  <root level="INFO">   
+    <appender-ref ref="stdout" />   
+  </root>   
+</configuration> -->

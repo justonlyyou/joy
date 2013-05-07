@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN"  
+"http://jetty.mortbay.org/configure.dtd">
+<Configure class="org.eclipse.jetty.webapp.WebAppContext">
+	<New id="dataSource" class="org.eclipse.jetty.plus.jndi.Resource">
+		<Arg></Arg>
+		<Arg>JDBC/JOY</Arg>
+		<Arg>
+			<New class="com.mchange.v2.c3p0.ComboPooledDataSource">
+				<Set name="user">root</Set>
+				<Set name="password">tangwl</Set>
+
+				<!-- mysql -->
+				<Set name="driverClass">com.mysql.jdbc.Driver</Set>
+				<Set name="jdbcUrl">jdbc:mysql://localhost:3306/joy</Set>
+
+				<!-- oracle -->
+				<!-- <Set name="driverClass">oracle.jdbc.driver.OracleDriver</Set> -->
+				<!-- <Set name="jdbcUrl">jdbc:oracle:thin:@localhost:1521:joy</Set> -->
+
+
+				<!-- ms sql -->
+				<!-- <Set name="driverClass">com.microsoft.sqlserver.jdbc.SQLServerDriver</Set> -->
+				<!-- <Set name="jdbcUrl">jdbc:sqlserver://localhost:1433;database=joy</Set> -->
+			</New>
+		</Arg>
+	</New>
+</Configure>

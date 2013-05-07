@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/data/jpa
+    http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+	<!-- <repositories base-package="com.kvc.joy.*."/> -->
+	<!-- <context:exclude-filter type="regex" expression=".*SomeRepository" /> -->
+	<!-- <repository id="userRepository" /> -->
+	<!-- </repositories> -->
+
+	<!-- <repositories base-package="com.acme.repository" repository-impl-postfix="FooBar"> -->
+	<!-- <repository id="userRepository" /> -->
+	<!-- </repositories> -->
+
+	<!-- Manual wiring of custom implementations (I) -->
+	<!-- <beans:bean id="userRepositoryImpl" class="…"> -->
+	<!-- further configuration -->
+	<!-- </beans:bean> -->
+
+	<!-- Manual wiring of custom implementations (II) -->
+	<!-- <repositories base-package="com.acme.repository"> -->
+	<!-- <repository id="userRepository" repository-impl-ref="customRepositoryImplementation" /> -->
+	<!-- </repositories> -->
+	<!-- <bean id="customRepositoryImplementation" class="…"> -->
+	<!-- further configuration -->
+	<!-- </bean> -->
+
+	<!-- Using the custom factory with the namespace -->
+	<!-- <repositories base-package="com.acme.repository" factory-class="com.acme.MyRepositoryFactoryBean" /> -->
+
+	<!-- PropertyEditors -->
+	<!-- <bean class="….web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"> -->
+	<!-- <property name="webBindingInitializer"> -->
+	<!-- <bean class="….web.bind.support.ConfigurableWebBindingInitializer"> -->
+	<!-- <property name="propertyEditorRegistrars"> -->
+	<!-- <bean class="org.springframework.data.repository.support.DomainClassPropertyEditorRegistrar" /> -->
+	<!-- </property> -->
+	<!-- </bean> -->
+	<!-- </property> -->
+	<!-- </bean> -->
+
+	<!-- don't need HttpServletRequest parameter -->
+	<!-- <bean class="….web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"> -->
+	<!-- <property name="customArgumentResolvers"> -->
+	<!-- <list> -->
+	<!-- <bean class="org.springframework.data.web.PageableArgumentResolver" /> -->
+	<!-- </list> -->
+	<!-- </property> -->
+	<!-- </bean> -->
+
+
+
+
+</beans:beans>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/util 
+		http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<bean id="wfProcessEngineConfiguration" class="org.activiti.spring.SpringProcessEngineConfiguration">
+		<!-- 控制能在流程配置表达式中使用的Bean，默认均可，全不可配置一个空map -->
+		<!-- <property name="beans"> <map> <entry key="printer" value-ref="printer" /> </map> </property> -->
+		<!-- 自动部署，仅当资源确实改变时发生 -->
+		<!-- <property name="deploymentResources" value="classpath*:/org/activiti/spring/test/autodeployment/autodeploy.*.bpmn20.xml" 
+			/> -->
+		<!-- the strategy to handle the database schema on process engine boot and shutdown: true, false, create-drop -->
+		<!-- <property name="databaseSchemaUpdate" value="true" /> -->
+		<!-- JobExecutor is activated when the process engine boots -->
+		<property name="jobExecutorActivate" value="false" />
+		<property name="history" value="audit" />
+		<!-- swap the default hashmap cache with a LRU cache that has the provided hard limit -->
+		<property name="processDefinitionCacheLimit" value="10" />
+		<!-- inject custom cache implementation, This must be a bean that implements the org.activiti.engine.impl.persistence.deploy.DeploymentCache 
+			interface, when you use the rules task: There is a similar property called knowledgeBaseCacheLimit and knowledgeBaseCache 
+			for configuring the rules cache -->
+		<!-- <property name="processDefinitionCache"> <bean class="org.activiti.MyCache" /> </property> -->
+
+		<property name="createDiagramOnDeploy" value="false" />
+
+		<property name="dataSource" ref="dataSource" />
+		<property name="transactionManager" ref="transactionManager" />
+
+		<property name="jpaEntityManagerFactory" ref="entityManagerFactory" />
+		<property name="jpaHandleTransaction" value="true" />
+		<property name="jpaCloseEntityManager" value="true" />
+
+	</bean>
+
+	<bean id="wfProcessEngineFactory" class="org.activiti.spring.ProcessEngineFactoryBean">
+		<property name="processEngineConfiguration" ref="wfProcessEngineConfiguration" />
+	</bean>
+
+	<bean id="wfRepositoryService" factory-bean="wfProcessEngineFactory" factory-method="getRepositoryService" />
+	<bean id="wfRuntimeService" factory-bean="wfProcessEngineFactory" factory-method="getRuntimeService" />
+	<bean id="wfTaskService" factory-bean="wfProcessEngineFactory" factory-method="getTaskService" />
+	<bean id="wfHistoryService" factory-bean="wfProcessEngineFactory" factory-method="getHistoryService" />
+	<bean id="wfManagementService" factory-bean="wfProcessEngineFactory" factory-method="getManagementService" />
+	<bean id="wfFormService" factory-bean="wfProcessEngineFactory" factory-method="getFormService" />
+	<bean id="wfIdentityService" factory-bean="wfProcessEngineFactory" factory-method="getIdentityService" />
+
+</beans>

@@ -1,0 +1,260 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+<head id="Head"><title>
+
+	Hibernate 不同数据库的连接及SQL方言 
+
+</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta id="metaKeywords" name="keywords" content="Hibernate 不同数据库的连接及SQL方言" /><meta name="google-site-verification" content="hKt1bEVNTOaEOkYyHHv6Cbms3U3NbbEq-9d1gefpKVM"/><link type="text/css" rel="stylesheet" href="/css/common.css" /><link id="MainCss" type="text/css" rel="stylesheet" href="http://www.blogjava.net/Skins/sea/style.css" /><link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://www.blogjava.net/Alpha/rss.aspx" /></head>
+
+<body>
+
+    <form>
+
+<div class = "post">
+
+<p>&lt;!--MySql 驱动程序 eg. mysql-connector-java-5.0.4-bin.jar--&gt;<br />
+
+&nbsp;&nbsp;&lt;property name="dialect"&gt;org.hibernate.dialect.MySQLDialect&lt;/property&gt;<br />
+
+&nbsp;&nbsp;&lt;property name="connection.driver_class"&gt;com.mysql.jdbc.Driver&lt;/property&gt;</p>
+
+<p>&nbsp;&nbsp;&lt;!-- JDBC URL --&gt;<br />
+
+&nbsp;&nbsp;&lt;property name="connection.url"&gt;jdbc:mysql://localhost/dbname?characterEncoding=gb2312&lt;/property&gt;</p>
+
+<p>&nbsp;&nbsp;&lt;!-- 数据库用户名--&gt;<br />
+
+&nbsp;&nbsp;&lt;property name="connection.username"&gt;root&lt;/property&gt;</p>
+
+<p>&nbsp;&nbsp;&lt;!-- 数据库密码--&gt;<br />
+
+&nbsp;&nbsp;&lt;property name="connection.password"&gt;root&lt;/property&gt;<br />
+
+&nbsp;&nbsp;<br />
+
+&nbsp;&nbsp;<br />
+
+&nbsp;&nbsp;&lt;!--Sql Server 驱动程序 eg. jtds-1.2.jar--&gt;<br />
+
+&nbsp;&nbsp;&lt;property name="dialect"&gt;org.hibernate.dialect.SQLServerDialect&lt;/property&gt;<br />
+
+&nbsp;&nbsp;&lt;property name="connection.driver_class"&gt;net.sourceforge.jtds.jdbc.Driver&lt;/property&gt;</p>
+
+<p>&nbsp;&nbsp;&lt;!-- JDBC URL --&gt;<br />
+
+&nbsp;&nbsp;&lt;property name="connection.url"&gt;jdbc:jtds:sqlserver://localhost:1433;DatabaseName=dbname&lt;/property&gt;</p>
+
+<p>&nbsp;&nbsp;&lt;!-- 数据库用户名--&gt;<br />
+
+&nbsp;&nbsp;&lt;property name="connection.username"&gt;sa&lt;/property&gt;</p>
+
+<p>&nbsp;&nbsp;&lt;!-- 数据库密码--&gt;<br />
+
+&nbsp;&nbsp;&lt;property name="connection.password"&gt;&lt;/property&gt;</p>
+
+<p>&nbsp;&nbsp;<br />
+
+&nbsp;&nbsp;<br />
+
+&nbsp;&nbsp;&lt;!--Oracle 驱动程序 ojdbc14.jar--&gt;<br />
+
+&nbsp;&nbsp;&lt;property name="dialect"&gt;org.hibernate.dialect.OracleDialect&lt;/property&gt;<br />
+
+&nbsp;&nbsp;&lt;property name="connection.driver_class"&gt;oracle.jdbc.driver.OracleDriver&lt;/property&gt;</p>
+
+<p>&nbsp;&nbsp;&lt;!-- JDBC URL --&gt;<br />
+
+&nbsp;&nbsp;&lt;property name="connection.url"&gt;jdbc:oracle:thin:&#64;localhost:1521:dbname&lt;/property&gt;</p>
+
+<p>&nbsp;&nbsp;&lt;!-- 数据库用户名--&gt;<br />
+
+&nbsp;&nbsp;&lt;property name="connection.username"&gt;test&lt;/property&gt;</p>
+
+<p>&nbsp;&nbsp;&lt;!-- 数据库密码--&gt;<br />
+
+&nbsp;&nbsp;&lt;property name="connection.password"&gt;test&lt;/property&gt;</p>
+
+<br />
+
+<br />
+
+如果出现如下错误，则可能是Hibernate SQL方言 (hibernate.dialect)设置不正确。<br />
+
+Caused by: java.sql.SQLException: [Microsoft][SQLServer 2000 Driver for JDBC][SQLServer]'last_insert_id' 不是可以识别的 函数名。<br />
+
+<div>
+
+<table summary="&#10;                    Hibernate SQL方言 (hibernate.dialect)&#10;                " border="1">
+
+    <thead>
+
+        <tr>
+
+            <th>RDBMS
+
+            <th>方言
+
+        </tr>
+
+    </tr>
+
+</tr>
+
+<tbody>
+
+    <tr>
+
+        <td>DB2
+
+        <td><tt>org.hibernate.dialect.DB2Dialect</tt>
+
+        <tr>
+
+            <td>DB2 AS/400
+
+            <td><tt>org.hibernate.dialect.DB2400Dialect</tt>
+
+            <tr>
+
+                <td>DB2 OS390
+
+                <td><tt>org.hibernate.dialect.DB2390Dialect</tt>
+
+                <tr>
+
+                    <td>PostgreSQL
+
+                    <td><tt>org.hibernate.dialect.PostgreSQLDialect</tt>
+
+                    <tr>
+
+                        <td>MySQL
+
+                        <td><tt>org.hibernate.dialect.MySQLDialect</tt>
+
+                        <tr>
+
+                            <td>MySQL with InnoDB
+
+                            <td><tt>org.hibernate.dialect.MySQLInnoDBDialect</tt>
+
+                            <tr>
+
+                                <td>MySQL with MyISAM
+
+                                <td><tt>org.hibernate.dialect.MySQLMyISAMDialect</tt>
+
+                                <tr>
+
+                                    <td>Oracle (any version)
+
+                                    <td><tt>org.hibernate.dialect.OracleDialect</tt>
+
+                                    <tr>
+
+                                        <td>Oracle 9i/10g
+
+                                        <td><tt>org.hibernate.dialect.Oracle9Dialect</tt>
+
+                                        <tr>
+
+                                            <td>Sybase
+
+                                            <td><tt>org.hibernate.dialect.SybaseDialect</tt>
+
+                                            <tr>
+
+                                                <td>Sybase Anywhere
+
+                                                <td><tt>org.hibernate.dialect.SybaseAnywhereDialect</tt>
+
+                                                <tr>
+
+                                                    <td>Microsoft SQL Server
+
+                                                    <td><tt>org.hibernate.dialect.SQLServerDialect</tt>
+
+                                                    <tr>
+
+                                                        <td>SAP DB
+
+                                                        <td><tt>org.hibernate.dialect.SAPDBDialect</tt>
+
+                                                        <tr>
+
+                                                            <td>Informix
+
+                                                            <td><tt>org.hibernate.dialect.InformixDialect</tt>
+
+                                                            <tr>
+
+                                                                <td>HypersonicSQL
+
+                                                                <td><tt>org.hibernate.dialect.HSQLDialect</tt>
+
+                                                                <tr>
+
+                                                                    <td>Ingres
+
+                                                                    <td><tt>org.hibernate.dialect.IngresDialect</tt>
+
+                                                                    <tr>
+
+                                                                        <td>Progress
+
+                                                                        <td><tt>org.hibernate.dialect.ProgressDialect</tt>
+
+                                                                        <tr>
+
+                                                                            <td>Mckoi SQL
+
+                                                                            <td><tt>org.hibernate.dialect.MckoiDialect</tt>
+
+                                                                            <tr>
+
+                                                                                <td>Interbase
+
+                                                                                <td><tt>org.hibernate.dialect.InterbaseDialect</tt>
+
+                                                                                <tr>
+
+                                                                                    <td>Pointbase
+
+                                                                                    <td><tt>org.hibernate.dialect.PointbaseDialect</tt>
+
+                                                                                    <tr>
+
+                                                                                        <td>FrontBase
+
+                                                                                        <td><tt>org.hibernate.dialect.FrontbaseDialect</tt>
+
+                                                                                        <tr>
+
+                                                                                            <td>Firebird
+
+                                                                                            <td><tt>org.hibernate.dialect.FirebirdDialect</tt></td>
+
+                                                                                        </tr>
+
+                                                                                    </tbody>
+
+                                                                                </table>
+
+                                                                                <br />
+
+                                                                                <br />
+
+                                                                                </div>
+
+	
+
+</div>
+
+
+</body>
+
+</html>
+
