@@ -151,7 +151,7 @@ body {
 		<form id="loginForm" class="form-signin" action="${ctx}/login"
 			method="get">
 			<input type="text" class="form-control required" placeholder="用户名"  name="username" value="kevice" value="${username}" autofocus> 
-			<input type="password" class="form-control required" placeholder="密码" name="password" value="theshyboy">
+			<input type="password" class="form-control required" placeholder="密码" name="password" value="tangwl">
 			<tags:captcha name="captcha" />
 			<label class="checkbox"> 
 				<input type="checkbox" value="remember-me" name="rememberMe" title="下次不需要再登录">
