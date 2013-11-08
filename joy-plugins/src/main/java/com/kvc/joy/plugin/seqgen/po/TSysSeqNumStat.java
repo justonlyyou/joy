@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import com.kvc.joy.core.persistence.entity.UuidEntity;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 
 /**
  * 序列号统计对象模型
@@ -12,7 +13,8 @@ import com.kvc.joy.core.persistence.entity.UuidEntity;
  * @author <b>唐玮琳</b>
  */
 @Entity
-@Table(name = "T_SYS_SEQ_NUM_STAT")
+@Table(name = "t_sys_seq_num_stat")
+@Comment("序列号统计")
 public class TSysSeqNumStat extends UuidEntity {
 
 	private String numId; // 外键，序列号码表主键
@@ -24,7 +26,8 @@ public class TSysSeqNumStat extends UuidEntity {
 	private String periodStartTime; // 周期开始时间，周期如果为不循环，无值
 	private String statTime; // 统计时间(入库时间)
 
-	@Column(length = 32)
+	@Column(length = 32, nullable = false)
+	@Comment("序列号ID")
 	public String getNumId() {
 		return numId;
 	}
@@ -34,6 +37,7 @@ public class TSysSeqNumStat extends UuidEntity {
 	}
 
 	@Column(length = 1)
+	@Comment(value="周期类型代码", codeId="joy_code_time_unit")
 	public int getPeriodType() {
 		return periodType;
 	}
@@ -43,6 +47,7 @@ public class TSysSeqNumStat extends UuidEntity {
 	}
 
 	@Column(length = 10)
+	@Comment("周期数")
 	public Long getPeriodCount() {
 		return periodCount;
 	}
@@ -52,6 +57,7 @@ public class TSysSeqNumStat extends UuidEntity {
 	}
 
 	@Column(length = 20)
+	@Comment("最大序列号")
 	public Long getMaxNum() {
 		return maxNum;
 	}
@@ -61,6 +67,7 @@ public class TSysSeqNumStat extends UuidEntity {
 	}
 
 	@Column(length = 128)
+	@Comment("最大完整序列号")
 	public String getMaxFullNum() {
 		return maxFullNum;
 	}
@@ -70,6 +77,7 @@ public class TSysSeqNumStat extends UuidEntity {
 	}
 
 	@Column(length = 20)
+	@Comment("序列号数")
 	public Long getNumCount() {
 		return numCount;
 	}
@@ -79,6 +87,7 @@ public class TSysSeqNumStat extends UuidEntity {
 	}
 
 	@Column(length = 14)
+	@Comment("周期开始时间")
 	public String getPeriodStartTime() {
 		return periodStartTime;
 	}
@@ -88,6 +97,7 @@ public class TSysSeqNumStat extends UuidEntity {
 	}
 
 	@Column(length = 14)
+	@Comment("开始时间")
 	public String getStatTime() {
 		return statTime;
 	}

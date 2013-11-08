@@ -6,6 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.Table;
 
+import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
+
 /**
  * 
  * @author 唐玮琳
@@ -13,7 +15,8 @@ import javax.persistence.Table;
  */
 @IdClass(TErbacGroupUserId.class)
 @Entity
-@Table(name = "T_ERBAC_GROUP_USER")
+@Table(name = "t_erbac_group_user")
+@Comment("组和用户关联表")
 public class TErbacGroupUser {
 
 	private String groupId;
@@ -21,6 +24,7 @@ public class TErbacGroupUser {
 
 	@Id
 	@Column(length = 32, name = "GROUP_ID")
+	@Comment("组ID")
 	public String getGroupId() {
 		return groupId;
 	}
@@ -31,6 +35,7 @@ public class TErbacGroupUser {
 
 	@Id
 	@Column(length = 32, name = "USER_ID")
+	@Comment("用户ID")
 	public String getUserId() {
 		return userId;
 	}

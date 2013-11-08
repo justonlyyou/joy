@@ -17,7 +17,7 @@ import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 import com.kvc.joy.plugin.security.erbac.support.enums.UserStatus;
 
 @Entity
-@Table(name = "T_ERBAC_USER")
+@Table(name = "t_erbac_user")
 @Comment("用户信息")
 public class TErbacUser extends UuidCrudEntity  {
 
@@ -38,7 +38,7 @@ public class TErbacUser extends UuidCrudEntity  {
 	private Collection<TErbacUserAuth> userAuths; // 用户权限关系
 	
 	@Column(name = "USER_ACCOUNT", length = 32, nullable = false, unique = true)
-	@Comment("登陆帐号")
+	@Comment("账号")
 	public String getAccount() {
 		return account;
 	}
@@ -48,6 +48,7 @@ public class TErbacUser extends UuidCrudEntity  {
 	}
 
 	@Column(name = "USER_NAME", length = 64)
+	@Comment("姓名")
 	public String getName() {
 		return name;
 	}
@@ -57,6 +58,7 @@ public class TErbacUser extends UuidCrudEntity  {
 	}
 
 	@Column(length = 32)
+	@Comment("密码")
 	public String getPassword() {
 		return password;
 	}
@@ -66,6 +68,7 @@ public class TErbacUser extends UuidCrudEntity  {
 	}
 
 	@Column(length = 2, nullable = false)
+	@Comment(value="状态代码", codeId="joy_code_user_status")
 	public String getStautsCode() {
 		return stauts == null ? null : stauts.getCode();
 	}
@@ -84,6 +87,7 @@ public class TErbacUser extends UuidCrudEntity  {
 	}
 
 	@Column(length = 1, nullable = false)
+	@Comment(value="性别代码", codeId="joy_code_sex")
 	public String getSexCode() {
 		return sex == null ? null : sex.getCode();
 	}
@@ -102,6 +106,7 @@ public class TErbacUser extends UuidCrudEntity  {
 	}
 
 	@Column(name = "DESCRIPTION")
+	@Comment("描述")
 	public String getDesc() {
 		return desc;
 	}
@@ -121,7 +126,7 @@ public class TErbacUser extends UuidCrudEntity  {
 	}
 
 	// @ManyToMany(cascade = CascadeType.REFRESH)
-	// @JoinTable(name = "T_ERBAC_USER_AUTH", // 关联表名
+	// @JoinTable(name = "t_erbac_user_auth", // 关联表名
 	// inverseJoinColumns = @JoinColumn(name = "AUTHORITY_ID"),// 被维护端外键
 	// joinColumns = @JoinColumn(name = "USER_ID")) // 维护端外键
 	// @OneToMany(mappedBy = "user", cascade = CascadeType.REFRESH, fetch =
@@ -154,6 +159,7 @@ public class TErbacUser extends UuidCrudEntity  {
 	}
 
 	@Column(length = 10)
+	@Comment("登陆次数")
 	public Integer getLoginCount() {
 		return loginCount;
 	}
@@ -163,6 +169,7 @@ public class TErbacUser extends UuidCrudEntity  {
 	}
 
 	@Column(length = 14)
+	@Comment("最后登陆时间")
 	public String getLastLoginTime() {
 		return lastLoginTime;
 	}

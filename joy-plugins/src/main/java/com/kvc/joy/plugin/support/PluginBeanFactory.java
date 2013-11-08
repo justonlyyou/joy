@@ -13,7 +13,7 @@ import org.springframework.core.task.TaskExecutor;
 
 import com.google.code.kaptcha.Producer;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
-import com.kvc.joy.core.spring.utils.SpringBeanUtils;
+import com.kvc.joy.core.spring.utils.SpringBeanTool;
 import com.kvc.joy.plugin.image.captcha.service.ICaptchaService;
 import com.kvc.joy.plugin.monitor.jdbc.service.ISysSqlLogService;
 import com.kvc.joy.plugin.schedule.quartz.service.IQuartzJobRegistry;
@@ -34,7 +34,7 @@ import com.kvc.joy.plugin.seqgen.service.ISequenceGenerator;
 public class PluginBeanFactory extends CoreBeanFactory {
 
 	public static ISequenceGenerator getSequenceGenerator() {
-		return (ISequenceGenerator) SpringBeanUtils.getBean("sequenceGenerator");
+		return (ISequenceGenerator) SpringBeanTool.getBean("sequenceGenerator");
 	}
 	
 //	public static EhCacheManager getShiroCacheManager() {
@@ -42,75 +42,75 @@ public class PluginBeanFactory extends CoreBeanFactory {
 //	}
 
 	public static Scheduler getScheduler() {
-		return (Scheduler) SpringBeanUtils.getBean("schedulerFactory");
+		return (Scheduler) SpringBeanTool.getBean("schedulerFactory");
 	}
 
 	public static IQuartzJobRegistry getQuartzJobRegistry() {
-		return (IQuartzJobRegistry) SpringBeanUtils.getBean("quartzJobRegistry");
+		return (IQuartzJobRegistry) SpringBeanTool.getBean("quartzJobRegistry");
 	}
 
 	public static IQuartzTriggersHolder getQuartzTriggersHolder() {
-		return (IQuartzTriggersHolder) SpringBeanUtils.getBean("quartzTriggersHolder");
+		return (IQuartzTriggersHolder) SpringBeanTool.getBean("quartzTriggersHolder");
 	}
 	
 	public static SecurityManager getSecurityManager() {
-		return (SecurityManager) SpringBeanUtils.getBean("securityManager");
+		return (SecurityManager) SpringBeanTool.getBean("securityManager");
 	}
 	
 	public static RepositoryService getWfRepositoryService() {
-		return (RepositoryService) SpringBeanUtils.getBean("wfRepositoryService");
+		return (RepositoryService) SpringBeanTool.getBean("wfRepositoryService");
 	}
 	
 	public static  RuntimeService getWfRuntimeService() {
-		return (RuntimeService) SpringBeanUtils.getBean("wfRuntimeService");
+		return (RuntimeService) SpringBeanTool.getBean("wfRuntimeService");
 	}
 	
 	public static  TaskService getWfTaskService() {
-		return (TaskService) SpringBeanUtils.getBean("wfTaskService");
+		return (TaskService) SpringBeanTool.getBean("wfTaskService");
 	}
 	
 	public static  HistoryService getWfHistoryService() {
-		return (HistoryService) SpringBeanUtils.getBean("wfHistoryService");
+		return (HistoryService) SpringBeanTool.getBean("wfHistoryService");
 	}
 	
 	public static  ManagementService getWfManagementService() {
-		return (ManagementService) SpringBeanUtils.getBean("wfManagementService");
+		return (ManagementService) SpringBeanTool.getBean("wfManagementService");
 	}
 	
 	public static  FormService getWfFormService() {
-		return (FormService) SpringBeanUtils.getBean("wfFormService");
+		return (FormService) SpringBeanTool.getBean("wfFormService");
 	}
 	
 	public static IdentityService getWfIdentityService() {
-		return (IdentityService) SpringBeanUtils.getBean("wfIdentityService");
+		return (IdentityService) SpringBeanTool.getBean("wfIdentityService");
 	}
 	
 	public static ICaptchaService getCaptchaService() {
-		return (ICaptchaService) SpringBeanUtils.getBean("captchaService");
+		return (ICaptchaService) SpringBeanTool.getBean("captchaService");
 	}
 	
 	public static ILoginService getLoginService() {
-		return (ILoginService) SpringBeanUtils.getBean("loginService");
+		return (ILoginService) SpringBeanTool.getBean("loginService");
 	}
 	
 	public static ILoginLogService getLoginLogService() {
-		return (ILoginLogService) SpringBeanUtils.getBean("loginLogService");
+		return (ILoginLogService) SpringBeanTool.getBean("loginLogService");
 	}
 	
 	public static ILogoutService getLogoutService() {
-		return (ILogoutService) SpringBeanUtils.getBean("logoutService");
+		return (ILogoutService) SpringBeanTool.getBean("logoutService");
 	}
 	
 	public static ILogoutLogService getLogoutLogService() {
-		return (ILogoutLogService) SpringBeanUtils.getBean("logoutLogService");
+		return (ILogoutLogService) SpringBeanTool.getBean("logoutLogService");
 	}
 	
 	public static ISysSqlLogService getSysSqlLogService() {
-		return (ISysSqlLogService) SpringBeanUtils.getBean("sysSqlLogService");
+		return (ISysSqlLogService) SpringBeanTool.getBean("sysSqlLogService");
 	}
 	
 	public static TaskExecutor getSysSqlLogThreadPool() {
-		return (TaskExecutor) SpringBeanUtils.getBean("sysSqlLogThreadPool");
+		return (TaskExecutor) SpringBeanTool.getBean("sysSqlLogThreadPool");
 	}
 	
 	/**
@@ -122,7 +122,7 @@ public class PluginBeanFactory extends CoreBeanFactory {
 	 * @time 2013年9月21日 下午6:39:43
 	 */
 	public static Producer getCaptchaProducer() {
-		return (Producer) SpringBeanUtils.getBean("captchaProducer");
+		return (Producer) SpringBeanTool.getBean("captchaProducer");
 	}
 	
 }

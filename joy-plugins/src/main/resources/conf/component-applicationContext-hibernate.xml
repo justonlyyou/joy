@@ -12,6 +12,6 @@
 		http://www.springframework.org/schema/util/spring-util.xsd"
 		default-autowire="byName">
 
-	<bean id="hibernateUtils" class="com.kvc.joy.plugin.persistence.hibernate.HibernateUtils"/>
+	<bean id="hibernateTool" class="com.kvc.joy.plugin.persistence.hibernate.HibernateTool"/>
 
 </beans>

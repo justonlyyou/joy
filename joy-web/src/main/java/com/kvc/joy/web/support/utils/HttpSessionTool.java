@@ -9,13 +9,13 @@ import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser;
  * @author 唐玮琳
  * @time 2012-6-14 下午10:06:47
  */
-public class HttpSessionUtils {
+public class HttpSessionTool {
 
-	private HttpSessionUtils() {
+	private HttpSessionTool() {
 	}
 
 	public static HttpSession getSession() {
-		return HttpRequestUtils.getRequest().getSession();
+		return HttpRequestTool.getRequest().getSession();
 	}
 
 	public static TErbacUser getUser() {

@@ -2,7 +2,7 @@ package com.kvc.joy.core.sysres.param.service;
 
 import com.kvc.joy.commons.enums.YesNot;
 import com.kvc.joy.commons.lang.DateTool;
-import com.kvc.joy.core.sysres.SysResUtils;
+import com.kvc.joy.core.sysres.SysResTool;
 
 /**
  * 系统参数基类，各应用系统可以继承该类，实现自己的个性参数。    <br>
@@ -39,10 +39,10 @@ public class BaseSystemParameter {
 	 * 初始化系统参数
 	 */
 	public static void init() {
-		THROW_TO_PRINT_TRACE_SWITCH = YesNot.YES.getBinary().equals(SysResUtils.getParamValue("THROW_TO_PRINT_TRACE_SWITCH"));
-		FETCH_MAX_VALUE_IN_WEB = Integer.parseInt(SysResUtils.getParamValue("FETCH_MAX_VALUE_IN_WEB"));
-		DATABASE_CHARSET = SysResUtils.getParamValue("DATABASE_CHARSET");
-		PASSWORD_TYPE = SysResUtils.getParamValue("PASSWORD_TYPE");
+		THROW_TO_PRINT_TRACE_SWITCH = YesNot.YES.getBinary().equals(SysResTool.getParamValue("THROW_TO_PRINT_TRACE_SWITCH"));
+		FETCH_MAX_VALUE_IN_WEB = Integer.parseInt(SysResTool.getParamValue("FETCH_MAX_VALUE_IN_WEB"));
+		DATABASE_CHARSET = SysResTool.getParamValue("DATABASE_CHARSET");
+		PASSWORD_TYPE = SysResTool.getParamValue("PASSWORD_TYPE");
 		SYSTEM_STARTUP_TIME = DateTool.currentDate(DateTool.UNFMT_yyyyMMddHHmmss);
 	}
 	

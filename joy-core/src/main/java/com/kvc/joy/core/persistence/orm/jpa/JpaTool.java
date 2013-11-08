@@ -31,19 +31,19 @@ import com.kvc.joy.commons.bean.IEntity;
 import com.kvc.joy.commons.support.GroupExecutor;
 import com.kvc.joy.core.persistence.support.QueryLogics;
 import com.kvc.joy.core.rp.pagestore.PageStore;
-import com.kvc.joy.core.spring.utils.SpringBeanUtils;
+import com.kvc.joy.core.spring.utils.SpringBeanTool;
 
 @Repository
 @SuppressWarnings("rawtypes")
-public class JpaUtils extends BaseJpaDao {
+public class JpaTool extends BaseJpaDao {
 
-	private static Logger logger = LoggerFactory.getLogger(JpaUtils.class);
+	private static Logger logger = LoggerFactory.getLogger(JpaTool.class);
 	
-	private JpaUtils() {
+	private JpaTool() {
 	}
 
-	private static JpaUtils getInstance() {
-		return SpringBeanUtils.getBean(JpaUtils.class);
+	private static JpaTool getInstance() {
+		return SpringBeanTool.getBean(JpaTool.class);
 	}
 
 	public static void persist(Object engity) {

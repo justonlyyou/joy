@@ -21,11 +21,11 @@ import com.kvc.joy.core.sysres.menu.po.TSysMenu;
  * @author 唐玮琳
  * @time 2013-2-7 下午10:29:32
  */
-public class SysResUtils {
+public class SysResTool {
 	
-	private static Logger logger = LoggerFactory.getLogger(SysResUtils.class);
+	private static Logger logger = LoggerFactory.getLogger(SysResTool.class);
 
-	private SysResUtils() {
+	private SysResTool() {
 	}
 
 	/**

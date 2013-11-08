@@ -1,11 +1,8 @@
 package com.kvc.joy.commons.lang;
 
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-
-import com.kvc.joy.commons.exception.SystemException;
 
 /**
  * 数组操作工具类
@@ -46,54 +43,6 @@ public class ArrayTool {
 		return arr == null ? new Object[0][0] : arr;
 	}
 	
-	/**
-	 * 将Object类型的数组转换为指定类型的数组，并填充给定的数组 <br>
-	 * 主要用途是将用List.toArray()方法得到的Object类型的数组适配为原来类型的数组 <br>
-	 * 特别注意：objs数组的元素的类型必须能强化转换为指令的空数组的元素类型
-	 * 
-	 * @param nullArrays 指定的有长度但元素都是null的数组
-	 * @param objs 待转换的数组
-	 * @return 填充后的数组
-	 * @throws SystemException  nullArrays数组为null或两个数组的长度不一致 <br>
-	 * 			ClassCastException 两个数组元素的类型不匹配
-	 * @since 1.0.0
-	 * @author 唐玮琳
-	 * @time 2013年10月9日 下午11:44:16
-	 */
-	@SuppressWarnings("unchecked")
-	public static <T> T[] cast(T[] nullArrays, Object[] objs) {
-		if(nullArrays == null) {
-			throw new SystemException("nullArrays数组不能为null");
-		}
-		if(isNotEmpty(objs)) {
-			if(nullArrays.length != objs.length) {
-				throw new SystemException("两个数组的长度必须一致");
-			}
-			for (int i = 0; i < objs.length; i++) {
-				nullArrays[i] = (T) objs[i];
-			}
-		}
-		return nullArrays;
-	}
-	
-	/**
-	 * 将列表转换为指定类型的数组，并填充给定的数组 <br>
-	 * 主要用途是将用List.toArray()方法得到的Object类型的数组适配为原来类型的数组 <br>
-	 * 特别注意：objs元素的类型必须能强化转换为指令的空数组的元素类型
-	 * 
-	 * @param nullArrays 指定的有长度但元素都是null的数组
-	 * @param objs 待转换的列表
-	 * @return 填充后的数组
-	 * @throws SystemException  nullArrays数组为null或两个数组的长度不一致 <br>
-	 * 			ClassCastException 两个数组元素的类型不匹配
-	 * @since 1.0.0
-	 * @author 唐玮琳
-	 * @time 2013年10月9日 下午11:44:16
-	 */
-	public static <T> T[] cast(T[] nullArrays, List<T> objs) {
-		return cast(nullArrays, objs.toArray());
-	}
-
 	// vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 	// 封装org.apache.commons.lang3.ArrayUtils
 	// vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv

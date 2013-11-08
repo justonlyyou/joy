@@ -1,8 +1,8 @@
 package com.kvc.joy.plugin.seqgen.support;
 
 import com.kvc.joy.commons.lang.DateTool;
-import com.kvc.joy.core.persistence.orm.jpa.JpaUtils;
-import com.kvc.joy.core.spring.utils.SpringBeanUtils;
+import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
+import com.kvc.joy.core.spring.utils.SpringBeanTool;
 import com.kvc.joy.plugin.seqgen.po.TSysSeqNum;
 import com.kvc.joy.plugin.seqgen.po.TSysSeqNumRule;
 import com.kvc.joy.plugin.seqgen.po.TSysSeqNumStat;
@@ -27,7 +27,7 @@ public class SeqNumStat {
 			statSeqNum.setPeriodType(seqRule.getPeriodType());
 			statSeqNum.setPeriodCount(seqRule.getPeriodCount());
 			statSeqNum.setMaxNum(seqCache.getRealSeqNum());
-			ISequenceGenerator sequenceGenerator = (ISequenceGenerator) SpringBeanUtils.getBean("sequenceGenerator");
+			ISequenceGenerator sequenceGenerator = (ISequenceGenerator) SpringBeanTool.getBean("sequenceGenerator");
 			statSeqNum.setMaxFullNum(sequenceGenerator.fillPattern(seqCache.getRealSeqNum(), seqCache, seqNum));
 			statSeqNum.setNumCount(numCount);
 			statSeqNum.setPeriodStartTime(seqNum.getCurPeriodStartTime());
@@ -38,7 +38,7 @@ public class SeqNumStat {
 	}
 	
 	private void save(TSysSeqNumStat statSeqNum) {
-		JpaUtils.persist(statSeqNum);
+		JpaTool.persist(statSeqNum);
 	}
 
 }

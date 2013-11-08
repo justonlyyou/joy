@@ -13,6 +13,7 @@ import javax.persistence.Transient;
 
 import com.kvc.joy.core.persistence.entity.UuidCrudEntity;
 import com.kvc.joy.core.persistence.jdbc.model.vo.IMdRdbConn;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 import com.kvc.joy.core.sysres.code.po.TSysCodeTable;
 
 /**
@@ -22,7 +23,8 @@ import com.kvc.joy.core.sysres.code.po.TSysCodeTable;
  * @time 2012-6-8 下午9:26:10
  */
 @Entity
-@Table(name = "T_SYS_DATA_SRC")
+@Table(name = "t_sys_data_src")
+@Comment("数据源")
 public class TSysDataSrc extends UuidCrudEntity implements IMdRdbConn {
 
 	private String name;
@@ -41,7 +43,8 @@ public class TSysDataSrc extends UuidCrudEntity implements IMdRdbConn {
 	private Integer minConnCount;
 	private Set<TSysCodeTable> codeDics = new HashSet<TSysCodeTable>(0);
 
-	@Column(length = 32)
+	@Column(length = 32, nullable = false)
+	@Comment("名称")
 	public String getName() {
 		return name;
 	}
@@ -51,6 +54,7 @@ public class TSysDataSrc extends UuidCrudEntity implements IMdRdbConn {
 	}
 
 	@Column(length = 32)
+	@Comment("数据库别名")
 	public String getDbAlias() {
 		return dbAlias;
 	}
@@ -60,6 +64,7 @@ public class TSysDataSrc extends UuidCrudEntity implements IMdRdbConn {
 	}
 
 	@Column(length = 2)
+	@Comment("数据库类型")
 	public String getDbType() {
 		return dbType;
 	}
@@ -69,6 +74,7 @@ public class TSysDataSrc extends UuidCrudEntity implements IMdRdbConn {
 	}
 
 	@Column(length = 32)
+	@Comment("数据库名称")
 	public String getDbName() {
 		return dbName;
 	}
@@ -78,6 +84,7 @@ public class TSysDataSrc extends UuidCrudEntity implements IMdRdbConn {
 	}
 
 	@Column(length = 128)
+	@Comment("连接串")
 	public String getDbUrl() {
 		return dbUrl;
 	}
@@ -87,6 +94,7 @@ public class TSysDataSrc extends UuidCrudEntity implements IMdRdbConn {
 	}
 
 	@Column(length = 32)
+	@Comment("JNDI名称")
 	public String getJndiName() {
 		return jndiName;
 	}
@@ -96,6 +104,7 @@ public class TSysDataSrc extends UuidCrudEntity implements IMdRdbConn {
 	}
 
 	@Column(length = 32)
+	@Comment("用户名")
 	public String getUsername() {
 		return username;
 	}
@@ -105,6 +114,7 @@ public class TSysDataSrc extends UuidCrudEntity implements IMdRdbConn {
 	}
 
 	@Column(length = 32)
+	@Comment("用户密码")
 	public String getPassword() {
 		return password;
 	}
@@ -114,6 +124,7 @@ public class TSysDataSrc extends UuidCrudEntity implements IMdRdbConn {
 	}
 
 	@Column(length = 128)
+	@Comment("连接参数")
 	public String getParameter() {
 		return parameter;
 	}
@@ -122,7 +133,8 @@ public class TSysDataSrc extends UuidCrudEntity implements IMdRdbConn {
 		this.parameter = parameter;
 	}
 
-	@Column(length = 1)
+	@Column(length = 16)
+	@Comment("字符集")
 	public String getCharset() {
 		return charset;
 	}
@@ -132,6 +144,7 @@ public class TSysDataSrc extends UuidCrudEntity implements IMdRdbConn {
 	}
 
 	@Column(length = 32)
+	@Comment("IP地址")
 	public String getIpAddress() {
 		return ipAddress;
 	}
@@ -141,6 +154,7 @@ public class TSysDataSrc extends UuidCrudEntity implements IMdRdbConn {
 	}
 
 	@Column(length = 5)
+	@Comment("端口")
 	public String getServerPort() {
 		return serverPort;
 	}
@@ -149,6 +163,8 @@ public class TSysDataSrc extends UuidCrudEntity implements IMdRdbConn {
 		this.serverPort = serverPort;
 	}
 
+	@Column(length = 4)
+	@Comment("最大连接数")
 	public Integer getMaxConnCount() {
 		return maxConnCount;
 	}
@@ -157,6 +173,8 @@ public class TSysDataSrc extends UuidCrudEntity implements IMdRdbConn {
 		this.maxConnCount = maxConnCount;
 	}
 
+	@Column(length = 4)
+	@Comment("最小连接数")
 	public Integer getMinConnCount() {
 		return minConnCount;
 	}

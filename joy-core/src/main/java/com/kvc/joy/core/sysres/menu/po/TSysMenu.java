@@ -10,9 +10,10 @@ import javax.persistence.Table;
 import com.kvc.joy.commons.bean.IEntity;
 import com.kvc.joy.commons.support.IListToTreeRestrict;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.DefaultValue;
 
 @Entity
-@Table(name = "T_SYS_MENU")
+@Table(name = "t_sys_menu")
 @Comment("系统菜单")
 public class TSysMenu implements IEntity<String>, IListToTreeRestrict<String> {
 
@@ -24,16 +25,18 @@ public class TSysMenu implements IEntity<String>, IListToTreeRestrict<String> {
 	private String icon;
 	private boolean active;
 	private boolean deleted;
-	
+
 	public TSysMenu() {
 	}
-	
+
 	public TSysMenu(String id) {
 		this.id = id;
 	}
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.TABLE)
+	@Column(length = 32, nullable = false)
+	@Comment("主键")
 	public String getId() {
 		return id;
 	}
@@ -42,7 +45,7 @@ public class TSysMenu implements IEntity<String>, IListToTreeRestrict<String> {
 		this.id = id;
 	}
 
-	@Column(length=64, nullable=false)
+	@Column(length = 64, nullable = false)
 	@Comment("文本")
 	public String getText() {
 		return text;
@@ -52,7 +55,8 @@ public class TSysMenu implements IEntity<String>, IListToTreeRestrict<String> {
 		this.text = text;
 	}
 
-	@Column(length=32)
+	@Column(length = 32)
+	@Comment("父项ID")
 	public String getParentId() {
 		return parentId;
 	}
@@ -61,7 +65,8 @@ public class TSysMenu implements IEntity<String>, IListToTreeRestrict<String> {
 		this.parentId = parentId;
 	}
 
-	@Column(length=128)
+	@Column(length = 128)
+	@Comment("URL")
 	public String getUrl() {
 		return url;
 	}
@@ -70,7 +75,8 @@ public class TSysMenu implements IEntity<String>, IListToTreeRestrict<String> {
 		this.url = url;
 	}
 
-	@Column(length=16)
+	@Column(length = 16)
+	@Comment("排序序号")
 	public String getOrderNum() {
 		return orderNum;
 	}
@@ -79,7 +85,8 @@ public class TSysMenu implements IEntity<String>, IListToTreeRestrict<String> {
 		this.orderNum = orderNum;
 	}
 
-	@Column(length=128)
+	@Column(length = 128)
+	@Comment("图标URL")
 	public String getIcon() {
 		return icon;
 	}
@@ -88,7 +95,9 @@ public class TSysMenu implements IEntity<String>, IListToTreeRestrict<String> {
 		this.icon = icon;
 	}
 
-	@Column(length = 1, nullable = false, columnDefinition="boolean default false")
+	@Column(length = 1, nullable = false)
+	@DefaultValue("true")
+	@Comment("是否启用")
 	public boolean isActive() {
 		return active;
 	}
@@ -97,7 +106,9 @@ public class TSysMenu implements IEntity<String>, IListToTreeRestrict<String> {
 		this.active = active;
 	}
 
-	@Column(length = 1, nullable = false, columnDefinition="boolean default false")
+	@Column(length = 1, nullable = false)
+	@DefaultValue("false")
+	@Comment("是否已删除")
 	public boolean isDeleted() {
 		return deleted;
 	}

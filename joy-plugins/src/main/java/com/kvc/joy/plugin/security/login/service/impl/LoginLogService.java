@@ -8,7 +8,7 @@ import com.kvc.joy.commons.bean.BeanTool;
 import com.kvc.joy.commons.lang.DateTool;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.core.init.support.JoyPropeties;
-import com.kvc.joy.core.persistence.orm.jpa.JpaUtils;
+import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser;
 import com.kvc.joy.plugin.security.erbac.support.utils.UserTool;
 import com.kvc.joy.plugin.security.login.dao.LoginLogDao;
@@ -38,7 +38,7 @@ public class LoginLogService implements ILoginLogService {
 		if (currentUser != null) {
 			loginLog.setUserId(currentUser.getId());	
 		}
-		JpaUtils.persist(loginLog);
+		JpaTool.persist(loginLog);
 		return loginLog;
 	}
 	

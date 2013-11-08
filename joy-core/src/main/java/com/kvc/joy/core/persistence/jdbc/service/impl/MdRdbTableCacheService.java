@@ -6,7 +6,6 @@ import com.kvc.joy.core.ehcache.support.AbstractEhCacheHolder;
 import com.kvc.joy.core.init.service.ISystemInitService;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbTable;
 import com.kvc.joy.core.persistence.jdbc.service.IMdRdbTableService;
-import com.kvc.joy.core.persistence.jdbc.support.MdRdbCommentGenerator;
 
 /**
  * 
@@ -24,7 +23,6 @@ public class MdRdbTableCacheService extends AbstractEhCacheHolder<String, MdRdbT
 
 	public void init() {
 		cache(loadAll());
-//		MdRdbCommentGenerator.generate(); //TODO
 	}
 
 	@Override

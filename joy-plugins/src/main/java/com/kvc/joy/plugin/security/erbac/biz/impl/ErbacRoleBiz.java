@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kvc.joy.commons.bean.TreeNode;
-import com.kvc.joy.core.persistence.orm.jpa.JpaUtils;
+import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.plugin.security.erbac.biz.IErbacRoleBiz;
 import com.kvc.joy.plugin.security.erbac.model.po.TErbacRole;
 
@@ -19,7 +19,7 @@ public class ErbacRoleBiz implements IErbacRoleBiz {
 	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	public List<TreeNode> getAllRoles() {
-		List<TErbacRole> roleList = JpaUtils.searchAll(TErbacRole.class);
+		List<TErbacRole> roleList = JpaTool.searchAll(TErbacRole.class);
 		Map<Integer, TreeNode> treeNodeMap = new HashMap<Integer, TreeNode>(roleList.size());
 		for (TErbacRole role : roleList) {
 //			treeNodeMap.put(role.getId(),new TreeNode(role.getId() + "", role.getName())); //TODO

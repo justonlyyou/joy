@@ -17,7 +17,7 @@ import com.kvc.joy.commons.bean.Pair;
 import com.kvc.joy.commons.lang.DateTool;
 import com.kvc.joy.plugin.image.captcha.consts.CaptchaConsts;
 import com.kvc.joy.plugin.support.PluginBeanFactory;
-import com.kvc.joy.web.support.utils.HttpSessionUtils;
+import com.kvc.joy.web.support.utils.HttpSessionTool;
 
 /**
  * 
@@ -67,14 +67,14 @@ public class CaptchaController {
 	@RequestMapping("/validateCode")
 	@ResponseBody
 	public String validate(@RequestParam("captcha") String captcha) {
-		String code = (String) HttpSessionUtils.getSession().getAttribute(CaptchaConsts.CAPTCHA_SESSION_KEY);
+		String code = (String) HttpSessionTool.getSession().getAttribute(CaptchaConsts.CAPTCHA_SESSION_KEY);
 		return PluginBeanFactory.getCaptchaService().validateCode(captcha, code) + "";
 	}
 	
 	@RequestMapping("/validateTime")
 	@ResponseBody
 	public String validate() {
-		String date = (String) HttpSessionUtils.getSession().getAttribute(CaptchaConsts.CAPTCHA_SESSION_DATE);
+		String date = (String) HttpSessionTool.getSession().getAttribute(CaptchaConsts.CAPTCHA_SESSION_DATE);
 		return PluginBeanFactory.getCaptchaService().validateTime(date) + "";
 	}
 	

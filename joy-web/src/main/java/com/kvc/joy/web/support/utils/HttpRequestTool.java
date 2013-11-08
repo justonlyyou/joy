@@ -22,9 +22,9 @@ import com.kvc.joy.commons.lang.string.StringTool;
  * @author 唐玮琳
  * @time 2012-6-14 下午10:05:28
  */
-public class HttpRequestUtils {
+public class HttpRequestTool {
 
-	private HttpRequestUtils() {
+	private HttpRequestTool() {
 	}
 
 	public static HttpServletRequest getRequest() {
@@ -118,26 +118,31 @@ public class HttpRequestUtils {
 	 */
 	public static Pair<String, String> getBrowserInfo() {
 		String agent = getRequest().getHeader("User-Agent");
-		String name = null;
-		Pattern pattern = Pattern.compile("");
+		String name = "unknown";
+		String version = "unknown";
+		Pattern pattern = null;
 		Matcher matcher;
-		if (agent.indexOf("MSIE") != -1) {
+		if (agent.contains("MSIE")) {
 			name = "MSIE"; // 微软IE
 			pattern = Pattern.compile(name + "\\s([0-9.]+)");
-		} else if (agent.indexOf("Firefox") != -1) {
+		} else if (agent.contains("Firefox")) {
 			name = "Firefox"; // 火狐
 			pattern = Pattern.compile(name + "\\/([0-9.]+)");
-		} else if (agent.indexOf("Chrome") != -1) {
+		} else if (agent.contains("Chrome")) {
 			name = "Chrome"; // Google
 			pattern = Pattern.compile(name + "\\/([0-9.]+)");
-		} else if (agent.indexOf("Opera") != -1) {
+		} else if (agent.contains("Opera")) {
 			name = "Opera"; // Opera
 			pattern = Pattern.compile("Version\\/([0-9.]+)");
+		} else if (agent.contains("Safari")) {
+			name = "Safari"; // Opera
+			pattern = Pattern.compile("Version\\/([0-9.]+)");
 		}
-		matcher = pattern.matcher(agent);
-		String version = null;
-		if (matcher.find()) {
-			version = matcher.group(1);
+		if (pattern != null) {
+			matcher = pattern.matcher(agent);
+			if (matcher.find()) {
+				version = matcher.group(1);
+			}
 		}
 		return new Pair<String, String>(name, version);
 	}
@@ -151,19 +156,30 @@ public class HttpRequestUtils {
 	 * @time 2013年10月1日 下午6:12:43
 	 */
 	public static Pair<String, String> getOsInfo() {
+		//TODO
 		String agent = getRequest().getHeader("User-Agent");
-		String name = null;   
-        Pattern pattern = Pattern.compile("");   
-        Matcher matcher;   
-        if(agent.indexOf("Windows") != -1){   
+		String name = "unknown";
+		String version = "unknown";
+        if(agent.contains("Windows")){   
             name = "Windows"; //如：win7 = Windows NT 6.1  
-            pattern = Pattern.compile(name + "\\s([a-zA-Z0-9]+\\s[0-9.]+)");   
-        }   
-        matcher = pattern.matcher(agent);
-        String version = null;
-        if(matcher.find()) {
-        	version = matcher.group(1);   
+            Pattern pattern = Pattern.compile(name + "\\s([a-zA-Z0-9]+\\s[0-9.]+)");
+            Matcher matcher = pattern.matcher(agent);
+            if(matcher.find()) {
+            	version = matcher.group(1);   
+            }
+        } else if(agent.contains("FreeBSD")) {
+        	name = "FreeBSD";
+        } else if(agent.contains("Macintosh")) {
+        	name = "Mac";
+        } else if(agent.contains("SunOS")) {
+        	name = "Solaris";
+        } else if(agent.contains("Linux")) {
+        	name = "Linux";
+        	if (agent.contains("Ubuntu")) {
+        		version = "Ubuntu";
+			}
         }
+        
         return new Pair<String, String>(name, version);
 	}
 

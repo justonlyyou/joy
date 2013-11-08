@@ -30,7 +30,7 @@
   <function>
     <description>翻译代码</description>
     <name>translateCode</name>
-    <function-class>com.kvc.joy.core.sysres.SysResUtils</function-class>
+    <function-class>com.kvc.joy.core.sysres.SysResTool</function-class>
     <function-signature>java.lang.String translateCode(java.lang.String,java.lang.String,java.lang.String)</function-signature>
     <example>${joy:translateCode(code,tableId,enumClass)}</example>
   </function>
@@ -38,7 +38,7 @@
   <function>
     <description>返回所有代码及其翻译列表</description>
     <name>getAllCodeAndTrans</name>
-    <function-class>com.kvc.joy.core.sysres.SysResUtils</function-class>
+    <function-class>com.kvc.joy.core.sysres.SysResTool</function-class>
     <function-signature>java.util.Map getAllCodeAndTrans(java.lang.String,java.lang.String)</function-signature>
     <example>${joy:getAllCodeAndTrans(tableId,enumClass)}</example>
   </function>
@@ -46,7 +46,7 @@
   <function>
     <description>返回指定菜单的路径</description>
     <name>getMenuPath</name>
-    <function-class>com.kvc.joy.core.sysres.SysResUtils</function-class>
+    <function-class>com.kvc.joy.core.sysres.SysResTool</function-class>
     <function-signature>com.kvc.joy.core.sysres.menu.po.TSysMenu getMenuPath(java.lang.String)</function-signature>
     <example>${joy:getMenuPath(menuId)}</example>
   </function>

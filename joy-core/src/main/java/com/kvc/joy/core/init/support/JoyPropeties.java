@@ -12,6 +12,7 @@ public class JoyPropeties extends BaseProperties {
 
 	public static String DB_JNDI;
 	public static boolean DB_AUTOCOMMIT;
+	public static String DB_DATASOURCEID;
 	public static String JUNIT_DB_DRIVERCLASSNAME;
 	public static String JUNIT_DB_URL;
 	public static String JUNIT_DB_USERNAME;
@@ -68,6 +69,7 @@ public class JoyPropeties extends BaseProperties {
 	protected void init() {
 		DB_JNDI = getStr("db.jndi");
 		DB_AUTOCOMMIT = getBool("db.autoCommit");
+		DB_DATASOURCEID = getStr("db.dataSourceId");
 		JUNIT_DB_DRIVERCLASSNAME = getStr("junit.db.driverClassName");
 		JUNIT_DB_URL = getStr("junit.db.url");
 		JUNIT_DB_USERNAME = getStr("junit.db.username");

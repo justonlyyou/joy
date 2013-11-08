@@ -7,15 +7,15 @@ import org.quartz.Scheduler;
  * @author 唐玮琳
  * @time 2013-2-17 下午6:46:04
  */
-public class QuartzUtils {
+public class QuartzTool {
 
 	private static Scheduler scheduler;
 
-	private QuartzUtils() {
+	private QuartzTool() {
 	}
 
 	public static void setScheduler(Scheduler scheduler) {
-		QuartzUtils.scheduler = scheduler;
+		QuartzTool.scheduler = scheduler;
 	}
 
 	public static Scheduler getScheduler() {

@@ -3,6 +3,9 @@ package com.kvc.joy.core.persistence.entity;
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
+import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.DefaultValue;
+
 /**
  * 
  * @author 唐玮琳
@@ -23,8 +26,10 @@ public class UuidCrudEntity extends UuidEntity implements ICrudEntity<String> {
 	protected boolean deleted;
 	protected boolean active;
 	protected boolean builtIn;
+	protected String remarks; // 备注
 
-	@Column(length = 14)
+	@Column(length = 17)
+	@Comment("创建时间")
 	public String getCreateTime() {
 		return createTime;
 	}
@@ -34,6 +39,7 @@ public class UuidCrudEntity extends UuidEntity implements ICrudEntity<String> {
 	}
 
 	@Column(length = 32)
+	@Comment("创建用户ID")
 	public String getCreateUser() {
 		return createUser;
 	}
@@ -43,6 +49,7 @@ public class UuidCrudEntity extends UuidEntity implements ICrudEntity<String> {
 	}
 
 	@Column(length = 32)
+	@Comment("创建单位ID")
 	public String getCreateDept() {
 		return createDept;
 	}
@@ -51,7 +58,8 @@ public class UuidCrudEntity extends UuidEntity implements ICrudEntity<String> {
 		this.createDept = createDept;
 	}
 
-	@Column(length = 14)
+	@Column(length = 17)
+	@Comment("更新时间")
 	public String getUpdateTime() {
 		return updateTime;
 	}
@@ -61,6 +69,7 @@ public class UuidCrudEntity extends UuidEntity implements ICrudEntity<String> {
 	}
 
 	@Column(length = 32)
+	@Comment("更新用户ID")
 	public String getUpdateUser() {
 		return updateUser;
 	}
@@ -70,6 +79,7 @@ public class UuidCrudEntity extends UuidEntity implements ICrudEntity<String> {
 	}
 
 	@Column(length = 32)
+	@Comment("更新单位ID")
 	public String getUpdateDept() {
 		return updateDept;
 	}
@@ -78,7 +88,8 @@ public class UuidCrudEntity extends UuidEntity implements ICrudEntity<String> {
 		this.updateDept = updateDept;
 	}
 
-	@Column(length = 14)
+	@Column(length = 17)
+	@Comment("删除时间")
 	public String getDeleteTime() {
 		return deleteTime;
 	}
@@ -88,6 +99,7 @@ public class UuidCrudEntity extends UuidEntity implements ICrudEntity<String> {
 	}
 
 	@Column(length = 32)
+	@Comment("删除用户ID")
 	public String getDeleteUser() {
 		return deleteUser;
 	}
@@ -97,6 +109,7 @@ public class UuidCrudEntity extends UuidEntity implements ICrudEntity<String> {
 	}
 
 	@Column(length = 32)
+	@Comment("删除单位ID")
 	public String getDeleteDept() {
 		return deleteDept;
 	}
@@ -106,6 +119,8 @@ public class UuidCrudEntity extends UuidEntity implements ICrudEntity<String> {
 	}
 
 	@Column(length = 1, nullable = false)
+	@DefaultValue("false")
+	@Comment("是否已删除")
 	public boolean isDeleted() {
 		return deleted;
 	}
@@ -115,6 +130,8 @@ public class UuidCrudEntity extends UuidEntity implements ICrudEntity<String> {
 	}
 	
 	@Column(length = 1, nullable = false)
+	@DefaultValue("true")
+	@Comment("是否激活")
 	public boolean isActive() {
 		return active;
 	}
@@ -124,12 +141,24 @@ public class UuidCrudEntity extends UuidEntity implements ICrudEntity<String> {
 	}
 
 	@Column(length = 1, updatable = false, nullable = false)
+	@DefaultValue("false")
+	@Comment("是否系统内置")
 	public boolean isBuiltIn() {
 		return builtIn;
 	}
 
 	public void setBuiltIn(boolean builtIn) {
 		this.builtIn = builtIn;
+	}
+	
+	@Column(length = 256)
+	@Comment("备注")
+	public String getRemarks() {
+		return remarks;
+	}
+
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
 	}
 
 }

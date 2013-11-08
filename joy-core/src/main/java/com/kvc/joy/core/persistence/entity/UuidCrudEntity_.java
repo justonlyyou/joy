@@ -18,6 +18,7 @@ public class UuidCrudEntity_ extends UuidEntity_ {
 	public static volatile SingularAttribute<UuidCrudEntity, String> deleteTime;
 	public static volatile SingularAttribute<UuidCrudEntity, String> deleteUser;
 	public static volatile SingularAttribute<UuidCrudEntity, String> deleteDept;
+	public static volatile SingularAttribute<UuidCrudEntity, String> remarks;
 	public static volatile SingularAttribute<UuidCrudEntity, Boolean> deleted;
 	public static volatile SingularAttribute<UuidCrudEntity, Boolean> active;
 	public static volatile SingularAttribute<UuidCrudEntity, Boolean> builtIn;

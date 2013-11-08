@@ -11,7 +11,6 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Service;
 
-import com.kvc.joy.commons.lang.ArrayTool;
 import com.kvc.joy.core.init.service.IJoyPlugin;
 import com.kvc.joy.core.init.service.ISystemInitService;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
@@ -54,7 +53,7 @@ public class JoyPluginsInitializer implements ISystemInitService, BeanPostProces
 				xmlList.add(component.getXmlPath());
 			}
 		}
-		String[] xmls = ArrayTool.cast(new String[xmlList.size()], xmlList);
+		String[] xmls = xmlList.toArray(new String[xmlList.size()]);
 		CoreBeanFactory.getSpringXmlDynamicLoadService().load(xmls);
 
 		// 初始化平台各插件

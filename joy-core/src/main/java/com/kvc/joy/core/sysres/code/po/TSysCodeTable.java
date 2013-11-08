@@ -8,10 +8,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.kvc.joy.core.persistence.entity.UuidCrudEntity;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.DefaultValue;
 import com.kvc.joy.core.sysres.datasrc.model.po.TSysDataSrc;
 
 @Entity
-@Table(name = "T_SYS_CODE_TABLE")
+@Table(name = "t_sys_code_table")
+@Comment("代码表注册")
 public class TSysCodeTable extends UuidCrudEntity {
 
 	// Fields
@@ -29,7 +32,9 @@ public class TSysCodeTable extends UuidCrudEntity {
 
 	// Property accessors
 
-	@Column(length = 30)
+	@Column(length = 30, nullable=false)
+	@DefaultValue("code")
+	@Comment("代码字段")
 	public String getCodeField() {
 		return this.codeField;
 	}
@@ -48,6 +53,8 @@ public class TSysCodeTable extends UuidCrudEntity {
 		this.dataSrc = dataSrc;
 	}
 
+	@Column(length = 30, nullable=false)
+	@Comment("代码表名")
 	public String getTableName() {
 		return tableName;
 	}
@@ -56,6 +63,8 @@ public class TSysCodeTable extends UuidCrudEntity {
 		this.tableName = tableName;
 	}
 
+	@Column(length = 64)
+	@Comment("代码表中文名")
 	public String getCnTableName() {
 		return cnTableName;
 	}
@@ -64,6 +73,8 @@ public class TSysCodeTable extends UuidCrudEntity {
 		this.cnTableName = cnTableName;
 	}
 
+	@Column(length = 32, nullable = false)
+	@Comment("翻译字段")
 	public String getTransField() {
 		return transField;
 	}
@@ -72,6 +83,8 @@ public class TSysCodeTable extends UuidCrudEntity {
 		this.transField = transField;
 	}
 
+	@Column(length = 32)
+	@Comment("父项代码字段")
 	public String getParentField() {
 		return parentField;
 	}

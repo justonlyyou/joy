@@ -8,6 +8,7 @@ import javax.persistence.Transient;
 import org.apache.commons.lang3.StringUtils;
 
 import com.kvc.joy.core.persistence.entity.UuidEntity;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 import com.kvc.joy.plugin.security.login.support.enums.LogoutMethod;
 
 /**
@@ -17,7 +18,8 @@ import com.kvc.joy.plugin.security.login.support.enums.LogoutMethod;
  * @time 2013年10月15日 上午9:57:43
  */
 @Entity
-@Table(name = "T_LOGOUT_LOG")
+@Table(name = "t_logout_log")
+@Comment("登出日志")
 public class TLogoutLog extends UuidEntity {
 
 	private String userId;
@@ -25,7 +27,8 @@ public class TLogoutLog extends UuidEntity {
 	private String logoutTime;
 	private LogoutMethod logoutMethod;
 
-	@Column(length = 32)
+	@Column(length = 32, nullable = false)
+	@Comment("用户ID")
 	public String getUserId() {
 		return userId;
 	}
@@ -34,7 +37,8 @@ public class TLogoutLog extends UuidEntity {
 		this.userId = userId;
 	}
 
-	@Column(length = 14)
+	@Column(length = 14, nullable = false)
+	@Comment("登出时间")
 	public String getLogoutTime() {
 		return logoutTime;
 	}
@@ -52,6 +56,8 @@ public class TLogoutLog extends UuidEntity {
 		this.logoutMethod = logoutMethod;
 	}
 
+	@Column(length = 2, nullable = false)
+	@Comment(value="登出方式代码", codeId="joy_code_logout_method")
 	public String getLogoutMethodCode() {
 		return logoutMethod == null ? null : logoutMethod.getCode();
 	}
@@ -65,6 +71,7 @@ public class TLogoutLog extends UuidEntity {
 	}
 
 	@Column(length = 32)
+	@Comment("登陆日志ID")
 	public String getLoginLogId() {
 		return loginLogId;
 	}

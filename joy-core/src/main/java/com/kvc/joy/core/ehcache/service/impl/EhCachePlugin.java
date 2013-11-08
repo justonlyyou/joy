@@ -15,7 +15,7 @@ import com.kvc.joy.core.ehcache.model.po.TSysCacheCfg;
 import com.kvc.joy.core.ehcache.model.po.TSysCacheCfg_;
 import com.kvc.joy.core.init.service.SpringManagedJoyPlugin;
 import com.kvc.joy.core.init.support.JoyPropeties;
-import com.kvc.joy.core.persistence.orm.jpa.JpaUtils;
+import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
 
 /**
@@ -44,7 +44,7 @@ public class EhCachePlugin extends SpringManagedJoyPlugin {
 	private void joinDbEhCacheConf()  {
 		EhCacheCacheManager ehCacheCacheManager = CoreBeanFactory.getEhCacheCacheManager();
 		CacheManager cacheManager = ehCacheCacheManager.getCacheManager();
-		List<TSysCacheCfg> cacheCfgList = JpaUtils.search(TSysCacheCfg.class, TSysCacheCfg_.deleted, false);
+		List<TSysCacheCfg> cacheCfgList = JpaTool.search(TSysCacheCfg.class, TSysCacheCfg_.deleted, false);
 		for (TSysCacheCfg cacheCfg : cacheCfgList) {
 			joinDbEhCacheConf(cacheManager, cacheCfg);
 		}
@@ -72,7 +72,7 @@ public class EhCachePlugin extends SpringManagedJoyPlugin {
 		configuration.setMemoryStoreEvictionPolicy(cacheCfg.getMemoryStoreEvictionPolicy());
 		configuration.setDiskPersistent(cacheCfg.isDiskPersistent());
 		configuration.setDiskExpiryThreadIntervalSeconds(cacheCfg.getDiskExpiryThreadIntervalSeconds());
-		configuration.setDiskSpoolBufferSizeMB(cacheCfg.getDiskSpoolBufferSizeMB());
+		configuration.setDiskSpoolBufferSizeMB(cacheCfg.getDiskSpoolBufferSizeMb());
 		return configuration;
 	}
 

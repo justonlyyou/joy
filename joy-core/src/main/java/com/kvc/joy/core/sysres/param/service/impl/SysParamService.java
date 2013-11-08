@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import com.kvc.joy.core.persistence.orm.jpa.JpaUtils;
+import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.core.sysres.param.po.TSysParam;
 import com.kvc.joy.core.sysres.param.po.TSysParam_;
 import com.kvc.joy.core.sysres.param.service.ISysParamService;
@@ -19,7 +19,7 @@ import com.kvc.joy.core.sysres.param.service.ISysParamService;
 public class SysParamService implements ISysParamService {
 
 	public Map<String, TSysParam> get() {
-		 List<TSysParam> list = JpaUtils.search(TSysParam.class, TSysParam_.deleted, false);
+		 List<TSysParam> list = JpaTool.search(TSysParam.class, TSysParam_.deleted, false);
 		 Map<String, TSysParam> map = new HashMap<String, TSysParam>(list.size());
 		 for (TSysParam sysParam : list) {
 			 map.put(sysParam.getParamName(), sysParam);
@@ -31,7 +31,7 @@ public class SysParamService implements ISysParamService {
 		Map<String, Object> map = new HashMap<String, Object>(2);
 		map.put(TSysParam_.paramName.getName(), paramName);
 		map.put(TSysParam_.deleted.getName(), Boolean.valueOf(false));
-		List<TSysParam> results = JpaUtils.andSearch(TSysParam.class, map);
+		List<TSysParam> results = JpaTool.andSearch(TSysParam.class, map);
 		if(results.isEmpty()) {
 			return null;
 		} else {
@@ -41,7 +41,7 @@ public class SysParamService implements ISysParamService {
 
 	@Transactional
 	public void put(TSysParam sysParam) {
-		JpaUtils.persist(sysParam);
+		JpaTool.persist(sysParam);
 	}
 
 }

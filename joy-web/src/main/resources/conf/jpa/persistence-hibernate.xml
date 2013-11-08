@@ -10,6 +10,7 @@
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<!-- <jar-file>joy-core-1.0.0-SNAPSHOT.jar</jar-file> -->
 		
+		<!-- 
       	<class>com.kvc.joy.core.ehcache.model.po.TSysCacheCfg</class>
       	<class>com.kvc.joy.core.sysres.code.po.TSysCodeTable</class>
       	<class>com.kvc.joy.core.sysres.datasrc.model.po.TSysDataSrc</class>
@@ -32,6 +33,7 @@
       	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacRoleAuth</class>
       	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacUser</class>
       	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacUserAuth</class>
+      	 -->
         
         <properties>
         <!-- 

@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 import com.kvc.joy.commons.bean.IEntity;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 
 /**
  * 主键生成策略是UUID的实体基类
@@ -25,6 +26,7 @@ public class UuidEntity implements IEntity<String> {
 
 	@Id
 	@Column(length = 32)
+	@Comment(value="主键", detailDesc="生成策略: UUID")
 	public String getId() {
 		return id;
 	}
@@ -49,10 +51,6 @@ public class UuidEntity implements IEntity<String> {
 		}
 		UuidEntity other = (UuidEntity) obj;
 		return getId().equals(other.getId());
-	}
-	
-	public static void main(String[] args) {
-		System.out.println(new UuidEntity().getId().length());
 	}
 
 }

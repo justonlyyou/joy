@@ -37,4 +37,10 @@
 		p:mdRdbPrimaryKeyService-ref="mdRdbPrimaryKeyService" >
 	</bean>
 	
+	<!-- MySQL表结构反向同步服务 -->
+	<bean id="mySqlAlterReverseSyncService" class="com.kvc.joy.core.persistence.jdbc.service.impl.MySqlAlterReverseSyncService" />
+	
+	<!-- Oracle表结构反向同步服务 -->
+	<bean id="oracleAlterReverseSyncService" class="com.kvc.joy.core.persistence.jdbc.service.impl.OracleAlterReverseSyncService" />
+	
 </beans>

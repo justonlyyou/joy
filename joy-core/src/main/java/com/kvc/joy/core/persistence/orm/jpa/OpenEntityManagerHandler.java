@@ -13,7 +13,7 @@ import org.springframework.orm.jpa.EntityManagerHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
-import com.kvc.joy.core.spring.utils.SpringBeanUtils;
+import com.kvc.joy.core.spring.utils.SpringBeanTool;
 
 @Service
 public class OpenEntityManagerHandler implements InvocationHandler {
@@ -27,7 +27,7 @@ public class OpenEntityManagerHandler implements InvocationHandler {
 			throws Throwable {
 		Object result = null;
 		boolean isOpen = false;
-		EntityManagerFactory emFactory = (EntityManagerFactory) SpringBeanUtils.getBean("entityManagerFactory");
+		EntityManagerFactory emFactory = (EntityManagerFactory) SpringBeanTool.getBean("entityManagerFactory");
 		if (TransactionSynchronizationManager.hasResource(emFactory)) {
 			isOpen = true;
 		} else {

@@ -10,7 +10,7 @@ import com.kvc.joy.plugin.security.erbac.model.vo.ErbacPermission;
  * @author 唐玮琳
  * @time 2013-2-22 下午11:38:37
  */
-public class ShiroPermissionExpUtils {
+public class ShiroPermissionExpTool {
 	
 	public static final String PERMISSION_SEPARATOR = ":";
 	public static final String PERMISSION_ALL = "*";

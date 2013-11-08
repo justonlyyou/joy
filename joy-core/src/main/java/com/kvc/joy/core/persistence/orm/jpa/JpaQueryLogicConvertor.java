@@ -9,7 +9,6 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import com.kvc.joy.commons.lang.ArrayTool;
 import com.kvc.joy.core.persistence.support.QueryLogic;
 import com.kvc.joy.core.persistence.support.QueryLogicOperator;
 import com.kvc.joy.core.persistence.support.QueryLogics;
@@ -35,7 +34,7 @@ public class JpaQueryLogicConvertor {
 					predicates.add(predicate);
 				}
 			}
-			return ArrayTool.cast(new Predicate[predicates.size()], predicates.toArray());
+			return predicates.toArray(new Predicate[predicates.size()]);
 		} else {
 			return new Predicate[0];
 		}

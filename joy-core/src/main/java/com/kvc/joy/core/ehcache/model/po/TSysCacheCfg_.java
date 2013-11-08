@@ -23,6 +23,6 @@ public class TSysCacheCfg_ extends UuidCrudEntity_ {
 	public static volatile SingularAttribute<TSysCacheCfg, String> memoryStoreEvictionPolicy;
 	public static volatile SingularAttribute<TSysCacheCfg, Boolean> diskPersistent;
 	public static volatile SingularAttribute<TSysCacheCfg, Integer> diskExpiryThreadIntervalSeconds;
-	public static volatile SingularAttribute<TSysCacheCfg, Integer> diskSpoolBufferSizeMB;
+	public static volatile SingularAttribute<TSysCacheCfg, Integer> diskSpoolBufferSizeMb;
 
 }

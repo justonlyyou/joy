@@ -9,10 +9,12 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import com.kvc.joy.core.persistence.entity.UuidEntity;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 import com.kvc.joy.plugin.security.erbac.support.enums.AuthorityType;
 
 @Entity
-@Table(name = "T_ERBAC_ROLE_AUTH")
+@Table(name = "t_erbac_role_auth")
+@Comment("角色权限")
 public class TErbacRoleAuth extends UuidEntity {
 
 	private TErbacRole role;
@@ -29,6 +31,7 @@ public class TErbacRoleAuth extends UuidEntity {
 	}
 
 	@Column(length = 1, nullable = false)
+	@Comment(value="权限类型代码", codeId="joy_code_authority_type")
 	public String getAuthorityTypeCode() {
 		return authorityType.getCode();
 	}

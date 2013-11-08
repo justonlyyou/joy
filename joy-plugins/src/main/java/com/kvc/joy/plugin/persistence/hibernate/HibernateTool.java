@@ -26,7 +26,7 @@ import com.kvc.joy.commons.bean.IEntity;
 import com.kvc.joy.commons.collections.MapTool;
 import com.kvc.joy.commons.lang.ArrayTool;
 import com.kvc.joy.commons.support.GroupExecutor;
-import com.kvc.joy.core.spring.utils.SpringBeanUtils;
+import com.kvc.joy.core.spring.utils.SpringBeanTool;
 
 /**
  * Hibernate工具类
@@ -34,15 +34,15 @@ import com.kvc.joy.core.spring.utils.SpringBeanUtils;
  * @author <b>唐玮琳</b>
  */
 @Transactional
-public class HibernateUtils extends BaseHibernateDao {
+public class HibernateTool extends BaseHibernateDao {
 
 	// private static Logger logger = Logger.getLogger(HibernateUtils.class);
 
 //	private HibernateUtils() {
 //	}
 
-	private static HibernateUtils getInstance() {
-		return (HibernateUtils) SpringBeanUtils.getBean("hibernateUtils");
+	private static HibernateTool getInstance() {
+		return (HibernateTool) SpringBeanTool.getBean("hibernateTool");
 	}
 
 	public static <T> T get(Class<T> clazz, Serializable id) {

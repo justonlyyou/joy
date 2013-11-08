@@ -8,6 +8,7 @@ import org.springframework.transaction.TransactionDefinition;
 
 import com.kvc.joy.core.ehcache.support.IEhCacheHolder;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbTable;
+import com.kvc.joy.core.persistence.jdbc.service.IMdRdbAlterReverseSyncService;
 import com.kvc.joy.core.persistence.jdbc.service.IMdRdbColumnService;
 import com.kvc.joy.core.persistence.jdbc.service.IMdRdbPrimaryKeyService;
 import com.kvc.joy.core.persistence.jdbc.service.IMdRdbTableService;
@@ -27,31 +28,31 @@ import com.kvc.joy.core.sysres.param.service.ISysParamService;
 public class CoreBeanFactory {
 
 	public static JdbcTemplate getJdbcTemplate() {
-		return (JdbcTemplate) SpringBeanUtils.getBean("jdbcTemplate");
+		return (JdbcTemplate) SpringBeanTool.getBean("jdbcTemplate");
 	}
 
 	public static JpaTemplate getJpaTemplate() {
-		return (JpaTemplate) SpringBeanUtils.getBean("jpaTemplate");
+		return (JpaTemplate) SpringBeanTool.getBean("jpaTemplate");
 	}
 
 	public static TransactionDefinition getTransactionDefinition() {
-		return (TransactionDefinition) SpringBeanUtils.getBean("txDefinition");
+		return (TransactionDefinition) SpringBeanTool.getBean("txDefinition");
 	}
 
 	public static JpaTransactionManager getJpaTransactionManager() {
-		return (JpaTransactionManager) SpringBeanUtils.getBean("transactionManager");
+		return (JpaTransactionManager) SpringBeanTool.getBean("transactionManager");
 	}
 
 	public static ISysMenuService getSysMenuService() {
-		return (ISysMenuService) SpringBeanUtils.getBean("sysMenuService");
+		return (ISysMenuService) SpringBeanTool.getBean("sysMenuService");
 	}
 	
 	public static EhCacheCacheManager getEhCacheCacheManager() {
-		return (EhCacheCacheManager) SpringBeanUtils.getBean("ehCacheCacheManager");
+		return (EhCacheCacheManager) SpringBeanTool.getBean("ehCacheCacheManager");
 	}
 	
 	public static SpringXmlDynamicLoadService getSpringXmlDynamicLoadService() {
-		return SpringBeanUtils.getBean(SpringXmlDynamicLoadService.class);
+		return SpringBeanTool.getBean(SpringXmlDynamicLoadService.class);
 	}
 
 	/**
@@ -62,7 +63,7 @@ public class CoreBeanFactory {
 	 * @time 2013-2-3 下午10:00:51
 	 */
 	public static IMdRdbTableService getMdRdbTableService() {
-		return (IMdRdbTableService) SpringBeanUtils.getBean("mdRdbTableService");
+		return (IMdRdbTableService) SpringBeanTool.getBean("mdRdbTableService");
 	}
 
 	/**
@@ -74,7 +75,7 @@ public class CoreBeanFactory {
 	 */
 	@SuppressWarnings("unchecked")
 	public static IEhCacheHolder<String, MdRdbTable> getMdRdbTableCacheService() {
-		return (IEhCacheHolder<String, MdRdbTable>) SpringBeanUtils.getBean("mdRdbTableCacheService");
+		return (IEhCacheHolder<String, MdRdbTable>) SpringBeanTool.getBean("mdRdbTableCacheService");
 	}
 
 	/**
@@ -85,7 +86,7 @@ public class CoreBeanFactory {
 	 * @time 2013-2-3 下午10:02:21
 	 */
 	public static IMdRdbColumnService getMdRdbColumnService() {
-		return (IMdRdbColumnService) SpringBeanUtils.getBean("mdRdbColumnService");
+		return (IMdRdbColumnService) SpringBeanTool.getBean("mdRdbColumnService");
 	}
 
 	/**
@@ -96,7 +97,7 @@ public class CoreBeanFactory {
 	 * @time 2013-2-3 下午10:02:35
 	 */
 	public static IMdRdbColumnService getMdRdbColumnCacheService() {
-		return (IMdRdbColumnService) SpringBeanUtils.getBean("mdRdbColumnCacheService");
+		return (IMdRdbColumnService) SpringBeanTool.getBean("mdRdbColumnCacheService");
 	}
 
 	/**
@@ -107,7 +108,7 @@ public class CoreBeanFactory {
 	 * @time 2013-2-3 下午10:02:49
 	 */
 	public static IMdRdbPrimaryKeyService getMdRdbPrimaryKeyService() {
-		return (IMdRdbPrimaryKeyService) SpringBeanUtils.getBean("mdRdbPrimaryKeyService");
+		return (IMdRdbPrimaryKeyService) SpringBeanTool.getBean("mdRdbPrimaryKeyService");
 	}
 
 	/**
@@ -118,7 +119,7 @@ public class CoreBeanFactory {
 	 * @time 2013-2-3 下午10:03:39
 	 */
 	public static IMdRdbPrimaryKeyService getMdRdbPrimaryKeyCacheService() {
-		return (IMdRdbPrimaryKeyService) SpringBeanUtils.getBean("mdRdbPrimaryKeyCacheService");
+		return (IMdRdbPrimaryKeyService) SpringBeanTool.getBean("mdRdbPrimaryKeyCacheService");
 	}
 
 	/**
@@ -129,7 +130,7 @@ public class CoreBeanFactory {
 	 * @time 2013-2-8 上午11:24:11
 	 */
 	public static ISysParamService getSysParamService() {
-		return (ISysParamService) SpringBeanUtils.getBean("sysParamService");
+		return (ISysParamService) SpringBeanTool.getBean("sysParamService");
 	}
 	
 	/**
@@ -141,7 +142,7 @@ public class CoreBeanFactory {
 	 */
 	@SuppressWarnings("unchecked")
 	public static IEhCacheHolder<String, TSysParam> getSysParamCacheService() {
-		return (IEhCacheHolder<String, TSysParam>) SpringBeanUtils.getBean("sysParamCacheService");
+		return (IEhCacheHolder<String, TSysParam>) SpringBeanTool.getBean("sysParamCacheService");
 	}
 	
 	/**
@@ -152,7 +153,7 @@ public class CoreBeanFactory {
 	 * @time 2013-2-8 下午8:03:02
 	 */
 	public static ISysCodeService getSysCodeService() {
-		return (ISysCodeService) SpringBeanUtils.getBean("sysCodeService");
+		return (ISysCodeService) SpringBeanTool.getBean("sysCodeService");
 	}
 	
 	/**
@@ -163,7 +164,15 @@ public class CoreBeanFactory {
 	 * @time 2013-2-8 下午8:03:02
 	 */
 	public static ISysCodeCacheService getSysCodeCacheService() {
-		return (ISysCodeCacheService) SpringBeanUtils.getBean("sysCodeCacheService");
+		return (ISysCodeCacheService) SpringBeanTool.getBean("sysCodeCacheService");
+	}
+	
+	public static IMdRdbAlterReverseSyncService getMySqlAlterReverseSyncService() {
+		return (IMdRdbAlterReverseSyncService) SpringBeanTool.getBean("mySqlAlterReverseSyncService");
+	}
+	
+	public static IMdRdbAlterReverseSyncService getOracleAlterReverseSyncService() {
+		return (IMdRdbAlterReverseSyncService) SpringBeanTool.getBean("oracleAlterReverseSyncService");
 	}
 	
 }

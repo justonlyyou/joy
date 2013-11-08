@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.kvc.joy.core.persistence.orm.jpa.JpaUtils;
+import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.plugin.security.login.model.po.TLoginLog;
 import com.kvc.joy.plugin.security.login.model.po.TLogoutLog;
 import com.kvc.joy.plugin.security.login.model.po.TLogoutLog_;
@@ -35,7 +35,7 @@ public class LogoutService implements ILogoutService {
 		TLoginLog preLoginSuccessLog = loginLogService.getPreLoginSuccessLog(logOnLogin.getId());
 		if (preLoginSuccessLog != null) {
 			String loginLogId = preLoginSuccessLog.getId();
-			List<TLogoutLog> logoutLogs = JpaUtils.search(TLogoutLog.class, TLogoutLog_.loginLogId, loginLogId);
+			List<TLogoutLog> logoutLogs = JpaTool.search(TLogoutLog.class, TLogoutLog_.loginLogId, loginLogId);
 			if (logoutLogs.isEmpty()) {
 				String logoutTime = preLoginSuccessLog.getLoginTime();
 				logoutLogService.logout(loginLogId, LogoutMethod.OTHERS, logoutTime);

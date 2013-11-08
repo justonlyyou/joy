@@ -12,7 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.kvc.joy.commons.lang.string.StringTool;
-import com.kvc.joy.web.support.utils.HttpRequestUtils;
+import com.kvc.joy.web.support.utils.HttpRequestTool;
 
 /**
  * Extjs模型Action，主要提供将POJO转为Extjs的Model，这样不用每个POJO都写一个Extjs的Model
@@ -24,7 +24,7 @@ public class ExtModelAction {
 	private transient Logger logger = LoggerFactory.getLogger(getClass());
 
 	public List<ExtDataField> fetchFields() {
-		String className = HttpRequestUtils.getParameter("className"); // // extjs模型javascript类名，也即POJO全类名
+		String className = HttpRequestTool.getParameter("className"); // // extjs模型javascript类名，也即POJO全类名
 		List<ExtDataField> fieldList = null;
 		if (StringTool.isNotBlank(className)) {
 			fieldList = fieldMap.get(className);

@@ -1,15 +1,5 @@
 package com.kvc.joy.core.persistence.jdbc.support;
 
-import java.util.Collection;
-import java.util.List;
-
-import junit.framework.Assert;
-
-import org.junit.Test;
-
-import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
-import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbTable;
-import com.kvc.joy.junit.BaseTestCase;
 
 /**
  * 

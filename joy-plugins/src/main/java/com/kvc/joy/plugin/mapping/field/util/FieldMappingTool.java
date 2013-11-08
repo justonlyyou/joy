@@ -19,7 +19,7 @@ import com.kvc.joy.plugin.mapping.field.po.TSysFieldMappingRule;
  * 字段映射规则数据访问对象
  * @author  唐玮琳
  */
-public class FieldMappingUtils {
+public class FieldMappingTool {
 	
 	/**
 	 * 对象类型：java对象 
@@ -34,25 +34,25 @@ public class FieldMappingUtils {
 	 */
 	public static final String OBJECT_TYPE_TABLE_TO_JAVA = TSysFieldMappingRule.OBJECT_TYPE_TABLE_TO_JAVA;
 	
-	private Logger logger = LoggerFactory.getLogger(FieldMappingUtils.class);
-	private volatile static FieldMappingUtils fieldMappingUtils;
+	private Logger logger = LoggerFactory.getLogger(FieldMappingTool.class);
+	private volatile static FieldMappingTool fieldMappingTool;
 	
 
 	private Map<String, TSysFieldMappingRule> ruleMap;
 	
-	private FieldMappingUtils() {
+	private FieldMappingTool() {
 		loadAllFieldMapping();
 	}
 
-	public static FieldMappingUtils getInstance() {
-		if (fieldMappingUtils == null) {
-			synchronized (FieldMappingUtils.class) {
-				if (fieldMappingUtils == null) {
-					fieldMappingUtils = new FieldMappingUtils();
+	public static FieldMappingTool getInstance() {
+		if (fieldMappingTool == null) {
+			synchronized (FieldMappingTool.class) {
+				if (fieldMappingTool == null) {
+					fieldMappingTool = new FieldMappingTool();
 				}
 			}
 		}
-		return fieldMappingUtils;
+		return fieldMappingTool;
 	}
 	
 	private void loadAllFieldMapping() {
@@ -105,8 +105,8 @@ public class FieldMappingUtils {
 	public static <T> T copyProperties(Class<T> destClass, Object srcObj) {
 		String srcClassName = srcObj.getClass().getSimpleName();
 		String destClassName = destClass.getSimpleName();
-		Set<TSysFieldMapping> fieldMappingSet = FieldMappingUtils.getInstance().getFieldMapping(srcClassName, destClassName, 
-				FieldMappingUtils.OBJECT_TYPE_JAVA_OBJECT);
+		Set<TSysFieldMapping> fieldMappingSet = FieldMappingTool.getInstance().getFieldMapping(srcClassName, destClassName, 
+				FieldMappingTool.OBJECT_TYPE_JAVA_OBJECT);
 		Map<String, String> fieldMap = new HashMap<String, String>(fieldMappingSet.size());
 		for (TSysFieldMapping fieldMapping : fieldMappingSet) {
 			String field1 = fieldMapping.getField1();

@@ -56,15 +56,18 @@ public class MdRdbColumnCommentParser {
 	private static String parseDetailDesc(String origComment) {
 		String detailDesc = null;
 		boolean existJsonStr = origComment.matches(JSON_REQ_EXP);
-		int start = origComment.indexOf(SEPARATER) + 1;
-		if (existJsonStr) {
-			int end = origComment.indexOf("{");
-			detailDesc = origComment.substring(start, end).trim();
-		} else {
-			detailDesc = origComment.substring(start).trim();
-		}
-		if (StringTool.isNotBlank(detailDesc)) {
-			detailDesc = detailDesc.replaceFirst(SEPARATER + "$", "").trim();
+		int index = origComment.indexOf(SEPARATER);
+		if (index != -1) {
+			int start = index + 1;
+			if (existJsonStr) {
+				int end = origComment.indexOf("{");
+				detailDesc = origComment.substring(start, end).trim();
+			} else {
+				detailDesc = origComment.substring(start).trim();
+			}
+			if (StringTool.isNotBlank(detailDesc)) {
+				detailDesc = detailDesc.replaceFirst(SEPARATER + "$", "").trim();
+			}
 		}
 		return detailDesc;
 	}
@@ -84,7 +87,8 @@ public class MdRdbColumnCommentParser {
 	}
 
 	public static void main(String[] args) {
-		MdRdbColumnComment comment = parse("brief,detail, {\"codeId\":\"DM_SEX\"}");
+//		MdRdbColumnComment comment = parse("brief,detail, {\"codeId\":\"DM_SEX\"}");
+		MdRdbColumnComment comment = parse("是否系统内置");
 		System.out.println(comment);
 	}
 

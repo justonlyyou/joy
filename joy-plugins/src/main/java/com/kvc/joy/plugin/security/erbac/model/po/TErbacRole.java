@@ -14,9 +14,11 @@ import javax.persistence.Table;
 
 import com.kvc.joy.commons.support.IListToTreeRestrict;
 import com.kvc.joy.core.persistence.entity.UuidCrudEntity;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 
 @Entity
-@Table(name = "T_ERBAC_ROLE")
+@Table(name = "t_erbac_role")
+@Comment("角色")
 public class TErbacRole extends UuidCrudEntity implements IListToTreeRestrict<String> {
 
 	private String parentId; // 父角色id
@@ -28,6 +30,7 @@ public class TErbacRole extends UuidCrudEntity implements IListToTreeRestrict<St
 	private Collection<TErbacRoleAuth> roleAuths; // 角色权限关系
 
 	@Column(name = "ROLE_NAME", length = 64, nullable = false)
+	@Comment("名称")
 	public String getName() {
 		return name;
 	}
@@ -37,6 +40,7 @@ public class TErbacRole extends UuidCrudEntity implements IListToTreeRestrict<St
 	}
 
 	@Column(name = "DESCRIPTION")
+	@Comment("描述")
 	public String getDesc() {
 		return desc;
 	}
@@ -46,7 +50,7 @@ public class TErbacRole extends UuidCrudEntity implements IListToTreeRestrict<St
 	}
 
 	@ManyToMany(cascade = CascadeType.REFRESH)
-	@JoinTable(name = "T_ERBAC_ROLE_USER", // 关联表名
+	@JoinTable(name = "t_erbac_role_user", // 关联表名
 	inverseJoinColumns = @JoinColumn(name = "USER_ID"),// 被维护端外键
 	joinColumns = @JoinColumn(name = "ROLE_ID"))
 	// 维护端外键
@@ -59,7 +63,7 @@ public class TErbacRole extends UuidCrudEntity implements IListToTreeRestrict<St
 	}
 
 	// @ManyToMany(cascade = CascadeType.REFRESH)
-	// @JoinTable(name = "T_ERBAC_ROLE_AUTH", // 关联表名
+	// @JoinTable(name = "t_erbac_role_auth", // 关联表名
 	// inverseJoinColumns = @JoinColumn(name = "AUTHORITY_ID"), // 被维护端外键
 	// joinColumns = @JoinColumn(name = "ROLE_ID")) // 维护端外键
 	// public Collection<TErbacAuthority> getAuthorities() {
@@ -72,7 +76,7 @@ public class TErbacRole extends UuidCrudEntity implements IListToTreeRestrict<St
 	// }
 
 	@ManyToMany(cascade = CascadeType.REFRESH)
-	@JoinTable(name = "T_ERBAC_ROLE_GROUP", // 关联表名
+	@JoinTable(name = "t_erbac_role_group", // 关联表名
 	inverseJoinColumns = @JoinColumn(name = "GROUP_ID"), // 被维护端外键
 	joinColumns = @JoinColumn(name = "ROLE_ID"))
 	// 维护端外键
@@ -85,6 +89,7 @@ public class TErbacRole extends UuidCrudEntity implements IListToTreeRestrict<St
 	}
 
 	@Column(length = 32)
+	@Comment("父项ID")
 	public String getParentId() {
 		return parentId;
 	}

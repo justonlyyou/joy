@@ -17,7 +17,7 @@ import com.kvc.joy.commons.bean.Pair;
 import com.kvc.joy.commons.enums.YesNot;
 import com.kvc.joy.commons.lang.DateTool;
 import com.kvc.joy.commons.lang.string.StringTool;
-import com.kvc.joy.core.persistence.orm.jpa.JpaUtils;
+import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.plugin.seqgen.po.TSysSeqNum;
 import com.kvc.joy.plugin.seqgen.po.TSysSeqNumRule;
 import com.kvc.joy.plugin.seqgen.service.ISequenceGenerator;
@@ -44,7 +44,7 @@ public class SequenceGenerator implements ISequenceGenerator {
 
 	public SequenceGenerator() {
 		try {
-			List<TSysSeqNum> seqs = JpaUtils.searchAll(TSysSeqNum.class);
+			List<TSysSeqNum> seqs = JpaTool.searchAll(TSysSeqNum.class);
 			for (TSysSeqNum seqNum : seqs) {
 				TSysSeqNumRule seqRule = seqNum.getSeqRule();
 				checkConfig(seqRule, seqNum);
@@ -140,7 +140,7 @@ public class SequenceGenerator implements ISequenceGenerator {
 			// update SequenceNum
 			nextNum = seqCache.next();
 			tSysSeqNum.setCurSeq(seqCache.getCacheSeqNum());
-			JpaUtils.persist(tSysSeqNum);
+			JpaTool.persist(tSysSeqNum);
 		} else {
 			nextNum = seqCache.next();
 			tSysSeqNum.setCurSeq(nextNum);
@@ -214,7 +214,7 @@ public class SequenceGenerator implements ISequenceGenerator {
 				TSysSeqNum seqNum = seqCache.getSeqNum();
 				long realSeqNum = seqCache.getRealSeqNum();
 				seqNum.setCurSeq(realSeqNum);
-				JpaUtils.persist(seqNum);
+				JpaTool.persist(seqNum);
 			}
 	}
 	

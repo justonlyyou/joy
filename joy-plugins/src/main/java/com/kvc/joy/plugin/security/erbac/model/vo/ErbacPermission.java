@@ -1,7 +1,7 @@
 package com.kvc.joy.plugin.security.erbac.model.vo;
 
 import com.kvc.joy.plugin.security.erbac.model.po.TErbacAuthority;
-import com.kvc.joy.plugin.security.erbac.support.utils.ShiroPermissionExpUtils;
+import com.kvc.joy.plugin.security.erbac.support.utils.ShiroPermissionExpTool;
 
 /**
  * 
@@ -10,9 +10,9 @@ import com.kvc.joy.plugin.security.erbac.support.utils.ShiroPermissionExpUtils;
  */
 public class ErbacPermission {
 
-	private String domain = ShiroPermissionExpUtils.PERMISSION_ALL; // 资源
-	private String action = ShiroPermissionExpUtils.PERMISSION_ALL; // 操作
-	private String instance = ShiroPermissionExpUtils.PERMISSION_ALL; // 资源实例
+	private String domain = ShiroPermissionExpTool.PERMISSION_ALL; // 资源
+	private String action = ShiroPermissionExpTool.PERMISSION_ALL; // 操作
+	private String instance = ShiroPermissionExpTool.PERMISSION_ALL; // 资源实例
 
 	public ErbacPermission() {
 	}
@@ -62,7 +62,7 @@ public class ErbacPermission {
 	
 	@Override
 	public String toString() {
-		return ShiroPermissionExpUtils.createShiroPermissionExp(this);
+		return ShiroPermissionExpTool.createShiroPermissionExp(this);
 	}
 
 }

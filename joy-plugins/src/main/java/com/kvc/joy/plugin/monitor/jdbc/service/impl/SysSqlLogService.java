@@ -9,7 +9,7 @@ import com.kvc.joy.commons.lang.DateTool;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.core.init.support.AppPropeties;
 import com.kvc.joy.core.init.support.JoyPropeties;
-import com.kvc.joy.core.persistence.orm.jpa.JpaUtils;
+import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.plugin.monitor.jdbc.model.po.TSysSqlLog;
 import com.kvc.joy.plugin.monitor.jdbc.model.vo.ParamMsg;
 import com.kvc.joy.plugin.monitor.jdbc.service.ISysSqlLogService;
@@ -42,7 +42,9 @@ public class SysSqlLogService implements ISysSqlLogService {
 	public void saveLog(ParamMsg param) {
 		long costTime = param.getCostTime();
 		Integer filterTime = JoyPropeties.PLUGIN_JWEBAP_JDBC_FILTERTIME;
-		if (costTime >= filterTime) {
+		String sql = param.getSql().toLowerCase();
+		if (costTime >= filterTime && (sql.startsWith("select") || sql.startsWith("update") 
+				|| sql.startsWith("insert") || sql.startsWith("delete"))) {
 			final TSysSqlLog sysSqlLog = createTSysSqlLog(param);
 			if (sysSqlLog != null) {
 				PluginBeanFactory.getSysSqlLogThreadPool().execute(new Runnable() {
@@ -67,7 +69,7 @@ public class SysSqlLogService implements ISysSqlLogService {
 	 */
 	@Transactional
 	public void persist(TSysSqlLog sqlLog) {
-		JpaUtils.persist(sqlLog);
+		JpaTool.persist(sqlLog);
 	}
 	
 	protected TSysSqlLog createTSysSqlLog(ParamMsg param) {
@@ -113,7 +115,7 @@ public class SysSqlLogService implements ISysSqlLogService {
 	private void setLogLocation(TSysSqlLog sqlLog) {
 		if (JoyPropeties.PLUGIN_JWEBAP_JDBC_LOGPOSITION) {
 			String classPrefix = AppPropeties.CLASS_PREFIX;
-			StackTraceElement elem = ExceptionTool.findFirstStackTraceElem(classPrefix, getClass(), JpaUtils.class);
+			StackTraceElement elem = ExceptionTool.findFirstStackTraceElem(classPrefix, getClass(), JpaTool.class);
 			if (elem != null) {
 				sqlLog.setClassName(elem.getClassName());
 				sqlLog.setMethodName(elem.getMethodName());

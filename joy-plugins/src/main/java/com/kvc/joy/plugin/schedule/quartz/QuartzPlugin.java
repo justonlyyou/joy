@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import com.kvc.joy.commons.exception.ServiceException;
 import com.kvc.joy.core.init.service.SpringManagedJoyPlugin;
 import com.kvc.joy.core.init.support.JoyPropeties;
-import com.kvc.joy.plugin.schedule.quartz.support.utils.QuartzUtils;
+import com.kvc.joy.plugin.schedule.quartz.support.utils.QuartzTool;
 import com.kvc.joy.plugin.support.PluginBeanFactory;
 
 /**
@@ -26,7 +26,7 @@ public class QuartzPlugin extends SpringManagedJoyPlugin {
 
 	public void startup() {
 		scheduler = PluginBeanFactory.getScheduler();
-		QuartzUtils.setScheduler(scheduler);
+		QuartzTool.setScheduler(scheduler);
 		try {
 			scheduler.start();
 		} catch (SchedulerException e) {

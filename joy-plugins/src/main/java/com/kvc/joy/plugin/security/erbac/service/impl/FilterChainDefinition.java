@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.plugin.security.erbac.dao.impl.TErbacAuthorityDao;
 import com.kvc.joy.plugin.security.erbac.model.po.TErbacAuthority;
-import com.kvc.joy.plugin.security.erbac.support.utils.ShiroPermissionExpUtils;
+import com.kvc.joy.plugin.security.erbac.support.utils.ShiroPermissionExpTool;
 
 /**
  * 
@@ -44,7 +44,7 @@ public class FilterChainDefinition implements FactoryBean<Ini.Section> {
 		for (TErbacAuthority authority : urlAuthorities) {
 			// 如果不为空值添加到section中
 			if (StringTool.isNotEmpty(authority.getDomain())) {
-				String permission = ShiroPermissionExpUtils.createShiroPermissionExp(authority);
+				String permission = ShiroPermissionExpTool.createShiroPermissionExp(authority);
 				section.put(authority.getResource(), MessageFormat.format(PREMISSION_STRING, permission));
 			}
 		}

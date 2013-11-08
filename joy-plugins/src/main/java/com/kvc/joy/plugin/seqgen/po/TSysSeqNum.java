@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.kvc.joy.commons.bean.IEntity;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.DefaultValue;
 
 /**
  * 序列号信息对象模型
@@ -18,7 +20,8 @@ import com.kvc.joy.commons.bean.IEntity;
  * @author <b>唐玮琳</b>
  */
 @Entity
-@Table(name = "T_SYS_SEQ_NUM")
+@Table(name = "t_sys_seq_num")
+@Comment("序列号")
 public class TSysSeqNum implements IEntity<String> {
 
 	/** 当前周期开始时间格式 */
@@ -35,6 +38,8 @@ public class TSysSeqNum implements IEntity<String> {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
+	@Column(length=32, nullable=false)
+	@Comment("主键")
 	public String getId() {
 		return id;
 	}
@@ -43,6 +48,7 @@ public class TSysSeqNum implements IEntity<String> {
 		this.id = id;
 	}
 	
+	@Comment("前缀模板参数")
 	public String getPrefixParams() {
 		return prefixParams;
 	}
@@ -51,6 +57,7 @@ public class TSysSeqNum implements IEntity<String> {
 		this.prefixParams = prefixParams;
 	}
 
+	@Comment("后缀模板参数")
 	public String getSuffixParams() {
 		return suffixParams;
 	}
@@ -59,7 +66,8 @@ public class TSysSeqNum implements IEntity<String> {
 		this.suffixParams = suffixParams;
 	}
 
-	@Column(length=64)
+	@Column(length=64, nullable=false)
+	@Comment("序列号名称")
 	public String getSeqName() {
 		return seqName;
 	}
@@ -69,6 +77,7 @@ public class TSysSeqNum implements IEntity<String> {
 	}
 
 	@Column(length=20)
+	@Comment("序列号当前值")
 	public long getCurSeq() {
 		return curSeq;
 	}
@@ -78,6 +87,7 @@ public class TSysSeqNum implements IEntity<String> {
 	}
 
 	@Column(length = 14)
+	@Comment("当前周期开始值")
 	public String getCurPeriodStartTime() {
 		return curPeriodStartTime;
 	}
@@ -87,6 +97,8 @@ public class TSysSeqNum implements IEntity<String> {
 	}
 
 	@Column(nullable = false)
+	@DefaultValue("true")
+	@Comment("是否启用")
 	public boolean getActive() {
 		return active;
 	}

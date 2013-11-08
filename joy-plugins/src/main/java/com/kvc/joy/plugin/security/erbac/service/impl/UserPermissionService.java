@@ -9,7 +9,7 @@ import org.apache.shiro.subject.Subject;
 import com.kvc.joy.plugin.security.erbac.model.po.TErbacAuthority;
 import com.kvc.joy.plugin.security.erbac.model.vo.ErbacPermission;
 import com.kvc.joy.plugin.security.erbac.service.IUserPermissionService;
-import com.kvc.joy.plugin.security.erbac.support.utils.ShiroPermissionExpUtils;
+import com.kvc.joy.plugin.security.erbac.support.utils.ShiroPermissionExpTool;
 
 /**
  * 
@@ -50,7 +50,7 @@ public class UserPermissionService implements IUserPermissionService {
 		List<TErbacAuthority> permissions = getPermissions(userId);
 		List<String> permissionExps = new ArrayList<String>(permissions.size());
 		for (TErbacAuthority authority : permissions) {
-			permissionExps.add(ShiroPermissionExpUtils.createShiroPermissionExp(authority));
+			permissionExps.add(ShiroPermissionExpTool.createShiroPermissionExp(authority));
 		}
 		return permissionExps;
 	}

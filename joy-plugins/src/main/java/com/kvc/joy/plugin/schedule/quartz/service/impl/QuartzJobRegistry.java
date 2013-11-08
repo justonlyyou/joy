@@ -10,7 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.kvc.joy.plugin.schedule.quartz.service.IQuartzJobRegistry;
-import com.kvc.joy.plugin.schedule.quartz.support.utils.QuartzUtils;
+import com.kvc.joy.plugin.schedule.quartz.support.utils.QuartzTool;
 
 /**
  * 
@@ -26,7 +26,7 @@ public class QuartzJobRegistry implements IQuartzJobRegistry {
 		Trigger trigger = quartzTriggersHolder.getTrigger(planId);
 		JobDetail jobDetail = newJob(jobClass).withIdentity(jobId).requestRecovery().build();
 		try {
-			QuartzUtils.getScheduler().scheduleJob(jobDetail, trigger);
+			QuartzTool.getScheduler().scheduleJob(jobDetail, trigger);
 		} catch (SchedulerException e) {
 			logger.error("任务#" + jobId + "调度失败！", e);
 		}

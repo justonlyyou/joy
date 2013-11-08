@@ -17,7 +17,7 @@ import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumnComment;
 import com.kvc.joy.core.persistence.jdbc.service.IMdRdbColumnService;
 import com.kvc.joy.core.persistence.jdbc.support.MdRdbColumnCommentParser;
-import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcUtils;
+import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
 
 /**
  * 
@@ -29,12 +29,12 @@ public class MdRdbColumnService implements IMdRdbColumnService {
 	private Logger logger = LoggerFactory.getLogger(getClass());
 	
 	public List<MdRdbColumn> getColumns(String datasourceId, String tableName) {
-		tableName = tableName.toUpperCase();
-		logger.info("加载表字段元数据信息，datasourceId: " + datasourceId + ", " + tableName);
+		tableName = tableName.toLowerCase();
+		logger.info("加载表字段元数据信息，datasourceId: " + datasourceId + ", table: " + tableName);
 		List<MdRdbColumn> columns = null;
 		Connection conn = null;
 		try {
-			conn = JdbcUtils.getConnectionDirect(datasourceId);
+			conn = JdbcTool.getConnectionDirect(datasourceId);
 			DatabaseMetaData metaData = conn.getMetaData();
 			Map<String, MdRdbColumn> columnMap = loadColumns(conn, metaData, tableName);
 			columns = new ArrayList<MdRdbColumn>(columnMap.values());
@@ -48,7 +48,7 @@ public class MdRdbColumnService implements IMdRdbColumnService {
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 		} finally {
-			JdbcUtils.closeConnection(conn);
+			JdbcTool.closeConnection(conn);
 		}
 		return columns;
 	}
@@ -58,7 +58,7 @@ public class MdRdbColumnService implements IMdRdbColumnService {
 		ResultSet rs = metaData.getColumns(null, metaData.getUserName(), tableName, null);
 		while (rs.next()) {
 			MdRdbColumn column = createColumn(rs);
-			columnMap.put(column.getName().toUpperCase(), column);
+			columnMap.put(column.getName().toLowerCase(), column);
 		}
 		return columnMap;
 	}
@@ -75,10 +75,15 @@ public class MdRdbColumnService implements IMdRdbColumnService {
 	private static MdRdbColumn createColumn(ResultSet columns) throws SQLException {
 		MdRdbColumn column = new MdRdbColumn();
 		column.setType(columns.getString("TYPE_NAME"));
-		column.setName(columns.getString("COLUMN_NAME").toUpperCase());
+		column.setName(columns.getString("COLUMN_NAME").toLowerCase());
 		String columnDef = columns.getString("COLUMN_DEF");
 		if (columnDef != null) {
 			columnDef = columnDef.trim();
+			if (columnDef.equals("b'1'")) {
+				columnDef = "true";
+			} else if (columnDef.equals("b'0'")) {
+				columnDef = "false";
+			}
 		}
 		column.setDefaultValue(columnDef);
 		String remarks = columns.getString("REMARKS");
@@ -100,5 +105,6 @@ public class MdRdbColumnService implements IMdRdbColumnService {
 		column.setPrecision(new BigDecimal(columns.getInt("DECIMAL_DIGITS")));
 		return column;
 	}
+	
 	
 }

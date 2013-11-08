@@ -1,15 +1,14 @@
 package com.kvc.joy.web.support.utils;
 
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * 
  * @author 唐玮琳
  * @time 2012-6-14 下午10:06:32
  */
-public class HttpResposeUtils {
+public class HttpResposeTool {
 	
-	private HttpResposeUtils() {
+	private HttpResposeTool() {
 	}
 	
 //	public static HttpServletResponse getResponse() {

@@ -5,16 +5,18 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import com.kvc.joy.core.persistence.entity.UuidCrudEntity;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.DefaultValue;
 
 @Entity
-@Table(name = "T_SYS_PARAM")
+@Table(name = "t_sys_param")
+@Comment("系统参数")
 public class TSysParam extends UuidCrudEntity {
 
 	// Fields
 	private String paramName; // 参数名
 	private String paramValue; // 参数值
 	private String defaultValue; // 参数默认值
-	private String description; // 描述
 	private boolean encrypt; // 是否加密
 
 	// Constructors
@@ -24,8 +26,9 @@ public class TSysParam extends UuidCrudEntity {
 	}
 
 	// Property accessors
-	
-	@Column(length=64)
+
+	@Column(length = 64, nullable = false)
+	@Comment("参数名")
 	public String getParamName() {
 		return this.paramName;
 	}
@@ -34,7 +37,8 @@ public class TSysParam extends UuidCrudEntity {
 		this.paramName = paramName;
 	}
 
-	@Column(length=128)
+	@Column(length = 128)
+	@Comment("参数值")
 	public String getParamValue() {
 		return this.paramValue;
 	}
@@ -66,6 +70,8 @@ public class TSysParam extends UuidCrudEntity {
 		return true;
 	}
 
+	@Column(length = 128)
+	@Comment("默认值")
 	public String getDefaultValue() {
 		return defaultValue;
 	}
@@ -74,16 +80,9 @@ public class TSysParam extends UuidCrudEntity {
 		this.defaultValue = defaultValue;
 	}
 
-	@Column(length=255)
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	@Column(length=1)
+	@Column(length = 1, nullable = false)
+	@DefaultValue("false")
+	@Comment("是否加密")
 	public boolean getEncrypt() {
 		return encrypt;
 	}
@@ -91,5 +90,5 @@ public class TSysParam extends UuidCrudEntity {
 	public void setEncrypt(boolean encrypt) {
 		this.encrypt = encrypt;
 	}
-	
+
 }

@@ -15,13 +15,13 @@ import org.springframework.stereotype.Service;
  * @author 唐玮琳
  */
 @Service
-public class SpringBeanUtils implements ApplicationContextAware {
+public class SpringBeanTool implements ApplicationContextAware {
 
 	private static ApplicationContext appContext;
 	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-		SpringBeanUtils.appContext = applicationContext;
+		SpringBeanTool.appContext = applicationContext;
 		logger.info("初始化Spring上下文成功。");
 	}
 

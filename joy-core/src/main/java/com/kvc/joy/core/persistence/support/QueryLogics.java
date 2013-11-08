@@ -12,7 +12,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.domain.Sort.Order;
 
-import com.kvc.joy.commons.lang.ArrayTool;
 import com.kvc.joy.commons.lang.string.StringTool;
 
 /**
@@ -89,7 +88,7 @@ public class QueryLogics {
 
 	public Order[] getOrderArray() {
 		List<Order> orders = getOrders();
-		return ArrayTool.cast(new Order[orders.size()], orders);
+		return orders.toArray(new Order[orders.size()]);
 	}
 
 	public Map<String, String> getOrderMap() {

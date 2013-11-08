@@ -10,13 +10,13 @@ import com.kvc.joy.commons.enums.ICodeEnum;
  */
 public enum RdbObjectType implements ICodeEnum {
 
-	TABLE("TABLE", "表"),
-	SYSTEM_TABLE ("SYSTEM TABLE", "系统内置表"),
-	GLOBAL_TEMPORARY ("GLOBAL TEMPORARY", "全局临时表"),
-	LOCAL_TEMPORARY("LOCAL TEMPORARY", "本地临时表"),
-	VIEW("VIEW", "视图"),
-	SYNONYM("SYNONYM", "同义词"),
-	ALIAS("ALIAS", "别名");
+	TABLE("table", "表"),
+	SYSTEM_TABLE ("system table", "系统内置表"),
+	GLOBAL_TEMPORARY ("global temporary", "全局临时表"),
+	LOCAL_TEMPORARY("local temporary", "本地临时表"),
+	VIEW("view", "视图"),
+	SYNONYM("synonym", "同义词"),
+	ALIAS("alias", "别名");
 	
 	private String code;
 	private String desc;

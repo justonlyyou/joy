@@ -11,10 +11,12 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import com.kvc.joy.core.persistence.entity.UuidCrudEntity;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 import com.kvc.joy.plugin.security.erbac.support.enums.ResourceType;
 
 @Entity
-@Table(name = "T_ERBAC_AUTHORITY")
+@Table(name = "t_erbac_authority")
+@Comment("权限")
 public class TErbacAuthority extends UuidCrudEntity {
 
 	private String parentId; // 父权限id
@@ -33,6 +35,7 @@ public class TErbacAuthority extends UuidCrudEntity {
 //	private Collection<TErbacGroup> groups; // 组
 
 	@Column(name="AUTH_NAME", length=64, nullable=false)
+	@Comment("名称")
 	public String getName() {
 		return name;
 	}
@@ -42,6 +45,7 @@ public class TErbacAuthority extends UuidCrudEntity {
 	}
 
 	@Column(name = "DESCRIPTION")
+	@Comment("描述")
 	public String getDesc() {
 		return desc;
 	}
@@ -64,7 +68,7 @@ public class TErbacAuthority extends UuidCrudEntity {
 //	}
 
 //	@ManyToMany(cascade = CascadeType.REFRESH)
-//	@JoinTable(name = "T_ERBAC_AUTH_RES",
+//	@JoinTable(name = "t_erbac_auth_res",
 //			inverseJoinColumns = @JoinColumn(name = "RESOURCE_ID"),
 //			joinColumns = @JoinColumn(name = "AUTHORITY_ID"))	
 //	public Collection<TErbacResource> getResources() {
@@ -96,6 +100,7 @@ public class TErbacAuthority extends UuidCrudEntity {
 //	}
 
 	@Column(length = 32)
+	@Comment("父项ID")
 	public String getParentId() {
 		return parentId;
 	}

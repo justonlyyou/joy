@@ -11,13 +11,15 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.kvc.joy.core.persistence.entity.UuidEntity;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 
 /**
  * 字段映射规则
  * @author  唐玮琳
  */
 @Entity
-@Table(name = "T_SYS_FIELD_MAPPING_RULE")
+@Table(name = "t_sys_field_mapping_rule")
+@Comment("字段映射规则")
 public class TSysFieldMappingRule extends UuidEntity {
 
 	/**
@@ -40,6 +42,7 @@ public class TSysFieldMappingRule extends UuidEntity {
 	private Set<TSysFieldMapping> fieldMappingSet = new HashSet<TSysFieldMapping>();
 
 	@Column(length = 64, nullable = false)
+	@Comment("对象1的名称")
 	public String getObject1() {
 		return object1;
 	}
@@ -49,6 +52,7 @@ public class TSysFieldMappingRule extends UuidEntity {
 	}
 
 	@Column(length = 64, nullable = false)
+	@Comment("对象2的名称")
 	public String getObject2() {
 		return object2;
 	}
@@ -58,6 +62,7 @@ public class TSysFieldMappingRule extends UuidEntity {
 	}
 
 	@Column(name = "DESCRIPTION", length = 128, nullable = false)
+	@Comment("描述")
 	public String getDesc() {
 		return desc;
 	}
@@ -67,6 +72,7 @@ public class TSysFieldMappingRule extends UuidEntity {
 	}
 
 	@Column(length = 2, nullable = false)
+	@Comment("对象类型")
 	public String getObjectType() {
 		return objectType;
 	}

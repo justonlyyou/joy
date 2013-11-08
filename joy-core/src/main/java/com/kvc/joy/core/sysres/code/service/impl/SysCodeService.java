@@ -11,8 +11,8 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcUtils;
-import com.kvc.joy.core.persistence.orm.jpa.JpaUtils;
+import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
+import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.core.sysres.code.po.TSysCodeTable;
 import com.kvc.joy.core.sysres.code.service.ISysCodeService;
 import com.kvc.joy.core.sysres.datasrc.model.po.TSysDataSrc;
@@ -29,7 +29,7 @@ public class SysCodeService implements ISysCodeService {
 	public Map<String, String> get(String codeTableId) {
 		logger.info("加载代码表#" + codeTableId + "的数据...");
 		Map<String, String> map = new HashMap<String, String>();
-		TSysCodeTable codeDic = JpaUtils.get(TSysCodeTable.class, codeTableId);
+		TSysCodeTable codeDic = JpaTool.get(TSysCodeTable.class, codeTableId);
 		TSysDataSrc dataSrc = codeDic.getDataSrc();
 
 		String sqlPattern = "select {0}, {1} from {2}";
@@ -39,7 +39,7 @@ public class SysCodeService implements ISysCodeService {
 		Connection conn = null;
 		PreparedStatement statement = null;
 		try {
-			conn = JdbcUtils.getConnection(dataSrc);
+			conn = JdbcTool.getConnection(dataSrc);
 			statement = conn.prepareStatement(sql);
 			ResultSet rs = statement.executeQuery();
 			while (rs.next()) {
@@ -58,7 +58,7 @@ public class SysCodeService implements ISysCodeService {
 					logger.error(ex.getMessage(), ex);
 				}
 			}
-			JdbcUtils.closeConnection(conn);
+			JdbcTool.closeConnection(conn);
 		}
 		return map;
 	}

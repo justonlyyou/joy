@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.Expression;
-import javax.persistence.criteria.Path;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
@@ -14,8 +13,6 @@ import org.springframework.data.domain.Sort.Order;
 import org.springframework.stereotype.Repository;
 
 import com.kvc.joy.commons.bean.Pair;
-import com.kvc.joy.commons.collections.ListTool;
-import com.kvc.joy.commons.lang.ArrayTool;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.core.persistence.orm.jpa.BaseJpaDao;
 import com.kvc.joy.plugin.security.login.model.po.TLoginLog;
@@ -124,7 +121,7 @@ public class LoginLogDao extends BaseJpaDao<TLoginLog> {
 				if (StringTool.isNotBlank(curLogId)) {
 					predicates.add(cb.notEqual(root.get(TLoginLog_.id), curLogId));	
 				}
-				return cb.and(ArrayTool.cast(new Predicate[predicates.size()], predicates));
+				return cb.and(predicates.toArray(new Predicate[predicates.size()]));
 			}
 			
 			@Override

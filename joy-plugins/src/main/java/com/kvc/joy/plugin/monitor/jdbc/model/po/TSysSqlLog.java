@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import com.kvc.joy.core.persistence.entity.UuidEntity;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 
 /**
  * 
@@ -12,7 +13,8 @@ import com.kvc.joy.core.persistence.entity.UuidEntity;
  * @time 2012-12-15 下午7:09:20
  */
 @Entity
-@Table(name = "T_SYS_SQL_LOG")
+@Table(name = "t_sys_sql_log")
+@Comment("SQL日志")
 public class TSysSqlLog extends UuidEntity {
 
 	private String logTime;
@@ -27,6 +29,7 @@ public class TSysSqlLog extends UuidEntity {
 	private Integer lineNumber;
 
 	@Column(length = 17)
+	@Comment("日志时间")
 	public String getLogTime() {
 		return logTime;
 	}
@@ -36,6 +39,7 @@ public class TSysSqlLog extends UuidEntity {
 	}
 
 	@Column(length = 32)
+	@Comment("应用名称")
 	public String getAppName() {
 		return appName;
 	}
@@ -45,6 +49,7 @@ public class TSysSqlLog extends UuidEntity {
 	}
 
 	@Column(length = 128)
+	@Comment("模块名")
 	public String getModuleName() {
 		return moduleName;
 	}
@@ -54,6 +59,7 @@ public class TSysSqlLog extends UuidEntity {
 	}
 
 	@Column(length = 8)
+	@Comment(value="耗时", detailDesc="单位: 毫秒")
 	public Long getCostTime() {
 		return costTime;
 	}
@@ -63,6 +69,7 @@ public class TSysSqlLog extends UuidEntity {
 	}
 
 	@Column(length = 4000)
+	@Comment(value="sql文本", detailDesc="未参数化")
 	public String getSqlText() {
 		return sqlText;
 	}
@@ -72,6 +79,7 @@ public class TSysSqlLog extends UuidEntity {
 	}
 
 	@Column(length = 1024)
+	@Comment(value="变量值", detailDesc="多个用半角逗号隔开")
 	public String getVariables() {
 		return variables;
 	}
@@ -81,6 +89,7 @@ public class TSysSqlLog extends UuidEntity {
 	}
 
 	@Column(length = 4000)
+	@Comment(value="完整sql文本", detailDesc="已参数化")
 	public String getFullSql() {
 		return fullSql;
 	}
@@ -90,6 +99,7 @@ public class TSysSqlLog extends UuidEntity {
 	}
 
 	@Column(length = 128)
+	@Comment("类名")
 	public String getClassName() {
 		return className;
 	}
@@ -99,6 +109,7 @@ public class TSysSqlLog extends UuidEntity {
 	}
 
 	@Column(length = 64)
+	@Comment("方法名")
 	public String getMethodName() {
 		return methodName;
 	}
@@ -108,6 +119,7 @@ public class TSysSqlLog extends UuidEntity {
 	}
 
 	@Column(length = 5)
+	@Comment("行号")
 	public Integer getLineNumber() {
 		return lineNumber;
 	}

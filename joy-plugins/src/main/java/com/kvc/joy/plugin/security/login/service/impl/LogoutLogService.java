@@ -1,7 +1,7 @@
 package com.kvc.joy.plugin.security.login.service.impl;
 
 import com.kvc.joy.commons.lang.DateTool;
-import com.kvc.joy.core.persistence.orm.jpa.JpaUtils;
+import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.plugin.security.erbac.support.utils.UserTool;
 import com.kvc.joy.plugin.security.login.dao.LoginLogDao;
 import com.kvc.joy.plugin.security.login.model.po.TLoginLog;
@@ -34,7 +34,7 @@ public class LogoutLogService implements ILogoutLogService {
 			logoutTime = DateTool.currentDate(DateTool.UNFMT_yyyyMMddHHmmss);
 		}
 		logoutLog.setLogoutTime(logoutTime);
-		JpaUtils.persist(logoutLog);
+		JpaTool.persist(logoutLog);
 	}
 
 	public void setLoginLogDao(LoginLogDao loginLogDao) {

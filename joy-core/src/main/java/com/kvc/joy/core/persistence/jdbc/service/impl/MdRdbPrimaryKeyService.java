@@ -10,11 +10,10 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.kvc.joy.core.persistence.jdbc.RdbMdUtils;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbPrimaryKey;
 import com.kvc.joy.core.persistence.jdbc.service.IMdRdbPrimaryKeyService;
-import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcUtils;
+import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
 
 /**
  * 
@@ -26,25 +25,25 @@ public class MdRdbPrimaryKeyService  implements IMdRdbPrimaryKeyService {
 	private Logger logger = LoggerFactory.getLogger(getClass());
 	
 	public MdRdbPrimaryKey getPrimaryKey(String datasourceId, String tableName) {
-		tableName = tableName.toUpperCase();
+		tableName = tableName.toLowerCase();
 		logger.info("加载表字段主键的元数据信息，datasourceId: " + datasourceId + ", " + tableName);
 		MdRdbPrimaryKey primaryKey = null;
 		Connection conn = null;
 		try {
-			conn = JdbcUtils.getConnectionDirect(datasourceId);
+			conn = JdbcTool.getConnectionDirect(datasourceId);
 			DatabaseMetaData metaData = conn.getMetaData();
 			List<String> pks = getPrimaryKey(metaData, tableName);
 			for (String pk : pks) {
 				if (primaryKey == null) {
 					primaryKey = new MdRdbPrimaryKey();
 				}
-				MdRdbColumn column = RdbMdUtils.getColumn(datasourceId, tableName, pk);
+				MdRdbColumn column = JdbcTool.getColumn(datasourceId, tableName, pk);
 				primaryKey.getColumns().add(column);
 			}
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 		} finally {
-			JdbcUtils.closeConnection(conn);
+			JdbcTool.closeConnection(conn);
 		}
 		return primaryKey;
 	}
@@ -63,7 +62,7 @@ public class MdRdbPrimaryKeyService  implements IMdRdbPrimaryKeyService {
 		List<String> pks = new ArrayList<String>(1);
 		ResultSet primaryKeys = metaData.getPrimaryKeys(null, metaData.getUserName(), tableName);
 		while (primaryKeys.next()) {
-			pks.add(primaryKeys.getString("COLUMN_NAME").toUpperCase());
+			pks.add(primaryKeys.getString("COLUMN_NAME").toLowerCase());
 		}
 		return pks;
 	}

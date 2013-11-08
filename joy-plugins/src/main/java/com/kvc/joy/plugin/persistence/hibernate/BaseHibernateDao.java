@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kvc.joy.commons.exception.ExceptionTool;
-import com.kvc.joy.core.persistence.orm.jpa.JpaUtils;
+import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 
 /**
  * 基于的Hibernate数据访问对象基类
@@ -98,7 +98,7 @@ public abstract class BaseHibernateDao<T> {
 	}
 	
 	public Session session() {
-		return (Session) JpaUtils.getEntityMgr().getDelegate();
+		return (Session) JpaTool.getEntityMgr().getDelegate();
 //		return JpaUtils.getEntityMgr().unwrap(Session.class);
 	}
 

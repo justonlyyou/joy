@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.kvc.joy.commons.bean.TreeNode;
 import com.kvc.joy.commons.collections.CollectionTool;
 import com.kvc.joy.commons.support.ListToTreeConvertor;
-import com.kvc.joy.core.persistence.orm.jpa.JpaUtils;
+import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.plugin.security.erbac.biz.IErbacGroupBiz;
 import com.kvc.joy.plugin.security.erbac.biz.IErbacUserBiz;
 import com.kvc.joy.plugin.security.erbac.dao.IErbacGroupDao;
@@ -87,9 +87,9 @@ public class ErbacGroupBiz implements IErbacGroupBiz {
 	public boolean addUsers(String groupId, Collection<String> userIds) {
 		TErbacGroup group = iErbacGroupDao.findOne(groupId);
 		if (group != null) {
-			List<TErbacUser> users = JpaUtils.inSearch(TErbacUser.class, userIds);
+			List<TErbacUser> users = JpaTool.inSearch(TErbacUser.class, userIds);
 			group.getUsers().addAll(users);
-			JpaUtils.persist(group);
+			JpaTool.persist(group);
 		}
 		return true;
 	}

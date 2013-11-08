@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.kvc.joy.commons.bean.IEntity;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.DefaultValue;
 
 /**
  * 序列号生成规则对象模型
@@ -15,7 +17,8 @@ import com.kvc.joy.commons.bean.IEntity;
  * @author <b>唐玮琳</b>
  */
 @Entity
-@Table(name = "T_SYS_SEQ_NUM_RULE")
+@Table(name = "t_sys_seq_num_rule")
+@Comment("序列号规则")
 public class TSysSeqNumRule implements IEntity<String> {
 
 	private String id;
@@ -32,6 +35,8 @@ public class TSysSeqNumRule implements IEntity<String> {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
+	@Column(length=32, nullable=false)
+	@Comment("主键")
 	public String getId() {
 		return id;
 	}
@@ -41,6 +46,7 @@ public class TSysSeqNumRule implements IEntity<String> {
 	}
 	
 	@Column(length = 32, nullable = false)
+	@Comment("规则名称")
 	public String getName() {
 		return name;
 	}
@@ -50,6 +56,8 @@ public class TSysSeqNumRule implements IEntity<String> {
 	}
 
 	@Column(length = 20, nullable = false)
+	@DefaultValue("1")
+	@Comment("起始值")
 	public long getStartValue() {
 		return startValue;
 	}
@@ -59,6 +67,7 @@ public class TSysSeqNumRule implements IEntity<String> {
 	}
 
 	@Column(length = 20)
+	@Comment(value="最大值", detailDesc="如果有设置，将忽略周期配置")
 	public Long getMaxValue() {
 		return maxValue;
 	}
@@ -68,6 +77,7 @@ public class TSysSeqNumRule implements IEntity<String> {
 	}
 
 	@Column(length = 1)
+	@Comment(value="周期类型代码", codeId="joy_code_time_unit", detailDesc="为空不循环")
 	public Integer getPeriodType() {
 		return periodType;
 	}
@@ -77,6 +87,7 @@ public class TSysSeqNumRule implements IEntity<String> {
 	}
 
 	@Column(length = 10)
+	@Comment("周期数")
 	public Long getPeriodCount() {
 		return periodCount;
 	}
@@ -86,6 +97,7 @@ public class TSysSeqNumRule implements IEntity<String> {
 	}
 
 	@Column(length = 4)
+	@Comment(value="序列号长度", detailDesc="不足位数时将左补0")
 	public Integer getLength() {
 		return length;
 	}
@@ -95,6 +107,8 @@ public class TSysSeqNumRule implements IEntity<String> {
 	}
 
 	@Column(length = 64)
+	@Comment(value="前缀模板", detailDesc="支持java花括号参数占位符，" +
+			"如{0}代表第一个参数，还支持java日期格式化，格式化串前后用%括起来")
 	public String getPrefix() {
 		return prefix;
 	}
@@ -104,6 +118,8 @@ public class TSysSeqNumRule implements IEntity<String> {
 	}
 
 	@Column(length = 64)
+	@Comment(value="后缀模板", detailDesc="支持java花括号参数占位符，" +
+			"如{0}代表第一个参数，还支持java日期格式化，格式化串前后用%括起来")
 	public String getSuffix() {
 		return suffix;
 	}
@@ -113,6 +129,7 @@ public class TSysSeqNumRule implements IEntity<String> {
 	}
 
 	@Column(length = 6, nullable = false)
+	@Comment("增量值")
 	public int getIncrement() {
 		return increment;
 	}
@@ -122,6 +139,7 @@ public class TSysSeqNumRule implements IEntity<String> {
 	}
 
 	@Column(length = 6)
+	@Comment(value="缓存大小", detailDesc="为0或1表示不缓存")
 	public int getCacheSize() {
 		return cacheSize;
 	}

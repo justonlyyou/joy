@@ -11,8 +11,8 @@ import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.plugin.image.captcha.consts.CaptchaConsts;
 import com.kvc.joy.plugin.security.login.support.vo.LoginVo;
 import com.kvc.joy.plugin.support.PluginBeanFactory;
-import com.kvc.joy.web.support.utils.HttpRequestUtils;
-import com.kvc.joy.web.support.utils.HttpSessionUtils;
+import com.kvc.joy.web.support.utils.HttpRequestTool;
+import com.kvc.joy.web.support.utils.HttpSessionTool;
 
 /**
  * 
@@ -66,16 +66,16 @@ public class LoginController {
 		 loginVo.setRememberMe(StringTool.isNotBlank(rememberMe));
 		loginVo.setCaptchaRequire(captchaRequire);
 		loginVo.setCaptchaClient(captcha);
-		loginVo.setLoginIp(HttpRequestUtils.getIpAddr());
-		Pair<String, String> osInfo = HttpRequestUtils.getOsInfo();
+		loginVo.setLoginIp(HttpRequestTool.getIpAddr());
+		Pair<String, String> osInfo = HttpRequestTool.getOsInfo();
 		loginVo.setOsType(osInfo.getFirst());
 		loginVo.setOsVersion(osInfo.getSecond());
-		Pair<String, String> browserInfo = HttpRequestUtils.getBrowserInfo();
+		Pair<String, String> browserInfo = HttpRequestTool.getBrowserInfo();
 		loginVo.setBroswerType(browserInfo.getFirst());
 		loginVo.setBroswerVersion(browserInfo.getSecond());
-		String captchaGenTime = (String) HttpSessionUtils.getSession().getAttribute(CaptchaConsts.CAPTCHA_SESSION_DATE);
+		String captchaGenTime = (String) HttpSessionTool.getSession().getAttribute(CaptchaConsts.CAPTCHA_SESSION_DATE);
 		loginVo.setCaptchaGenTime(captchaGenTime);
-		String captchaServer = (String) HttpSessionUtils.getSession().getAttribute(CaptchaConsts.CAPTCHA_SESSION_KEY);
+		String captchaServer = (String) HttpSessionTool.getSession().getAttribute(CaptchaConsts.CAPTCHA_SESSION_KEY);
 		loginVo.setCaptchaServer(captchaServer);
 		return loginVo;
 	}

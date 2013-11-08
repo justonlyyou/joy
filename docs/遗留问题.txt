@@ -1,3 +1,17 @@
-1. JPA的注解不能对表和字段指定注释
-
-2. 
+JDBC里有DatabaseMetadata接口，通过它可以拿到数据库的元数据，也就是数据库的相关描述信息。果然，getColumns()就可以拿到表所有的字段信息：
+Connection conn = dbms.getConnection();
+DatabaseMetaData dmd = conn.getMetaData();
+ResultSet rs = dmd.getColumns( null, “%”, strTableName, “%”);
+Whiel( rs.next() )
+{
+    String strFieldName = Rs.getString( 4 );
+    String strFieldType = Rs.getString( 5 );
+}
+       这种方式的特点是不需要去访问表内数据，看上去也很简洁。在mysql, postgresql中都很顺利，但很可惜，在连Oracle(JDBC 10.2.0.4)的时候，rs.next()为false了。查看Oracle JDBC的doc,这也是支持的该接口的，并没有任何特别的说明。那奇怪了。再在OracleJDBC的文档上看到该版本Bug列表
+The following table lists the JDBC bugs addressed in this patch set:
+5892966
+No columns from getColumns() when includeSynonyms=true
+原来这里有个特殊的，当includeSysonyms设为true时, getColumns是没有返回的。这个OracleOracle就有点不太符合JDBC的标准了。Oracle文档有这一段话:
+By default, the getColumns method does not retrieve information about the columns if a synonym is specified. To enable the retrieval of information if a synonym is specified, you must call the setIncludeSynonyms method on the connection as follows:
+( (oracle.jdbc.driver.OracleConnection)conn ).setIncludeSynonyms(true)
+This will cause all subsequent getColumns method call on the connection to include synonyms. This is similar to setRemarksReporting. Alternatively, you can set the includeSynonyms connection property. This is similar to the remarksReporting connection property

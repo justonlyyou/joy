@@ -29,55 +29,55 @@ public class JpaEntityRepository<T extends IEntity<ID>, ID extends Serializable>
 	}
 
 	public List<T> searchAll(Order... orders) {
-		return JpaUtils.searchAll(entityClass, orders);
+		return JpaTool.searchAll(entityClass, orders);
 	}
 
 	public List<T> inSearch(String attr, Collection<?> values, Order... orders) {
-		return JpaUtils.inSearch(entityClass, attr, values, orders);
+		return JpaTool.inSearch(entityClass, attr, values, orders);
 	}
 
 	public List<T> inSearch(Collection<?> values, Order... orders) {
-		return JpaUtils.inSearch(entityClass, values, orders);
+		return JpaTool.inSearch(entityClass, values, orders);
 	}
 
 	public List<T> search(String attr, Object value, Order... orders) {
-		return JpaUtils.search(entityClass, attr, value, orders);
+		return JpaTool.search(entityClass, attr, value, orders);
 	}
 
 	public List<T> andSearch(Map<String, Object> attrMap, Order... orders) {
-		return JpaUtils.andSearch(entityClass, attrMap, orders);
+		return JpaTool.andSearch(entityClass, attrMap, orders);
 	}
 
 	public List<T> orSearch(Map<String, Object> attrMap, Order... orders) {
-		return JpaUtils.orSearch(entityClass, attrMap, orders);
+		return JpaTool.orSearch(entityClass, attrMap, orders);
 	}
 
 	public List<T> pagingSearch(PageStore pageStore) {
-		return JpaUtils.pagingSearch(entityClass, pageStore);
+		return JpaTool.pagingSearch(entityClass, pageStore);
 	}
 
 	public <E> List<T> inSearch(SingularAttribute<? super T, E> attr, Collection<E> values, Order... orders) {
-		return JpaUtils.inSearch(entityClass, attr, values, orders);
+		return JpaTool.inSearch(entityClass, attr, values, orders);
 	}
 
 	public <F> List<T> search(SingularAttribute<? super T, F> attr, F value, Order... orders) {
-		return JpaUtils.search(entityClass, attr, value, orders);
+		return JpaTool.search(entityClass, attr, value, orders);
 	}
 
 	public <E> List<T> andQuery(Map<SingularAttribute<? super T, E>, E> attrMap, Order... orders) {
-		return JpaUtils.andQuery(entityClass, attrMap, orders);
+		return JpaTool.andQuery(entityClass, attrMap, orders);
 	}
 
 	public <E> List<T> orQuery(Map<SingularAttribute<? super T, E>, E> attrMap, Order... orders) {
-		return JpaUtils.orQuery(entityClass, attrMap, orders);
+		return JpaTool.orQuery(entityClass, attrMap, orders);
 	}
 
 	public List<?> findBySql(String sql) {
-		return JpaUtils.findBySql(sql);
+		return JpaTool.findBySql(sql);
 	}
 
 	public long querySequence(String sequence) {
-		return JpaUtils.querySequence(sequence);
+		return JpaTool.querySequence(sequence);
 	}
 
 }

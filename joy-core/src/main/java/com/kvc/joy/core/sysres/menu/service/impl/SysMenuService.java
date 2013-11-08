@@ -12,7 +12,7 @@ import com.kvc.joy.commons.collections.ListTool;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.support.ListToTreeConvertor;
 import com.kvc.joy.core.persistence.orm.jpa.JpaOrder;
-import com.kvc.joy.core.persistence.orm.jpa.JpaUtils;
+import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.core.sysres.menu.po.TSysMenu;
 import com.kvc.joy.core.sysres.menu.po.TSysMenu_;
 import com.kvc.joy.core.sysres.menu.service.ISysMenuService;
@@ -23,7 +23,7 @@ public class SysMenuService implements ISysMenuService {
 
 	@Override
 	public List<TreeNode<TSysMenu>> getAllMenus(String userId) {
-		List<TSysMenu> allMenuList = JpaUtils.search(TSysMenu.class, TSysMenu_.deleted, false,
+		List<TSysMenu> allMenuList = JpaTool.search(TSysMenu.class, TSysMenu_.deleted, false,
 				JpaOrder.asc(TSysMenu_.orderNum));
 		return processMenus(allMenuList);
 	}
@@ -38,7 +38,7 @@ public class SysMenuService implements ISysMenuService {
 
 	@Override
 	public List<TreeNode<TSysMenu>> getRootMenus(String userId) {
-		List<TSysMenu> allMenuList = JpaUtils.search(TSysMenu.class, TSysMenu_.deleted, false,
+		List<TSysMenu> allMenuList = JpaTool.search(TSysMenu.class, TSysMenu_.deleted, false,
 				JpaOrder.asc(TSysMenu_.orderNum));
 		List<TSysMenu> rootMenuList = new ArrayList<TSysMenu>();
 		for (TSysMenu sysMenu : allMenuList) {
@@ -83,7 +83,7 @@ public class SysMenuService implements ISysMenuService {
 	
 	//TODO 公用
 	private void findMenuPath(List<TSysMenu> allMenuList, List<TSysMenu> paths, String menuId) {
-		TSysMenu sysMenu = JpaUtils.get(TSysMenu.class, menuId);
+		TSysMenu sysMenu = JpaTool.get(TSysMenu.class, menuId);
 		paths.add(sysMenu);
 		String parentId = sysMenu.getParentId();
 		if (StringTool.isNotBlank(parentId)) {

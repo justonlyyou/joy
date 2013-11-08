@@ -3,7 +3,7 @@ package com.kvc.joy.plugin.mapping.field.dao;
 import java.util.List;
 
 import com.kvc.joy.commons.exception.ServiceException;
-import com.kvc.joy.core.persistence.orm.jpa.JpaUtils;
+import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.plugin.mapping.field.po.TSysFieldMappingRule;
 
 /**
@@ -17,7 +17,7 @@ public class TCfgFieldMappingRuleDao {
 		List<TSysFieldMappingRule> ruleList = null;
 		try {
 			
-			ruleList = JpaUtils.searchAll(TSysFieldMappingRule.class);
+			ruleList = JpaTool.searchAll(TSysFieldMappingRule.class);
 			for (TSysFieldMappingRule rule : ruleList) {
 				rule.getFieldMappingSet();
 			}

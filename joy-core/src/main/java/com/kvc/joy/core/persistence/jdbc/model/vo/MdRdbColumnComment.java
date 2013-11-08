@@ -57,8 +57,8 @@ public class MdRdbColumnComment {
 	@Override
 	public String toString() {
 		String briefDesc = StringTool.isBlank(this.briefDesc) ? "" : this.briefDesc;
-		String detailDesc = StringTool.isBlank(this.detailDesc) ? "" : ", " + this.briefDesc;
-		String codeId = StringTool.isBlank(this.detailDesc) ? "" : ", {\"codeId\":\"" + this.codeId + "\"}";
+		String detailDesc = StringTool.isBlank(this.detailDesc) ? "" : ", " + this.detailDesc;
+		String codeId = StringTool.isBlank(this.codeId) ? "" : ", {\"codeId\":\"" + this.codeId + "\"}";
 		return briefDesc + detailDesc + codeId;
 	}
 	

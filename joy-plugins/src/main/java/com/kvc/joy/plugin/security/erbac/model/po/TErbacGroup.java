@@ -14,9 +14,11 @@ import javax.persistence.Table;
 
 import com.kvc.joy.commons.support.IListToTreeRestrict;
 import com.kvc.joy.core.persistence.entity.UuidCrudEntity;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 
 @Entity
-@Table(name = "T_ERBAC_GROUP")
+@Table(name = "t_erbac_group")
+@Comment("组")
 public class TErbacGroup extends UuidCrudEntity implements IListToTreeRestrict<String> {
 
 	private String parentId; // 父组id
@@ -28,6 +30,7 @@ public class TErbacGroup extends UuidCrudEntity implements IListToTreeRestrict<S
 	private Collection<TErbacGroupAuth> groupAuths; // 组权限关系
 
 	@Column(name = "GROUP_NAME", length = 64)
+	@Comment("名称")
 	public String getName() {
 		return name;
 	}
@@ -37,6 +40,7 @@ public class TErbacGroup extends UuidCrudEntity implements IListToTreeRestrict<S
 	}
 
 	@Column(name = "DESCRIPTION")
+	@Comment("描述")
 	public String getDesc() {
 		return desc;
 	}
@@ -56,7 +60,7 @@ public class TErbacGroup extends UuidCrudEntity implements IListToTreeRestrict<S
 	}
 
 	@ManyToMany(cascade = CascadeType.REFRESH)
-	@JoinTable(name = "T_ERBAC_GROUP_USER", // 关联表名
+	@JoinTable(name = "t_erbac_group_user", // 关联表名
 	inverseJoinColumns = @JoinColumn(name = "USER_ID"), // 被维护端外键
 	joinColumns = @JoinColumn(name = "GROUP_ID")) // 维护端外键
 	public Collection<TErbacUser> getUsers() {
@@ -68,7 +72,7 @@ public class TErbacGroup extends UuidCrudEntity implements IListToTreeRestrict<S
 	}
 
 	// @ManyToMany(cascade = CascadeType.REFRESH)
-	// @JoinTable(name = "T_ERBAC_GROUP_AUTH", // 关联表名
+	// @JoinTable(name = "t_erbac_group_auth", // 关联表名
 	// inverseJoinColumns = @JoinColumn(name = "AUTHORITY_ID"), // 被维护端外键
 	// joinColumns = @JoinColumn(name = "GROUP_ID")) // 维护端外键
 	// public Collection<TErbacAuthority> getAuthorities() {
@@ -80,6 +84,7 @@ public class TErbacGroup extends UuidCrudEntity implements IListToTreeRestrict<S
 	// }
 
 	@Column(length = 32)
+	@Comment("父项ID")
 	public String getParentId() {
 		return parentId;
 	}

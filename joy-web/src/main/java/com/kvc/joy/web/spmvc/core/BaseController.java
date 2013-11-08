@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.kvc.joy.commons.bean.IEntity;
 import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.lang.GenericTool;
-import com.kvc.joy.core.persistence.orm.jpa.JpaUtils;
+import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.core.rp.pagestore.PageStore;
 import com.kvc.joy.core.rp.pagestore.PageStoreCreator;
-import com.kvc.joy.web.support.utils.HttpRequestUtils;
+import com.kvc.joy.web.support.utils.HttpRequestTool;
 
 /**
  * 
@@ -54,8 +54,8 @@ public abstract class BaseController<T extends IEntity<?>> {
 
 	@RequestMapping("/get")
 	public String get(Model model) {
-		String id = HttpRequestUtils.getParameter("id");
-		T m = JpaUtils.get(getEntityClass(), convertId(id));
+		String id = HttpRequestTool.getParameter("id");
+		T m = JpaTool.get(getEntityClass(), convertId(id));
 		model.addAttribute("model", m);
 		return getDetailViewName();
 	}
@@ -65,7 +65,7 @@ public abstract class BaseController<T extends IEntity<?>> {
 	}
 
 	protected void addAttributes(Model model) {
-		Map<String, String[]> parameterMap = HttpRequestUtils.getParameterMap();
+		Map<String, String[]> parameterMap = HttpRequestTool.getParameterMap();
 		for (Entry<String, String[]> entry : parameterMap.entrySet()) {
 			String[] values = entry.getValue();
 			Object value = null;
@@ -81,7 +81,7 @@ public abstract class BaseController<T extends IEntity<?>> {
 	}
 
 	protected PageStore getPageStore() {
-		Map<String, String> paramMap = HttpRequestUtils.getParameters();
+		Map<String, String> paramMap = HttpRequestTool.getParameters();
 		PageStore store = new PageStoreCreator(paramMap).create();
 		Order[] defaultOrders = getDefaultOrders();
 		if (defaultOrders != null) {

@@ -8,10 +8,12 @@ import javax.persistence.Transient;
 import org.apache.commons.lang3.StringUtils;
 
 import com.kvc.joy.core.persistence.entity.UuidEntity;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 import com.kvc.joy.plugin.security.login.support.enums.LoginFailReason;
 
 @Entity
-@Table(name = "T_LOGIN_LOG")
+@Table(name = "t_login_log")
+@Comment("登陆日志")
 public class TLoginLog extends UuidEntity {
 
 	private String userId; // 用户
@@ -31,6 +33,7 @@ public class TLoginLog extends UuidEntity {
 	
 
 	@Column(length = 32)
+	@Comment("用户账号")
 	public String getUserAccount() {
 		return userAccount;
 	}
@@ -39,6 +42,8 @@ public class TLoginLog extends UuidEntity {
 		this.userAccount = userAccount;
 	}
 
+	@Column(length=64)
+	@Comment("用户姓名")
 	public String getUserName() {
 		return userName;
 	}
@@ -47,6 +52,8 @@ public class TLoginLog extends UuidEntity {
 		this.userName = userName;
 	}
 
+	@Column(length=32)
+	@Comment("用户密码")
 	public String getUserPassword() {
 		return userPassword;
 	}
@@ -56,6 +63,7 @@ public class TLoginLog extends UuidEntity {
 	}
 
 	@Column(length = 14)
+	@Comment("登陆时间")
 	public String getLoginTime() {
 		return loginTime;
 	}
@@ -65,6 +73,7 @@ public class TLoginLog extends UuidEntity {
 	}
 
 	@Column(length = 14)
+	@Comment("登出时间")
 	public String getLogoutTime() {
 		return logoutTime;
 	}
@@ -73,6 +82,8 @@ public class TLoginLog extends UuidEntity {
 		this.logoutTime = logoutTime;
 	}
 
+	@Column(length = 32)
+	@Comment("登陆IP")
 	public String getLoginIp() {
 		return loginIp;
 	}
@@ -81,6 +92,8 @@ public class TLoginLog extends UuidEntity {
 		this.loginIp = loginIp;
 	}
 
+	@Column(length = 32)
+	@Comment("浏览器类型")
 	public String getBroswerType() {
 		return broswerType;
 	}
@@ -89,6 +102,8 @@ public class TLoginLog extends UuidEntity {
 		this.broswerType = broswerType;
 	}
 
+	@Column(length = 32)
+	@Comment("操作系统类型")
 	public String getOsType() {
 		return osType;
 	}
@@ -97,6 +112,8 @@ public class TLoginLog extends UuidEntity {
 		this.osType = osType;
 	}
 
+	@Column(length = 1, nullable = false)
+	@Comment("是否登陆成功")
 	public boolean isLoginSuccess() {
 		return loginSuccess;
 	}
@@ -115,6 +132,7 @@ public class TLoginLog extends UuidEntity {
 	}
 	
 	@Column(length = 2)
+	@Comment(value="登陆失败原因代码", codeId="joy_code_login_fail_reason")
 	public String getLoginFailReasonCode() {
 		return loginFailReason == null ? null : loginFailReason.getCode();
 	}
@@ -127,6 +145,8 @@ public class TLoginLog extends UuidEntity {
 		}
 	}
 
+	@Column(length = 1, nullable = false)
+	@Comment("是否记住我")
 	public boolean isRememberMe() {
 		return rememberMe;
 	}
@@ -135,6 +155,8 @@ public class TLoginLog extends UuidEntity {
 		this.rememberMe = rememberMe;
 	}
 
+	@Column(length = 32)
+	@Comment("浏览器版本")
 	public String getBroswerVersion() {
 		return broswerVersion;
 	}
@@ -143,6 +165,8 @@ public class TLoginLog extends UuidEntity {
 		this.broswerVersion = broswerVersion;
 	}
 
+	@Column(length = 32)
+	@Comment("操作系统版本")
 	public String getOsVersion() {
 		return osVersion;
 	}
@@ -152,6 +176,7 @@ public class TLoginLog extends UuidEntity {
 	}
 
 	@Column(length = 32)
+	@Comment("用户ID")
 	public String getUserId() {
 		return userId;
 	}
