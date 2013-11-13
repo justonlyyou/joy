@@ -52,6 +52,9 @@ public class JoyInitializer implements IJoyInitializer {
 		
 		MdRdbAlterReverseSyncServiceFactory.getInstance().generate("com.kvc.joy.**.po");
 		
+//		List<MdRdbColumn> columnList = EntityCommentAndDefaultValueScanner.scanColumnCommentAndDefaultValue(TErbacOrganization.class);
+//		System.out.println("columnList: "+columnList.size());
+		
 		logger.info("done afterContextInit");
 	}
 

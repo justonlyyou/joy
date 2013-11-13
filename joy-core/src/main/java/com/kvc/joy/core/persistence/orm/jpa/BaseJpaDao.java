@@ -22,7 +22,6 @@ import org.springframework.orm.jpa.support.JpaDaoSupport;
 import com.kvc.joy.commons.bean.Pair;
 import com.kvc.joy.commons.exception.ExceptionTool;
 import com.kvc.joy.commons.lang.GenericTool;
-import com.sun.org.apache.bcel.internal.generic.Select;
 
 public abstract class BaseJpaDao<T> extends JpaDaoSupport {
 
@@ -111,10 +110,6 @@ public abstract class BaseJpaDao<T> extends JpaDaoSupport {
 	}
 
 	protected abstract class JPACallBack<T> {
-		
-		public Select getSelect(CriteriaBuilder cb, Root<T> root) {
-			return null;
-		}
 		
 		public abstract Expression<Boolean> getRestriction(CriteriaBuilder cb, Root<T> root);
 		

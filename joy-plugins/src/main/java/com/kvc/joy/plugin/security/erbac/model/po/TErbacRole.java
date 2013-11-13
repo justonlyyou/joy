@@ -23,7 +23,6 @@ public class TErbacRole extends UuidCrudEntity implements IListToTreeRestrict<St
 
 	private String parentId; // 父角色id
 	private String name; // 角色名
-	private String desc; // 描述
 	private Collection<TErbacUser> users; // 用户
 	private Collection<TErbacGroup> groups; // 组
 	// private Collection<TErbacAuthority> authorities; // 权限
@@ -37,16 +36,6 @@ public class TErbacRole extends UuidCrudEntity implements IListToTreeRestrict<St
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	@Column(name = "DESCRIPTION")
-	@Comment("描述")
-	public String getDesc() {
-		return desc;
-	}
-
-	public void setDesc(String desc) {
-		this.desc = desc;
 	}
 
 	@ManyToMany(cascade = CascadeType.REFRESH)

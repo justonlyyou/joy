@@ -27,12 +27,12 @@ public class MdRdbTableCacheService extends AbstractEhCacheHolder<String, MdRdbT
 
 	@Override
 	protected MdRdbTable loadEntity(String key) {
-		return mdRdbTableService.get(key);
+		return mdRdbTableService.getTableByDatasourceId(key);
 	}
 
 	@Override
 	protected Map<String, MdRdbTable> loadAll() {
-		return mdRdbTableService.get();
+		return mdRdbTableService.getAllTables();
 	}
 
 	public String getName() {

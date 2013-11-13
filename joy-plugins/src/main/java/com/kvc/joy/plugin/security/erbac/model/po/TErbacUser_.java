@@ -16,7 +16,6 @@ public class TErbacUser_ extends UuidCrudEntity_ {
 	public static volatile SingularAttribute<TErbacUser, String> sexCode;
 	public static volatile SingularAttribute<TErbacUser, String> password;
 	public static volatile SingularAttribute<TErbacUser, String> stautsCode;
-	public static volatile SingularAttribute<TErbacUser, String> desc;
 	public static volatile SingularAttribute<TErbacUser, Integer> loginCount;
 	public static volatile SingularAttribute<TErbacUser, String> lastLoginTime;
 	public static volatile CollectionAttribute<TErbacUser, Collection<TErbacUserAuth>> userAuths;

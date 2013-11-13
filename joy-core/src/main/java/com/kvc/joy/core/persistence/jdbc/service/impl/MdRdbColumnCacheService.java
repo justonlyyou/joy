@@ -18,8 +18,13 @@ public class MdRdbColumnCacheService implements IMdRdbColumnService {
 	private IMdRdbColumnService mdRdbColumnService;
 
 	@Cacheable(CACHE_NAME)
-	public List<MdRdbColumn> getColumns(String datasourceId, String tableName) {
-		return mdRdbColumnService.getColumns(datasourceId, tableName);
+	public List<MdRdbColumn> getColumnsByDatasourceId(String datasourceId, String tableName) {
+		return mdRdbColumnService.getColumnsByDatasourceId(datasourceId, tableName);
+	}
+	
+	@Cacheable(CACHE_NAME)
+	public List<MdRdbColumn> getColumnsByJndi(String jndi, String tableName) {
+		return mdRdbColumnService.getColumnsByJndi(jndi, tableName);
 	}
 	
 	public void setMdRdbColumnService(IMdRdbColumnService mdRdbColumnService) {

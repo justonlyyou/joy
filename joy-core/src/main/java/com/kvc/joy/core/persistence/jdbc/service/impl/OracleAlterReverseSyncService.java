@@ -20,8 +20,8 @@ import com.kvc.joy.core.persistence.jdbc.service.AbstractMdRdbAlterReverseSyncSe
  */
 public class OracleAlterReverseSyncService extends AbstractMdRdbAlterReverseSyncService {
 
-	private static final String ALTER_COLUMN_COMMENT_SQL = "ALTER TABLE {0} CHANGE ''{1}'' COMMENT ''{2}''";
-	private static final String ALTER_COLUMN_DEFAULT_VALUE_SQL = "ALTER TABLE {0} MODIFY {1} DEFAULT {2}";
+	private static final String ALTER_COLUMN_COMMENT_SQL = "ALTER TABLE {0} CHANGE ''{1}'' COMMENT ''{2}'';";
+	private static final String ALTER_COLUMN_DEFAULT_VALUE_SQL = "ALTER TABLE {0} MODIFY {1} DEFAULT {2};";
 
 	@Override
 	protected String getAlterColumnCommentSql(MdRdbTable table, MdRdbColumn column, MdRdbColumn columnInDb) {

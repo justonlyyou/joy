@@ -59,6 +59,11 @@ jar中配置文件放在“/”(根目录)下时，通过classpath*加载配置�
 文件系统中的资源，而在jar包中的资源并不会被返回。
 解决方法是将配置文件放在根的下一级目录内，例如/conf/application-context.xml，web.xml中配置
 为classpath*:conf/**/*application-context.xml。
+
+
+6. method.getAnnotation(class) 有时会取不到方法上的注解，换一下方法的位置就行，原因不解。
+	如TErbacOrganization的getParentId()，放在最前面死活不行，移到后面就没问题。
+
 	
 	
 	

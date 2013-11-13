@@ -26,7 +26,6 @@ import java.math.BigDecimal;
  */
 public class MdRdbColumn implements Serializable {
 
-	private static final long serialVersionUID = 9136644100996941305L;
 	private String name;
 	private String type;
 	private Boolean nullable;

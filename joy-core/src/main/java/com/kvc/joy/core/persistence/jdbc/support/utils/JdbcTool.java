@@ -24,6 +24,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
+import com.kvc.joy.commons.collections.CollectionTool;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.core.persistence.jdbc.dao.BaseJdbcDao;
 import com.kvc.joy.core.persistence.jdbc.model.vo.DbMetaData;
@@ -56,9 +57,18 @@ public class JdbcTool extends BaseJdbcDao {
 		return SpringBeanTool.getBean(JdbcTool.class);
 	}
 
-	public static Connection getConnectionDirect(String datasourceId) { //TODO
+	/**
+	 * 
+	 * 
+	 * @param datasourceId
+	 * @return
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年11月10日 下午11:21:39
+	 */
+	public static Connection getConnection(String datasourceId) {
 		IMdRdbConn mdRdbConn = JpaTool.get(TSysDataSrc.class, datasourceId);
-		return getConnectionDirect(mdRdbConn);
+		return getConnection(mdRdbConn);
 	}
 
 	/**
@@ -69,19 +79,24 @@ public class JdbcTool extends BaseJdbcDao {
 	 * @author 唐玮琳
 	 * @time 2012-11-2 下午2:29:43
 	 */
-	public static Connection getConnectionDirect(IMdRdbConn mdRdbConn) { // TODO
+	public static Connection getConnection(IMdRdbConn mdRdbConn) {
 		if (mdRdbConn == null) {
 			return null;
 		}
 		Connection conn = null;
-		try {
-			Properties info = new Properties();
-			info.setProperty("remarksReporting", "true");
-			info.setProperty("user", mdRdbConn.getUsername());
-			info.setProperty("password", mdRdbConn.getPassword());
-			conn = DriverManager.getConnection(mdRdbConn.getUrl(), info);
-		} catch (Exception e) {
-			logger.error(e.getMessage(), e);
+		String jndi = mdRdbConn.getJndiName();
+		if (StringTool.isNotBlank(jndi)) {
+			conn = getConnectionByJndi(jndi);
+		} else {
+			try {
+				Properties info = new Properties();
+				info.setProperty("remarksReporting", "true");
+				info.setProperty("user", mdRdbConn.getUsername());
+				info.setProperty("password", mdRdbConn.getPassword());
+				conn = DriverManager.getConnection(mdRdbConn.getUrl(), info);
+			} catch (Exception e) {
+				logger.error(e.getMessage(), e);
+			}
 		}
 		return conn;
 	}
@@ -89,29 +104,20 @@ public class JdbcTool extends BaseJdbcDao {
 	/**
 	 * 
 	 * 
-	 * @param datasourceId
+	 * @param jndi
 	 * @return
+	 * @since 1.0.0
 	 * @author 唐玮琳
-	 * @time 2013-2-8 下午3:14:11
+	 * @time 2013年11月10日 下午11:19:13
 	 */
-	public static Connection getConnection(String datasourceId) { //TODO
-		IMdRdbConn mdRdbConn = JpaTool.get(TSysDataSrc.class, datasourceId);
-		return getConnection(mdRdbConn);
-	}
-	
-	/**
-	 * 
-	 * 
-	 * @param mdRdbConn
-	 * @return
-	 * @author 唐玮琳
-	 * @time 2013-2-8 下午3:14:07
-	 */
-	public static Connection getConnection(IMdRdbConn mdRdbConn) { //TODO
-		try {
-			return getDataSource(mdRdbConn).getConnection();
-		} catch (SQLException e) {
-			logger.error("获取数据库连接出错！", e);
+	public static Connection getConnectionByJndi(String jndi) {
+		DataSource dataSource = getDataSource(jndi);
+		if (dataSource != null) {
+			try {
+				return dataSource.getConnection();
+			} catch (SQLException e) {
+				logger.error("通过JNDI：" + jndi + "获取连接出错！");
+			}
 		}
 		return null;
 	}
@@ -134,27 +140,29 @@ public class JdbcTool extends BaseJdbcDao {
 	/**
 	 * 获取数据源
 	 * 
-	 * @param mdRdbConn
+	 * @param jndi jndi名称
 	 * @return
 	 * @author 唐玮琳
 	 * @time 2013-2-8 下午2:59:18
 	 */
-	public static DataSource getDataSource(IMdRdbConn mdRdbConn) {
-		String jndiName = mdRdbConn.getJndiName();
-		DataSource dataSource = dataSourceMap.get(jndiName);
+	public static DataSource getDataSource(String jndi) {
+		DataSource dataSource = dataSourceMap.get(jndi);
 		if(dataSource == null) {
-			if (StringTool.isNotBlank(jndiName)) {
+			if (StringTool.isNotBlank(jndi)) {
 				InitialContext context = null;
 				try {
 					context = new InitialContext();
-					dataSource = (DataSource) context.lookup(jndiName);
+					dataSource = (DataSource) context.lookup(jndi);
 				} catch (NamingException e) {
 					try {
-						dataSource = (DataSource) context.lookup("java:comp/env/" + jndiName);
+						dataSource = (DataSource) context.lookup("java:comp/env/" + jndi);
 					} catch (NamingException ex) {
-						logger.error("以JNDI: " + jndiName + "获取数据源失败！", ex);
+						logger.error("以JNDI: " + jndi + "获取数据源失败！", ex);
 					}
 				}
+			}
+			if (dataSource != null) {
+				dataSourceMap.put(jndi, dataSource);
 			}
 		}
 		return dataSource;
@@ -255,8 +263,22 @@ public class JdbcTool extends BaseJdbcDao {
 	 * @author 唐玮琳
 	 * @time 2012-12-18 下午3:16:14
 	 */
-	public static List<MdRdbColumn> getColumns(String datasourceId, String tableName) {
-		return CoreBeanFactory.getMdRdbColumnCacheService().getColumns(datasourceId, tableName);
+	public static List<MdRdbColumn> getColumnsByDatasourceId(String datasourceId, String tableName) {
+		return CoreBeanFactory.getMdRdbColumnCacheService().getColumnsByDatasourceId(datasourceId, tableName);
+	}
+	
+	/**
+	 * 
+	 * 
+	 * @param jndi
+	 * @param tableName
+	 * @return
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年11月11日 上午12:21:40
+	 */
+	public static List<MdRdbColumn> getColumnsByJndi(String jndi, String tableName) {
+		return CoreBeanFactory.getMdRdbColumnCacheService().getColumnsByJndi(jndi, tableName);
 	}
 
 	/**
@@ -269,14 +291,25 @@ public class JdbcTool extends BaseJdbcDao {
 	 * @author 唐玮琳
 	 * @time 2012-12-18 下午3:21:37
 	 */
-	public static MdRdbColumn getColumn(String datasourceId, String tableName, String columnName) {
-		List<MdRdbColumn> columns = getColumns(datasourceId, tableName);
-		for (MdRdbColumn column : columns) {
-			if (column.getName().equalsIgnoreCase(columnName)) {
-				return column;
-			}
-		}
-		return null;
+	public static MdRdbColumn getColumnByDatasourceId(String datasourceId, String tableName, String columnName) {
+		List<MdRdbColumn> columns = getColumnsByDatasourceId(datasourceId, tableName);
+		return CollectionTool.getMatchBean(columns, "name", columnName.toLowerCase());
+	}
+	
+	/**
+	 * 获取表的某一列
+	 * 
+	 * @param jndi
+	 * @param tableName
+	 * @param columnName
+	 * @return
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年11月11日 上午12:26:52
+	 */
+	public static MdRdbColumn getColumnByJndi(String jndi, String tableName, String columnName) {
+		List<MdRdbColumn> columns = getColumnsByJndi(jndi, tableName);
+		return CollectionTool.getMatchBean(columns, "name", columnName.toLowerCase());
 	}
 
 	/**
@@ -289,7 +322,7 @@ public class JdbcTool extends BaseJdbcDao {
 	 * @time 2012-12-18 下午3:37:42
 	 */
 	public static MdRdbPrimaryKey getPrimaryKey(String datasourceId, String tableName) {
-		return CoreBeanFactory.getMdRdbPrimaryKeyCacheService().getPrimaryKey(datasourceId, tableName);
+		return CoreBeanFactory.getMdRdbPrimaryKeyCacheService().getPrimaryKeyByDatasourceId(datasourceId, tableName);
 	}
 
 	/**
@@ -362,13 +395,13 @@ public class JdbcTool extends BaseJdbcDao {
 	 * @author 唐玮琳
 	 * @time 2013-11-10 上午10:13:34
 	 */
-	public static DbMetaData getDbMetaData(String datasourceId) {
-		if (StringTool.isBlank(datasourceId)) {
-			return null;
-		}
-		TSysDataSrc ds = JpaTool.get(TSysDataSrc.class, datasourceId);
-		return getDbMetaData(ds);
-	}
+//	public static DbMetaData getDbMetaData(String datasourceId) {
+//		if (StringTool.isBlank(datasourceId)) {
+//			return null;
+//		}
+//		TSysDataSrc ds = JpaTool.get(TSysDataSrc.class, datasourceId);
+//		return getDbMetaData(ds);
+//	}
 	
 	/**
 	 * <p>
@@ -381,21 +414,51 @@ public class JdbcTool extends BaseJdbcDao {
 	 * @author 唐玮琳
 	 * @time 2013-11-10 上午10:13:34
 	 */
-	public static DbMetaData getDbMetaData(TSysDataSrc datasource) {
+//	public static DbMetaData getDbMetaData(IMdRdbConn mdRdbConn) {
+//		DbMetaData dbMetaData = null;
+//		if (mdRdbConn != null) {
+//			Connection conn = null;
+//			try {
+//				conn = JdbcTool.getConnectionDirect(mdRdbConn);
+//				DatabaseMetaData metaData = conn.getMetaData();
+//				dbMetaData = new DbMetaData(metaData);
+//			} catch (Exception e) {
+//				logger.error(e.getMessage(), e);
+//			} finally {
+//				JdbcTool.closeConnection(conn);
+//			}
+//		}
+//		return dbMetaData;
+//	}
+	
+	private static DbMetaData getDbMetaData(Connection conn) {
 		DbMetaData dbMetaData = null;
-		if (datasource != null) {
-			Connection conn = null;
-			try {
-				conn = JdbcTool.getConnectionDirect(datasource);
-				DatabaseMetaData metaData = conn.getMetaData();
-				dbMetaData = new DbMetaData(metaData);
-			} catch (Exception e) {
-				logger.error(e.getMessage(), e);
-			} finally {
-				JdbcTool.closeConnection(conn);
-			}
+		try {
+			DatabaseMetaData metaData = conn.getMetaData();
+			dbMetaData = new DbMetaData(metaData);
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+		} finally {
+			JdbcTool.closeConnection(conn);
 		}
 		return dbMetaData;
 	}
-
+		
+	/**
+	 * 根据JNDI获取数据库元数据信息
+	 * 
+	 * @param jndi JNDI名称
+	 * @return 数据库元数据信息对象
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年11月10日 下午11:54:57
+	 */
+	public static DbMetaData getDbMetaDataByJndi(String jndi) {
+		if (StringTool.isBlank(jndi)) {
+			return null;
+		}
+		Connection conn = JdbcTool.getConnectionByJndi(jndi);
+		return getDbMetaData(conn);
+	}
+	
 }

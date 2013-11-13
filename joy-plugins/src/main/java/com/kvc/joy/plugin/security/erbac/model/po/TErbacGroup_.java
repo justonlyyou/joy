@@ -13,7 +13,6 @@ public class TErbacGroup_ extends UuidCrudEntity_ {
 
 	public static volatile SingularAttribute<TErbacGroup, String> parentId;
 	public static volatile SingularAttribute<TErbacGroup, String> name;
-	public static volatile SingularAttribute<TErbacGroup, String> desc;
 	public static volatile CollectionAttribute<TErbacGroup, Collection<TErbacUser>> users;
 	public static volatile CollectionAttribute<TErbacGroup, Collection<TErbacRole>> roles;
 	public static volatile CollectionAttribute<TErbacGroup, Collection<TErbacGroupAuth>> groupAuths;

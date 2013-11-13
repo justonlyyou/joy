@@ -28,13 +28,24 @@ public class MdRdbColumnService implements IMdRdbColumnService {
 
 	private Logger logger = LoggerFactory.getLogger(getClass());
 	
-	public List<MdRdbColumn> getColumns(String datasourceId, String tableName) {
-		tableName = tableName.toLowerCase();
+	@Override
+	public List<MdRdbColumn> getColumnsByDatasourceId(String datasourceId, String tableName) {
 		logger.info("加载表字段元数据信息，datasourceId: " + datasourceId + ", table: " + tableName);
+		Connection conn = JdbcTool.getConnection(datasourceId);
+		return getColumns(conn, tableName);
+	}
+	
+	@Override
+	public List<MdRdbColumn> getColumnsByJndi(String jndi, String tableName) {
+		logger.info("加载表字段元数据信息，jndi: " + jndi + ", table: " + tableName);
+		Connection conn = JdbcTool.getConnectionByJndi(jndi);
+		return getColumns(conn, tableName);
+	}
+	
+	protected List<MdRdbColumn> getColumns(Connection conn, String tableName) {
+		tableName = tableName.toLowerCase();
 		List<MdRdbColumn> columns = null;
-		Connection conn = null;
 		try {
-			conn = JdbcTool.getConnectionDirect(datasourceId);
 			DatabaseMetaData metaData = conn.getMetaData();
 			Map<String, MdRdbColumn> columnMap = loadColumns(conn, metaData, tableName);
 			columns = new ArrayList<MdRdbColumn>(columnMap.values());

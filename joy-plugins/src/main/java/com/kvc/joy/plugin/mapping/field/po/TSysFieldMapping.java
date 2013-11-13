@@ -83,6 +83,7 @@ public class TSysFieldMapping implements IEntity<String> {
 
 	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.REFRESH }, optional = false)
 	@JoinColumn(name = "RULE_ID") 
+	@Comment("映射规则ID")
 	public TSysFieldMappingRule getRule() {
 		return rule;
 	}

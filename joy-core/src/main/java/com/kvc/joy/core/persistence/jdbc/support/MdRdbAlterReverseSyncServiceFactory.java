@@ -30,7 +30,7 @@ public class MdRdbAlterReverseSyncServiceFactory {
 	}
 
 	public static IMdRdbAlterReverseSyncService getInstance() {
-		DbMetaData dbMetaData = JdbcTool.getDbMetaData(JoyPropeties.DB_DATASOURCEID);
+		DbMetaData dbMetaData = JdbcTool.getDbMetaDataByJndi(JoyPropeties.DB_JNDI);
 		RdbType databaseType = dbMetaData.getDatabaseType();
 		IMdRdbAlterReverseSyncService generator = null;
 		switch (databaseType) {

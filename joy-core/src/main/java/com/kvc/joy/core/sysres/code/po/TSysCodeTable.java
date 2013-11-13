@@ -45,6 +45,7 @@ public class TSysCodeTable extends UuidCrudEntity {
 
 	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.REFRESH }, optional = false)
 	@JoinColumn(name = "DATA_SRC_ID")
+	@Comment("数据源ID")
 	public TSysDataSrc getDataSrc() {
 		return dataSrc;
 	}
@@ -92,5 +93,5 @@ public class TSysCodeTable extends UuidCrudEntity {
 	public void setParentField(String parentField) {
 		this.parentField = parentField;
 	}
-
+	
 }

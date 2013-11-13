@@ -42,6 +42,7 @@ public class TErbacGroupAuth extends UuidEntity {
 
 	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.REFRESH }, optional = false)
 	@JoinColumn(name = "GROUP_ID") 
+	@Comment("组ID")
 	public TErbacGroup getGroup() {
 		return group;
 	}
@@ -52,6 +53,7 @@ public class TErbacGroupAuth extends UuidEntity {
 
 	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.REFRESH }, optional = false)
 	@JoinColumn(name = "AUTHORITY_ID") 
+	@Comment("权限ID")
 	public TErbacAuthority getAuthority() {
 		return authority;
 	}
@@ -60,5 +62,4 @@ public class TErbacGroupAuth extends UuidEntity {
 		this.authority = authority;
 	}
 	
-
 }

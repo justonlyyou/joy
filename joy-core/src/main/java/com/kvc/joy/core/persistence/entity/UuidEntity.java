@@ -24,17 +24,6 @@ public class UuidEntity implements IEntity<String> {
 		this.id = UUID.randomUUID().toString().replaceAll("-", "").toUpperCase();
 	}
 
-	@Id
-	@Column(length = 32)
-	@Comment(value="主键", detailDesc="生成策略: UUID")
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
 	@Override
 	public int hashCode() {
 		return id.hashCode();
@@ -51,6 +40,17 @@ public class UuidEntity implements IEntity<String> {
 		}
 		UuidEntity other = (UuidEntity) obj;
 		return getId().equals(other.getId());
+	}
+	
+	@Id
+	@Column(length = 32)
+	@Comment(value="主键", detailDesc="生成策略: UUID")
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 }

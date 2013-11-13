@@ -109,6 +109,7 @@ public class TSysSeqNum implements IEntity<String> {
 	
 	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.REFRESH }, optional = false)
 	@JoinColumn(name = "RULE_ID") 
+	@Comment("规则ID")
 	public TSysSeqNumRule getSeqRule() {
 		return seqRule;
 	}

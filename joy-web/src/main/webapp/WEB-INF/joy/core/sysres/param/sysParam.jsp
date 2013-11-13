@@ -76,7 +76,7 @@
 									<td><tags:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false"/></td>
 									<td>${p.paramName}</td>
 									<td>${p.paramValue}</td>
-									<td>${p.description}</td>
+									<td>${p.desc}</td>
 									<td><tags:codeTrans code="${p.encrypt}" enumClass="com.kvc.joy.commons.enums.YesNot" /></td>
 								</tr>
 							</c:forEach>

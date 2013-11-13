@@ -7,6 +7,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -21,6 +22,7 @@ import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumnComment;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbTable;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.DefaultValue;
+import com.kvc.joy.plugin.security.erbac.model.po.TErbacOrganization;
 
 /**
  * <p>
@@ -63,7 +65,7 @@ public class EntityCommentAndDefaultValueScanner {
 							Entity entity = clazz.getAnnotation(Entity.class);
 							if (entity != null) {
 								MdRdbTable table = scanTableComment(clazz);
-								List<MdRdbColumn> columns = scanColumnCommentAndDefaultValue(clazz, table);
+								List<MdRdbColumn> columns = scanColumnCommentAndDefaultValue(clazz);
 								table.setColumns(columns);
 								tableList.add(table);
 							}
@@ -89,47 +91,77 @@ public class EntityCommentAndDefaultValueScanner {
 		return table;
 	}
 
-	private static List<MdRdbColumn> scanColumnCommentAndDefaultValue(Class<?> clazz, MdRdbTable table) {
+	public static List<MdRdbColumn> scanColumnCommentAndDefaultValue(Class<?> clazz) {
 		List<MdRdbColumn> columns = new ArrayList<MdRdbColumn>();
 		List<Method> methods = MethodTool.getReadMethods(clazz);
 		for (Method method : methods) {
 			Transient trans = method.getAnnotation(Transient.class);
 			if (trans == null) {
-				Comment columnCommentAnno = method.getAnnotation(Comment.class);
-				DefaultValue defaultValueAnno = method.getAnnotation(DefaultValue.class);
-				if (columnCommentAnno != null || defaultValueAnno != null) {
-					MdRdbColumn column = new MdRdbColumn();
-					columns.add(column);
-					Column columnAnno = method.getAnnotation(Column.class);
-					String name = null;
-					if (columnAnno != null) {
-						name = StringTool.lowerCase(columnAnno.name());
-					}
-					if (StringTool.isEmpty(name)) {
-						name = StringTool.humpToUnderline(method.getName().replaceFirst("^is|^get", "")).toLowerCase();
-					}
-					column.setName(name);
+				Method mthd = getAnnoMethod(clazz, method.getName());
+				if (mthd != null) {
+					Comment columnCommentAnno = mthd.getAnnotation(Comment.class);
+					DefaultValue defaultValueAnno = mthd.getAnnotation(DefaultValue.class);
+					if (columnCommentAnno != null || defaultValueAnno != null) {
+						MdRdbColumn column = new MdRdbColumn();
+						columns.add(column);
+						Column columnAnno = mthd.getAnnotation(Column.class);
+						String columnName = null;
+						if (columnAnno == null) {
+							JoinColumn joinColumnAnno = mthd.getAnnotation(JoinColumn.class);
+							if (joinColumnAnno != null) {
+								columnName = joinColumnAnno.name().toLowerCase();
+							}
+						} else {
+							columnName = StringTool.lowerCase(columnAnno.name());
+						}
+						if (StringTool.isEmpty(columnName)) {
+							columnName = StringTool.humpToUnderline(mthd.getName().replaceFirst("^is|^get", "")).toLowerCase();
+						}
+						column.setName(columnName);
 
-					if (columnCommentAnno != null) {
-						MdRdbColumnComment comment = new MdRdbColumnComment();
-						column.setComment(comment);
-						comment.setBriefDesc(columnCommentAnno.value());
-						comment.setDetailDesc(columnCommentAnno.detailDesc());
-						comment.setCodeId(columnCommentAnno.codeId());
-					}
+						if (columnCommentAnno != null) {
+							MdRdbColumnComment comment = new MdRdbColumnComment();
+							column.setComment(comment);
+							comment.setBriefDesc(columnCommentAnno.value());
+							comment.setDetailDesc(columnCommentAnno.detailDesc());
+							comment.setCodeId(columnCommentAnno.codeId());
+						}
 
-					if (defaultValueAnno != null) {
-						String defaultValue = defaultValueAnno.value();
-						column.setDefaultValue(defaultValue);
+						if (defaultValueAnno != null) {
+							String defaultValue = defaultValueAnno.value();
+							column.setDefaultValue(defaultValue);
+						}
 					}
 				}
 			}
 		}
 		return columns;
 	}
+	
+	private static Method getAnnoMethod(Class<?> clazz, String getter) {
+		if (clazz != Object.class && clazz.isInterface() == false) {
+			Method method = MethodTool.getAccessibleMethod(clazz, getter);
+			if (method == null) {
+				return getAnnoMethod(clazz.getSuperclass(), getter);
+			} else {
+				if (method.isAnnotationPresent(Comment.class) || method.isAnnotationPresent(DefaultValue.class)) {
+					return method;
+				} else {
+					if (method.isBridge()) {
+						return getAnnoMethod(clazz.getSuperclass(), getter);
+					}
+				}
+			}
+		}
+		return null;
+	}
 
 	public static void main(String[] args) {
-		EntityCommentAndDefaultValueScanner.scan("com.kvc.joy.core.ehcache.model.po");
+//		EntityCommentAndDefaultValueScanner.scan("com.kvc.joy.core.ehcache.model.po");
+		List<MdRdbColumn> columnList = EntityCommentAndDefaultValueScanner.scanColumnCommentAndDefaultValue(TErbacOrganization.class);
+		System.out.println("columnList: "+columnList.size());
 	}
+	
+	
 
 }

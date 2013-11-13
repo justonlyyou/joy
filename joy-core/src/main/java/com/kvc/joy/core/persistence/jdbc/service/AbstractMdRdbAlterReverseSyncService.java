@@ -1,11 +1,10 @@
 package com.kvc.joy.core.persistence.jdbc.service;
 
 import java.text.MessageFormat;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,20 +27,19 @@ import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
  */
 public abstract class AbstractMdRdbAlterReverseSyncService implements IMdRdbAlterReverseSyncService {
 
-
 	private Logger logger = LoggerFactory.getLogger(getClass());
-	private static final String TABLE_COMMENT_SQL = "ALTER TABLE {0} COMMENT ''{1}''";
+	private static final String TABLE_COMMENT_SQL = "ALTER TABLE {0} COMMENT ''{1}'';";
 
 	@Transactional
 	public void generate(String... pkgs) {
 		List<MdRdbTable> tables = EntityCommentAndDefaultValueScanner.scan(pkgs);
-		Set<String> sqlSet = genTableCommentSql(tables);
-		sqlSet.addAll(genColumnCommentSql(tables));
-		executeSql(sqlSet);
+		List<String> sqlList = genTableCommentSql(tables);
+		sqlList.addAll(genColumnCommentSql(tables));
+		executeSql(sqlList);
 	}
 
-	protected Set<String> genTableCommentSql(List<MdRdbTable> tables) {
-		Set<String> sqlSet = new HashSet<String>();
+	protected List<String> genTableCommentSql(List<MdRdbTable> tables) {
+		List<String> sqlList = new ArrayList<String>();
 		List<MdRdbTable> tablesInDb = JdbcTool.getTables(JoyPropeties.DB_DATASOURCEID);
 		Map<Object, MdRdbTable> tableMap = CollectionTool.toEntityMap(tablesInDb, "name");
 		for (MdRdbTable table : tables) {
@@ -51,12 +49,12 @@ public abstract class AbstractMdRdbAlterReverseSyncService implements IMdRdbAlte
 				MdRdbTable tableInDb = tableMap.get(tableName);
 				String tableCommentInDb = tableInDb.getComment();
 				if (StringTool.equals(tableComment, tableCommentInDb) == false) {
+					sqlList.add(getAlterTableCommentSql(table));
 					tableInDb.setComment(tableComment);
-					sqlSet.add(getAlterTableCommentSql(table));
 				}
 			}
 		}
-		return sqlSet;
+		return sqlList;
 	}
 	
 	protected String getAlterTableCommentSql(MdRdbTable table) {
@@ -65,12 +63,12 @@ public abstract class AbstractMdRdbAlterReverseSyncService implements IMdRdbAlte
 		return MessageFormat.format(TABLE_COMMENT_SQL, tableName, tableComment);
 	}
 
-	protected Set<String> genColumnCommentSql(List<MdRdbTable> tables) {
-		Set<String> sqlSet = new HashSet<String>();
+	protected List<String> genColumnCommentSql(List<MdRdbTable> tables) {
+		List<String> sqlList = new ArrayList<String>();
 		for (MdRdbTable table : tables) {
-			List<MdRdbColumn> columnsInDb = JdbcTool.getColumns(JoyPropeties.DB_DATASOURCEID, table.getName());
+			List<MdRdbColumn> columnsInDb = JdbcTool.getColumnsByJndi(JoyPropeties.DB_JNDI, table.getName());
 			Map<Object, MdRdbColumn> columnMap = CollectionTool.toEntityMap(columnsInDb, "name");
-
+			
 			Collection<MdRdbColumn> columns = table.getColumns();
 			for (MdRdbColumn column : columns) {
 				String columnName = column.getName();
@@ -86,37 +84,43 @@ public abstract class AbstractMdRdbAlterReverseSyncService implements IMdRdbAlte
 				MdRdbColumnComment commentInDb = columnInDb.getComment();
 				String columnCommentInDb = commentInDb == null ? "" : commentInDb.toString();
 				if (StringTool.equals(columnComment, columnCommentInDb) == false) {
+					sqlList.add(getAlterColumnCommentSql(table, column, columnInDb));
 					columnInDb.setComment(comment);
-					sqlSet.add(getAlterColumnCommentSql(table, column, columnInDb));
 				}
 				
-				// default value
+				// default value, 必须在comment后面，否则会被刷掉
 				String defaultValue = column.getDefaultValue();
 				String defaultValueInDb = columnInDb.getDefaultValue();
 				if (StringTool.equals(defaultValue, defaultValueInDb) == false) {
-					columnInDb.setDefaultValue(defaultValueInDb);
-					sqlSet.add(getAlterColumnDefaultValueSql(table, column, columnInDb));
+					sqlList.add(getAlterColumnDefaultValueSql(table, column, columnInDb));
+					columnInDb.setDefaultValue(defaultValue);
 				}
 			}
 		}
-		return sqlSet;
+		return sqlList;
 	}
 	
 	protected abstract String getAlterColumnCommentSql(MdRdbTable table, MdRdbColumn column, MdRdbColumn columnInDb);
 	
 	protected abstract String getAlterColumnDefaultValueSql(MdRdbTable table, MdRdbColumn column, MdRdbColumn columnInDb);
 	
-	protected void executeSql(Set<String> sqlSet) {
-		String[] sqls = sqlSet.toArray(new String[0]);
-		if(logger.isDebugEnabled()) {
-			for (String sql : sqls) {
-				logger.debug("修改表结构: " + sql);
-			}	
+	protected void executeSql(List<String> sqlList) {
+		if(sqlList.isEmpty() == false && logger.isDebugEnabled()) {
+			StringBuilder sb = new StringBuilder("\n表结构更新SQL语句如下: \n");
+			for (String sql : sqlList) {
+				sb.append(sql + "\n");
+			}
+			logger.debug(sb.toString());
 		}
-		if (sqls.length == 0) {
+		if (sqlList.isEmpty()) {
 			logger.info("表结构未改变，不用同步数据库。");
 		} else {
-			JdbcTool.jdbcTemplate().batchUpdate(sqls);	
+			logger.info("开始更新表结构...");
+			long start = System.currentTimeMillis();
+			String[] sqls = sqlList.toArray(new String[0]);
+			JdbcTool.jdbcTemplate().batchUpdate(sqls);
+			long end = System.currentTimeMillis();
+			logger.info("表结构更新完成，共执行" + sqlList.size() + "条SQL语句，耗时" + ((end - start) / 1000) + "秒。");
 		}
 	}
 

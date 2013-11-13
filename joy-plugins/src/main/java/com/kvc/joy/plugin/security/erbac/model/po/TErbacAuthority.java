@@ -21,7 +21,6 @@ public class TErbacAuthority extends UuidCrudEntity {
 
 	private String parentId; // 父权限id
 	private String name; // 权限名称
-	private String desc; // 权限描述
 	private String resource; // 资源
 	private ResourceType resourceType; 
 	private String domain; // 资源(某一类资源)
@@ -44,17 +43,6 @@ public class TErbacAuthority extends UuidCrudEntity {
 		this.name = name;
 	}
 
-	@Column(name = "DESCRIPTION")
-	@Comment("描述")
-	public String getDesc() {
-		return desc;
-	}
-
-	@Column
-	public void setDesc(String desc) {
-		this.desc = desc;
-	}
-	
 //	@ManyToMany(cascade = CascadeType.REFRESH,
 //			mappedBy="authorities", 
 //			fetch = FetchType.LAZY
@@ -136,6 +124,7 @@ public class TErbacAuthority extends UuidCrudEntity {
 		this.groupAuths = groupAuths;
 	}
 
+	@Comment("资源域")
 	public String getDomain() {
 		return domain;
 	}
@@ -145,6 +134,7 @@ public class TErbacAuthority extends UuidCrudEntity {
 	}
 
 	@Column(length = 32)
+	@Comment("操作")
 	public String getAction() {
 		return action;
 	}
@@ -154,6 +144,7 @@ public class TErbacAuthority extends UuidCrudEntity {
 	}
 
 	@Column(length = 32)
+	@Comment("资源实例")
 	public String getInstance() {
 		return instance;
 	}
@@ -163,6 +154,7 @@ public class TErbacAuthority extends UuidCrudEntity {
 	}
 	
 	@Column(length = 2, nullable = false)
+	@Comment(value="资源类型代码", codeId="joy_code_resource_type")
 	public String getResourceTypeCode() {
 		return resourceType == null ? null : resourceType.getCode();
 	}
@@ -181,6 +173,7 @@ public class TErbacAuthority extends UuidCrudEntity {
 	}
 
 	@Column(nullable = false)
+	@Comment("资源")
 	public String getResource() {
 		return resource;
 	}

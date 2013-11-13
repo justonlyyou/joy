@@ -24,20 +24,36 @@ public class MdRdbPrimaryKeyService  implements IMdRdbPrimaryKeyService {
 
 	private Logger logger = LoggerFactory.getLogger(getClass());
 	
-	public MdRdbPrimaryKey getPrimaryKey(String datasourceId, String tableName) {
+	@Override
+	public MdRdbPrimaryKey getPrimaryKeyByDatasourceId(String datasourceId, String tableName) {
+		logger.info("加载表字段主键的元数据信息，datasourceId: " + datasourceId + ", tableName: " + tableName);
+		Connection conn = JdbcTool.getConnection(datasourceId);
+		return getPrimaryKey(conn, tableName, null, datasourceId);
+	}
+	
+	@Override
+	public MdRdbPrimaryKey getPrimaryKeyByJndi(String jndi, String tableName) {
+		logger.info("加载表字段主键的元数据信息，jndi: " + jndi + ", tableName: " + tableName);
+		Connection conn = JdbcTool.getConnectionByJndi(jndi);
+		return getPrimaryKey(conn, tableName, jndi, null);
+	}
+	
+	protected MdRdbPrimaryKey getPrimaryKey(Connection conn, String tableName, String jndi, String dsId) {
 		tableName = tableName.toLowerCase();
-		logger.info("加载表字段主键的元数据信息，datasourceId: " + datasourceId + ", " + tableName);
 		MdRdbPrimaryKey primaryKey = null;
-		Connection conn = null;
 		try {
-			conn = JdbcTool.getConnectionDirect(datasourceId);
 			DatabaseMetaData metaData = conn.getMetaData();
 			List<String> pks = getPrimaryKey(metaData, tableName);
 			for (String pk : pks) {
 				if (primaryKey == null) {
 					primaryKey = new MdRdbPrimaryKey();
 				}
-				MdRdbColumn column = JdbcTool.getColumn(datasourceId, tableName, pk);
+				MdRdbColumn column = null;
+				if (jndi == null) {
+					column = JdbcTool.getColumnByDatasourceId(dsId, tableName, pk);	
+				} else {
+					column = JdbcTool.getColumnByJndi(jndi, tableName, pk);	
+				}
 				primaryKey.getColumns().add(column);
 			}
 		} catch (Exception e) {
@@ -66,5 +82,5 @@ public class MdRdbPrimaryKeyService  implements IMdRdbPrimaryKeyService {
 		}
 		return pks;
 	}
-	
+
 }

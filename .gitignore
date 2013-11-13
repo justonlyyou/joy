@@ -1,41 +1,25 @@
-/.settings
-/.project
-/.classpath
+*/.settings
+*/.project
+*/.classpath
+*/.externalToolBuilders
+
 /logs
 
-/joy-commons/.settings
-/joy-commons/.project
-/joy-commons/.classpath
 /joy-commons/target
 /joy-commons/logs
 
-/joy-core/.settings
-/joy-core/.project
-/joy-core/.classpath
 /joy-core/target
 /joy-core/logs
 
-/joy-plugins/.settings
-/joy-plugins/.project
-/joy-plugins/.classpath
 /joy-plugins/target
 /joy-plugins/logs
 
-/joy-swing/.settings
-/joy-swing/.project
-/joy-swing/.classpath
 /joy-swing/target
 /joy-swing/logs
 
-/joy-tools/.settings
-/joy-tools/.project
-/joy-tools/.classpath
 /joy-tools/target
 /joy-tools/logs
 
-/joy-web/.settings
-/joy-web/.project
-/joy-web/.classpath
 /joy-web/target
 /joy-web/logs
 /joy-web/src/main/webapp/WEB-INF/classes

@@ -26,7 +26,7 @@ public class UuidCrudEntity extends UuidEntity implements ICrudEntity<String> {
 	protected boolean deleted;
 	protected boolean active;
 	protected boolean builtIn;
-	protected String remarks; // 备注
+	protected String desc;
 
 	@Column(length = 17)
 	@Comment("创建时间")
@@ -151,14 +151,14 @@ public class UuidCrudEntity extends UuidEntity implements ICrudEntity<String> {
 		this.builtIn = builtIn;
 	}
 	
-	@Column(length = 256)
-	@Comment("备注")
-	public String getRemarks() {
-		return remarks;
+	@Column(name = "DESCRIPTION")
+	@Comment("描述")
+	public String getDesc() {
+		return desc;
 	}
 
-	public void setRemarks(String remarks) {
-		this.remarks = remarks;
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
 
 }

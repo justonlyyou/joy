@@ -13,7 +13,6 @@ public class TErbacAuthority_ extends UuidCrudEntity_ {
 
 	public static volatile SingularAttribute<TErbacAuthority, String> parentId;
 	public static volatile SingularAttribute<TErbacAuthority, String> name;
-	public static volatile SingularAttribute<TErbacAuthority, String> desc;
 	public static volatile SingularAttribute<TErbacAuthority, String> resource;
 	public static volatile SingularAttribute<TErbacAuthority, String> domain;
 	public static volatile SingularAttribute<TErbacAuthority, String> action;

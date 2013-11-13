@@ -24,7 +24,7 @@ public class JoyWebInitializer extends ContextLoaderListener {
 	private static Logger logger = LoggerFactory.getLogger(JoyWebInitializer.class);
 
 	private IJoyInitializer joyInitializer = new JoyInitializer();
-
+	
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
 		preContextInitialized(event);
@@ -91,5 +91,5 @@ public class JoyWebInitializer extends ContextLoaderListener {
 			JwebapJdbcPlugin.preInit();
 		}
 	}
-
+	
 }

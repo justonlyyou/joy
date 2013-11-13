@@ -20,6 +20,5 @@ public class TQrtzJobPlan_ extends UuidCrudEntity_ {
 	public static volatile SingularAttribute<TQrtzJobPlan, String> expireTime;
 	public static volatile SingularAttribute<TQrtzJobPlan, String> lastFireTime;
 	public static volatile SingularAttribute<TQrtzJobPlan, String> nextFireTime;
-	public static volatile SingularAttribute<TQrtzJobPlan, String> remarks;
 
 }

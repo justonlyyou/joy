@@ -29,7 +29,6 @@ public class TErbacUser extends UuidCrudEntity  {
 	private Sex sex; // 性别
 	private String password; // 密码
 	private UserStatus stauts; // 状态
-	private String desc; // 描述
 	private Integer loginCount; // 登录次数
 	private String lastLoginTime; // 最后一次登录时间
 	private Collection<TErbacRole> roles; // 角色
@@ -103,16 +102,6 @@ public class TErbacUser extends UuidCrudEntity  {
 
 	public void setSex(Sex sex) {
 		this.sex = sex;
-	}
-
-	@Column(name = "DESCRIPTION")
-	@Comment("描述")
-	public String getDesc() {
-		return desc;
-	}
-
-	public void setDesc(String desc) {
-		this.desc = desc;
 	}
 
 	@ManyToMany(cascade = CascadeType.REFRESH, mappedBy = "users",// 通过维护端的属性关联
