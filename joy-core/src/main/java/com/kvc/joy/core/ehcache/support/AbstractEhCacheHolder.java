@@ -15,11 +15,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.kvc.joy.commons.exception.ServiceException;
-import com.kvc.joy.core.init.support.JoyPropeties;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
 
 /**
  * 抽象的EhCache缓存持有者
+ * 
  * @author <b>唐玮琳</b>
  */
 public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V> {
@@ -40,15 +40,11 @@ public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V
 		V entity = null;
 		try {
 			Element element = null;
-			if (JoyPropeties.PLUGIN_EHCACHE_ENABLED) {
-				element = getCache().get(key);
-			}
+			element = getCache().get(key);
 			if (element == null) {
 				entity = loadEntity(key);
-				if (JoyPropeties.PLUGIN_EHCACHE_ENABLED) {
-					element = new Element(key, entity);
-					getCache().put(element);
-				}
+				element = new Element(key, entity);
+				getCache().put(element);
 			} else {
 				entity = (V) element.getObjectValue();
 			}
@@ -65,16 +61,12 @@ public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V
 	}
 
 	public Map<K, V> getMap() {
-		if(JoyPropeties.PLUGIN_EHCACHE_ENABLED) {
-			Set<K> keys = getKeys();
-			Map<K, V> map = new LinkedHashMap<K, V>();
-			for (K key : keys) {
-				map.put(key, get(key));
-			}
-			return map;
-		} else {
-			return  loadAll();
+		Set<K> keys = getKeys();
+		Map<K, V> map = new LinkedHashMap<K, V>(keys.size());
+		for (K key : keys) {
+			map.put(key, get(key));
 		}
+		return map;
 	}
 
 	/**
@@ -85,15 +77,11 @@ public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V
 	 * @time 2013-1-2 下午11:11:52
 	 */
 	protected void cache(Map<K, V> data) {
-		if (JoyPropeties.PLUGIN_EHCACHE_ENABLED) {
-			if (data != null) {
-				for (Entry<K, V> entry : data.entrySet()) {
-					Element element = new Element(entry.getKey(), entry.getValue());
-					getCache().put(element);
-				}
+		if (data != null) {
+			for (Entry<K, V> entry : data.entrySet()) {
+				Element element = new Element(entry.getKey(), entry.getValue());
+				getCache().put(element);
 			}
-		} else {
-			logger.warn("ehcache缓存组件未启用，不能缓存数据！");
 		}
 	}
 
@@ -106,7 +94,7 @@ public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V
 	 * @date 2012-5-30 上午10:56:21
 	 */
 	protected abstract V loadEntity(K key);
-	
+
 	/**
 	 * 加载所有数据
 	 * 
@@ -123,13 +111,8 @@ public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V
 	 * @date 2012-5-30 上午11:14:54
 	 */
 	public void refresh() {
-		if (JoyPropeties.PLUGIN_EHCACHE_ENABLED) {
-			logger.info("刷新缓存：" + getCacheName() + "里的所有数据...");
-			getCache().removeAll();
-			
-		} else {
-			logger.warn("ehcache缓存组件未启用，不能刷新缓存！");
-		}
+		logger.info("刷新缓存：" + getCacheName() + "里的所有数据...");
+		getCache().removeAll();
 	}
 
 	/**
@@ -140,13 +123,9 @@ public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V
 	 * @date 2012-5-30 上午11:21:27
 	 */
 	public void refresh(K key) {
-		if (JoyPropeties.PLUGIN_EHCACHE_ENABLED) {
-			logger.info("刷新缓存：" + getCacheName() + "里key为" + key + "的数据...");
-			getCache().remove(key);
-			get(key);
-		} else {
-			logger.warn("ehcache缓存组件未启用，不能刷新缓存！");
-		}
+		logger.info("刷新缓存：" + getCacheName() + "里key为" + key + "的数据...");
+		getCache().remove(key);
+		get(key);
 	}
 
 	protected Cache getCache() {

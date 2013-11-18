@@ -5,11 +5,13 @@ import javax.servlet.ServletContextEvent;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.context.ConfigurableWebApplicationContext;
 import org.springframework.web.context.ContextLoaderListener;
 
 import com.kvc.joy.commons.support.ICommand;
 import com.kvc.joy.core.init.service.IJoyInitializer;
 import com.kvc.joy.core.init.service.impl.JoyInitializer;
+import com.kvc.joy.core.init.service.impl.JoyPluginsInitializer;
 import com.kvc.joy.core.init.support.JoyPropeties;
 import com.kvc.joy.core.sysres.param.service.BaseSystemParameter;
 import com.kvc.joy.plugin.monitor.jdbc.JwebapJdbcPlugin;
@@ -62,6 +64,12 @@ public class JoyWebInitializer extends ContextLoaderListener {
 				JoyWebInitializer.super.contextInitialized(event);
 			}
 		});
+	}
+	
+	protected void customizeContext(ServletContext sc, ConfigurableWebApplicationContext wac) {
+		String contextConfigLocation = JoyPluginsInitializer.getCtxConfLocations();
+		wac.setConfigLocation(contextConfigLocation);
+		super.customizeContext(sc, wac);
 	}
 
 	protected void postContextInitialized(ServletContextEvent event) {

@@ -22,7 +22,6 @@ public class JoyPropeties extends BaseProperties {
 	public static boolean JPA_SHOWSQL;
 	public static boolean JPA_GENERATEDDL;
 	public static boolean PLUGIN_PERSISTENCE_HIBERNATE_ENABLED;
-	public static boolean PLUGIN_EHCACHE_ENABLED;
 	public static boolean PLUGIN_SEQGEN_ENABLED;
 	public static boolean PLUGIN_JWEBAP_JDBC_ENABLED;
 	public static Integer PLUGIN_JWEBAP_JDBC_FILTERTIME;
@@ -54,6 +53,7 @@ public class JoyPropeties extends BaseProperties {
 	public static String PLUGIN_CAPTCHA_KAPTCHA_SESSION_KEY;
 	public static Integer PLUGIN_CAPTCHA_KAPTCHA_TEXTPRODUCER_CHAR_LENGTH;
 	public static String PLUGIN_CAPTCHA_KAPTCHA_TEXTPRODUCER_FONT_NAMES;
+	public static String PLUGIN_FLYWAY_SQLMIGRATIONPREFIX;
 
 	private JoyPropeties() {
 	}
@@ -79,7 +79,6 @@ public class JoyPropeties extends BaseProperties {
 		JPA_SHOWSQL = getBool("jpa.showSql");
 		JPA_GENERATEDDL = getBool("jpa.generateDdl");
 		PLUGIN_PERSISTENCE_HIBERNATE_ENABLED = getBool("plugin.persistence.hibernate.enabled");
-		PLUGIN_EHCACHE_ENABLED = getBool("plugin.ehcache.enabled");
 		PLUGIN_SEQGEN_ENABLED = getBool("plugin.seqgen.enabled");
 		PLUGIN_JWEBAP_JDBC_ENABLED = getBool("plugin.jwebap.jdbc.enabled");
 		PLUGIN_JWEBAP_JDBC_FILTERTIME = getInt("plugin.jwebap.jdbc.filterTime");
@@ -111,6 +110,7 @@ public class JoyPropeties extends BaseProperties {
 		PLUGIN_CAPTCHA_KAPTCHA_SESSION_KEY = getStr("plugin.captcha.kaptcha.session.key");
 		PLUGIN_CAPTCHA_KAPTCHA_TEXTPRODUCER_CHAR_LENGTH = getInt("plugin.captcha.kaptcha.textproducer.char.length");
 		PLUGIN_CAPTCHA_KAPTCHA_TEXTPRODUCER_FONT_NAMES = getStr("plugin.captcha.kaptcha.textproducer.font.names");
+		PLUGIN_FLYWAY_SQLMIGRATIONPREFIX = getStr("plugin.flyway.sqlMigrationPrefix");
 	}
 
 	@Override

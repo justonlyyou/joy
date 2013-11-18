@@ -23,5 +23,7 @@
 	
 	<!-- 登出日志服务 -->
 	<bean id="logoutLogService" class="com.kvc.joy.plugin.security.login.service.impl.LogoutLogService" />
+	
+	<bean class="com.kvc.joy.plugin.security.login.dao.LoginLogDao" />
 
 </beans>

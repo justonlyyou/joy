@@ -5,14 +5,15 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumnComment;
 import com.kvc.joy.core.persistence.jdbc.service.IMdRdbColumnService;
@@ -21,35 +22,43 @@ import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
 
 /**
  * 
+ * @since 1.0.0
  * @author 唐玮琳
  * @time 2013-1-2 下午10:38:44
  */
 public class MdRdbColumnService implements IMdRdbColumnService {
 
 	private Logger logger = LoggerFactory.getLogger(getClass());
-	
+
 	@Override
-	public List<MdRdbColumn> getColumnsByDatasourceId(String datasourceId, String tableName) {
-		logger.info("加载表字段元数据信息，datasourceId: " + datasourceId + ", table: " + tableName);
-		Connection conn = JdbcTool.getConnection(datasourceId);
-		return getColumns(conn, tableName);
+	public Map<String, MdRdbColumn> getColumns(String dsId, String tableName) {
+		logger.info("加载表字段元数据信息，datasourceId: " + dsId + ", table: " + tableName);
+		if (StringTool.isBlank(dsId) || StringTool.isBlank(tableName)) {
+			return new HashMap<String, MdRdbColumn>(0);
+		} else {
+			Connection conn = JdbcTool.getConnectionByDsId(dsId);
+			return getColumns(conn, tableName);
+		}
 	}
-	
-	@Override
-	public List<MdRdbColumn> getColumnsByJndi(String jndi, String tableName) {
-		logger.info("加载表字段元数据信息，jndi: " + jndi + ", table: " + tableName);
-		Connection conn = JdbcTool.getConnectionByJndi(jndi);
-		return getColumns(conn, tableName);
-	}
-	
-	protected List<MdRdbColumn> getColumns(Connection conn, String tableName) {
+
+//	@Override
+//	public Map<String, MdRdbColumn> getColumnsByJndi(String jndi, String tableName) {
+//		logger.info("加载表字段元数据信息，jndi: " + jndi + ", table: " + tableName);
+//		if (StringTool.isBlank(jndi) || StringTool.isBlank(tableName)) {
+//			return new HashMap<String, MdRdbColumn>(0);
+//		} else {
+//			Connection conn = JdbcTool.getConnectionByJndi(jndi);
+//			return getColumns(conn, tableName);
+//		}
+//	}
+
+	protected Map<String, MdRdbColumn> getColumns(Connection conn, String tableName) {
 		tableName = tableName.toLowerCase();
-		List<MdRdbColumn> columns = null;
+		Map<String, MdRdbColumn> columnMap = null;
 		try {
 			DatabaseMetaData metaData = conn.getMetaData();
-			Map<String, MdRdbColumn> columnMap = loadColumns(conn, metaData, tableName);
-			columns = new ArrayList<MdRdbColumn>(columnMap.values());
-			
+			columnMap = loadColumns(conn, metaData, tableName);
+
 			// 设置主键标识
 			List<String> pks = MdRdbPrimaryKeyService.getPrimaryKey(metaData, tableName);
 			for (String pk : pks) {
@@ -61,11 +70,12 @@ public class MdRdbColumnService implements IMdRdbColumnService {
 		} finally {
 			JdbcTool.closeConnection(conn);
 		}
-		return columns;
+		return columnMap;
 	}
-	
-	private Map<String, MdRdbColumn> loadColumns(Connection conn, DatabaseMetaData metaData, String tableName) throws SQLException {
-		Map<String, MdRdbColumn> columnMap = new HashMap<String, MdRdbColumn>();
+
+	private Map<String, MdRdbColumn> loadColumns(Connection conn, DatabaseMetaData metaData, String tableName)
+			throws SQLException {
+		Map<String, MdRdbColumn> columnMap = new LinkedHashMap<String, MdRdbColumn>();
 		ResultSet rs = metaData.getColumns(null, metaData.getUserName(), tableName, null);
 		while (rs.next()) {
 			MdRdbColumn column = createColumn(rs);
@@ -73,7 +83,7 @@ public class MdRdbColumnService implements IMdRdbColumnService {
 		}
 		return columnMap;
 	}
-	
+
 	/**
 	 * 创建数据字段对象
 	 * 
@@ -116,6 +126,5 @@ public class MdRdbColumnService implements IMdRdbColumnService {
 		column.setPrecision(new BigDecimal(columns.getInt("DECIMAL_DIGITS")));
 		return column;
 	}
-	
-	
+
 }

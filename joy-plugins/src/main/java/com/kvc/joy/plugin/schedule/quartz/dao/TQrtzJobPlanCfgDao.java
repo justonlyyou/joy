@@ -7,8 +7,6 @@ import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import org.springframework.stereotype.Repository;
-
 import com.kvc.joy.commons.lang.DateTool;
 import com.kvc.joy.core.persistence.orm.jpa.BaseJpaDao;
 import com.kvc.joy.plugin.schedule.quartz.model.po.TQrtzJobPlan;
@@ -19,7 +17,6 @@ import com.kvc.joy.plugin.schedule.quartz.model.po.TQrtzJobPlan_;
  * @author 唐玮琳
  * @time 2013-2-17 下午6:58:25
  */
-@Repository
 public class TQrtzJobPlanCfgDao extends BaseJpaDao<TQrtzJobPlan> {
 	
 	public List<TQrtzJobPlan>getEffectPlans() {

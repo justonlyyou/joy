@@ -53,7 +53,7 @@
      <logger name="org.jwebap.plugin.tracer.jdbc.ProxyPreparedStatement" level="DEBUG" />
      <logger name="org.jwebap.plugin.tracer.jdbc.ProxyStatement" level="DEBUG" />
 
-    <root level="ERROR">
+    <root level="DEBUG">
         <appender-ref ref="Console"/>
         <appender-ref ref="FileHtml"/>
         <appender-ref ref="SQL_MONITOR_APPENDER"/>

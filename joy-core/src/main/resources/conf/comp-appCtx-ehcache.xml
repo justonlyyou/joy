@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/util 
+		http://www.springframework.org/schema/util/spring-util.xsd
+		http://www.springframework.org/schema/cache 
+		http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+	<!-- 隐式地向 Spring 容器注册 AutowiredAnnotationBeanPostProcessor、 CommonAnnotationBeanPostProcessor、 PersistenceAnnotationBeanPostProcessor 
+		以及 equiredAnnotationBeanPostProcessor 这 4 个 BeanPostProcessor。 在配置文件中使用 context 命名空间之前， 必须在 <beans> 元素中声明 context 命名空间。 -->
+	<context:annotation-config />
+
+	<!-- 不但启用了对类包进行扫描 以实施注释驱动 Bean 定义的功能， 同时还启用了注释驱动自动注入的功能 （即还隐式地在内部注册了 AutowiredAnnotationBeanPostProcessor 和 CommonAnnotationBeanPostProcessor） -->
+	<context:component-scan base-package="com.kvc" />
+
+	<!-- 缓存注解驱动 -->
+	<cache:annotation-driven cache-manager="ehCacheCacheManager" />
+	<!-- <cache:annotation-driven cache-manager="ehCacheCacheManager" proxy-target-class="false" mode="proxy"/> -->
+
+	<bean id="cacheManagerFactory" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" p:shared="false">
+		<property name="configLocation">
+			<value>classpath:/conf/ehcache.xml</value>
+		</property>
+	</bean>
+
+	<bean id="ehCacheCacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager" p:cacheManager-ref="cacheManagerFactory" />
+
+
+	<!--<bean id="ehCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean"> <property name="cacheManager"> <ref 
+		local="cacheManager" /> </property> <property name="cacheName"> <value>countryCache</value> </property> </bean> -->
+
+	<!-- <bean id="methodCacheInterceptor" class="com.kvc.joy.comp.cache.ehcache.service.impl.MethodCacheInterceptor"> <property 
+		name="cache"> <ref local="ehCache" /> </property> </bean> <bean id="methodCacheAfterAdvice" class="com.kvc.joy.comp.cache.ehcache.service.MethodCacheAfterAdvice"> 
+		<property name="cache"> <ref local="ehCache" /> </property> </bean> <bean id="methodCachePointCut" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor"> 
+		<property name="advice"> <ref local="methodCacheInterceptor" /> </property> <property name="patterns"> <list> <value>com.testcompany.common.cache.EHCacheComponent.cacheFind*.*</value> 
+		<value>com.testcompany.common.cache.EHCacheComponent.cacheGet*.*</value> </list> </property> </bean> <bean id="methodCachePointCutAdvice" 
+		class="org.springframework.aop.support.RegexpMethodPointcutAdvisor"> <property name="advice"> <ref local="methodCacheAfterAdvice" 
+		/> </property> <property name="patterns"> <list> <value>com.testcompany.common.cache.EHCacheComponent.cacheCreate.*</value> 
+		<value>com.testcompany.common.cache.EHCacheComponent.cacheUpdate.*</value> <value>com.testcompany.common.cache.EHCacheComponent.cacheDelete.*</value> 
+		</list> </property> </bean> -->
+
+</beans>

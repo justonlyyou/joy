@@ -152,10 +152,10 @@ public class StringTool {
 	 * </p>
 	 * 
 	 * <pre>
-	 * humpToUnderline(null) = ""
-	 * humpToUnderline("") = ""
-	 * humpToUnderline(" ") = ""
-	 * humpToUnderline("humpToUnderline") = "HUMP_TO_UNDERLINE"
+	 * humpToUnderscore(null) = ""
+	 * humpToUnderscore("") = ""
+	 * humpToUnderscore(" ") = ""
+	 * humpToUnderscore("humpToUnderscore") = "HUMP_TO_Underscore"
 	 * </pre>
 	 * 
 	 * @param str “驼峰”式写法的字符串
@@ -165,7 +165,7 @@ public class StringTool {
 	 * @author 唐玮琳
 	 * @time 2013-4-8 下午9:54:54
 	 */
-	public static String humpToUnderline(String str) {
+	public static String humpToUnderscore(String str) {
 		if (isNotBlank(str)) {
 			str = str.trim();
 			char[] chars = str.toCharArray();
@@ -184,14 +184,14 @@ public class StringTool {
 	
 	/**
 	 * <p>
-	 * 将“_”分割的字符串转为“驼峰”式写法的字符串, 如：HUMP_TO_UNDERLINE -> humpToUnderline
+	 * 将“_”分割的字符串转为“驼峰”式写法的字符串, 如：HUMP_TO_Underscore -> humpToUnderscore
 	 * </p>
 	 * 
 	 * <pre>
-	 * humpToUnderline(null) = ""
-	 * humpToUnderline("") = ""
-	 * humpToUnderline(" ") = ""
-	 * humpToUnderline("HUMP_TO_UNDERLINE") = "humpToUnderline"
+	 * underscoreToHump(null) = ""
+	 * underscoreToHump("") = ""
+	 * underscoreToHump(" ") = ""
+	 * underscoreToHump("HUMP_TO_Underscore") = "humpToUnderscore"
 	 * </pre>
 	 * 
 	 * @param str “_”分割的字符串
@@ -201,7 +201,7 @@ public class StringTool {
 	 * @author 唐玮琳
 	 * @time 2013-4-8 下午9:55:54
 	 */
-	public static String underlineToHump(String str) {
+	public static String underscoreToHump(String str) {
 		if (isNotBlank(str)) {
 			str = str.trim();
 			String[] words = split(str, "_");

@@ -10,7 +10,6 @@ import javax.persistence.criteria.Root;
 
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.domain.Sort.Order;
-import org.springframework.stereotype.Repository;
 
 import com.kvc.joy.commons.bean.Pair;
 import com.kvc.joy.commons.lang.string.StringTool;
@@ -25,7 +24,6 @@ import com.kvc.joy.plugin.security.login.support.enums.LoginFailReason;
  * @author 唐玮琳
  * @time 2013年9月30日 上午12:04:47
  */
-@Repository
 public class LoginLogDao extends BaseJpaDao<TLoginLog> {
 	
 	/**

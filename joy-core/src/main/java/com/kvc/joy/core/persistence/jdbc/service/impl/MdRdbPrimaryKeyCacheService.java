@@ -17,15 +17,15 @@ public class MdRdbPrimaryKeyCacheService implements IMdRdbPrimaryKeyService {
 
 	@Cacheable(CACHE_NAME)
 	@Override
-	public MdRdbPrimaryKey getPrimaryKeyByDatasourceId(String datasourceId, String tableName) {
-		return mdRdbPrimaryKeyService.getPrimaryKeyByDatasourceId(datasourceId, tableName);
+	public MdRdbPrimaryKey getPrimaryKey(String dsId, String tableName) {
+		return mdRdbPrimaryKeyService.getPrimaryKey(dsId, tableName);
 	}
 	
-	@Cacheable(CACHE_NAME)
-	@Override
-	public MdRdbPrimaryKey getPrimaryKeyByJndi(String jndi, String tableName) {
-		return mdRdbPrimaryKeyService.getPrimaryKeyByJndi(jndi, tableName);
-	}
+//	@Cacheable(CACHE_NAME)
+//	@Override
+//	public MdRdbPrimaryKey getPrimaryKeyByJndi(String jndi, String tableName) {
+//		return mdRdbPrimaryKeyService.getPrimaryKeyByJndi(jndi, tableName);
+//	}
 	
 	public void setMdRdbPrimaryKeyService(IMdRdbPrimaryKeyService mdRdbPrimaryKeyService) {
 		this.mdRdbPrimaryKeyService = mdRdbPrimaryKeyService;

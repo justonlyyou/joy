@@ -1,5 +1,7 @@
 package com.kvc.joy.core.persistence.jdbc.model.vo;
 
+import java.io.Serializable;
+
 import com.kvc.joy.commons.lang.string.StringTool;
 
 /**
@@ -8,7 +10,7 @@ import com.kvc.joy.commons.lang.string.StringTool;
  * @author 唐玮琳
  * @time 2013-2-5 下午11:26:43
  */
-public class MdRdbColumnComment {
+public class MdRdbColumnComment implements Serializable {
 
 	private String briefDesc; // 简要描述
 	private String detailDesc; // 详细描述

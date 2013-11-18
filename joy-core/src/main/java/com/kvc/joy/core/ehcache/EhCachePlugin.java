@@ -1,4 +1,4 @@
-package com.kvc.joy.core.ehcache.service.impl;
+package com.kvc.joy.core.ehcache;
 
 import java.util.List;
 
@@ -13,8 +13,7 @@ import org.springframework.stereotype.Component;
 
 import com.kvc.joy.core.ehcache.model.po.TSysCacheCfg;
 import com.kvc.joy.core.ehcache.model.po.TSysCacheCfg_;
-import com.kvc.joy.core.init.service.SpringManagedJoyPlugin;
-import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.core.init.service.IJoyPlugin;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
 
@@ -24,10 +23,10 @@ import com.kvc.joy.core.spring.utils.CoreBeanFactory;
  * @time 2013-2-3 下午4:24:32
  */
 @Component
-public class EhCachePlugin extends SpringManagedJoyPlugin {
+public class EhCachePlugin implements IJoyPlugin {
 
 	private Logger logger = LoggerFactory.getLogger(getClass());
-	
+
 	public String getName() {
 		return "EhCache缓存";
 	}
@@ -36,12 +35,11 @@ public class EhCachePlugin extends SpringManagedJoyPlugin {
 		joinDbEhCacheConf();
 	}
 
-
 	public void destroy() {
-		
+
 	}
-	
-	private void joinDbEhCacheConf()  {
+
+	private void joinDbEhCacheConf() {
 		EhCacheCacheManager ehCacheCacheManager = CoreBeanFactory.getEhCacheCacheManager();
 		CacheManager cacheManager = ehCacheCacheManager.getCacheManager();
 		List<TSysCacheCfg> cacheCfgList = JpaTool.search(TSysCacheCfg.class, TSysCacheCfg_.deleted, false);
@@ -49,8 +47,8 @@ public class EhCachePlugin extends SpringManagedJoyPlugin {
 			joinDbEhCacheConf(cacheManager, cacheCfg);
 		}
 	}
-	
-	private void joinDbEhCacheConf(CacheManager cacheManager, TSysCacheCfg cacheCfg)  {
+
+	private void joinDbEhCacheConf(CacheManager cacheManager, TSysCacheCfg cacheCfg) {
 		if (cacheManager.cacheExists(cacheCfg.getCacheName()) == false) {
 			CacheConfiguration configuration = createCacheConfiguration(cacheCfg);
 			Cache cache = new Cache(configuration);
@@ -59,7 +57,7 @@ public class EhCachePlugin extends SpringManagedJoyPlugin {
 			logger.warn("缓存【" + cacheCfg.getCacheName() + "】已存在，不能重复添加！");
 		}
 	}
-	
+
 	private CacheConfiguration createCacheConfiguration(TSysCacheCfg cacheCfg) {
 		CacheConfiguration configuration = new CacheConfiguration();
 		configuration.setName(cacheCfg.getCacheName());
@@ -77,7 +75,7 @@ public class EhCachePlugin extends SpringManagedJoyPlugin {
 	}
 
 	public boolean isEnabled() {
-		return JoyPropeties.PLUGIN_EHCACHE_ENABLED;
+		return true;
 	}
 
 	public int getInitPriority() {
@@ -85,8 +83,18 @@ public class EhCachePlugin extends SpringManagedJoyPlugin {
 	}
 
 	@Override
-	public String getXmlPath() {
-		return "/conf/component-applicationContext-ehcache.xml";
+	public String getSqlMigrationPrefix() {
+		return "EHCACHE";
+	}
+
+	@Override
+	public String getPoPackage() {
+		return TSysCacheCfg.class.getPackage().getName();
+	}
+
+	@Override
+	public String getCtxConfLocation() {
+		return "classpath*:/conf/comp-appCtx-ehcache.xml";
 	}
 
 }

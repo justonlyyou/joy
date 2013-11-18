@@ -20,13 +20,14 @@
 	<properties>
 		<joy.version>1.0.0-SNAPSHOT</joy.version>
 		<springframework.version>3.2.4.RELEASE</springframework.version>
-		<logback.version>1.0.9</logback.version>
+		<logback.version>1.0.13</logback.version>
 		<jackson.version>2.1.4</jackson.version>
 		<hibernate.version>4.2.6.Final</hibernate.version>
 		<activiti.version>5.12</activiti.version>
 		<quartz.version>2.2.1</quartz.version>
 		
 		<kaptcha.version>2.3.2</kaptcha.version>
+		<flyway.version>2.2.1</flyway.version>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -72,7 +73,7 @@
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-api</artifactId>
-				<version>1.7.2</version>
+				<version>1.7.5</version>
 			</dependency>
 			<dependency>
 				<groupId>ch.qos.logback</groupId>
@@ -313,6 +314,11 @@
 				<version>${kaptcha.version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>com.googlecode.flyway</groupId>
+				<artifactId>flyway-core</artifactId>
+				<version>${flyway.version}</version>
+			</dependency>
 
 			<!-- test -->
 			<dependency>

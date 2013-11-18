@@ -14,31 +14,23 @@ public interface IMdRdbTableService {
 	/**
 	 * 
 	 * 
-	 * @return
-	 * @author 唐玮琳
-	 * @time 2013-2-3 下午9:43:46
-	 */
-	Map<String, MdRdbTable> getAllTables();
-	
-	/**
-	 * 
-	 * 
-	 * @param key "datasourceId-tableName"
-	 * @return
-	 * @author 唐玮琳
-	 * @time 2013-2-14 下午8:56:13
-	 */
-	MdRdbTable getTableByDatasourceId(String key);
-	
-	/**
-	 * 
-	 * 
-	 * @param key "jndi-tableName"
+	 * @param dsId
 	 * @return
 	 * @since 1.0.0
 	 * @author 唐玮琳
-	 * @time 2013年11月11日 上午12:38:01
+	 * @time 2013年11月15日 下午11:10:58
 	 */
-	MdRdbTable getTableByJndi(String key);
-
+	Map<String, MdRdbTable> getTables(String dsId);
+	
+	/**
+	 * 
+	 * 
+	 * @param jndi
+	 * @return
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年11月15日 下午11:11:02
+	 */
+//	Map<String, MdRdbTable> getTablesByJndi(String jndi);
+	
 }

@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import com.kvc.joy.commons.support.ICommand;
 import com.kvc.joy.core.init.service.IJoyInitializer;
 import com.kvc.joy.core.init.service.ISystemInitService;
-import com.kvc.joy.core.persistence.jdbc.support.MdRdbAlterReverseSyncServiceFactory;
 import com.kvc.joy.core.spring.utils.SpringBeanTool;
 
 /**
@@ -43,17 +42,12 @@ public class JoyInitializer implements IJoyInitializer {
 		if (command != null) {
 			command.execute();
 		}
-
+		
 		ISystemInitService compStartupService = (ISystemInitService) SpringBeanTool.getBean("joyPluginsInitializer");
 		compStartupService.init();
-
+		
 		ISystemInitService sysInitService = (ISystemInitService) SpringBeanTool.getBean("systemInitializer");
 		sysInitService.init();
-		
-		MdRdbAlterReverseSyncServiceFactory.getInstance().generate("com.kvc.joy.**.po");
-		
-//		List<MdRdbColumn> columnList = EntityCommentAndDefaultValueScanner.scanColumnCommentAndDefaultValue(TErbacOrganization.class);
-//		System.out.println("columnList: "+columnList.size());
 		
 		logger.info("done afterContextInit");
 	}
@@ -66,5 +60,5 @@ public class JoyInitializer implements IJoyInitializer {
 		}
 		logger.info("done onContextDestroyed");
 	}
-
+	
 }

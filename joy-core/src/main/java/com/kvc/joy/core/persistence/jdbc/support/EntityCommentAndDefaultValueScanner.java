@@ -115,7 +115,7 @@ public class EntityCommentAndDefaultValueScanner {
 							columnName = StringTool.lowerCase(columnAnno.name());
 						}
 						if (StringTool.isEmpty(columnName)) {
-							columnName = StringTool.humpToUnderline(mthd.getName().replaceFirst("^is|^get", "")).toLowerCase();
+							columnName = StringTool.humpToUnderscore(mthd.getName().replaceFirst("^is|^get", "")).toLowerCase();
 						}
 						column.setName(columnName);
 

@@ -27,13 +27,6 @@
 		</property>
 	</bean>
 
-	<!-- 业务库JDBC模版 -->
-	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-		<property name="dataSource">
-			<ref local="dataSource" />
-		</property>
-	</bean>
-
 	<!-- 定义一个切入点，使事务在它的切入点内有效 
 	<aop:config>
 		<aop:pointcut id="crudMethos" expression="execution(* com.kvc.joy.*..service.impl.*.*(..))" />
@@ -80,10 +73,10 @@
 	</bean>
 	
 	<!-- 强制使用cglib代理 -->
-	<aop:aspectj-autoproxy proxy-target-class="true"/>
+<!-- 	<aop:aspectj-autoproxy proxy-target-class="true"/> -->
 <!-- 	<aop:aspectj-autoproxy expose-proxy="true"/> -->
+	<aop:config proxy-target-class="true" />
 
 	<!-- <import resource="jpa.xml" /> -->
-
 
 </beans>

@@ -10,8 +10,11 @@ import com.kvc.joy.commons.enums.ICodeEnum;
  */
 public enum JobRunState implements ICodeEnum {
 	
-	RUNNING("1", "运行中"),
-	PAUSE("2", "暂停");
+	NO_START("00", "未启动"),
+	RUNNING("11", "运行中"),
+	EXCEPTION("21", "异常终止"),
+	PAUSE("22", "用户挂起"),
+	FINISH("80", "已完成");
 
 	private final String code;
 	private final String desc;

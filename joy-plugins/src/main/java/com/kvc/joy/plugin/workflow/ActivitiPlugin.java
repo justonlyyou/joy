@@ -3,7 +3,7 @@ package com.kvc.joy.plugin.workflow;
 import org.activiti.engine.ProcessEngines;
 import org.springframework.stereotype.Component;
 
-import com.kvc.joy.core.init.service.SpringManagedJoyPlugin;
+import com.kvc.joy.core.init.service.IJoyPlugin;
 import com.kvc.joy.core.init.support.JoyPropeties;
 
 /**
@@ -12,7 +12,7 @@ import com.kvc.joy.core.init.support.JoyPropeties;
  * @time 2013-3-17 下午9:19:27
  */
 @Component
-public class ActivitiPlugin extends SpringManagedJoyPlugin {
+public class ActivitiPlugin implements IJoyPlugin {
 
 	@Override
 	public String getName() {
@@ -40,8 +40,18 @@ public class ActivitiPlugin extends SpringManagedJoyPlugin {
 	}
 
 	@Override
-	public String getXmlPath() {
-		return "/conf/component-applicationContext-activiti.xml";
+	public String getSqlMigrationPrefix() {
+		return "ACTIVITI";
+	}
+
+	@Override
+	public String getPoPackage() {
+		return null;
+	}
+
+	@Override
+	public String getCtxConfLocation() {
+		return "classpath*:/conf/plugin-appCtx-activiti.xml";
 	}
 
 }

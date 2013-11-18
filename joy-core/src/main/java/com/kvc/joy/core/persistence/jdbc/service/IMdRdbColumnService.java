@@ -1,6 +1,6 @@
 package com.kvc.joy.core.persistence.jdbc.service;
 
-import java.util.List;
+import java.util.Map;
 
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
 
@@ -15,13 +15,13 @@ public interface IMdRdbColumnService {
 	/**
 	 * 
 	 * @param jndi
-	 * @param datasourceId
+	 * @param dsId
 	 * @param tableName
 	 * @return
 	 * @author 唐玮琳
 	 * @time 2013-2-3 下午9:25:26
 	 */
-	List<MdRdbColumn> getColumnsByDatasourceId(String datasourceId, String tableName);
+	Map<String, MdRdbColumn> getColumns(String dsId, String tableName);
 	
 	/**
 	 * 
@@ -33,6 +33,6 @@ public interface IMdRdbColumnService {
 	 * @author 唐玮琳
 	 * @time 2013年11月11日 上午12:15:05
 	 */
-	List<MdRdbColumn> getColumnsByJndi(String jndi, String tableName);
+//	Map<String, MdRdbColumn> getColumnsByJndi(String jndi, String tableName);
 
 }

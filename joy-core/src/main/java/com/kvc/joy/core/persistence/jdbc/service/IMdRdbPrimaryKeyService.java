@@ -12,13 +12,13 @@ public interface IMdRdbPrimaryKeyService {
 	/**
 	 * 
 	 * 
-	 * @param datasourceId
+	 * @param dsId
 	 * @param tableName
 	 * @return
 	 * @author 唐玮琳
 	 * @time 2013-2-3 下午9:24:38
 	 */
-	MdRdbPrimaryKey getPrimaryKeyByDatasourceId(String datasourceId, String tableName);
+	MdRdbPrimaryKey getPrimaryKey(String dsId, String tableName);
 	
 	/**
 	 * 
@@ -30,7 +30,7 @@ public interface IMdRdbPrimaryKeyService {
 	 * @author 唐玮琳
 	 * @time 2013年11月11日 上午12:27:47
 	 */
-	MdRdbPrimaryKey getPrimaryKeyByJndi(String jndi, String tableName);
+//	MdRdbPrimaryKey getPrimaryKeyByJndi(String jndi, String tableName);
 	
 	
 }

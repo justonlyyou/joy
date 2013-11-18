@@ -1,6 +1,6 @@
 package com.kvc.joy.core.persistence.jdbc.service.impl;
 
-import java.util.List;
+import java.util.Map;
 
 import org.springframework.cache.annotation.Cacheable;
 
@@ -18,14 +18,16 @@ public class MdRdbColumnCacheService implements IMdRdbColumnService {
 	private IMdRdbColumnService mdRdbColumnService;
 
 	@Cacheable(CACHE_NAME)
-	public List<MdRdbColumn> getColumnsByDatasourceId(String datasourceId, String tableName) {
-		return mdRdbColumnService.getColumnsByDatasourceId(datasourceId, tableName);
+	@Override
+	public Map<String, MdRdbColumn> getColumns(String datasourceId, String tableName) {
+		return mdRdbColumnService.getColumns(datasourceId, tableName);
 	}
 	
-	@Cacheable(CACHE_NAME)
-	public List<MdRdbColumn> getColumnsByJndi(String jndi, String tableName) {
-		return mdRdbColumnService.getColumnsByJndi(jndi, tableName);
-	}
+//	@Cacheable(CACHE_NAME)
+//	@Override
+//	public Map<String, MdRdbColumn> getColumnsByJndi(String jndi, String tableName) {
+//		return mdRdbColumnService.getColumnsByJndi(jndi, tableName);
+//	}
 	
 	public void setMdRdbColumnService(IMdRdbColumnService mdRdbColumnService) {
 		this.mdRdbColumnService = mdRdbColumnService;

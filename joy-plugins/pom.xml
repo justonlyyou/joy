@@ -65,6 +65,11 @@
 			<groupId>com.google.code.kaptcha</groupId>
 			<artifactId>google-kaptcha</artifactId>
 		</dependency>
+		
+		<dependency>
+            <groupId>com.googlecode.flyway</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
 
 	</dependencies>
 

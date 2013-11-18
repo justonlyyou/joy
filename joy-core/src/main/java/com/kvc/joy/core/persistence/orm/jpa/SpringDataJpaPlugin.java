@@ -2,7 +2,7 @@ package com.kvc.joy.core.persistence.orm.jpa;
 
 import org.springframework.stereotype.Component;
 
-import com.kvc.joy.core.init.service.SpringManagedJoyPlugin;
+import com.kvc.joy.core.init.service.IJoyPlugin;
 import com.kvc.joy.core.init.support.JoyPropeties;
 
 /**
@@ -11,7 +11,7 @@ import com.kvc.joy.core.init.support.JoyPropeties;
  * @time 2013-2-16 下午8:48:42
  */
 @Component
-public class SpringDataJpaPlugin extends SpringManagedJoyPlugin {
+public class SpringDataJpaPlugin implements IJoyPlugin {
 
 	@Override
 	public String getName() {
@@ -25,12 +25,12 @@ public class SpringDataJpaPlugin extends SpringManagedJoyPlugin {
 
 	@Override
 	public void startup() {
-		
+
 	}
 
 	@Override
 	public void destroy() {
-		
+
 	}
 
 	@Override
@@ -39,10 +39,18 @@ public class SpringDataJpaPlugin extends SpringManagedJoyPlugin {
 	}
 
 	@Override
-	public String getXmlPath() {
-		return "/conf/spring-data-jpa.xml";
+	public String getSqlMigrationPrefix() {
+		return "SPRING_DATA_JPA";
+	}
+
+	@Override
+	public String getPoPackage() {
+		return null;
 	}
 	
-	
+	@Override
+	public String getCtxConfLocation() {
+		return "classpath*:/conf/comp-appCtx-spring-data-jpa.xml";
+	}
 
 }

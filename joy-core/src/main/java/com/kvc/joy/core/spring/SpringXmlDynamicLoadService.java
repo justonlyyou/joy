@@ -28,12 +28,12 @@ public class SpringXmlDynamicLoadService implements BeanFactoryAware {
 	}
 
 	public void load(String... locations) {
-		logger.info("加载spring配置文件：");
 		if (ArrayTool.isNotEmpty(locations)) {
+			StringBuilder sb = new StringBuilder("\n加载以下spring配置文件：\n");
 			for (String location : locations) {
-				logger.info(location);
+				sb.append(location + "\n");
 			}
-			logger.info("加载spring配置文件：" + locations);
+			logger.info(sb.toString());
 			definitionReader.loadBeanDefinitions(locations);
 		}
 	}

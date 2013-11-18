@@ -2,7 +2,7 @@ package com.kvc.joy.plugin.report.jasperreports;
 
 import org.springframework.stereotype.Component;
 
-import com.kvc.joy.core.init.service.SpringManagedJoyPlugin;
+import com.kvc.joy.core.init.service.IJoyPlugin;
 import com.kvc.joy.core.init.support.JoyPropeties;
 
 /**
@@ -11,30 +11,26 @@ import com.kvc.joy.core.init.support.JoyPropeties;
  * @time 2013-2-27 下午10:39:51
  */
 @Component
-public class JasperReportsPlugin extends SpringManagedJoyPlugin {
+public class JasperReportsPlugin implements IJoyPlugin {
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+		return "JasperReports";
 	}
 
 	@Override
 	public int getInitPriority() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public void startup() {
-		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void destroy() {
-		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -43,8 +39,18 @@ public class JasperReportsPlugin extends SpringManagedJoyPlugin {
 	}
 
 	@Override
-	public String getXmlPath() {
-		return "/conf/component-applicationContext-jasperreports.xml";
+	public String getSqlMigrationPrefix() {
+		return "JASPERREPORTS";
+	}
+
+	@Override
+	public String getPoPackage() {
+		return null;
+	}
+
+	@Override
+	public String getCtxConfLocation() {
+		return "classpath*:/conf/plugin-appCtx-jasperreports.xml";
 	}
 
 }

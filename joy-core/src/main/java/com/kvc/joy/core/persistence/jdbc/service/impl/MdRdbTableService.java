@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,19 +12,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.kvc.joy.commons.lang.string.StringTool;
-import com.kvc.joy.core.init.support.JoyPropeties;
 import com.kvc.joy.core.persistence.jdbc.model.vo.DbMetaData;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbTable;
 import com.kvc.joy.core.persistence.jdbc.service.IMdRdbTableService;
 import com.kvc.joy.core.persistence.jdbc.support.enums.RdbType;
 import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
-import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
-import com.kvc.joy.core.sysres.datasrc.model.po.TSysDataSrc;
-import com.kvc.joy.core.sysres.datasrc.model.po.TSysDataSrc_;
 
 /**
  * 
+ * @since 1.0.0
  * @author 唐玮琳
  * @time 2013-2-3 下午9:39:00
  */
@@ -31,85 +29,31 @@ public class MdRdbTableService implements IMdRdbTableService {
 
 	private Logger logger = LoggerFactory.getLogger(getClass());
 
+//	@Override
+//	public Map<String, MdRdbTable> getTablesByJndi(String jndi) {
+//		logger.info("加载表元数据信息，jndi: " + jndi);
+//		if (StringTool.isBlank(jndi)) {
+//			return new HashMap<String, MdRdbTable>(0);
+//		} else {
+//			Connection conn = JdbcTool.getConnectionByJndi(jndi);
+//			return load(conn);
+//		}
+//	}
+	
 	@Override
-	public Map<String, MdRdbTable> getAllTables() {
-		logger.info("加载所有数据库所有表的元数据信息...");
-		Map<String, MdRdbTable> tableMap = new HashMap<String, MdRdbTable>();
-		List<TSysDataSrc> dsList = JpaTool.search(TSysDataSrc.class, TSysDataSrc_.deleted, false);
-		if (dsList.isEmpty()) {
-			dsList.add(null);
+	public Map<String, MdRdbTable> getTables(String dsId) {
+		logger.info("加载表元数据信息，datasourceId: " + dsId);
+		if (StringTool.isBlank(dsId)) {
+			return new HashMap<String, MdRdbTable>(0);
+		} else {
+			Connection conn = JdbcTool.getConnectionByDsId(dsId);
+			return load(conn);
 		}
-		for (TSysDataSrc ds : dsList) {
-			Map<String, MdRdbTable> tables = load(ds);
-			tableMap.putAll(tables);
-		}
-		return tableMap;
 	}
 	
-	@Override
-	public MdRdbTable getTableByJndi(String key) {
-		String[] values = key.split("-");
-		String jndi = values[0];
-		String tableName = values[1];
-		Connection conn = JdbcTool.getConnectionByJndi(jndi);
-		return getTable(conn, tableName);
-	}
-	
-	@Override
-	public MdRdbTable getTableByDatasourceId(String key) {
-		String[] values = key.split("-");
-		String datasourceId = values[0];
-		String tableName = values[1];
-		Connection conn = JdbcTool.getConnection(datasourceId);
-		return getTable(conn, tableName);
-	}
-	
-	public MdRdbTable getTable(Connection conn, String tableName) {
+	private Map<String, MdRdbTable> load(Connection conn) {
+		Map<String, MdRdbTable> tableMap = new LinkedHashMap<String, MdRdbTable>();
 		try {
-			DatabaseMetaData metaData = conn.getMetaData();
-			DbMetaData dbMetaData = new DbMetaData(metaData);
-			RdbType databaseType = dbMetaData.getDatabaseType();
-			Map<String, String> tableCommentMap = null;
-			if (databaseType == RdbType.MYSQL) {
-				tableCommentMap = getMySqlTableComments(dbMetaData);
-			}
-			ResultSet rsTable = metaData.getTables(null, metaData.getUserName(), tableName, null);
-			while (rsTable.next()) {
-				String tableType = rsTable.getString("TABLE_TYPE").toLowerCase();
-				String remarks = null;
-				if (tableCommentMap == null) {
-					remarks = rsTable.getString("REMARKS");	
-				} else {
-					remarks = tableCommentMap.get(tableName);
-				}
-				return new MdRdbTable(tableName, remarks, tableType);
-			}
-		} catch (Exception e) {
-			logger.error(e.getMessage(), e);
-		} finally {
-			JdbcTool.closeConnection(conn);
-		}
-		return null;
-	}
-
-	private Map<String, MdRdbTable> load(TSysDataSrc ds) {
-		Map<String, MdRdbTable> tableMap = new HashMap<String, MdRdbTable>();
-		Connection conn = null;
-		try {
-			String dsId = null;
-			String jndi = null;
-			if (ds == null) {
-				jndi = JoyPropeties.DB_JNDI;
-				dsId = JoyPropeties.DB_DATASOURCEID;
-			} else {
-				jndi = ds.getJndiName();
-				dsId = ds.getDatasourceId();
-			}
-			if (StringTool.isBlank(jndi)) {
-				conn = JdbcTool.getConnection(ds);
-			} else {
-				conn = JdbcTool.getConnectionByJndi(JoyPropeties.DB_JNDI);	
-			}
 			DatabaseMetaData metaData = conn.getMetaData();
 			DbMetaData dbMetaData = new DbMetaData(metaData);
 			RdbType databaseType = dbMetaData.getDatabaseType();
@@ -130,7 +74,7 @@ public class MdRdbTableService implements IMdRdbTableService {
 					}
 					MdRdbTable mdDbTable = new MdRdbTable(tableName, remarks, tableType);
 					
-					tableMap.put(getDataobjectKey(dsId, tableName), mdDbTable);
+					tableMap.put(tableName, mdDbTable);
 				}
 			}
 		} catch (Exception e) {
@@ -139,10 +83,6 @@ public class MdRdbTableService implements IMdRdbTableService {
 			JdbcTool.closeConnection(conn);
 		}
 		return tableMap;
-	}
-
-	private static String getDataobjectKey(String datasourceId, String tableName) {
-		return datasourceId + "-" + tableName;
 	}
 
 	protected Map<String, String> getMySqlTableComments(DbMetaData dbMetaData) {

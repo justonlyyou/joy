@@ -3,15 +3,15 @@ package com.kvc.joy.plugin.security.erbac.support.enums;
 import com.kvc.joy.commons.enums.EnumTool;
 import com.kvc.joy.commons.enums.ICodeEnum;
 
-public enum ResourceType implements ICodeEnum {
+public enum AuthResourceType implements ICodeEnum {
 
 	URL("01", "URL"),
-	METHOD("02", "方法");
+	METHOD("02", "类的方法");
 	
 	private String code;
 	private String desc;
 	
-	ResourceType(String code, String desc) {
+	AuthResourceType(String code, String desc) {
 		this.code = code;
 		this.desc = desc;
 	}
@@ -24,8 +24,8 @@ public enum ResourceType implements ICodeEnum {
 		return desc;
 	}
 	
-	public static ResourceType enumOf(String code) {
-		return EnumTool.enumOf(ResourceType.class, code);
+	public static AuthResourceType enumOf(String code) {
+		return EnumTool.enumOf(AuthResourceType.class, code);
 	}
 
 }

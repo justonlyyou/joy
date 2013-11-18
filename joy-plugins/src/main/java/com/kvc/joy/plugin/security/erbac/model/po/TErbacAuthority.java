@@ -12,7 +12,7 @@ import javax.persistence.Transient;
 
 import com.kvc.joy.core.persistence.entity.UuidCrudEntity;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
-import com.kvc.joy.plugin.security.erbac.support.enums.ResourceType;
+import com.kvc.joy.plugin.security.erbac.support.enums.AuthResourceType;
 
 @Entity
 @Table(name = "t_erbac_authority")
@@ -22,7 +22,7 @@ public class TErbacAuthority extends UuidCrudEntity {
 	private String parentId; // 父权限id
 	private String name; // 权限名称
 	private String resource; // 资源
-	private ResourceType resourceType; 
+	private AuthResourceType resourceType; 
 	private String domain; // 资源(某一类资源)
 	private String action; // 操作
 	private String instance; // 资源实例(某类资源特定的实例)
@@ -154,21 +154,21 @@ public class TErbacAuthority extends UuidCrudEntity {
 	}
 	
 	@Column(length = 2, nullable = false)
-	@Comment(value="资源类型代码", codeId="joy_code_resource_type")
+	@Comment(value="资源类型代码", codeId="joy_code_auth_res_type")
 	public String getResourceTypeCode() {
 		return resourceType == null ? null : resourceType.getCode();
 	}
 
 	public void setResourceTypeCode(String typeCode) {
-		this.resourceType = ResourceType.enumOf(typeCode);
+		this.resourceType = AuthResourceType.enumOf(typeCode);
 	}
 
 	@Transient
-	public ResourceType getResourceType() {
+	public AuthResourceType getResourceType() {
 		return resourceType;
 	}
 
-	public void setResourceType(ResourceType resourceType) {
+	public void setResourceType(AuthResourceType resourceType) {
 		this.resourceType = resourceType;
 	}
 

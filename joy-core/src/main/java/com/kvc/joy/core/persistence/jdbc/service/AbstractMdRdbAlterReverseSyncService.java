@@ -10,7 +10,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.kvc.joy.commons.collections.CollectionTool;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.core.init.support.JoyPropeties;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
@@ -40,8 +39,7 @@ public abstract class AbstractMdRdbAlterReverseSyncService implements IMdRdbAlte
 
 	protected List<String> genTableCommentSql(List<MdRdbTable> tables) {
 		List<String> sqlList = new ArrayList<String>();
-		List<MdRdbTable> tablesInDb = JdbcTool.getTables(JoyPropeties.DB_DATASOURCEID);
-		Map<Object, MdRdbTable> tableMap = CollectionTool.toEntityMap(tablesInDb, "name");
+		Map<String, MdRdbTable> tableMap = JdbcTool.getTables(JoyPropeties.DB_DATASOURCEID);
 		for (MdRdbTable table : tables) {
 			String tableComment = table.getComment();
 			if (StringTool.isNotBlank(tableComment)) {
@@ -66,9 +64,7 @@ public abstract class AbstractMdRdbAlterReverseSyncService implements IMdRdbAlte
 	protected List<String> genColumnCommentSql(List<MdRdbTable> tables) {
 		List<String> sqlList = new ArrayList<String>();
 		for (MdRdbTable table : tables) {
-			List<MdRdbColumn> columnsInDb = JdbcTool.getColumnsByJndi(JoyPropeties.DB_JNDI, table.getName());
-			Map<Object, MdRdbColumn> columnMap = CollectionTool.toEntityMap(columnsInDb, "name");
-			
+			Map<String, MdRdbColumn> columnMap = JdbcTool.getColumns(JoyPropeties.DB_DATASOURCEID, table.getName());
 			Collection<MdRdbColumn> columns = table.getColumns();
 			for (MdRdbColumn column : columns) {
 				String columnName = column.getName();
@@ -106,21 +102,21 @@ public abstract class AbstractMdRdbAlterReverseSyncService implements IMdRdbAlte
 	
 	protected void executeSql(List<String> sqlList) {
 		if(sqlList.isEmpty() == false && logger.isDebugEnabled()) {
-			StringBuilder sb = new StringBuilder("\n表结构更新SQL语句如下: \n");
+			StringBuilder sb = new StringBuilder("\n实体表结构更新SQL语句如下: \n");
 			for (String sql : sqlList) {
 				sb.append(sql + "\n");
 			}
 			logger.debug(sb.toString());
 		}
 		if (sqlList.isEmpty()) {
-			logger.info("表结构未改变，不用同步数据库。");
+			logger.info("实体表结构未改变，不用同步数据库。");
 		} else {
-			logger.info("开始更新表结构...");
+			logger.info("开始更新实体表结构...");
 			long start = System.currentTimeMillis();
 			String[] sqls = sqlList.toArray(new String[0]);
 			JdbcTool.jdbcTemplate().batchUpdate(sqls);
 			long end = System.currentTimeMillis();
-			logger.info("表结构更新完成，共执行" + sqlList.size() + "条SQL语句，耗时" + ((end - start) / 1000) + "秒。");
+			logger.info("实体表结构更新完成，共执行" + sqlList.size() + "条SQL语句，耗时" + ((end - start) / 1000) + "秒。");
 		}
 	}
 

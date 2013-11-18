@@ -31,7 +31,8 @@
 	</bean>
 
 	<!-- supports: Hibernate、OpenJPA、TopLink、EclipseJPA -->
-	<bean id="jpaVendorAdapter" class="${jpa.vendorAdapterClass}">
+<!-- 	<bean id="jpaVendorAdapter" class="${jpa.vendorAdapterClass}"> -->
+	<bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 		<property name="showSql" value="${jpa.showSql}"></property>
 		<property name="generateDdl" value="${jpa.generateDdl}"></property>
 	</bean>
@@ -49,6 +50,8 @@
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
+	
+	<bean id="jpaTool" class="com.kvc.joy.core.persistence.orm.jpa.JpaTool"/>
 	
     <!-- 
 	<bean name="openEntityManagerInViewInterceptor"

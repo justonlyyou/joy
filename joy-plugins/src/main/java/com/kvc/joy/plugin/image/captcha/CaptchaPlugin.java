@@ -2,7 +2,7 @@ package com.kvc.joy.plugin.image.captcha;
 
 import org.springframework.stereotype.Component;
 
-import com.kvc.joy.core.init.service.SpringManagedJoyPlugin;
+import com.kvc.joy.core.init.service.IJoyPlugin;
 import com.kvc.joy.core.init.support.JoyPropeties;
 
 /**
@@ -12,7 +12,7 @@ import com.kvc.joy.core.init.support.JoyPropeties;
  * @time 2013年9月21日 下午5:28:21
  */
 @Component
-public class CaptchaPlugin extends SpringManagedJoyPlugin {
+public class CaptchaPlugin implements IJoyPlugin {
 
 	@Override
 	public String getName() {
@@ -38,8 +38,19 @@ public class CaptchaPlugin extends SpringManagedJoyPlugin {
 	}
 
 	@Override
-	public String getXmlPath() {
-		return "/conf/component-applicationContext-captcha.xml";
+	public String getSqlMigrationPrefix() {
+		return "CAPTCHA";
 	}
 
+	@Override
+	public String getPoPackage() {
+		return null;
+	}
+
+	@Override
+	public String getCtxConfLocation() {
+		return "classpath*:/conf/comp-appCtx-captcha.xml";
+	}
+
+	
 }

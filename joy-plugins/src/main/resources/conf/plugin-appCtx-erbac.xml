@@ -68,5 +68,8 @@
 	</bean>
 
 	<bean id="userPermissionService" class="com.kvc.joy.plugin.security.erbac.service.impl.UserPermissionService" />
+	
+	<bean class="com.kvc.joy.plugin.security.erbac.dao.impl.TErbacAuthorityDao" />
+	
 
 </beans>

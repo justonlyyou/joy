@@ -22,5 +22,8 @@
 			<ref bean="sysCodeService"/>
 		</property>
 	</bean>
-
+	
+	<!-- 系统菜单服务 -->
+	<bean id="sysMenuService" class="com.kvc.joy.core.sysres.menu.service.impl.SysMenuService" />
+	
 </beans>

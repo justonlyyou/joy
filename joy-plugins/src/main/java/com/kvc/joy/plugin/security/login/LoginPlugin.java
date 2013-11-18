@@ -2,8 +2,9 @@ package com.kvc.joy.plugin.security.login;
 
 import org.springframework.stereotype.Component;
 
-import com.kvc.joy.core.init.service.SpringManagedJoyPlugin;
+import com.kvc.joy.core.init.service.IJoyPlugin;
 import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.plugin.security.login.model.po.TLoginLog;
 
 /**
  * 
@@ -12,7 +13,7 @@ import com.kvc.joy.core.init.support.JoyPropeties;
  * @time 2013年9月29日 上午1:28:49
  */
 @Component
-public class LoginPlugin extends SpringManagedJoyPlugin {
+public class LoginPlugin implements IJoyPlugin {
 
 	@Override
 	public String getName() {
@@ -38,8 +39,18 @@ public class LoginPlugin extends SpringManagedJoyPlugin {
 	}
 
 	@Override
-	public String getXmlPath() {
-		return "/conf/component-applicationContext-login.xml";
+	public String getSqlMigrationPrefix() {
+		return "LOGIN";
+	}
+
+	@Override
+	public String getPoPackage() {
+		return TLoginLog.class.getPackage().getName();
+	}
+	
+	@Override
+	public String getCtxConfLocation() {
+		return "classpath*:/conf/plugin-appCtx-login.xml";
 	}
 
 }

@@ -27,9 +27,9 @@ public class MySqlAlterReverseSyncService extends AbstractMdRdbAlterReverseSyncS
 	@Override
 	protected String getAlterColumnCommentSql(MdRdbTable table, MdRdbColumn column, MdRdbColumn columnInDb) {
 		String columnName = column.getName();
-		String type = columnInDb.getType();
+		String type = columnInDb.getType().toLowerCase();
 		Integer length = columnInDb.getLength();
-		if (length != null) {
+		if (length != null && type.startsWith("date") == false) {
 			type += "(";
 			BigDecimal precision = columnInDb.getPrecision();
 			if (precision == null || precision.intValue() == 0) {
@@ -41,7 +41,7 @@ public class MySqlAlterReverseSyncService extends AbstractMdRdbAlterReverseSyncS
 		}
 		String defaultValue = columnInDb.getDefaultValue();
 		if (StringTool.isNotBlank(defaultValue)) {
-			if(type.startsWith("VARCHAR")) {
+			if(type.startsWith("varchar")) {
 				defaultValue = "'" + defaultValue + "'";
 			}
 			defaultValue = "DEFAULT " + defaultValue; 
@@ -58,8 +58,8 @@ public class MySqlAlterReverseSyncService extends AbstractMdRdbAlterReverseSyncS
 	protected String getAlterColumnDefaultValueSql(MdRdbTable table, MdRdbColumn column, MdRdbColumn columnInDb) {
 		String columnName = column.getName();
 		String defaultValue = column.getDefaultValue();
-		String type = columnInDb.getType();
-		if(type.startsWith("VARCHAR")) {
+		String type = columnInDb.getType().toLowerCase();
+		if(type.startsWith("varchar")) {
 			defaultValue = "'" + defaultValue + "'";
 		}
 		return MessageFormat.format(ALTER_COLUMN_DEFAULT_VALUE_SQL, table.getName(), columnName, defaultValue);

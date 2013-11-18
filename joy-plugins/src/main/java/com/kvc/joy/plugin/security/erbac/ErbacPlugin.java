@@ -2,8 +2,9 @@ package com.kvc.joy.plugin.security.erbac;
 
 import org.springframework.stereotype.Component;
 
-import com.kvc.joy.core.init.service.SpringManagedJoyPlugin;
+import com.kvc.joy.core.init.service.IJoyPlugin;
 import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser;
 
 /**
  * 
@@ -11,18 +12,20 @@ import com.kvc.joy.core.init.support.JoyPropeties;
  * @time 2013-2-14 上午10:35:38
  */
 @Component
-public class ErbacPlugin extends SpringManagedJoyPlugin {
+public class ErbacPlugin implements IJoyPlugin {
 
 	public String getName() {
 		return "扩展的基于角色访问控制";
 	}
 
 	public void startup() {
-//		EhCacheManager shiroCacheManager = PluginBeanFactory.getShiroCacheManager();
-//		if (JoyPropeties.ehchcheEnabled) {
-//			EhCacheManagerFactoryBean ehCacheManagerFactory = PluginBeanFactory.getEhCacheManagerFactory();
-//			shiroCacheManager.setCacheManager(ehCacheManagerFactory.getObject());
-//		}
+		// EhCacheManager shiroCacheManager =
+		// PluginBeanFactory.getShiroCacheManager();
+		// if (JoyPropeties.ehchcheEnabled) {
+		// EhCacheManagerFactoryBean ehCacheManagerFactory =
+		// PluginBeanFactory.getEhCacheManagerFactory();
+		// shiroCacheManager.setCacheManager(ehCacheManagerFactory.getObject());
+		// }
 	}
 
 	public void destroy() {
@@ -39,8 +42,18 @@ public class ErbacPlugin extends SpringManagedJoyPlugin {
 	}
 
 	@Override
-	public String getXmlPath() {
-		return "/conf/component-applicationContext-erbac.xml";
+	public String getSqlMigrationPrefix() {
+		return "ERBAC";
+	}
+
+	@Override
+	public String getPoPackage() {
+		return TErbacUser.class.getPackage().getName();
+	}
+
+	@Override
+	public String getCtxConfLocation() {
+		return "classpath*:/conf/plugin-appCtx-erbac.xml";
 	}
 
 }

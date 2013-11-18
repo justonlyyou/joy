@@ -25,15 +25,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Sort.Order;
 import org.springframework.orm.jpa.JpaCallback;
 import org.springframework.orm.jpa.JpaTemplate;
-import org.springframework.stereotype.Repository;
 
 import com.kvc.joy.commons.bean.IEntity;
 import com.kvc.joy.commons.support.GroupExecutor;
 import com.kvc.joy.core.persistence.support.QueryLogics;
 import com.kvc.joy.core.rp.pagestore.PageStore;
-import com.kvc.joy.core.spring.utils.SpringBeanTool;
+import com.kvc.joy.core.spring.utils.CoreBeanFactory;
 
-@Repository
 @SuppressWarnings("rawtypes")
 public class JpaTool extends BaseJpaDao {
 
@@ -43,7 +41,7 @@ public class JpaTool extends BaseJpaDao {
 	}
 
 	private static JpaTool getInstance() {
-		return SpringBeanTool.getBean(JpaTool.class);
+		return (JpaTool) CoreBeanFactory.getJpaTool();
 	}
 
 	public static void persist(Object engity) {

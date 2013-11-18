@@ -7,11 +7,13 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
 
 import com.kvc.joy.core.ehcache.support.IEhCacheHolder;
-import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbTable;
+import com.kvc.joy.core.persistence.flyway.service.IRdbObjectsInitService;
+import com.kvc.joy.core.persistence.jdbc.dao.BaseJdbcDao;
 import com.kvc.joy.core.persistence.jdbc.service.IMdRdbAlterReverseSyncService;
 import com.kvc.joy.core.persistence.jdbc.service.IMdRdbColumnService;
 import com.kvc.joy.core.persistence.jdbc.service.IMdRdbPrimaryKeyService;
 import com.kvc.joy.core.persistence.jdbc.service.IMdRdbTableService;
+import com.kvc.joy.core.persistence.orm.jpa.BaseJpaDao;
 import com.kvc.joy.core.spring.SpringXmlDynamicLoadService;
 import com.kvc.joy.core.sysres.code.service.ISysCodeCacheService;
 import com.kvc.joy.core.sysres.code.service.ISysCodeService;
@@ -26,6 +28,15 @@ import com.kvc.joy.core.sysres.param.service.ISysParamService;
  * @time 2012-6-7 下午9:06:16
  */
 public class CoreBeanFactory {
+	
+	@SuppressWarnings("rawtypes")
+	public static BaseJpaDao getJpaTool() {
+		return (BaseJpaDao) SpringBeanTool.getBean("jpaTool");
+	}
+	
+	public static BaseJdbcDao getJdbcTool() {
+		return (BaseJdbcDao) SpringBeanTool.getBean("jdbcTool");
+	}
 
 	public static JdbcTemplate getJdbcTemplate() {
 		return (JdbcTemplate) SpringBeanTool.getBean("jdbcTemplate");
@@ -73,9 +84,8 @@ public class CoreBeanFactory {
 	 * @author 唐玮琳
 	 * @time 2013-2-3 下午10:01:02
 	 */
-	@SuppressWarnings("unchecked")
-	public static IEhCacheHolder<String, MdRdbTable> getMdRdbTableCacheService() {
-		return (IEhCacheHolder<String, MdRdbTable>) SpringBeanTool.getBean("mdRdbTableCacheService");
+	public static IMdRdbTableService getMdRdbTableCacheService() {
+		return (IMdRdbTableService) SpringBeanTool.getBean("mdRdbTableCacheService");
 	}
 
 	/**
@@ -173,6 +183,10 @@ public class CoreBeanFactory {
 	
 	public static IMdRdbAlterReverseSyncService getOracleAlterReverseSyncService() {
 		return (IMdRdbAlterReverseSyncService) SpringBeanTool.getBean("oracleAlterReverseSyncService");
+	}
+	
+	public static IRdbObjectsInitService getRdbObjectsInitService() {
+		return (IRdbObjectsInitService) SpringBeanTool.getBean("rdbObjectsInitService");
 	}
 	
 }

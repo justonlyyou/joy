@@ -12,6 +12,9 @@
 		http://www.springframework.org/schema/util/spring-util.xsd">
 
 	<context:property-placeholder location="classpath*:/conf/quartz.properties" ignore-unresolvable="true" />
+	
+	<bean class="com.kvc.joy.plugin.schedule.quartz.dao.TQrtzJobPlanCfgDao" />
+	
 
 	<!-- 
 	<bean name="dfsMoveJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">

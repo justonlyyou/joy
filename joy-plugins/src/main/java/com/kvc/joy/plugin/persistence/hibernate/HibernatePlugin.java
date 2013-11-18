@@ -2,7 +2,7 @@ package com.kvc.joy.plugin.persistence.hibernate;
 
 import org.springframework.stereotype.Component;
 
-import com.kvc.joy.core.init.service.SpringManagedJoyPlugin;
+import com.kvc.joy.core.init.service.IJoyPlugin;
 import com.kvc.joy.core.init.support.JoyPropeties;
 
 /**
@@ -12,7 +12,7 @@ import com.kvc.joy.core.init.support.JoyPropeties;
  * @time 2013年10月3日 下午8:36:42
  */
 @Component
-public class HibernatePlugin extends SpringManagedJoyPlugin {
+public class HibernatePlugin implements IJoyPlugin {
 
 	@Override
 	public String getName() {
@@ -31,7 +31,7 @@ public class HibernatePlugin extends SpringManagedJoyPlugin {
 	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -40,8 +40,18 @@ public class HibernatePlugin extends SpringManagedJoyPlugin {
 	}
 
 	@Override
-	public String getXmlPath() {
-		return "/conf/component-applicationContext-hibernate.xml";
+	public String getSqlMigrationPrefix() {
+		return "HIBERNATE";
+	}
+
+	@Override
+	public String getPoPackage() {
+		return null;
+	}
+
+	@Override
+	public String getCtxConfLocation() {
+		return "classpath*:/conf/plugin-appCtx-hibernate.xml";
 	}
 
 }

@@ -8,6 +8,26 @@ package com.kvc.joy.core.init.service;
 public interface IJoyPlugin {
 	
 	/**
+	 * 获取数据库更新脚本文件前缀
+	 * 
+	 * @return
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年11月16日 下午5:58:34
+	 */
+	String getSqlMigrationPrefix();
+	
+	/**
+	 * 获取持久对象包名(可包含*号通配符)
+	 * 
+	 * @return
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年11月16日 下午6:02:32
+	 */
+	String getPoPackage();
+	
+	/**
 	 * 
 	 * 
 	 * @return
@@ -24,14 +44,6 @@ public interface IJoyPlugin {
 	 * @time 2013-2-14 下午8:11:09
 	 */
 	int getInitPriority();
-	
-	/**
-	 * 
-	 * 
-	 * @author 唐玮琳
-	 * @time 2013-2-3 下午11:13:24
-	 */
-	void init();
 	
 	/**
 	 * 
@@ -58,6 +70,14 @@ public interface IJoyPlugin {
 	 */
 	boolean isEnabled();
 	
-	String getXmlPath();
-
+	/**
+	 * 
+	 * 
+	 * @return
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年11月17日 上午12:33:33
+	 */
+	String getCtxConfLocation();
+	
 }
