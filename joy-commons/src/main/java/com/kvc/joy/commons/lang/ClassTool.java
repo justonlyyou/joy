@@ -1,10 +1,14 @@
 package com.kvc.joy.commons.lang;
 
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Method;
+import java.net.URLDecoder;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.kvc.joy.commons.exception.SystemException;
 
 /**
  * 类工具
@@ -45,6 +49,64 @@ public class ClassTool {
 		}
 		return clazz;
 	}
+	
+	/**
+     * 实例化指定名字的类
+     *
+     * @param className 要实例化的全限定名字的类
+     * @return 实例
+     * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 *             InstantiationException, IllegalAccessException, ClassNotFoundException
+     */
+    public static synchronized Object instantiate(String className) {
+        try {
+			return Class.forName(className, true, getClassLoader()).newInstance();
+		} catch(Exception e) {
+			throw new SystemException(e);
+		}
+    }
+
+    private static ClassLoader getClassLoader() {
+        return Thread.currentThread().getContextClassLoader();
+    }
+
+    /**
+     * 确认指定名称的类是否存在并且可被加载。当它自己或它依赖的类不存在或不能被加载时，将返回false
+     * 
+     * @param className 全限定类名
+     * @return 类是否存在并且可被加载
+     * @since 1.0.0
+     * @author 唐玮琳
+     * @time 2013年11月20日 上午12:42:57
+     */
+    public static boolean isPresent(String className) {
+        try {
+            getClassLoader().loadClass(className);
+            return true;
+        } catch (Throwable ex) {
+            // Class or one of its dependencies is not present...
+            return false;
+        }
+    }
+
+    /**
+     * 获取类在磁盘上的物理位置
+     * 
+     * @param aClass 要获取位置的类
+     * @return 类文件的绝对路径
+     * @since 1.0.0
+     * @author 唐玮琳
+     * @time 2013年11月20日 上午12:45:58
+     */
+    public static String getLocationOnDisk(Class<?> aClass) {
+        try {
+            String url = aClass.getProtectionDomain().getCodeSource().getLocation().getPath();
+            return URLDecoder.decode(url, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            //Can never happen.
+            return null;
+        }
+    }
 
 	// vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 	// 封装org.apache.commons.lang3.ClassUtils
