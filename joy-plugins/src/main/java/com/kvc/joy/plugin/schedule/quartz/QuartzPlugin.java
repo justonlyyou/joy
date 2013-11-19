@@ -31,7 +31,7 @@ public class QuartzPlugin implements IJoyPlugin {
 		try {
 			scheduler.start();
 		} catch (SchedulerException e) {
-			throw new SystemException("quartz调度器启动失败！", e);
+			throw new SystemException(e, "quartz调度器启动失败！");
 		}
 
 		PluginBeanFactory.getQuartzTriggersHolder().loadTriggers();
@@ -42,12 +42,12 @@ public class QuartzPlugin implements IJoyPlugin {
 		try {
 			scheduler.shutdown();
 		} catch (SchedulerException e) {
-			throw new SystemException("quartz调度器关闭失败！", e);
+			throw new SystemException(e, "quartz调度器关闭失败！");
 		}
 		// try {
 		// schedulerFactory.destroy();
 		// } catch (SchedulerException e) {
-		// throw new JoyException("quartz调度器工厂销毁失败！", e);
+		// throw new SystemException(e, "quartz调度器工厂销毁失败！");
 		// }
 	}
 

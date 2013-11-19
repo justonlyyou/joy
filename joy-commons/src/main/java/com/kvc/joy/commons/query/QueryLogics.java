@@ -1,4 +1,4 @@
-package com.kvc.joy.core.persistence.support;
+package com.kvc.joy.commons.query;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,29 +6,27 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort.Direction;
-import org.springframework.data.domain.Sort.Order;
-
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
+import com.kvc.joy.commons.query.sort.Direction;
+import com.kvc.joy.commons.query.sort.Order;
 
 /**
  * 
  * @author 唐玮琳
  * @time 2012-6-19 下午9:45:39
  */
-public class QueryLogics {
-	
+public class QueryLogics implements java.io.Serializable {
+
 	public static final String KEY_PREFIX_ORDER_BY = "_joy_key__order_by_";
 	public static final String KEY_PREFIX_ORDER = "_joy_key__order_value_";
 	public static final String KEY_PREFIX_ORDER_DEFAULT = "_joy_key__order_default_";
 
-	private Pageable pageable;
+	private Paging paging;
 	private Map<String, QueryLogic> conditions = new LinkedHashMap<String, QueryLogic>(0);
 	private Map<String, String> orderMap = new HashMap<String, String>(0);
-	private Logger logger = LoggerFactory.getLogger(getClass());
+	protected static final Log logger = LogFactory.getLog(QueryLogic.class);
 
 	public QueryLogicOperator getOperator(String field) {
 		QueryLogic queryLogic = conditions.get(field);
@@ -56,12 +54,12 @@ public class QueryLogics {
 		conditions.put(fieldName, new QueryLogic(operator, fieldValue));
 	}
 
-	public Pageable getPageable() {
-		return pageable;
+	public Paging getPaging() {
+		return paging;
 	}
 
-	public void setPageable(Pageable pageable) {
-		this.pageable = pageable;
+	public void setPaging(Paging paging) {
+		this.paging = paging;
 	}
 
 	public Map<String, QueryLogic> getConditions() {
@@ -78,9 +76,9 @@ public class QueryLogics {
 			String order = orderMap.get(key);
 			try {
 				Direction direction = Direction.fromString(order);
-				orders.add(new Order(direction, key));
+				orders.add(new Order(key, direction));
 			} catch (Exception e) {
-				logger.error(e.getMessage(), e);
+				logger.error(e, e.getMessage());
 			}
 		}
 		return orders;
@@ -98,9 +96,9 @@ public class QueryLogics {
 	public void setOrderMap(Map<String, String> orderMap) {
 		this.orderMap = orderMap;
 	}
-	
+
 	public static void main(String[] args) {
 		System.out.println(Direction.fromString("d"));
 	}
-	
+
 }

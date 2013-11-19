@@ -2,43 +2,15 @@ package com.kvc.joy.commons.exception;
 
 import java.net.ConnectException;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * 服务层抛出的异常
  * 
  * @since 1.0.0
  * @author <b>唐玮琳</b>
  */
-public class ServiceException extends RuntimeException {
+public class ServiceException extends JoyRuntimeException {
 
-	private static final long serialVersionUID = -6627301388547321950L;
-	private static Logger logger = LoggerFactory.getLogger(ServiceException.class);
 	private String url;
-
-	public ServiceException(String message) {
-		super(message);
-		type = BUSINESS_EXCETION;
-		logger.error(message);
-	}
-
-	public ServiceException(String message, Throwable cause) {
-		super(message, cause);
-		logger.error(message, cause);
-	}
-	
-	public ServiceException(String message, Throwable cause, boolean log) {
-		super(message, cause);
-		if(log) {
-			logger.error(message, cause);	
-		}
-	}
-
-	public ServiceException(Exception ex) {
-		this(ex.getMessage(), ex);
-	}
-
 	private int type;
 
 	/**
@@ -58,6 +30,23 @@ public class ServiceException extends RuntimeException {
 	 * 业务异常
 	 */
 	public static final int BUSINESS_EXCETION = 2;
+
+	public ServiceException(String message, Object... args) {
+		super(message, args);
+		type = BUSINESS_EXCETION;
+	}
+
+	public ServiceException(Throwable cause, String message, Object... args) {
+		super(cause, message, args);
+	}
+	
+	public ServiceException(Throwable cause, boolean log, String message, Object... args) {
+		super(cause, log, message, args);
+	}
+
+	public ServiceException(Throwable ex) {
+		super(ex);
+	}
 
 	public String getMessage() {
 		String msg = super.getMessage();

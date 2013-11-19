@@ -1,8 +1,7 @@
 package com.kvc.joy.plugin.seqgen.support;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.plugin.seqgen.po.TSysSeqNum;
 import com.kvc.joy.plugin.seqgen.po.TSysSeqNumRule;
 
@@ -21,7 +20,7 @@ public class SequenceCache {
 	private boolean newCycle;
 	
 	private TSysSeqNum seqNum;	
-	private Logger logger = LoggerFactory.getLogger(getClass());
+	protected static final Log logger = LogFactory.getLog(SequenceCache.class);
 	
 	public SequenceCache(TSysSeqNum seqNum) {
 		this.seqNum = seqNum;

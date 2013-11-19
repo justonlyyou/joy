@@ -3,9 +3,10 @@ package com.kvc.joy.core.init.support;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
+
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * 
@@ -15,7 +16,7 @@ import org.springframework.core.io.support.PropertiesLoaderUtils;
  */
 public abstract class BaseProperties {
 
-	protected static Logger logger = LoggerFactory.getLogger(BaseProperties.class);
+	protected static final Log logger = LogFactory.getLog(BaseProperties.class);
 	protected Properties properties;
 
 	protected Properties getProperties() {
@@ -23,7 +24,7 @@ public abstract class BaseProperties {
 			try {
 				properties = PropertiesLoaderUtils.loadAllProperties(getPropertiesFile());
 			} catch (IOException e) {
-				logger.error("加载" + getPropertiesFile() + "文件出错！", e);
+				logger.error(e, "加载" + getPropertiesFile() + "文件出错！");
 			}
 		}
 		return properties;

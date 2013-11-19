@@ -10,15 +10,14 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.plugin.security.login.support.ipmatch.IpMatchFacility;
 
 public class AxisFilter implements Filter{
 	
-	private static Logger logger = LoggerFactory.getLogger(AxisFilter.class);
+	protected static final Log logger = LogFactory.getLog(AxisFilter.class);
 	
 	private IpMatchFacility ipMatch;
 

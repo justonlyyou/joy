@@ -57,7 +57,7 @@ public class ClassPathResource implements Comparable<ClassPathResource>, Resourc
 		try {
 			return URLDecoder.decode(url.getPath(), "UTF-8");
 		} catch (UnsupportedEncodingException e) {
-			throw new SystemException("Unknown encoding: UTF-8", e);
+			throw new SystemException(e, "Unknown encoding: UTF-8");
 		}
 	}
 

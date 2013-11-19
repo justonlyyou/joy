@@ -7,12 +7,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.collections.ListTool;
 import com.kvc.joy.commons.lang.ArrayTool;
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * ip工具类
@@ -25,7 +24,7 @@ public class IpTool {
 
 	// 二进制32位为全1的整数值
 	private static final long ALL32ONE = 4294967295L;
-	private static Logger logger = LoggerFactory.getLogger(IpTool.class);
+	protected static final Log logger = LogFactory.getLog(IpTool.class);
 
 	/**
 	 * <p>
@@ -312,7 +311,7 @@ public class IpTool {
     	try {
 			return InetAddress.getLocalHost().getHostAddress();
 		} catch (UnknownHostException e) {
-			logger.error(e.getMessage(), e);
+			logger.error(e);
 			return null;
 		}
     }

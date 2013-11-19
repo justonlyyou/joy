@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.kvc.joy.commons.bean.TreeNode;
 import com.kvc.joy.commons.collections.ListTool;
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.support.ListToTreeConvertor;
 import com.kvc.joy.core.persistence.orm.jpa.JpaOrder;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
@@ -19,7 +19,7 @@ import com.kvc.joy.core.sysres.menu.service.ISysMenuService;
 
 public class SysMenuService implements ISysMenuService {
 
-	private Logger logger = LoggerFactory.getLogger(getClass());
+	protected static final Log logger = LogFactory.getLog(SysMenuService.class);
 
 	@Override
 	public List<TreeNode<TSysMenu>> getAllMenus(String userId) {

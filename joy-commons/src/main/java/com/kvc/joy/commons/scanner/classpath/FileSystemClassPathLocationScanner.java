@@ -22,17 +22,16 @@ import java.net.URLDecoder;
 import java.util.Set;
 import java.util.TreeSet;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.io.FileTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * ClassPathLocationScanner for the file system.
  */
 public class FileSystemClassPathLocationScanner implements ClassPathLocationScanner {
 
-	private static final Logger LOG = LoggerFactory.getLogger(FileSystemClassPathLocationScanner.class);
+	protected static final Log LOG = LogFactory.getLog(FileSystemClassPathLocationScanner.class);
 
 	public Set<String> findResourceNames(String location, URL locationUrl) throws IOException {
 		String filePath = FileTool.toFile(locationUrl).getParent();

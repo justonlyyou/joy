@@ -8,10 +8,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.web.support.utils.HttpRequestTool;
 
 /**
@@ -21,7 +20,7 @@ import com.kvc.joy.web.support.utils.HttpRequestTool;
 public class ExtModelAction {
 
 	private transient static final Map<String, List<ExtDataField>> fieldMap = new HashMap<String, List<ExtDataField>>();
-	private transient Logger logger = LoggerFactory.getLogger(getClass());
+	protected static final Log logger = LogFactory.getLog(ExtModelAction.class);
 
 	public List<ExtDataField> fetchFields() {
 		String className = HttpRequestTool.getParameter("className"); // // extjs模型javascript类名，也即POJO全类名
@@ -51,7 +50,7 @@ public class ExtModelAction {
 			}
 			fieldMap.put(className, fieldList);
 		} catch (Exception e) {
-			logger.error("getModelFields()出错！", e);
+			logger.error(e, "getModelFields()出错！");
 		}
 		return fieldList;
 	}

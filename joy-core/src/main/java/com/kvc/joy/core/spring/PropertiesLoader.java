@@ -12,13 +12,13 @@ import java.io.InputStream;
 import java.util.NoSuchElementException;
 import java.util.Properties;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 
 import com.kvc.joy.commons.io.IoTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * Properties文件载入工具类. 可载入多个properties文件, 相同的属性在最后载入的文件中的值将会覆盖之前的值，但以System的Property优先.
@@ -26,7 +26,7 @@ import com.kvc.joy.commons.io.IoTool;
  */
 public class PropertiesLoader {
 
-	private static Logger logger = LoggerFactory.getLogger(PropertiesLoader.class);
+	protected static final Log logger = LogFactory.getLog(PropertiesLoader.class);
 
 	private static ResourceLoader resourceLoader = new DefaultResourceLoader();
 

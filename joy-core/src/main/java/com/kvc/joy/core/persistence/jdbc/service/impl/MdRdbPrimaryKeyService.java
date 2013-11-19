@@ -7,10 +7,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbPrimaryKey;
 import com.kvc.joy.core.persistence.jdbc.service.IMdRdbPrimaryKeyService;
@@ -24,7 +23,7 @@ import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
  */
 public class MdRdbPrimaryKeyService  implements IMdRdbPrimaryKeyService {
 
-	private Logger logger = LoggerFactory.getLogger(getClass());
+	protected static final Log logger = LogFactory.getLog(MdRdbPrimaryKeyService.class);
 	
 	@Override
 	public MdRdbPrimaryKey getPrimaryKey(String dsId, String tableName) {
@@ -62,7 +61,7 @@ public class MdRdbPrimaryKeyService  implements IMdRdbPrimaryKeyService {
 				primaryKey.getColumns().add(column);
 			}
 		} catch (Exception e) {
-			logger.error(e.getMessage(), e);
+			logger.error(e);
 		} finally {
 			JdbcTool.closeConnection(conn);
 		}

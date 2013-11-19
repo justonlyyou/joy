@@ -1,9 +1,9 @@
-package com.kvc.joy.core.persistence.support;
+package com.kvc.joy.commons.query;
 
 import javax.persistence.Transient;
 
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import com.kvc.joy.commons.query.sort.Sort;
+
 
 /**
  * 分页接口
@@ -11,7 +11,7 @@ import org.springframework.data.domain.Sort;
  * @author 唐玮琳
  * @time 2012-6-5 下午10:34:04
  */
-public class Paging implements Pageable {
+public class Paging implements java.io.Serializable { // implements Pageable {
 
 	public static final String KEY_PAGE_SIZE = "_joy_key__paging_pageSize";
 	public static final String KEY_PAGE_NUMBER = "_joy_key__paging_pageNumber";
@@ -20,7 +20,6 @@ public class Paging implements Pageable {
 	private int offset;
 	private int pageNumber = 1;
 	private int pageSize = 10;
-	private Sort sort;
 	private int totalCount;
 	private int pageCount;
 	private int slider = 1; // 前后显示页面长度
@@ -34,6 +33,8 @@ public class Paging implements Pageable {
 	private boolean lastPage;//是否是最后一页
 	private int nextPage;
 	private int prePage;
+	
+	private Sort sort;
 
 	public void cal() {
 		//1
@@ -117,15 +118,6 @@ public class Paging implements Pageable {
 
 	public void setPageSize(int pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	@Transient
-	public Sort getSort() {
-		return sort;
-	}
-
-	public void setSort(Sort sort) {
-		this.sort = sort;
 	}
 
 	public long getTotalCount() {
@@ -222,6 +214,15 @@ public class Paging implements Pageable {
 
 	public void setMidEndPage(int midEndPage) {
 		this.midEndPage = midEndPage;
+	}
+
+	@Transient
+	public Sort getSort() {
+		return sort;
+	}
+
+	public void setSort(Sort sort) {
+		this.sort = sort;
 	}
 	
 }

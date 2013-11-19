@@ -17,11 +17,11 @@ import javax.sql.DataSource;
 
 import net.sf.ehcache.CacheException;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.init.support.JoyPropeties;
 import com.kvc.joy.core.persistence.jdbc.dao.BaseJdbcDao;
 import com.kvc.joy.core.persistence.jdbc.model.vo.DbMetaData;
@@ -42,7 +42,7 @@ import com.kvc.joy.core.sysres.datasrc.model.po.TSysDataSrc;
  */
 public class JdbcTool extends BaseJdbcDao {
 
-	private static Logger logger = LoggerFactory.getLogger(JdbcTool.class);
+	protected static final Log logger = LogFactory.getLog(JdbcTool.class);
 	private static Map<String, DataSource> dataSourceMap = new HashMap<String, DataSource>();
 
 	private JdbcTool() {
@@ -114,7 +114,7 @@ public class JdbcTool extends BaseJdbcDao {
 				info.setProperty("password", mdRdbConn.getPassword());
 				conn = DriverManager.getConnection(mdRdbConn.getUrl(), info);
 			} catch (Exception e) {
-				logger.error(e.getMessage(), e);
+				logger.error(e);
 			}
 		}
 		return conn;
@@ -131,7 +131,7 @@ public class JdbcTool extends BaseJdbcDao {
 				conn.close();
 			}
 		} catch (SQLException e) {
-			logger.error(e.getMessage(), e);
+			logger.error(e);
 		}
 	}
 
@@ -335,7 +335,7 @@ public class JdbcTool extends BaseJdbcDao {
 			DatabaseMetaData metaData = conn.getMetaData();
 			dbMetaData = new DbMetaData(metaData);
 		} catch (Exception e) {
-			logger.error(e.getMessage(), e);
+			logger.error(e);
 		}
 		return dbMetaData;
 	}

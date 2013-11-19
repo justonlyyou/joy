@@ -1,8 +1,6 @@
 package com.kvc.joy.commons.lang;
 
 import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -11,10 +9,10 @@ import java.util.Iterator;
 import java.util.Set;
 
 import org.apache.commons.collections.FastHashMap;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.kvc.joy.commons.exception.SystemException;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.math.NumberTool;
 
 /**
@@ -84,7 +82,7 @@ public class DateTool {
 			return (FastHashMap) datePartenMap.clone();
 		}
 	};
-	private static Logger logger = LoggerFactory.getLogger(DateTool.class);
+	protected static final Log logger = LogFactory.getLog(DateTool.class);
 
 	static {
 		Set<String> fmtSet = new HashSet<String>();
@@ -487,37 +485,9 @@ public class DateTool {
 	 */
 	public static Date parseDate(String str, String... parsePatterns) {
 		try {
-			if (str == null || parsePatterns == null) {
-				throw new IllegalArgumentException("Date and Patterns must not be null");
-			}
-
-			ParsePosition pos = new ParsePosition(0);
-			for (String parsePattern : parsePatterns) {
-
-				String pattern = parsePattern;
-
-				// LANG-530 - need to make sure 'ZZ' output doesn't get passed to SimpleDateFormat
-				if (parsePattern.endsWith("ZZ")) {
-					pattern = pattern.substring(0, pattern.length() - 1);
-				}
-
-				DateFormat format = getFormat(pattern);
-				pos.setIndex(0);
-
-				String str2 = str;
-				// LANG-530 - need to make sure 'ZZ' output doesn't hit SimpleDateFormat as it will ParseException
-				if (parsePattern.endsWith("ZZ")) {
-					str2 = str.replaceAll("([-+][0-9][0-9]):([0-9][0-9])$", "$1$2");
-				}
-
-				Date date = format.parse(str2, pos);
-				if (date != null && pos.getIndex() == str2.length()) {
-					return date;
-				}
-			}
-			throw new ParseException("Unable to parse the date: " + str, -1);
+			return org.apache.commons.lang3.time.DateUtils.parseDate(str, parsePatterns);
 		} catch (Exception e) {
-			logger.error(e.getMessage(), e);
+			logger.error(e, e.getMessage());
 		}
 		return null;
 	}
@@ -544,7 +514,7 @@ public class DateTool {
 		try {
 			return org.apache.commons.lang3.time.DateUtils.parseDateStrictly(str, parsePatterns);
 		} catch (Exception e) {
-			logger.error(e.getMessage(), e);
+			logger.error(e, e.getMessage());
 		}
 		return null;
 	}

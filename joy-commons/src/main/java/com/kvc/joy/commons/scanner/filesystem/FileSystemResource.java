@@ -78,7 +78,7 @@ public class FileSystemResource implements Resource, Comparable<FileSystemResour
             Reader reader = new InputStreamReader(inputStream, Charset.forName(encoding));
             return IoTool.toString(reader);
         } catch (IOException e) {
-            throw new SystemException("Unable to load filesystem resource: " + location.getPath() + " (encoding: " + encoding + ")", e);
+            throw new SystemException(e, "Unable to load filesystem resource: " + location.getPath() + " (encoding: " + encoding + ")");
         }
     }
 
@@ -92,7 +92,7 @@ public class FileSystemResource implements Resource, Comparable<FileSystemResour
             InputStream inputStream = new FileInputStream(location);
             return IoTool.toByteArray(inputStream);
         } catch (IOException e) {
-            throw new SystemException("Unable to load filesystem resource: " + location.getPath(), e);
+            throw new SystemException(e, "Unable to load filesystem resource: " + location.getPath());
         }
     }
 

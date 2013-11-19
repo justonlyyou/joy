@@ -9,9 +9,9 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import com.kvc.joy.core.persistence.support.QueryLogic;
-import com.kvc.joy.core.persistence.support.QueryLogicOperator;
-import com.kvc.joy.core.persistence.support.QueryLogics;
+import com.kvc.joy.commons.query.QueryLogic;
+import com.kvc.joy.commons.query.QueryLogicOperator;
+import com.kvc.joy.commons.query.QueryLogics;
 
 /**
  * 

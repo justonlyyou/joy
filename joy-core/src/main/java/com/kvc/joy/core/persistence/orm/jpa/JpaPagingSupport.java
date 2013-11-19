@@ -9,7 +9,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.persistence.criteria.Selection;
 
-import com.kvc.joy.core.persistence.support.Paging;
+import com.kvc.joy.commons.query.Paging;
 import com.kvc.joy.core.rp.pagestore.PageStore;
 
 /**

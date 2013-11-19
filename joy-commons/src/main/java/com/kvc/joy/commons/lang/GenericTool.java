@@ -7,8 +7,8 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * 泛型工具类
@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
  */
 public class GenericTool {
 
-	private static Logger logger = LoggerFactory.getLogger(GenericTool.class);
+	protected static final Log logger = LogFactory.getLog(GenericTool.class);
 
 	// vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 	// 整理SpringSide的Generics类

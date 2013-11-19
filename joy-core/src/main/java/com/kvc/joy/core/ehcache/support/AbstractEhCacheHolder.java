@@ -11,10 +11,9 @@ import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheException;
 import net.sf.ehcache.Element;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.exception.SystemException;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
 
 /**
@@ -25,7 +24,7 @@ import com.kvc.joy.core.spring.utils.CoreBeanFactory;
 public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V> {
 
 	private Cache cache;
-	protected Logger logger = LoggerFactory.getLogger(getClass());
+	protected static final Log logger = LogFactory.getLog(AbstractEhCacheHolder.class);
 
 	/**
 	 * 根据key从缓存中取得实体
@@ -50,7 +49,7 @@ public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V
 			}
 			return entity;
 		} catch (CacheException e) {
-			throw new SystemException("缓存读取发生异常!", e);
+			throw new SystemException(e, "缓存读取发生异常!");
 		}
 	}
 

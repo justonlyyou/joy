@@ -24,12 +24,11 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.io.FileTool;
 import com.kvc.joy.commons.lang.ClassTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.scanner.support.Resource;
 
 /**
@@ -37,7 +36,7 @@ import com.kvc.joy.commons.scanner.support.Resource;
  */
 public class ClassPathScanner {
 
-	private static final Logger LOG = LoggerFactory.getLogger(ClassPathScanner.class);
+	protected static final Log LOG = LogFactory.getLog(ClassPathScanner.class);
 
 	/**
 	 * Scans the classpath for resources under the specified location, starting

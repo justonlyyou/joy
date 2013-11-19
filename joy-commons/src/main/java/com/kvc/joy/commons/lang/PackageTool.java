@@ -12,8 +12,8 @@ import java.util.Set;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * java包工具类
@@ -24,7 +24,7 @@ import org.slf4j.LoggerFactory;
  */
 public class PackageTool {
 
-	private static Logger logger = LoggerFactory.getLogger(PackageTool.class);
+	protected static final Log logger = LogFactory.getLog(PackageTool.class);
 
 	private PackageTool() {
 	}
@@ -115,7 +115,7 @@ public class PackageTool {
 				}
 			}
 		} catch (IOException e) {
-			logger.error(e.getMessage(), e);
+			logger.error(e);
 		}
 	}
 
@@ -156,7 +156,7 @@ public class PackageTool {
 									// 添加到classes
 									action.addClass(Class.forName(packageName + '.' + className));
 								} catch (ClassNotFoundException e) {
-									logger.error(e.getMessage(), e);
+									logger.error(e);
 								}
 							}
 						} else { // 获取包名
@@ -169,7 +169,7 @@ public class PackageTool {
 			}
 		} catch (IOException e) {
 			// log.error("在扫描用户定义视图时从jar包获取文件出错");
-			logger.error(e.getMessage(), e);
+			logger.error(e);
 		}
 	}
 
@@ -209,7 +209,7 @@ public class PackageTool {
 						// 添加到集合中去
 						action.addClass(Thread.currentThread().getContextClassLoader().loadClass(packageName + '.' + className));
 					} catch (ClassNotFoundException e) {
-						logger.error(e.getMessage(), e);
+						logger.error(e);
 					}
 				}
 			}

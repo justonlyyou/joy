@@ -8,8 +8,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,6 +15,8 @@ import com.kvc.joy.commons.bean.Pair;
 import com.kvc.joy.commons.enums.YesNot;
 import com.kvc.joy.commons.lang.DateTool;
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.plugin.seqgen.po.TSysSeqNum;
 import com.kvc.joy.plugin.seqgen.po.TSysSeqNumRule;
@@ -33,7 +33,7 @@ import com.kvc.joy.plugin.seqgen.support.SequenceCache;
 @Transactional(propagation=Propagation.REQUIRES_NEW)
 public class SequenceGenerator implements ISequenceGenerator {
 
-	private static final Logger log = LoggerFactory.getLogger(SequenceGenerator.class);
+	protected static final Log log = LogFactory.getLog(SequenceGenerator.class);
 
 	private static Map<String, SequenceCache> cacheSeq = new HashMap<String, SequenceCache>();
 	
@@ -54,7 +54,7 @@ public class SequenceGenerator implements ISequenceGenerator {
 			log.info("序列号种数：" + seqs.size());
 			log.info("序列号缓存：" + cacheSeq);
 		} catch (Exception e) {
-			log.error("获取序列号规则和号码信息出错！", e);
+			log.error(e, "获取序列号规则和号码信息出错！");
 		}
 	}
 	

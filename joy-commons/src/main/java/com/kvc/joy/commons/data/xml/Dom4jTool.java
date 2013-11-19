@@ -13,10 +13,10 @@ import org.dom4j.Element;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * DOM4J操作工具类
@@ -26,7 +26,7 @@ import com.kvc.joy.commons.lang.string.StringTool;
  */
 public class Dom4jTool {
 
-	private static Logger logger = LoggerFactory.getLogger(Dom4jTool.class);
+	protected static final Log logger = LogFactory.getLog(Dom4jTool.class);
 
 	private Dom4jTool() {
 	}
@@ -49,7 +49,7 @@ public class Dom4jTool {
 				SAXReader saxReader = new SAXReader();
 				document = saxReader.read(in);
 			} catch (DocumentException e) {
-				logger.error("读取xml文件失败：" + e.getMessage(), e);
+				logger.error(e, "读取xml文件失败：" + e.getMessage());
 			} finally {
 				close(in);
 			}
@@ -79,7 +79,7 @@ public class Dom4jTool {
 					SAXReader saxReader = new SAXReader();
 					document = saxReader.read(new File(path));
 				} catch (DocumentException e) {
-					logger.error("读取xml文件[" + path + "]失败：" + e.getMessage(), e);
+					logger.error(e, "读取xml文件[{0}]失败：{1}" , path, e.getMessage());
 				}
 			} else {
 				logger.error("调用Dom4jTool.readXml方法时传入的path参数对应的文件路径找不到：" + path);
@@ -147,7 +147,7 @@ public class Dom4jTool {
 			writer.write(document);
 			writer.close();
 		} catch (IOException e) {
-			logger.error("往[" + path + "]写入xml失败！", e);
+			logger.error(e, "往[" + path + "]写入xml失败！");
 		}
 	}
 
@@ -214,7 +214,7 @@ public class Dom4jTool {
 			try {
 				doc = DocumentHelper.parseText(xmlStr);
 			} catch (DocumentException e) {
-				logger.error("不能将指定的字符串解析为xml：\n" + xmlStr, e);
+				logger.error(e, "不能将指定的字符串解析为xml：\n" + xmlStr);
 			}
 		} else {
 			logger.error("调用Dom4jTool.string2Document方法时传入的xmlStr参数为空！");
@@ -410,14 +410,14 @@ public class Dom4jTool {
 		try {
 			writer.write(elem);
 		} catch (IOException e) {
-			logger.error(e.getMessage(), e);
+			logger.error(e);
 			return null;
 		} finally {
 			if (writer != null) {
 				try {
 					writer.close();
 				} catch (IOException e) {
-					logger.error(e.getMessage(), e);
+					logger.error(e);
 				}
 			}
 		}
@@ -429,7 +429,7 @@ public class Dom4jTool {
 			try {
 				in.close();
 			} catch (IOException e) {
-				logger.error(e.getMessage(), e);
+				logger.error(e);
 			}
 		}
 	}

@@ -6,8 +6,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Service;
@@ -15,6 +13,8 @@ import org.springframework.stereotype.Service;
 import com.googlecode.flyway.core.Flyway;
 import com.kvc.joy.commons.lang.PackageTool;
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.init.service.IJoyPlugin;
 import com.kvc.joy.core.init.service.ISystemInitService;
 import com.kvc.joy.core.init.support.JoyPropeties;
@@ -30,7 +30,7 @@ import com.kvc.joy.core.spring.utils.CoreBeanFactory;
 public class JoyPluginsInitializer implements ISystemInitService, BeanPostProcessor {
 
 	private List<IJoyPlugin> components = new ArrayList<IJoyPlugin>();
-	private static Logger logger = LoggerFactory.getLogger(JoyPluginsInitializer.class);
+	private static Log logger = LogFactory.getLog(JoyPluginsInitializer.class);
 
 	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
 		if (bean instanceof IJoyPlugin) {
@@ -72,12 +72,12 @@ public class JoyPluginsInitializer implements ISystemInitService, BeanPostProces
 				
 				try {
 					component.startup();
-					logger.info("JOY平台插件【" + component.getName() + "】启动成功。");
+					logger.info("JOY平台插件【{0}】启动成功。", component.getName());
 				} catch (Exception e) {
-					logger.error("JOY平台插件【" + component.getName() + "】启动失败！", e);
+					logger.error(e, "JOY平台插件【{0}】启动失败！", component.getName());
 				}
 			} else {
-				logger.info("JOY平台插件【" + component.getName() + "】未启动。");
+				logger.info("JOY平台插件【{0}】未启动。", component.getName());
 			}
 		}
 		

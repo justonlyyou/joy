@@ -9,12 +9,12 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kvc.joy.commons.bean.TreeNode;
 import com.kvc.joy.commons.collections.CollectionTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.support.ListToTreeConvertor;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.plugin.security.erbac.biz.IErbacGroupBiz;
@@ -35,7 +35,7 @@ public class ErbacGroupBiz implements IErbacGroupBiz {
 
 	private IErbacGroupDao iErbacGroupDao;
 	private IErbacUserBiz erbacUserBiz;
-	private Logger logger = LoggerFactory.getLogger(getClass());
+	protected static final Log logger = LogFactory.getLog(ErbacGroupBiz.class);
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public List<TreeNode<TErbacGroup>> getGroupTree() {

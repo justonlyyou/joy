@@ -34,7 +34,7 @@ public class TCfgFieldMappingRuleDao {
 //				}
 //			});
 		} catch (Exception e) {
-			throw new SystemException("加载字段映射规则出错！", e);
+			throw new SystemException(e, "加载字段映射规则出错！");
 		}
 		return ruleList;
 	}

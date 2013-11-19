@@ -1,4 +1,4 @@
-package com.kvc.joy.core.persistence.support;
+package com.kvc.joy.commons.query;
 
 
 /**
@@ -6,7 +6,7 @@ package com.kvc.joy.core.persistence.support;
  * @author 唐玮琳
  * @time 2012-6-22 上午12:00:28
  */
-public class QueryLogic {
+public class QueryLogic implements java.io.Serializable {
 	
 	public static final String OPERATOR_PARA_NAME_PREFIX = "_joy_key__operator_";
 

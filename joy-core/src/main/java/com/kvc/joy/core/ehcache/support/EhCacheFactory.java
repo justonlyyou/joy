@@ -6,11 +6,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * EhCache缓存工厂
@@ -20,7 +19,7 @@ import com.kvc.joy.commons.lang.string.StringTool;
 public class EhCacheFactory {
 
 	private static Map<String, IEhCacheHolder> cacheHolderMap;
-	private static Logger logger = LoggerFactory.getLogger(EhCacheFactory.class);
+	protected static final Log logger = LogFactory.getLog(EhCacheFactory.class);
 
 	static {
 		initCacheMap();

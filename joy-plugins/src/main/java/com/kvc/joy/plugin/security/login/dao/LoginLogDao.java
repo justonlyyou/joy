@@ -8,11 +8,10 @@ import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import org.springframework.data.domain.Sort.Direction;
-import org.springframework.data.domain.Sort.Order;
-
 import com.kvc.joy.commons.bean.Pair;
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.query.sort.Direction;
+import com.kvc.joy.commons.query.sort.Order;
 import com.kvc.joy.core.persistence.orm.jpa.BaseJpaDao;
 import com.kvc.joy.plugin.security.login.model.po.TLoginLog;
 import com.kvc.joy.plugin.security.login.model.po.TLoginLog_;
@@ -84,7 +83,7 @@ public class LoginLogDao extends BaseJpaDao<TLoginLog> {
 			
 			@Override
 			public Order[] getOrders() {
-				return new Order[] {new Order(Direction.DESC, TLoginLog_.loginTime.getName())};
+				return new Order[] {new Order(TLoginLog_.loginTime.getName(), Direction.DESC)};
 			}
 			
 		});
@@ -129,7 +128,7 @@ public class LoginLogDao extends BaseJpaDao<TLoginLog> {
 			
 			@Override
 			public Order[] getOrders() {
-				return new Order[] {new Order(Direction.DESC, TLoginLog_.loginTime.getName())};
+				return new Order[] {new Order(TLoginLog_.loginTime.getName(), Direction.DESC)};
 			}
 		});
 		return uniqueResult(result);

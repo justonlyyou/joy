@@ -5,15 +5,14 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.Sort;
-
 import com.kvc.joy.commons.lang.string.StringTool;
-import com.kvc.joy.core.persistence.support.Paging;
-import com.kvc.joy.core.persistence.support.QueryLogic;
-import com.kvc.joy.core.persistence.support.QueryLogicOperator;
-import com.kvc.joy.core.persistence.support.QueryLogics;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
+import com.kvc.joy.commons.query.Paging;
+import com.kvc.joy.commons.query.QueryLogic;
+import com.kvc.joy.commons.query.QueryLogicOperator;
+import com.kvc.joy.commons.query.QueryLogics;
+import com.kvc.joy.commons.query.sort.Sort;
 
 /**
  * 
@@ -22,7 +21,7 @@ import com.kvc.joy.core.persistence.support.QueryLogics;
  */
 public class PageStoreCreator {
 
-	private static Logger logger = LoggerFactory.getLogger(PageStoreCreator.class);
+	protected static final Log logger = LogFactory.getLog(PageStoreCreator.class);
 	private Map<String, String> paramMap;
 
 	public PageStoreCreator(Map<String, String> paramMap) {
@@ -39,7 +38,7 @@ public class PageStoreCreator {
 		Paging paging = createPaging();
 		store.setPaging(paging);
 		QueryLogics queryLogics = createQueryLogics();
-		queryLogics.setPageable(paging);
+		queryLogics.setPaging(paging);
 		queryLogics.setOrderMap(orders);
 		if (orders.isEmpty() == false) {
 			paging.setSort(new Sort(queryLogics.getOrders()));

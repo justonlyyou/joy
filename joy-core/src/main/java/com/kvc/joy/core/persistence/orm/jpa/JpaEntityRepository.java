@@ -8,10 +8,10 @@ import java.util.Map;
 import javax.persistence.EntityManager;
 import javax.persistence.metamodel.SingularAttribute;
 
-import org.springframework.data.domain.Sort.Order;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 
 import com.kvc.joy.commons.bean.IEntity;
+import com.kvc.joy.commons.query.sort.Order;
 import com.kvc.joy.core.rp.pagestore.PageStore;
 
 /**

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * 预编译sql语句转化器，实现将预编译的sql语句转化成完整的sql语句
@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
  */
 public class PreparedSqlConvertor implements IPreparedSqlConvertor {
 
-	public static final Logger logger = LoggerFactory.getLogger(PreparedSqlConvertor.class);
+	protected static final Log logger = LogFactory.getLog(PreparedSqlConvertor.class);
 	/** 预编译sql语句 */
 	private String sql;
 
@@ -47,7 +47,7 @@ public class PreparedSqlConvertor implements IPreparedSqlConvertor {
 
 			params.set(i - 1, strValue);
 		} catch (Exception e) {
-			logger.error("sql转换异常", e);
+			logger.error(e, "sql转换异常");
 		}
 
 	}
@@ -71,7 +71,7 @@ public class PreparedSqlConvertor implements IPreparedSqlConvertor {
 				}
 			}
 		} catch (Exception e) {
-			logger.error("sql转换异常", e);
+			logger.error(e, "sql转换异常");
 		}
 
 		return t.toString();

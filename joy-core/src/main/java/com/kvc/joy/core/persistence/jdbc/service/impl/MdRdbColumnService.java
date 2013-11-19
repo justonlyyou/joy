@@ -10,10 +10,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumnComment;
 import com.kvc.joy.core.persistence.jdbc.service.IMdRdbColumnService;
@@ -28,7 +27,7 @@ import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
  */
 public class MdRdbColumnService implements IMdRdbColumnService {
 
-	private Logger logger = LoggerFactory.getLogger(getClass());
+	protected static final Log logger = LogFactory.getLog(MdRdbColumnService.class);
 
 	@Override
 	public Map<String, MdRdbColumn> getColumns(String dsId, String tableName) {
@@ -66,7 +65,7 @@ public class MdRdbColumnService implements IMdRdbColumnService {
 				column.setKey(true);
 			}
 		} catch (Exception e) {
-			logger.error(e.getMessage(), e);
+			logger.error(e);
 		} finally {
 			JdbcTool.closeConnection(conn);
 		}

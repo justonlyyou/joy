@@ -13,19 +13,19 @@ import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Path;
 import javax.persistence.criteria.Root;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.Sort.Order;
 import org.springframework.orm.jpa.JpaTemplate;
 import org.springframework.orm.jpa.support.JpaDaoSupport;
 
 import com.kvc.joy.commons.bean.Pair;
 import com.kvc.joy.commons.exception.ExceptionTool;
 import com.kvc.joy.commons.lang.GenericTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
+import com.kvc.joy.commons.query.sort.Order;
 
 public abstract class BaseJpaDao<T> extends JpaDaoSupport {
 
-	protected static Logger log = LoggerFactory.getLogger(BaseJpaDao.class);
+	protected static final Log log = LogFactory.getLog(BaseJpaDao.class);
 
 	@PersistenceContext
 	protected EntityManager em;

@@ -6,11 +6,11 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.init.support.JoyPropeties;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumnComment;
@@ -26,7 +26,7 @@ import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
  */
 public abstract class AbstractMdRdbAlterReverseSyncService implements IMdRdbAlterReverseSyncService {
 
-	private Logger logger = LoggerFactory.getLogger(getClass());
+	protected static final Log logger = LogFactory.getLog(AbstractMdRdbAlterReverseSyncService.class);
 	private static final String TABLE_COMMENT_SQL = "ALTER TABLE {0} COMMENT ''{1}'';";
 
 	@Transactional

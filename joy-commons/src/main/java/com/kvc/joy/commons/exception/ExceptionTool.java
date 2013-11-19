@@ -7,10 +7,10 @@ import java.util.List;
 import java.util.Set;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * <p>
@@ -22,7 +22,7 @@ import com.kvc.joy.commons.lang.string.StringTool;
  */
 public class ExceptionTool {
 
-	private static Logger logger = LoggerFactory.getLogger(ExceptionTool.class);
+	protected static final Log logger = LogFactory.getLog(ExceptionTool.class);
 
 	/**
 	 * <p>
@@ -115,16 +115,16 @@ public class ExceptionTool {
 	
 	/**
 	 * <p>
-	 * 解包装JoyException异常(取得最近一个不是JoyException的异常)
+	 * 解包装SystemException异常(取得最近一个不是SystemException的异常)
 	 * </p>
 	 * 
 	 * @param e 异常，可以为null，为null将返回null
-	 * @return 最近一个不是JoyException的异常，指定异常为null将返回null
+	 * @return 最近一个不是SystemException的异常，指定异常为null将返回null
 	 * @since 1.0.0
 	 * @author 唐玮琳
 	 * @time 2013-5-5 下午11:49:20
 	 */
-	public static Throwable unwrapJoyException(Throwable e) {
+	public static Throwable unwrapSystemException(Throwable e) {
 		while(e instanceof SystemException) {
 			e = e.getCause();
 		}

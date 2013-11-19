@@ -8,11 +8,11 @@ import org.hibernate.criterion.CriteriaSpecification;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kvc.joy.commons.exception.ExceptionTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 
 /**
@@ -22,7 +22,7 @@ import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
  */
 public abstract class BaseHibernateDao<T> {
 
-	private static final Logger log = LoggerFactory.getLogger(BaseHibernateDao.class);
+	protected static final Log logger = LogFactory.getLog(BaseHibernateDao.class);
 	
 	/**
 	 * 拼接or查询条件
@@ -84,7 +84,7 @@ public abstract class BaseHibernateDao<T> {
 		if (resultList.size() == 1) {
 			result = resultList.get(0);
 		} else if (resultList.size() > 1) {
-			log.error("期望获取唯一记录，实际查询到" + resultList.size() + "条记录，方法调用轨迹为：");
+			logger.error("期望获取唯一记录，实际查询到" + resultList.size() + "条记录，方法调用轨迹为：");
 			ExceptionTool.printStackTrace();
 		}
 		return result;

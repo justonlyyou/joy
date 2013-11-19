@@ -16,6 +16,8 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import com.kvc.joy.commons.bean.Pair;
 import com.kvc.joy.commons.lang.ArrayTool;
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * 
@@ -23,6 +25,8 @@ import com.kvc.joy.commons.lang.string.StringTool;
  * @time 2012-6-14 下午10:05:28
  */
 public class HttpRequestTool {
+	
+	private static final Log logger = LogFactory.getLog(HttpRequestTool.class);
 
 	private HttpRequestTool() {
 	}
@@ -99,8 +103,7 @@ public class HttpRequestTool {
 			try {
 				ip = InetAddress.getLocalHost().getHostAddress();
 			} catch (UnknownHostException e) {
-				// logger.error("", e);
-				e.printStackTrace();
+				 logger.error(e);
 			}
 		}
 		// logger.debug("当前用户的IP为:" + currentIp);

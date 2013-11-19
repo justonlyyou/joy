@@ -1,12 +1,11 @@
 package com.kvc.joy.core.persistence.orm.jpa;
 
 import javax.persistence.criteria.Expression;
-import javax.persistence.criteria.Order;
 import javax.persistence.metamodel.SingularAttribute;
 
-import org.springframework.data.domain.Sort;
+import com.kvc.joy.commons.query.sort.Direction;
 
-public class JpaOrder extends Sort.Order implements javax.persistence.criteria.Order {
+public class JpaOrder extends com.kvc.joy.commons.query.sort.Order {
 
 	private boolean ascending;
 	private SingularAttribute<?, ?> attribute;
@@ -22,7 +21,7 @@ public class JpaOrder extends Sort.Order implements javax.persistence.criteria.O
 	}
 
 	protected JpaOrder(String propertyName, boolean ascending) {
-		super(ascending ? Sort.Direction.ASC : Sort.Direction.DESC, propertyName);
+		super(propertyName, ascending ? Direction.ASC : Direction.DESC);
 		this.propertyName = propertyName;
 		this.ascending = ascending;
 	}
@@ -39,28 +38,28 @@ public class JpaOrder extends Sort.Order implements javax.persistence.criteria.O
 		return propertyName;
 	}
 
-	public static Sort.Order asc(SingularAttribute<?, ?> property) {
+	public static com.kvc.joy.commons.query.sort.Order asc(SingularAttribute<?, ?> property) {
 		return new JpaOrder(property, true);
 	}
 
-	public static Sort.Order desc(SingularAttribute<?, ?> property) {
+	public static com.kvc.joy.commons.query.sort.Order desc(SingularAttribute<?, ?> property) {
 		return new JpaOrder(property, false);
 	}
 
-	public static Sort.Order asc(String propertyName) {
+	public static com.kvc.joy.commons.query.sort.Order asc(String propertyName) {
 		return new JpaOrder(propertyName, true);
 	}
 
-	public static Sort.Order desc(String propertyName) {
+	public static com.kvc.joy.commons.query.sort.Order desc(String propertyName) {
 		return new JpaOrder(propertyName, false);
 	}
 
 	public Expression<?> getExpression() {
 		return (Expression<?>) attribute;
 	}
-
-	public Order reverse() {
-		return new JpaOrder(propertyName, !ascending);
-	}
+//
+//	public Order reverse() {
+//		return new JpaOrder(propertyName, !ascending);
+//	}
 
 }

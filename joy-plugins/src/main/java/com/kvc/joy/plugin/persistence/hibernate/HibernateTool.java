@@ -55,7 +55,7 @@ public class HibernateTool extends BaseHibernateDao {
 		result = (T) getSession().get(clazz, id);
 		// } catch (ObjectNotFoundException e) {
 		// // 虽然都说用get方法加载不到对象时会返回null，但有时还是抛这个异常了，原因还不明
-		// logger.warn("用session.get()加载对象失败！", e);
+		// logger.warn("用session.get()加载对象失败！");
 		// }
 		return result;
 	}

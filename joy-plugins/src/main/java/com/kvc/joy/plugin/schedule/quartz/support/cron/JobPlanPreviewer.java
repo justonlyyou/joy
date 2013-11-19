@@ -7,10 +7,10 @@ import java.util.Date;
 import java.util.List;
 
 import org.quartz.CronExpression;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.kvc.joy.commons.lang.DateTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.plugin.schedule.quartz.model.vo.JobPlanPreviewVO;
 
 /**
@@ -21,13 +21,13 @@ import com.kvc.joy.plugin.schedule.quartz.model.vo.JobPlanPreviewVO;
 public class JobPlanPreviewer {
 
 	private CronExpression exp;
-	private Logger logger = LoggerFactory.getLogger(getClass());
+	protected static final Log logger = LogFactory.getLog(JobPlanPreviewer.class);
 
 	public JobPlanPreviewer(String cronExp) {
 		try {
 			exp = new CronExpression(cronExp);
 		} catch (ParseException e) {
-			logger.error("cron表达式【" + cronExp + "】解析出错！", e);
+			logger.error(e, "cron表达式【{0}】解析出错！", cronExp);
 		}
 	}
 

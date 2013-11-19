@@ -1,7 +1,5 @@
 package com.kvc.joy.core.spring;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
@@ -10,6 +8,8 @@ import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.stereotype.Service;
 
 import com.kvc.joy.commons.lang.ArrayTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * 
@@ -20,7 +20,7 @@ import com.kvc.joy.commons.lang.ArrayTool;
 public class SpringXmlDynamicLoadService implements BeanFactoryAware {
 
 	private XmlBeanDefinitionReader definitionReader;
-	private Logger logger = LoggerFactory.getLogger(getClass());
+	protected static final Log logger = LogFactory.getLog(SpringXmlDynamicLoadService.class);
 
 	@Override
 	public void setBeanFactory(BeanFactory beanFactory) throws BeansException {

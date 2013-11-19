@@ -1,20 +1,7 @@
 package com.kvc.joy.web.init;
 
-import javax.annotation.Resource;
-import javax.servlet.ServletContext;
 //import javax.servlet.ServletRegistration;
 //import javax.servlet.ServletRegistration.Dynamic;
-import javax.sql.DataSource;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.context.annotation.Bean;
-import org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;
-import org.springframework.web.context.ContextLoader;
-import org.springframework.web.context.support.XmlWebApplicationContext;
-import org.springframework.web.servlet.DispatcherServlet;
-
-import com.kvc.joy.core.init.support.JoyPropeties;
 
 /**
  * 
@@ -24,7 +11,7 @@ import com.kvc.joy.core.init.support.JoyPropeties;
 public class WebConfig {
 
 //	private ServletContext servletContext;
-//	private Logger logger = LoggerFactory.getLogger(getClass());
+//	protected static final Log logger = LogFactory.getLog(WebConfig.class);
 //
 //	public WebConfig(ServletContext servletContext) {
 //		this.servletContext = servletContext;

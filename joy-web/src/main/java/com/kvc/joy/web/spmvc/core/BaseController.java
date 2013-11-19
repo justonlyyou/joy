@@ -3,8 +3,6 @@ package com.kvc.joy.web.spmvc.core;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Sort.Order;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.kvc.joy.commons.bean.IEntity;
 import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.lang.GenericTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.core.rp.pagestore.PageStore;
 import com.kvc.joy.core.rp.pagestore.PageStoreCreator;
@@ -25,7 +25,7 @@ import com.kvc.joy.web.support.utils.HttpRequestTool;
  */
 public abstract class BaseController<T extends IEntity<?>> {
 
-	protected Logger logger = LoggerFactory.getLogger(getClass());
+	protected static final Log logger = LogFactory.getLog(BaseController.class);
 
 	protected abstract String getCurrentViewName();
 

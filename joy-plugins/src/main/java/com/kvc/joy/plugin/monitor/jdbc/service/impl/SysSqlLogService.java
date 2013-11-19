@@ -1,12 +1,12 @@
 package com.kvc.joy.plugin.monitor.jdbc.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kvc.joy.commons.exception.ExceptionTool;
 import com.kvc.joy.commons.lang.DateTool;
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.init.support.AppPropeties;
 import com.kvc.joy.core.init.support.JoyPropeties;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
@@ -24,7 +24,7 @@ import com.kvc.joy.plugin.support.PluginBeanFactory;
  */
 public class SysSqlLogService implements ISysSqlLogService {
 	
-	private Logger logger = LoggerFactory.getLogger(getClass());
+	protected static final Log logger = LogFactory.getLog(SysSqlLogService.class);
 	
 	/**
 	 * 获取本实例，为了在本类的非事务方法调用事务方法
@@ -125,7 +125,7 @@ public class SysSqlLogService implements ISysSqlLogService {
 				try {
 					simpleClassName = Class.forName(elem.getClassName()).getSimpleName();
 				} catch (ClassNotFoundException e) {
-					logger.error("找不到类：" + elem.getClassName(), e);
+					logger.error(e, "找不到类：" + elem.getClassName());
 				}
 				if (simpleClassName != null) {
 					String moduleName = StringTool.substringBetween(elem.getClassName(), classPrefix + ".", "." + simpleClassName);

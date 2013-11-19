@@ -6,11 +6,11 @@ import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.config.CacheConfiguration;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.cache.ehcache.EhCacheCacheManager;
 import org.springframework.stereotype.Component;
 
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.ehcache.model.po.TSysCacheCfg;
 import com.kvc.joy.core.ehcache.model.po.TSysCacheCfg_;
 import com.kvc.joy.core.init.service.IJoyPlugin;
@@ -25,7 +25,7 @@ import com.kvc.joy.core.spring.utils.CoreBeanFactory;
 @Component
 public class EhCachePlugin implements IJoyPlugin {
 
-	private Logger logger = LoggerFactory.getLogger(getClass());
+	protected static final Log logger = LogFactory.getLog(EhCachePlugin.class);
 
 	public String getName() {
 		return "EhCache缓存";

@@ -6,7 +6,6 @@ import java.beans.PropertyDescriptor;
 import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -18,13 +17,13 @@ import java.util.Set;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.commons.lang3.SerializationException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.kvc.joy.commons.exception.ExceptionTool;
 import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.lang.SerializationTool;
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * Bean操作工具类
@@ -35,7 +34,7 @@ import com.kvc.joy.commons.lang.string.StringTool;
  */
 public class BeanTool {
 
-	private static Logger logger = LoggerFactory.getLogger(BeanTool.class);
+	protected static final Log logger = LogFactory.getLog(BeanTool.class);
 
 	private BeanTool() {
 	}
@@ -84,7 +83,7 @@ public class BeanTool {
 			copyProperties(destObj, srcObj, propertyMap);
 		} catch (Exception e) {
 			String msgPattern = "属性拷贝失败! destClass：{0}，srcObj：{1}， fieldMap: {2}";
-			logger.error(MessageFormat.format(msgPattern, destClass, srcObj, propertyMap), e);
+			logger.error(e, msgPattern, destClass, srcObj, propertyMap);
 		}
 		return destObj;
 	}
@@ -120,7 +119,7 @@ public class BeanTool {
 			}
 		} catch (Exception e) {
 			String msgPattern = "属性拷贝失败! destObj：{0}，srcObj：{1}， fieldMap: {2}";
-			logger.error(MessageFormat.format(msgPattern, destObj, srcObj, propertyMap), e);
+			logger.error(e, msgPattern, destObj, srcObj, propertyMap);
 		}
 	}
 
@@ -147,7 +146,7 @@ public class BeanTool {
 			target = targetClass.newInstance();
 			copyProperties(target, srcObj);
 		} catch (Exception e) {
-			throw new SystemException("Bean对象拷贝出错！", ExceptionTool.unwrapJoyException(e));
+			throw new SystemException(ExceptionTool.unwrapSystemException(e), "Bean对象拷贝出错！");
 		}
 		return (T) target;
 	}
@@ -172,7 +171,7 @@ public class BeanTool {
 			BeanTool.copyProperties(src, dest);
 			dest.setId(id);
 		} catch (Exception e) {
-			throw new SystemException("Bean属性拷贝出错！", ExceptionTool.unwrapJoyException(e));
+			throw new SystemException(ExceptionTool.unwrapSystemException(e), "Bean属性拷贝出错！");
 		}
 	}
 
@@ -218,7 +217,7 @@ public class BeanTool {
 				}
 			}
 		} catch (Throwable e) {
-			throw new SystemException("Bean属性拷贝出错！", e);
+			throw new SystemException(e, "Bean属性拷贝出错！");
 		}
 	}
 
@@ -243,7 +242,7 @@ public class BeanTool {
 			IEntity<T> emptyEntity = entity.getClass().newInstance();
 			BeanTool.copyProperties(emptyEntity, entity);
 		} catch (Exception e) {
-			throw new SystemException("重置bean属性出错！", ExceptionTool.unwrapJoyException(e));
+			throw new SystemException(ExceptionTool.unwrapSystemException(e), "重置bean属性出错！");
 		}
 		entity.setId(id);
 	}
@@ -293,7 +292,7 @@ public class BeanTool {
 		try {
 			return (T) BeanUtils.cloneBean(bean);
 		} catch (Exception e) {
-			throw new SystemException("Bean浅克隆出错！", e);
+			throw new SystemException(e, "Bean浅克隆出错！");
 		}
 	}
 
@@ -315,7 +314,7 @@ public class BeanTool {
 		try {
 			BeanUtils.copyProperties(dest, orig);
 		} catch (Exception e) {
-			throw new SystemException("Bean拷贝出错！", e);
+			throw new SystemException(e, "Bean拷贝出错！");
 		}
 	}
 
@@ -338,7 +337,7 @@ public class BeanTool {
 		try {
 			PropertyUtils.copyProperties(dest, orig);
 		} catch (Exception e) {
-			throw new SystemException("Bean拷贝出错！", e);
+			throw new SystemException(e, "Bean拷贝出错！");
 		}
 	}
 
@@ -361,7 +360,7 @@ public class BeanTool {
 		try {
 			BeanUtils.copyProperty(bean, name, value);
 		} catch (Exception e) {
-			throw new SystemException("拷贝属性值出错！", e);
+			throw new SystemException(e, "拷贝属性值出错！");
 		}
 	}
 
@@ -385,7 +384,7 @@ public class BeanTool {
 		try {
 			return PropertyUtils.describe(bean);
 		} catch (Exception e) {
-			throw new SystemException("提取属性值出错！", e);
+			throw new SystemException(e, "提取属性值出错！");
 		}
 	}
 
@@ -409,7 +408,7 @@ public class BeanTool {
 		try {
 			return PropertyUtils.getProperty(bean, name);
 		} catch (Exception e) {
-			throw new SystemException("获取属性的值出错！", e, false);
+			throw new SystemException(e, false, "获取属性的值出错！");
 		}
 	}
 

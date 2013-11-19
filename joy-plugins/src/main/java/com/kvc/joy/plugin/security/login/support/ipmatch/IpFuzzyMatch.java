@@ -1,9 +1,8 @@
 package com.kvc.joy.plugin.security.login.support.ipmatch;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.net.IpTool;
 
 /**
@@ -11,7 +10,7 @@ import com.kvc.joy.commons.net.IpTool;
  */
 class IpFuzzyMatch implements IpMatch {
 	
-	private final Logger log = LoggerFactory.getLogger(this.getClass());
+	protected static final Log log = LogFactory.getLog(IpFuzzyMatch.class);
 	private long minValue;
 	private long maxValue;
 

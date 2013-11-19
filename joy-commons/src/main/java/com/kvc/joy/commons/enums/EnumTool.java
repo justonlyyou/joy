@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang3.EnumUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.kvc.joy.commons.exception.ExceptionTool;
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * 枚举工具类
@@ -20,7 +20,7 @@ import com.kvc.joy.commons.lang.string.StringTool;
  */
 public class EnumTool {
 	
-	private static Logger logger = LoggerFactory.getLogger(EnumTool.class);
+	protected static final Log logger = LogFactory.getLog(EnumTool.class);
 	
 	private EnumTool() {
 	}

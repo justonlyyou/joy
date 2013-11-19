@@ -14,10 +14,9 @@ import jxl.CellType;
 import jxl.Sheet;
 import jxl.Workbook;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * excel数据导入器抽象类
@@ -25,7 +24,7 @@ import com.kvc.joy.commons.lang.string.StringTool;
  */
 public abstract class AbstractExcelImporter implements IExcelImporter {
 
-	private static final Logger logger = LoggerFactory.getLogger(AbstractExcelImporter.class);
+	protected static final Log logger = LogFactory.getLog(AbstractExcelImporter.class);
 
 	/**
 	 * List<字段名>

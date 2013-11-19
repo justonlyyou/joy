@@ -1,4 +1,6 @@
-package com.kvc.joy.core.persistence.support;
+package com.kvc.joy.commons.query;
+
+import java.io.Serializable;
 
 import com.kvc.joy.commons.enums.EnumTool;
 import com.kvc.joy.commons.enums.ICodeEnum;
@@ -9,7 +11,7 @@ import com.kvc.joy.commons.lang.string.StringTool;
  * @author 唐玮琳
  * @time 2012-6-19 下午9:51:19
  */
-public enum QueryLogicOperator implements ICodeEnum{
+public enum QueryLogicOperator implements ICodeEnum, Serializable{
 
 	EQ("=", "等于"),
 	IEQ("I=", "忽略大小写等于"),

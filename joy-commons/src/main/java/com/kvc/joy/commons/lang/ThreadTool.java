@@ -3,10 +3,9 @@ package com.kvc.joy.commons.lang;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * 线程相关工具类
@@ -17,7 +16,7 @@ import com.kvc.joy.commons.lang.string.StringTool;
  */
 public class ThreadTool {
 	
-	private static Logger logger = LoggerFactory.getLogger(StringTool.class);
+	protected static final Log logger = LogFactory.getLog(StringTool.class);
 	
 	private ThreadTool() {
 	}
@@ -36,7 +35,7 @@ public class ThreadTool {
 		try {
 			Thread.sleep(millis);
 		} catch (InterruptedException e) {
-			logger.warn(e.getMessage(), e);
+			logger.error(e);
 		}
 	}
 
@@ -55,7 +54,7 @@ public class ThreadTool {
 		try {
 			Thread.sleep(unit.toMillis(duration));
 		} catch (InterruptedException e) {
-			logger.warn(e.getMessage(), e);
+			logger.error(e);
 		}
 	}
 
@@ -87,7 +86,7 @@ public class ThreadTool {
 				}
 			}
 		} catch (InterruptedException ie) {
-			logger.warn(ie.getMessage(), ie);
+			logger.error(ie);
 			// (Re-)Cancel if current thread also interrupted
 			pool.shutdownNow();
 			// Preserve interrupt status
@@ -114,7 +113,7 @@ public class ThreadTool {
 				logger.warn("线程池未结束!");
 			}
 		} catch (InterruptedException ie) {
-			logger.warn(ie.getMessage(), ie);
+			logger.error(ie);
 			Thread.currentThread().interrupt();
 		}
 	}

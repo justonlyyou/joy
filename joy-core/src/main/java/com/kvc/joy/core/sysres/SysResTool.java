@@ -4,15 +4,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.enums.EnumTool;
 import com.kvc.joy.commons.enums.ICodeEnum;
 import com.kvc.joy.commons.enums.YesNot;
 import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.lang.BooleanTool;
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
 import com.kvc.joy.core.sysres.menu.po.TSysMenu;
 
@@ -23,7 +22,7 @@ import com.kvc.joy.core.sysres.menu.po.TSysMenu;
  */
 public class SysResTool {
 	
-	private static Logger logger = LoggerFactory.getLogger(SysResTool.class);
+	protected static final Log logger = LogFactory.getLog(SysResTool.class);
 
 	private SysResTool() {
 	}

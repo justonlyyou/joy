@@ -3,12 +3,11 @@ package com.kvc.joy.core.persistence.jdbc.support;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.bean.BeanTool;
 import com.kvc.joy.commons.data.json.JsonTool;
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumnComment;
 
 /**
@@ -21,7 +20,7 @@ public class MdRdbColumnCommentParser {
 
 	private static final String SEPARATER = ",";
 	private static final String JSON_REQ_EXP = ".*\\{(\"\\w+\":\".+\")+\\}.*";
-	private static Logger logger = LoggerFactory.getLogger(MdRdbColumnCommentParser.class);
+	protected static final Log logger = LogFactory.getLog(MdRdbColumnCommentParser.class);
 
 	private MdRdbColumnCommentParser() {
 	}

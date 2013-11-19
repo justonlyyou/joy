@@ -3,8 +3,8 @@ package com.kvc.joy.commons.lang.string;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * 国际化工具
@@ -17,7 +17,7 @@ public class I18nTool {
 
 	private static ResourceBundle bundle;
 	private static final String BASE_NAME = "conf/i18n/language";
-	private static Logger logger = LoggerFactory.getLogger(StringTool.class);
+	protected static final Log logger = LogFactory.getLog(StringTool.class);
 
 	static {
 		bundle(BASE_NAME, Locale.getDefault());
@@ -39,7 +39,7 @@ public class I18nTool {
 		try {
 			bundle = ResourceBundle.getBundle(baseName, locale);
 		} catch (Exception e) {
-			logger.error("绑定本地运行环境和资源文件时出错!", e);
+			logger.error(e, "绑定本地运行环境和资源文件时出错!");
 			bundle = null;
 		}
 		return bundle;

@@ -14,10 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser;
 import com.kvc.joy.plugin.security.login.support.ipmatch.IpMatchFacility;
 
@@ -28,7 +27,7 @@ import com.kvc.joy.plugin.security.login.support.ipmatch.IpMatchFacility;
  */
 public class LoginFilter implements Filter {
 
-	private static Logger logger = LoggerFactory.getLogger(LoginFilter.class);
+	protected static final Log logger = LogFactory.getLog(LoginFilter.class);
 	private static IpMatchFacility ipMatch;
 	private String loginPage;
 
@@ -88,7 +87,7 @@ public class LoginFilter implements Filter {
 			try {
 				currentIp = InetAddress.getLocalHost().getHostAddress();
 			} catch (UnknownHostException e) {
-				logger.error("", e);
+				logger.error(e);
 			}
 		}
 		logger.debug("当前用户的IP为:" + currentIp);

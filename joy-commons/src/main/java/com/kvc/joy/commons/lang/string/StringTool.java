@@ -5,10 +5,10 @@ import java.util.Locale;
 import java.util.Map;
 
 import org.apache.commons.lang3.ObjectUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.kvc.joy.commons.collections.MapTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.security.CryptoTool;
 import com.kvc.joy.commons.security.DigestTool;
 
@@ -21,7 +21,7 @@ import com.kvc.joy.commons.security.DigestTool;
  */
 public class StringTool {
 
-	private static Logger logger = LoggerFactory.getLogger(StringTool.class);
+	protected static final Log logger = LogFactory.getLog(StringTool.class);
 
 	private StringTool() {
 	}
@@ -4383,7 +4383,7 @@ public class StringTool {
 		try {
 			return org.apache.commons.lang3.StringUtils.toString(bytes, charsetName);
 		} catch (Exception e) {
-			logger.error(e.getMessage(), e);
+			logger.error(e);
 		}
 		return null;
 	}

@@ -4,8 +4,6 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.JsonParser.Feature;
@@ -16,6 +14,8 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * json工具类
@@ -26,7 +26,7 @@ import com.kvc.joy.commons.lang.string.StringTool;
  */
 public class JsonTool {
 
-	private static final Logger logger = LoggerFactory.getLogger(JsonTool.class);
+	protected static final Log logger = LogFactory.getLog(JsonTool.class);
 
 	private JsonTool() {
 	}
@@ -93,7 +93,7 @@ public class JsonTool {
 		try {
 			return mapper.readValue(json, clazz);
 		} catch (Exception e) {
-			logger.error("json解析为对象出错！json: " + json, e);
+			logger.error(e, "json解析为对象出错！json: " + json);
 		}
 		return null;
 	}
@@ -123,7 +123,7 @@ public class JsonTool {
 		try {
 			return mapper.readValue(jsonString, javaType);
 		} catch (IOException e) {
-			logger.error("反序列化json串出错:" + jsonString, e);
+			logger.error(e, "反序列化json串出错:" + jsonString);
 			return null;
 		}
 	}
@@ -229,7 +229,7 @@ public class JsonTool {
 		try {
 			return mapper.readValue(jsonFile, clazz);
 		} catch (Exception e) {
-			logger.error("json解析为对象出错！", e);
+			logger.error(e, "json解析为对象出错！");
 		}
 		return null;
 	}
@@ -254,7 +254,7 @@ public class JsonTool {
 		try {
 			return mapper.writeValueAsString(object);
 		} catch (IOException e) {
-			logger.warn("序列化对象为json时出错:" + object, e);
+			logger.error(e, "序列化对象为json时出错:" + object);
 			return null;
 		}
 	}
@@ -347,7 +347,7 @@ public class JsonTool {
 		try {
 			return (T) mapper.readerForUpdating(object).readValue(jsonString);
 		} catch (Exception e) {
-			logger.error("将json串:" + jsonString + " 更新到对象:" + object + " 时出错.", e);
+			logger.error(e, "将json串:{0}更新到对象:{1}时出错.", jsonString, object);
 		}
 		return null;
 	}

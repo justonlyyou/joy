@@ -20,22 +20,22 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import javax.persistence.metamodel.SingularAttribute;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.Sort.Order;
 import org.springframework.orm.jpa.JpaCallback;
 import org.springframework.orm.jpa.JpaTemplate;
 
 import com.kvc.joy.commons.bean.IEntity;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
+import com.kvc.joy.commons.query.QueryLogics;
+import com.kvc.joy.commons.query.sort.Order;
 import com.kvc.joy.commons.support.GroupExecutor;
-import com.kvc.joy.core.persistence.support.QueryLogics;
 import com.kvc.joy.core.rp.pagestore.PageStore;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
 
 @SuppressWarnings("rawtypes")
 public class JpaTool extends BaseJpaDao {
 
-	private static Logger logger = LoggerFactory.getLogger(JpaTool.class);
+	protected static final Log logger = LogFactory.getLog(JpaTool.class);
 	
 	private JpaTool() {
 	}
@@ -130,7 +130,7 @@ public class JpaTool extends BaseJpaDao {
 
 			}.execute();
 		} catch (Exception e) {
-			logger.error(e.getMessage(), e);
+			logger.error(e);
 		}
 		return resultList;
 	}

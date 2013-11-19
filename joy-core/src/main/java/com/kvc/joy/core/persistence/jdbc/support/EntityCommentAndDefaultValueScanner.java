@@ -11,12 +11,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.lang.PackageTool;
 import com.kvc.joy.commons.lang.reflect.MethodTool;
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumnComment;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbTable;
@@ -40,7 +39,7 @@ import com.kvc.joy.plugin.security.erbac.model.po.TErbacOrganization;
  */
 public class EntityCommentAndDefaultValueScanner {
 
-	private static Logger logger = LoggerFactory.getLogger(EntityCommentAndDefaultValueScanner.class);
+	protected static final Log logger = LogFactory.getLog(EntityCommentAndDefaultValueScanner.class);
 
 	private EntityCommentAndDefaultValueScanner() {
 	}

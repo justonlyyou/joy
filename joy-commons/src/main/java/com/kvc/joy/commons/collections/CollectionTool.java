@@ -32,7 +32,7 @@ import com.kvc.joy.commons.lang.string.StringTool;
  */
 public class CollectionTool {
 
-//	private static Logger logger = LoggerFactory.getLogger(CollectionTool.class);
+//	protected static final Log logger = LogFactory.getLog(CollectionTool.class);
 
 	private CollectionTool() {
 	}

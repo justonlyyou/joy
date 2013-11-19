@@ -1,8 +1,7 @@
 package com.kvc.joy.core.init.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.support.ICommand;
 import com.kvc.joy.core.init.service.IJoyInitializer;
 import com.kvc.joy.core.init.service.ISystemInitService;
@@ -16,7 +15,7 @@ import com.kvc.joy.core.spring.utils.SpringBeanTool;
  */
 public class JoyInitializer implements IJoyInitializer {
 
-	private Logger logger = LoggerFactory.getLogger(getClass());
+	protected static final Log logger = LogFactory.getLog(JoyInitializer.class);
 
 	@Override
 	public void beforeContextInit(ICommand command) {

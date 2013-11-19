@@ -5,18 +5,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kvc.joy.commons.bean.TreeNode;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.plugin.security.erbac.biz.IErbacRoleBiz;
 import com.kvc.joy.plugin.security.erbac.model.po.TErbacRole;
 
 @Transactional
 public class ErbacRoleBiz implements IErbacRoleBiz {
-	private Logger logger = LoggerFactory.getLogger(getClass());
+	
+	protected static final Log logger = LogFactory.getLog(ErbacRoleBiz.class);
 
 	public List<TreeNode> getAllRoles() {
 		List<TErbacRole> roleList = JpaTool.searchAll(TErbacRole.class);

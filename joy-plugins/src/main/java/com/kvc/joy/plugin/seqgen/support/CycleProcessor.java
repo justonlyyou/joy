@@ -5,11 +5,10 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.bean.Pair;
 import com.kvc.joy.commons.enums.TimeUnit;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.plugin.seqgen.po.TSysSeqNum;
 import com.kvc.joy.plugin.seqgen.po.TSysSeqNumRule;
 
@@ -21,7 +20,7 @@ import com.kvc.joy.plugin.seqgen.po.TSysSeqNumRule;
 public class CycleProcessor {
 	
 	private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat(TSysSeqNum.TIME_DB_FMT_STR);
-	private static Logger logger = LoggerFactory.getLogger(CycleProcessor.class);
+	protected static final Log logger = LogFactory.getLog(CycleProcessor.class);
 
 	public static Pair<Boolean, Calendar> processCycle(SequenceCache seqCache) {
 		TSysSeqNum tSysSeqNum = seqCache.getSeqNum();
@@ -141,7 +140,7 @@ public class CycleProcessor {
 		try {
 			curPeriodStartTime = simpleDateFormat.parse(curPeriodStartTimeStr);
 		} catch (ParseException e) {
-			logger.error("当前周期开始时间：" + curPeriodStartTimeStr + "日期转换出错！", e);
+			logger.error(e, "当前周期开始时间：{0}日期转换出错！", curPeriodStartTimeStr);
 		}
 		Calendar startTime = Calendar.getInstance();
 		startTime.setTime(curPeriodStartTime);

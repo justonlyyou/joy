@@ -5,10 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.bean.TreeNode;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * 列表到树结构的转换器
@@ -19,7 +18,7 @@ import com.kvc.joy.commons.bean.TreeNode;
  */
 public class ListToTreeConvertor {
 	
-	private static Logger logger = LoggerFactory.getLogger(ListToTreeConvertor.class);
+	protected static final Log logger = LogFactory.getLog(ListToTreeConvertor.class);
 	
 	private ListToTreeConvertor() {
 	}

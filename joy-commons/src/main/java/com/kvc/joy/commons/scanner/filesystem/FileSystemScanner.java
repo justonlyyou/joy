@@ -20,10 +20,9 @@ import java.io.IOException;
 import java.util.Set;
 import java.util.TreeSet;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.exception.SystemException;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.scanner.support.Resource;
 
 /**
@@ -31,7 +30,7 @@ import com.kvc.joy.commons.scanner.support.Resource;
  */
 public class FileSystemScanner {
 
-	private static final Logger LOG = LoggerFactory.getLogger(FileSystemScanner.class);
+	protected static final Log LOG = LogFactory.getLog(FileSystemScanner.class);
 
 	/**
 	 * Scans the FileSystem for resources under the specified location, starting

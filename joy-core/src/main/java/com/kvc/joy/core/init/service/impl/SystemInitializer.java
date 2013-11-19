@@ -3,12 +3,12 @@ package com.kvc.joy.core.init.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Service;
 
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.init.service.ISystemInitService;
 
 /**
@@ -20,7 +20,7 @@ import com.kvc.joy.core.init.service.ISystemInitService;
 public class SystemInitializer implements ISystemInitService, BeanPostProcessor {
 
 	private List<ISystemInitService> initServiceList = new ArrayList<ISystemInitService>();
-	private Logger logger = LoggerFactory.getLogger(getClass());
+	protected static final Log logger = LogFactory.getLog(SystemInitializer.class);
 
 	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
 		if (bean instanceof ISystemInitService) {

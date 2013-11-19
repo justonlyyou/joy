@@ -17,10 +17,10 @@ import java.sql.SQLXML;
 import java.util.Calendar;
 
 import org.jwebap.core.Trace;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.plugin.monitor.jdbc.IPreparedSqlConvertor;
 import com.kvc.joy.plugin.monitor.jdbc.PreparedSqlConvertor;
 import com.kvc.joy.plugin.monitor.jdbc.model.vo.ParamMsg;
@@ -38,7 +38,7 @@ public class ProxyPreparedStatement extends ProxyStatement
 	private String _sql=null;
 	private int _batchCount=0;
 	private IPreparedSqlConvertor convertor;
-	private Logger logger = LoggerFactory.getLogger(getClass()); 
+	protected static final Log logger = LogFactory.getLog(ProxyPreparedStatement.class); 
 	
 	public ProxyPreparedStatement(ProxyConnection conn,
 			PreparedStatement stmt) {

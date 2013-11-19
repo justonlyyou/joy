@@ -49,7 +49,7 @@ public class PinYinTool {
 				}
 			}
 		} catch (Exception e) {
-			throw new SystemException("汉字转换为全拼出错！", e);
+			throw new SystemException(e, "汉字转换为全拼出错！");
 		}
 		return result.toString();
 	}
@@ -84,7 +84,7 @@ public class PinYinTool {
 				}
 			}
 		} catch (Exception e) {
-			throw new SystemException("汉字的首字母提取出错！", e);
+			throw new SystemException(e, "汉字的首字母提取出错！");
 		}
 		return result.toString();
 	}

@@ -1,14 +1,14 @@
 package com.kvc.joy.plugin.security.login.support.ipmatch;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * 单个IP匹配
  */
 class IpSingleMatch implements IpMatch {
 	
-	private final Logger log = LoggerFactory.getLogger(getClass());
+	protected static final Log log = LogFactory.getLog(IpSingleMatch.class);
 
 	private String srcIp;
 

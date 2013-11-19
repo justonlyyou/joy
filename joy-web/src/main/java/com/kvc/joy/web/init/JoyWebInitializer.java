@@ -3,11 +3,11 @@ package com.kvc.joy.web.init;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.context.ConfigurableWebApplicationContext;
 import org.springframework.web.context.ContextLoaderListener;
 
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.support.ICommand;
 import com.kvc.joy.core.init.service.IJoyInitializer;
 import com.kvc.joy.core.init.service.impl.JoyInitializer;
@@ -23,7 +23,7 @@ import com.kvc.joy.plugin.monitor.jdbc.JwebapJdbcPlugin;
  */
 public class JoyWebInitializer extends ContextLoaderListener {
 
-	private static Logger logger = LoggerFactory.getLogger(JoyWebInitializer.class);
+	private static final Log logger = LogFactory.getLog(JoyWebInitializer.class);
 
 	private IJoyInitializer joyInitializer = new JoyInitializer();
 	

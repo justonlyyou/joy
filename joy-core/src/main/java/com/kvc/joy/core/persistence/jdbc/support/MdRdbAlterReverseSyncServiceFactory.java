@@ -3,9 +3,8 @@
  */
 package com.kvc.joy.core.persistence.jdbc.support;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.init.support.JoyPropeties;
 import com.kvc.joy.core.persistence.jdbc.model.vo.DbMetaData;
 import com.kvc.joy.core.persistence.jdbc.service.IMdRdbAlterReverseSyncService;
@@ -24,7 +23,7 @@ import com.kvc.joy.core.spring.utils.CoreBeanFactory;
  */
 public class MdRdbAlterReverseSyncServiceFactory {
 
-	private static Logger logger = LoggerFactory.getLogger(MdRdbAlterReverseSyncServiceFactory.class);
+	protected static final Log logger = LogFactory.getLog(MdRdbAlterReverseSyncServiceFactory.class);
 
 	private MdRdbAlterReverseSyncServiceFactory() {
 	}

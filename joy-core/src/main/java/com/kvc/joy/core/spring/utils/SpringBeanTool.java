@@ -2,12 +2,13 @@ package com.kvc.joy.core.spring.utils;
 
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Service;
+
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * Spring Bean工具类，同时它负责spring上下文注入
@@ -18,7 +19,7 @@ import org.springframework.stereotype.Service;
 public class SpringBeanTool implements ApplicationContextAware {
 
 	private static ApplicationContext appContext;
-	private Logger logger = LoggerFactory.getLogger(getClass());
+	protected static final Log logger = LogFactory.getLog(SpringBeanTool.class);
 
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 		SpringBeanTool.appContext = applicationContext;

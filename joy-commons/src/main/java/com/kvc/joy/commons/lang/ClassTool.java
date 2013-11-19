@@ -5,10 +5,9 @@ import java.lang.reflect.Method;
 import java.net.URLDecoder;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.exception.SystemException;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * 类工具
@@ -19,7 +18,7 @@ import com.kvc.joy.commons.exception.SystemException;
  */
 public class ClassTool {
 
-	private static Logger logger = LoggerFactory.getLogger(ClassTool.class);
+	protected static final Log logger = LogFactory.getLog(ClassTool.class);
 	private static final String CGLIB_CLASS_SEPARATOR = "$$";
 
 	private ClassTool() {
@@ -641,7 +640,7 @@ public class ClassTool {
 		try {
 			return org.apache.commons.lang3.ClassUtils.getClass(className, initialize);
 		} catch (Exception e) {
-			logger.error(e.getMessage(), e);
+			logger.error(e, e.getMessage());
 		}
 		return null;
 	}
@@ -664,7 +663,7 @@ public class ClassTool {
 		try {
 			return org.apache.commons.lang3.ClassUtils.getClass(className);
 		} catch (Exception e) {
-			logger.error(e.getMessage(), e);
+			logger.error(e);
 		}
 		return null;
 	}
@@ -686,7 +685,7 @@ public class ClassTool {
 		try {
 			return org.apache.commons.lang3.ClassUtils.getClass(className);
 		} catch (Exception e) {
-			logger.error(e.getMessage(), e);
+			logger.error(e);
 		}
 		return null;
 	}
@@ -709,7 +708,7 @@ public class ClassTool {
 		try {
 			return org.apache.commons.lang3.ClassUtils.getClass(className, initialize);
 		} catch (Exception e) {
-			logger.error(e.getMessage(), e);
+			logger.error(e);
 		}
 		return null;
 	}
@@ -742,7 +741,7 @@ public class ClassTool {
 		try {
 			return org.apache.commons.lang3.ClassUtils.getPublicMethod(cls, methodName, parameterTypes);
 		} catch (Exception e) {
-			logger.error(e.getMessage(), e);
+			logger.error(e);
 		}
 		return null;
 	}

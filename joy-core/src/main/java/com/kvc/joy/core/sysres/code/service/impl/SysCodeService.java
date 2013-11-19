@@ -8,9 +8,8 @@ import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.core.sysres.code.po.TSysCodeTable;
@@ -24,7 +23,7 @@ import com.kvc.joy.core.sysres.datasrc.model.po.TSysDataSrc;
  */
 public class SysCodeService implements ISysCodeService {
 
-	private Logger logger = LoggerFactory.getLogger(getClass());
+	protected static final Log logger = LogFactory.getLog(SysCodeService.class);
 
 	public Map<String, String> get(String codeTableId) {
 		logger.info("加载代码表#" + codeTableId + "的数据...");
@@ -47,9 +46,9 @@ public class SysCodeService implements ISysCodeService {
 				String trans = rs.getString(transFieldName);
 				map.put(code, trans);
 			}
-			logger.info("加载代码表#" + codeTableId + "数据共" + map.size() + "条。");
+			logger.info("加载代码表#{0}数据共{1}条。", codeTableId, map.size());
 		} catch (SQLException e) {
-			logger.error("代码表#" + codeTableId + "数据加载失败！", e);
+			logger.error(e, "代码表#{0}数据加载失败！", codeTableId);
 		} finally {
 			if (statement != null) {
 				try {

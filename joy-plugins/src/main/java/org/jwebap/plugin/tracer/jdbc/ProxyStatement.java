@@ -7,9 +7,9 @@ import java.sql.SQLWarning;
 import java.sql.Statement;
 
 import org.jwebap.core.Trace;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.plugin.monitor.jdbc.model.vo.ParamMsg;
 
 
@@ -18,7 +18,7 @@ public class ProxyStatement extends Trace implements Statement {
 	protected ProxyConnection _conn;
 	protected Statement _stmt = null;
 	protected boolean _closed = false;
-	private Logger logger = LoggerFactory.getLogger(getClass()); 
+	private final static Log logger = LogFactory.getLog(ProxyStatement.class); 
 
 	public ProxyStatement(ProxyConnection conn, Statement stmt) {
 		super(conn);
@@ -451,7 +451,7 @@ public class ProxyStatement extends Trace implements Statement {
 			ParamMsg message = new ParamMsg(trace.getContent(), trace.getActiveTime());
 			logger.debug(message.toString(), message);
 		} catch (Exception e) {
-			logger.error("sql性能监控处理出错 ！", e);
+			logger.error(e, "sql性能监控处理出错 ！");
 		}
 	}
 	

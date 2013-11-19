@@ -1,17 +1,10 @@
 package com.kvc.joy.core.rp.pagestore;
 
-import java.util.Map;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.kvc.joy.core.persistence.support.Paging;
-import com.kvc.joy.core.persistence.support.QueryLogics;
 
 public class PageStoreFactory {
 
 //	private static ThreadLocal<PageStore> pageStoreThreadLocal = new ThreadLocal<PageStore>();
-//	private static Logger logger = LoggerFactory.getLogger(PageStoreFactory.class);
+//	protected static final Log logger = LogFactory.getLog(PageStoreFactory.class);
 //
 //	public static PageStore create(Map<String, String> paramMap) {
 //		PageStore pageStore = pageStoreThreadLocal.get();

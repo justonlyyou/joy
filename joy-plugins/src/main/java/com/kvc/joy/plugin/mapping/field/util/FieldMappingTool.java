@@ -6,11 +6,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.bean.BeanTool;
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.plugin.mapping.field.dao.TCfgFieldMappingRuleDao;
 import com.kvc.joy.plugin.mapping.field.po.TSysFieldMapping;
 import com.kvc.joy.plugin.mapping.field.po.TSysFieldMappingRule;
@@ -34,7 +33,7 @@ public class FieldMappingTool {
 	 */
 	public static final String OBJECT_TYPE_TABLE_TO_JAVA = TSysFieldMappingRule.OBJECT_TYPE_TABLE_TO_JAVA;
 	
-	private Logger logger = LoggerFactory.getLogger(FieldMappingTool.class);
+	protected static final Log logger = LogFactory.getLog(FieldMappingTool.class);
 	private volatile static FieldMappingTool fieldMappingTool;
 	
 

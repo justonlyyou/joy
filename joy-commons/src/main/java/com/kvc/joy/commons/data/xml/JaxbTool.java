@@ -29,8 +29,8 @@ import com.kvc.joy.commons.lang.ClassTool;
  * </p>
  * 
  * <p>
- * 使用Jaxb2.0实现XML和Java的相互转化, OXM(Object XML Mapping),
- * JAXB2在底层是用StAX(JSR 173)来处理XML文档的
+ * 使用Jaxb2.0实现XML和Java的相互转化, OXM(Object XML Mapping), JAXB2在底层是用StAX(JSR
+ * 173)来处理XML文档的
  * </p>
  * 
  * @author 唐玮琳
@@ -40,7 +40,7 @@ import com.kvc.joy.commons.lang.ClassTool;
 public class JaxbTool {
 
 	private static ConcurrentMap<Class<?>, JAXBContext> jaxbContexts = new ConcurrentHashMap<Class<?>, JAXBContext>();
-	
+
 	private JaxbTool() {
 	}
 
@@ -218,8 +218,7 @@ public class JaxbTool {
 				jaxbContext = JAXBContext.newInstance(clazz, CollectionWrapper.class);
 				jaxbContexts.putIfAbsent(clazz, jaxbContext);
 			} catch (JAXBException ex) {
-				throw new SystemException("不能为类 [" + clazz + "]创建JAXBContext: "
-						+ ex.getMessage(), ex);
+				throw new SystemException(ex, "不能为类 [{0}]创建JAXBContext: {1}", clazz, ex.getMessage());
 			}
 		}
 		return jaxbContext;

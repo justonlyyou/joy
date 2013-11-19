@@ -7,18 +7,18 @@ import java.lang.reflect.Proxy;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.orm.jpa.EntityManagerHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.spring.utils.SpringBeanTool;
 
 @Service
 public class OpenEntityManagerHandler implements InvocationHandler {
 
-	private static final Logger logger = LoggerFactory.getLogger(OpenEntityManagerHandler.class);
+	protected static final Log logger = LogFactory.getLog(OpenEntityManagerHandler.class);
 	
 	private EntityManager em;
 	private Object obj;

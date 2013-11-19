@@ -1,9 +1,8 @@
 package com.kvc.joy.plugin.schedule.quartz.support.cron;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.plugin.schedule.quartz.model.vo.QrtzJobPlanCfgVO;
 
 /**
@@ -13,7 +12,7 @@ import com.kvc.joy.plugin.schedule.quartz.model.vo.QrtzJobPlanCfgVO;
 public abstract class AbstractCronExpressionCreator implements ICronExpressionCreator {
 
 	protected QrtzJobPlanCfgVO plan;
-	protected Logger logger = LoggerFactory.getLogger(getClass());
+	protected static final Log logger = LogFactory.getLog(AbstractCronExpressionCreator.class);
 
 	public AbstractCronExpressionCreator(QrtzJobPlanCfgVO plan) {
 		this.plan = plan;

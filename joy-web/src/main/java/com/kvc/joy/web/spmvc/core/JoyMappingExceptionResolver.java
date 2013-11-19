@@ -6,12 +6,11 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 
-import com.kvc.joy.core.rp.pagestore.PageStoreFactory;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * 
@@ -21,7 +20,7 @@ import com.kvc.joy.core.rp.pagestore.PageStoreFactory;
  */
 public class JoyMappingExceptionResolver extends SimpleMappingExceptionResolver {
 
-	private Logger logger = LoggerFactory.getLogger(getClass());
+	protected static final Log logger = LogFactory.getLog(JoyMappingExceptionResolver.class);
 	
 	@Override
 	protected ModelAndView doResolveException(HttpServletRequest request, HttpServletResponse response, Object handler,
