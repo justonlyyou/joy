@@ -22,7 +22,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.kvc.joy.commons.exception.ExceptionTool;
-import com.kvc.joy.commons.exception.ServiceException;
+import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.lang.SerializationTool;
 import com.kvc.joy.commons.lang.string.StringTool;
 
@@ -132,7 +132,7 @@ public class BeanTool {
 	 * @param srcObj 源对象
 	 * @param targetClass 目标类
 	 * @return 目标类的对象
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 *             InvocationTargetException 对被调用方法的包装异常 <br>
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问
 	 *             InstantiationException 实例化异常
@@ -147,7 +147,7 @@ public class BeanTool {
 			target = targetClass.newInstance();
 			copyProperties(target, srcObj);
 		} catch (Exception e) {
-			throw new ServiceException("Bean对象拷贝出错！", ExceptionTool.unwrapJoyException(e));
+			throw new SystemException("Bean对象拷贝出错！", ExceptionTool.unwrapJoyException(e));
 		}
 		return (T) target;
 	}
@@ -159,7 +159,7 @@ public class BeanTool {
 	 * 
 	 * @param src 源对象
 	 * @param dest 目标对象
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 *             InvocationTargetException 对被调用方法的包装异常 <br>
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问
 	 * @since 1.0.0
@@ -172,7 +172,7 @@ public class BeanTool {
 			BeanTool.copyProperties(src, dest);
 			dest.setId(id);
 		} catch (Exception e) {
-			throw new ServiceException("Bean属性拷贝出错！", ExceptionTool.unwrapJoyException(e));
+			throw new SystemException("Bean属性拷贝出错！", ExceptionTool.unwrapJoyException(e));
 		}
 	}
 
@@ -184,7 +184,7 @@ public class BeanTool {
 	 * @param source 源对象
 	 * @param target 目标对象
 	 * @param excludeProperties 不拷贝的属性可变数组
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 *             InvocationTargetException 对被调用方法的包装异常 <br>
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问 <br>
 	 *             NoSuchMethodException 如果找不到指定的可访问的方法 <br>
@@ -218,7 +218,7 @@ public class BeanTool {
 				}
 			}
 		} catch (Throwable e) {
-			throw new ServiceException("Bean属性拷贝出错！", e);
+			throw new SystemException("Bean属性拷贝出错！", e);
 		}
 	}
 
@@ -228,7 +228,7 @@ public class BeanTool {
 	 * </p>
 	 * 
 	 * @param entity 目标bean
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 *             InvocationTargetException 对被调用方法的包装异常 <br>
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问
 	 *             InstantiationException 实例化异常
@@ -243,7 +243,7 @@ public class BeanTool {
 			IEntity<T> emptyEntity = entity.getClass().newInstance();
 			BeanTool.copyProperties(emptyEntity, entity);
 		} catch (Exception e) {
-			throw new ServiceException("重置bean属性出错！", ExceptionTool.unwrapJoyException(e));
+			throw new SystemException("重置bean属性出错！", ExceptionTool.unwrapJoyException(e));
 		}
 		entity.setId(id);
 	}
@@ -279,7 +279,7 @@ public class BeanTool {
 	 * 
 	 * @param bean 被克隆的bean
 	 * @return 克隆后的bean
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 *             InvocationTargetException 对被调用方法的包装异常 <br>
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问 <br>
 	 *             NoSuchMethodException 如果找不到指定的可访问的方法 <br>
@@ -293,7 +293,7 @@ public class BeanTool {
 		try {
 			return (T) BeanUtils.cloneBean(bean);
 		} catch (Exception e) {
-			throw new ServiceException("Bean浅克隆出错！", e);
+			throw new SystemException("Bean浅克隆出错！", e);
 		}
 	}
 
@@ -304,7 +304,7 @@ public class BeanTool {
 	 * 
 	 * @param orig 源bean
 	 * @param dest 目标bean
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 *             InvocationTargetException 对被调用方法的包装异常 <br>
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问 <br>
 	 * @since 1.0.0
@@ -315,7 +315,7 @@ public class BeanTool {
 		try {
 			BeanUtils.copyProperties(dest, orig);
 		} catch (Exception e) {
-			throw new ServiceException("Bean拷贝出错！", e);
+			throw new SystemException("Bean拷贝出错！", e);
 		}
 	}
 
@@ -326,7 +326,7 @@ public class BeanTool {
 	 * 
 	 * @param orig 源bean
 	 * @param dest 目标bean
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 *             InvocationTargetException 对被调用方法的包装异常 <br>
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问 <br>
 	 *             NoSuchMethodException 如果找不到指定的可访问的方法 <br>
@@ -338,7 +338,7 @@ public class BeanTool {
 		try {
 			PropertyUtils.copyProperties(dest, orig);
 		} catch (Exception e) {
-			throw new ServiceException("Bean拷贝出错！", e);
+			throw new SystemException("Bean拷贝出错！", e);
 		}
 	}
 
@@ -350,7 +350,7 @@ public class BeanTool {
 	 * @param bean 目标bean
 	 * @param name 属性名(可以嵌套/索引/映射/组合)
 	 * @param value 属性值
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 *             InvocationTargetException 对被调用方法的包装异常 <br>
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问 <br>
 	 * @since 1.0.0
@@ -361,7 +361,7 @@ public class BeanTool {
 		try {
 			BeanUtils.copyProperty(bean, name, value);
 		} catch (Exception e) {
-			throw new ServiceException("拷贝属性值出错！", e);
+			throw new SystemException("拷贝属性值出错！", e);
 		}
 	}
 
@@ -372,7 +372,7 @@ public class BeanTool {
 	 * 
 	 * @param bean 被提取属性的bean
 	 * @return Map<属性名，属性值>
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 *             InvocationTargetException 对被调用方法的包装异常 <br>
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问 <br>
 	 *             NoSuchMethodException 如果找不到指定的可访问的方法 <br>
@@ -385,7 +385,7 @@ public class BeanTool {
 		try {
 			return PropertyUtils.describe(bean);
 		} catch (Exception e) {
-			throw new ServiceException("提取属性值出错！", e);
+			throw new SystemException("提取属性值出错！", e);
 		}
 	}
 
@@ -397,7 +397,7 @@ public class BeanTool {
 	 * @param bean 目标bean
 	 * @param name 属性名(可以嵌套/索引/映射/组合)
 	 * @return 属性值
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 *             InvocationTargetException 对被调用方法的包装异常 <br>
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问 <br>
 	 *             NoSuchMethodException 如果找不到指定的可访问的方法 <br>
@@ -409,7 +409,7 @@ public class BeanTool {
 		try {
 			return PropertyUtils.getProperty(bean, name);
 		} catch (Exception e) {
-			throw new ServiceException("获取属性的值出错！", e, false);
+			throw new SystemException("获取属性的值出错！", e, false);
 		}
 	}
 

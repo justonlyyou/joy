@@ -2,7 +2,7 @@ package com.kvc.joy.commons.io;
 
 import org.apache.commons.io.FileSystemUtils;
 
-import com.kvc.joy.commons.exception.ServiceException;
+import com.kvc.joy.commons.exception.SystemException;
 
 /**
  * <p>
@@ -39,7 +39,7 @@ public class FileSystemTool {
 	 * 
 	 * @param path 要计算剩余空间的路径, 不能为null, 在Unix上不能为空串
 	 * @return 剩余空间(单位：KB)
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br> 
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br> 
 	 * 						IllegalArgumentException 如果路径无效
 	 * 						IllegalStateException 如果初始化时发生错误
 	 * 						IOException 如果查找剩余空间时出现io异常
@@ -51,7 +51,7 @@ public class FileSystemTool {
 		try {
 			return FileSystemUtils.freeSpaceKb(path);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -73,7 +73,7 @@ public class FileSystemTool {
 	 * @param path 要计算剩余空间的路径, 不能为null, 在Unix上不能为空串
 	 * @param timeout 计算超时时间(毫秒)， 为0或负数代表不超时
 	 * @return 剩余空间(单位：KB)
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br> 
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br> 
 	 * 						IllegalArgumentException 如果路径无效
 	 * 						IllegalStateException 如果初始化时发生错误
 	 * 						IOException 如果查找剩余空间时出现io异常
@@ -85,7 +85,7 @@ public class FileSystemTool {
 		try {
 			return FileSystemUtils.freeSpaceKb(path, timeout);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -102,7 +102,7 @@ public class FileSystemTool {
 	 * </pre>
 	 * 
 	 * @return 剩余空间(单位：KB)
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br> 
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br> 
 	 * 						IllegalStateException 如果初始化时发生错误
 	 * 						IOException 如果查找剩余空间时出现io异常
 	 * @since 1.0.0
@@ -113,7 +113,7 @@ public class FileSystemTool {
 		try {
 			return FileSystemUtils.freeSpaceKb();
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -131,7 +131,7 @@ public class FileSystemTool {
 	 * 
 	 * @param timeout 计算超时时间(毫秒)， 为0或负数代表不超时
 	 * @return 剩余空间(单位：KB)
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br> 
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br> 
 	 * 						IllegalStateException 如果初始化时发生错误
 	 * 						IOException 如果查找剩余空间时出现io异常
 	 * @since 1.0.0
@@ -142,7 +142,7 @@ public class FileSystemTool {
 		try {
 			return FileSystemUtils.freeSpaceKb(timeout);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 

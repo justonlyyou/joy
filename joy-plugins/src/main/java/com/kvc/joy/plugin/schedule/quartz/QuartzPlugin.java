@@ -4,7 +4,7 @@ import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 import org.springframework.stereotype.Component;
 
-import com.kvc.joy.commons.exception.ServiceException;
+import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.core.init.service.IJoyPlugin;
 import com.kvc.joy.core.init.support.JoyPropeties;
 import com.kvc.joy.plugin.schedule.quartz.model.po.TQrtzJobPlan;
@@ -31,7 +31,7 @@ public class QuartzPlugin implements IJoyPlugin {
 		try {
 			scheduler.start();
 		} catch (SchedulerException e) {
-			throw new ServiceException("quartz调度器启动失败！", e);
+			throw new SystemException("quartz调度器启动失败！", e);
 		}
 
 		PluginBeanFactory.getQuartzTriggersHolder().loadTriggers();
@@ -42,7 +42,7 @@ public class QuartzPlugin implements IJoyPlugin {
 		try {
 			scheduler.shutdown();
 		} catch (SchedulerException e) {
-			throw new ServiceException("quartz调度器关闭失败！", e);
+			throw new SystemException("quartz调度器关闭失败！", e);
 		}
 		// try {
 		// schedulerFactory.destroy();

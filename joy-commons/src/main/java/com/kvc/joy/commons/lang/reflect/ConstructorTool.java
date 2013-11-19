@@ -2,7 +2,7 @@ package com.kvc.joy.commons.lang.reflect;
 
 import java.lang.reflect.Constructor;
 
-import com.kvc.joy.commons.exception.ServiceException;
+import com.kvc.joy.commons.exception.SystemException;
 
 /**
  * <p>
@@ -35,7 +35,7 @@ public class ConstructorTool {
 	 * @param cls 要创建的实例的类, 不能为null
 	 * @param args 构造器的参数可变数组, null将被当作空数组
 	 * @return 指定类的新实例, 不会为null
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NoSuchMethodException 如果找不到匹配的构造器 <br>
 	 * 						IllegalAccessException 如果调用不被安全体制允许 <br>
 	 * 						InvocationTargetException 如果调用时发生错误 <br>
@@ -49,7 +49,7 @@ public class ConstructorTool {
 		try {
 			return org.apache.commons.lang3.reflect.ConstructorUtils.invokeConstructor(cls, args);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -67,7 +67,7 @@ public class ConstructorTool {
 	 * @param args 构造器的参数可变数组, null将被当作空数组
 	 * @param parameterTypes 参数类型数组, null将被当作空数组
 	 * @return 指定类的新实例, 不会为null
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NoSuchMethodException 如果找不到匹配的构造器 <br>
 	 * 						IllegalAccessException 如果调用不被安全体制允许 <br>
 	 * 						InvocationTargetException 如果调用时发生错误 <br>
@@ -81,7 +81,7 @@ public class ConstructorTool {
 		try {
 			return org.apache.commons.lang3.reflect.ConstructorUtils.invokeConstructor(cls, args, parameterTypes);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -98,7 +98,7 @@ public class ConstructorTool {
 	 * @param cls 要创建的实例的类, 不能为null
 	 * @param args 构造器的参数可变数组, null将被当作空数组
 	 * @return 指定类的新实例, 不会为null
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NoSuchMethodException 如果找不到匹配的构造器 <br>
 	 * 						IllegalAccessException 如果调用不被安全体制允许 <br>
 	 * 						InvocationTargetException 如果调用时发生错误 <br>
@@ -112,7 +112,7 @@ public class ConstructorTool {
 		try {
 			return org.apache.commons.lang3.reflect.ConstructorUtils.invokeExactConstructor(cls, args);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -130,7 +130,7 @@ public class ConstructorTool {
 	 * @param args 构造器的参数可变数组, null将被当作空数组
 	 * @param parameterTypes 参数类型数组, null将被当作空数组
 	 * @return 指定类的新实例, 不会为null
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NoSuchMethodException 如果找不到匹配的构造器 <br>
 	 * 						IllegalAccessException 如果调用不被安全体制允许 <br>
 	 * 						InvocationTargetException 如果调用时发生错误 <br>
@@ -144,7 +144,7 @@ public class ConstructorTool {
 		try {
 			return org.apache.commons.lang3.reflect.ConstructorUtils.invokeExactConstructor(cls, args, parameterTypes);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 

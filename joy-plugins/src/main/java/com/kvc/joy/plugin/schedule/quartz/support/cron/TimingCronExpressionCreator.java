@@ -3,7 +3,7 @@ package com.kvc.joy.plugin.schedule.quartz.support.cron;
 import java.util.Calendar;
 import java.util.Date;
 
-import com.kvc.joy.commons.exception.ServiceException;
+import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.plugin.schedule.quartz.model.vo.QrtzJobPlanCfgVO;
 
 /**
@@ -23,7 +23,7 @@ public class TimingCronExpressionCreator extends AbstractCronExpressionCreator {
 		Date onceExecuteTime = null; //TODO
 		//plan.getOnceExecuteTime();
 		if (onceExecuteTime == null) {
-			throw new ServiceException("【一次发生时间】不允许为空！");
+			throw new SystemException("【一次发生时间】不允许为空！");
 		}
 		time = Calendar.getInstance();
 		time.setTime(onceExecuteTime);

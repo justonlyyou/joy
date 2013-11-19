@@ -8,7 +8,7 @@ import org.apache.commons.codec.DecoderException;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.binary.Hex;
 
-import com.kvc.joy.commons.exception.ServiceException;
+import com.kvc.joy.commons.exception.SystemException;
 
 /**
  * <p>
@@ -62,7 +62,7 @@ public class EncodeTool {
 		try {
 			return Hex.decodeHex(input.toCharArray());
 		} catch (DecoderException e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -150,7 +150,7 @@ public class EncodeTool {
 		try {
 			return URLEncoder.encode(part, DEFAULT_URL_ENCODING);
 		} catch (UnsupportedEncodingException e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -170,7 +170,7 @@ public class EncodeTool {
 		try {
 			return URLDecoder.decode(part, DEFAULT_URL_ENCODING);
 		} catch (UnsupportedEncodingException e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 }

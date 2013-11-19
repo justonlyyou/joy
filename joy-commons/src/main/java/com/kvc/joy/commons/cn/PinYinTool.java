@@ -6,7 +6,7 @@ import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat;
 import net.sourceforge.pinyin4j.format.HanyuPinyinToneType;
 import net.sourceforge.pinyin4j.format.HanyuPinyinVCharType;
 
-import com.kvc.joy.commons.exception.ServiceException;
+import com.kvc.joy.commons.exception.SystemException;
 
 /**
  * 拼音工具类
@@ -49,7 +49,7 @@ public class PinYinTool {
 				}
 			}
 		} catch (Exception e) {
-			throw new ServiceException("汉字转换为全拼出错！", e);
+			throw new SystemException("汉字转换为全拼出错！", e);
 		}
 		return result.toString();
 	}
@@ -84,7 +84,7 @@ public class PinYinTool {
 				}
 			}
 		} catch (Exception e) {
-			throw new ServiceException("汉字的首字母提取出错！", e);
+			throw new SystemException("汉字的首字母提取出错！", e);
 		}
 		return result.toString();
 	}

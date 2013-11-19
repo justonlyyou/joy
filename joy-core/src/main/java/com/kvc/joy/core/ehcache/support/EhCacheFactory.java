@@ -9,7 +9,7 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.kvc.joy.commons.exception.ServiceException;
+import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.lang.string.StringTool;
 
 /**
@@ -123,7 +123,7 @@ public class EhCacheFactory {
 	private static IEhCacheHolder getCacheHolder(String cacheName) {
 		IEhCacheHolder cacheHolder = cacheHolderMap.get(cacheName);
 		if (cacheHolder == null) {
-			throw new ServiceException("不存在名称为" + cacheName + "的缓存，请确定是否已注册该缓存！");
+			throw new SystemException("不存在名称为" + cacheName + "的缓存，请确定是否已注册该缓存！");
 		}
 		return cacheHolder;
 	}

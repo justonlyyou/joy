@@ -125,7 +125,7 @@ public class ExceptionTool {
 	 * @time 2013-5-5 下午11:49:20
 	 */
 	public static Throwable unwrapJoyException(Throwable e) {
-		while(e instanceof ServiceException) {
+		while(e instanceof SystemException) {
 			e = e.getCause();
 		}
 		return e;

@@ -1,6 +1,6 @@
 package com.kvc.joy.plugin.security.erbac.support.utils;
 
-import com.kvc.joy.commons.exception.ServiceException;
+import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.plugin.security.erbac.model.po.TErbacAuthority;
 import com.kvc.joy.plugin.security.erbac.model.vo.ErbacPermission;
@@ -66,7 +66,7 @@ public class ShiroPermissionExpTool {
 	 */
 	public static ErbacPermission parsePermissionExp(String permissionExp) {
 		if(StringTool.isBlank(permissionExp)) {
-			throw new ServiceException("参数permissionExp不能为空！");
+			throw new SystemException("参数permissionExp不能为空！");
 		}
 		String[] values = permissionExp.split(PERMISSION_SEPARATOR);
 		ErbacPermission erbacPermission = new ErbacPermission(values[0]);

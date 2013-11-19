@@ -2,7 +2,7 @@ package com.kvc.joy.commons.lang.reflect;
 
 import java.lang.reflect.Field;
 
-import com.kvc.joy.commons.exception.ServiceException;
+import com.kvc.joy.commons.exception.SystemException;
 
 /**
  * <p>
@@ -30,7 +30,7 @@ public class FieldTool {
 	 * @param cls 要反射的类, 不能为null
 	 * @param fieldName 要获取的字段的名称
 	 * @return 字段对象
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果任意参数为null
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -40,7 +40,7 @@ public class FieldTool {
 		try {
 			return org.apache.commons.lang3.reflect.FieldUtils.getField(cls, fieldName);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -53,7 +53,7 @@ public class FieldTool {
 	 * @param fieldName 要获取的字段的名称
 	 * @param forceAccess 是否使用<code>setAccessible</code>方法突破范围限制, <code>False</code>将仅匹配public的字段
 	 * @return 字段对象
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 *  					IllegalArgumentException 如果类或字段名为null
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -63,7 +63,7 @@ public class FieldTool {
 		try {	
 			return org.apache.commons.lang3.reflect.FieldUtils.getField(cls, fieldName, forceAccess);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -75,7 +75,7 @@ public class FieldTool {
 	 * @param cls 要反射的类, 不能为null
 	 * @param fieldName 要获取的字段的名称
 	 * @return 字段对象
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果类或字段名为null
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -85,7 +85,7 @@ public class FieldTool {
 		try {	
 			return org.apache.commons.lang3.reflect.FieldUtils.getDeclaredField(cls, fieldName);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}	
 	}
 
@@ -98,7 +98,7 @@ public class FieldTool {
 	 * @param fieldName 要获取的字段的名称
 	 * @param forceAccess 是否使用<code>setAccessible</code>方法突破范围限制, <code>False</code>将仅匹配public的字段
 	 * @return 字段对象
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 			IllegalArgumentException 如果类或字段名为null
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -108,7 +108,7 @@ public class FieldTool {
 		try {
 			return org.apache.commons.lang3.reflect.FieldUtils.getDeclaredField(cls, fieldName, forceAccess);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -119,7 +119,7 @@ public class FieldTool {
 	 * 
 	 * @param field 要读取的字段
 	 * @return 字段值
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						 IllegalArgumentException 如果字段为null或不是静态的或该字段不可访问
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -129,7 +129,7 @@ public class FieldTool {
 		try {
 			return org.apache.commons.lang3.reflect.FieldUtils.readStaticField(field);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -141,7 +141,7 @@ public class FieldTool {
 	 * @param field 要读取的字段
 	 * @param forceAccess 是否使用<code>setAccessible</code>方法突破范围限制
 	 * @return 字段值
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果字段为null或不是静态的或该字段不可访问
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -151,7 +151,7 @@ public class FieldTool {
 		try {
 			return org.apache.commons.lang3.reflect.FieldUtils.readStaticField(field, forceAccess);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -163,7 +163,7 @@ public class FieldTool {
 	 * @param cls 要反射的类, 不能为null
 	 * @param fieldName 要获取的字段的名称
 	 * @return 字段值
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果类或字段名为null, 字段找不到或不可访问
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -173,7 +173,7 @@ public class FieldTool {
 		try {
 			return org.apache.commons.lang3.reflect.FieldUtils.readStaticField(cls, fieldName);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -186,7 +186,7 @@ public class FieldTool {
 	 * @param fieldName 要获取的字段的名称
 	 * @param forceAccess 是否使用<code>setAccessible</code>方法突破范围限制, <code>False</code>将仅匹配public的字段
 	 * @return 字段对象
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果类或字段名为null, 字段找不到或不可访问
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -196,7 +196,7 @@ public class FieldTool {
 		try {
 			return org.apache.commons.lang3.reflect.FieldUtils.readStaticField(cls, fieldName, forceAccess);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -208,7 +208,7 @@ public class FieldTool {
 	 * @param cls 要反射的类, 不能为null
 	 * @param fieldName 要获取的字段的名称
 	 * @return 字段值
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果类或字段名为null, 字段找不到或不可访问
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -218,7 +218,7 @@ public class FieldTool {
 		try {
 			return org.apache.commons.lang3.reflect.FieldUtils.readDeclaredStaticField(cls, fieldName);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -231,7 +231,7 @@ public class FieldTool {
 	 * @param fieldName 要获取的字段的名称
 	 * @param forceAccess 是否使用<code>setAccessible</code>方法突破范围限制, <code>False</code>将仅匹配public的字段
 	 * @return 字段对象
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果类或字段名为null, 字段找不到或不可访问
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -241,7 +241,7 @@ public class FieldTool {
 		try {
 			return org.apache.commons.lang3.reflect.FieldUtils.readDeclaredStaticField(cls, fieldName, forceAccess);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -253,7 +253,7 @@ public class FieldTool {
 	 * @param field 字段对象
 	 * @param target 目标对象, 如果为null表示读取的是静态字段
 	 * @return 字段值
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果字段为null或不可访问
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -263,7 +263,7 @@ public class FieldTool {
 		try {
 			return org.apache.commons.lang3.reflect.FieldUtils.readField(field, target);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -276,7 +276,7 @@ public class FieldTool {
 	 * @param target 目标对象, 如果为null表示读取的是静态字段
 	 * @param forceAccess 是否使用<code>setAccessible</code>方法突破范围限制
 	 * @return 字段值
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果字段为null或不可访问
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -286,7 +286,7 @@ public class FieldTool {
 		try {
 			return org.apache.commons.lang3.reflect.FieldUtils.readField(field, target, forceAccess);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -298,14 +298,14 @@ public class FieldTool {
 	 * @param target 要反射的目标对象, 不能为null
 	 * @param fieldName 要获取的字段的名称
 	 * @return 字段值
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果类或字段名为null, 或指定的字段不是public的
 	 */
 	public static Object readField(Object target, String fieldName) {
 		try {
 			return org.apache.commons.lang3.reflect.FieldUtils.readField(target, fieldName);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -318,7 +318,7 @@ public class FieldTool {
 	 * @param fieldName 要获取的字段的名称
 	 * @param forceAccess 是否使用<code>setAccessible</code>方法突破范围限制, <code>False</code>将仅匹配public的字段
 	 * @return 字段值
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						llegalArgumentException 如果类或字段名为null, 或指定字段不可访问
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -328,7 +328,7 @@ public class FieldTool {
 		try {
 			return org.apache.commons.lang3.reflect.FieldUtils.readField(target, fieldName, forceAccess);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -340,7 +340,7 @@ public class FieldTool {
 	 * @param target 要反射的目标对象, 不能为null
 	 * @param fieldName 要获取的字段的名称
 	 * @return 字段值
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果类或字段名为null, 或指定的字段不是public的
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -350,7 +350,7 @@ public class FieldTool {
 		try {
 			return org.apache.commons.lang3.reflect.FieldUtils.readDeclaredField(target, fieldName);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -363,7 +363,7 @@ public class FieldTool {
 	 * @param fieldName 要获取的字段的名称
 	 * @param forceAccess 是否使用<code>setAccessible</code>方法突破范围限制, <code>False</code>将仅匹配public的字段
 	 * @return 字段对象
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果 <code>target</code> 或 <code>fieldName</code> 为 null, 或指定的字段不是public的
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -373,7 +373,7 @@ public class FieldTool {
 		try {
 			return org.apache.commons.lang3.reflect.FieldUtils.readDeclaredField(target, fieldName, forceAccess);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -384,7 +384,7 @@ public class FieldTool {
 	 * 
 	 * @param field 要写入的字段
 	 * @param 要设置的值
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果指定的字段为null或不是静态的, 或不是public的, 或为final
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -394,7 +394,7 @@ public class FieldTool {
 		try {
 			org.apache.commons.lang3.reflect.FieldUtils.writeStaticField(field, value);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -406,7 +406,7 @@ public class FieldTool {
 	 * @param field 要写入的字段
 	 * @param 要设置的值
 	 * @param forceAccess 是否使用<code>setAccessible</code>方法突破范围限制<code>False</code>将仅匹配public的字段
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果字段为null或不是静态的或该字段不可访问或为final
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -416,7 +416,7 @@ public class FieldTool {
 		try {
 			org.apache.commons.lang3.reflect.FieldUtils.writeStaticField(field, value, forceAccess);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -428,7 +428,7 @@ public class FieldTool {
 	 * @param cls 要查找的字段的类
 	 * @param fieldName 要写入的字段的名称
 	 * @param 要设置的值
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果字段找不到, 或不是静态的, 或不是public的, 或为final的
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -438,7 +438,7 @@ public class FieldTool {
 		try {
 			org.apache.commons.lang3.reflect.FieldUtils.writeStaticField(cls, fieldName, value);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -451,7 +451,7 @@ public class FieldTool {
 	 * @param fieldName 要写入的字段的名称
 	 * @param 要设置的值
 	 * @param forceAccess 是否使用<code>setAccessible</code>方法突破范围限制, <code>False</code>将仅匹配public的字段
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果字段找不到, 或不是静态的, 或不可访问, 或为final的
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -461,7 +461,7 @@ public class FieldTool {
 		try {
 			org.apache.commons.lang3.reflect.FieldUtils.writeStaticField(cls, fieldName, value);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -473,7 +473,7 @@ public class FieldTool {
 	 * @param cls 要查找的字段的类
 	 * @param fieldName 要写入的字段的名称
 	 * @param 要设置的值
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果字段找不到, 或不是静态的, 或不是public的, 或为final的
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -483,7 +483,7 @@ public class FieldTool {
 		try {
 			org.apache.commons.lang3.reflect.FieldUtils.writeDeclaredStaticField(cls, fieldName, value);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -496,7 +496,7 @@ public class FieldTool {
 	 * @param fieldName 要写入的字段的名称
 	 * @param 要设置的值
 	 * @param forceAccess 是否使用<code>setAccessible</code>方法突破范围限制, <code>False</code>将仅匹配public的字段
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 *						IllegalArgumentException 如果字段找不到, 或不是静态的, 或不可访问, 或为final的
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -506,7 +506,7 @@ public class FieldTool {
 		try {
 			org.apache.commons.lang3.reflect.FieldUtils.writeDeclaredStaticField(cls, fieldName, value, forceAccess);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -518,7 +518,7 @@ public class FieldTool {
 	 * @param field 要写入的字段
 	 * @param target 目标对象, 如果为null表示读取的是静态字段
 	 * @param 要设置的值
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果字段为null, 或不可访问, 或为final的
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -528,7 +528,7 @@ public class FieldTool {
 		try {
 			org.apache.commons.lang3.reflect.FieldUtils.writeField(field, target, value);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -541,7 +541,7 @@ public class FieldTool {
 	 * @param target 目标对象, 如果为null表示读取的是静态字段
 	 * @param 要设置的值
 	 * @param forceAccess 是否使用<code>setAccessible</code>方法突破范围限制, <code>False</code>将仅匹配public的字段
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果字段为null或不可访问, 或为final的
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -551,7 +551,7 @@ public class FieldTool {
 		try {
 			org.apache.commons.lang3.reflect.FieldUtils.writeField(field, target, value, forceAccess);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -563,7 +563,7 @@ public class FieldTool {
 	 * @param target 要反射的目标对象, 不能为null
 	 * @param fieldName 要获取的字段的名称
 	 * @param 要设置的值
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 			IllegalArgumentException 如果 <code>target</code> 或 <code>fieldName</code> 为 null, 或字段不可访问 
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -573,7 +573,7 @@ public class FieldTool {
 		try {
 			org.apache.commons.lang3.reflect.FieldUtils.writeField(target, fieldName, value);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -586,7 +586,7 @@ public class FieldTool {
 	 * @param fieldName 要获取的字段的名称
 	 * @param 要设置的值
 	 * @param forceAccess 是否使用<code>setAccessible</code>方法突破范围限制, <code>False</code>将仅匹配public的字段
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 *		IllegalArgumentException 如果 <code>target</code> 或 <code>fieldName</code> 为 null, 或字段不可访问 
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -596,7 +596,7 @@ public class FieldTool {
 		try {
 			org.apache.commons.lang3.reflect.FieldUtils.writeField(target, fieldName, value, forceAccess);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -608,7 +608,7 @@ public class FieldTool {
 	 * @param target 要反射的目标对象, 不能为null
 	 * @param fieldName 要获取的字段的名称
 	 * @param 要设置的值
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 		IllegalArgumentException 如果 <code>target</code> 或 <code>fieldName</code> 为 null, 或字段不可访问 
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -618,7 +618,7 @@ public class FieldTool {
 		try {
 			org.apache.commons.lang3.reflect.FieldUtils.writeDeclaredField(target, fieldName, value);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -631,7 +631,7 @@ public class FieldTool {
 	 * @param fieldName 要获取的字段的名称
 	 * @param 要设置的值
 	 * @param forceAccess 是否使用<code>setAccessible</code>方法突破范围限制, <code>False</code>将仅匹配public的字段
-	 * @throws ServiceException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 		IllegalArgumentException 如果 <code>target</code> 或 <code>fieldName</code> 为 null, 或字段不可访问 
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -641,7 +641,7 @@ public class FieldTool {
 		try {
 			org.apache.commons.lang3.reflect.FieldUtils.writeDeclaredField(target, fieldName, value, forceAccess);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 

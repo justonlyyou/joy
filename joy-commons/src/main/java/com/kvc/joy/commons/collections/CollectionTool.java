@@ -19,7 +19,7 @@ import org.apache.commons.collections.Transformer;
 
 import com.kvc.joy.commons.bean.BeanTool;
 import com.kvc.joy.commons.bean.IEntity;
-import com.kvc.joy.commons.exception.ServiceException;
+import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.lang.ArrayTool;
 import com.kvc.joy.commons.lang.reflect.MethodTool;
 import com.kvc.joy.commons.lang.string.StringTool;
@@ -330,7 +330,7 @@ public class CollectionTool {
 	 * @param propertyName 属性名称, 不能为null
 	 * @return Map<属性值，实体对象>
 	 * @throws IllegalArgumentException 如果propertyName参数为空
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NoSuchMethodException 如果找不到指定的可访问的方法 <br>
 	 * 						InvocationTargetException 对被调用方法的包装异常 <br>
 	 * 						IllegalAccessException 如果请求的方法不能通过反射访问
@@ -367,7 +367,7 @@ public class CollectionTool {
 	 * @param valuePropertyName 要提取为Map中的Value值的属性名, 不能为null
 	 * @return Map<参数keyPropertyName对应的值, 参数valuePropertyName对应的值>
 	 * @throws IllegalArgumentException 如果两个属性名之一为空
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 *             NoSuchMethodException 如果找不到指定的可访问的方法 <br>
 	 *             InvocationTargetException 对被调用方法的包装异常 <br>
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问
@@ -395,7 +395,7 @@ public class CollectionTool {
 						PropertyUtils.getProperty(obj, valuePropertyName));
 			}
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 
 		return map;
@@ -410,7 +410,7 @@ public class CollectionTool {
 	 * @param propertyName 要提取的属性名, 不能为null
 	 * @return List<指定属性名的值>
 	 * @throws IllegalArgumentException 如果属性名为空
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 *             NoSuchMethodException 如果找不到指定的可访问的方法 <br>
 	 *             InvocationTargetException 对被调用方法的包装异常 <br>
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问
@@ -434,7 +434,7 @@ public class CollectionTool {
 				list.add(BeanTool.getProperty(obj, propertyName));
 			}
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 
 		return list;

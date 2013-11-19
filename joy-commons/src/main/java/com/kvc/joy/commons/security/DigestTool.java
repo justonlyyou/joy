@@ -8,7 +8,7 @@ import java.security.SecureRandom;
 
 import org.apache.commons.lang3.Validate;
 
-import com.kvc.joy.commons.exception.ServiceException;
+import com.kvc.joy.commons.exception.SystemException;
 
 /**
  * <p>
@@ -112,7 +112,7 @@ public class DigestTool {
 			}
 			return result;
 		} catch (GeneralSecurityException e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -152,7 +152,7 @@ public class DigestTool {
 		try {
 			return digest(input, MD5);
 		} catch (IOException e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -172,7 +172,7 @@ public class DigestTool {
 		try {
 			return digest(input, SHA1);
 		} catch (IOException e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -190,7 +190,7 @@ public class DigestTool {
 
 			return messageDigest.digest();
 		} catch (GeneralSecurityException e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 	

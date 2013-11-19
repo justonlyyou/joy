@@ -20,7 +20,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.LineIterator;
 import org.apache.commons.io.filefilter.IOFileFilter;
 
-import com.kvc.joy.commons.exception.ServiceException;
+import com.kvc.joy.commons.exception.SystemException;
 
 /**
  * <p>
@@ -146,7 +146,7 @@ public class FileTool {
 	 * 
 	 * @param file 待打开为输入流的文件对象, 不能为 {@code null}
 	 * @return 指定文件的一个新的{@link FileInputStream}
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 指定的参数为null时
 	 * 						FileNotFoundException 如果指定的文件不存在时
      * 						IOException 如果文件对象是一个目录时
@@ -162,7 +162,7 @@ public class FileTool {
 			}
 			return FileUtils.openInputStream(file);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -185,7 +185,7 @@ public class FileTool {
 	 * 
 	 * @param file 待打开为输入流的文件对象, 不能为 {@code null}
 	 * @return 指定文件的一个新的{@link FileOutputStream}
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 指定的参数为null时
 	 * 						IOException 如果文件对象是一个目录时
      * 						IOException 如果文件没法被写入时
@@ -201,7 +201,7 @@ public class FileTool {
 			}
 			return FileUtils.openOutputStream(file);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -224,7 +224,7 @@ public class FileTool {
 	 * @param file 待打开为输入流的文件对象, 不能为 {@code null}
 	 * @param append {@code true}: 字节将被添加到文件的末尾而不是覆盖该文件
 	 * @return 指定文件的一个新的{@link FileOutputStream}
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 指定的参数为null时
 	 * 						IOException 如果文件对象是一个目录时
      * 						IOException 如果文件没法被写入时
@@ -240,7 +240,7 @@ public class FileTool {
 			}
 			return FileUtils.openOutputStream(file, append);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -305,7 +305,7 @@ public class FileTool {
 	 * </p>
 	 * 
 	 * @param file 待处理的文件
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 指定的参数为null时
 	 * 						IOException 产生io异常时
 	 * @since 1.0.0
@@ -319,7 +319,7 @@ public class FileTool {
 			}
 			FileUtils.touch(file);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -505,7 +505,7 @@ public class FileTool {
 	 * @param file1 第一个文件
 	 * @param file2 第二个文件
 	 * @return true：如果它们的内容都相同或两个文件都不存在，否则返回false
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 出现io错误
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -515,7 +515,7 @@ public class FileTool {
 		try {
 			return FileUtils.contentEquals(file1, file2);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -534,7 +534,7 @@ public class FileTool {
 	 * @param file2 第二个文件
 	 * @param charsetName 字符编码. 为null将使用平台的默认编码
 	 * @return true：如果它们的内容都相同或两个文件都不存在，否则返回false
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 出现io错误
 	 * @see IOTool#contentEqualsIgnoreEOL(Reader, Reader)
 	 * @since 1.0.0
@@ -545,7 +545,7 @@ public class FileTool {
 		try {
 			return FileUtils.contentEqualsIgnoreEOL(file1, file2, charsetName);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -605,7 +605,7 @@ public class FileTool {
 	 * 
 	 * @param files 待转化的File数组, 不能为 {@code null}
 	 * @return 转换后的URL数组
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 文件不能被转化时
 	 * 						NullPointerException 如果参数为null
 	 * @since 1.0.0
@@ -616,7 +616,7 @@ public class FileTool {
 		try {
 			return FileUtils.toURLs(files);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -638,7 +638,7 @@ public class FileTool {
 	 * 
 	 * @param srcFile 一个已存在的待拷贝的文件, 不能为 {@code null}
 	 * @param destDir 要存放拷贝后的文件的目标目录, 不能为 {@code null}
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果任意参数为null
 	 * 						IOException 如果源或目标无效
 	 * 						IOException 如果出现io错误
@@ -651,7 +651,7 @@ public class FileTool {
 		try {
 			FileUtils.copyFileToDirectory(srcFile, destDir);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -673,7 +673,7 @@ public class FileTool {
 	 * @param srcFile 一个已存在的待拷贝的文件, 不能为 {@code null}
 	 * @param destDir 要存放拷贝后的文件的目标目录, 不能为 {@code null}
 	 * @param preserveFileDate 是否保留文件原日期
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果任意参数为null
 	 * 						IOException 如果源或目标无效
 	 * 						IOException 如果出现io错误
@@ -686,7 +686,7 @@ public class FileTool {
 		try {
 			FileUtils.copyFileToDirectory(srcFile, destDir, preserveFileDate);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -707,7 +707,7 @@ public class FileTool {
 	 * 
 	 * @param srcFile 一个已存在的待拷贝的文件, 不能为 {@code null}
 	 * @param destFile 新的文件, 不能为 {@code null}
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果任意参数为null
 	 * 						IOException 如果源或目标无效
 	 * 						IOException 如果拷贝时出现io错误
@@ -720,7 +720,7 @@ public class FileTool {
 		try {
 			FileUtils.copyFile(srcFile, destFile);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -742,7 +742,7 @@ public class FileTool {
 	 * @param srcFile 一个已存在的待拷贝的文件, 不能为 {@code null}
 	 * @param destFile 新的文件, 不能为 {@code null}
 	 * @param preserveFileDate 是否保留文件原日期
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果任意参数为null
 	 * 						IOException 如果源或目标无效
 	 * 						IOException 如果拷贝时出现io错误
@@ -755,7 +755,7 @@ public class FileTool {
 		try {
 			FileUtils.copyFile(srcFile, destFile, preserveFileDate);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -771,7 +771,7 @@ public class FileTool {
 	 * @param input 要读取数据的文件对象
 	 * @param output 要写入的 <code>OutputStream</code>
 	 * @return 拷贝的字节数
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果任意参数为null
 	 * 						IOException 如果拷贝时出现io错误
 	 * @since 1.0.0
@@ -782,7 +782,7 @@ public class FileTool {
 		try {
 			return FileUtils.copyFile(input, output);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -808,7 +808,7 @@ public class FileTool {
 	 * 
 	 * @param srcDir 一个存在的待拷贝的目录, 不能为 {@code null}
 	 * @param destDir 放置拷贝后的源目标的目标目录，不能为 {@code null}
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果任意参数为null <br>
 	 * 						IOException 如果源目录或目标目录无效 <br>
 	 * 						IOException 如果拷贝时出现io错误
@@ -820,7 +820,7 @@ public class FileTool {
 		try {
 			FileUtils.copyDirectoryToDirectory(srcDir, destDir);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -845,7 +845,7 @@ public class FileTool {
 	 * 
 	 * @param srcDir 一个存在的待拷贝的目录, 不能为 {@code null}
 	 * @param destDir 新的目录, 不能为 {@code null}
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果任意参数为null <br>
 	 * 						IOException 如果源目录或目标目录无效 <br>
 	 * 						IOException 如果拷贝时出现io错误
@@ -857,7 +857,7 @@ public class FileTool {
 		try {
 			FileUtils.copyDirectory(srcDir, destDir);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -883,7 +883,7 @@ public class FileTool {
 	 * @param srcDir 一个存在的待拷贝的目录, 不能为 {@code null}
 	 * @param destDir 新的目录, 不能为 {@code null}
 	 * @param preserveFileDate 是否保留文件原日期
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果任意参数为null <br>
 	 * 						IOException 如果源目录或目标目录无效 <br>
 	 * 						IOException 如果拷贝时出现io错误
@@ -895,7 +895,7 @@ public class FileTool {
 		try {
 			FileUtils.copyDirectory(srcDir, destDir, preserveFileDate);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -942,7 +942,7 @@ public class FileTool {
 	 * @param srcDir 一个存在的待拷贝的目录, 不能为 {@code null}
 	 * @param destDir 新的目录, 不能为 {@code null}
 	 * @param filter 要使用的过滤器, null表示拷贝所有目录和文件
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果源目录或目标目录为null <br>
 	 * 						IOException 如果源目录或目标目录无效 <br>
 	 * 						IOException 如果拷贝时出现io错误
@@ -954,7 +954,7 @@ public class FileTool {
 		try {
 			FileUtils.copyDirectory(srcDir, destDir, filter);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1002,7 +1002,7 @@ public class FileTool {
 	 * @param destDir 新的目录, 不能为 {@code null}
 	 * @param filter 要使用的过滤器, null表示拷贝所有目录和文件
 	 * @param preserveFileDate 是否保留文件日期
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果源目录或目标目录为null <br>
 	 * 						IOException 如果源目录或目标目录无效 <br>
 	 * 						IOException 如果拷贝时出现io错误
@@ -1014,7 +1014,7 @@ public class FileTool {
 		try {
 			FileUtils.copyDirectory(srcDir, destDir, preserveFileDate);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1035,7 +1035,7 @@ public class FileTool {
 	 * 
 	 * @param source 要拷贝字节的<code>URL</code>，不能为 {@code null}
 	 * @param destination 要写入字节的非目录<code>File</code>(可能覆盖), 不能为 {@code null}
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果源URL不能被打开 <br>
 	 * 						IOException 如果目标是一个目录 <br>
 	 * 						IOException 如果目标文件不能被写入 <br>
@@ -1049,7 +1049,7 @@ public class FileTool {
 		try {
 			FileUtils.copyURLToFile(source, destination);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1067,7 +1067,7 @@ public class FileTool {
 	 * @param destination 要写入字节的非目录<code>File</code>(可能覆盖), 不能为 {@code null}
 	 * @param connectionTimeout 如果<code>source</code>没有连接生成的超时毫秒数 
 	 * @param readTimeout 如果没有数据可以从<code>source</code>读取的超时毫秒数
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果源URL不能被打开 <br>
 	 * 						IOException 如果目标是一个目录 <br>
 	 * 						IOException 如果目标文件不能被写入 <br>
@@ -1081,7 +1081,7 @@ public class FileTool {
 		try {
 			FileUtils.copyURLToFile(source, destination, connectionTimeout, readTimeout);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1097,7 +1097,7 @@ public class FileTool {
 	 * 
 	 * @param source 拷贝数据的来源<code>InputStream</code>, 不能为 {@code null}
 	 * @param destination 要写入字节的非目录<code>File</code>(可能覆盖), 不能为 {@code null}
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果目标是一个目录 <br>
 	 * 						IOException 如果目标文件不能被写入 <br>
 	 * 						IOException 如果目标需要被创建但是又创建不了 <br>
@@ -1110,7 +1110,7 @@ public class FileTool {
 		try {
 			FileUtils.copyInputStreamToFile(source, destination);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1121,7 +1121,7 @@ public class FileTool {
 	 * </p>
 	 * 
 	 * @param directory 待删除的目录
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 删除操作失败时 <br>
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1131,7 +1131,7 @@ public class FileTool {
 		try {
 			FileUtils.deleteDirectory(directory);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1177,7 +1177,7 @@ public class FileTool {
 	 * @param directory 父目录
 	 * @param child 子文件或子目录
 	 * @return true：父目录包含子目录或文件，否则返回false
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 检查文件时出现io错误
 	 * @see FilenameTool#directoryContains(String, String)
 	 * @since 1.0.0
@@ -1188,7 +1188,7 @@ public class FileTool {
 		try {
 			return FileUtils.directoryContains(directory, child);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1198,7 +1198,7 @@ public class FileTool {
 	 * </p>
 	 * 
 	 * @param directory 待清空的目录
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 清除不成功时
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1208,7 +1208,7 @@ public class FileTool {
 		try {
 			FileUtils.cleanDirectory(directory);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1225,7 +1225,7 @@ public class FileTool {
 	 * @param file 要检查的文件, 不能为 {@code null}
 	 * @param seconds 等待的最大秒数
 	 * @return true: 如果文件存在
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果文件为 {@code null}
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1244,7 +1244,7 @@ public class FileTool {
 	 * @param file 要读取的文件, 不能为 {@code null}
 	 * @param encoding 要使用的编码, {@code null} 将使用平台默认的编码
 	 * @return 文件内容，不会为 {@code null}
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果文件为 {@code null}
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1254,7 +1254,7 @@ public class FileTool {
 		try {
 			return FileUtils.readFileToString(file, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1267,7 +1267,7 @@ public class FileTool {
 	 * @param encoding 要使用的编码, {@code null} 将使用平台默认的编码
 	 * @return 文件内容，不会为 {@code null}
 	 * @in case of an I/O error
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * 						UnsupportedCharsetException 指定的编码不被支持时
 	 * @since 1.0.0
@@ -1278,7 +1278,7 @@ public class FileTool {
 		try {
 			return FileUtils.readFileToString(file, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1289,7 +1289,7 @@ public class FileTool {
 	 * 
 	 * @param file 要读取的文件, 不能为 {@code null}
 	 * @return 文件的内容, never {@code null}
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1299,7 +1299,7 @@ public class FileTool {
 		try {
 			return FileUtils.readFileToString(file);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1310,7 +1310,7 @@ public class FileTool {
 	 * 
 	 * @param file 要读取的文件, 不能为 {@code null}
 	 * @return 文件内容的字节数组, 不会为 {@code null}
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1320,7 +1320,7 @@ public class FileTool {
 		try {
 			return FileUtils.readFileToByteArray(file);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1332,7 +1332,7 @@ public class FileTool {
 	 * @param file 要读取的文件, 不能为 {@code null}
 	 * @param encoding 要使用的编码, {@code null} 将使用平台默认的编码
 	 * @return 字符串列表，每一个元素代表文件中的每一行, 不会为{@code null}
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1342,7 +1342,7 @@ public class FileTool {
 		try {
 			return FileUtils.readLines(file, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1354,7 +1354,7 @@ public class FileTool {
 	 * @param file 要读取的文件, 不能为 {@code null}
 	 * @param encoding 要使用的编码, {@code null} 将使用平台默认的编码
 	 * @return 字符串列表，每一个元素代表文件中的每一行, 不会为{@code null}
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * 						UnsupportedCharsetException 如果编码不被支持
 	 * @since 1.0.0
@@ -1365,7 +1365,7 @@ public class FileTool {
 		try {
 			return FileUtils.readLines(file, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1376,7 +1376,7 @@ public class FileTool {
 	 * 
 	 * @param file 要读取的文件, 不能为 {@code null}
 	 * @return 字符串列表，每一个元素代表文件中的每一行, 不会为{@code null}
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1386,7 +1386,7 @@ public class FileTool {
 		try {
 			return FileUtils.readLines(file);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1424,7 +1424,7 @@ public class FileTool {
 	 * @param file 要读取的文件对象, 不能为 {@code null}
 	 * @param encoding 要使用的编码, {@code null} 将使用平台默认的编码
 	 * @return 代表文件中每行的迭代器, 不会为 {@code null}
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1434,7 +1434,7 @@ public class FileTool {
 		try {
 			return FileUtils.lineIterator(file, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1445,7 +1445,7 @@ public class FileTool {
 	 * 
 	 * @param file 要读取的文件对象, 不能为 {@code null}
 	 * @return 代表文件中每行的迭代器, 不会为 {@code null}
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @see #lineIterator(File, String)
 	 * @since 1.0.0
@@ -1456,7 +1456,7 @@ public class FileTool {
 		try {
 			return FileUtils.lineIterator(file);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1469,7 +1469,7 @@ public class FileTool {
 	 * @param file 要写入的文件
 	 * @param data 要写入到文件的内容
 	 * @param encoding 要使用的编码, {@code null} 将使用平台默认的编码
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * 						UnsupportedEncodingException 如果指定的编码不被虚拟机支持
 	 * @since 1.0.0
@@ -1480,7 +1480,7 @@ public class FileTool {
 		try {
 			FileUtils.writeStringToFile(file, data, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1492,7 +1492,7 @@ public class FileTool {
 	 * @param file 要写入的文件
 	 * @param data 要写入到文件的内容
 	 * @param encoding 要使用的编码, {@code null} 将使用平台默认的编码
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * 						UnsupportedEncodingException 如果指定的编码不被虚拟机支持
 	 * @since 1.0.0
@@ -1503,7 +1503,7 @@ public class FileTool {
 		try {
 			FileUtils.writeStringToFile(file, data, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1516,7 +1516,7 @@ public class FileTool {
 	 * @param data 要写入到文件的内容
 	 * @param encoding 要使用的编码, {@code null} 将使用平台默认的编码
 	 * @param append 字符序列是否被拼接到文件末尾，而不是覆盖原来文件的内容
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1526,7 +1526,7 @@ public class FileTool {
 		try {
 			FileUtils.writeStringToFile(file, data, append);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1539,7 +1539,7 @@ public class FileTool {
 	 * @param data 要写入到文件的内容
 	 * @param encoding 要使用的编码, {@code null} 将使用平台默认的编码
 	 * @param append 字符序列是否被拼接到文件末尾，而不是覆盖原来文件的内容
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * 						UnsupportedEncodingException 如果指定的编码不被虚拟机支持
 	 * @since 1.0.0
@@ -1550,7 +1550,7 @@ public class FileTool {
 		try {
 			FileUtils.writeStringToFile(file, data, encoding, append);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1561,7 +1561,7 @@ public class FileTool {
 	 * 
 	 * @param file 要写入的文件
 	 * @param data 要写入到文件的内容
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1571,7 +1571,7 @@ public class FileTool {
 		try {
 			FileUtils.writeStringToFile(file, data);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1583,7 +1583,7 @@ public class FileTool {
 	 * @param file 要写入的文件
 	 * @param data 要写入到文件的内容
 	 * @param append 字符串是否被拼接到文件末尾，而不是覆盖原来文件的内容
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1593,7 +1593,7 @@ public class FileTool {
 		try {
 			FileUtils.writeStringToFile(file, data, append);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1604,7 +1604,7 @@ public class FileTool {
 	 * 
 	 * @param file 要写入的文件
 	 * @param data 要写入到文件的内容
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1614,7 +1614,7 @@ public class FileTool {
 		try {
 			FileUtils.write(file, data);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1626,7 +1626,7 @@ public class FileTool {
 	 * @param file 要写入的文件
 	 * @param data 要写入到文件的内容
 	 * @param append 字符序列是否被拼接到文件末尾，而不是覆盖原来文件的内容
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1636,7 +1636,7 @@ public class FileTool {
 		try {
 			FileUtils.write(file, data, append);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1648,7 +1648,7 @@ public class FileTool {
 	 * @param file 要写入的文件
 	 * @param data 要写入到文件的内容
 	 * @param encoding 要使用的编码, {@code null} 将使用平台默认的编码
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1658,7 +1658,7 @@ public class FileTool {
 		try {
 			FileUtils.write(file, data, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1670,7 +1670,7 @@ public class FileTool {
 	 * @param file 要写入的文件
 	 * @param data 要写入到文件的内容
 	 * @param encoding 要使用的编码, {@code null} 将使用平台默认的编码
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * 						UnsupportedEncodingException 如果指定的编码不被虚拟机支持
 	 * @since 1.0.0
@@ -1681,7 +1681,7 @@ public class FileTool {
 		try {
 			FileUtils.write(file, data, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1694,7 +1694,7 @@ public class FileTool {
 	 * @param data 要写入到文件的内容
 	 * @param encoding 要使用的编码, {@code null} 将使用平台默认的编码
 	 * @param append 字符序列是否被拼接到文件末尾，而不是覆盖原来文件的内容
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1704,7 +1704,7 @@ public class FileTool {
 		try {
 			FileUtils.write(file, data, encoding, append);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1717,7 +1717,7 @@ public class FileTool {
 	 * @param data 要写入到文件的内容
 	 * @param encoding 要使用的编码, {@code null} 将使用平台默认的编码
 	 * @param append 字符序列是否被拼接到文件末尾，而不是覆盖原来文件的内容
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * 						UnsupportedEncodingException 如果指定的编码不被虚拟机支持
 	 * @since 1.0.0
@@ -1728,7 +1728,7 @@ public class FileTool {
 		try {
 			FileUtils.write(file, data, encoding, append);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1739,7 +1739,7 @@ public class FileTool {
 	 * 
 	 * @param file 要写入的文件
 	 * @param data 要写入到文件的内容
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1749,7 +1749,7 @@ public class FileTool {
 		try {
 			FileUtils.writeByteArrayToFile(file, data);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1761,7 +1761,7 @@ public class FileTool {
 	 * @param file 要写入的文件
 	 * @param data 要写入到文件的内容
 	 * @param append 数据是否被拼接到文件末尾，而不是替换原文件的内容
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1771,7 +1771,7 @@ public class FileTool {
 		try {
 			FileUtils.writeByteArrayToFile(file, data, append);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1788,7 +1788,7 @@ public class FileTool {
 	 * @param file 要写入的文件
 	 * @param encoding 要使用的编码, {@code null} 将使用平台默认的编码
 	 * @param 要写入的容器, {@code null} 将写入空行
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * 						UnsupportedEncodingException 如果指定的编码不被虚拟机支持
 	 * @since 1.0.0
@@ -1799,7 +1799,7 @@ public class FileTool {
 		try {
 			FileUtils.writeLines(file, lines);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1817,7 +1817,7 @@ public class FileTool {
 	 * @param encoding 要使用的编码, {@code null} 将使用平台默认的编码
 	 * @param 要写入的容器, {@code null} 将写入空行
 	 * @param append 数据是否被拼接到文件末尾，而不是替换原文件的内容
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * 						UnsupportedEncodingException 如果指定的编码不被虚拟机支持
 	 * @since 1.0.0
@@ -1828,7 +1828,7 @@ public class FileTool {
 		try {
 			FileUtils.writeLines(file, encoding, lines, append);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1844,7 +1844,7 @@ public class FileTool {
 	 * 
 	 * @param file 要写入的文件
 	 * @param 要写入的容器, {@code null} 将写入空行
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1854,7 +1854,7 @@ public class FileTool {
 		try {
 			FileUtils.writeLines(file, lines);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1871,7 +1871,7 @@ public class FileTool {
 	 * @param file 要写入的文件 to
 	 * @param lines 要写入的容器, {@code null} 将写入空行
 	 * @param append 数据是否被拼接到文件末尾，而不是替换原文件的内容
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1881,7 +1881,7 @@ public class FileTool {
 		try {
 			FileUtils.writeLines(file, lines, append);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1899,7 +1899,7 @@ public class FileTool {
 	 * @param encoding 要使用的编码, {@code null} 将使用平台默认的编码
 	 * @param lines 要写入的容器, {@code null} 将写入空行
 	 * @param lineEnding 行分隔符, {@code null}将使用系统默认的行分隔符
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * 						UnsupportedEncodingException 如果指定的编码不被虚拟机支持
 	 * @since 1.0.0
@@ -1910,7 +1910,7 @@ public class FileTool {
 		try {
 			FileUtils.writeLines(file, lines, lineEnding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1929,7 +1929,7 @@ public class FileTool {
 	 * @param lines 要写入的容器, {@code null} 将写入空行
 	 * @param lineEnding 行分隔符, {@code null}将使用系统默认的行分隔符
 	 * @param append 数据是否被拼接到文件末尾，而不是替换原文件的内容
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * 						UnsupportedEncodingException 如果指定的编码不被虚拟机支持
 	 * @since 1.0.0
@@ -1940,7 +1940,7 @@ public class FileTool {
 		try {
 			FileUtils.writeLines(file, encoding, lines, lineEnding, append);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1953,7 +1953,7 @@ public class FileTool {
 	 * @param file 要写入的文件 to
 	 * @param lines 要写入的容器, {@code null} 将写入空行
 	 * @param lineEnding 行分隔符, {@code null}将使用系统默认的行分隔符
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1963,7 +1963,7 @@ public class FileTool {
 		try {
 			FileUtils.writeLines(file, lines, lineEnding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1977,7 +1977,7 @@ public class FileTool {
 	 * @param lines 要写入的容器, {@code null} 将写入空行
 	 * @param lineEnding 行分隔符, {@code null}将使用系统默认的行分隔符
 	 * @param append 数据是否被拼接到文件末尾，而不是替换原文件的内容
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1987,7 +1987,7 @@ public class FileTool {
 		try {
 			FileUtils.writeLines(file, lines, lineEnding, append);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2005,7 +2005,7 @@ public class FileTool {
 	 * </ul>
 	 * 
 	 * @param file 要删除的文件或目录, 不能为 {@code null}
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果目录或文件为{@code null} <br>
 	 * 						FileNotFoundException 如果目录或文件找不到 <br>
 	 * 						IOException 删除操作失败时
@@ -2017,7 +2017,7 @@ public class FileTool {
 		try {
 			FileUtils.forceDelete(file);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2027,7 +2027,7 @@ public class FileTool {
 	 * </p>
 	 * 
 	 * @param file 要删除的文件或目录, 不能为 {@code null}
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果目录或文件为{@code null} <br>
 	 * 						IOException 删除操作失败时
 	 * @since 1.0.0
@@ -2038,7 +2038,7 @@ public class FileTool {
 		try {
 			FileUtils.forceDeleteOnExit(file);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2053,7 +2053,7 @@ public class FileTool {
 	 * </p>
 	 * 
 	 * @param directory 要创建的目录, 不能为 {@code null}
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果目录为{@code null} <br>
 	 * 						IOException 如果目录不能被创建或存在但不是一个目录
 	 * @since 1.0.0
@@ -2064,7 +2064,7 @@ public class FileTool {
 		try {
 			FileUtils.forceMkdir(directory);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2257,7 +2257,7 @@ public class FileTool {
 	 * 
 	 * @param file 待计算校验和的文件, 不能为 {@code null}
 	 * @return 校验和
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 *  					NullPointerException 如果文件或校验和为 {@code null} <br>
 	 * 						IllegalArgumentException 如果指定的文件是一个目录 <br>
 	 * 						IOException 读取文件时发生io异常
@@ -2269,7 +2269,7 @@ public class FileTool {
 		try {
 			return FileUtils.checksumCRC32(file);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2285,7 +2285,7 @@ public class FileTool {
 	 * @param file 要计算校验和的文件, 不能为 {@code null}
 	 * @param checksum 使用的校验和对象, 不能为 {@code null}
 	 * @return 指定的校验和对象，已经由文件的内容更新过
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果任意参数为 {@code null} <br>
 	 * 						IllegalArgumentException 如果指定的文件是一个目录 <br>
 	 * 						IOException 读取文件时发生io异常
@@ -2297,7 +2297,7 @@ public class FileTool {
 		try {
 			return FileUtils.checksum(file, checksum);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2312,7 +2312,7 @@ public class FileTool {
 	 * 
 	 * @param srcDir 要移动的目录
 	 * @param destDir 目标目录
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果任意参数为 {@code null} <br>
 	 * 						FileExistsException 如果目标目录存在 <br>
 	 * 						IOException 源或目标不可用时 <br>
@@ -2325,7 +2325,7 @@ public class FileTool {
 		try {
 			FileUtils.moveDirectory(srcDir, destDir);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2341,7 +2341,7 @@ public class FileTool {
 	 * @param srcDir 要移动的目录
 	 * @param destDir 目标目录
 	 * @param createDestDir {@code true}：创建目录, {@code false} : 将抛出IOException异常
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果任意参数为 {@code null} <br>
 	 * 						FileExistsException 如果目标目录存在 <br>
 	 * 						IOException 源或目标不可用时 <br>
@@ -2354,7 +2354,7 @@ public class FileTool {
 		try {
 			FileUtils.moveDirectoryToDirectory(src, destDir, createDestDir);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2369,7 +2369,7 @@ public class FileTool {
 	 * 
 	 * @param srcFile 要移动的文件
 	 * @param destFile 目标文件
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果任意参数为 {@code null} <br>
 	 * 						FileExistsException 如果目标文件存在 <br>
 	 * 						IOException 源或目标不可用时 <br>
@@ -2382,7 +2382,7 @@ public class FileTool {
 		try {
 			FileUtils.moveFile(srcFile, destFile);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2398,7 +2398,7 @@ public class FileTool {
 	 * @param srcFile 要移动的文件
 	 * @param destDir 目标目录
 	 * @param createDestDir {@code true}：创建目录, {@code false} : 将抛出IOException异常
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果任意参数为 {@code null} <br>
 	 * 						FileExistsException 如果目标文件存在 <br>
 	 * 						IOException 源或目标不可用时 <br>
@@ -2411,7 +2411,7 @@ public class FileTool {
 		try {
 			FileUtils.moveFileToDirectory(srcFile, destDir, createDestDir);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2426,7 +2426,7 @@ public class FileTool {
 	 * 
 	 * @param src 要移动的文件或目录
 	 * @param destDir 目标目录
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果任意参数为 {@code null} <br>
 	 * 						FileExistsException 如果文件或目录存在于目标目录中 <br>
 	 * 						IOException 源或目标不可用时 <br>
@@ -2439,7 +2439,7 @@ public class FileTool {
 		try {
 			FileUtils.moveToDirectory(src, destDir, createDestDir);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2459,7 +2459,7 @@ public class FileTool {
 	 * 
 	 * @param file 要检查的文件
 	 * @return true：如果文件是一个符号链接
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果检查时发生io错误
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -2469,7 +2469,7 @@ public class FileTool {
 		try {
 			return FileUtils.isSymlink(file);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 

@@ -9,7 +9,7 @@ import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.kvc.joy.commons.exception.ServiceException;
+import com.kvc.joy.commons.exception.SystemException;
 
 /**
  * <p>
@@ -50,7 +50,7 @@ public class MethodTool {
 			}
 			return methods;
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 	
@@ -63,7 +63,7 @@ public class MethodTool {
 	 * @param obj 调用的对象
 	 * @param propertyName 属性名
 	 * @return 属性名对应get方法的返回值
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NoSuchMethodException 如果找不到指定的可访问的方法 <br>
 	 * 						InvocationTargetException 对被调用方法的包装异常 <br>
 	 * 						IllegalAccessException 如果请求的方法不能通过反射访问
@@ -135,7 +135,7 @@ public class MethodTool {
 	 * @param methodName 方法名
 	 * @param args 参数值可变数组 - null将被当作空数组
 	 * @return 指定方法调用的返回值
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NoSuchMethodException 如果找不到指定的可访问的方法 <br>
 	 * 						InvocationTargetException 对被调用方法的包装异常 <br>
 	 * 						IllegalAccessException 如果请求的方法不能通过反射访问
@@ -147,7 +147,7 @@ public class MethodTool {
 		try {
 			return org.apache.commons.lang3.reflect.MethodUtils.invokeMethod(object, methodName, args);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -169,7 +169,7 @@ public class MethodTool {
 	 * @param args 参数值数组 - null将被当作空数组
 	 * @param parameterTypes 参数类型数组 - null将被当作空数组
 	 * @return 指定方法调用的返回值
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NoSuchMethodException 如果找不到指定的可访问的方法 <br>
 	 * 						InvocationTargetException 对被调用方法的包装异常 <br>
 	 * 						IllegalAccessException 如果请求的方法不能通过反射访问
@@ -181,7 +181,7 @@ public class MethodTool {
 		try {
 			return org.apache.commons.lang3.reflect.MethodUtils.invokeMethod(object, methodName, args, parameterTypes);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -198,7 +198,7 @@ public class MethodTool {
 	 * @param methodName 方法名
 	 * @param args 参数值数组 - null将被当作空数组
 	 * @return 指定方法调用的返回值
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NoSuchMethodException 如果找不到指定的可访问的方法 <br>
 	 * 						InvocationTargetException 对被调用方法的包装异常 <br>
 	 * 						IllegalAccessException 如果请求的方法不能通过反射访问
@@ -210,7 +210,7 @@ public class MethodTool {
 		try {
 			return org.apache.commons.lang3.reflect.MethodUtils.invokeExactMethod(object, methodName, args);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -228,7 +228,7 @@ public class MethodTool {
 	 * @param args 参数值数组 - null将被当作空数组
 	 * @param parameterTypes 参数类型数组 - null将被当作空数组
 	 * @return 指定方法调用的返回值
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NoSuchMethodException 如果找不到指定的可访问的方法 <br>
 	 * 						InvocationTargetException 对被调用方法的包装异常 <br>
 	 * 						IllegalAccessException 如果请求的方法不能通过反射访问
@@ -241,7 +241,7 @@ public class MethodTool {
 			return org.apache.commons.lang3.reflect.MethodUtils.invokeExactMethod(object, methodName, args,
 					parameterTypes);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -259,7 +259,7 @@ public class MethodTool {
 	 * @param args 参数值数组 - null将被当作空数组
 	 * @param parameterTypes 参数类型数组 - null将被当作空数组
 	 * @return 指定方法调用的返回值
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NoSuchMethodException 如果找不到指定的可访问的方法 <br>
 	 * 						InvocationTargetException 对被调用方法的包装异常 <br>
 	 * 						IllegalAccessException 如果请求的方法不能通过反射访问
@@ -273,7 +273,7 @@ public class MethodTool {
 			return org.apache.commons.lang3.reflect.MethodUtils.invokeExactStaticMethod(cls, methodName, args,
 					parameterTypes);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -299,7 +299,7 @@ public class MethodTool {
 	 * @param methodName 方法名
 	 * @param args 参数值数组 - null将被当作空数组
 	 * @return 指定方法调用的返回值
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NoSuchMethodException 如果找不到指定的可访问的方法 <br>
 	 * 						InvocationTargetException 对被调用方法的包装异常 <br>
 	 * 						IllegalAccessException 如果请求的方法不能通过反射访问
@@ -311,7 +311,7 @@ public class MethodTool {
 		try {
 			return org.apache.commons.lang3.reflect.MethodUtils.invokeStaticMethod(cls, methodName, args);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -333,7 +333,7 @@ public class MethodTool {
 	 * @param args 参数值数组 - null将被当作空数组
 	 * @param parameterTypes 参数类型数组 - null将被当作空数组
 	 * @return 指定方法调用的返回值
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NoSuchMethodException 如果找不到指定的可访问的方法 <br>
 	 * 						InvocationTargetException 对被调用方法的包装异常 <br>
 	 * 						IllegalAccessException 如果请求的方法不能通过反射访问
@@ -346,7 +346,7 @@ public class MethodTool {
 			return org.apache.commons.lang3.reflect.MethodUtils.invokeStaticMethod(cls, methodName, args,
 					parameterTypes);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -363,7 +363,7 @@ public class MethodTool {
 	 * @param methodName 方法名
 	 * @param args 参数值数组 - null将被当作空数组
 	 * @return 指定方法调用的返回值
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NoSuchMethodException 如果找不到指定的可访问的方法 <br>
 	 * 						InvocationTargetException 对被调用方法的包装异常 <br>
 	 * 						IllegalAccessException 如果请求的方法不能通过反射访问
@@ -375,7 +375,7 @@ public class MethodTool {
 		try {
 			return org.apache.commons.lang3.reflect.MethodUtils.invokeExactStaticMethod(cls, methodName, args);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 

@@ -2,7 +2,7 @@ package com.kvc.joy.plugin.mapping.field.dao;
 
 import java.util.List;
 
-import com.kvc.joy.commons.exception.ServiceException;
+import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.plugin.mapping.field.po.TSysFieldMappingRule;
 
@@ -34,7 +34,7 @@ public class TCfgFieldMappingRuleDao {
 //				}
 //			});
 		} catch (Exception e) {
-			throw new ServiceException("加载字段映射规则出错！", e);
+			throw new SystemException("加载字段映射规则出错！", e);
 		}
 		return ruleList;
 	}

@@ -21,7 +21,7 @@ import java.util.List;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.LineIterator;
 
-import com.kvc.joy.commons.exception.ServiceException;
+import com.kvc.joy.commons.exception.SystemException;
 
 /**
  * <p>
@@ -358,7 +358,7 @@ public class IoTool {
 	 * 
 	 * @param input 要被完全缓存的Stream
 	 * @return 被完全缓存的Stream
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -368,7 +368,7 @@ public class IoTool {
 		try {
 			return IOUtils.toBufferedInputStream(input);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -401,7 +401,7 @@ public class IoTool {
 	 * 
 	 * @param input 要读取的 <code>InputStream</code>
 	 * @return 字节数组
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -412,7 +412,7 @@ public class IoTool {
 		try {
 			return IOUtils.toByteArray(input);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -430,7 +430,7 @@ public class IoTool {
 	 * @param input 要读取的 <code>InputStream</code>
 	 * @param size <code>InputStream</code>的大小
 	 * @return 请求的字节数组
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException io错误发生或<code>InputStream</code>的大小与size参数不一致时 <br>					
 	 * 						IllegalArgumentException 如果size参数小于0或大于Integer.MAX_VALUE
 	 * @see IOTool#toByteArray(java.io.InputStream, int)
@@ -442,7 +442,7 @@ public class IoTool {
 		try {
 			return IOUtils.toByteArray(input, size);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -455,7 +455,7 @@ public class IoTool {
 	 * @param input 要读取的 <code>InputStream</code>
 	 * @param size <code>InputStream</code>的大小
 	 * @return 请求的字节数组
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException io错误发生或<code>InputStream</code>的大小与size参数不一致时 <br>					
 	 * 						IllegalArgumentException 如果size参数小于0
 	 * @since 1.0.0
@@ -466,7 +466,7 @@ public class IoTool {
 		try {
 			return IOUtils.toByteArray(input, size);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -481,7 +481,7 @@ public class IoTool {
 	 * 
 	 * @param input 要读取的 <code>Reader</code>
 	 * @return 字节数组
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -492,7 +492,7 @@ public class IoTool {
 		try {
 			return IOUtils.toByteArray(input);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -508,7 +508,7 @@ public class IoTool {
 	 * @param input 要读取的 <code>Reader</code>
 	 * @param encoding 编码
 	 * @return 字节数组
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -519,7 +519,7 @@ public class IoTool {
 		try {
 			return IOUtils.toByteArray(input, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -540,7 +540,7 @@ public class IoTool {
 	 * @param input 要读取的 <code>Reader</code>
 	 * @param encoding 编码
 	 * @return 字节数组
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
@@ -552,7 +552,7 @@ public class IoTool {
 		try {
 			return IOUtils.toByteArray(input, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -563,7 +563,7 @@ public class IoTool {
 	 * 
 	 * @param uri 要读取的内容的<code>URI</code>
 	 * @return 请求的字节数组
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -574,7 +574,7 @@ public class IoTool {
 		try {
 			return IOUtils.toByteArray(uri);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -585,7 +585,7 @@ public class IoTool {
 	 * 
 	 * @param url 要读取的内容的<code>URL</code>
 	 * @return 请求的字节数组
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -596,7 +596,7 @@ public class IoTool {
 		try {
 			return IOUtils.toByteArray(url);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -607,7 +607,7 @@ public class IoTool {
 	 * 
 	 * @param urlConn 要读取的内容的<code>URLConnection</code>
 	 * @return 请求的字节数组
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -618,7 +618,7 @@ public class IoTool {
 		try {
 			return IOUtils.toByteArray(urlConn);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -637,7 +637,7 @@ public class IoTool {
 	 * 
 	 * @param is 要读取的 <code>InputStream</code>
 	 * @return 字节数组
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -648,7 +648,7 @@ public class IoTool {
 		try {
 			return IOUtils.toCharArray(is);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -665,7 +665,7 @@ public class IoTool {
 	 * @param is 要读取的 <code>InputStream</code>
 	 * @param encoding 使用的编码，null表示平台默认的编码
 	 * @return 字节数组
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -676,7 +676,7 @@ public class IoTool {
 		try {
 			return IOUtils.toCharArray(is, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -698,7 +698,7 @@ public class IoTool {
 	 * @param is 要读取的 <code>InputStream</code>
 	 * @param encoding 使用的编码，null表示平台默认的编码
 	 * @return 字节数组
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 指定编码不被支持时
@@ -710,7 +710,7 @@ public class IoTool {
 		try {
 			return IOUtils.toCharArray(is, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -725,7 +725,7 @@ public class IoTool {
 	 * 
 	 * @param input 要读取的 <code>Reader</code>
 	 * @return 字节数组
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -736,7 +736,7 @@ public class IoTool {
 		try {
 			return IOUtils.toCharArray(input);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -754,7 +754,7 @@ public class IoTool {
 	 * 
 	 * @param input 要读取的<code>InputStream</code>
 	 * @return 请求的字符串
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -765,7 +765,7 @@ public class IoTool {
 		try {
 			return IOUtils.toString(input);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -783,7 +783,7 @@ public class IoTool {
 	 * @param input 要读取的<code>InputStream</code>
 	 * @param encoding 使用的编码，null表示平台默认的编码
 	 * @return 请求的字符串
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -794,7 +794,7 @@ public class IoTool {
 		try {
 			return IOUtils.toString(input, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -815,7 +815,7 @@ public class IoTool {
 	 * @param input 要读取的<code>InputStream</code>
 	 * @param encoding 使用的编码，null表示平台默认的编码
 	 * @return 请求的字符串
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 指定的编码不被支持时
@@ -827,7 +827,7 @@ public class IoTool {
 		try {
 			return IOUtils.toString(input, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -842,7 +842,7 @@ public class IoTool {
 	 * 
 	 * @param input 要读取的<code>Reader</code>
 	 * @return 请求的字符串
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -853,7 +853,7 @@ public class IoTool {
 		try {
 			return IOUtils.toString(input);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -864,7 +864,7 @@ public class IoTool {
 	 * 
 	 * @param uri URI源
 	 * @return URI指向的内容的字符串表示
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -874,7 +874,7 @@ public class IoTool {
 		try {
 			return IOUtils.toString(uri);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -886,7 +886,7 @@ public class IoTool {
 	 * @param uri URI源
 	 * @param encoding URL指向的内容的编码名称
 	 * @return URI指向的内容的字符串表示
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -896,7 +896,7 @@ public class IoTool {
 		try {
 			return IOUtils.toString(uri, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -908,7 +908,7 @@ public class IoTool {
 	 * @param uri URI源
 	 * @param encoding URL指向的内容的编码名称
 	 * @return URI指向的内容的字符串表示
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
 	 * @since 1.0.0
@@ -919,7 +919,7 @@ public class IoTool {
 		try {
 			return IOUtils.toString(uri, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -930,7 +930,7 @@ public class IoTool {
 	 * 
 	 * @param url URL源
 	 * @return URL指向的内容的字符串表示
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -940,7 +940,7 @@ public class IoTool {
 		try {
 			return IOUtils.toString(url);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -952,7 +952,7 @@ public class IoTool {
 	 * @param url URL源
 	 * @param encoding URL指向的内容的编码名称
 	 * @return URL指向的内容的字符串表示
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -962,7 +962,7 @@ public class IoTool {
 		try {
 			return IOUtils.toString(url, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -975,7 +975,7 @@ public class IoTool {
 	 * @param encoding URL指向的内容的编码名称
 	 * @return URI指向的内容的字符串表示
 	 * @if an I/O exception occurs.
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
 	 * @since 1.0.0
@@ -986,7 +986,7 @@ public class IoTool {
 		try {
 			return IOUtils.toString(url, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1003,7 +1003,7 @@ public class IoTool {
 	 * @param input 要读取的字节数组
 	 * @param encoding 使用的编码，null表示平台默认的编码
 	 * @return 请求的字符串
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -1014,7 +1014,7 @@ public class IoTool {
 		try {
 			return IOUtils.toString(input, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1032,7 +1032,7 @@ public class IoTool {
 	 * 
 	 * @param input 要读取的<code>InputStream</code>, 不能为null
 	 * @return 字符串列表，不会为null
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -1043,7 +1043,7 @@ public class IoTool {
 		try {
 			return IOUtils.readLines(input);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1060,7 +1060,7 @@ public class IoTool {
 	 * @param input 要读取的<code>InputStream</code>, 不能为null
 	 * @param encoding 使用的编码，null表示平台默认的编码
 	 * @return 字符串列表，不会为null
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -1071,7 +1071,7 @@ public class IoTool {
 		try {
 			return IOUtils.readLines(input, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1093,7 +1093,7 @@ public class IoTool {
 	 * @param input 要读取的<code>InputStream</code>, 不能为null
 	 * @param encoding 使用的编码，null表示平台默认的编码
 	 * @return 字符串列表，不会为null
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
@@ -1105,7 +1105,7 @@ public class IoTool {
 		try {
 			return IOUtils.readLines(input, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1120,7 +1120,7 @@ public class IoTool {
 	 * 
 	 * @param input 要读取的<code>Reader</code>, 不能为null
 	 * @return 字符串列表，不会为null
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -1131,7 +1131,7 @@ public class IoTool {
 		try {
 			return IOUtils.readLines(input);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1166,7 +1166,7 @@ public class IoTool {
 	 * 
 	 * @param reader 要读取的<code>Reader</code>, 不能为null
 	 * @return an Iterator of the lines in the reader, never null
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IllegalArgumentException 如果参数为null <br>
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -1206,7 +1206,7 @@ public class IoTool {
 	 * @param input 要读取的<code>InputStream</code>, 不能为null
 	 * @param encoding 使用的编码，null表示平台默认的编码
 	 * @return an Iterator of the lines in the reader, never null
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IllegalArgumentException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -1217,7 +1217,7 @@ public class IoTool {
 		try {
 			return IOUtils.lineIterator(input, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1251,7 +1251,7 @@ public class IoTool {
 	 * @param input 要读取的<code>InputStream</code>, 不能为null
 	 * @param encoding 使用的编码，null表示平台默认的编码
 	 * @return an Iterator of the lines in the reader, never null
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IllegalArgumentException 如果参数为null <br>
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
@@ -1263,7 +1263,7 @@ public class IoTool {
 		try {
 			return IOUtils.lineIterator(input, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1311,7 +1311,7 @@ public class IoTool {
 	 * @param input 待转换的CharSequence
 	 * @param encoding 使用的编码，null表示平台默认的编码
 	 * @return 输入流
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
 	 * @since 1.0.0
@@ -1322,7 +1322,7 @@ public class IoTool {
 		try {
 			return IOUtils.toInputStream(input, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1370,7 +1370,7 @@ public class IoTool {
 	 * @param input 待转换的字符串
 	 * @param encoding 使用的编码，null表示平台默认的编码
 	 * @return 输入流
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
 	 * @since 1.0.0
@@ -1381,7 +1381,7 @@ public class IoTool {
 		try {
 			return IOUtils.toInputStream(input, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1394,7 +1394,7 @@ public class IoTool {
 	 * 
 	 * @param data 待写入的字节数组, 在输出时不会被修改, null将什么也不做
 	 * @param output 要写入的 <code>OutputStream</code>
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -1405,7 +1405,7 @@ public class IoTool {
 		try {
 			IOUtils.write(data, output);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1421,7 +1421,7 @@ public class IoTool {
 	 * 
 	 * @param data 待写入的字节数组, 在输出时不会被修改, null将什么也不做
 	 * @param output 要写入的<code>Writer</code>
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -1432,7 +1432,7 @@ public class IoTool {
 		try {
 			IOUtils.write(data, output);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1449,7 +1449,7 @@ public class IoTool {
 	 * @param data 待写入的字节数组, 在输出时不会被修改, null将什么也不做
 	 * @param output 要写入的<code>Writer</code>
 	 * @param encoding 使用的编码，null表示平台默认的编码
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -1460,7 +1460,7 @@ public class IoTool {
 		try {
 			IOUtils.write(data, output, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1482,7 +1482,7 @@ public class IoTool {
 	 * @param data 待写入的字节数组, 在输出时不会被修改, null将什么也不做
 	 * @param output 要写入的<code>Writer</code>
 	 * @param encoding 使用的编码，null表示平台默认的编码
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
@@ -1494,7 +1494,7 @@ public class IoTool {
 		try {
 			IOUtils.write(data, output, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1509,7 +1509,7 @@ public class IoTool {
 	 * 
 	 * @param data 待写入的字符数组, 在输出时不会被修改, null将什么也不做
 	 * @param output 要写入的<code>Writer</code>
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -1520,7 +1520,7 @@ public class IoTool {
 		try {
 			IOUtils.write(data, output);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1536,7 +1536,7 @@ public class IoTool {
 	 * 
 	 * @param data 待写入的字符数组, 在输出时不会被修改, null将什么也不做
 	 * @param output 要写入的<code>OutputStream</code>
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -1547,7 +1547,7 @@ public class IoTool {
 		try {
 			IOUtils.write(data, output);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1564,7 +1564,7 @@ public class IoTool {
 	 * @param data 待写入的字符数组, 在输出时不会被修改, null将什么也不做
 	 * @param output 要写入的<code>OutputStream</code>
 	 * @param encoding 使用的编码，null表示平台默认的编码
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -1575,7 +1575,7 @@ public class IoTool {
 		try {
 			IOUtils.write(data, output, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1597,7 +1597,7 @@ public class IoTool {
 	 * @param data 待写入的字符数组, 在输出时不会被修改, null将什么也不做
 	 * @param output 要写入的<code>OutputStream</code>
 	 * @param encoding 使用的编码，null表示平台默认的编码
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
@@ -1609,7 +1609,7 @@ public class IoTool {
 		try {
 			IOUtils.write(data, output, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1622,7 +1622,7 @@ public class IoTool {
 	 * 
 	 * @param data 待写入的<code>CharSequence</code>， 为null将什么也不做
 	 * @param output 要写入的<code>Writer</code>
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -1633,7 +1633,7 @@ public class IoTool {
 		try {
 			IOUtils.write(data, output);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1649,7 +1649,7 @@ public class IoTool {
 	 * 
 	 * @param data 待写入的<code>CharSequence</code>， 为null将什么也不做
 	 * @param output 要写入的<code>OutputStream</code>
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -1660,7 +1660,7 @@ public class IoTool {
 		try {
 			IOUtils.write(data, output);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1677,7 +1677,7 @@ public class IoTool {
 	 * @param data 待写入的<code>CharSequence</code>， 为null将什么也不做
 	 * @param output 要写入的<code>OutputStream</code>
 	 * @param encoding 使用的编码，null表示平台默认的编码
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -1688,7 +1688,7 @@ public class IoTool {
 		try {
 			IOUtils.write(data, output, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1710,7 +1710,7 @@ public class IoTool {
 	 * @param data 待写入的<code>CharSequence</code>， 为null将什么也不做
 	 * @param output 要写入的<code>OutputStream</code>
 	 * @param encoding 使用的编码，null表示平台默认的编码
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
@@ -1722,7 +1722,7 @@ public class IoTool {
 		try {
 			IOUtils.write(data, output, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1735,7 +1735,7 @@ public class IoTool {
 	 * 
 	 * @param data 待写入的<code>String</code>，为null将什么也不做
 	 * @param output 要写入的<code>Writer</code>
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -1746,7 +1746,7 @@ public class IoTool {
 		try {
 			IOUtils.write(data, output);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1762,7 +1762,7 @@ public class IoTool {
 	 * 
 	 * @param data 待写入的<code>String</code>，为null将什么也不做
 	 * @param output 要写入的<code>OutputStream</code>
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -1773,7 +1773,7 @@ public class IoTool {
 		try {
 			IOUtils.write(data, output);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1790,7 +1790,7 @@ public class IoTool {
 	 * @param data 待写入的<code>String</code>，为null将什么也不做
 	 * @param output 要写入的<code>OutputStream</code>
 	 * @param encoding 使用的编码，null表示平台默认的编码
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -1801,7 +1801,7 @@ public class IoTool {
 		try {
 			IOUtils.write(data, output, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1823,7 +1823,7 @@ public class IoTool {
 	 * @param data 待写入的<code>String</code>，为null将什么也不做
 	 * @param output 要写入的<code>OutputStream</code>
 	 * @param encoding 使用的编码，null表示平台默认的编码
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
@@ -1835,7 +1835,7 @@ public class IoTool {
 		try {
 			IOUtils.write(data, output, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1853,7 +1853,7 @@ public class IoTool {
 	 * @param lines 要写入的行，null的实体产生空白行
 	 * @param lineEnding 要使用的行分隔符，null将用系统默认行分隔符
 	 * @param output 要写入的<code>OutputStream</code>, 不能为null, 不能是已关闭的
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时           
 	 * @since 1.0.0
@@ -1864,7 +1864,7 @@ public class IoTool {
 		try {
 			IOUtils.writeLines(lines, lineEnding, output);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1878,7 +1878,7 @@ public class IoTool {
 	 * @param lineEnding 要使用的行分隔符，null将用系统默认行分隔符
 	 * @param output 要写入的<code>OutputStream</code>, 不能为null, 不能是已关闭的
 	 * @param encoding 使用的编码，null表示平台默认的编码
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -1889,7 +1889,7 @@ public class IoTool {
 		try {
 			IOUtils.writeLines(lines, lineEnding, output, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1907,7 +1907,7 @@ public class IoTool {
 	 * @param lineEnding 要使用的行分隔符，null将用系统默认行分隔符
 	 * @param output 要写入的<code>OutputStream</code>, 不能为null, 不能是已关闭的
 	 * @param encoding 使用的编码，null表示平台默认的编码
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
@@ -1919,7 +1919,7 @@ public class IoTool {
 		try {
 			IOUtils.writeLines(lines, lineEnding, output, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1931,7 +1931,7 @@ public class IoTool {
 	 * @param lines 要写入的行，null的实体产生空白行
 	 * @param lineEnding 要使用的行分隔符，null将用系统默认行分隔符
 	 * @param writer 要写入的<code>Writer</code>, 不能为null, 不能是已关闭的
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -1942,7 +1942,7 @@ public class IoTool {
 		try {
 			IOUtils.writeLines(lines, lineEnding, writer);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1966,7 +1966,7 @@ public class IoTool {
 	 * @param input 要读取的<code>InputStream</code>
 	 * @param output 要写入的<code>OutputStream</code>
 	 * @return 拷贝的字节数, 如果大于Integer.MAX_VALUE返回-1 
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果任意参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -1977,7 +1977,7 @@ public class IoTool {
 		try {
 			return IOUtils.copy(input, output);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -1993,7 +1993,7 @@ public class IoTool {
 	 * @param input 要读取的<code>InputStream</code>
 	 * @param output 要写入的<code>OutputStream</code>
 	 * @return 拷贝的字节数
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -2004,7 +2004,7 @@ public class IoTool {
 		try {
 			return IOUtils.copyLarge(input, output);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2021,7 +2021,7 @@ public class IoTool {
 	 * @param output 要写入的<code>OutputStream</code>
 	 * @param buffer 拷贝时要使用的缓存
 	 * @return 拷贝的字节数
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -2032,7 +2032,7 @@ public class IoTool {
 		try {
 			return IOUtils.copyLarge(input, output, buffer);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2051,7 +2051,7 @@ public class IoTool {
 	 * @param inputOffset : 拷贝前从输入跳过的字节数，负数将拷贝所有
 	 * @param length : 要拷贝的字节数. 负数将拷贝所有
 	 * @return 拷贝的字节数
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果input 或 output参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -2062,7 +2062,7 @@ public class IoTool {
 		try {
 			return IOUtils.copyLarge(input, output, inputOffset, length);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2082,7 +2082,7 @@ public class IoTool {
 	 * @param length 要拷贝的字节数. 负数将拷贝所有
 	 * @param buffer 拷贝时要使用的缓存
 	 * @return 拷贝的字节数
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果input 或 output参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -2094,7 +2094,7 @@ public class IoTool {
 		try {
 			return IOUtils.copyLarge(input, output, inputOffset, length, buffer);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2113,7 +2113,7 @@ public class IoTool {
 	 * 
 	 * @param input 要读取的<code>InputStream</code>
 	 * @param output 要写入的<code>Writer</code>
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -2124,7 +2124,7 @@ public class IoTool {
 		try {
 			IOUtils.copy(input, output);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2144,7 +2144,7 @@ public class IoTool {
 	 * @param input 要读取的<code>InputStream</code>
 	 * @param output 要写入的<code>Writer</code>
 	 * @param encoding 使用的编码，null表示平台默认的编码
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -2155,7 +2155,7 @@ public class IoTool {
 		try {
 			IOUtils.copy(input, output, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2180,7 +2180,7 @@ public class IoTool {
 	 * @param input 要读取的<code>InputStream</code>
 	 * @param output 要写入的<code>Writer</code>
 	 * @param encoding 使用的编码，null表示平台默认的编码
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
@@ -2192,7 +2192,7 @@ public class IoTool {
 		try {
 			IOUtils.copy(input, output, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2216,7 +2216,7 @@ public class IoTool {
 	 * @param input 要读取的<code>Reader</code>
 	 * @param output 要写入的<code>Writer</code>
 	 * @return 拷贝的字符数，如果大于Integer.MAX_VALUE将返回-1
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果input 或 output参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -2227,7 +2227,7 @@ public class IoTool {
 		try {
 			return IOUtils.copy(input, output);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2243,7 +2243,7 @@ public class IoTool {
 	 * @param input 要读取的<code>Reader</code>
 	 * @param output 要写入的<code>Writer</code>
 	 * @return 拷贝的字符数
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果input 或 output参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -2254,7 +2254,7 @@ public class IoTool {
 		try {
 			return IOUtils.copyLarge(input, output);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2271,7 +2271,7 @@ public class IoTool {
 	 * @param output 要写入的<code>Writer</code>
 	 * @param buffer 拷贝时使用的缓存
 	 * @return 拷贝的字符数
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果input 或 output参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -2282,7 +2282,7 @@ public class IoTool {
 		try {
 			return IOUtils.copyLarge(input, output, buffer);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2301,7 +2301,7 @@ public class IoTool {
 	 * @param inputOffset : 拷贝前从输入跳过的字符数，负数将拷贝所有
 	 * @param length : 要拷贝的字符数. 负数将拷贝所有
 	 * @return 拷贝的字符数
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果input 或 output参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -2312,7 +2312,7 @@ public class IoTool {
 		try {
 			return IOUtils.copyLarge(input, output, inputOffset, length);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2332,7 +2332,7 @@ public class IoTool {
 	 * @param length : 要拷贝的字符数. 负数将拷贝所有
 	 * @param buffer 拷贝时使用的缓存
 	 * @return 拷贝的字符数
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果input 或 output参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -2343,7 +2343,7 @@ public class IoTool {
 		try {
 			return IOUtils.copyLarge(input, output, inputOffset, length, buffer);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2367,7 +2367,7 @@ public class IoTool {
 	 * 
 	 * @param input 要读取的<code>Reader</code>
 	 * @param output 要写入的<code>OutputStream</code>
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果input 或 output参数为null <br>
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -2377,7 +2377,7 @@ public class IoTool {
 		try {
 			IOUtils.copy(input, output);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2402,7 +2402,7 @@ public class IoTool {
 	 * @param input 要读取的<code>Reader</code>
 	 * @param output 要写入的<code>OutputStream</code>
 	 * @param encoding 使用的编码，null表示平台默认的编码
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果input 或 output参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -2413,7 +2413,7 @@ public class IoTool {
 		try {
 			IOUtils.copy(input, output, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2443,7 +2443,7 @@ public class IoTool {
 	 * @param input 要读取的<code>Reader</code>
 	 * @param output 要写入的<code>OutputStream</code>
 	 * @param encoding 使用的编码，null表示平台默认的编码
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果input 或 output参数为null <br>
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
@@ -2455,7 +2455,7 @@ public class IoTool {
 		try {
 			IOUtils.copy(input, output, encoding);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2473,7 +2473,7 @@ public class IoTool {
 	 * @param input1 第一个输入流
 	 * @param input2 第二个输入流
 	 * @return true：两个输入流的内容相等，或它们都不存在，否则返回false
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -2484,7 +2484,7 @@ public class IoTool {
 		try {
 			return IOUtils.contentEquals(input1, input2);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2500,7 +2500,7 @@ public class IoTool {
 	 * @param input1 第一个reader
 	 * @param input2 第二个reader
 	 * @return true：两个reader的内容相等，或它们都不存在，否则返回false
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -2511,7 +2511,7 @@ public class IoTool {
 		try {
 			return IOUtils.contentEquals(input1, input2);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2527,7 +2527,7 @@ public class IoTool {
 	 * @param input1 第一个reader
 	 * @param input2 第二个reader
 	 * @return true：两个reader的内容相等(忽略EOL字符)，或它们都不存在，否则返回false
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -2538,7 +2538,7 @@ public class IoTool {
 		try {
 			return IOUtils.contentEqualsIgnoreEOL(input1, input2);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2551,7 +2551,7 @@ public class IoTool {
 	 * @param input 待跳过的字节流
 	 * @param toSkip 跳过的字节数
 	 * @return 实际跳过的字节数
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IllegalArgumentException 如果toSkip参数为负数 <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -2562,7 +2562,7 @@ public class IoTool {
 		try {
 			return IOUtils.skip(input, toSkip);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2577,7 +2577,7 @@ public class IoTool {
 	 * @return 实际跳过的字节数
 	 * 
 	 * @see Reader#skip(long)
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IllegalArgumentException 如果toSkip参数为负数 <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
@@ -2588,7 +2588,7 @@ public class IoTool {
 		try {
 			return IOUtils.skip(input, toSkip);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2605,7 +2605,7 @@ public class IoTool {
 	 * @param input 要跳过的流
 	 * @param toSkip 要跳过的字节数，不能为负数
 	 * @see InputStream#skip(long)
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException 读取时发生错误 <br>
 	 * 					IllegalArgumentException 如果指定的字节数为负数 <br>
 	 * 					EOFException 如果要跳过的字节数不正确
@@ -2617,7 +2617,7 @@ public class IoTool {
 		try {
 			IOUtils.skipFully(input, toSkip);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2634,7 +2634,7 @@ public class IoTool {
 	 * @param input 要跳过的流
 	 * @param toSkip 要跳过的字符数，不能为负数
 	 * @see Reader#skip(long)
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException 读取时发生错误 <br>
 	 * 					IllegalArgumentException 如果指定的字符数为负数 <br>
 	 * 					EOFException 如果要跳过的字符数不正确
@@ -2646,7 +2646,7 @@ public class IoTool {
 		try {
 			IOUtils.skipFully(input, toSkip);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2661,7 +2661,7 @@ public class IoTool {
 	 * @param offset 初始读入缓冲区的偏移量
 	 * @param length 要读取的长度, 必须 >= 0
 	 * @return 实际读取的长度; 可能比请求的小(如果到达文件末尾)
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException 读取时发生错误
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -2671,7 +2671,7 @@ public class IoTool {
 		try {
 			return IOUtils.read(input, buffer, offset, length);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2684,7 +2684,7 @@ public class IoTool {
 	 * @param input 要读入字符的字符流
 	 * @param buffer 目标
 	 * @return 实际读取的长度; 可能比请求的小(如果到达文件末尾)
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException 读取时发生错误
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -2694,7 +2694,7 @@ public class IoTool {
 		try {
 			return IOUtils.read(input, buffer);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2709,7 +2709,7 @@ public class IoTool {
 	 * @param offset 初始读入缓冲区的偏移量
 	 * @param length 要读取的长度, 必须 >= 0
 	 * @return 实际读取的长度; 可能比请求的小(如果到达文件末尾)
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException 读取时发生错误
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -2719,7 +2719,7 @@ public class IoTool {
 		try {
 			return IOUtils.read(input, buffer, offset, length);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2732,7 +2732,7 @@ public class IoTool {
 	 * @param input 要读入字符的字节流
 	 * @param buffer 目标
 	 * @return 实际读取的长度; 可能比请求的小(如果到达文件末尾)
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException 读取时发生错误
 	 * @since 1.0.0
 	 * @author 唐玮琳
@@ -2742,7 +2742,7 @@ public class IoTool {
 		try {
 			return IOUtils.read(input, buffer);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2760,7 +2760,7 @@ public class IoTool {
 	 * @param buffer 目标
 	 * @param offset 初始读入缓冲区的偏移量
 	 * @param length 要读取的长度, 必须 >= 0
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException 读取时发生错误 <br>
 	 * 					IllegalArgumentException 如果指定的字符数为负数 <br>
 	 * 					EOFException 如果要跳过的字符数不正确
@@ -2772,7 +2772,7 @@ public class IoTool {
 		try {
 			IOUtils.read(input, buffer, offset, length);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2788,7 +2788,7 @@ public class IoTool {
 	 * 
 	 * @param input 要读入字符的字节流
 	 * @param buffer 目标
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException 读取时发生错误 <br>
 	 * 					IllegalArgumentException 如果指定的字符数为负数 <br>
 	 * 					EOFException 如果要跳过的字符数不正确
@@ -2800,7 +2800,7 @@ public class IoTool {
 		try {
 			IOUtils.readFully(input, buffer);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2818,7 +2818,7 @@ public class IoTool {
 	 * @param buffer 目标
 	 * @param offset 初始读入缓冲区的偏移量
 	 * @param length 要读取的长度, 必须 >= 0
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException 读取时发生错误 <br>
 	 * 					IllegalArgumentException 如果指定的字节数为负数 <br>
 	 * 					EOFException 如果要跳过的字节数不正确
@@ -2830,7 +2830,7 @@ public class IoTool {
 		try {
 			IOUtils.readFully(input, buffer, offset, length);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -2846,7 +2846,7 @@ public class IoTool {
 	 * 
 	 * @param input 要读入字节的字节流
 	 * @param buffer 目标
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException 读取时发生错误 <br>
 	 * 					IllegalArgumentException 如果指定的字节数为负数 <br>
 	 * 					EOFException 如果要跳过的字节数不正确
@@ -2858,7 +2858,7 @@ public class IoTool {
 		try {
 			IOUtils.readFully(input, buffer);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 

@@ -16,7 +16,7 @@ import javax.xml.namespace.QName;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.kvc.joy.commons.exception.ServiceException;
+import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.lang.ClassTool;
 
 /**
@@ -90,7 +90,7 @@ public class JaxbTool {
 			createMarshaller(clazz, encoding).marshal(root, writer);
 			return writer.toString();
 		} catch (JAXBException e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -134,7 +134,7 @@ public class JaxbTool {
 
 			return writer.toString();
 		} catch (JAXBException e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -156,7 +156,7 @@ public class JaxbTool {
 			StringReader reader = new StringReader(xml);
 			return (T) createUnmarshaller(clazz).unmarshal(reader);
 		} catch (JAXBException e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -186,7 +186,7 @@ public class JaxbTool {
 
 			return marshaller;
 		} catch (JAXBException e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -206,7 +206,7 @@ public class JaxbTool {
 			JAXBContext jaxbContext = getJaxbContext(clazz);
 			return jaxbContext.createUnmarshaller();
 		} catch (JAXBException e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
@@ -218,7 +218,7 @@ public class JaxbTool {
 				jaxbContext = JAXBContext.newInstance(clazz, CollectionWrapper.class);
 				jaxbContexts.putIfAbsent(clazz, jaxbContext);
 			} catch (JAXBException ex) {
-				throw new ServiceException("不能为类 [" + clazz + "]创建JAXBContext: "
+				throw new SystemException("不能为类 [" + clazz + "]创建JAXBContext: "
 						+ ex.getMessage(), ex);
 			}
 		}

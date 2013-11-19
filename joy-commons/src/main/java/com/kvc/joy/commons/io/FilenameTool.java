@@ -8,7 +8,7 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOCase;
 
 import com.kvc.joy.commons.enums.CaseSensitivity;
-import com.kvc.joy.commons.exception.ServiceException;
+import com.kvc.joy.commons.exception.SystemException;
 
 /**
  * <p>
@@ -297,7 +297,7 @@ public class FilenameTool {
 	 * @param canonicalParent 父目录
 	 * @param canonicalChild 文件或子目录
 	 * @return true: 父目录包含指定的子目录或文件，否则返回false
-	 * @throws ServiceException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
+	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 *             IllegalArgumentException 对被调用方法的包装异常 <br>
 	 *             IOException 如果请求的方法不能通过反射访问
 	 * @see FileUtils#directoryContains(File, File)
@@ -309,7 +309,7 @@ public class FilenameTool {
 		try {
 			return FilenameUtils.directoryContains(canonicalParent, canonicalChild);
 		} catch (Exception e) {
-			throw new ServiceException(e);
+			throw new SystemException(e);
 		}
 	}
 
