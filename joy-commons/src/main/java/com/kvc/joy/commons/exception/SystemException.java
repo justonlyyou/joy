@@ -22,8 +22,8 @@ public class SystemException extends JoyRuntimeException {
 		super(cause, log, message, args);
 	}
 
-	public SystemException(Throwable ex) {
-		super(ex);
+	public SystemException(Throwable e) {
+		super(e);
 	}
 
 }

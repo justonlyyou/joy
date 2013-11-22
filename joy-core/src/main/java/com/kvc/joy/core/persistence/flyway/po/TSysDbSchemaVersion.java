@@ -8,7 +8,6 @@ import javax.persistence.Table;
 
 import com.kvc.joy.commons.bean.IEntity;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
-import com.kvc.joy.core.persistence.orm.jpa.annotations.DefaultValue;
 
 /**
  * 
@@ -126,9 +125,8 @@ public class TSysDbSchemaVersion implements IEntity<TSysDbSchemaVersionPk>{
 		this.installedBy = installedBy;
 	}
 
-	@Column(length=17, nullable = true)
+	@Column(length=17, nullable = false)
 	@Comment("安装时间")
-	@DefaultValue("222222")
 	public String getInstalledOn() {
 		return installedOn;
 	}

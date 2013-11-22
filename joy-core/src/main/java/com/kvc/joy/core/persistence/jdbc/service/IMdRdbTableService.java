@@ -3,6 +3,7 @@ package com.kvc.joy.core.persistence.jdbc.service;
 import java.util.Map;
 
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbTable;
+import com.kvc.joy.core.persistence.jdbc.model.vo.RdbConnection;
 
 /**
  * 
@@ -14,23 +15,12 @@ public interface IMdRdbTableService {
 	/**
 	 * 
 	 * 
-	 * @param dsId
+	 * @param conntion
 	 * @return
 	 * @since 1.0.0
 	 * @author 唐玮琳
 	 * @time 2013年11月15日 下午11:10:58
 	 */
-	Map<String, MdRdbTable> getTables(String dsId);
-	
-	/**
-	 * 
-	 * 
-	 * @param jndi
-	 * @return
-	 * @since 1.0.0
-	 * @author 唐玮琳
-	 * @time 2013年11月15日 下午11:11:02
-	 */
-//	Map<String, MdRdbTable> getTablesByJndi(String jndi);
+	Map<String, MdRdbTable> getTables(RdbConnection conntion);
 	
 }

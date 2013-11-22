@@ -1,35 +1,32 @@
 package com.kvc.joy.core.persistence.jdbc.support.utils;
 
 import java.sql.Connection;
-import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
-import java.util.Set;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-import net.sf.ehcache.CacheException;
-
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.init.support.JoyPropeties;
 import com.kvc.joy.core.persistence.jdbc.dao.BaseJdbcDao;
-import com.kvc.joy.core.persistence.jdbc.model.vo.DbMetaData;
-import com.kvc.joy.core.persistence.jdbc.model.vo.IMdRdbConn;
-import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
-import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbPrimaryKey;
-import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbTable;
-import com.kvc.joy.core.persistence.jdbc.support.enums.RdbObjectType;
+import com.kvc.joy.core.persistence.jdbc.model.vo.IMdRdbDataSrc;
+import com.kvc.joy.core.persistence.jdbc.support.db.DbSupportFactory;
+import com.kvc.joy.core.persistence.jdbc.support.db.RowMapper;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
 import com.kvc.joy.core.sysres.datasrc.model.po.TSysDataSrc;
@@ -62,7 +59,7 @@ public class JdbcTool extends BaseJdbcDao {
 	 * @time 2013年11月10日 下午11:21:39
 	 */
 	public static Connection getConnectionByDsId(String dsId) {
-		IMdRdbConn mdRdbConn = JpaTool.get(TSysDataSrc.class, dsId);
+		IMdRdbDataSrc mdRdbConn = JpaTool.get(TSysDataSrc.class, dsId);
 		if (mdRdbConn == null && JoyPropeties.DB_DATASOURCEID.equals(dsId)) {
 			return getConnectionByJndi(JoyPropeties.DB_JNDI);
 		}
@@ -98,7 +95,7 @@ public class JdbcTool extends BaseJdbcDao {
 	 * @author 唐玮琳
 	 * @time 2012-11-2 下午2:29:43
 	 */
-	public static Connection getConnection(IMdRdbConn mdRdbConn) {
+	public static Connection getConnection(IMdRdbDataSrc mdRdbConn) {
 		if (mdRdbConn == null) {
 			return null;
 		}
@@ -127,13 +124,49 @@ public class JdbcTool extends BaseJdbcDao {
 	 */
 	public static void closeConnection(Connection conn) {
 		try {
-			if (conn != null && !conn.isClosed()) {
+			if (conn != null && conn.isClosed() == false) {
 				conn.close();
 			}
 		} catch (SQLException e) {
 			logger.error(e);
 		}
 	}
+	
+	/**
+	 * 
+	 * 
+	 * @param statement
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年11月23日 下午8:45:59
+	 */
+	public static void closeStatement(Statement statement) {
+        try {
+        	if (statement != null) {
+        		statement.close();
+        	}
+        } catch (SQLException e) {
+            logger.error(e);
+        }
+    }
+
+	/**
+	 * 
+	 * 
+	 * @param resultSet
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年11月23日 下午8:45:16
+	 */
+    public static void closeResultSet(ResultSet resultSet) {
+        try {
+        	if (resultSet != null) {
+        		resultSet.close();
+        	}
+        } catch (SQLException e) {
+            logger.error(e);
+        }
+    }
 
 	/**
 	 * 获取数据源
@@ -166,178 +199,259 @@ public class JdbcTool extends BaseJdbcDao {
 		return dataSource;
 	}
 
-	/**
-	 * 获取给定数据源下的所有表的所有元数据信息
-	 * 
-	 * @param dsId 数据源ID
-	 * @return Map<String, MdRdbTable>
-	 * @author 唐玮琳
-	 * @time 2012-11-1 下午5:03:48
-	 */
-	public static Map<String, MdRdbTable> getTables(String dsId) {
-		return getRelationalObjects(dsId, RdbObjectType.TABLE);
-	}
-	
-	/**
-	 * 获取表的所有列
-	 * 
-	 * @param dsId 数据源id
-	 * @param tableName 表名
-	 * @return
-	 * @author 唐玮琳
-	 * @time 2012-12-18 下午3:16:14
-	 */
-	public static Map<String, MdRdbColumn> getColumns(String dsId, String tableName) {
-		if (StringTool.isBlank(tableName)) {
-			return null;
-		}
-		if (StringTool.isBlank(dsId)) {
-			dsId = JoyPropeties.DB_DATASOURCEID;
-		}
-		return CoreBeanFactory.getMdRdbColumnCacheService().getColumns(dsId, tableName.toLowerCase());
-	}
-
-	/**
-	 * 获取表的某一列
-	 * 
-	 * @param dsId 数据源id
-	 * @param tableName 表名
-	 * @param columnName 列名
-	 * @return
-	 * @author 唐玮琳
-	 * @time 2012-12-18 下午3:21:37
-	 */
-	public static MdRdbColumn getColumn(String dsId, String tableName, String columnName) {
-		if (StringTool.isBlank(tableName) || StringTool.isBlank(columnName)) {
-			return null;
-		}
-		if (StringTool.isBlank(dsId)) {
-			dsId = JoyPropeties.DB_DATASOURCEID;
-		}
-		Map<String, MdRdbColumn> columns = getColumns(dsId, tableName);
-		return columns.get(columnName.toLowerCase());
-	}
-
-	/**
-	 * 获取主键
-	 * 
-	 * @param dsId 数据源id
-	 * @param tableName 表名
-	 * @return 主键对象
-	 * @author 唐玮琳
-	 * @time 2012-12-18 下午3:37:42
-	 */
-	public static MdRdbPrimaryKey getPrimaryKey(String dsId, String tableName) {
-		if (StringTool.isBlank(tableName)) {
-			return null;
-		}
-		if (StringTool.isBlank(dsId)) {
-			dsId = JoyPropeties.DB_DATASOURCEID;
-		}
-		return CoreBeanFactory.getMdRdbPrimaryKeyCacheService().getPrimaryKey(dsId, tableName.toLowerCase());
-	}
-	
-	/**
-	 * 根据数据源ID、对象名从缓存中取得该对象的元数据信息
-	 * 
-	 * @param dsId 数据源ID(为空取系统默认数据源id)
-	 * @param name 对象名(为空返回null)
-	 * @return MdDbTable
-	 * @author 唐玮琳
-	 * @throws CacheException
-	 * @time 2012-12-14 下午4:54:03
-	 */
-	public static MdRdbTable getRelationalObject(String dsId, String name) {
-		if (StringTool.isBlank(name)) {
-			return null;
-		}
-		if (StringTool.isBlank(dsId)) {
-			dsId = JoyPropeties.DB_DATASOURCEID;
-		}
-		Map<String, MdRdbTable> tableMap = CoreBeanFactory.getMdRdbTableCacheService().getTables(dsId);
-		return tableMap.get(name.toLowerCase());
-	}
-	
-	/**
-	 * 根据数据源ID、对象类型，从缓存中取得对应表的元数据信息
-	 * 
-	 * @param dsId 数据源ID(为空取系统默认数据源id)
-	 * @param objTypes 对象类型数组
-	 * @return Map<String, MdRdbTable>
-	 * @throws CacheException
-	 * @author 唐玮琳
-	 * @time 2012-12-14 下午5:26:01
-	 */
-	public static Map<String, MdRdbTable> getRelationalObjects(String dsId, RdbObjectType... objTypes) {
-		if (StringTool.isBlank(dsId)) {
-			dsId = JoyPropeties.DB_DATASOURCEID;
-		}
-		Map<String, MdRdbTable> tableMap = CoreBeanFactory.getMdRdbTableCacheService().getTables(dsId);
-		return filterRelationalObject(tableMap);
-	}
-	
-	private static Map<String, MdRdbTable> filterRelationalObject(Map<String, MdRdbTable> tableMap, RdbObjectType... objTypes) {
-		Set<String> objTypeSet = new HashSet<String>();
-		if (objTypes != null) {
-			for (RdbObjectType rdbObjectType : objTypes) {
-				objTypeSet.add(rdbObjectType.getCode());
-			}
-		}
-		Map<String, MdRdbTable> results = new LinkedHashMap<String, MdRdbTable>();
-		
-		for (MdRdbTable table : tableMap.values()) {
-			if (objTypeSet.isEmpty() || objTypeSet.contains(table.getType())) {
-				results.put(table.getName(), table);
-			}
-		}
-		return results;
-	}
-
 	public static final JdbcTemplate jdbcTemplate() {
 		return getInstance().getJdbcTemplate();
 	}
 
-	/**
-	 * 
-	 * 
-	 * @param dsId
-	 * @return
-	 * @since 1.0.0
-	 * @author 唐玮琳
-	 * @time 2013年11月16日 上午1:05:04
-	 */
-	public static DbMetaData getDbMetaData(String dsId) {
-		if (StringTool.isBlank(dsId)) {
-			dsId = JoyPropeties.DB_DATASOURCEID;
-		}
-		Connection conn = JdbcTool.getConnectionByDsId(dsId);
-		DbMetaData dbMetaData = null;
-		try {
-			dbMetaData = getDbMetaData(conn);
-		} finally {
-			JdbcTool.closeConnection(conn);	
-		}
-		return dbMetaData;
-	}
 	
 	/**
-	 * 
-	 * 注：调用者必须自己负责关闭连接
-	 * @param conn
-	 * @return
-	 * @since 1.0.0
-	 * @author 唐玮琳
-	 * @time 2013年11月16日 上午1:07:38
-	 */
-	public static DbMetaData getDbMetaData(Connection conn) {
-		DbMetaData dbMetaData = null;
-		try {
-			DatabaseMetaData metaData = conn.getMetaData();
-			dbMetaData = new DbMetaData(metaData);
-		} catch (Exception e) {
-			logger.error(e);
-		}
-		return dbMetaData;
-	}
+     * Executes this query with these parameters against this connection.
+     *
+     * @param query  The query to execute.
+     * @param params The query parameters.
+     * @return The query results.
+     * @throws SQLException when the query execution failed.
+     */
+    public static List<Map<String, String>> queryForList(Connection conn, String query, String... params) {
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        List<Map<String, String>> result;
+        try {
+            statement = conn.prepareStatement(query);
+            for (int i = 0; i < params.length; i++) {
+                statement.setString(i + 1, params[i]);
+            }
+            resultSet = statement.executeQuery();
+
+            result = new ArrayList<Map<String, String>>();
+            while (resultSet.next()) {
+                Map<String, String> rowMap = new HashMap<String, String>();
+                for (int i = 1; i <= resultSet.getMetaData().getColumnCount(); i++) {
+                    rowMap.put(resultSet.getMetaData().getColumnLabel(i), resultSet.getString(i));
+                }
+                result.add(rowMap);
+            }
+        } catch (Exception e) {
+        	throw new SystemException(e);
+        } finally {
+            JdbcTool.closeResultSet(resultSet);
+            JdbcTool.closeStatement(statement);
+        }
+
+
+        return result;
+    }
+
+    /**
+     * Executes this query with these parameters against this connection.
+     *
+     * @param query  The query to execute.
+     * @param params The query parameters.
+     * @return The query results as a list of strings.
+     * @throws SQLException when the query execution failed.
+     */
+    public static List<String> queryForStringList(Connection conn, String query, String... params) {
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        List<String> result;
+        try {
+            statement = conn.prepareStatement(query);
+            for (int i = 0; i < params.length; i++) {
+                statement.setString(i + 1, params[i]);
+            }
+            resultSet = statement.executeQuery();
+
+            result = new ArrayList<String>();
+            while (resultSet.next()) {
+                result.add(resultSet.getString(1));
+            }
+        } catch (Exception e) {
+        	throw new SystemException(e);
+        } finally {
+        	JdbcTool.closeResultSet(resultSet);
+        	JdbcTool.closeStatement(statement);
+        }
+
+        return result;
+    }
+
+    /**
+     * Executes this query with these parameters against this connection.
+     *
+     * @param query  The query to execute.
+     * @param params The query parameters.
+     * @return The query result.
+     * @throws SQLException when the query execution failed.
+     */
+    public static int queryForInt(Connection conn, String query, String... params) {
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        int result;
+        try {
+            statement = conn.prepareStatement(query);
+            for (int i = 0; i < params.length; i++) {
+                statement.setString(i + 1, params[i]);
+            }
+            resultSet = statement.executeQuery();
+            resultSet.next();
+            result = resultSet.getInt(1);
+        } catch (Exception e) {
+        	throw new SystemException(e);
+        } finally {
+        	JdbcTool.closeResultSet(resultSet);
+        	JdbcTool.closeStatement(statement);
+        }
+
+        return result;
+    }
+
+    /**
+     * Executes this query with these parameters against this connection.
+     *
+     * @param query  The query to execute.
+     * @param params The query parameters.
+     * @return The query result.
+     * @throws SQLException when the query execution failed.
+     */
+    public static String queryForString(Connection conn, String query, String... params) {
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        String result;
+        try {
+            statement = conn.prepareStatement(query);
+            for (int i = 0; i < params.length; i++) {
+                statement.setString(i + 1, params[i]);
+            }
+            resultSet = statement.executeQuery();
+            result = null;
+            if (resultSet.next()) {
+                result = resultSet.getString(1);
+            }
+        } catch (Exception e) {
+        	throw new SystemException(e);
+        } finally {
+        	JdbcTool.closeResultSet(resultSet);
+        	JdbcTool.closeStatement(statement);
+        }
+
+        return result;
+    }
+
+    /**
+     * Executes this sql statement using a PreparedStatement.
+     *
+     * @param sql    The statement to execute.
+     * @param params The statement parameters.
+     * @throws SQLException when the execution failed.
+     */
+    public static void execute(Connection conn, String sql, Object... params) {
+        PreparedStatement statement = null;
+        try {
+            statement = prepareStatement(conn, sql, params);
+            statement.execute();
+        } catch (Exception e) {
+        	throw new SystemException(e);
+        } finally {
+        	JdbcTool.closeStatement(statement);
+        }
+    }
+
+    /**
+     * Executes this sql statement using an ordinary Statement.
+     *
+     * @param sql The statement to execute.
+     * @throws SQLException when the execution failed.
+     */
+    public static void executeStatement(Connection conn, String sql) {
+        Statement statement = null;
+        try {
+            statement = conn.createStatement();
+            statement.execute(sql);
+        } catch (Exception e) {
+        	throw new SystemException(e);
+        } finally {
+        	JdbcTool.closeStatement(statement);
+        }
+    }
+
+    /**
+     * Executes this update sql statement.
+     *
+     * @param sql    The statement to execute.
+     * @param params The statement parameters.
+     * @throws SQLException when the execution failed.
+     */
+    public static void update(Connection conn, String sql, Object... params) {
+        PreparedStatement statement = null;
+        try {
+            statement = prepareStatement(conn, sql, params);
+            statement.executeUpdate();
+        } catch (Exception e) {
+        	throw new SystemException(e);
+        } finally {
+        	JdbcTool.closeStatement(statement);
+        }
+    }
+
+    /**
+     * Creates a new prepared statement for this sql with these params.
+     *
+     * @param sql    The sql to execute.
+     * @param params The params.
+     * @return The new prepared statement.
+     * @throws SQLException when the statement could not be prepared.
+     */
+    private static PreparedStatement prepareStatement(Connection conn, String sql, Object[] params) throws SQLException {
+        PreparedStatement statement = conn.prepareStatement(sql);
+        for (int i = 0; i < params.length; i++) {
+            if (params[i] == null) {
+            	int nullType = DbSupportFactory.createDbSupport(conn).getNullType();
+                statement.setNull(i + 1, nullType);
+            } else if (params[i] instanceof Integer) {
+                statement.setInt(i + 1, (Integer) params[i]);
+            } else if (params[i] instanceof Boolean) {
+                statement.setBoolean(i + 1, (Boolean) params[i]);
+            } else {
+                statement.setString(i + 1, (String) params[i]);
+            }
+        }
+        return statement;
+    }
+
+    /**
+     * Executes this query and map the results using this row mapper.
+     *
+     * @param query     The query to execute.
+     * @param rowMapper The row mapper to use.
+     * @param <T>       The type of the result objects.
+     * @return The list of results.
+     * @throws SQLException when the query failed to execute.
+     */
+    public static <T> List<T> query(Connection conn, String query, RowMapper<T> rowMapper) {
+        Statement statement = null;
+        ResultSet resultSet = null;
+
+        List<T> results;
+        try {
+            statement = conn.createStatement();
+            resultSet = statement.executeQuery(query);
+
+            results = new ArrayList<T>();
+            while (resultSet.next()) {
+                results.add(rowMapper.mapRow(resultSet));
+            }
+        } catch (Exception e) {
+        	throw new SystemException(e);
+        } finally {
+        	JdbcTool.closeResultSet(resultSet);
+        	JdbcTool.closeStatement(statement);
+        }
+
+        return results;
+    }
 	
 }

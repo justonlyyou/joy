@@ -9,8 +9,6 @@ import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * 预编译sql语句转化器，实现将预编译的sql语句转化成完整的sql语句
- * 
- * @author <b>zhangliang</b>
  */
 public class PreparedSqlConvertor implements IPreparedSqlConvertor {
 

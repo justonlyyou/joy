@@ -18,7 +18,6 @@ import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.init.service.IJoyPlugin;
 import com.kvc.joy.core.init.service.ISystemInitService;
 import com.kvc.joy.core.init.support.JoyPropeties;
-import com.kvc.joy.core.persistence.jdbc.support.MdRdbAlterReverseSyncServiceFactory;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
 
 /**
@@ -61,7 +60,7 @@ public class JoyPluginsInitializer implements ISystemInitService, BeanPostProces
 				// 实体字段注释和默认值同步到数据库
 				String poPkg = component.getPoPackage();
 				if(StringTool.isNotBlank(poPkg)) {
-					MdRdbAlterReverseSyncServiceFactory.getInstance().generate(poPkg);
+					CoreBeanFactory.getMdRdbAlterReverseSyncService().generate(poPkg);
 				}
 				
 				// sql脚本安装

@@ -206,7 +206,12 @@ public class JpaTool extends BaseJpaDao {
 	public static <T> List<T> search(Class<T> entityClass, String attr, Object value, Order... orders) {
 		CriteriaQuery<T> criteriaQuery = getCB().createQuery(entityClass);
 		Root<T> root = criteriaQuery.from(entityClass);
-		Predicate predicate = getCB().equal(root.get(attr), value);
+		Predicate predicate;
+		if (value == null) {
+			predicate = getCB().isNull(root.get(attr));
+		} else {
+			predicate = getCB().equal(root.get(attr), value);
+		}
 		criteriaQuery.where(predicate);
 		criteriaQuery.orderBy(processOrder(root, orders));
 		TypedQuery<T> typedQuery = getEntityMgr().createQuery(criteriaQuery);

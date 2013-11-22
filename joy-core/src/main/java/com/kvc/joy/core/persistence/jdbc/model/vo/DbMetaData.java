@@ -3,9 +3,12 @@
  */
 package com.kvc.joy.core.persistence.jdbc.model.vo;
 
+import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.SQLException;
 
+import com.kvc.joy.core.persistence.jdbc.support.db.DbSupport;
+import com.kvc.joy.core.persistence.jdbc.support.db.DbSupportFactory;
 import com.kvc.joy.core.persistence.jdbc.support.enums.RdbType;
 
 /**
@@ -37,6 +40,7 @@ public class DbMetaData {
 	private String systemFunctions;
 	private String timeDateFunctions;
 	private String url;
+	private String currentSchema;
 	private int databaseMajorVersion;
 	private int databaseMinorVersion;
 	private int defaultTransactionIsolation;
@@ -68,7 +72,8 @@ public class DbMetaData {
 	public DbMetaData() {
 	}
 
-	public DbMetaData(DatabaseMetaData databaseMetaData) throws SQLException {
+	public DbMetaData(Connection conn) throws SQLException {
+		DatabaseMetaData databaseMetaData = conn.getMetaData();
 		databaseProductName = databaseMetaData.getDatabaseProductName();
 		driverName = databaseMetaData.getDriverName();
 		userName = databaseMetaData.getUserName();
@@ -114,6 +119,8 @@ public class DbMetaData {
 		systemFunctions = databaseMetaData.getSystemFunctions();
 		timeDateFunctions = databaseMetaData.getTimeDateFunctions();
 		url = databaseMetaData.getURL();
+		DbSupport db = DbSupportFactory.createDbSupport(conn);
+		currentSchema = db.getCurrentSchema().getName();
 	}
 
 	public String getDatabaseProductName() {
@@ -480,10 +487,8 @@ public class DbMetaData {
 		return RdbType.enumOfName(databaseProductName);
 	}
 	
-	public String getMySqlSchemaName() {
-		//TODO
-		String[] parts = url.split("/");
-		return parts[parts.length - 1];
+	public String getCurrentSchema() {
+		return currentSchema;
 	}
 
 }

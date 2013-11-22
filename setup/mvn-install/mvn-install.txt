@@ -8,6 +8,9 @@ mvn install:install-file -Dfile=E:\repository\leak-jar\jar\tracer_0.6.1.jar -Dgr
 
 mvn install:install-file -Dfile=E:\repository\leak-jar\jar\kaptcha-2.3.2.jar -DgroupId=com.google.code.kaptcha -DartifactId=google-kaptcha -Dversion=2.3.2 -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
 
+mvn install:install-file -Dfile=E:\repository\leak-jar\jar\JoSQL-2.2.jar -DgroupId=org.josql -DartifactId=josql -Dversion=2.2 -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
+mvn install:install-file -Dfile=E:\repository\leak-jar\jar\gentlyWEB-utils-1.1.jar -DgroupId=com.gentlyweb.utils -DartifactId=gentlyWEB-utils -Dversion=1.1 -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
+
 
 
 

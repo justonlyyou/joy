@@ -177,16 +177,12 @@ public class CoreBeanFactory {
 		return (ISysCodeCacheService) SpringBeanTool.getBean("sysCodeCacheService");
 	}
 	
-	public static IMdRdbAlterReverseSyncService getMySqlAlterReverseSyncService() {
-		return (IMdRdbAlterReverseSyncService) SpringBeanTool.getBean("mySqlAlterReverseSyncService");
-	}
-	
-	public static IMdRdbAlterReverseSyncService getOracleAlterReverseSyncService() {
-		return (IMdRdbAlterReverseSyncService) SpringBeanTool.getBean("oracleAlterReverseSyncService");
-	}
-	
 	public static IRdbObjectsInitService getRdbObjectsInitService() {
 		return (IRdbObjectsInitService) SpringBeanTool.getBean("rdbObjectsInitService");
+	}
+	
+	public static IMdRdbAlterReverseSyncService getMdRdbAlterReverseSyncService() {
+		return (IMdRdbAlterReverseSyncService) SpringBeanTool.getBean("mdRdbAlterReverseSyncService");
 	}
 	
 }

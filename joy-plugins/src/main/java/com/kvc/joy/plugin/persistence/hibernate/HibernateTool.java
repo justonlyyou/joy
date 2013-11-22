@@ -38,8 +38,8 @@ public class HibernateTool extends BaseHibernateDao {
 
 	// private static Logger logger = Logger.getLogger(HibernateUtils.class);
 
-//	private HibernateUtils() {
-//	}
+	// private HibernateUtils() {
+	// }
 
 	private static HibernateTool getInstance() {
 		return (HibernateTool) SpringBeanTool.getBean("hibernateTool");
@@ -48,7 +48,7 @@ public class HibernateTool extends BaseHibernateDao {
 	public static <T> T get(Class<T> clazz, Serializable id) {
 		return getInstance().getObjById(clazz, id);
 	}
-	
+
 	public <T> T getObjById(Class<T> clazz, Serializable id) {
 		T result = null;
 		// try {
@@ -59,7 +59,7 @@ public class HibernateTool extends BaseHibernateDao {
 		// }
 		return result;
 	}
-	
+
 	public static void persist(Object engity) {
 		getInstance().saveOrUpdate(engity);
 	}
@@ -71,7 +71,7 @@ public class HibernateTool extends BaseHibernateDao {
 	public static void remove(Object obj) {
 		getInstance().delete(obj);
 	}
-	
+
 	public void delete(Object obj) {
 		getSession().delete(obj);
 	}
@@ -79,11 +79,11 @@ public class HibernateTool extends BaseHibernateDao {
 	public static void evict(Object obj) {
 		getInstance().evictEntity(obj);
 	}
-	
+
 	public void evictEntity(Object obj) {
 		getSession().evict(obj);
 	}
-	
+
 	public static void flush() {
 		getInstance().flushSession();
 	}
@@ -95,7 +95,7 @@ public class HibernateTool extends BaseHibernateDao {
 	public static void refresh(Object obj) {
 		getInstance().refreshEntity(obj);
 	}
-	
+
 	public void refreshEntity(Object obj) {
 		getSession().refresh(obj);
 	}
@@ -119,7 +119,7 @@ public class HibernateTool extends BaseHibernateDao {
 	 * @date 2012-5-16 下午02:17:44
 	 */
 	public static void batchSave(Collection<?> objects, int batchSize) {
-		//TODO
+		// TODO
 		for (Object object : objects) {
 			persist(object);
 		}
@@ -149,7 +149,7 @@ public class HibernateTool extends BaseHibernateDao {
 	public static <T, E> List<T> inSearch(Class<T> clazz, String fieldName, Collection<E> collection) {
 		return getInstance().in(clazz, fieldName, collection);
 	}
-	
+
 	public <T, E> List<T> in(final Class<T> clazz, final String fieldName, final Collection<E> collection) {
 		if (collection == null || collection.isEmpty()) {
 			return new ArrayList<T>(0);
@@ -226,12 +226,19 @@ public class HibernateTool extends BaseHibernateDao {
 	public static <T> List<T> andSearch(final Class<T> clazz, final Map<String, Object> fieldMap, final Order... orders) {
 		return getInstance().andQuery(clazz, fieldMap, orders);
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public <T> List<T> andQuery(final Class<T> clazz, final Map<String, Object> fieldMap, final Order... orders) {
 		DetachedCriteria criteria = DetachedCriteria.forClass(clazz);
 		for (Entry<String, Object> entry : fieldMap.entrySet()) {
-			criteria.add(Restrictions.eq(entry.getKey(), entry.getValue()));
+			Object value = entry.getValue();
+			Criterion criterion;
+			if (value == null) {
+				criterion = Restrictions.isNull(entry.getKey());
+			} else {
+				criterion = Restrictions.eq(entry.getKey(), value);
+			}
+			criteria.add(criterion);
 		}
 		addOrder(criteria, orders);
 		return find(criteria);
@@ -290,7 +297,7 @@ public class HibernateTool extends BaseHibernateDao {
 	public static List search(final Class<?> clazz, final List<String> fieldNameList, final Order... orders) {
 		return getInstance().query(clazz, fieldNameList, orders);
 	}
-	
+
 	@SuppressWarnings({ "rawtypes" })
 	public List query(final Class<?> clazz, final List<String> fieldNameList, final Order... orders) {
 		DetachedCriteria criteria = DetachedCriteria.forClass(clazz);
@@ -323,7 +330,7 @@ public class HibernateTool extends BaseHibernateDao {
 	public static List<?> findBySql(final String sql) {
 		return getInstance().findUsingSql(sql);
 	}
-	
+
 	public List<?> findUsingSql(String sql) {
 		SQLQuery sqlQuery = getSession().createSQLQuery(sql);
 		return sqlQuery.list();
@@ -342,7 +349,7 @@ public class HibernateTool extends BaseHibernateDao {
 	public static int executeByHql(final String hql, final Object... params) {
 		return getInstance().executeUsingHql(hql, params);
 	}
-	
+
 	public int executeUsingHql(final String hql, final Object... params) {
 		Query query = getSession().createQuery(hql);
 		if (ArrayTool.isNotEmpty(params)) {
@@ -366,11 +373,11 @@ public class HibernateTool extends BaseHibernateDao {
 	public static int executeByHql(final String hql, final Map<String, Object> params) {
 		return getInstance().executeUsingHql(hql, params);
 	}
-	
+
 	public int executeUsingHql(final String hql, final Map<String, Object> params) {
 		Query query = getSession().createQuery(hql);
 		if (MapTool.isNotEmpty(params)) {
-			query.setProperties(params);	
+			query.setProperties(params);
 		}
 		return query.executeUpdate();
 	}
@@ -390,11 +397,11 @@ public class HibernateTool extends BaseHibernateDao {
 			}
 		}
 	}
-	
+
 	public static Session getSession() {
 		return getInstance().session();
 	}
-	
+
 	@SuppressWarnings("rawtypes")
 	public static List findByCriteria(DetachedCriteria detachedCriteria) {
 		return getInstance().find(detachedCriteria);

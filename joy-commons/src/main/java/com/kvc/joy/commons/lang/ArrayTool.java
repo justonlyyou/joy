@@ -16,6 +16,22 @@ public class ArrayTool {
 
 	private ArrayTool() {
 	}
+	
+	/**
+	 * 判断指定的对象是否为数组
+	 * 
+	 * @param obj 待判断的对象
+	 * @return true: 指定的对象为数组，反之为false
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年11月22日 下午11:16:02
+	 */
+	public static boolean isArray(Object obj) {
+		if (obj == null) {
+			return false;
+		}
+		return obj.getClass().isArray();
+	}
 
 	/**
 	 * <p>

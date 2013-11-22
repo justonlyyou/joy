@@ -146,10 +146,11 @@ public class MetaDataTableImpl implements MetaDataTable {
                     + "," + dbSupport.quote("script")
                     + "," + dbSupport.quote("checksum")
                     + "," + dbSupport.quote("installed_by")
+                    + "," + dbSupport.quote("installed_on") //diff add
                     + "," + dbSupport.quote("execution_time")
                     + "," + dbSupport.quote("success")
                     + ")"
-                    + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, " + dbSupport.getCurrentUserFunction() + ", ?, ?)", //diff add a "?"
+                    + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, " + dbSupport.getCurrentUserFunction() + ", ?, ?, ?)", //diff add two "?"
                     versionRank,
                     calculateInstalledRank(),
                     versionDomain, //diff add
@@ -158,6 +159,7 @@ public class MetaDataTableImpl implements MetaDataTable {
                     appliedMigration.getType().name(),
                     appliedMigration.getScript(),
                     appliedMigration.getChecksum(),
+                    DateTool.currentDate(DateTool.UNFMT_yyyyMMddHHmmssSSS),  //diff add
                     appliedMigration.getExecutionTime(),
                     appliedMigration.isSuccess());
             LOG.debug("MetaData table " + table + " successfully updated to reflect changes");
@@ -260,7 +262,7 @@ public class MetaDataTableImpl implements MetaDataTable {
                             MigrationType.valueOf(rs.getString("type")),
                             rs.getString("script"),
                             toInteger((Number) rs.getObject("checksum")),
-                            rs.getTimestamp("installed_on"),
+                            DateTool.parseDate(rs.getString("installed_on"), DateTool.UNFMT_yyyyMMddHHmmssSSS), // diff modify rs.getTimestamp("installed_on"), 
                             rs.getString("installed_by"),
                             toInteger((Number) rs.getObject("execution_time")),
                             rs.getBoolean("success")

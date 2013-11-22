@@ -5,19 +5,17 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumnComment;
+import com.kvc.joy.core.persistence.jdbc.model.vo.RdbConnection;
 import com.kvc.joy.core.persistence.jdbc.service.IMdRdbColumnService;
 import com.kvc.joy.core.persistence.jdbc.support.MdRdbColumnCommentParser;
-import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
 
 /**
  * 
@@ -30,26 +28,10 @@ public class MdRdbColumnService implements IMdRdbColumnService {
 	protected static final Log logger = LogFactory.getLog(MdRdbColumnService.class);
 
 	@Override
-	public Map<String, MdRdbColumn> getColumns(String dsId, String tableName) {
-		logger.info("加载表字段元数据信息，datasourceId: " + dsId + ", table: " + tableName);
-		if (StringTool.isBlank(dsId) || StringTool.isBlank(tableName)) {
-			return new HashMap<String, MdRdbColumn>(0);
-		} else {
-			Connection conn = JdbcTool.getConnectionByDsId(dsId);
-			return getColumns(conn, tableName);
-		}
+	public Map<String, MdRdbColumn> getColumns(RdbConnection connection, String tableName) {
+		logger.info("加载表字段元数据信息，datasourceId: " + connection.getDsId() + ", table: " + tableName);
+		return getColumns(connection.getConnection(), tableName);
 	}
-
-//	@Override
-//	public Map<String, MdRdbColumn> getColumnsByJndi(String jndi, String tableName) {
-//		logger.info("加载表字段元数据信息，jndi: " + jndi + ", table: " + tableName);
-//		if (StringTool.isBlank(jndi) || StringTool.isBlank(tableName)) {
-//			return new HashMap<String, MdRdbColumn>(0);
-//		} else {
-//			Connection conn = JdbcTool.getConnectionByJndi(jndi);
-//			return getColumns(conn, tableName);
-//		}
-//	}
 
 	protected Map<String, MdRdbColumn> getColumns(Connection conn, String tableName) {
 		tableName = tableName.toLowerCase();
@@ -66,8 +48,6 @@ public class MdRdbColumnService implements IMdRdbColumnService {
 			}
 		} catch (Exception e) {
 			logger.error(e);
-		} finally {
-			JdbcTool.closeConnection(conn);
 		}
 		return columnMap;
 	}

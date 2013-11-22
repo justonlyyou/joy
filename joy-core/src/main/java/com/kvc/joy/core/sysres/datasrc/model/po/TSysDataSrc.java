@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import com.kvc.joy.core.persistence.entity.UuidCrudEntity;
-import com.kvc.joy.core.persistence.jdbc.model.vo.IMdRdbConn;
+import com.kvc.joy.core.persistence.jdbc.model.vo.IMdRdbDataSrc;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 import com.kvc.joy.core.sysres.code.po.TSysCodeTable;
 
@@ -25,7 +25,7 @@ import com.kvc.joy.core.sysres.code.po.TSysCodeTable;
 @Entity
 @Table(name = "t_sys_data_src")
 @Comment("数据源")
-public class TSysDataSrc extends UuidCrudEntity implements IMdRdbConn {
+public class TSysDataSrc extends UuidCrudEntity implements IMdRdbDataSrc {
 
 	private String name;
 	private String dbAlias;

@@ -5,6 +5,7 @@ import java.util.Map;
 import org.springframework.cache.annotation.Cacheable;
 
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
+import com.kvc.joy.core.persistence.jdbc.model.vo.RdbConnection;
 import com.kvc.joy.core.persistence.jdbc.service.IMdRdbColumnService;
 
 /**
@@ -17,17 +18,11 @@ public class MdRdbColumnCacheService implements IMdRdbColumnService {
 	public static final String CACHE_NAME = "MD_RDB_COLUMN";
 	private IMdRdbColumnService mdRdbColumnService;
 
-	@Cacheable(CACHE_NAME)
+	@Cacheable(value=CACHE_NAME, key="#connection.dsId + '-' + #tableName")
 	@Override
-	public Map<String, MdRdbColumn> getColumns(String datasourceId, String tableName) {
-		return mdRdbColumnService.getColumns(datasourceId, tableName);
+	public Map<String, MdRdbColumn> getColumns(RdbConnection connection, String tableName) {
+		return mdRdbColumnService.getColumns(connection, tableName);
 	}
-	
-//	@Cacheable(CACHE_NAME)
-//	@Override
-//	public Map<String, MdRdbColumn> getColumnsByJndi(String jndi, String tableName) {
-//		return mdRdbColumnService.getColumnsByJndi(jndi, tableName);
-//	}
 	
 	public void setMdRdbColumnService(IMdRdbColumnService mdRdbColumnService) {
 		this.mdRdbColumnService = mdRdbColumnService;

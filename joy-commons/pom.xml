@@ -11,6 +11,11 @@
 
 	<artifactId>joy-commons</artifactId>
 	<name>joy-commons</name>
+	
+	<properties>
+		<josql.version>2.2</josql.version>
+		<gentlywebutils.version>1.1</gentlywebutils.version>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -85,6 +90,16 @@
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.josql</groupId>
+			<artifactId>josql</artifactId>
+			<version>${josql.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.gentlyweb.utils</groupId>
+			<artifactId>gentlyWEB-utils</artifactId>
+			<version>${gentlywebutils.version}</version>
 		</dependency>
 	</dependencies>
 
