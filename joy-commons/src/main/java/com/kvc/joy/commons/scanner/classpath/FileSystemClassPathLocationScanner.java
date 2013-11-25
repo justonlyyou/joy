@@ -34,7 +34,7 @@ public class FileSystemClassPathLocationScanner implements ClassPathLocationScan
 	protected static final Log LOG = LogFactory.getLog(FileSystemClassPathLocationScanner.class);
 
 	public Set<String> findResourceNames(String location, URL locationUrl) throws IOException {
-		String filePath = FileTool.toFile(locationUrl).getParent();
+		String filePath = FileTool.toFile(locationUrl).getPath();
 		File folder = new File(filePath);
 		if (!folder.isDirectory()) {
 			LOG.debug("Skipping path as it is not a directory: " + filePath);

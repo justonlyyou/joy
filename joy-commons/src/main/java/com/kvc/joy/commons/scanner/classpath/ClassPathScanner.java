@@ -49,16 +49,19 @@ public class ClassPathScanner {
 	 * @return The resources that were found.
 	 * @throws IOException when the location could not be scanned.
 	 */
-	public Resource[] scanForResources(String path, String prefix, String suffix) throws IOException {
+	public static Resource[] scanForResources(String path, String prefix, String suffix) {
 		LOG.debug("Scanning for classpath resources at '" + path + "' (Prefix: '" + prefix + "', Suffix: '" + suffix
 				+ "')");
 
 		Set<Resource> resources = new TreeSet<Resource>();
-
-		Set<String> resourceNames = findResourceNames(path, prefix, suffix);
-		for (String resourceName : resourceNames) {
-			resources.add(new ClassPathResource(resourceName));
-			LOG.debug("Found resource: " + resourceName);
+		try {
+			Set<String> resourceNames = findResourceNames(path, prefix, suffix);
+			for (String resourceName : resourceNames) {
+				resources.add(new ClassPathResource(resourceName));
+				LOG.debug("Found resource: " + resourceName);
+			}
+		} catch (Exception e) {
+			LOG.error(e);
 		}
 
 		return resources.toArray(new Resource[resources.size()]);
@@ -76,28 +79,32 @@ public class ClassPathScanner {
 	 * @return The non-abstract classes that were found.
 	 * @throws Exception when the location could not be scanned.
 	 */
-	public Class<?>[] scanForClasses(String location, Class<?> implementedInterface) throws Exception {
+	public static Class<?>[] scanForClasses(String location, Class<?> implementedInterface) {
 		LOG.debug("Scanning for classes at '" + location + "' (Implementing: '" + implementedInterface.getName() + "')");
 
 		List<Class<?>> classes = new ArrayList<Class<?>>();
 
-		Set<String> resourceNames = findResourceNames(location, "", ".class");
-		for (String resourceName : resourceNames) {
-			String className = toClassName(resourceName);
-			Class<?> clazz = getClassLoader().loadClass(className);
+		try {
+			Set<String> resourceNames = findResourceNames(location, "", ".class");
+			for (String resourceName : resourceNames) {
+				String className = toClassName(resourceName);
+				Class<?> clazz = getClassLoader().loadClass(className);
 
-			if (Modifier.isAbstract(clazz.getModifiers())) {
-				LOG.debug("Skipping abstract class: " + className);
-				continue;
+				if (Modifier.isAbstract(clazz.getModifiers())) {
+					LOG.debug("Skipping abstract class: " + className);
+					continue;
+				}
+
+				if (!implementedInterface.isAssignableFrom(clazz)) {
+					continue;
+				}
+
+				ClassTool.instantiate(className);
+				classes.add(clazz);
+				LOG.debug("Found class: " + className);
 			}
-
-			if (!implementedInterface.isAssignableFrom(clazz)) {
-				continue;
-			}
-
-			ClassTool.instantiate(className);
-			classes.add(clazz);
-			LOG.debug("Found class: " + className);
+		} catch (Exception e) {
+			LOG.error(e);
 		}
 
 		return classes.toArray(new Class<?>[classes.size()]);
@@ -109,7 +116,7 @@ public class ClassPathScanner {
 	 * @param resourceName The resource name.
 	 * @return The class name.
 	 */
-	private String toClassName(String resourceName) {
+	private static String toClassName(String resourceName) {
 		String nameWithDots = resourceName.replace("/", ".");
 		return nameWithDots.substring(0, (nameWithDots.length() - ".class".length()));
 	}
@@ -124,7 +131,7 @@ public class ClassPathScanner {
 	 * @return The resource names.
 	 * @throws IOException when scanning this location failed.
 	 */
-	private Set<String> findResourceNames(String path, String prefix, String suffix) throws IOException {
+	private static Set<String> findResourceNames(String path, String prefix, String suffix) throws IOException {
 		Set<String> resourceNames = new TreeSet<String>();
 
 		List<URL> locationsUrls = getLocationUrlsForPath(path);
@@ -151,7 +158,7 @@ public class ClassPathScanner {
 	 * @return The underlying physical URLs.
 	 * @throws IOException when the lookup fails.
 	 */
-	private List<URL> getLocationUrlsForPath(String path) throws IOException {
+	private static List<URL> getLocationUrlsForPath(String path) throws IOException {
 		List<URL> locationUrls = new ArrayList<URL>();
 		Enumeration<URL> urls = getClassLoader().getResources(path);
 		if (!urls.hasMoreElements()) {
@@ -172,7 +179,7 @@ public class ClassPathScanner {
 	 * @param protocol The protocol of the location url to scan.
 	 * @return The location scanner or {@code null} if it could not be created.
 	 */
-	private ClassPathLocationScanner createLocationScanner(String protocol) {
+	private static ClassPathLocationScanner createLocationScanner(String protocol) {
 		if ("file".equals(protocol)) {
 			return new FileSystemClassPathLocationScanner();
 		}
@@ -201,7 +208,7 @@ public class ClassPathScanner {
 	/**
 	 * @return The classloader to use to scan the classpath.
 	 */
-	private ClassLoader getClassLoader() {
+	private static ClassLoader getClassLoader() {
 		return Thread.currentThread().getContextClassLoader();
 	}
 
@@ -214,7 +221,7 @@ public class ClassPathScanner {
 	 * @param suffix The suffix to match.
 	 * @return The filtered names set.
 	 */
-	private Set<String> filterResourceNames(Set<String> resourceNames, String prefix, String suffix) {
+	private static Set<String> filterResourceNames(Set<String> resourceNames, String prefix, String suffix) {
 		Set<String> filteredResourceNames = new TreeSet<String>();
 		for (String resourceName : resourceNames) {
 			String fileName = resourceName.substring(resourceName.lastIndexOf("/") + 1);
@@ -222,7 +229,7 @@ public class ClassPathScanner {
 					&& (fileName.length() > (prefix + suffix).length())) {
 				filteredResourceNames.add(resourceName);
 			} else {
-				LOG.debug("Filtering out resource: " + resourceName + " (filename: " + fileName + ")");
+//				LOG.debug("Filtering out resource: " + resourceName + " (filename: " + fileName + ")");
 			}
 		}
 		return filteredResourceNames;

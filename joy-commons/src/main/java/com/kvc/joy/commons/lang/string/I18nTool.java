@@ -1,10 +1,16 @@
 package com.kvc.joy.commons.lang.string;
 
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.Locale;
+import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
+import com.kvc.joy.commons.scanner.classpath.ClassPathScanner;
+import com.kvc.joy.commons.scanner.support.Resource;
 
 /**
  * 国际化工具
@@ -15,12 +21,21 @@ import com.kvc.joy.commons.log.LogFactory;
  */
 public class I18nTool {
 
-	private static ResourceBundle bundle;
-	private static final String BASE_NAME = "conf/i18n/language";
-	protected static final Log logger = LogFactory.getLog(StringTool.class);
+	private static final String DEFAULT_BASE_PATH = "conf/i18n/";
+	private static Map<String, ResourceBundle> bundleMap = new LinkedHashMap<String, ResourceBundle>();
+	private static final Log logger = LogFactory.getLog(I18nTool.class);
 
 	static {
-		bundle(BASE_NAME, Locale.getDefault());
+		Resource[] resources = ClassPathScanner.scanForResources(DEFAULT_BASE_PATH, "", ".properties");
+		Set<String> baseNames = new LinkedHashSet<String>();
+		for (Resource resource : resources) {
+			String filename = resource.getFilename();
+			String baseName = filename.replaceFirst("\\.properties$", "").replaceFirst("_[a-z]{2}_[A-Z]{2}$", "");
+			baseNames.add(DEFAULT_BASE_PATH + baseName);
+		}
+		for (String baseName : baseNames) {
+			bundle(baseName);
+		}
 	}
 
 	/**
@@ -34,15 +49,28 @@ public class I18nTool {
 	 * @author 唐玮琳
 	 * @time 2013-5-1 下午5:05:12
 	 */
-	public static ResourceBundle bundle(String baseName, Locale locale) {
-		Locale.setDefault(locale);
+	public static synchronized ResourceBundle bundle(String baseName, Locale locale) {
+		ResourceBundle bundle = null;
 		try {
 			bundle = ResourceBundle.getBundle(baseName, locale);
+			bundleMap.put(baseName, bundle);
 		} catch (Exception e) {
 			logger.error(e, "绑定本地运行环境和资源文件时出错!");
-			bundle = null;
 		}
 		return bundle;
+	}
+
+	/**
+	 * 绑定本地运行环境和资源文件
+	 * 
+	 * @param baseName 资源文件的基本名称(扣掉后缀)
+	 * @return
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年11月25日 下午10:17:27
+	 */
+	public static ResourceBundle bundle(String baseName) {
+		return bundle(baseName, Locale.getDefault());
 	}
 
 	/**
@@ -57,13 +85,14 @@ public class I18nTool {
 	 * @time 2013-5-1 下午5:00:03
 	 */
 	public static String getLocalStr(String i18nKey) {
-		if (StringTool.isBlank(i18nKey)) {
-			return "";
+		if (StringTool.isNotBlank(i18nKey)) {
+			for (ResourceBundle bundle : bundleMap.values()) {
+				if (bundle.containsKey(i18nKey)) {
+					return bundle.getString(i18nKey);
+				}
+			}
 		}
-		if (bundle == null) {
-			return i18nKey;
-		}
-		return bundle.getString(i18nKey);
+		return "";
 	}
 
 	/**
@@ -77,8 +106,12 @@ public class I18nTool {
 	 * @time 2013-5-1 下午5:00:30
 	 */
 	public static void changeLocale(Locale locale) {
-		bundle(BASE_NAME, locale);
-		javax.swing.JComponent.setDefaultLocale(locale);
+		Set<String> baseNameSet = bundleMap.keySet();
+		bundleMap.clear();
+		for (String baseName : baseNameSet) {
+			bundle(baseName, locale);
+		}
+		Locale.setDefault(locale);
 	}
 
 	/**
