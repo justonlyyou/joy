@@ -8,10 +8,6 @@
            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
-	<context:component-scan base-package="com.kvc.joy">
-		<context:exclude-filter type="aspectj" expression="com.kvc.joy.**.web" />
-	</context:component-scan>
-
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
@@ -19,6 +15,10 @@
 			</list>
 		</property>
 	</bean>
+
+	<context:component-scan base-package="com.kvc.joy">
+		<context:exclude-filter type="aspectj" expression="com.kvc.joy.**.web" />
+	</context:component-scan>
 
 	<!-- 业务库数据源定义 -->
 	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">

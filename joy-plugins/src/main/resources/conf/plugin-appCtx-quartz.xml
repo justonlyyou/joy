@@ -13,7 +13,7 @@
 
 	<context:property-placeholder location="classpath*:/conf/quartz.properties" ignore-unresolvable="true" />
 	
-	<bean class="com.kvc.joy.plugin.schedule.quartz.dao.TQrtzJobPlanCfgDao" />
+	<bean id="qrtzJobPlanCfgDao" class="com.kvc.joy.plugin.schedule.quartz.dao.TQrtzJobPlanCfgDao" />
 	
 
 	<!-- 

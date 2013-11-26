@@ -82,7 +82,7 @@ public class JoyPluginsInitializer implements ISystemInitService, BeanPostProces
 		
 		// 应用sql脚本安装
 		Flyway flyway = CoreBeanFactory.getRdbObjectsInitService().createFlyway();
-		String migrationPrefix = JoyPropeties.PLUGIN_FLYWAY_SQLMIGRATIONPREFIX;
+		String migrationPrefix = JoyPropeties.FLYWAY_SQLMIGRATIONPREFIX;
 		flyway.setSqlMigrationPrefix(migrationPrefix);
 		CoreBeanFactory.getRdbObjectsInitService().migrate(flyway);
 	}
@@ -99,6 +99,7 @@ public class JoyPluginsInitializer implements ISystemInitService, BeanPostProces
 		StringBuilder sb = new StringBuilder();
 		String DEFAULT_CFG_LOCATION = "classpath*:/conf/applicationContext*.xml";
 		sb.append(DEFAULT_CFG_LOCATION);
+//		sb.append(",").append("classpath*:/conf/springMVC.xml");
 		Set<Class<?>> classes = PackageTool.getClassesInPackage("com.kvc.joy.core", true);
 		classes.addAll(PackageTool.getClassesInPackage("com.kvc.joy.plugin", true));
 		for (Class<?> clazz : classes) {
@@ -107,7 +108,7 @@ public class JoyPluginsInitializer implements ISystemInitService, BeanPostProces
 					IJoyPlugin plugin = (IJoyPlugin) clazz.newInstance();
 					if(plugin.isEnabled()) {
 						String loaction = plugin.getCtxConfLocation();
-						sb.append("," + loaction);
+						sb.append(",").append(loaction);
 					}
 				} catch (Exception e) {
 				}

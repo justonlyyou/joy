@@ -49,7 +49,7 @@ public class CaptchaPlugin implements IJoyPlugin {
 
 	@Override
 	public String getCtxConfLocation() {
-		return "classpath*:/conf/comp-appCtx-captcha.xml";
+		return "classpath*:/conf/plugin-appCtx-captcha.xml";
 	}
 
 	

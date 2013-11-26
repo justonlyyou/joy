@@ -36,7 +36,6 @@ public class JoyPropeties extends BaseProperties {
 	public static Integer PLUGIN_LOGIN_PASSWORD_ERROR_ALLOW_COUNT;
 	public static Integer PLUGIN_LOGIN_PASSWORD_ERROR_PERIOD_HOUR;
 	public static boolean PLUGIN_SPRING_MVC_ENABLED;
-	public static boolean PLUGIN_SPRING_DATA_JPA_ENABLED;
 	public static boolean PLUGIN_WORKFLOW_ENABLED;
 	public static boolean PLUGIN_MAPPING_FIELD_ENABLED;
 	public static boolean PLUGIN_CHART_ENABLED;
@@ -53,7 +52,7 @@ public class JoyPropeties extends BaseProperties {
 	public static String PLUGIN_CAPTCHA_KAPTCHA_SESSION_KEY;
 	public static Integer PLUGIN_CAPTCHA_KAPTCHA_TEXTPRODUCER_CHAR_LENGTH;
 	public static String PLUGIN_CAPTCHA_KAPTCHA_TEXTPRODUCER_FONT_NAMES;
-	public static String PLUGIN_FLYWAY_SQLMIGRATIONPREFIX;
+	public static String FLYWAY_SQLMIGRATIONPREFIX;
 
 	private JoyPropeties() {
 	}
@@ -93,7 +92,6 @@ public class JoyPropeties extends BaseProperties {
 		PLUGIN_LOGIN_PASSWORD_ERROR_ALLOW_COUNT = getInt("plugin.login.password.error.allow.count");
 		PLUGIN_LOGIN_PASSWORD_ERROR_PERIOD_HOUR = getInt("plugin.login.password.error.period.hour");
 		PLUGIN_SPRING_MVC_ENABLED = getBool("plugin.spring.mvc.enabled");
-		PLUGIN_SPRING_DATA_JPA_ENABLED = getBool("plugin.spring.data.jpa.enabled");
 		PLUGIN_WORKFLOW_ENABLED = getBool("plugin.workflow.enabled");
 		PLUGIN_MAPPING_FIELD_ENABLED = getBool("plugin.mapping.field.enabled");
 		PLUGIN_CHART_ENABLED = getBool("plugin.chart.enabled");
@@ -110,7 +108,7 @@ public class JoyPropeties extends BaseProperties {
 		PLUGIN_CAPTCHA_KAPTCHA_SESSION_KEY = getStr("plugin.captcha.kaptcha.session.key");
 		PLUGIN_CAPTCHA_KAPTCHA_TEXTPRODUCER_CHAR_LENGTH = getInt("plugin.captcha.kaptcha.textproducer.char.length");
 		PLUGIN_CAPTCHA_KAPTCHA_TEXTPRODUCER_FONT_NAMES = getStr("plugin.captcha.kaptcha.textproducer.font.names");
-		PLUGIN_FLYWAY_SQLMIGRATIONPREFIX = getStr("plugin.flyway.sqlMigrationPrefix");
+		FLYWAY_SQLMIGRATIONPREFIX = getStr("flyway.sqlMigrationPrefix");
 	}
 
 	@Override

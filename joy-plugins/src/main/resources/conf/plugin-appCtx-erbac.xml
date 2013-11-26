@@ -26,11 +26,11 @@
 		<!-- shiro的核心安全接口 -->
 		<property name="securityManager" ref="securityManager" />
 		<!-- 要求登录时的链接 -->
-		<property name="loginUrl" value="login" />
+		<property name="loginUrl" value="${plugin.erbac.loginUrl}" />
 		<!-- 登陆成功后要跳转的链接 -->
-		<property name="successUrl" value="" />
+		<property name="successUrl" value="${plugin.erbac.successUrl}" />
 		<!-- 未授权时要跳转的链接 -->
-		<property name="unauthorizedUrl" value="login" />
+		<property name="unauthorizedUrl" value="${plugin.erbac.unauthorizedUrl}" />
 		<!-- shiro链接约束配置,在这里使用自定义的动态获取资源类 -->
 		<property name="filterChainDefinitionMap" ref="filterChainDefinition" />
 	</bean>
@@ -52,10 +52,10 @@
 	 <!-- 用户授权信息Cache-->
      <bean id="cacheManager" class="org.apache.shiro.cache.MemoryConstrainedCacheManager" /> 
     
-    <!-- shiro对ehcache的缓存管理直接使用spring的缓存工厂 
+    <!-- shiro对ehcache的缓存管理直接使用spring的缓存工厂 --> 
 	<bean id="shiroCacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager"> 
-	    <property name="cacheManager" ref="ehCacheManagerFactory" />  //TODO 不在同一上下文 
-	</bean> -->
+	    <property name="cacheManager" ref="cacheManagerFactory" /> 
+	</bean>
 
 	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
 
@@ -69,7 +69,7 @@
 
 	<bean id="userPermissionService" class="com.kvc.joy.plugin.security.erbac.service.impl.UserPermissionService" />
 	
-	<bean class="com.kvc.joy.plugin.security.erbac.dao.impl.TErbacAuthorityDao" />
+	<bean id="erbacAuthorityDao" class="com.kvc.joy.plugin.security.erbac.dao.impl.TErbacAuthorityDao" />
 	
 
 </beans>

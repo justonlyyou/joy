@@ -3,7 +3,6 @@ package com.kvc.joy.core.persistence.orm.jpa;
 import org.springframework.stereotype.Component;
 
 import com.kvc.joy.core.init.service.IJoyPlugin;
-import com.kvc.joy.core.init.support.JoyPropeties;
 
 /**
  * 
@@ -35,7 +34,7 @@ public class SpringDataJpaPlugin implements IJoyPlugin {
 
 	@Override
 	public boolean isEnabled() {
-		return JoyPropeties.PLUGIN_SPRING_DATA_JPA_ENABLED;
+		return true;
 	}
 
 	@Override

@@ -40,7 +40,7 @@
 	 <bean id="persistenceUnitManager" class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">  
          <property name="persistenceXmlLocations">  
              <list>  
-                 <value>classpath*:${jpa.persistenceXml}</value>
+                 <value>${jpa.persistenceXml}</value>
              </list>  
          </property>
          <property name="defaultDataSource" ref="dataSource"></property>

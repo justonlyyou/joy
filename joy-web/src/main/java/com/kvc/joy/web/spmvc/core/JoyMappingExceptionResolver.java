@@ -25,7 +25,7 @@ public class JoyMappingExceptionResolver extends SimpleMappingExceptionResolver 
 	@Override
 	protected ModelAndView doResolveException(HttpServletRequest request, HttpServletResponse response, Object handler,
 			Exception ex) {
-		logger.error(ex.getMessage(), ex);
+		logger.error(ex);
 		
 		// Expose ModelAndView for chosen error view.
 		String viewName = determineViewName(ex, request);

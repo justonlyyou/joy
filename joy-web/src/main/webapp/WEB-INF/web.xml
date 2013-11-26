@@ -64,10 +64,6 @@
 	<listener>  
        <listener-class>com.kvc.joy.web.init.JoyWebInitializer</listener-class>  
     </listener>  
-	<!-- <context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath*:/conf/applicationContext*.xml</param-value>
-	</context-param> -->
 	
 	<listener>
 	    <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
@@ -77,7 +73,7 @@
 		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
 	</listener>
 
-	<!-- spring mvc 
+	<!-- spring mvc -->
 	<servlet>
 		<servlet-name>springMVC</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -89,8 +85,8 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>springMVC</servlet-name>
-		<url-pattern>/</url-pattern> --> <!-- 配置成"/*"会导致访问jsp页面直接显示源码！ -->
-<!-- 	</servlet-mapping> -->
+		<url-pattern>/</url-pattern> <!-- 配置成"/*"会导致访问jsp页面直接显示源码！ -->
+ 	</servlet-mapping> 
 	
 	<error-page>  
         <error-code>403</error-code>  

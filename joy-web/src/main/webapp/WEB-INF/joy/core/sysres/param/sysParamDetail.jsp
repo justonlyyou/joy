@@ -28,7 +28,7 @@
         	</tr>
         	<tr>
         		<td>参数说明</td>
-        		<td>${model.description}</td>
+        		<td>${model.desc}</td>
         		<td>默认值</td>
         		<td>${model.defaultValue}</td>
         	</tr>

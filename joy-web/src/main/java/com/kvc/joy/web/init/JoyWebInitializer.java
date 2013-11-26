@@ -1,5 +1,8 @@
 package com.kvc.joy.web.init;
 
+import java.util.Enumeration;
+
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 
@@ -66,7 +69,8 @@ public class JoyWebInitializer extends ContextLoaderListener {
 		});
 	}
 	
-	protected void customizeContext(ServletContext sc, ConfigurableWebApplicationContext wac) {
+	@Override
+	protected void customizeContext(final ServletContext sc, ConfigurableWebApplicationContext wac) {
 		String contextConfigLocation = JoyPluginsInitializer.getCtxConfLocations();
 		wac.setConfigLocation(contextConfigLocation);
 		super.customizeContext(sc, wac);

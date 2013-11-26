@@ -87,13 +87,13 @@
 		</property>
 	</bean>
 
-	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
-		<property name="converters">
-			<list>
+<!-- 	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean"> -->
+<!-- 		<property name="converters"> -->
+<!-- 			<list> -->
 				<!-- <bean class="com.baobaotao.domain.StringToUserConverter" /> -->
-			</list>
-		</property>
-	</bean>
+<!-- 			</list> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
 
 	<!-- 
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" p:messageConverters-ref="messageConverters">

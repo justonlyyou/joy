@@ -14,7 +14,7 @@
 
  	<bean id="rdbObjectsInitService" class="com.kvc.joy.core.persistence.flyway.service.impl.RdbObjectsInitService">
  		<property name="locations">
- 			<value>${plugin.flyway.locations}</value>
+ 			<value>${flyway.locations}</value>
  		</property>
  	</bean>
 

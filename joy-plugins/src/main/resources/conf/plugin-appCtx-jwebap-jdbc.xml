@@ -12,19 +12,19 @@
 		http://www.springframework.org/schema/util/spring-util.xsd"
 		default-autowire="byName">
 
-    <!-- JDBC性能监控日志服务 --> <!-- //TODO 移到对应的插件包中 -->
+    <!-- JDBC性能监控日志服务 -->
 	<bean id="sysSqlLogService" class="com.kvc.joy.plugin.monitor.jdbc.service.impl.SysSqlLogService" />
 
-	<!-- JDBC性能监控日志持久化线程池 --> <!-- //TODO 移到对应的插件包中 -->
+	<!-- JDBC性能监控日志持久化线程池 -->
 	<bean id="sysSqlLogThreadPool" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
 		<!-- 核心线程数 -->
-		<property name="corePoolSize" value="1" />
+		<property name="corePoolSize" value="${plugin.jwebap.jdbc.threadPool.corePoolSize}" />
 		<!-- 最大线程数 -->
-		<property name="maxPoolSize" value="3" />
+		<property name="maxPoolSize" value="${plugin.jwebap.jdbc.threadPool.maxPoolSize}" />
 		<!-- 队列最大长度 >=mainExecutor.maxSize -->
-		<property name="queueCapacity" value="10" />
+		<property name="queueCapacity" value="${plugin.jwebap.jdbc.threadPool.queueCapacity}" />
 		<!-- 线程池维护线程所允许的空闲时间 -->
-		<property name="keepAliveSeconds" value="1800" />
+		<property name="keepAliveSeconds" value="${plugin.jwebap.jdbc.threadPool.keepAliveSeconds}" />
 		<!-- 线程池对拒绝任务(无线程可用)的处理策略 -->
 		<property name="rejectedExecutionHandler">
 			<bean class="java.util.concurrent.ThreadPoolExecutor$CallerRunsPolicy" />
