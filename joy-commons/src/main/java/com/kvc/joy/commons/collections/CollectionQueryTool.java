@@ -209,7 +209,9 @@ public class CollectionQueryTool {
 			Object fieldValue = queryLogic.getFieldValue();
 			QueryLogicOperator operator = queryLogic.getOperator();
 			String logic = CollectionQueryLogicConvertor.convert(property, fieldValue, operator);
-			where.append(" AND ").append(logic);
+			if (StringTool.isNotBlank(logic)) {
+				where.append(" AND ").append(logic);
+			}
 		}
 		
 		Query q = parse(MessageFormat.format(sqlPattern, className, where, getOrderStrs(orders.toArray(new Order[0]))));
@@ -217,6 +219,7 @@ public class CollectionQueryTool {
 		
 		
 		Paging paging = queryLogics.getPaging();
+		paging.setTotalCount(resultList.size());
 		int start = paging.getOffset();
 		int pageSize = paging.getPageSize();
 		int end = start + pageSize;

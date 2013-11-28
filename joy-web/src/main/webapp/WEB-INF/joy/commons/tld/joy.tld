@@ -59,4 +59,12 @@
     <example>${joy:formatDate(dateStr, inFmt, outFmt)}</example>
   </function>
   
+  <function>
+    <description>返回所有数据源</description>
+    <name>getAllDataSrc</name>
+    <function-class>com.kvc.joy.core.sysres.SysResTool</function-class>
+    <function-signature>java.util.List getAllDataSrc()</function-signature>
+    <example>${joy:getAllDataSrc()}</example>
+  </function>
+  
 </taglib>

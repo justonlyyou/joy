@@ -9,57 +9,57 @@ import java.util.Map;
  * @since 1.0.0
  * @author <b>唐玮琳</b>
  */
-public class Pair<F, S> implements Map.Entry<F, S>, Serializable {
+public class Pair<L, R> implements Map.Entry<L, R>, Serializable {
 
 	private static final long serialVersionUID = 310389695718804619L;
 
-	private F first;
-	private S second;
+	private L left;
+	private R right;
 
 	public Pair() {
 	}
 
-	public Pair(F first, S second) {
-		this.first = first;
-		this.second = second;
+	public Pair(L left, R right) {
+		this.left = left;
+		this.right = right;
 
 	}
 
-	public F getFirst() {
-		return first;
+	public L getLeft() {
+		return left;
 	}
 
-	public void setFirst(F first) {
-		this.first = first;
+	public void setLeft(L left) {
+		this.left = left;
 	}
 
-	public S getSecond() {
-		return second;
+	public R getRight() {
+		return right;
 	}
 
 	@Override
 	public String toString() {
-		return "(" + first + ", " + second + ")";
+		return "(" + left + ", " + right + ")";
 	}
 
-	public void setSecond(S second) {
-		this.second = second;
+	public void setRight(R right) {
+		this.right = right;
 	}
 
-	public void putToMap(Map<F, S> map) {
-		map.put(first, second);
+	public void putToMap(Map<L, R> map) {
+		map.put(left, right);
 	}
 
-	public F getKey() {
-		return first;
+	public L getKey() {
+		return left;
 	}
 
-	public S getValue() {
-		return second;
+	public R getValue() {
+		return right;
 	}
 
-	public S setValue(S value) {
-		setSecond(value);
+	public R setValue(R value) {
+		setRight(value);
 		return value;
 	}
 }

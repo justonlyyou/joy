@@ -80,9 +80,9 @@ public class PrefixSuffixPatternParser {
 	 */
 	private String parse(Pair<String, String> fixPair) {
 		String resultStr = "";
-		String pattern = (String) fixPair.getFirst();
+		String pattern = (String) fixPair.getLeft();
 		if (StringTool.isBlank(pattern) == false) {
-			String params = (String) fixPair.getSecond();
+			String params = (String) fixPair.getRight();
 			pattern = replaceTimeForPtn(pattern);
 			resultStr = fillParameters(pattern, params);	
 		}

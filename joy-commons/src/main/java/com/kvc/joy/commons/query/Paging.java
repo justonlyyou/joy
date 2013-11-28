@@ -19,7 +19,7 @@ public class Paging implements java.io.Serializable { // implements Pageable {
 
 	private int offset;
 	private int pageNumber = 1;
-	private int pageSize = 10;
+	private int pageSize = 10; //TODO
 	private int totalCount;
 	private int pageCount;
 	private int slider = 1; // 前后显示页面长度
@@ -224,5 +224,5 @@ public class Paging implements java.io.Serializable { // implements Pageable {
 	public void setSort(Sort sort) {
 		this.sort = sort;
 	}
-	
+
 }

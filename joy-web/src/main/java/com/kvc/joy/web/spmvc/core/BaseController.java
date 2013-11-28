@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.kvc.joy.commons.bean.IEntity;
 import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.lang.GenericTool;
+import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
@@ -23,10 +24,10 @@ import com.kvc.joy.web.support.utils.HttpRequestTool;
  * @author 唐玮琳
  * @time 2013年10月7日 上午8:50:53
  */
-public abstract class BaseController<T extends IEntity<?>> {
+public abstract class BaseController<T> {
 
 	protected static final Log logger = LogFactory.getLog(BaseController.class);
-
+	
 	protected abstract String getCurrentViewName();
 
 	protected String getDetailViewName() {
@@ -45,23 +46,35 @@ public abstract class BaseController<T extends IEntity<?>> {
 	@RequestMapping("/list")
 	public String list(Model model) {
 		PageStore pageStore = getPageStore();
-		pageStore.query(getEntityClass());
+		queryByPageStore(pageStore);
 		pageStore.getPaging().cal();
 		model.addAttribute("pageStore", pageStore);
 		addAttributes(model);
 		return getCurrentViewName();
 	}
+	
+	protected void queryByPageStore(PageStore pageStore) {
+		pageStore.query(getEntityClass());
+	}
 
 	@RequestMapping("/get")
 	public String get(Model model) {
-		String id = HttpRequestTool.getParameter("id");
-		T m = JpaTool.get(getEntityClass(), convertId(id));
+		T m = loadEntity();
 		model.addAttribute("model", m);
 		return getDetailViewName();
 	}
-
-	protected Object convertId(String id) {
-		return id;
+	
+	protected T loadEntity() {
+		String id = HttpRequestTool.getParameter("id");
+		if (StringTool.isBlank(id)) {
+			throw new SystemException("加载实体时id参数必须指定！");
+		}
+		Class<T> entityClass = getEntityClass();
+		if (IEntity.class.isAssignableFrom(entityClass) == false) {
+			throw new SystemException("如果不想重写BaseController类的loadEntity方法，"
+					+ "继承BaseController的子类的泛型参数类型必须为实现IEntity接口的实体类！");
+		}
+		return JpaTool.get(entityClass, id);
 	}
 
 	protected void addAttributes(Model model) {
@@ -100,8 +113,8 @@ public abstract class BaseController<T extends IEntity<?>> {
 		Class<?> clazz = GenericTool.getSuperClassGenricType(getClass());
 		if (clazz.equals(Object.class)) {
 			throw new SystemException("继承BaseController的子类必须指定泛型参数！");
-		} else if (IEntity.class.isAssignableFrom(clazz) == false) {
-			throw new SystemException("继承BaseController的子类的泛型参数类型必须为实现IEntity接口的实体类！");
+//		} else if (IEntity.class.isAssignableFrom(clazz) == false) {
+//			throw new SystemException("继承BaseController的子类的泛型参数类型必须为实现IEntity接口的实体类！");
 		}
 		return (Class<T>) clazz;
 	}

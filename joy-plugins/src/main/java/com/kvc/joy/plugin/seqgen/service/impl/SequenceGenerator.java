@@ -120,7 +120,7 @@ public class SequenceGenerator implements ISequenceGenerator {
 		
 		Pair<String, String> prefixAndSuffix = parsePrefixAndSuffixPattern(seqNum.getId());
 
-		return prefixAndSuffix.getFirst() + curSeqStr + prefixAndSuffix.getSecond();
+		return prefixAndSuffix.getLeft() + curSeqStr + prefixAndSuffix.getRight();
 	}
 	
 	private long getSequenceNo(String seqNunId) {
@@ -129,10 +129,10 @@ public class SequenceGenerator implements ISequenceGenerator {
 		TSysSeqNum tSysSeqNum = seqCache.getSeqNum();
 		
 		Pair<Boolean, Calendar> result = CycleProcessor.processCycle(seqCache);
-		boolean restart = result.getFirst(); 
+		boolean restart = result.getLeft(); 
 		if (restart || seqCache.hasNext() == false) {
 			if (restart) {
-				onCycleRestart(seqCache, result.getSecond());
+				onCycleRestart(seqCache, result.getRight());
 			} else {
 				seqCache.refreshCache(restart);	
 			}

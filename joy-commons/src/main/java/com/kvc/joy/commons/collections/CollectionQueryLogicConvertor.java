@@ -26,9 +26,12 @@ public class CollectionQueryLogicConvertor {
 		if (StringTool.isEmpty(property) || operator == null) {
 			return DEFAULT_LOGIC;
 		}
-		if (operator.getCode().contains("LIKE") && value instanceof String) {
-			value = ((String) value).replaceAll("%", "\\\\%").replaceAll("_", "\\\\_");
+		if (value == null || "".equals(value)) {
+			return "";
 		}
+//		if (operator.getCode().contains("LIKE") && value instanceof String) {
+//			value = ((String) value).replaceAll("%", "\\\\%").replaceAll("_", "\\\\_");
+//		}
 		switch (operator) {
 		case EQ:
 			return property + " = " + quoteString(value);

@@ -45,8 +45,8 @@ public class CaptchaController {
 		response.setContentType("image/jpeg");
 		
 		Pair<String, RenderedImage> textAndImage = PluginBeanFactory.getCaptchaService().generate();
-		String capText = textAndImage.getFirst();
-		RenderedImage bi = textAndImage.getSecond();
+		String capText = textAndImage.getLeft();
+		RenderedImage bi = textAndImage.getRight();
 		
 		// store the text in the session
 		request.getSession().setAttribute(CaptchaConsts.CAPTCHA_SESSION_KEY, capText);

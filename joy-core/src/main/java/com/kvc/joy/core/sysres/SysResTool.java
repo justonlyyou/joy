@@ -13,6 +13,7 @@ import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
+import com.kvc.joy.core.sysres.datasrc.model.po.TSysDataSrc;
 import com.kvc.joy.core.sysres.menu.po.TSysMenu;
 
 /**
@@ -170,6 +171,18 @@ public class SysResTool {
 	 */
 	public static List<TSysMenu> getMenuPath(String menuId) {
 		return CoreBeanFactory.getSysMenuService().getMenuPath(menuId);
+	}
+	
+	/**
+	 * 获取所有数据源
+	 * 
+	 * @return List<数据源对象>
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年11月28日 下午4:59:01
+	 */
+	public static List<TSysDataSrc> getAllDataSrc() {
+		return CoreBeanFactory.getSysDataSrcService().getAllDataSrc();
 	}
 
 }

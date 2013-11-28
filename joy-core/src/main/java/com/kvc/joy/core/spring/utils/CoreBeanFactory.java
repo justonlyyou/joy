@@ -17,6 +17,7 @@ import com.kvc.joy.core.persistence.orm.jpa.BaseJpaDao;
 import com.kvc.joy.core.spring.SpringXmlDynamicLoadService;
 import com.kvc.joy.core.sysres.code.service.ISysCodeCacheService;
 import com.kvc.joy.core.sysres.code.service.ISysCodeService;
+import com.kvc.joy.core.sysres.datasrc.service.ISysDataSrcService;
 import com.kvc.joy.core.sysres.menu.service.ISysMenuService;
 import com.kvc.joy.core.sysres.param.po.TSysParam;
 import com.kvc.joy.core.sysres.param.service.ISysParamService;
@@ -164,6 +165,10 @@ public class CoreBeanFactory {
 	 */
 	public static ISysCodeService getSysCodeService() {
 		return (ISysCodeService) SpringBeanTool.getBean("sysCodeService");
+	}
+	
+	public static ISysDataSrcService getSysDataSrcService() {
+		return (ISysDataSrcService) SpringBeanTool.getBean("sysDataSrcService");
 	}
 	
 	/**

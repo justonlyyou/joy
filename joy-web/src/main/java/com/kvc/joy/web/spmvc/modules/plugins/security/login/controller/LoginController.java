@@ -68,11 +68,11 @@ public class LoginController {
 		loginVo.setCaptchaClient(captcha);
 		loginVo.setLoginIp(HttpRequestTool.getIpAddr());
 		Pair<String, String> osInfo = HttpRequestTool.getOsInfo();
-		loginVo.setOsType(osInfo.getFirst());
-		loginVo.setOsVersion(osInfo.getSecond());
+		loginVo.setOsType(osInfo.getLeft());
+		loginVo.setOsVersion(osInfo.getRight());
 		Pair<String, String> browserInfo = HttpRequestTool.getBrowserInfo();
-		loginVo.setBroswerType(browserInfo.getFirst());
-		loginVo.setBroswerVersion(browserInfo.getSecond());
+		loginVo.setBroswerType(browserInfo.getLeft());
+		loginVo.setBroswerVersion(browserInfo.getRight());
 		String captchaGenTime = (String) HttpSessionTool.getSession().getAttribute(CaptchaConsts.CAPTCHA_SESSION_DATE);
 		loginVo.setCaptchaGenTime(captchaGenTime);
 		String captchaServer = (String) HttpSessionTool.getSession().getAttribute(CaptchaConsts.CAPTCHA_SESSION_KEY);

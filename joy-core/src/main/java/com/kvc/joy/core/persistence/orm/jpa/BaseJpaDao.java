@@ -56,7 +56,7 @@ public abstract class BaseJpaDao<T> extends JpaDaoSupport {
 		// 分页
 		Pair<Integer, Integer> range = callBack.getPageRange();
 		if (range != null) {
-			typedQuery = typedQuery.setFirstResult(range.getFirst()).setMaxResults(range.getSecond());	
+			typedQuery = typedQuery.setFirstResult(range.getLeft()).setMaxResults(range.getRight());	
 		}
 		
 		return typedQuery.getResultList();

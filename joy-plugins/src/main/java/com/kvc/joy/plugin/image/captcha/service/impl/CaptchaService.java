@@ -27,9 +27,9 @@ public class CaptchaService implements ICaptchaService {
 	public Pair<String, RenderedImage> generate() {
 		Pair<String, RenderedImage> textAndImage = new Pair<String, RenderedImage>();
 		String capText = captchaProducer.createText();
-		textAndImage.setFirst(capText);
+		textAndImage.setLeft(capText);
 		BufferedImage bi = captchaProducer.createImage(capText);
-		textAndImage.setSecond(bi);
+		textAndImage.setRight(bi);
 		return textAndImage;
 	}
 

@@ -23,6 +23,9 @@
 		</property>
 	</bean>
 	
+	<bean id="sysDataSrcService" class="com.kvc.joy.core.sysres.datasrc.service.impl.SysDataSrcService" />
+	
+	
 	<!-- 系统菜单服务 -->
 	<bean id="sysMenuService" class="com.kvc.joy.core.sysres.menu.service.impl.SysMenuService" />
 	

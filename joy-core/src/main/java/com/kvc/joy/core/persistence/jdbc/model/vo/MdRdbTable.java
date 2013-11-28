@@ -74,5 +74,5 @@ public class MdRdbTable implements Comparable<MdRdbTable>, Serializable {
 	public void setColumns(Collection<MdRdbColumn> columns) {
 		this.columns = columns;
 	}
-	
+
 }

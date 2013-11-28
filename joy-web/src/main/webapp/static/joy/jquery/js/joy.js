@@ -10,10 +10,10 @@ function processOperator() {
 	var selects = $form.find("select");
 	var inputables = $.merge(inputs, selects);
     $.each(inputables, function(i, item) {
-		var attrName = item.getAttribute("name");
-		var opParamName = "_joy_key__operator_" + attrName;
 		var propsStr = item.getAttribute("data-joy-props");
 		if(propsStr) {
+			var attrName = item.getAttribute("name");
+			var opParamName = "_joy_key__operator_" + attrName;
 			var props = eval("({"+ propsStr + "})");
 			var hidden = $form.find("input[name=" + opParamName + "]");
 			if(hidden.length == 0) {
@@ -27,7 +27,7 @@ function processOperator() {
 function processPaginationTag() {
 	if($(".joy-pagination").length != 0) {
 		$("#submitBtn").bind("click", function(e) {
-			gotoPage();
+			gotoPage(1);
 		});	
 	}
 }
@@ -39,6 +39,14 @@ function gotoPage(n,s){
 	if(!isNaN(s)) {
 		$("#_joy_id__paging_pageSize").val(s);	
 	}
+	var action = $("form").attr("action");
+	if(action.indexOf("?") == -1) {
+		action += "?";
+	} else {
+		action += "&";
+	}
+	action += "_joy_key__paging_repaging=false";
+	$("form").attr("action", action);
 	$("form").submit();
 	return false;
 }

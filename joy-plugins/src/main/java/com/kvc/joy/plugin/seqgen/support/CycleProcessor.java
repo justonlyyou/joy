@@ -91,9 +91,9 @@ public class CycleProcessor {
 			}
 		}
 		Pair<Boolean, Calendar> result = new Pair<Boolean, Calendar>();
-		result.setFirst(reset);
+		result.setLeft(reset);
 		if (reset) {
-			result.setSecond(now);
+			result.setRight(now);
 		}
 		return result;
 	}
