@@ -12,7 +12,7 @@ import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser;
 import com.kvc.joy.plugin.security.login.model.po.TLoginLog;
 import com.kvc.joy.plugin.security.login.service.ILoginLogService;
 import com.kvc.joy.plugin.security.login.service.ILoginService;
-import com.kvc.joy.plugin.security.login.support.enums.LoginFailReason;
+import com.kvc.joy.plugin.security.login.support.enums.LoginState;
 import com.kvc.joy.plugin.security.login.support.vo.LoginVo;
 import com.kvc.joy.plugin.support.PluginBeanFactory;
 
@@ -35,7 +35,7 @@ public class LoginService  implements ILoginService {
 		if (loginVo.isCaptchaRequire()) {
 			errMsg = validateCaptcha(loginVo);
 			if (errMsg != null) {
-				loginVo.setLoginFailReason(LoginFailReason.CAPTCHA_ERR);
+				loginVo.setLoginState(LoginState.CAPTCHA_ERR);
 				loginLogService.logOnLogin(loginVo);
 				return errMsg;
 			}	
@@ -54,7 +54,7 @@ public class LoginService  implements ILoginService {
 		}
 		
 		if (errMsg == null) {
-			loginVo.setLoginSuccess(true);
+			loginVo.setLoginState(LoginState.SUCCESS);
 			TLoginLog logOnLogin = loginLogService.logOnLogin(loginVo);
 			PluginBeanFactory.getLogoutService().mendLogoutLogOnLogin(logOnLogin);
 		}
@@ -104,11 +104,11 @@ public class LoginService  implements ILoginService {
 			errMsg = "用户名或密码错误！"; // 用户名不存在，为了安全性，不精确提示
 		} catch (IncorrectCredentialsException ice) {
 			errMsg = "用户名或密码错误！";
-			loginVo.setLoginFailReason(LoginFailReason.PASSWORD_ERR);
+			loginVo.setLoginState(LoginState.PASSWORD_ERR);
 			loginLogService.logOnLogin(loginVo);
 		} catch (LockedAccountException lae) {
 			errMsg = "您的帐号已被锁定！";
-			loginVo.setLoginFailReason(LoginFailReason.ACCOUNT_LOCK);
+			loginVo.setLoginState(LoginState.ACCOUNT_LOCK);
 			loginLogService.logOnLogin(loginVo);
 		} catch (AuthenticationException ae) {
 			errMsg = "授权发生异常！";

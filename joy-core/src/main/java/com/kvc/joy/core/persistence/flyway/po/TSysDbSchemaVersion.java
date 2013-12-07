@@ -3,7 +3,6 @@ package com.kvc.joy.core.persistence.flyway.po;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.IdClass;
 import javax.persistence.Table;
 
 import com.kvc.joy.commons.bean.IEntity;
@@ -15,12 +14,12 @@ import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
  * @author 唐玮琳
  * @time 2013年11月15日 上午11:12:58
  */
-@IdClass(TSysDbSchemaVersionPk.class)
 @Entity
 @Table(name = "t_sys_db_schema_version")
 @Comment("数据库脚本脚本")
-public class TSysDbSchemaVersion implements IEntity<TSysDbSchemaVersionPk>{
+public class TSysDbSchemaVersion implements IEntity<String> {
 
+	private String id;
 	private int versionRank;
 	private int installedRank;
 	private String versionDomain; // 版本域 (扩展flyway的字段)
@@ -28,14 +27,26 @@ public class TSysDbSchemaVersion implements IEntity<TSysDbSchemaVersionPk>{
 	private String desc;
 	private String type;
 	private String script;
-	private int checksum;
+	private Integer checksum;
 	private String installedBy;
 	private String installedOn;
 	private int executionTime;
 	private boolean success;
-
+	
 	@Id
-	@Column(length=32)
+	@Column(length = 32)
+	@Comment(value="主键", detailDesc="生成策略: UUID")
+	@Override
+	public String getId() {
+		return id;
+	}
+
+	@Override
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	@Column(length = 32)
 	@Comment("版本域")
 	public String getVersionDomain() {
 		return versionDomain;
@@ -44,8 +55,7 @@ public class TSysDbSchemaVersion implements IEntity<TSysDbSchemaVersionPk>{
 	public void setVersionDomain(String versionDomain) {
 		this.versionDomain = versionDomain;
 	}
-	
-	@Id
+
 	@Comment("版本序号")
 	public int getVersionRank() {
 		return versionRank;
@@ -107,11 +117,11 @@ public class TSysDbSchemaVersion implements IEntity<TSysDbSchemaVersionPk>{
 
 	@Column(nullable = true)
 	@Comment("校验和")
-	public int getChecksum() {
+	public Integer getChecksum() {
 		return checksum;
 	}
 
-	public void setChecksum(int checksum) {
+	public void setChecksum(Integer checksum) {
 		this.checksum = checksum;
 	}
 
@@ -125,7 +135,7 @@ public class TSysDbSchemaVersion implements IEntity<TSysDbSchemaVersionPk>{
 		this.installedBy = installedBy;
 	}
 
-	@Column(length=17, nullable = false)
+	@Column(length = 17, nullable = false)
 	@Comment("安装时间")
 	public String getInstalledOn() {
 		return installedOn;
@@ -153,17 +163,6 @@ public class TSysDbSchemaVersion implements IEntity<TSysDbSchemaVersionPk>{
 
 	public void setSuccess(boolean success) {
 		this.success = success;
-	}
-
-	@Override
-	public TSysDbSchemaVersionPk getId() {
-		return new TSysDbSchemaVersionPk(versionRank, versionDomain);
-	}
-
-	@Override
-	public void setId(TSysDbSchemaVersionPk id) {
-		this.versionRank = id.getVersionRank();
-		this.versionDomain = id.getVersionDomain();
 	}
 
 }

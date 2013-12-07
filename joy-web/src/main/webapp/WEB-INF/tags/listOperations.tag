@@ -25,14 +25,14 @@
 
 <div class="joy-list-row-operations ${cssClass}">
 	<c:if test="${showDetailOp == null || showDetailOp}">
-		<i class="icon-file-text-alt" title="详情" onclick="${detailFunc}('${id}')" ></i>&nbsp;
+		<i class="fa fa-list-alt" title="详情" onclick="${detailFunc}('${id}')" ></i>&nbsp;
 	</c:if>
 	<c:if test="${showEditOp == null || showEditOp}">
-		<i class="icon-edit" title="编辑" onclick="${editFunc}('${id}')"></i>&nbsp;
+		<i class="fa fa-edit" title="编辑" onclick="${editFunc}('${id}')"></i>&nbsp;
 	</c:if>
 	
 	<c:if test="${showDeleteOp == null || showDeleteOp}">
-		<i class="icon-remove" title="删除" onclick="${deleteFunc}('${id}')"></i>&nbsp;
+		<i class="fa fa-times" title="删除" onclick="${deleteFunc}('${id}')"></i>&nbsp;
 	</c:if>
 	<c:if test="${exOp1CssClass != null}">
 		<i class="${exOp1CssClass}" title="${exOp1Title}" onclick="${exOp1Func}('${id}')"></i>&nbsp;

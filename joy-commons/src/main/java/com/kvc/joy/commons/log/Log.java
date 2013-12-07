@@ -24,12 +24,34 @@ public interface Log {
      * 
      * 
      * @param message
+     * @param param
+     * @since 1.0.0
+     * @author 唐玮琳
+     * @time 2013年12月7日 上午10:00:34
+     */
+    void debug(String message, ILogParam param);
+    
+    /**
+     * 
+     * 
+     * @param message
      * @param args
      * @since 1.0.0
      * @author 唐玮琳
      * @time 2013年11月20日 上午1:20:21
      */
     void info(String message, Object... args);
+    
+    /**
+     * 
+     * 
+     * @param message
+     * @param param
+     * @since 1.0.0
+     * @author 唐玮琳
+     * @time 2013年12月7日 上午10:00:34
+     */
+    void info(String message, ILogParam param);
 
     /**
      * 
@@ -41,6 +63,17 @@ public interface Log {
      * @time 2013年11月20日 上午1:20:25
      */
     void warn(String message, Object... args);
+    
+    /**
+     * 
+     * 
+     * @param message
+     * @param param
+     * @since 1.0.0
+     * @author 唐玮琳
+     * @time 2013年12月7日 上午10:00:34
+     */
+    void warn(String message, ILogParam param);
 
     /**
      * 
@@ -52,6 +85,17 @@ public interface Log {
      * @time 2013年11月20日 上午1:20:29
      */
     void error(String message, Object... args);
+    
+    /**
+     * 
+     * 
+     * @param message
+     * @param param
+     * @since 1.0.0
+     * @author 唐玮琳
+     * @time 2013年12月7日 上午10:00:34
+     */
+    void error(String message, ILogParam param);
 
     /**
      * 

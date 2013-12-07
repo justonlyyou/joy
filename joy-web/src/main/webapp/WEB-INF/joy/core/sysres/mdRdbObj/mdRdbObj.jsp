@@ -17,7 +17,7 @@
 		    type : 2,
 		    title : '关系数据库对象详情',
 		    iframe : {src : '${ctx}/mdRdbObj/get?id='+id},
-		    area : ['750px' , '466px'],
+		    area : ['850px' , '500px'],
 		    offset : ['50px','']
 		});
 	}
@@ -38,7 +38,7 @@
 						<div class="form-group">
 							<label for="dsId" class="col-sm-1 control-label">数据源</label>
 							<div class="col-sm-2">
-								<select class="form-control" name="dsId" value="${dsId}"> 
+								<select class="form-control" name="dsId" value="${dsId}" data-joy-props="operator:'='"> 
 									<c:forEach items="${joy:getAllDataSrc()}" var="entry">
 										<option value="${entry.id}" class="joy-select-option">${entry.name}</option>
 									</c:forEach>
@@ -56,7 +56,7 @@
 							</div>
 							<div class="col-sm-3">
 								<button id="submitBtn" class="btn btn-default">
-									<i class="icon-search"></i>&nbsp;查询
+									<i class="fa fa-search"></i>&nbsp;查询
 								</button>
 							</div>
 						</div>
@@ -69,7 +69,7 @@
 						<thead>
 							<tr>
 								<th class="joy-table-seq-col" width="30px">#</th>
-<!-- 								<th width="70px">操作</th> -->
+								<th width="70px">操作</th>
 								<th><tags:orderColumn property="name" columnName="对象名" defaultOrder="ASC" /></th>
 								<th>对象注释</th>
 								<th>对象类型</th>
@@ -79,7 +79,7 @@
 							<c:forEach items="${pageStore.result}" var="p" varStatus="stauts">
 								<tr>
 									<td class="joy-table-seq-col">${stauts.index+1}</td>
-<%-- 									<td><tags:listOperations id="${p.dsId}-${p.name}"/></td> --%>
+									<td><tags:listOperations id="${p.dsId}-${p.name}" showEditOp="false" showDeleteOp="false"/></td>
 									<td>${p.name}</td>
 									<td>${p.comment}</td>
 									<td>${p.type}</td>

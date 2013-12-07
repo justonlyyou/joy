@@ -56,4 +56,14 @@ public interface ILoginLogService {
 	 * @time 2013年10月15日 上午10:48:58
 	 */
 	TLoginLog getPreLoginSuccessLog(String curLogId);
+	
+	/**
+	 * 
+	 * 
+	 * @param logoutTime
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年12月7日 上午11:46:03
+	 */
+	TLoginLog onLogout(String logoutTime);
 }

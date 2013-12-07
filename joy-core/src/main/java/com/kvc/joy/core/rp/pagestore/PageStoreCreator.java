@@ -1,7 +1,8 @@
 package com.kvc.joy.core.rp.pagestore;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -23,6 +24,7 @@ public class PageStoreCreator {
 
 	protected static final Log logger = LogFactory.getLog(PageStoreCreator.class);
 	private Map<String, String> paramMap;
+	private Map<String, String> returnMap = new HashMap<String, String>(0);
 
 	public PageStoreCreator(Map<String, String> paramMap) {
 		this.paramMap = paramMap;
@@ -50,10 +52,30 @@ public class PageStoreCreator {
 	private QueryLogics createQueryLogics() {
 		QueryLogics logics = new QueryLogics();
 		
-		Map<String, QueryLogic> queryLogicMap = new LinkedHashMap<String, QueryLogic>();
+		List<QueryLogic> queryLogics = new ArrayList<QueryLogic>();
 		for (String key : paramMap.keySet()) {
-			if (key.startsWith(QueryLogic.OPERATOR_PARA_NAME_PREFIX)) {
-				String property = StringTool.substringAfter(key, QueryLogic.OPERATOR_PARA_NAME_PREFIX);
+			if (key.startsWith(QueryLogic.TIME_START_PROP_PREFIX)) {
+				String value = paramMap.get(key);
+				if (StringTool.isNotBlank(value)) {
+					returnMap.put(key, value);
+					String property = StringTool.substringAfter(key, QueryLogic.TIME_START_PROP_PREFIX);
+					String operatorStr = paramMap.get(QueryLogic.OPERATOR_PARAM_PREFIX + key);
+					if (StringTool.isBlank(operatorStr)) {
+						queryLogics.add(new QueryLogic(property, QueryLogicOperator.GE, value));
+					}
+				}
+			} else if (key.startsWith(QueryLogic.TIME_END_PROP_PREFIX)) {
+				String value = paramMap.get(key);
+				if (StringTool.isNotBlank(value)) {
+					returnMap.put(key, value);
+					String property = StringTool.substringAfter(key, QueryLogic.TIME_END_PROP_PREFIX);
+					String operatorStr = paramMap.get(QueryLogic.OPERATOR_PARAM_PREFIX + key);
+					if (StringTool.isBlank(operatorStr)) {
+						queryLogics.add(new QueryLogic(property, QueryLogicOperator.LT, value));
+					}
+				}
+			} else if (key.startsWith(QueryLogic.OPERATOR_PARAM_PREFIX)) {
+				String property = StringTool.substringAfter(key, QueryLogic.OPERATOR_PARAM_PREFIX);
 				if (paramMap.containsKey(property) == false) {
 					logger.warn("页面配置错误！属性【"+property+"】有配置操作符但找不到输入域，已忽略该条件！");
 				} else {
@@ -63,13 +85,12 @@ public class PageStoreCreator {
 						logger.warn("页面配置错误！属性【" + property + "】配置的操作符【" + operatorStr + "】非法！"
 								+ "合法的操作符取值请参考枚举类: " + QueryLogicOperator.class);
 					} else {
-						QueryLogic queryLogic = new QueryLogic(operator, paramMap.get(property));
-						queryLogicMap.put(property, queryLogic);	
+						queryLogics.add(new QueryLogic(property, operator, paramMap.get(property)));
 					}
 				}
 			}
 		}
-		logics.setConditions(queryLogicMap);
+		logics.setConditions(queryLogics);
 		
 		return logics;
 	}
@@ -114,6 +135,10 @@ public class PageStoreCreator {
 			paging.setOffset((paging.getPageNumber() - 1) * paging.getPageSize());
 		}
 		return paging;
+	}
+	
+	public Map<String, String> getReturnMap() {
+		return returnMap;
 	}
 	
 }

@@ -3,8 +3,6 @@ package com.kvc.joy.core.persistence.flyway.po;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-import com.kvc.joy.core.persistence.entity.UuidEntity_;
-
 /**
  * 
  * @since 1.0.0
@@ -12,8 +10,9 @@ import com.kvc.joy.core.persistence.entity.UuidEntity_;
  * @time 2013年11月15日 上午11:41:41
  */
 @StaticMetamodel(TSysDbSchemaVersion.class)
-public class TSysDbSchemaVersion_ extends UuidEntity_ {
+public class TSysDbSchemaVersion_ {
 	
+	public static volatile SingularAttribute<TSysDbSchemaVersion, String> id;
 	public static volatile SingularAttribute<TSysDbSchemaVersion, Integer> versionRank;
 	public static volatile SingularAttribute<TSysDbSchemaVersion, Integer> installedRank;
 	public static volatile SingularAttribute<TSysDbSchemaVersion, String> versionDomain;

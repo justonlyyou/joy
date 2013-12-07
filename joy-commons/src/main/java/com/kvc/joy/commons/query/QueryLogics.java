@@ -2,7 +2,6 @@ package com.kvc.joy.commons.query;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -24,34 +23,18 @@ public class QueryLogics implements java.io.Serializable {
 	public static final String KEY_PREFIX_ORDER_DEFAULT = "_joy_key__order_default_";
 
 	private Paging paging;
-	private Map<String, QueryLogic> conditions = new LinkedHashMap<String, QueryLogic>(0);
+	private List<QueryLogic> conditions = new ArrayList<QueryLogic>(0);
 	private Map<String, String> orderMap = new HashMap<String, String>(0);
 	protected static final Log logger = LogFactory.getLog(QueryLogic.class);
 
-	public QueryLogicOperator getOperator(String field) {
-		QueryLogic queryLogic = conditions.get(field);
-		if (queryLogic != null) {
-			return queryLogic.getOperator();
-		}
-		return null;
-	}
-
-	public Object getFieldValue(String field) {
-		QueryLogic queryLogic = conditions.get(field);
-		if (queryLogic != null) {
-			return queryLogic.getFieldValue();
-		}
-		return null;
-	}
-
-	public void addCondition(String fieldName, Object fieldValue, QueryLogicOperator operator) {
-		if (StringTool.isBlank(fieldName)) {
+	public void addCondition(String property, QueryLogicOperator operator, Object value) {
+		if (StringTool.isBlank(property)) {
 			throw new IllegalArgumentException("字段名或属性名不为空！");
 		}
 		if (operator == null) {
 			throw new IllegalArgumentException("查询逻辑操作符不为空！");
 		}
-		conditions.put(fieldName, new QueryLogic(operator, fieldValue));
+		conditions.add(new QueryLogic(property, operator, value));
 	}
 
 	public Paging getPaging() {
@@ -62,12 +45,12 @@ public class QueryLogics implements java.io.Serializable {
 		this.paging = paging;
 	}
 
-	public Map<String, QueryLogic> getConditions() {
+	public List<QueryLogic> getConditions() {
 		return conditions;
 	}
 
-	public void setConditions(Map<String, QueryLogic> Conditions) {
-		this.conditions = Conditions;
+	public void setConditions(List<QueryLogic> conditions) {
+		this.conditions = conditions;
 	}
 
 	public List<Order> getOrders() {
@@ -95,10 +78,6 @@ public class QueryLogics implements java.io.Serializable {
 
 	public void setOrderMap(Map<String, String> orderMap) {
 		this.orderMap = orderMap;
-	}
-
-	public static void main(String[] args) {
-		System.out.println(Direction.fromString("d"));
 	}
 
 }

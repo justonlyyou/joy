@@ -1,5 +1,6 @@
 package com.kvc.joy.core.persistence.jdbc.service;
 
+import java.io.Serializable;
 import java.util.Map;
 
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
@@ -11,7 +12,7 @@ import com.kvc.joy.core.persistence.jdbc.model.vo.RdbConnection;
  * @author 唐玮琳
  * @time 2013-2-3 下午9:22:12
  */
-public interface IMdRdbColumnService {
+public interface IMdRdbColumnService extends Serializable {
 
 	/**
 	 * 

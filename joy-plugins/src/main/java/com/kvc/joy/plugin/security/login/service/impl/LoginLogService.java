@@ -23,7 +23,7 @@ import com.kvc.joy.plugin.security.login.support.vo.LoginVo;
  * @time 2012-6-17 下午9:03:02
  */
 public class LoginLogService implements ILoginLogService {
-	
+
 	private LoginLogDao loginLogDao;
 
 	@Transactional
@@ -36,12 +36,12 @@ public class LoginLogService implements ILoginLogService {
 		loginLog.setUserPassword(StringTool.toMd5HexStr(loginLog.getUserPassword()));
 		TErbacUser currentUser = UserTool.getCurrentUser();
 		if (currentUser != null) {
-			loginLog.setUserId(currentUser.getId());	
+			loginLog.setUserId(currentUser.getId());
 		}
 		JpaTool.persist(loginLog);
 		return loginLog;
 	}
-	
+
 	@Override
 	public long statPasswordErrorCount(String account, String fromTime, String toTime) {
 		return loginLogDao.statPasswordErrorCount(account, fromTime, toTime);
@@ -59,7 +59,7 @@ public class LoginLogService implements ILoginLogService {
 		int maxErrorCount = JoyPropeties.PLUGIN_LOGIN_PASSWORD_ERROR_ALLOW_COUNT - 1;
 		return loginLogDao.isPasswordErrorFrequently(account, fromTime, toTime, maxErrorCount);
 	}
-	
+
 	public void setLoginLogDao(LoginLogDao loginLogDao) {
 		this.loginLogDao = loginLogDao;
 	}
@@ -68,6 +68,17 @@ public class LoginLogService implements ILoginLogService {
 	public TLoginLog getPreLoginSuccessLog(String curLogId) {
 		String userId = UserTool.getCurrentUser().getId();
 		return loginLogDao.getPreLoginSuccessLog(curLogId, userId);
+	}
+
+	@Override
+	public TLoginLog onLogout(String logoutTime) {
+		String userId = UserTool.getCurrentUser().getId();
+		TLoginLog loginLog = loginLogDao.getPreLoginSuccessLog(null, userId);
+		if (loginLog != null) {
+			loginLog.setLogoutTime(logoutTime);
+			JpaTool.persist(loginLog);
+		}
+		return loginLog;
 	}
 
 }

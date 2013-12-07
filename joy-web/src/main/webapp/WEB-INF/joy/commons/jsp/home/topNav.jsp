@@ -43,6 +43,30 @@
     	$("#topMenu li").removeClass("active");
     	$("#menuItem"+itemId).addClass("active");
     }
+    
+    function exit() {
+    	$.layer({
+    	    shade : [0], //不显示遮罩
+    	    area : ['250px','auto'],
+    	    dialog : {
+    	        msg:'您确定要退出系统？',
+    	        btns : 2, 
+    	        type : -1,
+    	        btn : ['确定','取消'],
+    	        yes : function(){
+    	        	$.ajax({
+    	                url: "${ctx}/logout?_joy_key__logout_method_code=11",
+   	                	error: function(request) {
+   	                        alert("发生未预期的错误！");
+   	                    },
+   	                    success: function(data) {
+   	                    	window.location.reload();
+   	                    }
+    	        	});
+    	        },
+    	    }
+    	});
+    }
 </script>
 
 <script id="topMenuTmpl" type="text/x-jsrender">
@@ -60,7 +84,8 @@
 		<div class="navbar-header navbar-brand" style="padding:0 10px 0 10px;">
 			<h5 title="${joy:getAppProperty('app.name')}">
 				<b><font size="5">J</font></b>
-				<i class="${joy:getAppProperty('app.icon.class')}"></i>
+<%-- 				<i class="${joy:getAppProperty('app.icon.class')}"></i> --%>
+<i class="fa fa-smile-o fa-2x"></i>
 				<b><font size="5">Y</font></b>
 			</h5>
 		</div>
@@ -68,7 +93,7 @@
 			<ul id="topMenu" class="nav navbar-nav"></ul>
 			<ul class="nav navbar-nav navbar-right" >
 				<li class="dropdown">
-					<a href="${ctx}/logout?_joy_key__logout_method_code=11" title="退出"><i class="icon-off icon-large"></i></a>
+					<a href="javascript:exit()" title="退出"><i class="fa fa-power-off"></i></a>
 				</li>
 			</ul>
 		</div>

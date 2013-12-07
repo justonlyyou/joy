@@ -4,6 +4,7 @@ import java.text.MessageFormat;
 
 import org.slf4j.Logger;
 
+import com.kvc.joy.commons.log.ILogParam;
 import com.kvc.joy.commons.log.Log;
 
 /**
@@ -75,6 +76,26 @@ public class Slf4jLog implements Log {
 	@Override
 	public boolean isErrorEnabled() {
 		return log.isErrorEnabled();
+	}
+
+	@Override
+	public void debug(String message, ILogParam param) {
+		log.debug(message, param);
+	}
+
+	@Override
+	public void info(String message, ILogParam param) {
+		log.info(message, param);
+	}
+
+	@Override
+	public void warn(String message, ILogParam param) {
+		log.warn(message, param);
+	}
+
+	@Override
+	public void error(String message, ILogParam param) {
+		log.error(message, param);
 	}
 
 }

@@ -1,5 +1,7 @@
 package com.kvc.joy.commons.enums;
 
+import com.kvc.joy.commons.lang.BooleanTool;
+
 
 /**
  * 逻辑真假的枚举
@@ -39,14 +41,12 @@ public enum YesNot implements ICodeEnum {
 	}
 	
 	public static YesNot enumOf(String code) {
-		return EnumTool.enumOf(YesNot.class, code);
+		boolean bool = BooleanTool.toBoolean(code);
+		return enumOfBool(bool);
 	}
 	
 	public static YesNot enumOfBool(boolean bool) {
-		if (bool) {
-			return YesNot.YES;
-		}
-		return YesNot.NOT;
+		return bool ? YES : NOT;
 	}
 	
 }

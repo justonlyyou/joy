@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,9 +15,11 @@ import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumnComment;
+import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbTable;
 import com.kvc.joy.core.persistence.jdbc.model.vo.RdbConnection;
 import com.kvc.joy.core.persistence.jdbc.service.IMdRdbColumnService;
 import com.kvc.joy.core.persistence.jdbc.support.MdRdbColumnCommentParser;
+import com.kvc.joy.core.persistence.jdbc.support.utils.MdRdbTool;
 
 /**
  * 
@@ -30,12 +34,9 @@ public class MdRdbColumnService implements IMdRdbColumnService {
 	@Override
 	public Map<String, MdRdbColumn> getColumns(RdbConnection connection, String tableName) {
 		logger.info("加载表字段元数据信息，datasourceId: " + connection.getDsId() + ", table: " + tableName);
-		return getColumns(connection.getConnection(), tableName);
-	}
-
-	protected Map<String, MdRdbColumn> getColumns(Connection conn, String tableName) {
 		tableName = tableName.toLowerCase();
 		Map<String, MdRdbColumn> columnMap = null;
+		Connection conn = connection.getConnection();
 		try {
 			DatabaseMetaData metaData = conn.getMetaData();
 			columnMap = loadColumns(conn, metaData, tableName);
@@ -46,6 +47,10 @@ public class MdRdbColumnService implements IMdRdbColumnService {
 				MdRdbColumn column = columnMap.get(pk);
 				column.setKey(true);
 			}
+			
+			// 与表关联
+			MdRdbTable table = MdRdbTool.getRelationalObject(connection, tableName);
+			table.setColumns(columnMap.values());
 		} catch (Exception e) {
 			logger.error(e);
 		}
@@ -54,7 +59,13 @@ public class MdRdbColumnService implements IMdRdbColumnService {
 
 	private Map<String, MdRdbColumn> loadColumns(Connection conn, DatabaseMetaData metaData, String tableName)
 			throws SQLException {
-		Map<String, MdRdbColumn> columnMap = new LinkedHashMap<String, MdRdbColumn>();
+		Map<String, MdRdbColumn> columnMap = new LinkedHashMap<String, MdRdbColumn>() {
+
+			@Override
+			public Collection<MdRdbColumn> values() {
+				return new ArrayList<MdRdbColumn>(super.values()); // 父类默认返回的集合不是可序列化的
+			}
+		};
 		ResultSet rs = metaData.getColumns(null, metaData.getUserName(), tableName, null);
 		while (rs.next()) {
 			MdRdbColumn column = createColumn(rs);

@@ -62,7 +62,7 @@ function processOrderColumnTag() {
 				order = $("#_joy_id__order_default_"+property).val();
 			}
 			if(order) {
-				order = order.toUpperCase()=="DESC" ? "icon-sort-down" : "icon-sort-up";
+				order = order.toUpperCase()=="DESC" ? "fa fa-sort-down" : "fa fa-sort-up";
 			}
 			var $orderLbl = $("#_joy_id__order_column_"+property);
 			$orderLbl.html($orderLbl.html() + ('<i class="' + order + '"></i>' || ""));

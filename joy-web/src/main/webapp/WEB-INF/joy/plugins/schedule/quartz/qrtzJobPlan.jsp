@@ -55,7 +55,7 @@
 							</div>
 							<div class="col-sm-3">
 								<button id="submitBtn" class="btn btn-default">
-									<i class="icon-search"></i>&nbsp;查询
+									<i class="fa fa-search"></i>&nbsp;查询
 								</button>
 							</div>
 						</div>
@@ -87,10 +87,10 @@
 									<td>${p.name}</td>
 									<td><tags:codeTrans code="${p.runState}" 
 										enumClass="com.kvc.joy.plugin.schedule.quartz.support.enums.JobRunState" /></td>
-									<td><tags:dateFormatter dateStr="${p.effectTime}" /></td>
-									<td><tags:dateFormatter dateStr="${p.expireTime}" /></td>
-									<td><tags:dateFormatter dateStr="${p.lastFireTime}" /></td>
-									<td><tags:dateFormatter dateStr="${p.nextFireTime}" /></td>
+									<td><tags:timeFormatter timeStr="${p.effectTime}" /></td>
+									<td><tags:timeFormatter timeStr="${p.expireTime}" /></td>
+									<td><tags:timeFormatter timeStr="${p.lastFireTime}" /></td>
+									<td><tags:timeFormatter timeStr="${p.nextFireTime}" /></td>
 								</tr>
 							</c:forEach>
 						</tbody>

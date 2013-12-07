@@ -1,12 +1,11 @@
 package com.kvc.joy.core.persistence.entity;
 
-import java.util.UUID;
-
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 import com.kvc.joy.commons.bean.IEntity;
+import com.kvc.joy.commons.support.IdGenerator;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 
 /**
@@ -21,7 +20,7 @@ public class UuidEntity implements IEntity<String> {
 	protected String id;
 
 	public UuidEntity() {
-		this.id = UUID.randomUUID().toString().replaceAll("-", "").toUpperCase();
+		this.id = IdGenerator.gen32Uuid();
 	}
 
 	@Override

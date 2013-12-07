@@ -19,8 +19,7 @@ public class TLoginLog_ extends UuidEntity_ {
 	public static volatile SingularAttribute<TLoginLog, String> broswerVersion;
 	public static volatile SingularAttribute<TLoginLog, String> osType;
 	public static volatile SingularAttribute<TLoginLog, String> osVersion;
-	public static volatile SingularAttribute<TLoginLog, Boolean> loginSuccess;
-	public static volatile SingularAttribute<TLoginLog, String> loginFailReasonCode;
+	public static volatile SingularAttribute<TLoginLog, String> loginStateCode;
 	public static volatile SingularAttribute<TLoginLog, Boolean> rememberMe;
 
 }

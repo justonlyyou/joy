@@ -12,6 +12,7 @@ import com.kvc.joy.core.persistence.jdbc.support.enums.RdbObjectType;
 public class MdRdbTable implements Comparable<MdRdbTable>, Serializable {
 
 	private static final long serialVersionUID = -8119151332561864994L;
+	private String dsId;
 	private String name;
 	private String comment;
 	private String type;
@@ -21,11 +22,12 @@ public class MdRdbTable implements Comparable<MdRdbTable>, Serializable {
 	public MdRdbTable() {
 	}
 	
-	public MdRdbTable(String name, String comment) {
-		this(name, comment, RdbObjectType.TABLE.getCode());
+	public MdRdbTable(String dsId, String name, String comment) {
+		this(dsId, name, comment, RdbObjectType.TABLE.getCode());
 	}
 	
-	public MdRdbTable(String name, String comment, String type) {
+	public MdRdbTable(String dsId, String name, String comment, String type) {
+		this.dsId = dsId;
 		this.name = name;
 		this.comment = comment;
 		this.type = type;
@@ -75,4 +77,12 @@ public class MdRdbTable implements Comparable<MdRdbTable>, Serializable {
 		this.columns = columns;
 	}
 
+	public String getDsId() {
+		return dsId;
+	}
+
+	public void setDsId(String dsId) {
+		this.dsId = dsId;
+	}
+	
 }

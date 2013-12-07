@@ -4,14 +4,15 @@ import com.kvc.joy.commons.enums.EnumTool;
 import com.kvc.joy.commons.enums.ICodeEnum;
 
 /**
- * 登陆失败原因枚举
+ * 登陆状态枚举
  * 
  * @since 1.0.0
  * @author 唐玮琳
  * @time 2013年9月29日 下午11:41:03
  */
-public enum LoginFailReason implements ICodeEnum {
+public enum LoginState implements ICodeEnum {
 
+	SUCCESS("00", "登陆成功"),
 	PASSWORD_ERR("11", "密码错误"),
 	CAPTCHA_ERR("12", "验证码错误"), 
 	ACCOUNT_LOCK("21", "帐号被锁定");
@@ -19,7 +20,7 @@ public enum LoginFailReason implements ICodeEnum {
 	private String code;
 	private String desc;
 
-	LoginFailReason(String code, String desc) {
+	LoginState(String code, String desc) {
 		this.code = code;
 		this.desc = desc;
 	}
@@ -34,8 +35,8 @@ public enum LoginFailReason implements ICodeEnum {
 		return desc;
 	}
 
-	public static LoginFailReason enumOf(String code) {
-		return EnumTool.enumOf(LoginFailReason.class, code);
+	public static LoginState enumOf(String code) {
+		return EnumTool.enumOf(LoginState.class, code);
 	}
 
 	@Override

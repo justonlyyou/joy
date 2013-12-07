@@ -4,12 +4,13 @@ import java.util.List;
 
 import org.springframework.util.StringUtils;
 
+import com.kvc.joy.commons.log.ILogParam;
 import com.kvc.joy.plugin.monitor.jdbc.IPreparedSqlConvertor;
 
 /**
  * @author <b>唐玮琳</b>
  */
-public class ParamMsg {
+public class ParamMsg implements ILogParam {
 
 	private String sql; // 不带参的sql语句
 	private String fullSql; // 完整的sql语句(带参)

@@ -7,7 +7,7 @@ import com.kvc.joy.plugin.monitor.jdbc.model.vo.ParamMsg;
 import com.kvc.joy.plugin.support.PluginBeanFactory;
 
 /**
- * 系统sql执行性能监控Appender
+ * 系统sql执行监控Appender
  * 
  * @since 1.0.0
  * @author 唐玮琳

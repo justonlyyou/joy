@@ -36,6 +36,7 @@ import com.googlecode.flyway.core.util.jdbc.RowMapper;
 import com.googlecode.flyway.core.util.logging.Log;
 import com.googlecode.flyway.core.util.logging.LogFactory;
 import com.kvc.joy.commons.lang.DateTool;
+import com.kvc.joy.commons.support.IdGenerator;
 
 /**
  * Supports reading and writing to the metadata table.
@@ -149,8 +150,9 @@ public class MetaDataTableImpl implements MetaDataTable {
                     + "," + dbSupport.quote("installed_on") //diff add
                     + "," + dbSupport.quote("execution_time")
                     + "," + dbSupport.quote("success")
+                    + "," + dbSupport.quote("id")
                     + ")"
-                    + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, " + dbSupport.getCurrentUserFunction() + ", ?, ?, ?)", //diff add two "?"
+                    + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, " + dbSupport.getCurrentUserFunction() + ", ?, ?, ?, ?)", //diff add three "?"
                     versionRank,
                     calculateInstalledRank(),
                     versionDomain, //diff add
@@ -161,7 +163,9 @@ public class MetaDataTableImpl implements MetaDataTable {
                     appliedMigration.getChecksum(),
                     DateTool.currentDate(DateTool.UNFMT_yyyyMMddHHmmssSSS),  //diff add
                     appliedMigration.getExecutionTime(),
-                    appliedMigration.isSuccess());
+                    appliedMigration.isSuccess(),
+                    IdGenerator.gen32Uuid() //diff add
+            		);
             LOG.debug("MetaData table " + table + " successfully updated to reflect changes");
         } catch (SQLException e) {
             throw new FlywayException("Unable to insert row for version '" + version + "' in metadata table " + table, e);

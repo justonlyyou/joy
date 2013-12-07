@@ -1,8 +1,5 @@
 package com.kvc.joy.web.init;
 
-import java.util.Enumeration;
-
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 

@@ -17,7 +17,6 @@ import com.kvc.joy.commons.lang.ArrayTool;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.query.Paging;
 import com.kvc.joy.commons.query.QueryLogic;
-import com.kvc.joy.commons.query.QueryLogicOperator;
 import com.kvc.joy.commons.query.QueryLogics;
 import com.kvc.joy.commons.query.sort.Order;
 
@@ -28,10 +27,10 @@ import com.kvc.joy.commons.query.sort.Order;
  * @time 2013年11月22日 上午10:08:11
  */
 public class CollectionQueryTool {
-	
+
 	private CollectionQueryTool() {
 	}
-	
+
 	/**
 	 * 
 	 * 
@@ -49,13 +48,13 @@ public class CollectionQueryTool {
 		if (ArrayTool.isEmpty(orders)) {
 			return new ArrayList<T>(beans);
 		}
-		
+
 		String sqlPattern = "SELECT * FROM {0} ORDERS BY {1}";
 		String className = beans.iterator().next().getClass().getName();
 		Query q = parse(MessageFormat.format(sqlPattern, className, getOrderStrs(orders)));
 		return getResults(q, beans);
 	}
-	
+
 	/**
 	 * 
 	 * 
@@ -75,7 +74,7 @@ public class CollectionQueryTool {
 		if (StringTool.isBlank(property) || CollectionTool.isEmpty(values)) {
 			return order(beans, orders);
 		}
-		
+
 		String className = beans.iterator().next().getClass().getName();
 		values = CollectionQueryLogicConvertor.quoteStrings(values);
 		String valueStrs = StringTool.join(values, ",");
@@ -89,7 +88,7 @@ public class CollectionQueryTool {
 		}
 		return getResults(q, beans);
 	}
-	
+
 	/**
 	 * 
 	 * 
@@ -113,7 +112,44 @@ public class CollectionQueryTool {
 		propMap.put(property, value);
 		return andQuery(beans, propMap, orders);
 	}
-	
+
+	/**
+	 * 
+	 * 
+	 * @param beans
+	 * @param property
+	 * @param orders
+	 * @return
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年11月29日 下午10:51:02
+	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public static List query(Collection<?> beans, String property, Order... orders) {
+		if (CollectionTool.isEmpty(beans)) {
+			return new ArrayList(0);
+		}
+		if (StringTool.isBlank(property)) {
+			return order(beans, orders);
+		}
+
+		String className = beans.iterator().next().getClass().getName();
+		String sqlPattern = "SELECT {0} FROM {1} ";
+		Query q;
+		if (ArrayTool.isEmpty(orders)) {
+			q = parse(MessageFormat.format(sqlPattern, property, className));
+		} else {
+			sqlPattern += " ORDER BY {2}";
+			q = parse(MessageFormat.format(sqlPattern, property, className, getOrderStrs(orders)));
+		}
+		List<?> results = getResults(q, beans);
+		List resultList = new ArrayList(results.size());
+		for (Object result : results) {
+			resultList.add(((Object[]) result)[0]);
+		}
+		return resultList;
+	}
+
 	/**
 	 * 
 	 * 
@@ -128,7 +164,7 @@ public class CollectionQueryTool {
 	public static <T> List<T> andQuery(Collection<T> beans, Map<String, Object> propertyMap, Order... orders) {
 		return search(true, beans, propertyMap, orders);
 	}
-	
+
 	/**
 	 * 
 	 * 
@@ -143,15 +179,16 @@ public class CollectionQueryTool {
 	public static <T> List<T> orSearch(Collection<T> beans, Map<String, Object> propertyMap, Order... orders) {
 		return search(false, beans, propertyMap, orders);
 	}
-	
-	private static <T> List<T> search(boolean andQuery, Collection<T> beans, Map<String, Object> propertyMap, Order... orders) {
+
+	private static <T> List<T> search(boolean andQuery, Collection<T> beans, Map<String, Object> propertyMap,
+			Order... orders) {
 		if (CollectionTool.isEmpty(beans)) {
 			return new ArrayList<T>(0);
 		}
 		if (MapTool.isEmpty(propertyMap)) {
 			return order(beans, orders);
 		}
-		
+
 		String className = beans.iterator().next().getClass().getName();
 		String dftConfition = andQuery ? "1=1" : "1=2";
 		String sqlPattern = "SELECT * FROM {0} WHERE " + dftConfition + " {1}";
@@ -162,11 +199,11 @@ public class CollectionQueryTool {
 		for (Entry<String, Object> entry : propertyMap.entrySet()) {
 			String property = entry.getKey();
 			if (StringTool.isNotBlank(property)) {
-				String logic = andQuery ? " AND " : " OR "; 
+				String logic = andQuery ? " AND " : " OR ";
 				where.append(logic).append(property);
 				Object value = entry.getValue();
 				if (value == null) {
-					where.append(" IS NULL");	
+					where.append(" IS NULL");
 				} else {
 					value = CollectionQueryLogicConvertor.quoteString(value);
 					where.append(" = ").append(value);
@@ -176,7 +213,7 @@ public class CollectionQueryTool {
 		Query q = parse(MessageFormat.format(sqlPattern, className, where, getOrderStrs(orders)));
 		return getResults(q, beans);
 	}
-	
+
 	/**
 	 * 
 	 * 
@@ -194,7 +231,7 @@ public class CollectionQueryTool {
 		if (queryLogics == null) {
 			return order(beans);
 		}
-		
+
 		String className = beans.iterator().next().getClass().getName();
 		String sqlPattern = "SELECT * FROM {0} WHERE 1=1 {1}";
 		List<Order> orders = queryLogics.getOrders();
@@ -202,22 +239,17 @@ public class CollectionQueryTool {
 			sqlPattern += " ORDER BY {2}";
 		}
 		StringBuilder where = new StringBuilder();
-		Map<String, QueryLogic> conditions = queryLogics.getConditions();
-		for (Entry<String, QueryLogic> entry : conditions.entrySet()) {
-			String property = entry.getKey();
-			QueryLogic queryLogic = entry.getValue();
-			Object fieldValue = queryLogic.getFieldValue();
-			QueryLogicOperator operator = queryLogic.getOperator();
-			String logic = CollectionQueryLogicConvertor.convert(property, fieldValue, operator);
+		List<QueryLogic> conditions = queryLogics.getConditions();
+		for (QueryLogic lgc : conditions) {
+			String logic = CollectionQueryLogicConvertor.convert(lgc.getProperty(), lgc.getValue(), lgc.getOperator());
 			if (StringTool.isNotBlank(logic)) {
 				where.append(" AND ").append(logic);
 			}
 		}
-		
+
 		Query q = parse(MessageFormat.format(sqlPattern, className, where, getOrderStrs(orders.toArray(new Order[0]))));
 		List<T> resultList = getResults(q, beans);
-		
-		
+
 		Paging paging = queryLogics.getPaging();
 		paging.setTotalCount(resultList.size());
 		int start = paging.getOffset();
@@ -228,13 +260,13 @@ public class CollectionQueryTool {
 		}
 		return new ArrayList<T>(resultList.subList(start, end));
 	}
-	
+
 	@SuppressWarnings("rawtypes")
 	public static <T> List queryBySql(Collection<T> beans, String sql) {
 		if (CollectionTool.isEmpty(beans)) {
 			return new ArrayList<T>(0);
 		}
-		
+
 		Query q = parse(sql);
 		try {
 			return q.execute(beans).getResults();
@@ -242,8 +274,7 @@ public class CollectionQueryTool {
 			throw new SystemException(e);
 		}
 	}
-	
-	
+
 	private static String getOrderStrs(Order... orders) {
 		if (ArrayTool.isEmpty(orders)) {
 			return "";
@@ -255,7 +286,7 @@ public class CollectionQueryTool {
 			return sb.substring(0, sb.length() - 1);
 		}
 	}
-	
+
 	private static Query parse(String sql) {
 		Query q = new Query();
 		try {
@@ -265,7 +296,7 @@ public class CollectionQueryTool {
 		}
 		return q;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	private static <T> List<T> getResults(Query q, Collection<T> beans) {
 		try {
@@ -274,5 +305,5 @@ public class CollectionQueryTool {
 			throw new SystemException(e);
 		}
 	}
-	
+
 }

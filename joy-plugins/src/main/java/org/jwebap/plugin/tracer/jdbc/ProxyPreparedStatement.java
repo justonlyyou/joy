@@ -513,7 +513,7 @@ public class ProxyPreparedStatement extends ProxyStatement
 			}
 			logger.debug(message.toString(), message);
 		} catch (Exception e) {
-			logger.error("sql性能监控处理出错 ！",  e);
+			logger.error(e, "sql性能监控处理出错 ！");
 		}
 	}
 

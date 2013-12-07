@@ -9,7 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.kvc.joy.core.persistence.entity.UuidEntity;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
-import com.kvc.joy.plugin.security.login.support.enums.LoginFailReason;
+import com.kvc.joy.plugin.security.login.support.enums.LoginState;
 
 @Entity
 @Table(name = "t_login_log")
@@ -27,8 +27,7 @@ public class TLoginLog extends UuidEntity {
 	private String broswerVersion; // 使用的浏览器版本
 	private String osType; // 使用的操作系统类型
 	private String osVersion; // 使用的操作系统版本
-	private boolean loginSuccess; // 是否登陆成功
-	private LoginFailReason loginFailReason; // 登陆失败原因
+	private LoginState loginState; // 登陆失败原因
 	private boolean rememberMe; // 记住我
 	
 
@@ -112,36 +111,26 @@ public class TLoginLog extends UuidEntity {
 		this.osType = osType;
 	}
 
-	@Column(length = 1, nullable = false)
-	@Comment("是否登陆成功")
-	public boolean isLoginSuccess() {
-		return loginSuccess;
-	}
-
-	public void setLoginSuccess(boolean loginSuccess) {
-		this.loginSuccess = loginSuccess;
-	}
-
 	@Transient
-	public LoginFailReason getLoginFailReason() {
-		return loginFailReason;
+	public LoginState getLoginState() {
+		return loginState;
 	}
 
-	public void setLoginFailReason(LoginFailReason loginFailReason) {
-		this.loginFailReason = loginFailReason;
+	public void setLoginState(LoginState loginState) {
+		this.loginState = loginState;
 	}
 	
 	@Column(length = 2)
-	@Comment(value="登陆失败原因代码", codeId="joy_code_login_fail_reason")
-	public String getLoginFailReasonCode() {
-		return loginFailReason == null ? null : loginFailReason.getCode();
+	@Comment(value="登陆状态代码", codeId="joy_code_login_state")
+	public String getLoginStateCode() {
+		return loginState == null ? null : loginState.getCode();
 	}
 
-	public void setLoginFailReasonCode(String loginFailReasonCode) {
-		if (StringUtils.isBlank(loginFailReasonCode)) {
-			this.loginFailReason = null;
+	public void setLoginStateCode(String loginStateCode) {
+		if (StringUtils.isBlank(loginStateCode)) {
+			this.loginState = null;
 		} else {
-			this.loginFailReason = LoginFailReason.enumOf(loginFailReasonCode);	
+			this.loginState = LoginState.enumOf(loginStateCode);	
 		}
 	}
 

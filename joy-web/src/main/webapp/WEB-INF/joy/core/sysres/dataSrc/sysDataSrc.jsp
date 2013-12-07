@@ -48,7 +48,7 @@
 							</div>
 							<div class="col-sm-6">
 								<button id="submitBtn" class="btn btn-default">
-									<i class="icon-search"></i>&nbsp;查询
+									<i class="fa fa-search"></i>&nbsp;查询
 								</button>
 							</div>
 						</div>

@@ -2,10 +2,9 @@ package com.kvc.joy.core.persistence.orm.jpa;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 
 import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.Path;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
@@ -22,14 +21,10 @@ public class JpaQueryLogicConvertor {
 
 	public static <T> Predicate[] convert(CriteriaBuilder cb, Root<T> root, QueryLogics queryLogics) {
 		if (queryLogics != null) {
-			Map<String, QueryLogic> conditions = queryLogics.getConditions();
+			List<QueryLogic> conditions = queryLogics.getConditions();
 			List<Predicate> predicates = new ArrayList<Predicate>(conditions.size());
-			for (Entry<String, QueryLogic> entry : conditions.entrySet()) {
-				String property = entry.getKey();
-				QueryLogic queryLogic = entry.getValue();
-				QueryLogicOperator operator = queryLogic.getOperator();
-				Object fieldValue = queryLogic.getFieldValue();
-				Predicate predicate = convert(property, fieldValue, operator, cb, root);
+			for (QueryLogic lgc : conditions) {
+				Predicate predicate = convert(lgc.getProperty(), lgc.getValue(), lgc.getOperator(), cb, root);
 				if (predicate != null) {
 					predicates.add(predicate);
 				}
@@ -49,71 +44,69 @@ public class JpaQueryLogicConvertor {
 		if (operator.getCode().contains("LIKE") && value instanceof String) {
 			value = ((String) value).replaceAll("%", "\\\\%").replaceAll("_", "\\\\_");
 		}
+		Path path = root.get(property);
 		switch (operator) {
 		case EQ:
-			return cb.equal(root.get(property), value);
+			return cb.equal(path, value);
 		case IEQ:
 			if (value instanceof String) {
-				return cb.equal(cb.upper(root.get(property)), ((String) value).toUpperCase());
+				return cb.equal(cb.upper(path), ((String) value).toUpperCase());
 			}
-			return cb.equal(root.get(property), value);
+			return cb.equal(path, value);
 		case NE:
 		case LG:
-			return cb.notEqual(root.get(property), value);
+			return cb.notEqual(path, value);
 		case GE:
-			return cb.ge(root.get(property), (Number) value);
+			return cb.greaterThanOrEqualTo(path, (Comparable) value);
 		case LE:
-			return cb.le(root.get(property), (Number) value);
+			return cb.lessThanOrEqualTo(path, (Comparable) value);
 		case GT:
-			return cb.gt(root.get(property), (Number) value);
+			return cb.greaterThan(path, (Comparable) value);
 		case LT:
-			return cb.lt(root.get(property), (Number) value);
+			return cb.lessThan(path, (Comparable) value);
 		case EQ_P:
-			return cb.equal(root.get(property), root.get((String) value));
+			return cb.equal(path, root.get((String) value));
 		case NE_P:
 		case LG_P:
-			return cb.notEqual(root.get(property), root.get((String) value));
+			return cb.notEqual(path, root.get((String) value));
 		case GE_P:
-			return cb.ge(root.get(property), root.get((String) value));
+			return cb.ge(path, root.get((String) value));
 		case LE_P:
-			return cb.le(root.get(property), root.get((String) value));
+			return cb.le(path, root.get((String) value));
 		case GT_P:
-			return cb.gt(root.get(property), root.get((String) value));
+			return cb.gt(path, root.get((String) value));
 		case LT_P:
-			return cb.lt(root.get(property), root.get((String) value));
+			return cb.lt(path, root.get((String) value));
 		case LIKE:
-			return cb.like(root.get(property), "%" + (String) value + "%");
+			return cb.like(path, "%" + (String) value + "%");
 		case LIKE_S:
-			return cb.like(root.get(property), (String) value + "%");
+			return cb.like(path, (String) value + "%");
 		case LIKE_E:
-			return cb.like(root.get(property), "%" + (String) value);
+			return cb.like(path, "%" + (String) value);
 		case ILIKE:
-			return cb.like(cb.upper(root.get(property)), "%" + ((String) value).toUpperCase() + "%");
+			return cb.like(cb.upper(path), "%" + ((String) value).toUpperCase() + "%");
 		case ILIKE_S:
-			return cb.like(cb.upper(root.get(property)), ((String) value).toUpperCase() + "%");
+			return cb.like(cb.upper(path), ((String) value).toUpperCase() + "%");
 		case ILIKE_E:
-			return cb.like(cb.upper(root.get(property)), "%" + ((String) value).toUpperCase());
-		 case IN:
-			if(value instanceof String) {
-				Object[] values = ((String)value).split(",");
-				return cb.in(root.get(property).in(values));
+			return cb.like(cb.upper(path), "%" + ((String) value).toUpperCase());
+		case IN:
+			if (value instanceof String) {
+				Object[] values = ((String) value).split(",");
+				return cb.in(path.in(values));
 			} else {
-				return cb.in(root.get(property).in(value));
+				return cb.in(path.in(value));
 			}
-		 case IS_NULL:
-			 return cb.isNull(root.get(property));
-		 case IS_NOT_NULL:
-			 return cb.isNotNull(root.get(property));
-		 case IS_EMPTY:
-			 return cb.isEmpty(root.get(property));
-		 case IS_NOT_EMPTY:
-			 return cb.isNotEmpty(root.get(property));
-		 default:
-			 return null;
+		case IS_NULL:
+			return cb.isNull(path);
+		case IS_NOT_NULL:
+			return cb.isNotNull(path);
+		case IS_EMPTY:
+			return cb.isEmpty(path);
+		case IS_NOT_EMPTY:
+			return cb.isNotEmpty(path);
+		default:
+			return null;
 		}
 	}
 	
-	public static void main(String[] args) {
-		System.out.println("a_".replaceAll("_", "\\\\_"));
-	}
 }

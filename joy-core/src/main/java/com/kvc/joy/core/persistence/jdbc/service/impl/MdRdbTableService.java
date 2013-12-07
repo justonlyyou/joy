@@ -3,6 +3,8 @@ package com.kvc.joy.core.persistence.jdbc.service.impl;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -25,8 +27,15 @@ public class MdRdbTableService implements IMdRdbTableService {
 
 	@Override
 	public Map<String, MdRdbTable> getTables(RdbConnection connection) {
-		logger.info("加载表元数据信息，datasourceId: " + connection.getDsId());
-		Map<String, MdRdbTable> tableMap = new LinkedHashMap<String, MdRdbTable>();
+		String dsId = connection.getDsId();
+		logger.info("加载表元数据信息，datasourceId: " + dsId);
+		Map<String, MdRdbTable> tableMap = new LinkedHashMap<String, MdRdbTable>() {
+
+			@Override
+			public Collection<MdRdbTable> values() {
+				return new ArrayList<MdRdbTable>(super.values()); // 父类默认返回的集合不是可序列化的
+			}
+		};
 		try {
 			Connection conn = connection.getConnection();
 			Map<String, String> tableCommentMap = DbSupportFactory.createDbSupport(conn).getTableComments();
@@ -37,7 +46,7 @@ public class MdRdbTableService implements IMdRdbTableService {
 				if (!tableName.startsWith("bin$")) {
 					String tableType = rsTable.getString("TABLE_TYPE").toLowerCase();
 					String remarks = tableCommentMap.get(tableName);
-					MdRdbTable mdDbTable = new MdRdbTable(tableName, remarks, tableType);
+					MdRdbTable mdDbTable = new MdRdbTable(dsId, tableName, remarks, tableType);
 					tableMap.put(tableName, mdDbTable);
 				}
 			}

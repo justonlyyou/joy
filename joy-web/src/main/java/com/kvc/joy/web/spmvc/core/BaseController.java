@@ -31,7 +31,7 @@ public abstract class BaseController<T> {
 	protected abstract String getCurrentViewName();
 
 	protected String getDetailViewName() {
-		return getCurrentViewName() + "Detail";
+		return   getCurrentViewName() + "Detail";
 	}
 
 	protected String getEditViewName() {
@@ -45,7 +45,7 @@ public abstract class BaseController<T> {
 
 	@RequestMapping("/list")
 	public String list(Model model) {
-		PageStore pageStore = getPageStore();
+		PageStore pageStore = getPageStore(model);
 		queryByPageStore(pageStore);
 		pageStore.getPaging().cal();
 		model.addAttribute("pageStore", pageStore);
@@ -59,12 +59,12 @@ public abstract class BaseController<T> {
 
 	@RequestMapping("/get")
 	public String get(Model model) {
-		T m = loadEntity();
+		T m = loadEntity(model);
 		model.addAttribute("model", m);
 		return getDetailViewName();
 	}
 	
-	protected T loadEntity() {
+	protected T loadEntity(Model model) {
 		String id = HttpRequestTool.getParameter("id");
 		if (StringTool.isBlank(id)) {
 			throw new SystemException("加载实体时id参数必须指定！");
@@ -93,9 +93,14 @@ public abstract class BaseController<T> {
 		}
 	}
 
-	protected PageStore getPageStore() {
+	protected PageStore getPageStore(Model model) {
 		Map<String, String> paramMap = HttpRequestTool.getParameters();
-		PageStore store = new PageStoreCreator(paramMap).create();
+		PageStoreCreator pageStoreCreator = new PageStoreCreator(paramMap);
+		PageStore store = pageStoreCreator.create();
+		Map<String, String> returnMap = pageStoreCreator.getReturnMap();
+		for (String key : returnMap.keySet()) {
+			model.addAttribute(key, returnMap.get(key));
+		}
 		Order[] defaultOrders = getDefaultOrders();
 		if (defaultOrders != null) {
 			Map<String, String> orderMap = store.getQueryLogics().getOrderMap();

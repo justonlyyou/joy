@@ -73,20 +73,28 @@ insert into `t_sys_param`(`id`,`default_value`,`description`,`param_name`,`param
 
 
 /* 初始化系统菜单 */
-insert into `t_sys_menu`(`id`,`active`,`icon`,`order_num`,`parent_id`,`TEXT`,`url`,`deleted`) values ('1',1,null,'1','','系统管理',null,0);
-insert into `t_sys_menu`(`id`,`active`,`icon`,`order_num`,`parent_id`,`TEXT`,`url`,`deleted`) values ('10',0,null,'2','8','用户管理',null,0);
-insert into `t_sys_menu`(`id`,`active`,`icon`,`order_num`,`parent_id`,`TEXT`,`url`,`deleted`) values ('11',0,null,'3','8','角色管理',null,0);
-insert into `t_sys_menu`(`id`,`active`,`icon`,`order_num`,`parent_id`,`TEXT`,`url`,`deleted`) values ('12',0,null,'4','8','组管理',null,0);
-insert into `t_sys_menu`(`id`,`active`,`icon`,`order_num`,`parent_id`,`TEXT`,`url`,`deleted`) values ('13',0,null,'3','1','个人信息维护',null,0);
-insert into `t_sys_menu`(`id`,`active`,`icon`,`order_num`,`parent_id`,`TEXT`,`url`,`deleted`) values ('14',0,null,'1','13','密码修改',null,0);
-insert into `t_sys_menu`(`id`,`active`,`icon`,`order_num`,`parent_id`,`TEXT`,`url`,`deleted`) values ('15',0,null,'2',null,'帮助',null,0);
-insert into `t_sys_menu`(`id`,`active`,`icon`,`order_num`,`parent_id`,`TEXT`,`url`,`deleted`) values ('2',1,null,'1','1','系统资源',null,0);
-insert into `t_sys_menu`(`id`,`active`,`icon`,`order_num`,`parent_id`,`TEXT`,`url`,`deleted`) values ('3',0,null,'1','2','数据源','/sysDataSrc/list',0);
-insert into `t_sys_menu`(`id`,`active`,`icon`,`order_num`,`parent_id`,`TEXT`,`url`,`deleted`) values ('4',0,null,'2','2','数据对象',null,0);
-insert into `t_sys_menu`(`id`,`active`,`icon`,`order_num`,`parent_id`,`TEXT`,`url`,`deleted`) values ('5',0,null,'3','2','系统参数','/sysParam/list',0);
-insert into `t_sys_menu`(`id`,`active`,`icon`,`order_num`,`parent_id`,`TEXT`,`url`,`deleted`) values ('6',0,null,'4','2','代码表','/sysCodeTable/list',0);
-insert into `t_sys_menu`(`id`,`active`,`icon`,`order_num`,`parent_id`,`TEXT`,`url`,`deleted`) values ('7',0,null,'5','2','任务计划','/qrtzJobPlan/list',0);
-insert into `t_sys_menu`(`id`,`active`,`icon`,`order_num`,`parent_id`,`TEXT`,`url`,`deleted`) values ('8',0,null,'2','1','权限管理',null,0);
-insert into `t_sys_menu`(`id`,`active`,`icon`,`order_num`,`parent_id`,`TEXT`,`url`,`deleted`) values ('9',0,null,'1','8','机构管理',null,0);
 
-
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('1',1,0,null,'1','','系统管理',null);
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('10',0,0,null,'2','8','用户管理',null);
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('11',0,0,null,'3','8','角色管理',null);
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('12',0,0,null,'4','8','组管理',null);
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('13',0,0,null,'3','1','个人信息维护',null);
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('14',0,0,null,'1','13','密码修改',null);
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('15',0,0,null,'3',null,'帮助',null);
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('16',0,0,null,'2',null,'系统监控',null);
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('17',1,0,null,'1','16','日志监控',null);
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('18',0,0,null,'1','17','脚本执行日志','/sqlScriptInstallLog/list');
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('19',0,0,null,'2','24','用户登陆日志','/userLoginLog/list');
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('2',1,0,null,'1','1','系统资源',null);
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('20',0,0,null,'3','24','用户操作日志','/userOperationLog/list');
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('21',0,0,null,'2','16','性能监控',null);
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('22',0,0,null,'1','21','系统资源监控','/sysResMonitor/list');
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('23',0,0,null,'2','21','SQL执行监控','/sqlExecMonitor/list');
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('24',0,0,null,'3','16','安全监控',null);
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('3',0,0,null,'1','2','数据源','/sysDataSrc/list');
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('4',0,0,null,'2','2','关系数据库对象','/mdRdbObj/list');
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('5',0,0,null,'3','2','系统参数','/sysParam/list');
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('6',0,0,null,'4','2','代码表','/sysCodeTable/list');
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('7',0,0,null,'5','2','任务计划','/qrtzJobPlan/list');
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('8',0,0,null,'2','1','权限管理',null);
+insert into `t_sys_menu`(`id`,`active`,`deleted`,`icon`,`order_num`,`parent_id`,`text`,`url`) values ('9',0,0,null,'1','8','机构管理',null);

@@ -1,5 +1,6 @@
 package com.kvc.joy.commons.query;
 
+import com.kvc.joy.commons.lang.string.StringTool;
 
 /**
  * 
@@ -7,15 +8,19 @@ package com.kvc.joy.commons.query;
  * @time 2012-6-22 上午12:00:28
  */
 public class QueryLogic implements java.io.Serializable {
-	
-	public static final String OPERATOR_PARA_NAME_PREFIX = "_joy_key__operator_";
+
+	public static final String OPERATOR_PARAM_PREFIX = "_joy_key__operator_";
+	public static final String TIME_START_PROP_PREFIX = "time_start__";
+	public static final String TIME_END_PROP_PREFIX = "time_end__";
 
 	private QueryLogicOperator operator;
-	private Object fieldValue;
+	private Object value;
+	private String property;
 
-	public QueryLogic(QueryLogicOperator operator, Object fieldValue) {
+	public QueryLogic(String property, QueryLogicOperator operator, Object value) {
+		this.property = property;
 		this.operator = operator;
-		this.fieldValue = fieldValue;
+		this.value = value;
 	}
 
 	public QueryLogicOperator getOperator() {
@@ -26,12 +31,34 @@ public class QueryLogic implements java.io.Serializable {
 		this.operator = operator;
 	}
 
-	public Object getFieldValue() {
-		return fieldValue;
+	public String getProperty() {
+		return property;
 	}
 
-	public void setFieldValue(Object fieldValue) {
-		this.fieldValue = fieldValue;
+	public void setProperty(String property) {
+		this.property = property;
+	}
+
+	public Object getValue() {
+		return value;
+	}
+
+//	public Object getQuoteValue() {
+//		if (value instanceof String) {
+//			return "'" + value + "'";
+//		}
+//		return value;
+//	}
+
+	public void setValue(Object fieldValue) {
+		this.value = fieldValue;
+	}
+
+	@Override
+	public String toString() {
+		String op = operator == null ? "null" : operator.getCode();
+		Object val = value == null ? "null" : value;
+		return property + " " + op + " " + val;
 	}
 
 }

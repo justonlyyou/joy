@@ -11,40 +11,6 @@
 		<session-timeout>30</session-timeout>
 	</session-config>
 
-	<!-- Jwebap
-	<context-param>
-		<param-name>jwebap-config</param-name>
-		<param-value>WEB-INF/classes/jwebap.xml</param-value>
-	</context-param> -->
-	<!-- 配置在所有 listener 之前，以保证 Jwebap 最先启动，这点对于类增强很重要。
-	<listener>
-		<listener-class>org.jwebap.startup.JwebapListener</listener-class>
-	</listener> -->
-	<!-- 配置 HttpComponent 的过滤器 
-	<filter>
-		<filter-name>PageDetectFilter</filter-name>
-		<filter-class>org.jwebap.plugin.tracer.http.DetectFilter</filter-class>
-		<init-param>
-			<param-name>excludeUrls</param-name>
-			<param-value>/detect;/detect/*;*.js;*.jpg;*.htm;*.html;*.gif;*.png;*.css;*.swf</param-value>
-		</init-param>
-	</filter>
-	<filter-mapping>
-		<filter-name>PageDetectFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping> 
-	-->
-	
-	<!-- 配置 Jwebap Console 视图Servlet 
-	<servlet>
-		<servlet-name>detect</servlet-name>
-		<servlet-class>org.jwebap.ui.controler.JwebapServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>detect</servlet-name>
-		<url-pattern>/detect/*</url-pattern>
-	</servlet-mapping>-->
-	
 	
 	<!-- openSessionInViewFilter 
 	<filter>
@@ -87,6 +53,23 @@
 		<servlet-name>springMVC</servlet-name>
 		<url-pattern>/</url-pattern> <!-- 配置成"/*"会导致访问jsp页面直接显示源码！ -->
  	</servlet-mapping> 
+ 	
+ 	<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+	         <param-name>forceEncoding</param-name>
+	         <param-value>true</param-value>
+	     </init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+	    <url-pattern>/*</url-pattern>
+	</filter-mapping>
 	
 	<error-page>  
         <error-code>403</error-code>  
@@ -105,24 +88,7 @@
         <location>/WEB-INF/joy/commons/jsp/error/500.jsp</location>  
     </error-page>
 	 
-	<!-- encoding 
-	<filter>
-		<filter-name>encoding</filter-name>
-		<filter-class>com.kvc.joy.core.web.filter.EncodingFilter</filter-class>
-		<init-param>
-			<param-name>encoding</param-name>
-			<param-value>UTF-8</param-value>
-		</init-param>
-		<init-param>
-			<param-name>ignore</param-name>
-			<param-value>true</param-value>
-		</init-param>
-	</filter>
-	<filter-mapping>
-		<filter-name>encoding</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-	-->
+	
 	<filter>
 		<filter-name>jpaFilter</filter-name>
 		<filter-class>

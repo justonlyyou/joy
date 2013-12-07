@@ -11,6 +11,7 @@ import java.util.Set;
 import org.apache.commons.collections.FastHashMap;
 
 import com.kvc.joy.commons.exception.SystemException;
+import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.math.NumberTool;
@@ -141,6 +142,9 @@ public class DateTool {
 	 * @time 2013年10月15日 下午9:22:14
 	 */
 	 public static Date parseDate(String dateStr, String fmt) {
+		 if (StringTool.isBlank(dateStr)) {
+			 return null;
+		 }
 		 try {
 			 return getFormat(fmt).parse(dateStr);	
 		} catch (Exception e) {
@@ -161,6 +165,9 @@ public class DateTool {
 	 * @time 2013-4-28 下午11:54:12
 	 */
 	public static String formatDate(Date date, String fmt) {
+		if (date == null) {
+			return "";
+		}
 		return getFormat(fmt).format(date);
 	}
 	
@@ -177,6 +184,9 @@ public class DateTool {
 	 */
 	public static String formatDate(String dateStr, String inFmt, String outFmt) {
 		Date date = parseDate(dateStr, inFmt);
+		if (date == null) {
+			return "";
+		}
 		return getFormat(outFmt).format(date);
 	}
 	
