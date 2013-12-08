@@ -89,7 +89,7 @@ public class ExceptionTool {
 	 * @author 唐玮琳
 	 * @time 2013-5-13 下午7:40:46
 	 */
-	public static StackTraceElement findFirstStackTraceElem(String str, Class<?>... excludeClasses) {
+	public static StackTraceElement findFirstStackTraceElem(String str, Class<?> fromClass, Class<?>... excludeClasses) {
 		if (StringTool.isBlank(str)) {
 			return null;
 		}
@@ -103,11 +103,18 @@ public class ExceptionTool {
 		}
 
 		StackTraceElement[] stackTrace = (new Throwable()).getStackTrace();
+		boolean findFromClass = fromClass == null;
 		for (int i = 1; i < stackTrace.length; i++) {
 			StackTraceElement elem = stackTrace[i];
 			String className = elem.getClassName();
-			if (className.contains(str) && !classNames.contains(className)) {
-				return elem;
+			if (!findFromClass && className.equals(fromClass.getName())) {
+				findFromClass = true;
+			} else {
+				if(findFromClass) {
+					if (className.contains(str) && !classNames.contains(className) && !className.contains("ByCGLIB$$")) {
+						return elem;
+					}
+				}	
 			}
 		}
 		return null;

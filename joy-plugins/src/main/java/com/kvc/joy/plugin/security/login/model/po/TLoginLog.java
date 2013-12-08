@@ -27,7 +27,7 @@ public class TLoginLog extends UuidEntity {
 	private String broswerVersion; // 使用的浏览器版本
 	private String osType; // 使用的操作系统类型
 	private String osVersion; // 使用的操作系统版本
-	private LoginState loginState; // 登陆失败原因
+	private LoginState loginState; // 登陆状态
 	private boolean rememberMe; // 记住我
 	
 

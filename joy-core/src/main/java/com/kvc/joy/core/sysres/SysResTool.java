@@ -1,8 +1,10 @@
 package com.kvc.joy.core.sysres;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import com.kvc.joy.commons.enums.EnumTool;
 import com.kvc.joy.commons.enums.ICodeEnum;
@@ -13,6 +15,7 @@ import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
+import com.kvc.joy.core.sysres.code.model.vo.CodeRecord;
 import com.kvc.joy.core.sysres.datasrc.model.po.TSysDataSrc;
 import com.kvc.joy.core.sysres.menu.po.TSysMenu;
 
@@ -62,14 +65,14 @@ public class SysResTool {
 	}
 	
 	/**
-	 * 获取某一代码表的所有代码及译文
+	 * 获取某一代码表的所有代码记录
 	 * 
 	 * @param codeTableId 代码表id
 	 * @return Map<代码值，译文>
 	 * @author 唐玮琳
 	 * @time 2013-2-8 下午8:04:52
 	 */
-	public static Map<String, String> getAllCodeAndTrans(String codeTableId) {
+	public static Map<String, CodeRecord> getAllCodeAndTrans(String codeTableId) {
 		return CoreBeanFactory.getSysCodeCacheService().get(codeTableId);
 	}
 	
@@ -82,7 +85,7 @@ public class SysResTool {
 	 * @author 唐玮琳
 	 * @time 2013-2-8 下午8:07:43
 	 */
-	public static String translateCode(String codeTableId, String code) {
+	public static CodeRecord translateCode(String codeTableId, String code) {
 		return CoreBeanFactory.getSysCodeCacheService().get(codeTableId, code);
 	}
 	
@@ -97,8 +100,9 @@ public class SysResTool {
 	 * @author 唐玮琳
 	 * @time 2013年10月13日 下午4:37:48
 	 */
-	public static String translateCode(String code, String codeTableId, String enumClass) {
-		String result = "";
+	@SuppressWarnings("rawtypes")
+	public static CodeRecord translateCode(String code, String codeTableId, String enumClass) {
+		CodeRecord result = null;
 		if (StringTool.isNotBlank(code)) {
 			if (StringTool.isNotBlank(codeTableId)) {
 				result = CoreBeanFactory.getSysCodeCacheService().get(codeTableId, code);
@@ -110,11 +114,15 @@ public class SysResTool {
 						Class<? extends Enum<? extends Enum<?>>> codeEnumClass = EnumTool.getCodeEnumClass(enumClass);
 						if (codeEnumClass == YesNot.class) {
 							boolean bool = BooleanTool.toBoolean(code);
-							result = YesNot.enumOfBool(bool).getTrans();
+							String trans = YesNot.enumOfBool(bool).getTrans();
+							String order = bool ? "0" : "1";
+							result = new CodeRecord(code, trans, null, order);
 						} else {
 							ICodeEnum e = (ICodeEnum) EnumTool.enumOf(enumClass, code);
 							if(e != null) {
-								result = e.getTrans();	
+								String trans = e.getTrans();
+								String order = ((Enum) e).ordinal() + "";
+								result = new CodeRecord(code, trans, null, order);
 							}
 						}
 					} else {
@@ -122,8 +130,8 @@ public class SysResTool {
 					}
 				}
 			}
-			if(StringTool.isBlank(result)) {
-				result = code;
+			if(result == null) {
+				result = new CodeRecord(code, code, null, null);
 			}
 		}
 		
@@ -141,8 +149,8 @@ public class SysResTool {
 	 * @time 2013年10月13日 下午5:59:18
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public static Map<String, String> getAllCodeAndTrans(String codeTableId, String enumClass) {
-		Map<String, String> codeMap = null;
+	public static Map<String, CodeRecord> getAllCodeAndTrans(String codeTableId, String enumClass) {
+		Map<String, CodeRecord> codeMap = null;
 		if (StringTool.isNotBlank(codeTableId)) {
 			codeMap = getAllCodeAndTrans(codeTableId);
 		} else {
@@ -151,13 +159,22 @@ public class SysResTool {
 			} else {
 				if (enumClass.matches("^([a-zA-Z][\\w]*[.][a-zA-Z][\\w]+)[.]*.*")) {
 					Class eClass = EnumTool.getCodeEnumClass(enumClass);
-					codeMap = EnumTool.getCodeMap(eClass);
+					Map<String, String> map = EnumTool.getCodeMap(eClass);
+					int index = 0;
+					codeMap = new LinkedHashMap<String, CodeRecord>(map.size());
+					for (Entry<String, String> entry : map.entrySet()) {
+						String code = entry.getKey();
+						String trans = entry.getValue();
+						CodeRecord codeRecord = new CodeRecord(code, trans, null, index + "");
+						codeMap.put(code, codeRecord);
+						index++;
+					}
 				} else {
 					throw new SystemException("要获取的代码对应的枚举类【" + enumClass + "】配置错误！");
 				}
 			}
 		}
-		return codeMap==null ? new HashMap<String, String>(0) : codeMap;
+		return codeMap==null ? new HashMap<String, CodeRecord>(0) : codeMap;
 	}
 	
 	/**

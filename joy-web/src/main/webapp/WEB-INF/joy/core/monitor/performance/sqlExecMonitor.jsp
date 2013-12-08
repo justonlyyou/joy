@@ -16,7 +16,7 @@
 		$.layer({
 		    type : 2,
 		    title : 'SQL脚本安装日志详情',
-		    iframe : {src : '${ctx}/sqlScriptInstallLog/get?id='+id},
+		    iframe : {src : '${ctx}/sqlExecMonitor/get?id='+id},
 		    area : ['750px' , '466px'],
 		    offset : ['50px','']
 		});
@@ -68,7 +68,10 @@
 								<th>
 								<tags:orderColumn property="costTime" columnName="耗时(毫秒)" defaultOrder="DESC" /></th>
 								<th><tags:orderColumn property="logTime" columnName="执行时间" /></th>
-								<th>SQL语句</th>
+								<th>应用</th>
+								<th>类</th>
+								<th>方法</th>
+								<th>行序</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -77,8 +80,11 @@
 									<td class="joy-table-seq-col">${stauts.index+1}</td>
 									<td><tags:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false"/></td>
 									<td>${p.costTime}</td>
-									<td>${p.logTime}</td>
-									<td>${p.sqlText}</td>
+									<td><tags:timeFormatter timeStr="${p.logTime}" realFmt="yyyyMMddHHmmssSSS" displayFmt="yyyy-MM-dd HH:mm:ss SSS"/></td>
+									<td>${p.appName}</td>
+									<td>${fn:split(p.className, ".")[fn:length(fn:split(p.className, ".")) - 1]}</td>
+									<td>${p.methodName}</td>
+									<td>${p.lineNumber}</td>
 								</tr>
 							</c:forEach>
 						</tbody>

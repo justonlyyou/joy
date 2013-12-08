@@ -1,4 +1,4 @@
-package com.kvc.joy.core.sysres.code.po;
+package com.kvc.joy.core.sysres.code.model.po;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -22,6 +22,7 @@ public class TSysCodeTable extends UuidCrudEntity {
 	private String cnTableName; // 代码表中文名
 	private String codeField; // 代码字段
 	private String transField; // 译文字段
+	private String orderField; // 排序字段
 	private String parentField; // 父代码字段
 	private TSysDataSrc dataSrc; // 数据源
 
@@ -92,6 +93,16 @@ public class TSysCodeTable extends UuidCrudEntity {
 
 	public void setParentField(String parentField) {
 		this.parentField = parentField;
+	}
+
+	@Column(length = 32)
+	@Comment("排序字段")
+	public String getOrderField() {
+		return orderField;
+	}
+
+	public void setOrderField(String orderField) {
+		this.orderField = orderField;
 	}
 	
 }

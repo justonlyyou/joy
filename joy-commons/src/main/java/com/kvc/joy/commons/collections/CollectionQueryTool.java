@@ -49,7 +49,7 @@ public class CollectionQueryTool {
 			return new ArrayList<T>(beans);
 		}
 
-		String sqlPattern = "SELECT * FROM {0} ORDERS BY {1}";
+		String sqlPattern = "SELECT * FROM {0} ORDER BY {1}";
 		String className = beans.iterator().next().getClass().getName();
 		Query q = parse(MessageFormat.format(sqlPattern, className, getOrderStrs(orders)));
 		return getResults(q, beans);

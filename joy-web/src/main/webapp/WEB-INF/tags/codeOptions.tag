@@ -18,5 +18,5 @@
 </c:if>
 <c:forEach items="${joy:getAllCodeAndTrans(tableId,enumClass)}" var="entry">
 	<option value="${entry.key}" class="joy-select-option ${cssClass}" style="${cssStyle}" 
-		<c:if test="${selectedValue == entry.key}"> selected</c:if>>${entry.value}</option>
+		<c:if test="${selectedValue == entry.key}"> selected</c:if>>${entry.value.trans}</option>
 </c:forEach>

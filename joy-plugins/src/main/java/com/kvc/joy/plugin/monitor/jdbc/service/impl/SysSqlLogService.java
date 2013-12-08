@@ -1,5 +1,6 @@
 package com.kvc.joy.plugin.monitor.jdbc.service.impl;
 
+import org.hibernate.Hibernate;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kvc.joy.commons.exception.ExceptionTool;
@@ -7,12 +8,16 @@ import com.kvc.joy.commons.lang.DateTool;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
+import com.kvc.joy.commons.log.slf4j.Slf4jLog;
 import com.kvc.joy.core.init.support.AppPropeties;
 import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
+import com.kvc.joy.plugin.monitor.jdbc.SqlMonitorAppender;
 import com.kvc.joy.plugin.monitor.jdbc.model.po.TSysSqlLog;
 import com.kvc.joy.plugin.monitor.jdbc.model.vo.ParamMsg;
 import com.kvc.joy.plugin.monitor.jdbc.service.ISysSqlLogService;
+import com.kvc.joy.plugin.persistence.hibernate.HibernateTool;
 import com.kvc.joy.plugin.support.PluginBeanFactory;
 
 /**
@@ -115,7 +120,8 @@ public class SysSqlLogService implements ISysSqlLogService {
 	private void setLogLocation(TSysSqlLog sqlLog) {
 		if (JoyPropeties.PLUGIN_JWEBAP_JDBC_LOGPOSITION) {
 			String classPrefix = AppPropeties.CLASS_PREFIX;
-			StackTraceElement elem = ExceptionTool.findFirstStackTraceElem(classPrefix, getClass(), JpaTool.class);
+			Class<?>[] persistToolClasses = {JpaTool.class, HibernateTool.class, JdbcTool.class};
+			StackTraceElement elem = ExceptionTool.findFirstStackTraceElem(classPrefix, logger.getClass(), persistToolClasses);
 			if (elem != null) {
 				sqlLog.setClassName(elem.getClassName());
 				sqlLog.setMethodName(elem.getMethodName());

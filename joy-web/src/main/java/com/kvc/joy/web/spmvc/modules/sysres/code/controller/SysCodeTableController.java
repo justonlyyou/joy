@@ -3,7 +3,7 @@ package com.kvc.joy.web.spmvc.modules.sysres.code.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.kvc.joy.core.sysres.code.po.TSysCodeTable;
+import com.kvc.joy.core.sysres.code.model.po.TSysCodeTable;
 import com.kvc.joy.web.spmvc.core.BaseController;
 
 /**

@@ -7,7 +7,7 @@ import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
 import com.kvc.joy.core.persistence.entity.UuidCrudEntity_;
-import com.kvc.joy.core.sysres.code.po.TSysCodeTable;
+import com.kvc.joy.core.sysres.code.model.po.TSysCodeTable;
 
 /**
  * 

@@ -16,7 +16,7 @@
 		$.layer({
 		    type : 2,
 		    title : 'SQL脚本安装日志详情',
-		    iframe : {src : '${ctx}/sqlScriptInstallLog/get?id='+id},
+		    iframe : {src : '${ctx}/userLoginLog/get?id='+id},
 		    area : ['750px' , '466px'],
 		    offset : ['50px','']
 		});

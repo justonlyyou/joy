@@ -1,7 +1,7 @@
 package com.kvc.joy.commons.enums;
 
 import java.util.EnumSet;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -87,7 +87,7 @@ public class EnumTool {
 			throw new IllegalArgumentException("enumClass参数不能为null！");
 		}
 		E[] enumConstants = enumClass.getEnumConstants();
-		Map<String, String> codeMap = new HashMap<String, String>(enumConstants.length);
+		Map<String, String> codeMap = new LinkedHashMap<String, String>(enumConstants.length);
 		for (E e : enumConstants) {
 			codeMap.put(e.getCode(), e.getTrans());
 		}

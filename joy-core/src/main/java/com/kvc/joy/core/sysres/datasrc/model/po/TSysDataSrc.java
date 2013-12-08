@@ -14,7 +14,7 @@ import javax.persistence.Transient;
 import com.kvc.joy.core.persistence.entity.UuidCrudEntity;
 import com.kvc.joy.core.persistence.jdbc.model.vo.IMdRdbDataSrc;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
-import com.kvc.joy.core.sysres.code.po.TSysCodeTable;
+import com.kvc.joy.core.sysres.code.model.po.TSysCodeTable;
 
 /**
  * 数据源

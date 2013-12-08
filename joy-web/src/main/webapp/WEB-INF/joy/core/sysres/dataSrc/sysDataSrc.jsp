@@ -17,7 +17,7 @@
 		    type : 2,
 		    title : '系统数据源详情',
 		    iframe : {src : '${ctx}/sysDataSrc/get?id='+id},
-		    area : ['750px' , '466px'],
+		    area : ['750px' , '500px'],
 		    offset : ['50px','']
 		});
 	}
@@ -36,17 +36,16 @@
 				<div class="joy-search-bar">
 					<div class="form-horizontal" role="form" style="height: 36px">
 						<div class="form-group">
-							<label for="id" class="col-sm-1 control-label">数据源ID</label>
+							<label for="id" class="col-sm-1 control-label">数据源</label>
 							<div class="col-sm-2">
-								<input class="form-control" value="${id}"
-									name="id" placeholder="请输入数据源ID" data-joy-props="operator:'ilike'">
+								<select class="form-control" name="id" value="${id}" data-joy-props="operator:'='">
+									<option value="">-- 请选择 --</option>
+									<c:forEach items="${joy:getAllDataSrc()}" var="entry">
+										<option value="${entry.id}" class="joy-select-option">${entry.name}</option>
+									</c:forEach>
+								</select>
 							</div>
-							<label for="name" class="col-sm-1 control-label">数据源名称</label>
-							<div class="col-sm-2">
-								<input class="form-control" value="${name}"
-									name="name" placeholder="请输入数据源名称" data-joy-props="operator:'ilike'">
-							</div>
-							<div class="col-sm-6">
+							<div class="col-sm-9">
 								<button id="submitBtn" class="btn btn-default">
 									<i class="fa fa-search"></i>&nbsp;查询
 								</button>

@@ -5,6 +5,7 @@ import java.util.Map;
 import org.springframework.cache.annotation.Cacheable;
 
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
+import com.kvc.joy.core.sysres.code.model.vo.CodeRecord;
 import com.kvc.joy.core.sysres.code.service.ISysCodeCacheService;
 import com.kvc.joy.core.sysres.code.service.ISysCodeService;
 
@@ -19,12 +20,12 @@ public class SysCodeCacheService implements ISysCodeCacheService {
 	private ISysCodeService sysCodeService;
 
 	@Cacheable(value=SYS_CODE, key="#codeTableId")
-	public Map<String, String> get(String codeTableId) {
+	public Map<String, CodeRecord> get(String codeTableId) {
 		return sysCodeService.get(codeTableId);
 	}
 
-	public String get(String codeId, String code) {
-		Map<String, String> map = CoreBeanFactory.getSysCodeCacheService().get(codeId);
+	public CodeRecord get(String codeId, String code) {
+		Map<String, CodeRecord> map = CoreBeanFactory.getSysCodeCacheService().get(codeId);
 		return map.get(code);
 	}
 	

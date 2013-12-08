@@ -2,6 +2,8 @@ package com.kvc.joy.core.sysres.code.service;
 
 import java.util.Map;
 
+import com.kvc.joy.core.sysres.code.model.vo.CodeRecord;
+
 /**
  * 
  * @author 唐玮琳
@@ -10,17 +12,17 @@ import java.util.Map;
 public interface ISysCodeCacheService {
 	
 	/**
-	 * 根据代码表id，获取该表所有代码及译文
+	 * 根据代码表id，获取该表所有代码记录
 	 * 
 	 * @param codeId 代码表id
-	 * @return Map<代码, 译文>
+	 * @return Map<代码, 代码记录>
 	 * @author 唐玮琳
 	 * @time 2013-2-8 下午2:23:24
 	 */
-	Map<String, String> get(String codeId);
+	Map<String, CodeRecord> get(String codeId);
 	
 	/**
-	 * 根据代码表id和代码值，获取对应译文
+	 * 根据代码表id和代码值，获取对应代码记录
 	 * 
 	 * @param codeTableId
 	 * @param code
@@ -28,6 +30,6 @@ public interface ISysCodeCacheService {
 	 * @author 唐玮琳
 	 * @time 2013-2-8 下午2:24:40
 	 */
-	String get(String codeTableId, String code);
+	CodeRecord get(String codeTableId, String code);
 
 }

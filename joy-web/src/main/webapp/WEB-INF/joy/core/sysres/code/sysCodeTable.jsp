@@ -16,7 +16,7 @@
 		$.layer({
 		    type : 2,
 		    title : '系统代码详情',
-		    iframe : {src : '${ctx}/sysCode/get?id='+id},
+		    iframe : {src : '${ctx}/sysCodeTable/get?id='+id},
 		    area : ['750px' , '466px'],
 		    offset : ['50px','']
 		});
@@ -67,6 +67,7 @@
 								<th><tags:orderColumn property="cnTableName" columnName="表中文名" /></th>
 								<th>代码字段名</th>
 								<th>译文字段名</th>
+								<th>排序字段名</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -78,6 +79,7 @@
 									<td>${p.cnTableName}</td>
 									<td>${p.codeField}</td>
 									<td>${p.transField}</td>
+									<td>${p.orderField}</td>
 								</tr>
 							</c:forEach>
 						</tbody>

@@ -18,6 +18,8 @@
 
 <body>
 	<div class="table-responsive">
+	
+		<div class="joy-title-bar">参数信息</div>
 		<table
 			class="table table-condensed table-hover table-bordered joy-detail-table">
 			<tr>
@@ -39,6 +41,8 @@
         		<td></td>
         	</tr>
 		</table>
+		
+		<tags:crudDetailList />
 	</div>
 </body>
 </html>

@@ -21,22 +21,44 @@
 		<table
 			class="table table-condensed table-hover table-bordered joy-detail-table">
 			<tr>
-        		<td>参数名</td>
-        		<td>${model.paramName}</td>
-        		<td>参数值</td>
-        		<td>${model.paramValue}</td>
+        		<td>用户ID</td>
+        		<td>${model.userId}</td>
+        		<td>用户帐号</td>
+        		<td>${model.userAccount}</td>
         	</tr>
         	<tr>
-        		<td>参数说明</td>
-        		<td>${model.desc}</td>
-        		<td>默认值</td>
-        		<td>${model.defaultValue}</td>
+        		<td>姓名</td>
+        		<td>${model.userName}</td>
+        		<td>密码(加密)</td>
+        		<td>${model.userPassword}</td>
         	</tr>
         	<tr>
-        		<td>是否加密</td>
-        		<td><tags:codeTrans code="${model.encrypt}" enumClass="com.kvc.joy.commons.enums.YesNot"/></td>
-        		<td></td>
-        		<td></td>
+        		<td>登陆时间</td>
+        		<td><tags:timeFormatter timeStr="${model.loginTime}"/></td>
+        		<td>登出时间</td>
+        		<td><tags:timeFormatter timeStr="${model.logoutTime}"/></td>
+        	</tr>
+        	<tr>
+        		<td>登陆状态</td>
+        		<td>${model.loginState.trans}</td>
+        		<td>登陆IP</td>
+        		<td>${model.loginIp}</td>
+        	</tr>
+        	<tr>
+        		<td>浏览器类型</td>
+        		<td>${model.broswerType}</td>
+        		<td>浏览器版本</td>
+        		<td>${model.broswerVersion}</td>
+        	</tr>
+        	<tr>
+        		<td>操作系统类型</td>
+        		<td>${model.osType}</td>
+        		<td>操作系统版本</td>
+        		<td>${model.osVersion}</td>
+        	</tr>
+        	<tr>
+        		<td>记住我</td>
+        		<td><tags:codeTrans code="${model.rememberMe}" enumClass="com.kvc.joy.commons.enums.YesNot" /></td>
         	</tr>
 		</table>
 	</div>

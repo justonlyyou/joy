@@ -91,5 +91,5 @@ public class TQrtzJobPlan extends UuidCrudEntity {
 	public void setNextFireTime(String nextFireTime) {
 		this.nextFireTime = nextFireTime;
 	}
-
+	
 }
