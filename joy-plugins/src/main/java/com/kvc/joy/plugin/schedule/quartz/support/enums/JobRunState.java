@@ -2,6 +2,7 @@ package com.kvc.joy.plugin.schedule.quartz.support.enums;
 
 import com.kvc.joy.commons.enums.EnumTool;
 import com.kvc.joy.commons.enums.ICodeEnum;
+import com.kvc.joy.core.sysres.SysResTool;
 
 /**
  * 
@@ -10,18 +11,25 @@ import com.kvc.joy.commons.enums.ICodeEnum;
  */
 public enum JobRunState implements ICodeEnum {
 	
-	NO_START("00", "未启动"),
-	RUNNING("11", "运行中"),
-	EXCEPTION("21", "异常终止"),
-	PAUSE("22", "用户挂起"),
-	FINISH("80", "已完成");
+	/** 未启动 */
+	NO_START("00"),
+	/** 运行中 */
+	RUNNING("11"),
+	/** 异常终止 */
+	EXCEPTION("21"),
+	/** 用户挂起 */
+	PAUSE("22"),
+	/** 已完成 */
+	FINISH("80");
+	
+	public static final String CODE_TABLE_ID = "joy_code_job_run_state";
 
 	private final String code;
 	private final String desc;
 
-	JobRunState(String code, String desc) {
+	JobRunState(String code) {
 		this.code = code;
-		this.desc = desc;
+		this.desc = SysResTool.translateCode(CODE_TABLE_ID, code).getTrans();
 	}
 
 	public String getCode() {

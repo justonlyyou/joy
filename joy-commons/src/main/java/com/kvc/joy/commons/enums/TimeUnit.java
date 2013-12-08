@@ -1,5 +1,7 @@
 package com.kvc.joy.commons.enums;
 
+import com.kvc.joy.core.sysres.SysResTool;
+
 
 /**
  * 时间单位枚举
@@ -9,22 +11,33 @@ package com.kvc.joy.commons.enums;
  */
 public enum TimeUnit implements ICodeEnum {
 	
-	YEAR("1", "年"),
-	MONTH("2", "月"),
-	WEEK("3", "周"),
-	DAY("4", "日"),
-	HOUR("5", "小时"),
-	MINUTE("6", "分钟"),
-	SECOND("7", "秒"),
-	MILLISECOND("8", "毫秒"),
-	MICROSECOND("9", "微秒");
+	/** 年 */
+	YEAR("1"),
+	/** 月 */
+	MONTH("2"),
+	/** 周 */
+	WEEK("3"),
+	/** 日 */
+	DAY("4"),
+	/** 小时 */
+	HOUR("5"),
+	/** 分钟 */
+	MINUTE("6"),
+	/** 秒 */
+	SECOND("7"),
+	/** 毫秒 */
+	MILLISECOND("8"),
+	/** 微秒 */
+	MICROSECOND("9");
+	
+	public static final String CODE_TABLE_ID = "joy_code_time_unit";
 	
 	private String code;
 	private String desc;
 	
-	TimeUnit(String code, String desc) {
+	TimeUnit(String code) {
 		this.code = code;
-		this.desc = desc;
+		this.desc = SysResTool.translateCode(CODE_TABLE_ID, code).getTrans();
 	}
 	
 	/* (non-Javadoc)

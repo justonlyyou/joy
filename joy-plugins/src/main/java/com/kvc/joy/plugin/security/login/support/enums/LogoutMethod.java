@@ -2,6 +2,7 @@ package com.kvc.joy.plugin.security.login.support.enums;
 
 import com.kvc.joy.commons.enums.EnumTool;
 import com.kvc.joy.commons.enums.ICodeEnum;
+import com.kvc.joy.core.sysres.SysResTool;
 
 /**
  * 
@@ -11,17 +12,23 @@ import com.kvc.joy.commons.enums.ICodeEnum;
  */
 public enum LogoutMethod implements ICodeEnum {
 	
-	CLICK_BUTTON("11", "点击退出按钮"),
-	CLOSE_BROSWER("12", "直接关闭浏览器"),
-	TIMEOUT("21", "超时"),
-	OTHERS("99", "其它");
+	/** 点击退出按钮 */
+	CLICK_BUTTON("11"),
+	/** 直接关闭浏览器 */
+	CLOSE_BROSWER("12"),
+	/** 超时 */
+	TIMEOUT("21"),
+	/** 其它 */
+	OTHERS("99");
+	
+	public static final String CODE_TABLE_ID = "joy_code_logout_method";
 	
 	private String code;
 	private String trans;
 	
-	LogoutMethod(String code, String trans) {
+	LogoutMethod(String code) {
 		this.code = code;
-		this.trans = trans;
+		this.trans = SysResTool.translateCode(CODE_TABLE_ID, code).getTrans();
 	}
 
 	@Override
