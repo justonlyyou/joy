@@ -6,12 +6,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.MessageFormat;
 import java.util.LinkedHashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
+import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
+import com.kvc.joy.core.persistence.jdbc.model.vo.RdbConnection;
 import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
+import com.kvc.joy.core.persistence.jdbc.support.utils.MdRdbTool;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.core.sysres.code.model.po.TSysCodeTable;
 import com.kvc.joy.core.sysres.code.model.vo.CodeRecord;
@@ -32,10 +36,8 @@ public class SysCodeService implements ISysCodeService {
 		Map<String, CodeRecord> map = new LinkedHashMap<String, CodeRecord>();
 		TSysCodeTable codeDic = JpaTool.get(TSysCodeTable.class, codeTableId);
 		TSysDataSrc dataSrc = codeDic.getDataSrc();
-		
 		String sqlPattern = "SELECT * FROM {0} ORDER BY {1} DESC";
 		String codeFieldName = codeDic.getCodeField();
-		String transFieldName = codeDic.getTransField();
 		String parentCodeField = codeDic.getParentField();
 		String orderByField = StringTool.isBlank(codeDic.getOrderField()) ? codeFieldName : codeDic.getOrderField();
 		String sql = MessageFormat.format(sqlPattern, codeDic.getTableName(), orderByField);
@@ -44,6 +46,7 @@ public class SysCodeService implements ISysCodeService {
 		try {
 			conn = JdbcTool.getConnection(dataSrc);
 			statement = conn.prepareStatement(sql);
+			String transFieldName = getTransFieldName(codeDic, conn);
 			ResultSet rs = statement.executeQuery();
 			while (rs.next()) {
 				String code = rs.getString(codeFieldName);
@@ -68,4 +71,20 @@ public class SysCodeService implements ISysCodeService {
 		}
 		return map;
 	}
+	
+	private String getTransFieldName(TSysCodeTable codeDic, Connection conn) {
+		Locale locale = Locale.getDefault();
+		String language = locale.getLanguage();
+		String country = locale.getCountry();
+		String transFieldPrefix = codeDic.getTransField();
+		String transField = transFieldPrefix + "_" + language + "_" + country;
+		String tableName = codeDic.getTableName().toLowerCase();
+		RdbConnection rdbConn = new RdbConnection(codeDic.getDataSrc().getId(), conn);
+		MdRdbColumn column = MdRdbTool.getColumn(rdbConn, tableName, transField.toLowerCase());
+		if (column == null) {
+			transField = transFieldPrefix;
+		}
+		return transField;
+	}
+	
 }
