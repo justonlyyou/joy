@@ -1,4 +1,4 @@
-package com.kvc.joy.core.sysres.param.po;
+package com.kvc.joy.core.sysres.param.model.po;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

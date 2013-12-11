@@ -19,7 +19,7 @@ import com.kvc.joy.core.sysres.code.service.ISysCodeCacheService;
 import com.kvc.joy.core.sysres.code.service.ISysCodeService;
 import com.kvc.joy.core.sysres.datasrc.service.ISysDataSrcService;
 import com.kvc.joy.core.sysres.menu.service.ISysMenuService;
-import com.kvc.joy.core.sysres.param.po.TSysParam;
+import com.kvc.joy.core.sysres.param.model.po.TSysParam;
 import com.kvc.joy.core.sysres.param.service.ISysParamService;
 
 /**

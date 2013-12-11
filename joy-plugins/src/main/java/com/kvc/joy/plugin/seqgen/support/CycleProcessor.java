@@ -9,8 +9,8 @@ import com.kvc.joy.commons.bean.Pair;
 import com.kvc.joy.commons.enums.TimeUnit;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
-import com.kvc.joy.plugin.seqgen.po.TSysSeqNum;
-import com.kvc.joy.plugin.seqgen.po.TSysSeqNumRule;
+import com.kvc.joy.plugin.seqgen.model.po.TSysSeqNum;
+import com.kvc.joy.plugin.seqgen.model.po.TSysSeqNumRule;
 
 /**
  * 周期处理

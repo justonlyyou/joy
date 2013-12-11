@@ -7,8 +7,8 @@ import java.util.Map;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
-import com.kvc.joy.core.sysres.param.po.TSysParam;
-import com.kvc.joy.core.sysres.param.po.TSysParam_;
+import com.kvc.joy.core.sysres.param.model.po.TSysParam;
+import com.kvc.joy.core.sysres.param.model.po.TSysParam_;
 import com.kvc.joy.core.sysres.param.service.ISysParamService;
 
 /**

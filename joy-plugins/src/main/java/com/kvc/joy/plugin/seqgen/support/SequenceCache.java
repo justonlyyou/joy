@@ -2,8 +2,8 @@ package com.kvc.joy.plugin.seqgen.support;
 
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
-import com.kvc.joy.plugin.seqgen.po.TSysSeqNum;
-import com.kvc.joy.plugin.seqgen.po.TSysSeqNumRule;
+import com.kvc.joy.plugin.seqgen.model.po.TSysSeqNum;
+import com.kvc.joy.plugin.seqgen.model.po.TSysSeqNumRule;
 
 /**
  * 序列号缓存

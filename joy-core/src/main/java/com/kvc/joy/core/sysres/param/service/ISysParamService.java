@@ -2,7 +2,7 @@ package com.kvc.joy.core.sysres.param.service;
 
 import java.util.Map;
 
-import com.kvc.joy.core.sysres.param.po.TSysParam;
+import com.kvc.joy.core.sysres.param.model.po.TSysParam;
 
 /**
  * 

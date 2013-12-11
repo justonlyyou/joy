@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.kvc.joy.commons.bean.TreeNode;
 import com.kvc.joy.commons.data.json.JsonTool;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
-import com.kvc.joy.core.sysres.menu.po.TSysMenu;
+import com.kvc.joy.core.sysres.menu.model.po.TSysMenu;
 import com.kvc.joy.plugin.security.erbac.support.utils.UserTool;
 
 /**

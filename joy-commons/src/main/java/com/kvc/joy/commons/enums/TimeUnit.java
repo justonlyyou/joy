@@ -1,6 +1,6 @@
 package com.kvc.joy.commons.enums;
 
-import com.kvc.joy.core.sysres.SysResTool;
+import java.util.Map;
 
 
 /**
@@ -11,45 +11,37 @@ import com.kvc.joy.core.sysres.SysResTool;
  */
 public enum TimeUnit implements ICodeEnum {
 	
-	/** 年 */
-	YEAR("1"),
-	/** 月 */
-	MONTH("2"),
-	/** 周 */
-	WEEK("3"),
-	/** 日 */
-	DAY("4"),
-	/** 小时 */
-	HOUR("5"),
-	/** 分钟 */
-	MINUTE("6"),
-	/** 秒 */
-	SECOND("7"),
-	/** 毫秒 */
-	MILLISECOND("8"),
-	/** 微秒 */
-	MICROSECOND("9");
+	YEAR("1", "年"),
+	MONTH("2", "月"),
+	WEEK("3", "周"),
+	DAY("4", "日"),
+	HOUR("5", "小时"),
+	MINUTE("6", "分钟"),
+	SECOND("7", "秒"),
+	MILLISECOND("8", "毫秒"),
+	MICROSECOND("9", "微秒");
 	
 	public static final String CODE_TABLE_ID = "joy_code_time_unit";
 	
 	private String code;
 	private String desc;
 	
-	TimeUnit(String code) {
+	TimeUnit(String code, String desc) {
 		this.code = code;
-		this.desc = SysResTool.translateCode(CODE_TABLE_ID, code).getTrans();
+		this.desc = desc;
 	}
 	
-	/* (non-Javadoc)
-	 * @see com.kvc.common.sys.support.ICodeEnum#getCode()
-	 */
+	public static void initTrans(Map<String, String> map) {
+		TimeUnit[] values = TimeUnit.values();
+		for (TimeUnit timeUnit : values) {
+			timeUnit.desc = map.get(timeUnit.getCode());
+		}
+	}
+	
 	public String getCode() {
 		return code;
 	}
 	
-	/* (non-Javadoc)
-	 * @see com.kvc.common.sys.support.ICodeEnum#getDesc()
-	 */
 	public String getTrans() {
 		return desc;
 	}

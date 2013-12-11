@@ -4,7 +4,7 @@ import java.util.Map;
 
 import com.kvc.joy.core.ehcache.support.AbstractEhCacheHolder;
 import com.kvc.joy.core.init.service.ISystemInitService;
-import com.kvc.joy.core.sysres.param.po.TSysParam;
+import com.kvc.joy.core.sysres.param.model.po.TSysParam;
 import com.kvc.joy.core.sysres.param.service.ISysParamService;
 
 /**

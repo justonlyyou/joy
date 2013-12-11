@@ -1,4 +1,4 @@
-package com.kvc.joy.core.sysres.menu.po;
+package com.kvc.joy.core.sysres.menu.model.po;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

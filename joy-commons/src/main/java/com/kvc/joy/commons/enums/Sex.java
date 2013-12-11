@@ -1,6 +1,6 @@
 package com.kvc.joy.commons.enums;
 
-import com.kvc.joy.core.sysres.SysResTool;
+import java.util.Map;
 
 /**
  * <p>
@@ -13,23 +13,26 @@ import com.kvc.joy.core.sysres.SysResTool;
  */
 public enum Sex implements ICodeEnum {
 	
-	/** 未知的性别 */
-	UNKNOWN("0"),
-	/** 男 */
-	MALE("1"),
-	/** 女 */
-	FEMALE("2"),
-	/** 未说明的性别 */
-	UNSPECIFIED("9");
+	UNKNOWN("0", "未知的性别"),
+	MALE("1", "男"),
+	FEMALE("2", "女"),
+	UNSPECIFIED("9", "未说明的性别");
 	
-	public static final String CODE_TABLE_ID = "joy_code_sex";
+	public static final String CODE_TABLE_ID = "joy_code_time_unit";
 	
 	private String code;
 	private String desc;
 	
-	Sex(String code) {
+	Sex(String code, String desc) {
 		this.code = code;
-		this.desc = SysResTool.translateCode(CODE_TABLE_ID, code).getTrans();
+		this.desc = desc;
+	}
+	
+	public static void initTrans(Map<String, String> map) {
+		Sex[] values = Sex.values();
+		for (Sex sex : values) {
+			sex.desc = map.get(sex.getCode());
+		}
 	}
 
 	@Override

@@ -17,7 +17,7 @@ import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
 import com.kvc.joy.core.sysres.code.model.vo.CodeRecord;
 import com.kvc.joy.core.sysres.datasrc.model.po.TSysDataSrc;
-import com.kvc.joy.core.sysres.menu.po.TSysMenu;
+import com.kvc.joy.core.sysres.menu.model.po.TSysMenu;
 
 /**
  * 
@@ -74,6 +74,24 @@ public class SysResTool {
 	 */
 	public static Map<String, CodeRecord> getAllCodeAndTrans(String codeTableId) {
 		return CoreBeanFactory.getSysCodeCacheService().get(codeTableId);
+	}
+	
+	/**
+	 * 
+	 * 
+	 * @param codeTableId
+	 * @return
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年12月9日 上午12:26:45
+	 */
+	public static Map<String, String> getAllCodeAndTransStr(String codeTableId) {
+		Map<String, CodeRecord> codeMap = getAllCodeAndTrans(codeTableId);
+		Map<String, String> map = new LinkedHashMap<String, String>(codeMap.size());
+		for (String code : codeMap.keySet()) {
+			map.put(code, codeMap.get(code).getTrans());
+		}
+		return map;
 	}
 	
 	/**

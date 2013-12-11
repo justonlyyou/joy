@@ -25,11 +25,9 @@ public enum LoginState implements ICodeEnum {
 	public static final String CODE_TABLE_ID = "joy_code_login_state";
 
 	private String code;
-	private String desc;
 
 	LoginState(String code) {
 		this.code = code;
-		this.desc = SysResTool.translateCode(CODE_TABLE_ID, code).getTrans();
 	}
 
 	@Override
@@ -39,7 +37,7 @@ public enum LoginState implements ICodeEnum {
 
 	@Override
 	public String getTrans() {
-		return desc;
+		return SysResTool.translateCode(CODE_TABLE_ID, code).getTrans();
 	}
 
 	public static LoginState enumOf(String code) {
@@ -48,7 +46,7 @@ public enum LoginState implements ICodeEnum {
 
 	@Override
 	public String toString() {
-		return desc;
+		return getTrans();
 	}
 
 }

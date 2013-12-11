@@ -3,7 +3,7 @@
  */
 package com.kvc.joy.plugin.seqgen.service;
 
-import com.kvc.joy.plugin.seqgen.po.TSysSeqNum;
+import com.kvc.joy.plugin.seqgen.model.po.TSysSeqNum;
 import com.kvc.joy.plugin.seqgen.support.SequenceCache;
 
 /**

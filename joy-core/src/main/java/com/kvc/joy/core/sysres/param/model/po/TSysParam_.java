@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.kvc.joy.core.sysres.param.po;
+package com.kvc.joy.core.sysres.param.model.po;
 
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;

@@ -1,4 +1,4 @@
-package com.kvc.joy.plugin.seqgen.po;
+package com.kvc.joy.plugin.seqgen.model.po;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

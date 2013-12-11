@@ -8,6 +8,8 @@ import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser;
 import com.kvc.joy.plugin.security.login.model.po.TLoginLog;
 import com.kvc.joy.plugin.security.login.service.ILoginLogService;
@@ -26,6 +28,7 @@ import com.kvc.joy.plugin.support.PluginBeanFactory;
 public class LoginService  implements ILoginService {
 	
 	private ILoginLogService loginLogService;
+	private Log log = LogFactory.getLog(getClass());
 
 	@Override
 	public String login(LoginVo loginVo) {
@@ -101,18 +104,23 @@ public class LoginService  implements ILoginService {
 		try {
 			currentUser.login(token);
 		} catch (UnknownAccountException uae) {
+			log.error(uae);
 			errMsg = "用户名或密码错误！"; // 用户名不存在，为了安全性，不精确提示
 		} catch (IncorrectCredentialsException ice) {
+			log.error(ice);
 			errMsg = "用户名或密码错误！";
 			loginVo.setLoginState(LoginState.PASSWORD_ERR);
 			loginLogService.logOnLogin(loginVo);
 		} catch (LockedAccountException lae) {
+			log.error(lae);
 			errMsg = "您的帐号已被锁定！";
 			loginVo.setLoginState(LoginState.ACCOUNT_LOCK);
 			loginLogService.logOnLogin(loginVo);
 		} catch (AuthenticationException ae) {
+			log.error(ae);
 			errMsg = "授权发生异常！";
 		} catch (Exception ae) {
+			log.error(ae);
 			errMsg = "发生未预期的错误！";
 		}
 		return errMsg;

@@ -12,13 +12,11 @@ public enum AuthResourceType implements ICodeEnum {
 	METHOD("02");
 	
 	private String code;
-	private String desc;
 	
 	public static final String CODE_TABLE_ID = "joy_code_auth_res_type";
 	
 	AuthResourceType(String code) {
 		this.code = code;
-		this.desc = SysResTool.translateCode(CODE_TABLE_ID, code).getTrans();
 	}
 	
 	public String getCode() {
@@ -26,7 +24,7 @@ public enum AuthResourceType implements ICodeEnum {
 	}
 
 	public String getTrans() {
-		return desc;
+		return SysResTool.translateCode(CODE_TABLE_ID, code).getTrans();
 	}
 	
 	public static AuthResourceType enumOf(String code) {

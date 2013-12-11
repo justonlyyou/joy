@@ -3,9 +3,9 @@ package com.kvc.joy.plugin.seqgen.support;
 import com.kvc.joy.commons.lang.DateTool;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.core.spring.utils.SpringBeanTool;
-import com.kvc.joy.plugin.seqgen.po.TSysSeqNum;
-import com.kvc.joy.plugin.seqgen.po.TSysSeqNumRule;
-import com.kvc.joy.plugin.seqgen.po.TSysSeqNumStat;
+import com.kvc.joy.plugin.seqgen.model.po.TSysSeqNum;
+import com.kvc.joy.plugin.seqgen.model.po.TSysSeqNumRule;
+import com.kvc.joy.plugin.seqgen.model.po.TSysSeqNumStat;
 import com.kvc.joy.plugin.seqgen.service.ISequenceGenerator;
 
 /**

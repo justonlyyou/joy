@@ -14,11 +14,9 @@ public enum AuthorityType implements ICodeEnum {
 	public static final String CODE_TABLE_ID = "joy_code_authority_type";
 
 	private String code;
-	private String desc;
 
 	AuthorityType(String code) {
 		this.code = code;
-		this.desc = SysResTool.translateCode(CODE_TABLE_ID, code).getTrans();
 	}
 
 	public String getCode() {
@@ -26,7 +24,7 @@ public enum AuthorityType implements ICodeEnum {
 	}
 
 	public String getTrans() {
-		return desc;
+		return SysResTool.translateCode(CODE_TABLE_ID, code).getTrans();
 	}
 
 	public static AuthorityType enumOf(String code) {

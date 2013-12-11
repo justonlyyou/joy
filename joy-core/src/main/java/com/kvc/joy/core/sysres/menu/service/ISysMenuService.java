@@ -3,7 +3,7 @@ package com.kvc.joy.core.sysres.menu.service;
 import java.util.List;
 
 import com.kvc.joy.commons.bean.TreeNode;
-import com.kvc.joy.core.sysres.menu.po.TSysMenu;
+import com.kvc.joy.core.sysres.menu.model.po.TSysMenu;
 
 
 public interface ISysMenuService {

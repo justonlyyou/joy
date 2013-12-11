@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.kvc.joy.plugin.mapping.field.po;
+package com.kvc.joy.plugin.mapping.field.model.po;
 
 import java.util.Set;
 

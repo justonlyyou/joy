@@ -14,6 +14,7 @@ import javax.persistence.Transient;
 import com.kvc.joy.commons.enums.Sex;
 import com.kvc.joy.core.persistence.entity.UuidCrudEntity;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.DefaultValue;
 import com.kvc.joy.plugin.security.erbac.support.enums.UserStatus;
 
 @Entity
@@ -29,6 +30,7 @@ public class TErbacUser extends UuidCrudEntity  {
 	private Sex sex; // 性别
 	private String password; // 密码
 	private UserStatus stauts; // 状态
+	private boolean online; // 是否在线
 	private Integer loginCount; // 登录次数
 	private String lastLoginTime; // 最后一次登录时间
 	private Collection<TErbacRole> roles; // 角色
@@ -166,6 +168,18 @@ public class TErbacUser extends UuidCrudEntity  {
 	public void setLastLoginTime(String lastLoginTime) {
 		this.lastLoginTime = lastLoginTime;
 	}
+
+	@Comment("在线")
+	@DefaultValue("false")
+	public boolean isOnline() {
+		return online;
+	}
+
+	public void setOnline(boolean online) {
+		this.online = online;
+	}
+	
+	
 
 //	@Id
 //	@Column(length = 32)

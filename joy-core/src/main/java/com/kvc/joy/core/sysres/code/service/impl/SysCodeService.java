@@ -40,7 +40,7 @@ public class SysCodeService implements ISysCodeService {
 		String codeFieldName = codeDic.getCodeField();
 		String parentCodeField = codeDic.getParentField();
 		String orderByField = StringTool.isBlank(codeDic.getOrderField()) ? codeFieldName : codeDic.getOrderField();
-		String sql = MessageFormat.format(sqlPattern, codeDic.getTableName(), orderByField);
+		String sql = MessageFormat.format(sqlPattern, codeDic.getTableName().toLowerCase(), orderByField);
 		Connection conn = null;
 		PreparedStatement statement = null;
 		try {

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.kvc.joy.plugin.mapping.field.po;
+package com.kvc.joy.plugin.mapping.field.model.po;
 
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;

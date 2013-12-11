@@ -14,11 +14,9 @@ public enum UserStatus implements ICodeEnum {
 	public static final String CODE_TABLE_ID = "joy_code_user_status";
 	
 	private String code;
-	private String desc;
 	
 	UserStatus(String code) {
 		this.code = code;
-		this.desc = SysResTool.translateCode(CODE_TABLE_ID, code).getTrans();
 	}
 	
 	public String getCode() {
@@ -26,7 +24,7 @@ public enum UserStatus implements ICodeEnum {
 	}
 
 	public String getTrans() {
-		return desc;
+		return SysResTool.translateCode(CODE_TABLE_ID, code).getTrans();
 	}
 	
 	public static UserStatus enumOf(String code) {

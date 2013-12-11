@@ -25,11 +25,9 @@ public enum JobRunState implements ICodeEnum {
 	public static final String CODE_TABLE_ID = "joy_code_job_run_state";
 
 	private final String code;
-	private final String desc;
 
 	JobRunState(String code) {
 		this.code = code;
-		this.desc = SysResTool.translateCode(CODE_TABLE_ID, code).getTrans();
 	}
 
 	public String getCode() {
@@ -37,7 +35,7 @@ public enum JobRunState implements ICodeEnum {
 	}
 	
 	public String getTrans() {
-		return desc;
+		return SysResTool.translateCode(CODE_TABLE_ID, code).getTrans();
 	}
 	
 	public static JobRunState enumOf(String code) {

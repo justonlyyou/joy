@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.kvc.joy.plugin.seqgen.po;
+package com.kvc.joy.plugin.seqgen.model.po;
 
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;

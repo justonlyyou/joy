@@ -1,11 +1,15 @@
 package com.kvc.joy.core.init.service.impl;
 
+import com.kvc.joy.commons.enums.Sex;
+import com.kvc.joy.commons.enums.TimeUnit;
+import com.kvc.joy.commons.enums.YesNot;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.support.ICommand;
 import com.kvc.joy.core.init.service.IJoyInitializer;
 import com.kvc.joy.core.init.service.ISystemInitService;
 import com.kvc.joy.core.spring.utils.SpringBeanTool;
+import com.kvc.joy.core.sysres.SysResTool;
 
 /**
  * 
@@ -48,6 +52,8 @@ public class JoyInitializer implements IJoyInitializer {
 		ISystemInitService sysInitService = (ISystemInitService) SpringBeanTool.getBean("systemInitializer");
 		sysInitService.init();
 		
+		initEnums();
+		
 		logger.info("done afterContextInit");
 	}
 
@@ -58,6 +64,15 @@ public class JoyInitializer implements IJoyInitializer {
 			command.execute();
 		}
 		logger.info("done onContextDestroyed");
+	}
+	
+	/**
+	 * 初始化joy-commons中的几个枚举
+	 */
+	protected void initEnums() {
+		YesNot.initTrans(SysResTool.getAllCodeAndTransStr(YesNot.CODE_TABLE_ID));
+		Sex.initTrans(SysResTool.getAllCodeAndTransStr(Sex.CODE_TABLE_ID));
+		TimeUnit.initTrans(SysResTool.getAllCodeAndTransStr(TimeUnit.CODE_TABLE_ID));
 	}
 	
 }

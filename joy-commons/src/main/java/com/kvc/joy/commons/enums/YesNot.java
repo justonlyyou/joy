@@ -1,5 +1,7 @@
 package com.kvc.joy.commons.enums;
 
+import java.util.Map;
+
 import com.kvc.joy.commons.lang.BooleanTool;
 
 
@@ -14,14 +16,23 @@ public enum YesNot implements ICodeEnum {
 	YES(true, "1", "是"),
 	NOT(false, "0", "否");
 	
+	public static final String CODE_TABLE_ID = "joy_code_yes_not";
+	
 	private boolean bool;
 	private String binary;
-	private String cnName;
+	private String trans;
 	
-	private YesNot(boolean bool, String binary, String cnName) {
+	private YesNot(boolean bool, String binary, String trans) {
 		this.bool = bool;
 		this.binary = binary;
-		this.cnName = cnName;
+		this.trans = trans;
+	}
+	
+	public static void initTrans(Map<String, String> map) {
+		YesNot[] values = YesNot.values();
+		for (YesNot yesNot : values) {
+			yesNot.trans = map.get(yesNot.getCode());
+		}
 	}
 
 	public boolean getBool() {
@@ -37,7 +48,7 @@ public enum YesNot implements ICodeEnum {
 	}
 
 	public String getTrans() {
-		return cnName;
+		return trans;
 	}
 	
 	public static YesNot enumOf(String code) {

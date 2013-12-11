@@ -24,11 +24,9 @@ public enum LogoutMethod implements ICodeEnum {
 	public static final String CODE_TABLE_ID = "joy_code_logout_method";
 	
 	private String code;
-	private String trans;
 	
 	LogoutMethod(String code) {
 		this.code = code;
-		this.trans = SysResTool.translateCode(CODE_TABLE_ID, code).getTrans();
 	}
 
 	@Override
@@ -38,7 +36,7 @@ public enum LogoutMethod implements ICodeEnum {
 
 	@Override
 	public String getTrans() {
-		return trans;
+		return SysResTool.translateCode(CODE_TABLE_ID, code).getTrans();
 	}
 	
 	public static LogoutMethod enumOf(String code) {
@@ -47,7 +45,7 @@ public enum LogoutMethod implements ICodeEnum {
 
 	@Override
 	public String toString() {
-		return trans;
+		return getTrans();
 	}
 
 }

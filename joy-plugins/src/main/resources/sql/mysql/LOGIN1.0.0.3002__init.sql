@@ -11,7 +11,7 @@ insert into `code_login_state`(`CODE`,`TRANS`) values ('12','验证码错误');
 insert into `code_login_state`(`CODE`,`TRANS`) values ('21','帐号被锁定');
 
 insert into `t_sys_code_table`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`update_dept`,`update_time`,`update_user`,`cn_table_name`,`code_field`,`parent_field`,`table_name`,`trans_field`,`data_src_id`) 
-values ('JOY_code_login_state',1,1,null,null,null,null,null,null,0,null,null,null,'登陆状态代码','CODE',null,'code_login_state','TRANS','JoyDs');
+values ('JOY_CODE_LOGIN_STATE',1,1,null,null,null,null,null,null,0,null,null,null,'登陆状态代码','CODE',null,'code_login_state','TRANS','JoyDs');
 
 
 /* 登出系统方式代码 */
@@ -27,6 +27,6 @@ insert into `code_logout_method`(`CODE`,`TRANS`) values ('21','超时');
 insert into `code_logout_method`(`CODE`,`TRANS`) values ('99','其它');
 
 insert into `t_sys_code_table`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`update_dept`,`update_time`,`update_user`,`cn_table_name`,`code_field`,`parent_field`,`table_name`,`trans_field`,`data_src_id`) 
-values ('JOY_CODE_LOGOUT_METHOD',1,1,null,null,null,null,null,null,0,null,null,null,'登出系统方式代码','CODE',null,'CODE_LOGOUT_METHOD','TRANS','JoyDs');
+values ('JOY_CODE_LOGOUT_METHOD',1,1,null,null,null,null,null,null,0,null,null,null,'登出系统方式代码','CODE',null,'code_logout_method','TRANS','JoyDs');
 
 

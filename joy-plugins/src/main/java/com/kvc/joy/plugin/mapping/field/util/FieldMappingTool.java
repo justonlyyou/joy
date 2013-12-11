@@ -11,8 +11,8 @@ import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.plugin.mapping.field.dao.TCfgFieldMappingRuleDao;
-import com.kvc.joy.plugin.mapping.field.po.TSysFieldMapping;
-import com.kvc.joy.plugin.mapping.field.po.TSysFieldMappingRule;
+import com.kvc.joy.plugin.mapping.field.model.po.TSysFieldMapping;
+import com.kvc.joy.plugin.mapping.field.model.po.TSysFieldMappingRule;
 
 /**
  * 字段映射规则数据访问对象

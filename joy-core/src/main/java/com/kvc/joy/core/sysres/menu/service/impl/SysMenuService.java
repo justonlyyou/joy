@@ -13,8 +13,8 @@ import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.support.ListToTreeConvertor;
 import com.kvc.joy.core.persistence.orm.jpa.JpaOrder;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
-import com.kvc.joy.core.sysres.menu.po.TSysMenu;
-import com.kvc.joy.core.sysres.menu.po.TSysMenu_;
+import com.kvc.joy.core.sysres.menu.model.po.TSysMenu;
+import com.kvc.joy.core.sysres.menu.model.po.TSysMenu_;
 import com.kvc.joy.core.sysres.menu.service.ISysMenuService;
 
 public class SysMenuService implements ISysMenuService {
