@@ -28,16 +28,6 @@ public abstract class BaseController<T> {
 
 	protected static final Log logger = LogFactory.getLog(BaseController.class);
 	
-	protected abstract String getCurrentViewName();
-
-	protected String getDetailViewName() {
-		return   getCurrentViewName() + "Detail";
-	}
-
-	protected String getEditViewName() {
-		return getCurrentViewName() + "Edit";
-	}
-
 	@RequestMapping("")
 	public String page(Model model) {
 		return getCurrentViewName();
@@ -53,10 +43,6 @@ public abstract class BaseController<T> {
 		return getCurrentViewName();
 	}
 	
-	protected void queryByPageStore(PageStore pageStore) {
-		pageStore.query(getEntityClass());
-	}
-
 	@RequestMapping("/get")
 	public String get(Model model) {
 		T m = loadEntity(model);
@@ -64,6 +50,35 @@ public abstract class BaseController<T> {
 		return getDetailViewName();
 	}
 	
+	@RequestMapping("/add")
+	public String add(Model model) {
+		return getEditViewName();
+	}
+	
+	@RequestMapping("/edit")
+	public String edit(Model model) {
+		return getEditViewName();
+	}
+	
+	@RequestMapping("/delete")
+	public String delete(Model model) {
+		return null; //TODO
+	}
+	
+	protected abstract String getCurrentViewName();
+
+	protected String getDetailViewName() {
+		return   getCurrentViewName() + "Detail";
+	}
+
+	protected String getEditViewName() {
+		return getCurrentViewName() + "Edit";
+	}
+	
+	protected void queryByPageStore(PageStore pageStore) {
+		pageStore.query(getEntityClass());
+	}
+
 	protected T loadEntity(Model model) {
 		String id = HttpRequestTool.getParameter("id");
 		if (StringTool.isBlank(id)) {

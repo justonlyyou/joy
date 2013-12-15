@@ -2,6 +2,8 @@
 insert into `t_sys_data_src`(`id`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`update_dept`,`update_time`,`update_user`,`active`,`charset`,`db_alias`,`db_name`,`db_type`,`ip_address`,`jndi_name`,`max_conn_count`,`min_conn_count`,`name`,`parameter`,`password`,`server_port`,`username`,`db_url`) 
 values ('JoyDs',1,null,null,null,null,null,null,0,null,null,null,1,null,null,null,null,null,'JDBC/JOY',null,null,'JOY平台数据源',null,'tangwl',null,'root','jdbc:mysql://localhost:3306/joy');
 
+insert into `t_sys_code_table`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`active_field`,`code_field`,`deleted_field`,`grouping_comment`,`grouping_field`,`order_field`,`parent_field`,`pinyin_field`,`segment_rule`,`table_comment`,`table_name`,`trans_field`,`data_src_id`) 
+values ('JOY_CODES',1,1,null,null,null,null,null,null,0,null,null,null,null,'ACTIVE','CODE','DELETED','GROUP_COMMENT','GROUP_ID','ORDINAL','PARENT_CODE','PIN_YIN','SEGMENT_RULE','总代码表','t_sys_codes','TRANS','JoyDs');
 
 /* 布尔代码 */
 CREATE TABLE `code_yes_not` (
@@ -15,7 +17,7 @@ insert into `code_yes_not`(`CODE`,`TRANS`,`ORDINAL`) values ('1','是', '1');
 insert into `code_yes_not`(`CODE`,`TRANS`,`ORDINAL`) values ('0','否', '2');
 
 
-insert into `t_sys_code_table`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`update_dept`,`update_time`,`update_user`,`cn_table_name`,`code_field`,`parent_field`,`table_name`,`trans_field`,`data_src_id`,`order_field`) 
+insert into `t_sys_code_table`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`update_dept`,`update_time`,`update_user`,`table_comment`,`code_field`,`parent_field`,`table_name`,`trans_field`,`data_src_id`,`order_field`) 
 values ('JOY_CODE_YES_NOT',1,1,null,null,null,null,null,null,0,null,null,null,'布尔代码','CODE',null,'code_yes_not','TRANS','JoyDs','ORDINAL');
 
 
@@ -31,7 +33,7 @@ insert into `code_sex`(`CODE`,`TRANS`) values ('1','男');
 insert into `code_sex`(`CODE`,`TRANS`) values ('2','女');
 insert into `code_sex`(`CODE`,`TRANS`) values ('9','未说明的性别');
 
-insert into `t_sys_code_table`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`update_dept`,`update_time`,`update_user`,`cn_table_name`,`code_field`,`parent_field`,`table_name`,`trans_field`,`data_src_id`) 
+insert into `t_sys_code_table`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`update_dept`,`update_time`,`update_user`,`table_comment`,`code_field`,`parent_field`,`table_name`,`trans_field`,`data_src_id`) 
 values ('JOY_CODE_SEX',1,1,null,null,null,null,null,null,0,null,null,null,'性别代码','CODE',null,'code_sex','TRANS','JoyDs');
 
 
@@ -52,7 +54,7 @@ insert into `code_time_unit`(`CODE`,`TRANS`) values ('7','秒');
 insert into `code_time_unit`(`CODE`,`TRANS`) values ('8','毫秒');
 insert into `code_time_unit`(`CODE`,`TRANS`) values ('9','微秒');
 
-insert into `t_sys_code_table`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`update_dept`,`update_time`,`update_user`,`cn_table_name`,`code_field`,`parent_field`,`table_name`,`trans_field`,`data_src_id`) 
+insert into `t_sys_code_table`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`update_dept`,`update_time`,`update_user`,`table_comment`,`code_field`,`parent_field`,`table_name`,`trans_field`,`data_src_id`) 
 values ('JOY_CODE_TIME_UNIT',1,1,null,null,null,null,null,null,0,null,null,null,'周期类型代码','CODE',null,'code_time_unit','TRANS','JoyDs');
 
 

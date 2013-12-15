@@ -176,7 +176,7 @@ public class CollectionQueryTool {
 	 * @author 唐玮琳
 	 * @time 2013年11月22日 下午9:18:36
 	 */
-	public static <T> List<T> orSearch(Collection<T> beans, Map<String, Object> propertyMap, Order... orders) {
+	public static <T> List<T> orQuery(Collection<T> beans, Map<String, Object> propertyMap, Order... orders) {
 		return search(false, beans, propertyMap, orders);
 	}
 

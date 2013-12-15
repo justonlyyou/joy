@@ -19,11 +19,17 @@ public class TSysCodeTable extends UuidCrudEntity {
 
 	// Fields
 	private String tableName; // 代码表表名
-	private String cnTableName; // 代码表中文名
+	private String tableComment; // 代码表注释
 	private String codeField; // 代码字段
 	private String transField; // 译文字段
 	private String orderField; // 排序字段
+	private String pinyinField; // 拼音字段
+	private String segmentRule; // 分段规则
 	private String parentField; // 父代码字段
+	private String activeField; // 是否启用字段
+	private String deletedField; // 是否删除字段
+	private String groupingField; // 组字段名(多种代码放同一表时区分用)
+	private String groupingComment; // 组注释
 	private TSysDataSrc dataSrc; // 数据源
 
 	// Constructors
@@ -33,7 +39,7 @@ public class TSysCodeTable extends UuidCrudEntity {
 
 	// Property accessors
 
-	@Column(length = 30, nullable=false)
+	@Column(length = 30, nullable = false)
 	@DefaultValue("code")
 	@Comment("代码字段")
 	public String getCodeField() {
@@ -55,7 +61,7 @@ public class TSysCodeTable extends UuidCrudEntity {
 		this.dataSrc = dataSrc;
 	}
 
-	@Column(length = 30, nullable=false)
+	@Column(length = 30, nullable = false)
 	@Comment("代码表名")
 	public String getTableName() {
 		return tableName;
@@ -66,13 +72,13 @@ public class TSysCodeTable extends UuidCrudEntity {
 	}
 
 	@Column(length = 64)
-	@Comment("代码表中文名")
-	public String getCnTableName() {
-		return cnTableName;
+	@Comment("代码表注释")
+	public String getTableComment() {
+		return tableComment;
 	}
 
-	public void setCnTableName(String cnTableName) {
-		this.cnTableName = cnTableName;
+	public void setTableComment(String tableComment) {
+		this.tableComment = tableComment;
 	}
 
 	@Column(length = 32, nullable = false)
@@ -104,5 +110,65 @@ public class TSysCodeTable extends UuidCrudEntity {
 	public void setOrderField(String orderField) {
 		this.orderField = orderField;
 	}
+
+	@Column(length = 32)
+	@Comment("拼音字段")
+	public String getPinyinField() {
+		return pinyinField;
+	}
+
+	public void setPinyinField(String pinyinField) {
+		this.pinyinField = pinyinField;
+	}
+
+	@Column(length = 32)
+	@Comment("分段规则,如果是共用代码表则表示分段规则的字段")
+	public String getSegmentRule() {
+		return segmentRule;
+	}
+
+	public void setSegmentRule(String segmentRule) {
+		this.segmentRule = segmentRule;
+	}
 	
+	@Column(length = 32)
+	@Comment("启用状态字段")
+	public String getActiveField() {
+		return activeField;
+	}
+
+	public void setActiveField(String activeField) {
+		this.activeField = activeField;
+	}
+
+	@Column(length = 32)
+	@Comment("删除状态字段")
+	public String getDeletedField() {
+		return deletedField;
+	}
+
+	public void setDeletedField(String deletedField) {
+		this.deletedField = deletedField;
+	}
+
+	@Column(length = 32)
+	@Comment("分组字段")
+	public String getGroupingField() {
+		return groupingField;
+	}
+
+	public void setGroupingField(String groupingField) {
+		this.groupingField = groupingField;
+	}
+
+	@Column(length = 64)
+	@Comment("分组注释")
+	public String getGroupingComment() {
+		return groupingComment;
+	}
+
+	public void setGroupingComment(String groupingComment) {
+		this.groupingComment = groupingComment;
+	}
+
 }

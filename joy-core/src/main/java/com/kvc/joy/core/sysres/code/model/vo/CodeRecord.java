@@ -53,5 +53,10 @@ public class CodeRecord implements Serializable {
 	public void setOrder(String order) {
 		this.order = order;
 	}
+	
+	@Override
+	public String toString() {
+		return "(" + code + " : " + trans + ")";
+	}
 
 }

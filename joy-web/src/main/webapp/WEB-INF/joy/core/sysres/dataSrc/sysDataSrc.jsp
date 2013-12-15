@@ -11,18 +11,6 @@
 
 <title>系统数据源管理页面</title>
 
-<script type="text/javascript">
-	function showDetail(id) {
-		$.layer({
-		    type : 2,
-		    title : '系统数据源详情',
-		    iframe : {src : '${ctx}/sysDataSrc/get?id='+id},
-		    area : ['750px' , '500px'],
-		    offset : ['50px','']
-		});
-	}
-</script>
-
 </head>
 
 <body>
@@ -34,22 +22,25 @@
 			</div>
 			<div class="panel-body">
 				<div class="joy-search-bar">
-					<div class="form-horizontal" role="form" style="height: 36px">
-						<div class="form-group">
-							<label for="id" class="col-sm-1 control-label">数据源</label>
-							<div class="col-sm-2">
-								<select class="form-control" name="id" value="${id}" data-joy-props="operator:'='">
-									<option value="">-- 请选择 --</option>
-									<c:forEach items="${joy:getAllDataSrc()}" var="entry">
-										<option value="${entry.id}" class="joy-select-option">${entry.name}</option>
-									</c:forEach>
-								</select>
-							</div>
-							<div class="col-sm-9">
-								<button id="submitBtn" class="btn btn-default">
-									<i class="fa fa-search"></i>&nbsp;查询
-								</button>
-							</div>
+					<div class="form-horizontal">
+						<label for="id" class="col-sm-1 control-label">数据源</label>
+						<div class="col-sm-2">
+							<select class="form-control" name="id" value="${id}" data-joy-props="operator:'='">
+								<option value="">-- 请选择 --</option>
+								<c:forEach items="${joy:getAllDataSrc()}" var="entry">
+									<option value="${entry.id}" class="joy-select-option">${entry.name}</option>
+								</c:forEach>
+							</select>
+						</div>
+						<div class="col-sm-1">
+							<button id="submitBtn" class="btn btn-default" style="margin-left: 5px">
+								<i class="fa fa-search"></i>&nbsp;查询
+							</button>
+						</div>
+						<div class="col-sm-8">
+							<button id="newBtn" class="btn btn-default" style="margin-left: 3px">
+								<i class="fa fa-plus"></i>&nbsp;新增
+							</button>
 						</div>
 					</div>
 				</div>
@@ -88,6 +79,39 @@
 			</div>
 		</div>
 	</form>
+	
+	<script type="text/javascript">
+		$(function() {
+			$("#newBtn").bind("click", function(e) {
+				e.preventDefault();
+				addRecord();
+			});
+		});
+		
+		function addRecord() {
+			$.layer({
+			    type : 2,
+			    title : '系统数据源新增',
+			    iframe : {src : '${ctx}/sysDataSrc/add'},
+			    area : ['750px' , '500px'],
+			    offset : ['50px','']
+			});
+		}
+	
+		function showDetail(id) {
+			$.layer({
+			    type : 2,
+			    title : '系统数据源详情',
+			    iframe : {src : '${ctx}/sysDataSrc/get?id='+id},
+			    area : ['750px' , '500px'],
+			    offset : ['50px','']
+			});
+		}
+		
+		function editRecord(id) {
+			
+		}
+	</script>
 
 </body>
 </html>

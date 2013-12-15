@@ -29,4 +29,7 @@
 	<!-- 系统菜单服务 -->
 	<bean id="sysMenuService" class="com.kvc.joy.core.sysres.menu.service.impl.SysMenuService" />
 	
+	<!-- 系统代码表数据访问对象 -->
+	<bean id="sysCodeTableDao" class="com.kvc.joy.core.sysres.code.dao.TSysCodeTableDao" />
+	
 </beans>

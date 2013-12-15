@@ -26,6 +26,14 @@ public class Order implements Serializable {
 	public Order(String property) {
 		this(property, Direction.ASC);
 	}
+	
+	public static Order asc(String property) {
+		return new Order(property); 
+	}
+	
+	public static Order desc(String property) {
+		return new Order(property, Direction.DESC); 
+	}
 
 	public boolean isAscending() {
 		return this.direction.equals(Direction.ASC);
