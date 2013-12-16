@@ -179,7 +179,17 @@ public interface ICrudEntity<T> extends IEntity<T> {
 	 * @author 唐玮琳
 	 * @time 2012-12-15 上午12:21:14
 	 */
-	boolean isDeleted();
+	String getDeleted();
+	
+	/**
+	 * 
+	 * 
+	 * @return
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年12月16日 下午8:15:01
+	 */
+	boolean deleted();
 
 	/**
 	 * 设置是否已被删除
@@ -188,7 +198,7 @@ public interface ICrudEntity<T> extends IEntity<T> {
 	 * @author 唐玮琳
 	 * @time 2012-12-15 上午12:21:21
 	 */
-	void setDeleted(boolean delete);
+	void setDeleted(String delete);
 	
 	/**
 	 * 是否启用
@@ -197,7 +207,17 @@ public interface ICrudEntity<T> extends IEntity<T> {
 	 * @author 唐玮琳
 	 * @time 2013-2-22 下午10:35:03
 	 */
-	boolean isActive();
+	String getActive();
+	
+	/**
+	 * 
+	 * 
+	 * @return
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年12月16日 下午8:14:50
+	 */
+	boolean active();
 	
 	/**
 	 * 设置启用状态
@@ -206,7 +226,7 @@ public interface ICrudEntity<T> extends IEntity<T> {
 	 * @author 唐玮琳
 	 * @time 2013-2-22 下午10:35:14
 	 */
-	void setActive(boolean active);
+	void setActive(String active);
 
 	/**
 	 * 是否为系统内置
@@ -215,7 +235,17 @@ public interface ICrudEntity<T> extends IEntity<T> {
 	 * @author 唐玮琳
 	 * @time 2012-12-17 下午11:04:03
 	 */
-	boolean isBuiltIn();
+	String getBuiltIn();
+	
+	/**
+	 * 
+	 * 
+	 * @return
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年12月16日 下午8:14:30
+	 */
+	boolean builtIn();
 
 	/**
 	 * 设置是否为系统内置
@@ -224,6 +254,6 @@ public interface ICrudEntity<T> extends IEntity<T> {
 	 * @author 唐玮琳
 	 * @time 2012-12-17 下午11:04:34
 	 */
-	void setBuiltIn(boolean builtIn);
+	void setBuiltIn(String builtIn);
 
 }

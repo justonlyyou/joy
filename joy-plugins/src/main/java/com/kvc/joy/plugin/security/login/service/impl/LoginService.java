@@ -96,7 +96,7 @@ public class LoginService  implements ILoginService {
 	private String validateUserAndPassword(Subject currentUser, LoginVo loginVo) {
 		String account = loginVo.getUserAccount();
 		String password = loginVo.getUserPassword();
-		boolean rememberMe = loginVo.isRememberMe();
+		boolean rememberMe = loginVo.rememberMe();
 				
 		String errMsg = null;
 		UsernamePasswordToken token = new UsernamePasswordToken(account, password);

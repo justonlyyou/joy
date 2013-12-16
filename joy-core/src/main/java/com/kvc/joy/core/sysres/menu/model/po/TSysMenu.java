@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import com.kvc.joy.commons.bean.IEntity;
 import com.kvc.joy.commons.support.IListToTreeRestrict;
@@ -23,8 +24,8 @@ public class TSysMenu implements IEntity<String>, IListToTreeRestrict<String> {
 	private String url; // 地址
 	private String orderNum; // 序号
 	private String icon;
-	private boolean active;
-	private boolean deleted;
+	private String active;
+	private String deleted;
 
 	public TSysMenu() {
 	}
@@ -96,24 +97,33 @@ public class TSysMenu implements IEntity<String>, IListToTreeRestrict<String> {
 	}
 
 	@Column(length = 1, nullable = false)
-	@DefaultValue("true")
+	@DefaultValue("0")
 	@Comment("是否启用")
-	public boolean isActive() {
+	public String getActive() {
 		return active;
 	}
 
-	public void setActive(boolean active) {
+	public boolean active() {
+		return "1".equals(active);
+	}
+	
+	public void setActive(String active) {
 		this.active = active;
 	}
 
 	@Column(length = 1, nullable = false)
-	@DefaultValue("false")
+	@DefaultValue("0")
 	@Comment("是否已删除")
-	public boolean isDeleted() {
+	public String getDeleted() {
 		return deleted;
 	}
+	
+	@Transient
+	public boolean deleted() {
+		return "1".equals(deleted);
+	}
 
-	public void setDeleted(boolean deleted) {
+	public void setDeleted(String deleted) {
 		this.deleted = deleted;
 	}
 

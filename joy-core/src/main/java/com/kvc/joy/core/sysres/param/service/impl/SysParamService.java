@@ -19,7 +19,7 @@ import com.kvc.joy.core.sysres.param.service.ISysParamService;
 public class SysParamService implements ISysParamService {
 
 	public Map<String, TSysParam> get() {
-		 List<TSysParam> list = JpaTool.search(TSysParam.class, TSysParam_.deleted, false);
+		 List<TSysParam> list = JpaTool.search(TSysParam.class, TSysParam_.deleted, "0");
 		 Map<String, TSysParam> map = new HashMap<String, TSysParam>(list.size());
 		 for (TSysParam sysParam : list) {
 			 map.put(sysParam.getParamName(), sysParam);

@@ -24,8 +24,8 @@ public class TQrtzJobPlanCfgDao extends BaseJpaDao<TQrtzJobPlan> {
 			
 			@Override
 			public Expression<Boolean> getRestriction(CriteriaBuilder cb, Root<TQrtzJobPlan> root) {
-				Predicate predicate1 = cb.equal(root.get(TQrtzJobPlan_.deleted), false);
-				Predicate predicate2 = cb.equal(root.get(TQrtzJobPlan_.active), true);
+				Predicate predicate1 = cb.equal(root.get(TQrtzJobPlan_.deleted), "0");
+				Predicate predicate2 = cb.equal(root.get(TQrtzJobPlan_.active), "1");
 				Predicate predicate3 = cb.greaterThan(root.get(TQrtzJobPlan_.expireTime), 
 						DateTool.currentDate(DateTool.UNFMT_yyyyMMddHHmmss));
 				return cb.and(predicate1, predicate2, predicate3);

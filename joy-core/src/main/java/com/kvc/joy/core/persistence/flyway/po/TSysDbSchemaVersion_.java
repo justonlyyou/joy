@@ -24,6 +24,6 @@ public class TSysDbSchemaVersion_ {
 	public static volatile SingularAttribute<TSysDbSchemaVersion, String> installedBy;
 	public static volatile SingularAttribute<TSysDbSchemaVersion, String> installedOn;
 	public static volatile SingularAttribute<TSysDbSchemaVersion, Integer> executionTime;
-	public static volatile SingularAttribute<TSysDbSchemaVersion, Boolean> success;
+	public static volatile SingularAttribute<TSysDbSchemaVersion, String> success;
 	
 }

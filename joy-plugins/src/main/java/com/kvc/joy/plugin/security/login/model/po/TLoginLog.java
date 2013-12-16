@@ -28,7 +28,7 @@ public class TLoginLog extends UuidEntity {
 	private String osType; // 使用的操作系统类型
 	private String osVersion; // 使用的操作系统版本
 	private LoginState loginState; // 登陆状态
-	private boolean rememberMe; // 记住我
+	private String rememberMe; // 记住我
 	
 
 	@Column(length = 32)
@@ -136,11 +136,15 @@ public class TLoginLog extends UuidEntity {
 
 	@Column(length = 1, nullable = false)
 	@Comment("是否记住我")
-	public boolean isRememberMe() {
+	public String getRememberMe() {
 		return rememberMe;
 	}
+	
+	public boolean rememberMe() {
+		return "1".equals(rememberMe);
+	}
 
-	public void setRememberMe(boolean rememberMe) {
+	public void setRememberMe(String rememberMe) {
 		this.rememberMe = rememberMe;
 	}
 

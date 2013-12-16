@@ -32,7 +32,7 @@
         		<td>表名</td>
         		<td>${model.tableName}</td>
         		<td>表注释</td>
-        		<td>${model.cnTableName}</td>
+        		<td>${model.tableComment}</td>
         	</tr>
         	<tr>
         		<td>代码字段</td>

@@ -17,7 +17,7 @@ public class TSysParam extends UuidCrudEntity {
 	private String paramName; // 参数名
 	private String paramValue; // 参数值
 	private String defaultValue; // 参数默认值
-	private boolean encrypt; // 是否加密
+	private String encrypt; // 是否加密
 
 	// Constructors
 
@@ -81,13 +81,17 @@ public class TSysParam extends UuidCrudEntity {
 	}
 
 	@Column(length = 1, nullable = false)
-	@DefaultValue("false")
+	@DefaultValue("0")
 	@Comment("是否加密")
-	public boolean getEncrypt() {
+	public String getEncrypt() {
 		return encrypt;
 	}
+	
+	public boolean encrypt() {
+		return "1".equals(encrypt);
+	}
 
-	public void setEncrypt(boolean encrypt) {
+	public void setEncrypt(String encrypt) {
 		this.encrypt = encrypt;
 	}
 

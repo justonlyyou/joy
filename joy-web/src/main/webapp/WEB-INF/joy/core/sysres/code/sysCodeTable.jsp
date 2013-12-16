@@ -41,10 +41,10 @@
 								<input class="form-control" value="${tableName}"
 									name="tableName" placeholder="请输入表名" data-joy-props="operator:'ilike'">
 							</div>
-							<label for="cnTableName" class="col-sm-1 control-label">表中文名</label>
+							<label for="tableComment" class="col-sm-1 control-label">表中文名</label>
 							<div class="col-sm-2">
-								<input class="form-control" value="${cnTableName}"
-									name="cnTableName" placeholder="请输入表中文名" data-joy-props="operator:'ilike'">
+								<input class="form-control" value="${tableComment}"
+									name="tableComment" placeholder="请输入表中文名" data-joy-props="operator:'ilike'">
 							</div>
 							<div class="col-sm-6">
 								<button id="submitBtn" class="btn btn-default">
@@ -64,7 +64,7 @@
 								<th width="70px">操作</th>
 								<th>
 								<tags:orderColumn property="tableName" columnName="表名" defaultOrder="ASC" /></th>
-								<th><tags:orderColumn property="cnTableName" columnName="表中文名" /></th>
+								<th><tags:orderColumn property="tableComment" columnName="表中文名" /></th>
 								<th>代码字段名</th>
 								<th>译文字段名</th>
 								<th>排序字段名</th>
@@ -76,7 +76,7 @@
 									<td class="joy-table-seq-col">${stauts.index+1}</td>
 									<td><tags:listOperations id="${p.id}"/></td>
 									<td>${p.tableName}</td>
-									<td>${p.cnTableName}</td>
+									<td>${p.tableComment}</td>
 									<td>${p.codeField}</td>
 									<td>${p.transField}</td>
 									<td>${p.orderField}</td>

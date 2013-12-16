@@ -63,7 +63,7 @@ public class LoginController {
 		LoginVo loginVo = new LoginVo();
 		loginVo.setUserAccount(username);
 		loginVo.setUserPassword(password);
-		 loginVo.setRememberMe(StringTool.isNotBlank(rememberMe));
+		 loginVo.setRememberMe(StringTool.isNotBlank(rememberMe) ? "1" : "0");
 		loginVo.setCaptchaRequire(captchaRequire);
 		loginVo.setCaptchaClient(captcha);
 		loginVo.setLoginIp(HttpRequestTool.getIpAddr());

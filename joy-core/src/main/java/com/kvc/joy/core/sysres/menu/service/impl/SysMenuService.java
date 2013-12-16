@@ -23,7 +23,7 @@ public class SysMenuService implements ISysMenuService {
 
 	@Override
 	public List<TreeNode<TSysMenu>> getAllMenus(String userId) {
-		List<TSysMenu> allMenuList = JpaTool.search(TSysMenu.class, TSysMenu_.deleted, false,
+		List<TSysMenu> allMenuList = JpaTool.search(TSysMenu.class, TSysMenu_.deleted, "0",
 				JpaOrder.asc(TSysMenu_.orderNum));
 		return processMenus(allMenuList);
 	}
@@ -38,7 +38,7 @@ public class SysMenuService implements ISysMenuService {
 
 	@Override
 	public List<TreeNode<TSysMenu>> getRootMenus(String userId) {
-		List<TSysMenu> allMenuList = JpaTool.search(TSysMenu.class, TSysMenu_.deleted, false,
+		List<TSysMenu> allMenuList = JpaTool.search(TSysMenu.class, TSysMenu_.deleted, "0",
 				JpaOrder.asc(TSysMenu_.orderNum));
 		List<TSysMenu> rootMenuList = new ArrayList<TSysMenu>();
 		for (TSysMenu sysMenu : allMenuList) {

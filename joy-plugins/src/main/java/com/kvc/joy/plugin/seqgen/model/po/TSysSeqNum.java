@@ -32,7 +32,7 @@ public class TSysSeqNum implements IEntity<String> {
 	private long curSeq; // 当前序列号(不包含前缀、后缀)
 	private String curPeriodStartTime; // 当前周期开始时间
 	private TSysSeqNumRule seqRule; // 序列号生成规则
-	private boolean active; // 有效性
+	private String active; // 有效性
 	private String prefixParams; // 前缀模板的参数值串，以逗号分隔
 	private String suffixParams; // 后缀模板的参数值串，以逗号分隔
 
@@ -97,13 +97,17 @@ public class TSysSeqNum implements IEntity<String> {
 	}
 
 	@Column(nullable = false)
-	@DefaultValue("true")
+	@DefaultValue("1")
 	@Comment("是否启用")
-	public boolean getActive() {
+	public String getActive() {
 		return active;
 	}
+	
+	public boolean active() {
+		return "1".equals(active);
+	}
 
-	public void setActive(boolean active) {
+	public void setActive(String active) {
 		this.active = active;
 	}
 	

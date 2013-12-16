@@ -2,6 +2,8 @@ package com.kvc.joy.core.ehcache;
 
 import java.util.List;
 
+import javax.persistence.Transient;
+
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.config.CacheConfiguration;
@@ -42,7 +44,7 @@ public class EhCachePlugin implements IJoyPlugin {
 	private void joinDbEhCacheConf() {
 		EhCacheCacheManager ehCacheCacheManager = CoreBeanFactory.getEhCacheCacheManager();
 		CacheManager cacheManager = ehCacheCacheManager.getCacheManager();
-		List<TSysCacheCfg> cacheCfgList = JpaTool.search(TSysCacheCfg.class, TSysCacheCfg_.deleted, false);
+		List<TSysCacheCfg> cacheCfgList = JpaTool.search(TSysCacheCfg.class, TSysCacheCfg_.deleted, "0");
 		for (TSysCacheCfg cacheCfg : cacheCfgList) {
 			joinDbEhCacheConf(cacheManager, cacheCfg);
 		}
@@ -63,17 +65,18 @@ public class EhCachePlugin implements IJoyPlugin {
 		configuration.setName(cacheCfg.getCacheName());
 		configuration.setMaxElementsInMemory(cacheCfg.getMaxElementsInMemory());
 		configuration.setMaxElementsOnDisk(cacheCfg.getMaxElementsOnDisk());
-		configuration.setEternal(cacheCfg.isEternal());
-		configuration.setOverflowToDisk(cacheCfg.isOverflowToDisk());
+		configuration.setEternal(cacheCfg.eternal());
+		configuration.setOverflowToDisk(cacheCfg.overflowToDisk());
 		configuration.setTimeToIdleSeconds(cacheCfg.getTimeToIdleSeconds());
 		configuration.setTimeToLiveSeconds(cacheCfg.getTimeToLiveSeconds());
 		configuration.setMemoryStoreEvictionPolicy(cacheCfg.getMemoryStoreEvictionPolicy());
-		configuration.setDiskPersistent(cacheCfg.isDiskPersistent());
+		configuration.setDiskPersistent(cacheCfg.diskPersistent());
 		configuration.setDiskExpiryThreadIntervalSeconds(cacheCfg.getDiskExpiryThreadIntervalSeconds());
 		configuration.setDiskSpoolBufferSizeMB(cacheCfg.getDiskSpoolBufferSizeMb());
 		return configuration;
 	}
 
+	@Transient
 	public boolean isEnabled() {
 		return true;
 	}

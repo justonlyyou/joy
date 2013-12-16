@@ -20,6 +20,6 @@ public class TSysParam_ extends UuidCrudEntity_ {
 	public static volatile SingularAttribute<TSysParam, String> paramName;
 	public static volatile SingularAttribute<TSysParam, String> paramValue;
 	public static volatile SingularAttribute<TSysParam, String> defaultValue;
-	public static volatile SingularAttribute<TSysParam, Boolean> encrypt;
+	public static volatile SingularAttribute<TSysParam, String> encrypt;
 
 }

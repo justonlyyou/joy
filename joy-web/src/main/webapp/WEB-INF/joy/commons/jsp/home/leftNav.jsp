@@ -66,11 +66,11 @@ html,body {
 						data-parent="#accordion" href="#collapse{{:object.id}}"> {{:object.text}} </a>
 				</h4>
 			</div>
-			<div id="collapse{{:object.id}}" class="panel-collapse collapse {{if object.active}}in{{/if}}">
+			<div id="collapse{{:object.id}}" class="panel-collapse collapse {{if object.active == 1}}in{{/if}}">
 				<div class="panel-body">
 					<ul class="nav nav-pills nav-stacked">
 						{{for children}}
-							<li id="leafItem{{:object.id}}" class="{{if object.active}}active{{/if}}">
+							<li id="leafItem{{:object.id}}" class="{{if object.active == 1}}active{{/if}}">
 								<a href="javascript:openPage('{{:object.url}}',{{:object.id}},'{{:object.text}}')">{{:object.text}}</a>
 							</li>
 						{{/for}}

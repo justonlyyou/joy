@@ -24,8 +24,8 @@ public class TSysCodeTableDao extends BaseJpaDao<TSysCodeTable> {
 			
 			@Override
 			public Expression<Boolean> getRestriction(CriteriaBuilder cb, Root<TSysCodeTable> root) {
-				Predicate predicate1 = cb.equal(root.get(TSysCodeTable_.deleted), false);
-				Predicate predicate2 = cb.equal(root.get(TSysCodeTable_.active), true);
+				Predicate predicate1 = cb.equal(root.get(TSysCodeTable_.deleted), "0");
+				Predicate predicate2 = cb.equal(root.get(TSysCodeTable_.active), "1");
 				Predicate predicate3 = cb.and(root.get(TSysCodeTable_.groupingComment).isNotNull());
 				return cb.and(predicate1, predicate2, predicate3);
 			}

@@ -23,10 +23,10 @@ public class UuidCrudEntity extends UuidEntity implements ICrudEntity<String> {
 	protected String deleteTime;
 	protected String deleteUser;
 	protected String deleteDept;
-	protected boolean deleted;
-	protected boolean active;
-	protected boolean builtIn;
 	protected String desc;
+	protected String deleted;
+	protected String active;
+	protected String builtIn;
 
 	@Column(length = 17)
 	@Comment("创建时间")
@@ -119,35 +119,47 @@ public class UuidCrudEntity extends UuidEntity implements ICrudEntity<String> {
 	}
 
 	@Column(length = 1, nullable = false)
-	@DefaultValue("false")
+	@DefaultValue("0")
 	@Comment("是否已删除")
-	public boolean isDeleted() {
+	public String getDeleted() {
 		return deleted;
 	}
+	
+	public boolean deleted() {
+		return "1".equals(deleted);
+	}
 
-	public void setDeleted(boolean deleted) {
+	public void setDeleted(String deleted) {
 		this.deleted = deleted;
 	}
 	
 	@Column(length = 1, nullable = false)
-	@DefaultValue("true")
+	@DefaultValue("0")
 	@Comment("是否激活")
-	public boolean isActive() {
+	public String getActive() {
 		return active;
 	}
+	
+	public boolean active() {
+		return "1".equals(deleted);
+	}
 
-	public void setActive(boolean active) {
+	public void setActive(String active) {
 		this.active = active;
 	}
 
 	@Column(length = 1, updatable = false, nullable = false)
-	@DefaultValue("false")
+	@DefaultValue("0")
 	@Comment("是否系统内置")
-	public boolean isBuiltIn() {
+	public String getBuiltIn() {
 		return builtIn;
 	}
+	
+	public boolean builtIn() {
+		return "1".equals(builtIn);
+	}
 
-	public void setBuiltIn(boolean builtIn) {
+	public void setBuiltIn(String builtIn) {
 		this.builtIn = builtIn;
 	}
 	

@@ -31,7 +31,7 @@ public class TSysDbSchemaVersion implements IEntity<String> {
 	private String installedBy;
 	private String installedOn;
 	private int executionTime;
-	private boolean success;
+	private String success;
 	
 	@Id
 	@Column(length = 32)
@@ -155,13 +155,17 @@ public class TSysDbSchemaVersion implements IEntity<String> {
 		this.executionTime = executionTime;
 	}
 
-	@Column(nullable = false)
+	@Column(length = 1, nullable = false)
 	@Comment("是否成功")
-	public boolean isSuccess() {
+	public String getSuccess() {
 		return success;
 	}
 
-	public void setSuccess(boolean success) {
+	public boolean success() {
+		return "1".equals(success);
+	}
+	
+	public void setSuccess(String success) {
 		this.success = success;
 	}
 

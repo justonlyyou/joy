@@ -19,7 +19,7 @@ public class TSysSeqNum_ {
 	public static volatile SingularAttribute<TSysSeqNum, String> seqName;
 	public static volatile SingularAttribute<TSysSeqNum, Long> curSeq;
 	public static volatile SingularAttribute<TSysSeqNum, String> curPeriodStartTime;
-	public static volatile SingularAttribute<TSysSeqNum, Boolean> active;
+	public static volatile SingularAttribute<TSysSeqNum, String> active;
 	public static volatile SingularAttribute<TSysSeqNum, String> prefixParams;
 	public static volatile SingularAttribute<TSysSeqNum, String> suffixParams;
 	public static volatile SingularAttribute<TSysSeqNum, TSysSeqNumRule> seqRule;

@@ -30,7 +30,7 @@ public class TErbacUser extends UuidCrudEntity  {
 	private Sex sex; // 性别
 	private String password; // 密码
 	private UserStatus stauts; // 状态
-	private boolean online; // 是否在线
+	private String online; // 是否在线
 	private Integer loginCount; // 登录次数
 	private String lastLoginTime; // 最后一次登录时间
 	private Collection<TErbacRole> roles; // 角色
@@ -169,13 +169,18 @@ public class TErbacUser extends UuidCrudEntity  {
 		this.lastLoginTime = lastLoginTime;
 	}
 
+	@Column(length = 1, nullable = false)
 	@Comment("在线")
-	@DefaultValue("false")
-	public boolean isOnline() {
+	@DefaultValue("0")
+	public String getOnline() {
 		return online;
 	}
+	
+	public boolean online() {
+		return "1".equals(online);
+	}
 
-	public void setOnline(boolean online) {
+	public void setOnline(String online) {
 		this.online = online;
 	}
 	

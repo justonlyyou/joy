@@ -40,7 +40,8 @@ insert into `t_sys_code_table`(`id`,`active`,`built_in`,`create_dept`,`create_ti
 values ('JOY_CODE_USER_STATUS',1,1,null,null,null,null,null,null,0,null,null,null,'用户帐号状态代码','CODE',null,'code_user_status','TRANS','JoyDs');
 
 /* 初始化用户 */
-insert into `t_erbac_user`(`id`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`update_dept`,`update_time`,`update_user`,`user_account`,`description`,`last_login_time`,`login_count`,`user_name`,`password`,`sex_code`,`stauts_code`,`active`) values ('kevice_id',0,null,null,null,null,null,null,0,null,null,null,'kevice',null,null,null,'唐玮琳','1e6cc81db305cf52c0533b2692211890','1','01',1);
+insert into `t_erbac_user`(`id`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`update_dept`,`update_time`,`update_user`,`user_account`,`description`,`last_login_time`,`login_count`,`user_name`,`password`,`sex_code`,`stauts_code`,`active`,`online`) 
+values ('kevice_id',0,null,null,null,null,null,null,0,null,null,null,'kevice',null,null,null,'唐玮琳','1e6cc81db305cf52c0533b2692211890','1','01',1,0);
 
 
 
