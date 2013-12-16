@@ -123,11 +123,17 @@ public class SysResTool {
 		CodeRecord result = null;
 		if (StringTool.isNotBlank(code)) {
 			if (StringTool.isNotBlank(codeTableId)) {
+				if("bool".equalsIgnoreCase(codeTableId)) {
+					codeTableId = "joy_code_yes_not";
+				}
 				result = CoreBeanFactory.getSysCodeCacheService().get(codeTableId, code);
 			} else {
 				if (StringTool.isBlank(enumClass)) {
 					logger.error("要翻译的代码对应的表id或枚举类未配置，不作翻译！");
 				} else {
+					if("bool".equalsIgnoreCase(enumClass)) {
+						enumClass = YesNot.class.getName();
+					} 
 					if (enumClass.matches("^([a-zA-Z][\\w]*[.][a-zA-Z][\\w]+)[.]*.*")) {
 						Class<? extends Enum<? extends Enum<?>>> codeEnumClass = EnumTool.getCodeEnumClass(enumClass);
 						if (codeEnumClass == YesNot.class) {

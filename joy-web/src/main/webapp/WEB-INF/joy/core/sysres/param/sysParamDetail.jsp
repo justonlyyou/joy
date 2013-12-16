@@ -36,7 +36,7 @@
         	</tr>
         	<tr>
         		<td>是否加密</td>
-        		<td><tags:codeTrans code="${model.encrypt}" enumClass="com.kvc.joy.commons.enums.YesNot"/></td>
+        		<td><tags:codeTrans code="${model.encrypt}" enumClass="bool"/></td>
         		<td></td>
         		<td></td>
         	</tr>

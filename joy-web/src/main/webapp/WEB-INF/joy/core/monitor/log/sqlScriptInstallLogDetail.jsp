@@ -34,7 +34,7 @@
         	</tr>
         	<tr>
         		<td>成功</td>
-        		<td><tags:codeTrans code="${model.success}" enumClass="com.kvc.joy.commons.enums.YesNot"/></td>
+        		<td><tags:codeTrans code="${model.success}" enumClass="bool"/></td>
         		<td>执行时间(毫秒)</td>
         		<td>${model.executionTime}</td>
         	</tr>

@@ -91,7 +91,7 @@
 									<td>${p.version}</td>
 									<td><tags:timeFormatter timeStr="${p.installedOn}" realFmt="yyyyMMddHHmmssSSS" /></td> 
 									<td>${p.script}</td>
-									<td><tags:codeTrans code="${p.success}" enumClass="com.kvc.joy.commons.enums.YesNot" /></td>
+									<td><tags:codeTrans code="${p.success}" enumClass="bool" /></td>
 								</tr>
 							</c:forEach>
 						</tbody>

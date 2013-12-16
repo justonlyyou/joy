@@ -37,9 +37,9 @@
         	</tr>
         	<tr>
         		<td>主键</td>
-        		<td><tags:codeTrans code="${model.key}" enumClass="com.kvc.joy.commons.enums.YesNot" /></td>
+        		<td><tags:codeTrans code="${model.key}" enumClass="bool" /></td>
         		<td>允许为空</td>
-        		<td><tags:codeTrans code="${model.nullable}" enumClass="com.kvc.joy.commons.enums.YesNot" /></td>
+        		<td><tags:codeTrans code="${model.nullable}" enumClass="bool" /></td>
         	</tr>
         	<tr>
         		<td>类型</td>

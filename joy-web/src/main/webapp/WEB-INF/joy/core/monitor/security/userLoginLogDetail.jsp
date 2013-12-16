@@ -58,7 +58,7 @@
         	</tr>
         	<tr>
         		<td>记住我</td>
-        		<td><tags:codeTrans code="${model.rememberMe}" enumClass="com.kvc.joy.commons.enums.YesNot" /></td>
+        		<td><tags:codeTrans code="${model.rememberMe}" enumClass="bool" /></td>
         	</tr>
 		</table>
 	</div>

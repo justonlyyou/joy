@@ -48,9 +48,9 @@
         	</tr>
         	<tr>
         		<td>启用</td>
-        		<td><tags:codeTrans code="${model.active}" enumClass="com.kvc.joy.commons.enums.YesNot"/></td>
+        		<td><tags:codeTrans code="${model.active}" enumClass="bool"/></td>
         		<td>系统内置</td>
-        		<td><tags:codeTrans code="${model.builtIn}" enumClass="com.kvc.joy.commons.enums.YesNot"/></td>
+        		<td><tags:codeTrans code="${model.builtIn}" enumClass="bool"/></td>
         	</tr>
         	<tr>
         		<td>描述</td>
