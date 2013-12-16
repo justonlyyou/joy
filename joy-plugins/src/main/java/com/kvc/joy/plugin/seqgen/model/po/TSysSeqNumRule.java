@@ -77,7 +77,7 @@ public class TSysSeqNumRule implements IEntity<String> {
 	}
 
 	@Column(length = 1)
-	@Comment(value="周期类型代码", codeId="joy_code_time_unit", detailDesc="为空不循环")
+	@Comment(value="周期类型代码", codeId="time_unit", detailDesc="为空不循环")
 	public Integer getPeriodType() {
 		return periodType;
 	}

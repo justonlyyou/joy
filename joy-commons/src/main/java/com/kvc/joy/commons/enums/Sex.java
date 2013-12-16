@@ -18,7 +18,7 @@ public enum Sex implements ICodeEnum {
 	FEMALE("2", "女"),
 	UNSPECIFIED("9", "未说明的性别");
 	
-	public static final String CODE_TABLE_ID = "joy_code_time_unit";
+	public static final String CODE_TABLE_ID = "time_unit";
 	
 	private String code;
 	private String desc;

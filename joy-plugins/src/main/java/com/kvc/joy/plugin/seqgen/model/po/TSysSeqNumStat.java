@@ -37,7 +37,7 @@ public class TSysSeqNumStat extends UuidEntity {
 	}
 
 	@Column
-	@Comment(value="周期类型代码", codeId="joy_code_time_unit")
+	@Comment(value="周期类型代码", codeId="time_unit")
 	public int getPeriodType() {
 		return periodType;
 	}

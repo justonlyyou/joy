@@ -13,7 +13,7 @@ public enum AuthResourceType implements ICodeEnum {
 	
 	private String code;
 	
-	public static final String CODE_TABLE_ID = "joy_code_auth_res_type";
+	public static final String CODE_TABLE_ID = "auth_res_type";
 	
 	AuthResourceType(String code) {
 		this.code = code;

@@ -11,7 +11,7 @@ public enum UserStatus implements ICodeEnum {
 	/** 正常 */
 	NORMAL("01");
 	
-	public static final String CODE_TABLE_ID = "joy_code_user_status";
+	public static final String CODE_TABLE_ID = "user_status";
 	
 	private String code;
 	

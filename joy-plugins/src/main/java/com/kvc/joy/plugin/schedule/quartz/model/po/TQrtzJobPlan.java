@@ -43,7 +43,7 @@ public class TQrtzJobPlan extends UuidCrudEntity {
 	}
 
 	@Column(length = 2, nullable = false)
-	@Comment(value="运行状态代码", codeId="joy_code_job_run_state")
+	@Comment(value="运行状态代码", codeId="job_run_state")
 	public String getRunState() {
 		return runState;
 	}

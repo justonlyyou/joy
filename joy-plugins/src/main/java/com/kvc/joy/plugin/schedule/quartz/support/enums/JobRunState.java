@@ -22,7 +22,7 @@ public enum JobRunState implements ICodeEnum {
 	/** 已完成 */
 	FINISH("80");
 	
-	public static final String CODE_TABLE_ID = "joy_code_job_run_state";
+	public static final String CODE_TABLE_ID = "job_run_state";
 
 	private final String code;
 

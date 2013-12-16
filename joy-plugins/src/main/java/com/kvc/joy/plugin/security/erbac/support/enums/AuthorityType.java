@@ -11,7 +11,7 @@ public enum AuthorityType implements ICodeEnum {
 	/** 可受权 */
 	AUTHORIZABLE("2");
 	
-	public static final String CODE_TABLE_ID = "joy_code_authority_type";
+	public static final String CODE_TABLE_ID = "authority_type";
 
 	private String code;
 

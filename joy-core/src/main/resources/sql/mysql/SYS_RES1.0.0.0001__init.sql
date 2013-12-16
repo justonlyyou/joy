@@ -2,60 +2,45 @@
 insert into `t_sys_data_src`(`id`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`update_dept`,`update_time`,`update_user`,`active`,`charset`,`db_alias`,`db_name`,`db_type`,`ip_address`,`jndi_name`,`max_conn_count`,`min_conn_count`,`name`,`parameter`,`password`,`server_port`,`username`,`db_url`) 
 values ('JoyDs',1,null,null,null,null,null,null,0,null,null,null,1,null,null,null,null,null,'JDBC/JOY',null,null,'JOY平台数据源',null,'tangwl',null,'root','jdbc:mysql://localhost:3306/joy');
 
+/* 注册代码表 */
 insert into `t_sys_code_table`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`active_field`,`code_field`,`deleted_field`,`grouping_comment`,`grouping_field`,`order_field`,`parent_field`,`pinyin_field`,`segment_rule`,`table_comment`,`table_name`,`trans_field`,`data_src_id`) 
 values ('JOY_CODES',1,1,null,null,null,null,null,null,0,null,null,null,null,'ACTIVE','CODE','DELETED','GROUP_COMMENT','GROUP_ID','ORDINAL','PARENT_CODE','PIN_YIN','SEGMENT_RULE','总代码表','t_sys_codes','TRANS','JoyDs');
 
 /* 布尔代码 */
-CREATE TABLE `code_yes_not` (
-  `CODE` varchar(1) NOT NULL COMMENT '代码',
-  `TRANS` varchar(4) NOT NULL COMMENT '译文',
-  `ORDINAL` varchar(1) NOT NULL COMMENT '序号',
-  PRIMARY KEY (`CODE`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='布尔代码';
-
-insert into `code_yes_not`(`CODE`,`TRANS`,`ORDINAL`) values ('1','是', '1');
-insert into `code_yes_not`(`CODE`,`TRANS`,`ORDINAL`) values ('0','否', '2');
-
-
-insert into `t_sys_code_table`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`update_dept`,`update_time`,`update_user`,`table_comment`,`code_field`,`parent_field`,`table_name`,`trans_field`,`data_src_id`,`order_field`) 
-values ('JOY_CODE_YES_NOT',1,1,null,null,null,null,null,null,0,null,null,null,'布尔代码','CODE',null,'code_yes_not','TRANS','JoyDs','ORDINAL');
-
+insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
+values ('JOY_CODE_YES_NOT_0','1','1',null,null,null,null,null,null,'0',null,null,null,null,'0','布尔代码','yes_not','2',null,'fou',null,'否','not');
+insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
+values ('JOY_CODE_YES_NOT_1','1','1',null,null,null,null,null,null,'0',null,null,null,null,'1','布尔代码','yes_not','1',null,'shi',null,'是','yes');
 
 /* 性别代码 */
-CREATE TABLE `code_sex` (
-  `CODE` varchar(1) NOT NULL COMMENT '代码',
-  `TRANS` varchar(32) NOT NULL COMMENT '译文',
-  PRIMARY KEY (`CODE`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='性别代码';
-
-insert into `code_sex`(`CODE`,`TRANS`) values ('0','未知的性别');
-insert into `code_sex`(`CODE`,`TRANS`) values ('1','男');
-insert into `code_sex`(`CODE`,`TRANS`) values ('2','女');
-insert into `code_sex`(`CODE`,`TRANS`) values ('9','未说明的性别');
-
-insert into `t_sys_code_table`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`update_dept`,`update_time`,`update_user`,`table_comment`,`code_field`,`parent_field`,`table_name`,`trans_field`,`data_src_id`) 
-values ('JOY_CODE_SEX',1,1,null,null,null,null,null,null,0,null,null,null,'性别代码','CODE',null,'code_sex','TRANS','JoyDs');
-
+insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
+values ('JOY_CODE_SEX_0','1','1',null,null,null,null,null,null,'0',null,null,null,null,'0','性别代码','sex','9',null,'wei zhi de xing bei',null,'未知的性别','unknown');
+insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
+values ('JOY_CODE_SEX_1','1','1',null,null,null,null,null,null,'0',null,null,null,null,'1','性别代码','sex','1',null,'nan',null,'男','male');
+insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
+values ('JOY_CODE_SEX_2','1','1',null,null,null,null,null,null,'0',null,null,null,null,'2','性别代码','sex','2',null,'nv',null,'女','female');
+insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
+values ('JOY_CODE_SEX_9','1','1',null,null,null,null,null,null,'0',null,null,null,null,'9','性别代码','sex','10',null,'wei shuo ming de xing bei',null,'未说明的性别','untold');
 
 /* 周期类型代码 */
-CREATE TABLE `code_time_unit` (
-  `CODE` varchar(1) NOT NULL COMMENT '代码',
-  `TRANS` varchar(32) NOT NULL COMMENT '译文',
-  PRIMARY KEY (`CODE`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='周期类型代码';
-
-insert into `code_time_unit`(`CODE`,`TRANS`) values ('1','年');
-insert into `code_time_unit`(`CODE`,`TRANS`) values ('2','月');
-insert into `code_time_unit`(`CODE`,`TRANS`) values ('3','周');
-insert into `code_time_unit`(`CODE`,`TRANS`) values ('4','日');
-insert into `code_time_unit`(`CODE`,`TRANS`) values ('5','小时');
-insert into `code_time_unit`(`CODE`,`TRANS`) values ('6','分钟');
-insert into `code_time_unit`(`CODE`,`TRANS`) values ('7','秒');
-insert into `code_time_unit`(`CODE`,`TRANS`) values ('8','毫秒');
-insert into `code_time_unit`(`CODE`,`TRANS`) values ('9','微秒');
-
-insert into `t_sys_code_table`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`update_dept`,`update_time`,`update_user`,`table_comment`,`code_field`,`parent_field`,`table_name`,`trans_field`,`data_src_id`) 
-values ('JOY_CODE_TIME_UNIT',1,1,null,null,null,null,null,null,0,null,null,null,'周期类型代码','CODE',null,'code_time_unit','TRANS','JoyDs');
+insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
+values ('JOY_CODE_TIME_UNIT_1','1','1',null,null,null,null,null,null,'0',null,null,null,null,'1','周期类型代码','time_unit',null,null,'nian',null,'年','year');
+insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
+values ('JOY_CODE_TIME_UNIT_2','1','1',null,null,null,null,null,null,'0',null,null,null,null,'2','周期类型代码','time_unit',null,null,'yue',null,'月','month');
+insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
+values ('JOY_CODE_TIME_UNIT_3','1','1',null,null,null,null,null,null,'0',null,null,null,null,'3','周期类型代码','time_unit',null,null,'zhou',null,'周','week');
+insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
+values ('JOY_CODE_TIME_UNIT_4','1','1',null,null,null,null,null,null,'0',null,null,null,null,'4','周期类型代码','time_unit',null,null,'ri',null,'日','day');
+insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
+values ('JOY_CODE_TIME_UNIT_5','1','1',null,null,null,null,null,null,'0',null,null,null,null,'5','周期类型代码','time_unit',null,null,'xiao shi',null,'小时','hour');
+insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
+values ('JOY_CODE_TIME_UNIT_6','1','1',null,null,null,null,null,null,'0',null,null,null,null,'6','周期类型代码','time_unit',null,null,'fen zhong',null,'分钟','minute');
+insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
+values ('JOY_CODE_TIME_UNIT_7','1','1',null,null,null,null,null,null,'0',null,null,null,null,'7','周期类型代码','time_unit',null,null,'miao',null,'秒','second');
+insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
+values ('JOY_CODE_TIME_UNIT_8','1','1',null,null,null,null,null,null,'0',null,null,null,null,'8','周期类型代码','time_unit',null,null,'hao miao',null,'毫秒','millisecond');
+insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
+values ('JOY_CODE_TIME_UNIT_9','1','1',null,null,null,null,null,null,'0',null,null,null,null,'9','周期类型代码','time_unit',null,null,'wei miao',null,'微秒','microsecond');
 
 
 /* 初始化系统参数 */

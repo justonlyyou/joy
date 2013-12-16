@@ -21,7 +21,7 @@ public enum LogoutMethod implements ICodeEnum {
 	/** 其它 */
 	OTHERS("99");
 	
-	public static final String CODE_TABLE_ID = "joy_code_logout_method";
+	public static final String CODE_TABLE_ID = "logout_method";
 	
 	private String code;
 	

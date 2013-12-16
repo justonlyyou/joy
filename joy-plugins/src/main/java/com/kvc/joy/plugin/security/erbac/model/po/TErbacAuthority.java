@@ -154,7 +154,7 @@ public class TErbacAuthority extends UuidCrudEntity {
 	}
 	
 	@Column(length = 2, nullable = false)
-	@Comment(value="资源类型代码", codeId="joy_code_auth_res_type")
+	@Comment(value="资源类型代码", codeId="auth_res_type")
 	public String getResourceTypeCode() {
 		return resourceType == null ? null : resourceType.getCode();
 	}

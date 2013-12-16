@@ -57,7 +57,7 @@ public class TLogoutLog extends UuidEntity {
 	}
 
 	@Column(length = 2, nullable = false)
-	@Comment(value="登出方式代码", codeId="joy_code_logout_method")
+	@Comment(value="登出方式代码", codeId="logout_method")
 	public String getLogoutMethodCode() {
 		return logoutMethod == null ? null : logoutMethod.getCode();
 	}

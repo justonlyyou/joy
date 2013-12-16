@@ -121,7 +121,7 @@ public class TLoginLog extends UuidEntity {
 	}
 	
 	@Column(length = 2)
-	@Comment(value="登陆状态代码", codeId="joy_code_login_state")
+	@Comment(value="登陆状态代码", codeId="login_state")
 	public String getLoginStateCode() {
 		return loginState == null ? null : loginState.getCode();
 	}

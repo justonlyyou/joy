@@ -69,7 +69,7 @@ public class TErbacUser extends UuidCrudEntity  {
 	}
 
 	@Column(length = 2, nullable = false)
-	@Comment(value="状态代码", codeId="joy_code_user_status")
+	@Comment(value="状态代码", codeId="user_status")
 	public String getStautsCode() {
 		return stauts == null ? null : stauts.getCode();
 	}
@@ -88,7 +88,7 @@ public class TErbacUser extends UuidCrudEntity  {
 	}
 
 	@Column(length = 1, nullable = false)
-	@Comment(value="性别代码", codeId="joy_code_sex")
+	@Comment(value="性别代码", codeId="sex")
 	public String getSexCode() {
 		return sex == null ? null : sex.getCode();
 	}

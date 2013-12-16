@@ -124,7 +124,7 @@ public class SysResTool {
 		if (StringTool.isNotBlank(code)) {
 			if (StringTool.isNotBlank(codeTableId)) {
 				if("bool".equalsIgnoreCase(codeTableId)) {
-					codeTableId = "joy_code_yes_not";
+					codeTableId = "yes_not";
 				}
 				result = CoreBeanFactory.getSysCodeCacheService().get(codeTableId, code);
 			} else {

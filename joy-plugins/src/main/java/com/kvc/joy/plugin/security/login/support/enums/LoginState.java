@@ -22,7 +22,7 @@ public enum LoginState implements ICodeEnum {
 	/** 帐号被锁定 */
 	ACCOUNT_LOCK("21");
 	
-	public static final String CODE_TABLE_ID = "joy_code_login_state";
+	public static final String CODE_TABLE_ID = "login_state";
 
 	private String code;
 

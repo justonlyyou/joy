@@ -31,7 +31,7 @@ public class TErbacUserAuth extends UuidEntity {
 	}
 
 	@Column(length = 1, nullable = false)
-	@Comment(value="权限类型代码", codeId="joy_code_authority_type")
+	@Comment(value="权限类型代码", codeId="authority_type")
 	public String getAuthorityTypeCode() {
 		return authorityType.getCode();
 	}

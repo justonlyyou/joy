@@ -16,7 +16,7 @@ public enum YesNot implements ICodeEnum {
 	YES(true, "1", "是"),
 	NOT(false, "0", "否");
 	
-	public static final String CODE_TABLE_ID = "joy_code_yes_not";
+	public static final String CODE_TABLE_ID = "yes_not";
 	
 	private boolean bool;
 	private String binary;

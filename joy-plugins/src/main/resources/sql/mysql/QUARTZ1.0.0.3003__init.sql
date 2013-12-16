@@ -1,18 +1,11 @@
 /* 任务运行状态代码 */
-CREATE TABLE `code_job_run_state` (
-  `CODE` varchar(2) NOT NULL COMMENT '代码',
-  `TRANS` varchar(32) NOT NULL COMMENT '译文',
-  PRIMARY KEY (`CODE`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='任务运行状态代码';
-
-insert into `code_job_run_state`(`CODE`,`TRANS`) values ('00','未启动');
-insert into `code_job_run_state`(`CODE`,`TRANS`) values ('11','运行中');
-insert into `code_job_run_state`(`CODE`,`TRANS`) values ('21','异常终止');
-insert into `code_job_run_state`(`CODE`,`TRANS`) values ('22','用户挂起');
-insert into `code_job_run_state`(`CODE`,`TRANS`) values ('80','已完成');
-
-insert into `t_sys_code_table`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`update_dept`,`update_time`,`update_user`,`table_comment`,`code_field`,`parent_field`,`table_name`,`trans_field`,`data_src_id`) 
-values ('JOY_CODE_JOB_RUN_STATE',1,1,null,null,null,null,null,null,0,null,null,null,'登陆失败原因代码','CODE',null,'code_job_run_state','TRANS','JoyDs');
-
-
-
+insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
+values ('JOY_CODE_JOB_RUN_STATE_00','1','1',null,null,null,null,null,null,'0',null,null,null,null,'00','任务运行状态代码','job_run_state',null,null,'wei qi dong',null,'未启动','unstart');
+insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
+values ('JOY_CODE_JOB_RUN_STATE_11','1','1',null,null,null,null,null,null,'0',null,null,null,null,'11','任务运行状态代码','job_run_state',null,null,'yun xing zhong',null,'运行中','running');
+insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
+values ('JOY_CODE_JOB_RUN_STATE_21','1','1',null,null,null,null,null,null,'0',null,null,null,null,'21','任务运行状态代码','job_run_state',null,null,'yi chang zhong zhi',null,'异常终止','abnormal termination');
+insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
+values ('JOY_CODE_JOB_RUN_STATE_22','1','1',null,null,null,null,null,null,'0',null,null,null,null,'22','任务运行状态代码','job_run_state',null,null,'yong hu gua qi',null,'用户挂起','user pause');
+insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`description`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
+values ('JOY_CODE_JOB_RUN_STATE_80','1','1',null,null,null,null,null,null,'0',null,null,null,null,'80','任务运行状态代码','job_run_state',null,null,'yi wan cheng',null,'已完成','finished');

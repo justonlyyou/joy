@@ -32,7 +32,7 @@
         		<td>CRON表达式</td>
         		<td>${model.cronExp}</td>
         		<td>运行状态</td>
-        		<td><tags:codeTrans code="${model.runState}" tableId="joy_code_job_run_state"/></td>
+        		<td><tags:codeTrans code="${model.runState}" tableId="job_run_state"/></td>
         	</tr>
         	<tr>
         		<td>上次执行时间</td>

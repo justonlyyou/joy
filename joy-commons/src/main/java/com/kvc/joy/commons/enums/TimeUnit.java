@@ -21,7 +21,7 @@ public enum TimeUnit implements ICodeEnum {
 	MILLISECOND("8", "毫秒"),
 	MICROSECOND("9", "微秒");
 	
-	public static final String CODE_TABLE_ID = "joy_code_time_unit";
+	public static final String CODE_TABLE_ID = "time_unit";
 	
 	private String code;
 	private String desc;
