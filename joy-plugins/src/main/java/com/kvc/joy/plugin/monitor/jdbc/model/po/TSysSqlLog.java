@@ -58,7 +58,7 @@ public class TSysSqlLog extends UuidEntity {
 		this.moduleName = moduleName;
 	}
 
-	@Column(length = 8)
+	@Column
 	@Comment(value="耗时", detailDesc="单位: 毫秒")
 	public Long getCostTime() {
 		return costTime;

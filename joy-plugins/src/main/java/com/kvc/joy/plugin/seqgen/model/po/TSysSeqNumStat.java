@@ -36,7 +36,7 @@ public class TSysSeqNumStat extends UuidEntity {
 		this.numId = numId;
 	}
 
-	@Column(length = 1)
+	@Column
 	@Comment(value="周期类型代码", codeId="joy_code_time_unit")
 	public int getPeriodType() {
 		return periodType;
@@ -46,7 +46,7 @@ public class TSysSeqNumStat extends UuidEntity {
 		this.periodType = periodType;
 	}
 
-	@Column(length = 10)
+	@Column
 	@Comment("周期数")
 	public Long getPeriodCount() {
 		return periodCount;
@@ -56,7 +56,7 @@ public class TSysSeqNumStat extends UuidEntity {
 		this.periodCount = periodCount;
 	}
 
-	@Column(length = 20)
+	@Column
 	@Comment("最大序列号")
 	public Long getMaxNum() {
 		return maxNum;
@@ -76,7 +76,7 @@ public class TSysSeqNumStat extends UuidEntity {
 		this.maxFullNum = maxFullNum;
 	}
 
-	@Column(length = 20)
+	@Column
 	@Comment("序列号数")
 	public Long getNumCount() {
 		return numCount;

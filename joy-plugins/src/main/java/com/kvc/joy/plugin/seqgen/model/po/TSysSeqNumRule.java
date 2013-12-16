@@ -128,7 +128,7 @@ public class TSysSeqNumRule implements IEntity<String> {
 		this.suffix = suffix;
 	}
 
-	@Column(length = 6, nullable = false)
+	@Column(nullable = false)
 	@Comment("增量值")
 	public int getIncrement() {
 		return increment;
@@ -138,7 +138,7 @@ public class TSysSeqNumRule implements IEntity<String> {
 		this.increment = increment;
 	}
 
-	@Column(length = 6)
+	@Column
 	@Comment(value="缓存大小", detailDesc="为0或1表示不缓存")
 	public int getCacheSize() {
 		return cacheSize;
