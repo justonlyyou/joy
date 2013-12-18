@@ -15,7 +15,7 @@
 		<table style="height: 100%; width: 600px; text-align: center;">
 			<tr>
 				<td>
-				<img width="220" height="393" src="${joyCtx}/commons/images/error.png" style="float: left; padding-right: 20px;" alt="" />
+				<img width="220" height="393" src="${joyCtx}/images/bg/error.png" style="float: left; padding-right: 20px;" alt="" />
 				<h4 style="color: #FF0000; line-height: 25px; font-size: 20px; text-align: left;">404 Oops! Page Not Found</h4>
 				<h4 style="color: #FF0000; line-height: 25px; font-size: 20px; text-align: left;"></h4>
 				<p style="line-height: 12px; color: #666666; font-family: Tahoma, '宋体'; font-size: 12px; text-align: left;">
