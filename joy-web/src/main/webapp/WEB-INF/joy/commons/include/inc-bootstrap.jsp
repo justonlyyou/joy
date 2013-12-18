@@ -1,7 +1,7 @@
 <%@ include file="/WEB-INF/joy/commons/include/inc-jquery.jsp"%>
 
-<link href="${joyCtx}/third/bootstrap/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
-<script src="${joyCtx}/third/bootstrap/bootstrap/js/bootstrap.js"></script>
+<link href="${thirdCtx}/bootstrap/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+<script src="${thirdCtx}/bootstrap/bootstrap/js/bootstrap.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('[data-toggle=tooltip]').tooltip({
@@ -15,4 +15,4 @@
 	});
 </script>
 
-<link href="${joyCtx}/third/bootstrap/font-awesome/css/font-awesome.css" rel="stylesheet">
+<link href="${thirdCtx}/bootstrap/font-awesome/css/font-awesome.css" rel="stylesheet">
