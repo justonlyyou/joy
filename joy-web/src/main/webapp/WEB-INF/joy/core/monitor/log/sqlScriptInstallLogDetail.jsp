@@ -34,13 +34,13 @@
         	</tr>
         	<tr>
         		<td>成功</td>
-        		<td><tags:codeTrans code="${model.success}" enumClass="bool"/></td>
+        		<td><joy:codeTrans code="${model.success}" enumClass="bool"/></td>
         		<td>执行时间(毫秒)</td>
         		<td>${model.executionTime}</td>
         	</tr>
         	<tr>
         		<td>安装时间</td>
-        		<td><tags:timeFormatter timeStr="${model.installedOn}" realFmt="yyyyMMddHHmmssSSS" displayFmt="yyyy-MM-dd HH:mm:ss SSS"/></td>
+        		<td><joy:timeFormatter timeStr="${model.installedOn}" realFmt="yyyyMMddHHmmssSSS" displayFmt="yyyy-MM-dd HH:mm:ss SSS"/></td>
         		<td>安装用户</td>
         		<td>${model.installedBy}</td>
         	</tr>

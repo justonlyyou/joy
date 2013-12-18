@@ -32,25 +32,25 @@
         		<td>CRON表达式</td>
         		<td>${model.cronExp}</td>
         		<td>运行状态</td>
-        		<td><tags:codeTrans code="${model.runState}" tableId="job_run_state"/></td>
+        		<td><joy:codeTrans code="${model.runState}" tableId="job_run_state"/></td>
         	</tr>
         	<tr>
         		<td>上次执行时间</td>
-        		<td><tags:timeFormatter timeStr="${model.lastFireTime}" /> </td>
+        		<td><joy:timeFormatter timeStr="${model.lastFireTime}" /> </td>
         		<td>下次执行时间</td>
-        		<td><tags:timeFormatter timeStr="${model.nextFireTime}" /></td>
+        		<td><joy:timeFormatter timeStr="${model.nextFireTime}" /></td>
         	</tr>
         	<tr>
         		<td>生效时间</td>
-        		<td><tags:timeFormatter timeStr="${model.effectTime}" /> </td>
+        		<td><joy:timeFormatter timeStr="${model.effectTime}" /> </td>
         		<td>到期时间</td>
-        		<td><tags:timeFormatter timeStr="${model.expireTime}" /></td>
+        		<td><joy:timeFormatter timeStr="${model.expireTime}" /></td>
         	</tr>
         	<tr>
         		<td>启用</td>
-        		<td><tags:codeTrans code="${model.active}" enumClass="bool"/></td>
+        		<td><joy:codeTrans code="${model.active}" enumClass="bool"/></td>
         		<td>系统内置</td>
-        		<td><tags:codeTrans code="${model.builtIn}" enumClass="bool"/></td>
+        		<td><joy:codeTrans code="${model.builtIn}" enumClass="bool"/></td>
         	</tr>
         	<tr>
         		<td>描述</td>
@@ -58,7 +58,7 @@
         	</tr>
 		</table>
 		
-		<tags:crudDetailList />
+		<joy:crudDetailList />
 	</div>
 </body>
 </html>

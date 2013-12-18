@@ -30,7 +30,7 @@
 	<form action="${ctx}/mdRdbObj/list" method="POST">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<tags:pageNavTitle />
+				<joy:pageNavTitle />
 			</div>
 			<div class="panel-body">
 				<div class="joy-search-bar">
@@ -39,7 +39,7 @@
 							<label for="dsId" class="col-sm-1 control-label">数据源</label>
 							<div class="col-sm-2">
 								<select class="form-control" name="dsId" value="${dsId}" data-joy-props="operator:'='"> 
-									<c:forEach items="${joy:getAllDataSrc()}" var="entry">
+									<c:forEach items="${joyFn:getAllDataSrc()}" var="entry">
 										<option value="${entry.id}" class="joy-select-option">${entry.name}</option>
 									</c:forEach>
 								</select>
@@ -70,7 +70,7 @@
 							<tr>
 								<th class="joy-table-seq-col" width="30px">#</th>
 								<th width="70px">操作</th>
-								<th><tags:orderColumn property="name" columnName="对象名" defaultOrder="ASC" /></th>
+								<th><joy:orderColumn property="name" columnName="对象名" defaultOrder="ASC" /></th>
 								<th>对象注释</th>
 								<th>对象类型</th>
 							</tr>
@@ -79,7 +79,7 @@
 							<c:forEach items="${pageStore.result}" var="p" varStatus="stauts">
 								<tr>
 									<td class="joy-table-seq-col">${stauts.index+1}</td>
-									<td><tags:listOperations id="${p.dsId}-${p.name}" showEditOp="false" showDeleteOp="false"/></td>
+									<td><joy:listOperations id="${p.dsId}-${p.name}" showEditOp="false" showDeleteOp="false"/></td>
 									<td>${p.name}</td>
 									<td>${p.comment}</td>
 									<td>${p.type}</td>
@@ -89,7 +89,7 @@
 					</table>
 				</div>
 
-				<tags:pagination />
+				<joy:pagination />
 
 			</div>
 		</div>

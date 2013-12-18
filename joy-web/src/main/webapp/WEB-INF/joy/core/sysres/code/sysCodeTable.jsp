@@ -30,7 +30,7 @@
 	<form action="${ctx}/sysCodeTable/list" method="POST">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<tags:pageNavTitle />
+				<joy:pageNavTitle />
 			</div>
 			<div class="panel-body">
 				<div class="joy-search-bar">
@@ -63,8 +63,8 @@
 								<th class="joy-table-seq-col" width="30px">#</th>
 								<th width="70px">操作</th>
 								<th>
-								<tags:orderColumn property="tableName" columnName="表名" defaultOrder="ASC" /></th>
-								<th><tags:orderColumn property="tableComment" columnName="表中文名" /></th>
+								<joy:orderColumn property="tableName" columnName="表名" defaultOrder="ASC" /></th>
+								<th><joy:orderColumn property="tableComment" columnName="表中文名" /></th>
 								<th>代码字段名</th>
 								<th>译文字段名</th>
 								<th>排序字段名</th>
@@ -74,7 +74,7 @@
 							<c:forEach items="${pageStore.result}" var="p" varStatus="stauts">
 								<tr>
 									<td class="joy-table-seq-col">${stauts.index+1}</td>
-									<td><tags:listOperations id="${p.id}"/></td>
+									<td><joy:listOperations id="${p.id}"/></td>
 									<td>${p.tableName}</td>
 									<td>${p.tableComment}</td>
 									<td>${p.codeField}</td>
@@ -86,7 +86,7 @@
 					</table>
 				</div>
 
-				<tags:pagination />
+				<joy:pagination />
 
 			</div>
 		</div>

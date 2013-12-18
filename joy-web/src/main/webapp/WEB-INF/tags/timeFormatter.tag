@@ -9,5 +9,5 @@
 	<c:set var="realFmt" value='${realFmt==null ? "yyyyMMddHHmmss" : realFmt}'/>
 	<c:set var="displayFmt" value='${displayFmt==null ? "yyyy-MM-dd HH:mm:ss" : displayFmt}'/>
 	
-	${joy:formatDate(timeStr, realFmt, displayFmt)}
+	${joyFn:formatDate(timeStr, realFmt, displayFmt)}
 </c:if>

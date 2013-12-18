@@ -29,53 +29,61 @@
 			class="table table-condensed table-hover table-bordered joy-detail-table">
 			<tr>
         		<td>数据源名称</td>
-        		<td><input type="text" class="form-control input-sm" placeholder="Text input"></td>
+        		<td><input type="text" class="form-control input-sm" name="model.name"></td>
         		<td>数据库类型</td>
         		<td>
-					<select class="form-control  input-sm">
-						<option value="">-- 请选择 --</option>
+					<select class="form-control  input-sm" name="model.dbType">
+						<joy:codeOptions enumClass="com.kvc.joy.core.persistence.jdbc.support.enums.RdbType" />
 					</select>
 				</td>
         	</tr>
         	<tr>
-        		<td>数据源名称</td>
-        		<td><input type="text" class="form-control input-sm" placeholder="Text input"></td>
-        		<td>数据库类型</td>
-        		<td>
-					<select class="form-control  input-sm">
-						<option value="">-- 请选择 --</option>
-					</select>
-				</td>
+        		<td>数据库名称</td>
+        		<td><input type="text" class="form-control input-sm" name="model.dbName"></td>
+        		<td>数据库别名</td>
+        		<td><input type="text" class="form-control input-sm" name="model.dbAlias"></td>
         	</tr>
         	<tr>
-        		<td>数据源名称</td>
-        		<td><input type="text" class="form-control input-sm" placeholder="Text input"></td>
-        		<td>数据库类型</td>
-        		<td>
-					<select class="form-control  input-sm">
-						<option value="">-- 请选择 --</option>
-					</select>
-				</td>
+        		<td>IP地址</td>
+        		<td><input type="text" class="form-control input-sm" name="model.ipAddress"></td>
+        		<td>端口</td>
+        		<td><input type="text" class="form-control input-sm" name="model.serverPort"></td>
         	</tr>
         	<tr>
-        		<td>数据源名称</td>
-        		<td><input type="text" class="form-control input-sm" placeholder="Text input"></td>
-        		<td>数据库类型</td>
-        		<td>
-					<select class="form-control  input-sm">
-						<option value="">-- 请选择 --</option>
-					</select>
-				</td>
+        		<td>用户名</td>
+        		<td><input type="text" class="form-control input-sm" name="model.username"></td>
+        		<td>密码</td>
+        		<td><input type="password" class="form-control input-sm" name="model.password"></td>
         	</tr>
         	<tr>
-        		<td>数据源名称</td>
-        		<td><input type="text" class="form-control input-sm" placeholder="Text input"></td>
-        		<td>数据库类型</td>
+        		<td>字符集</td>
+        		<td><input type="text" class="form-control input-sm" name="model.charset"></td>
+        		<td>其它参数</td>
+        		<td><input type="password" class="form-control input-sm" name="model.parameter"></td>
+        	</tr>
+        	<tr>
+        		<td>最小连接数</td>
+        		<td><input type="text" class="form-control input-sm" name="model.minConnCount"></td>
+        		<td>最大连接数</td>
+        		<td><input type="password" class="form-control input-sm" name="model.maxConnCount"></td>
+        	</tr>
+        	<tr>
+        		<td>连接串</td>
+        		<td colspan="3"><input type="text" class="form-control input-sm" name="model.dbUrl"></td>
+        	</tr>
+        	<tr>
+        		<td>JNDI</td>
+        		<td><input type="text" class="form-control input-sm" name="model.jndi"></td>
+        		<td>启用</td>
         		<td>
-					<select class="form-control  input-sm">
-						<option value="">-- 请选择 --</option>
+        			<select class="form-control  input-sm" name="model.active">
+						<joy:codeOptions enumClass="bool" showEmptyOption="false"/>
 					</select>
-				</td>
+        		</td>
+        	</tr>
+        	<tr>
+        		<td>描述</td>
+        		<td colspan="3"><input type="text" class="form-control input-sm" name="model.desc"></td>
         	</tr>
 		</table>
 		

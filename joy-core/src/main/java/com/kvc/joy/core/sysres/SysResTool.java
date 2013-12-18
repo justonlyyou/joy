@@ -73,6 +73,7 @@ public class SysResTool {
 	 * @time 2013-2-8 下午8:04:52
 	 */
 	public static Map<String, CodeRecord> getAllCodeAndTrans(String codeTableId) {
+		codeTableId = adaptCodeTableId(codeTableId);
 		return CoreBeanFactory.getSysCodeCacheService().get(codeTableId);
 	}
 	
@@ -104,6 +105,7 @@ public class SysResTool {
 	 * @time 2013-2-8 下午8:07:43
 	 */
 	public static CodeRecord translateCode(String codeTableId, String code) {
+		codeTableId = adaptCodeTableId(codeTableId);
 		return CoreBeanFactory.getSysCodeCacheService().get(codeTableId, code);
 	}
 	
@@ -123,17 +125,13 @@ public class SysResTool {
 		CodeRecord result = null;
 		if (StringTool.isNotBlank(code)) {
 			if (StringTool.isNotBlank(codeTableId)) {
-				if("bool".equalsIgnoreCase(codeTableId)) {
-					codeTableId = "yes_not";
-				}
+				codeTableId = adaptCodeTableId(codeTableId);
 				result = CoreBeanFactory.getSysCodeCacheService().get(codeTableId, code);
 			} else {
 				if (StringTool.isBlank(enumClass)) {
 					logger.error("要翻译的代码对应的表id或枚举类未配置，不作翻译！");
 				} else {
-					if("bool".equalsIgnoreCase(enumClass)) {
-						enumClass = YesNot.class.getName();
-					} 
+					enumClass = adaptEnumClass(enumClass);
 					if (enumClass.matches("^([a-zA-Z][\\w]*[.][a-zA-Z][\\w]+)[.]*.*")) {
 						Class<? extends Enum<? extends Enum<?>>> codeEnumClass = EnumTool.getCodeEnumClass(enumClass);
 						if (codeEnumClass == YesNot.class) {
@@ -181,6 +179,7 @@ public class SysResTool {
 			if (StringTool.isBlank(enumClass)) {
 				throw new SystemException("要获取的代码对应的表id或枚举类未配置！");
 			} else {
+				enumClass = adaptEnumClass(enumClass);
 				if (enumClass.matches("^([a-zA-Z][\\w]*[.][a-zA-Z][\\w]+)[.]*.*")) {
 					Class eClass = EnumTool.getCodeEnumClass(enumClass);
 					Map<String, String> map = EnumTool.getCodeMap(eClass);
@@ -224,6 +223,20 @@ public class SysResTool {
 	 */
 	public static List<TSysDataSrc> getAllDataSrc() {
 		return CoreBeanFactory.getSysDataSrcService().getAllDataSrc();
+	}
+	
+	private static String adaptCodeTableId(String codeTableId) {
+		if("bool".equalsIgnoreCase(codeTableId)) {
+			codeTableId = "yes_not";
+		}
+		return codeTableId;
+	}
+	
+	private static String adaptEnumClass(String enumClass) {
+		if("bool".equalsIgnoreCase(enumClass)) {
+			enumClass = YesNot.class.getName();
+		} 
+		return enumClass;
 	}
 
 }

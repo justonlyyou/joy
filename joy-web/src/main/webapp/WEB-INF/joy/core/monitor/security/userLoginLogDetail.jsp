@@ -34,9 +34,9 @@
         	</tr>
         	<tr>
         		<td>登陆时间</td>
-        		<td><tags:timeFormatter timeStr="${model.loginTime}"/></td>
+        		<td><joy:timeFormatter timeStr="${model.loginTime}"/></td>
         		<td>登出时间</td>
-        		<td><tags:timeFormatter timeStr="${model.logoutTime}"/></td>
+        		<td><joy:timeFormatter timeStr="${model.logoutTime}"/></td>
         	</tr>
         	<tr>
         		<td>登陆状态</td>
@@ -58,7 +58,7 @@
         	</tr>
         	<tr>
         		<td>记住我</td>
-        		<td><tags:codeTrans code="${model.rememberMe}" enumClass="bool" /></td>
+        		<td><joy:codeTrans code="${model.rememberMe}" enumClass="bool" /></td>
         	</tr>
 		</table>
 	</div>

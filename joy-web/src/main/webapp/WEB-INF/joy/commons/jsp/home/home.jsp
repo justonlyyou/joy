@@ -9,7 +9,7 @@
 <meta name="description" content="主页面">
 <meta name="author" content="Kevice">
 
-<title>${joy:getAppProperty('app.name')}</title>
+<title>${joyFn:getAppProperty('app.name')}</title>
 
 <style type="text/css">
 html,body {

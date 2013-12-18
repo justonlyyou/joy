@@ -30,13 +30,13 @@
 	<form action="${ctx}/userLoginLog/list" method="POST">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<tags:pageNavTitle />
+				<joy:pageNavTitle />
 			</div>
 			<div class="panel-body">
 				<div class="joy-search-bar">
 					<table>
 						<tr>
-							<tags:timeRangePicker property="loginTime" startPlaceholder="登陆时间始" endPlaceholder="登陆时间止"/>
+							<joy:timeRangePicker property="loginTime" startPlaceholder="登陆时间始" endPlaceholder="登陆时间止"/>
 							<td>&nbsp;&nbsp;</td>
 							<td>
 								<input class="form-control" value="${userAccount}" name="userAccount" 
@@ -51,7 +51,7 @@
 							<td>
 								<select class="form-control" name="loginStateCode" value="${loginStateCode}" title="登陆状态" data-joy-props="operator:'='">
 									<option value="">-- 登陆状态 --</option>
-									<tags:codeOptions enumClass="com.kvc.joy.plugin.security.login.support.enums.LoginState" showEmptyOption="false"/>
+									<joy:codeOptions enumClass="com.kvc.joy.plugin.security.login.support.enums.LoginState" showEmptyOption="false"/>
 								</select>
 							</td>
 							<td>&nbsp;&nbsp;</td>
@@ -73,7 +73,7 @@
 								<th class="joy-table-seq-col" width="30px">#</th>
 								<th width="70px">操作</th>
 								<th>帐号</th>
-								<th><tags:orderColumn property="loginTime" columnName="登陆时间" defaultOrder="DESC" /></th>
+								<th><joy:orderColumn property="loginTime" columnName="登陆时间" defaultOrder="DESC" /></th>
 								<th>登出时间</th>
 								<th>登陆IP</th>
 								<th>登陆状态</th>
@@ -83,10 +83,10 @@
 							<c:forEach items="${pageStore.result}" var="p" varStatus="stauts">
 								<tr>
 									<td class="joy-table-seq-col">${stauts.index+1}</td>
-									<td><tags:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false"/></td>
+									<td><joy:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false"/></td>
 									<td>${p.userAccount}</td>
-									<td><tags:timeFormatter timeStr="${p.loginTime}"/></td>
-									<td><tags:timeFormatter timeStr="${p.logoutTime}"/></td>
+									<td><joy:timeFormatter timeStr="${p.loginTime}"/></td>
+									<td><joy:timeFormatter timeStr="${p.logoutTime}"/></td>
 									<td>${p.loginIp}</td>
 									<td>${p.loginState.trans}</td>
 								</tr>
@@ -95,7 +95,7 @@
 					</table>
 				</div>
 
-				<tags:pagination />
+				<joy:pagination />
 
 			</div>
 		</div>

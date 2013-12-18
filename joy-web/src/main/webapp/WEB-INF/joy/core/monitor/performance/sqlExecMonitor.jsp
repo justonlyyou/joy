@@ -30,7 +30,7 @@
 	<form action="${ctx}/sqlExecMonitor/list" method="POST">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<tags:pageNavTitle />
+				<joy:pageNavTitle />
 			</div>
 			<div class="panel-body">
 				<div class="joy-search-bar">
@@ -39,7 +39,7 @@
 							<td>
 								执行时间：
 							</td>
-							<tags:timeRangePicker property="logTime" realFmt="yyyyMMddHHmmssSSS"/>
+							<joy:timeRangePicker property="logTime" realFmt="yyyyMMddHHmmssSSS"/>
 							<td>
 								&nbsp;耗时大于：
 							</td>
@@ -66,8 +66,8 @@
 								<th class="joy-table-seq-col" width="30px">#</th>
 								<th width="70px">操作</th>
 								<th>
-								<tags:orderColumn property="costTime" columnName="耗时(毫秒)" defaultOrder="DESC" /></th>
-								<th><tags:orderColumn property="logTime" columnName="执行时间" /></th>
+								<joy:orderColumn property="costTime" columnName="耗时(毫秒)" defaultOrder="DESC" /></th>
+								<th><joy:orderColumn property="logTime" columnName="执行时间" /></th>
 								<th>应用</th>
 								<th>类</th>
 								<th>方法</th>
@@ -78,9 +78,9 @@
 							<c:forEach items="${pageStore.result}" var="p" varStatus="stauts">
 								<tr>
 									<td class="joy-table-seq-col">${stauts.index+1}</td>
-									<td><tags:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false"/></td>
+									<td><joy:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false"/></td>
 									<td>${p.costTime}</td>
-									<td><tags:timeFormatter timeStr="${p.logTime}" realFmt="yyyyMMddHHmmssSSS" displayFmt="yyyy-MM-dd HH:mm:ss SSS"/></td>
+									<td><joy:timeFormatter timeStr="${p.logTime}" realFmt="yyyyMMddHHmmssSSS" displayFmt="yyyy-MM-dd HH:mm:ss SSS"/></td>
 									<td>${p.appName}</td>
 									<td>${fn:split(p.className, ".")[fn:length(fn:split(p.className, ".")) - 1]}</td>
 									<td>${p.methodName}</td>
@@ -91,7 +91,7 @@
 					</table>
 				</div>
 
-				<tags:pagination />
+				<joy:pagination />
 
 			</div>
 		</div>

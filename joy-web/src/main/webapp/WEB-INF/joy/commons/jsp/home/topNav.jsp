@@ -82,9 +82,9 @@
 <body>
 	<nav class="navbar navbar-default" role="navigation" style="margin-bottom:5px;">
 		<div class="navbar-header navbar-brand" style="padding:0 10px 0 10px;">
-			<h5 title="${joy:getAppProperty('app.name')}">
+			<h5 title="${joyFn:getAppProperty('app.name')}">
 				<b><font size="5">J</font></b>
-<%-- 				<i class="${joy:getAppProperty('app.icon.class')}"></i> --%>
+<%-- 				<i class="${joyFn:getAppProperty('app.icon.class')}"></i> --%>
 <i class="fa fa-smile-o fa-2x"></i>
 				<b><font size="5">Y</font></b>
 			</h5>

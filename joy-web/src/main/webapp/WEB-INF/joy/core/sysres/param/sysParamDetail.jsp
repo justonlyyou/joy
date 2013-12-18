@@ -36,13 +36,13 @@
         	</tr>
         	<tr>
         		<td>是否加密</td>
-        		<td><tags:codeTrans code="${model.encrypt}" enumClass="bool"/></td>
+        		<td><joy:codeTrans code="${model.encrypt}" enumClass="bool"/></td>
         		<td></td>
         		<td></td>
         	</tr>
 		</table>
 		
-		<tags:crudDetailList />
+		<joy:crudDetailList />
 	</div>
 </body>
 </html>

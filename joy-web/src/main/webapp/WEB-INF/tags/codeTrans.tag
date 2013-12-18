@@ -9,4 +9,4 @@
 <c:set var="tableId" value="${tableId}"/>
 <c:set var="enumClass" value="${enumClass}"/>
 
-${joy:translateCode(code,tableId,enumClass).trans}
+${joyFn:translateCode(code,tableId,enumClass).trans}

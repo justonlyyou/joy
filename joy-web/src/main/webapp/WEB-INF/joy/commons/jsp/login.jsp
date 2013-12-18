@@ -9,7 +9,7 @@
 <meta name="description" content="登录页面">
 <meta name="author" content="Kevice">
 
-<title>${joy:getAppProperty('app.name')}登录</title>
+<title>${joyFn:getAppProperty('app.name')}登录</title>
 
 <style type="text/css">
 body {
@@ -147,12 +147,12 @@ body {
 
 	<div class="container">
 
-		<h2 class="form-signin-heading">${joy:getAppProperty('app.name')}</h2>
+		<h2 class="form-signin-heading">${joyFn:getAppProperty('app.name')}</h2>
 		<form id="loginForm" class="form-signin" action="${ctx}/login"
 			method="get">
 			<input type="text" class="form-control required" placeholder="用户名"  name="username" value="kevice" value="${username}" autofocus> 
 			<input type="password" class="form-control required" placeholder="密码" name="password" value="tangwl">
-			<tags:captcha name="captcha" />
+			<joy:captcha name="captcha" />
 			<label class="checkbox"> 
 				<input type="checkbox" value="remember-me" name="rememberMe" title="下次不需要再登录">
 				记住我（公共场所慎用）
@@ -161,9 +161,9 @@ body {
 		</form>
 
 		<div class="copy-right">Copyright &copy;
-			2012-${joy:getAppProperty('app.copyRight.year')} - Powered By
-			${joy:getAppProperty('app.copyRight.author')}
-			${joy:getAppProperty('app.version')}</div>
+			2012-${joyFn:getAppProperty('app.copyRight.year')} - Powered By
+			${joyFn:getAppProperty('app.copyRight.author')}
+			${joyFn:getAppProperty('app.version')}</div>
 			
 		<div id="messageBox" class="alert alert-block alert-danger fade in hide">
 			<label id="loginError" class="error"></label>

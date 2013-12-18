@@ -6,9 +6,9 @@
   version="2.0">
     
   <description>JSTL 1.1 functions library</description>
-  <display-name>JSTL JOY</display-name>
+  <display-name>JOY FN JSTL</display-name>
   <tlib-version>1.1</tlib-version>
-  <short-name>joy</short-name>
+  <short-name>joyFn</short-name>
   <uri>http://java.sun.com/jsp/jstl/functionsc</uri>
 
   <function>
@@ -16,7 +16,7 @@
     <name>getJoyProperty</name>
     <function-class>com.kvc.joy.core.init.support.JoyPropeties</function-class>
     <function-signature>java.lang.String property(java.lang.String)</function-signature>
-    <example>${joy:getJoyProperty(property)}</example>
+    <example>${joyFn:getJoyProperty(property)}</example>
   </function>
   
   <function>
@@ -24,7 +24,7 @@
     <name>getAppProperty</name>
     <function-class>com.kvc.joy.core.init.support.AppPropeties</function-class>
     <function-signature>java.lang.String property(java.lang.String)</function-signature>
-    <example>${joy:getAppProperty(property)}</example>
+    <example>${joyFn:getAppProperty(property)}</example>
   </function>
   
   <function>
@@ -32,7 +32,7 @@
     <name>translateCode</name>
     <function-class>com.kvc.joy.core.sysres.SysResTool</function-class>
     <function-signature>java.lang.String translateCode(java.lang.String,java.lang.String,java.lang.String)</function-signature>
-    <example>${joy:translateCode(code,tableId,enumClass)}</example>
+    <example>${joyFn:translateCode(code,tableId,enumClass)}</example>
   </function>
   
   <function>
@@ -40,7 +40,7 @@
     <name>getAllCodeAndTrans</name>
     <function-class>com.kvc.joy.core.sysres.SysResTool</function-class>
     <function-signature>java.util.Map getAllCodeAndTrans(java.lang.String,java.lang.String)</function-signature>
-    <example>${joy:getAllCodeAndTrans(tableId,enumClass)}</example>
+    <example>${joyFn:getAllCodeAndTrans(tableId,enumClass)}</example>
   </function>
   
   <function>
@@ -48,7 +48,7 @@
     <name>getMenuPath</name>
     <function-class>com.kvc.joy.core.sysres.SysResTool</function-class>
     <function-signature>com.kvc.joy.core.sysres.menu.po.TSysMenu getMenuPath(java.lang.String)</function-signature>
-    <example>${joy:getMenuPath(menuId)}</example>
+    <example>${joyFn:getMenuPath(menuId)}</example>
   </function>
   
   <function>
@@ -56,7 +56,7 @@
     <name>formatDate</name>
     <function-class>com.kvc.joy.commons.lang.DateTool</function-class>
     <function-signature>java.lang.String formatDate(java.lang.String,java.lang.String,java.lang.String)</function-signature>
-    <example>${joy:formatDate(dateStr, inFmt, outFmt)}</example>
+    <example>${joyFn:formatDate(dateStr, inFmt, outFmt)}</example>
   </function>
   
   <function>
@@ -64,7 +64,7 @@
     <name>getAllDataSrc</name>
     <function-class>com.kvc.joy.core.sysres.SysResTool</function-class>
     <function-signature>java.util.List getAllDataSrc()</function-signature>
-    <example>${joy:getAllDataSrc()}</example>
+    <example>${joyFn:getAllDataSrc()}</example>
   </function>
   
 </taglib>

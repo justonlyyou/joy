@@ -18,7 +18,14 @@ import com.kvc.joy.commons.lang.string.StringTool;
  */
 public enum RdbType implements ICodeEnum {
 
-	MYSQL("11", "MySQL"), ORACLE("12", "Oracle");
+	MYSQL("01", "MySQL"), 
+	ORACLE("02", "Oracle"),
+	POSTGRESQL("03", "PostgreSQL"),
+	SQLSERVER("04", "SQLServer"),
+	DB2("05", "DB2"),
+	DERBY("11", "Derby"),
+	H2("12", "H2"),
+	HSQL("13", "HSQL");
 
 	private String code;
 	private String name;

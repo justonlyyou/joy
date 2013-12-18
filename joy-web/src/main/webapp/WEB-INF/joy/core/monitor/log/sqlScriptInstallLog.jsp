@@ -32,7 +32,7 @@
 	<form action="${ctx}/sqlScriptInstallLog/list" method="POST">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<tags:pageNavTitle />
+				<joy:pageNavTitle />
 			</div>
 			<div class="panel-body">
 				<div class="joy-search-bar">
@@ -41,7 +41,7 @@
 							<td>
 								安装时间：
 							</td>
-							<tags:timeRangePicker property="installedOn" realFmt="yyyyMMddHHmmssSSS"/>
+							<joy:timeRangePicker property="installedOn" realFmt="yyyyMMddHHmmssSSS"/>
 							<td>
 								&nbsp;版本域：
 							</td>
@@ -76,7 +76,7 @@
 								<th width="70px">操作</th>
 								<th>版本域</th>
 								<th>版本</th>
-								<th><tags:orderColumn property="installedOn"
+								<th><joy:orderColumn property="installedOn"
 										columnName="安装时间" defaultOrder="DESC" /></th>
 								<th>脚本</th>
 								<th>成功</th>
@@ -86,19 +86,19 @@
 							<c:forEach items="${pageStore.result}" var="p" varStatus="stauts">
 								<tr>
 									<td class="joy-table-seq-col">${stauts.index+1}</td>
-									<td><tags:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false" /></td>
+									<td><joy:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false" /></td>
 									<td>${p.versionDomain}</td>
 									<td>${p.version}</td>
-									<td><tags:timeFormatter timeStr="${p.installedOn}" realFmt="yyyyMMddHHmmssSSS" /></td> 
+									<td><joy:timeFormatter timeStr="${p.installedOn}" realFmt="yyyyMMddHHmmssSSS" /></td> 
 									<td>${p.script}</td>
-									<td><tags:codeTrans code="${p.success}" enumClass="bool" /></td>
+									<td><joy:codeTrans code="${p.success}" enumClass="bool" /></td>
 								</tr>
 							</c:forEach>
 						</tbody>
 					</table>
 				</div>
 
-				<tags:pagination />
+				<joy:pagination />
 
 			</div>
 		</div>

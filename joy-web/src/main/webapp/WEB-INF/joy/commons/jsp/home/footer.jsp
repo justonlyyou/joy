@@ -30,9 +30,9 @@
 <body>
 	<div class="copy-right">
 			Copyright &copy;
-			2012-${joy:getAppProperty('app.copyRight.year')} - Powered By
-			${joy:getAppProperty('app.copyRight.author')}
-			${joy:getAppProperty('app.version')}
+			2012-${joyFn:getAppProperty('app.copyRight.year')} - Powered By
+			${joyFn:getAppProperty('app.copyRight.author')}
+			${joyFn:getAppProperty('app.version')}
 	</div>
 </body>
 </html>

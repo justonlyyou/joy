@@ -15,5 +15,5 @@
 <c:set var="autoUpdateOnChanged" value='${autoUpdateOnChanged==null ? "true" : autoUpdateOnChanged}'></c:set>
 
 <input type="hidden" id="_joy_id__time_${property}" name="${property}" value="${time}">
-<input class="Wdate form-control joy-date-picker" value='${joy:formatDate(timeStart, realFmt, displayFmt)}' placeholder="${placeholder}" title="${placeholder}"
+<input class="Wdate form-control joy-date-picker" value='${joyFn:formatDate(timeStart, realFmt, displayFmt)}' placeholder="${placeholder}" title="${placeholder}"
 	onFocus="WdatePicker({dateFmt:'${displayFmt}',realFullFmt:'${fn:replace(realFmt, 'SSS', '000')}',firstDayOfWeek:${firstDayOfWeek},autoUpdateOnChanged:${autoUpdateOnChanged},vel:'_joy_id__time_${timeStartProperty}'})" />

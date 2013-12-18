@@ -30,7 +30,7 @@
 	<form action="${ctx}/sqlScriptInstallLog/list" method="POST">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<tags:pageNavTitle />
+				<joy:pageNavTitle />
 			</div>
 			<div class="panel-body">
 				<div class="joy-search-bar">
@@ -63,8 +63,8 @@
 								<th class="joy-table-seq-col" width="30px">#</th>
 								<th width="70px">操作</th>
 								<th>
-								<tags:orderColumn property="paramName" columnName="参数名" defaultOrder="ASC" /></th>
-								<th><tags:orderColumn property="paramValue" columnName="参数值" /></th>
+								<joy:orderColumn property="paramName" columnName="参数名" defaultOrder="ASC" /></th>
+								<th><joy:orderColumn property="paramValue" columnName="参数值" /></th>
 								<th>说明</th>
 								<th>是否加密</th>
 							</tr>
@@ -73,18 +73,18 @@
 							<c:forEach items="${pageStore.result}" var="p" varStatus="stauts">
 								<tr>
 									<td class="joy-table-seq-col">${stauts.index+1}</td>
-									<td><tags:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false"/></td>
+									<td><joy:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false"/></td>
 									<td>${p.paramName}</td>
 									<td>${p.paramValue}</td>
 									<td>${p.desc}</td>
-									<td><tags:codeTrans code="${p.encrypt}" enumClass="bool" /></td>
+									<td><joy:codeTrans code="${p.encrypt}" enumClass="bool" /></td>
 								</tr>
 							</c:forEach>
 						</tbody>
 					</table>
 				</div>
 
-				<tags:pagination />
+				<joy:pagination />
 
 			</div>
 		</div>

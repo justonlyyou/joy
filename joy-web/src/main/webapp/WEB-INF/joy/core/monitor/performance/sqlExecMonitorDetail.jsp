@@ -22,7 +22,7 @@
 			class="table table-condensed table-hover table-bordered joy-detail-table">
 			<tr>
         		<td>日志时间</td>
-        		<td><tags:timeFormatter timeStr="${model.logTime}" realFmt="yyyyMMddHHmmssSSS" displayFmt="yyyy-MM-dd HH:mm:ss SSS"/></td>
+        		<td><joy:timeFormatter timeStr="${model.logTime}" realFmt="yyyyMMddHHmmssSSS" displayFmt="yyyy-MM-dd HH:mm:ss SSS"/></td>
         	</tr>
         	<tr>
         		<td>耗时(毫秒)</td>

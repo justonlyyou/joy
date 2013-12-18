@@ -16,7 +16,7 @@
 			--&nbsp;请选择&nbsp;--
 	</option>
 </c:if>
-<c:forEach items="${joy:getAllCodeAndTrans(tableId,enumClass)}" var="entry">
+<c:forEach items="${joyFn:getAllCodeAndTrans(tableId,enumClass)}" var="entry">
 	<option value="${entry.key}" class="joy-select-option ${cssClass}" style="${cssStyle}" 
 		<c:if test="${selectedValue == entry.key}"> selected</c:if>>${entry.value.trans}</option>
 </c:forEach>

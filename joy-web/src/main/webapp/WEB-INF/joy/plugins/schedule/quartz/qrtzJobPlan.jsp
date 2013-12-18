@@ -30,7 +30,7 @@
 	<form action="${ctx}/qrtzJobPlan/list" method="POST">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<tags:pageNavTitle />
+				<joy:pageNavTitle />
 			</div>
 			<div class="panel-body">
 				<div class="joy-search-bar">
@@ -49,7 +49,7 @@
 							<label for="runState" class="col-sm-1 control-label">运行状态</label>
 							<div class="col-sm-2">
 								<select class="form-control" name="runState" data-joy-props="operator:'='">
-									<tags:codeOptions selectedValue="${runState}" 
+									<joy:codeOptions selectedValue="${runState}" 
 										enumClass="com.kvc.joy.plugin.schedule.quartz.support.enums.JobRunState"/>
 								</select>
 							</div>
@@ -82,22 +82,22 @@
 							<c:forEach items="${pageStore.result}" var="p" varStatus="stauts">
 								<tr>
 									<td class="joy-table-seq-col">${stauts.index+1}</td>
-									<td><tags:listOperations id="${p.id}"/></td>
+									<td><joy:listOperations id="${p.id}"/></td>
 									<td>${p.id}</td>
 									<td>${p.name}</td>
-									<td><tags:codeTrans code="${p.runState}" 
+									<td><joy:codeTrans code="${p.runState}" 
 										enumClass="com.kvc.joy.plugin.schedule.quartz.support.enums.JobRunState" /></td>
-									<td><tags:timeFormatter timeStr="${p.effectTime}" /></td>
-									<td><tags:timeFormatter timeStr="${p.expireTime}" /></td>
-									<td><tags:timeFormatter timeStr="${p.lastFireTime}" /></td>
-									<td><tags:timeFormatter timeStr="${p.nextFireTime}" /></td>
+									<td><joy:timeFormatter timeStr="${p.effectTime}" /></td>
+									<td><joy:timeFormatter timeStr="${p.expireTime}" /></td>
+									<td><joy:timeFormatter timeStr="${p.lastFireTime}" /></td>
+									<td><joy:timeFormatter timeStr="${p.nextFireTime}" /></td>
 								</tr>
 							</c:forEach>
 						</tbody>
 					</table>
 				</div>
 
-				<tags:pagination />
+				<joy:pagination />
 
 			</div>
 		</div>

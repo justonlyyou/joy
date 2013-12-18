@@ -48,7 +48,7 @@
         	</tr>
 		</table>
 		
-		<tags:crudDetailList />
+		<joy:crudDetailList />
 	</div>
 </body>
 </html>

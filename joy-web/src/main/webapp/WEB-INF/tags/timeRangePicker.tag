@@ -24,13 +24,13 @@
 <input type="hidden" id="_joy_id__${timeEndProperty}" name="${timeEndProperty}"  value="${timeEnd}">
 
 <td>
-	<input class="Wdate form-control joy-date-picker" value='${joy:formatDate(timeStart, realFmt, displayFmt)}' placeholder="${startPlaceholder}" title="${startPlaceholder}"
+	<input class="Wdate form-control joy-date-picker" value='${joyFn:formatDate(timeStart, realFmt, displayFmt)}' placeholder="${startPlaceholder}" title="${startPlaceholder}"
 		onFocus="WdatePicker({dateFmt:'${displayFmt}',realFullFmt:'${fn:replace(realFmt, 'SSS', '000')}',firstDayOfWeek:${firstDayOfWeek},autoUpdateOnChanged:${autoUpdateOnChanged},vel:'_joy_id__${timeStartProperty}'})" />
 </td>
 <td>
 &nbsp;&nbsp;-&nbsp;&nbsp;
 </td>
 <td>
-	<input class="Wdate form-control joy-date-picker" value='${joy:formatDate(timeEnd, realFmt, displayFmt)}' placeholder="${endPlaceholder}"  title="${endPlaceholder}"
+	<input class="Wdate form-control joy-date-picker" value='${joyFn:formatDate(timeEnd, realFmt, displayFmt)}' placeholder="${endPlaceholder}"  title="${endPlaceholder}"
 		onFocus="WdatePicker({dateFmt:'${displayFmt}',realFullFmt:'${fn:replace(realFmt, 'SSS', '000')}',firstDayOfWeek:${firstDayOfWeek},autoUpdateOnChanged:${autoUpdateOnChanged},vel:'_joy_id__${timeEndProperty}'})" />
 </td>

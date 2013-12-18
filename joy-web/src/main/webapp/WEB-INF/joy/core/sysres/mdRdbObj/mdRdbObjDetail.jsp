@@ -59,7 +59,7 @@
 				<tr>
 					<th class="joy-table-seq-col" width="30px">#</th>
 					<th width="70px">操作</th>
-					<th><tags:orderColumn property="model.columns.name" columnName="列名"/></th>
+					<th><joy:orderColumn property="model.columns.name" columnName="列名"/></th>
 					<th>注释</th>
 					<th>主键</th>
 					<th>允许为空</th>
@@ -73,11 +73,11 @@
 				<c:forEach items="${model.columns}" var="p" varStatus="stauts">
 					<tr>
 						<td class="joy-table-seq-col">${stauts.index+1}</td>
-						<td><tags:listOperations id="${model.dsId}-${model.name}-${p.name}" showEditOp="false" showDeleteOp="false"/></td>
+						<td><joy:listOperations id="${model.dsId}-${model.name}-${p.name}" showEditOp="false" showDeleteOp="false"/></td>
 						<td>${p.name}</td>
 						<td>${p.comment.briefDesc}</td>
-						<td><tags:codeTrans code="${p.key}" enumClass="bool" /></td>
-						<td><tags:codeTrans code="${p.nullable}" enumClass="bool" /></td>
+						<td><joy:codeTrans code="${p.key}" enumClass="bool" /></td>
+						<td><joy:codeTrans code="${p.nullable}" enumClass="bool" /></td>
 						<td>${p.type}</td>
 						<td>${p.defaultValue}</td>
 						<td>${p.length}</td>

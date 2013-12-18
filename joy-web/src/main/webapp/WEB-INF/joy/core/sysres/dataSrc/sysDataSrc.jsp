@@ -18,7 +18,7 @@
 	<form action="${ctx}/sysDataSrc/list" method="POST">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<tags:pageNavTitle />
+				<joy:pageNavTitle />
 			</div>
 			<div class="panel-body">
 				<div class="joy-search-bar">
@@ -27,7 +27,7 @@
 						<div class="col-sm-2">
 							<select class="form-control" name="id" value="${id}" data-joy-props="operator:'='">
 								<option value="">-- 请选择 --</option>
-								<c:forEach items="${joy:getAllDataSrc()}" var="entry">
+								<c:forEach items="${joyFn:getAllDataSrc()}" var="entry">
 									<option value="${entry.id}" class="joy-select-option">${entry.name}</option>
 								</c:forEach>
 							</select>
@@ -53,8 +53,8 @@
 								<th class="joy-table-seq-col" width="30px">#</th>
 								<th width="70px">操作</th>
 								<th>
-								<tags:orderColumn property="id" columnName="数据源ID" defaultOrder="ASC" /></th>
-								<th><tags:orderColumn property="name" columnName="数据源名称" /></th>
+								<joy:orderColumn property="id" columnName="数据源ID" defaultOrder="ASC" /></th>
+								<th><joy:orderColumn property="name" columnName="数据源名称" /></th>
 								<th>JNDI</th>
 								<th>URL</th>
 							</tr>
@@ -63,7 +63,7 @@
 							<c:forEach items="${pageStore.result}" var="p" varStatus="stauts">
 								<tr>
 									<td class="joy-table-seq-col">${stauts.index+1}</td>
-									<td><tags:listOperations id="${p.id}"/></td>
+									<td><joy:listOperations id="${p.id}"/></td>
 									<td>${p.id}</td>
 									<td>${p.name}</td>
 									<td>${p.jndiName}</td>
@@ -74,7 +74,7 @@
 					</table>
 				</div>
 
-				<tags:pagination />
+				<joy:pagination />
 
 			</div>
 		</div>
