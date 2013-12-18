@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="joyFn" uri="/WEB-INF/joy/commons/tld/joyFn.tld" %>
-<%@ taglib prefix="joy" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="joy" tagdir="/WEB-INF/tags/joy" %>
 
 <c:set var="ctx" value="${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}"/>
 <c:set var="staticCtx" value="${ctx}/static"/>

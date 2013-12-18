@@ -22,7 +22,7 @@ import com.kvc.joy.web.support.utils.HttpSessionTool;
 @Controller
 public class LoginController {
 
-	private static final String LOGIN_VIEW_NAME = "joy/commons/jsp/login";
+	private static final String LOGIN_VIEW_NAME = "joy/plugins/login/login";
 
 	// @Resource
 	// private ICaptchaService captchaService;
