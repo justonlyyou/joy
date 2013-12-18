@@ -27,7 +27,7 @@
 
 <body>
 
-	<form action="${ctx}/sqlExecMonitor/list" method="POST">
+	<form:form action="${ctx}/sqlExecMonitor/list" method="POST">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<joy:pageNavTitle />
@@ -44,14 +44,13 @@
 								&nbsp;耗时大于：
 							</td>
 							<td>
-								<input class="form-control" value="${costTime}"
-									name="costTime" placeholder="请输入耗时毫秒数" data-joy-props="operator:'>'">
+								<form:input class="form-control" path="costTime" placeholder="请输入耗时毫秒数" data-joy-props="operator:'>'"/>
 							</td>
 							<td>&nbsp;&nbsp;</td>
 							<td>
-								<button id="submitBtn" class="btn btn-default">
+								<form:button id="submitBtn" class="btn btn-default">
 									<i class="fa fa-search"></i>&nbsp;查询
-								</button>
+								</form:button>
 							</td>
 							
 						</tr>
@@ -95,7 +94,7 @@
 
 			</div>
 		</div>
-	</form>
+	</form:form>
 
 </body>
 </html>

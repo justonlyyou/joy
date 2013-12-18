@@ -5,6 +5,7 @@ import java.util.Map.Entry;
 
 import org.springframework.data.domain.Sort.Order;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.kvc.joy.commons.bean.IEntity;
@@ -16,6 +17,7 @@ import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.core.rp.pagestore.PageStore;
 import com.kvc.joy.core.rp.pagestore.PageStoreCreator;
+import com.kvc.joy.core.sysres.datasrc.model.po.TSysDataSrc;
 import com.kvc.joy.web.support.utils.HttpRequestTool;
 
 /**
@@ -34,7 +36,7 @@ public abstract class BaseController<T> {
 	}
 
 	@RequestMapping("/list")
-	public String list(Model model) {
+	public String list(Model model,  @ModelAttribute("command") T command) {
 		PageStore pageStore = getPageStore(model);
 		queryByPageStore(pageStore);
 		pageStore.getPaging().cal();

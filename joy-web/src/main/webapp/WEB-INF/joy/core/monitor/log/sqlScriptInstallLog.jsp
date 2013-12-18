@@ -29,7 +29,7 @@
 
 <body>
 
-	<form action="${ctx}/sqlScriptInstallLog/list" method="POST">
+	<form:form action="${ctx}/sqlScriptInstallLog/list" method="POST">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<joy:pageNavTitle />
@@ -46,21 +46,19 @@
 								&nbsp;版本域：
 							</td>
 							<td>
-								<input class="form-control" value="${versionDomain}"
-									name="versionDomain" placeholder="请输入版本域" data-joy-props="operator:'ilike'">
+								<form:input class="form-control" path="versionDomain" placeholder="请输入版本域" data-joy-props="operator:'ilike'"/>
 							</td>
 							<td>
 								&nbsp;版本：
 							</td>
 							<td>
-								<input class="form-control" value="${version}" name="version"
-									placeholder="请输入版本" data-joy-props="operator:'ilike'">
+								<form:input class="form-control" path="version" placeholder="请输入版本" data-joy-props="operator:'ilike'"/>
 							</td>
 							<td>&nbsp;&nbsp;</td>
 							<td>
-								<button id="submitBtn" class="btn btn-default">
+								<form:button id="submitBtn" class="btn btn-default">
 									<i class="fa fa-search"></i>&nbsp;查询
-								</button>
+								</form:button>
 							</td>
 							
 						</tr>
@@ -102,7 +100,7 @@
 
 			</div>
 		</div>
-	</form>
+	</form:form>
 
 </body>
 </html>

@@ -27,7 +27,7 @@
 
 <body>
 
-	<form action="${ctx}/mdRdbObj/list" method="POST">
+	<form:form action="${ctx}/mdRdbObj/list" method="POST">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<joy:pageNavTitle />
@@ -38,26 +38,24 @@
 						<div class="form-group">
 							<label for="dsId" class="col-sm-1 control-label">数据源</label>
 							<div class="col-sm-2">
-								<select class="form-control" name="dsId" value="${dsId}" data-joy-props="operator:'='"> 
+								<form:select class="form-control" path="dsId" data-joy-props="operator:'='"> 
 									<c:forEach items="${joyFn:getAllDataSrc()}" var="entry">
-										<option value="${entry.id}" class="joy-select-option">${entry.name}</option>
+										<form:option value="${entry.id}" class="joy-select-option">${entry.name}</form:option>
 									</c:forEach>
-								</select>
+								</form:select>
 							</div>
 							<label for="name" class="col-sm-1 control-label">对象名</label>
 							<div class="col-sm-2">
-								<input class="form-control" value="${name}"
-									name="name" placeholder="请输入对象名" data-joy-props="operator:'ilike'">
+								<form:input class="form-control" path="name" placeholder="请输入对象名" data-joy-props="operator:'ilike'" />
 							</div>
 							<label for="comment" class="col-sm-1 control-label">对象注释</label>
 							<div class="col-sm-2">
-								<input class="form-control" value="${comment}"
-									name="comment" placeholder="请输入对象注释" data-joy-props="operator:'ilike'">
+								<form:input class="form-control" path="comment" placeholder="请输入对象注释" data-joy-props="operator:'ilike'" />
 							</div>
 							<div class="col-sm-3">
-								<button id="submitBtn" class="btn btn-default">
+								<form:button id="submitBtn" class="btn btn-default">
 									<i class="fa fa-search"></i>&nbsp;查询
-								</button>
+								</form:button>
 							</div>
 						</div>
 					</div>
@@ -93,7 +91,7 @@
 
 			</div>
 		</div>
-	</form>
+	</form:form>
 
 </body>
 </html>

@@ -27,7 +27,7 @@
 
 <body>
 
-	<form action="${ctx}/qrtzJobPlan/list" method="POST">
+	<form:form action="${ctx}/qrtzJobPlan/list" method="POST">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<joy:pageNavTitle />
@@ -38,25 +38,23 @@
 						<div class="form-group">
 							<label for="id" class="col-sm-1 control-label">计划ID</label>
 							<div class="col-sm-2">
-								<input class="form-control" value="${id}"
-									name="id" placeholder="请输入计划ID" data-joy-props="operator:'ilike'">
+								<form:input class="form-control" path="id" placeholder="请输入计划ID" data-joy-props="operator:'ilike'"/>
 							</div>
 							<label for="name" class="col-sm-1 control-label">计划名称</label>
 							<div class="col-sm-2">
-								<input class="form-control" value="${name}"
-									name="name" placeholder="请输入计划名称" data-joy-props="operator:'ilike'">
+								<form:input class="form-control" path="name" placeholder="请输入计划名称" data-joy-props="operator:'ilike'"/>
 							</div>
 							<label for="runState" class="col-sm-1 control-label">运行状态</label>
 							<div class="col-sm-2">
-								<select class="form-control" name="runState" data-joy-props="operator:'='">
-									<joy:codeOptions selectedValue="${runState}" 
+								<form:select class="form-control" path="runState" data-joy-props="operator:'='">
+									<joy:codeOptions selectedValue="${runState}"
 										enumClass="com.kvc.joy.plugin.schedule.quartz.support.enums.JobRunState"/>
-								</select>
+								</form:select>
 							</div>
 							<div class="col-sm-3">
-								<button id="submitBtn" class="btn btn-default">
+								<form:button id="submitBtn" class="btn btn-default">
 									<i class="fa fa-search"></i>&nbsp;查询
-								</button>
+								</form:button>
 							</div>
 						</div>
 					</div>
@@ -101,7 +99,7 @@
 
 			</div>
 		</div>
-	</form>
+	</form:form>
 
 </body>
 </html>

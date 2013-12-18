@@ -27,7 +27,7 @@
 
 <body>
 
-	<form action="${ctx}/sqlScriptInstallLog/list" method="POST">
+	<form:form action="${ctx}/sqlScriptInstallLog/list" method="POST">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<joy:pageNavTitle />
@@ -38,18 +38,16 @@
 						<div class="form-group">
 							<label for="paramName" class="col-sm-1 control-label">参数名</label>
 							<div class="col-sm-2">
-								<input class="form-control" value="${paramName}"
-									name="paramName" placeholder="请输入参数名" data-joy-props="operator:'ilike'">
+								<form:input class="form-control" path="paramName" placeholder="请输入参数名" data-joy-props="operator:'ilike'"/>
 							</div>
 							<label for="paramValue" class="col-sm-1 control-label">参数值</label>
 							<div class="col-sm-2">
-								<input class="form-control" value="${paramValue}"
-									name="paramValue" placeholder="请输入参数值" data-joy-props="operator:'ilike'">
+								<form:input class="form-control" path="paramValue" placeholder="请输入参数值" data-joy-props="operator:'ilike'"/>
 							</div>
 							<div class="col-sm-6">
-								<button id="submitBtn" class="btn btn-default">
+								<form:button id="submitBtn" class="btn btn-default">
 									<i class="fa fa-search"></i>&nbsp;查询
-								</button>
+								</form:button>
 							</div>
 						</div>
 					</div>
@@ -88,7 +86,7 @@
 
 			</div>
 		</div>
-	</form>
+	</form:form>
 
 </body>
 </html>

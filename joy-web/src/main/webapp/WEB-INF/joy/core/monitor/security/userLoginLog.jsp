@@ -27,7 +27,7 @@
 
 <body>
 
-	<form action="${ctx}/userLoginLog/list" method="POST">
+	<form:form action="${ctx}/userLoginLog/list" method="POST">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<joy:pageNavTitle />
@@ -39,26 +39,25 @@
 							<joy:timeRangePicker property="loginTime" startPlaceholder="登陆时间始" endPlaceholder="登陆时间止"/>
 							<td>&nbsp;&nbsp;</td>
 							<td>
-								<input class="form-control" value="${userAccount}" name="userAccount" 
-									title="登陆帐号" placeholder="登陆帐号" data-joy-props="operator:'ilike'">
+								<form:input class="form-control" path="userAccount" title="登陆帐号" placeholder="登陆帐号" data-joy-props="operator:'ilike'"/>
 							</td>
 							<td>&nbsp;&nbsp;</td>
 							<td>
-								<input class="form-control" value="${loginIp}" name="loginIp"
-									title="登陆IP" placeholder="登陆IP" data-joy-props="operator:'like'">
+								<form:input class="form-control" path="loginIp" title="登陆IP" placeholder="登陆IP" data-joy-props="operator:'like'"/>
 							</td>
 							<td>&nbsp;&nbsp;</td>
 							<td>
-								<select class="form-control" name="loginStateCode" value="${loginStateCode}" title="登陆状态" data-joy-props="operator:'='">
-									<option value="">-- 登陆状态 --</option>
-									<joy:codeOptions enumClass="com.kvc.joy.plugin.security.login.support.enums.LoginState" showEmptyOption="false"/>
-								</select>
+								<form:select class="form-control" path="loginStateCode" title="登陆状态" data-joy-props="operator:'='">
+									<form:option value="">-- 登陆状态 --</form:option>
+									<joy:codeOptions enumClass="com.kvc.joy.plugin.security.login.support.enums.LoginState" 
+										selectedValue="${loginStateCode}" showEmptyOption="false"/>
+								</form:select>
 							</td>
 							<td>&nbsp;&nbsp;</td>
 							<td>
-								<button id="submitBtn" class="btn btn-default">
+								<form:button id="submitBtn" class="btn btn-default">
 									<i class="fa fa-search"></i>&nbsp;查询
-								</button>
+								</form:button>
 							</td>
 							
 						</tr>
@@ -99,7 +98,7 @@
 
 			</div>
 		</div>
-	</form>
+	</form:form>
 
 </body>
 </html>

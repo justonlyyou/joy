@@ -14,8 +14,7 @@
 </head>
 
 <body>
-
-	<form action="${ctx}/sysDataSrc/list" method="POST">
+	<form:form action="${ctx}/sysDataSrc/list" method="POST">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<joy:pageNavTitle />
@@ -25,22 +24,22 @@
 					<div class="form-horizontal">
 						<label for="id" class="col-sm-1 control-label">数据源</label>
 						<div class="col-sm-2">
-							<select class="form-control" name="id" value="${id}" data-joy-props="operator:'='">
-								<option value="">-- 请选择 --</option>
+							<form:select path="id" class="form-control" data-joy-props="operator:'='">
+								<form:option value="">-- 请选择 --</form:option>
 								<c:forEach items="${joyFn:getAllDataSrc()}" var="entry">
-									<option value="${entry.id}" class="joy-select-option">${entry.name}</option>
+									<form:option value="${entry.id}" class="joy-select-option">${entry.name}</form:option>
 								</c:forEach>
-							</select>
+							</form:select>
 						</div>
 						<div class="col-sm-1">
-							<button id="submitBtn" class="btn btn-default" style="margin-left: 5px">
+							<form:button id="submitBtn" class="btn btn-default" style="margin-left: 5px">
 								<i class="fa fa-search"></i>&nbsp;查询
-							</button>
+							</form:button>
 						</div>
 						<div class="col-sm-8">
-							<button id="newBtn" class="btn btn-default" style="margin-left: 3px">
+							<form:button id="newBtn" class="btn btn-default" style="margin-left: 3px">
 								<i class="fa fa-plus"></i>&nbsp;新增
-							</button>
+							</form:button>
 						</div>
 					</div>
 				</div>
@@ -78,7 +77,7 @@
 
 			</div>
 		</div>
-	</form>
+	</form:form>
 	
 	<script type="text/javascript">
 		$(function() {
