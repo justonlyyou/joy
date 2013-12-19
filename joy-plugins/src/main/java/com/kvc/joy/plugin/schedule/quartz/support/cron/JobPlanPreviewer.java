@@ -11,7 +11,7 @@ import org.quartz.CronExpression;
 import com.kvc.joy.commons.lang.DateTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
-import com.kvc.joy.plugin.schedule.quartz.model.vo.JobPlanPreviewVO;
+import com.kvc.joy.plugin.schedule.quartz.model.vo.JobPlanPreview;
 
 /**
  * 
@@ -31,8 +31,8 @@ public class JobPlanPreviewer {
 		}
 	}
 
-	public List<JobPlanPreviewVO> preview(int count) {
-		List<JobPlanPreviewVO> previewList = new ArrayList<JobPlanPreviewVO>(count);
+	public List<JobPlanPreview> preview(int count) {
+		List<JobPlanPreview> previewList = new ArrayList<JobPlanPreview>(count);
 		Date date = new Date();
 		Calendar calendar = Calendar.getInstance();
 		for (int i = 1; i <= count; i++) {
@@ -40,7 +40,7 @@ public class JobPlanPreviewer {
 			if (date == null) {
 				break;
 			}
-			JobPlanPreviewVO preview = new JobPlanPreviewVO();
+			JobPlanPreview preview = new JobPlanPreview();
 			preview.setOrdinal(i + "");
 			calendar.setTime(date);
 
@@ -55,13 +55,13 @@ public class JobPlanPreviewer {
 	}
 
 	public String previewAsString(int count) {
-		List<JobPlanPreviewVO> previewList = preview(count);
+		List<JobPlanPreview> previewList = preview(count);
 		String plan = null;
 		if (previewList.isEmpty()) {
 			plan = "从现在起无任何执行计划！";
 		} else {
 			StringBuilder plans = new StringBuilder();
-			for (JobPlanPreviewVO preview : previewList) {
+			for (JobPlanPreview preview : previewList) {
 				plans.append(preview + "</br>");
 			}
 			plan = plans.toString();
@@ -100,8 +100,8 @@ public class JobPlanPreviewer {
 
 	public static void main(String[] args) {
 		String cronExp = "0 0 13-15/1 */1 * ?";
-		List<JobPlanPreviewVO> previewList = new JobPlanPreviewer(cronExp).preview(10);
-		for (JobPlanPreviewVO preview : previewList) {
+		List<JobPlanPreview> previewList = new JobPlanPreviewer(cronExp).preview(10);
+		for (JobPlanPreview preview : previewList) {
 			System.out.println(preview);
 		}
 	}

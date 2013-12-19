@@ -163,7 +163,7 @@ public class MetaDataTableImpl implements MetaDataTable {
                     appliedMigration.getChecksum(),
                     DateTool.currentDate(DateTool.UNFMT_yyyyMMddHHmmssSSS),  //diff add
                     appliedMigration.getExecutionTime(),
-                    appliedMigration.isSuccess() ? "1" : "0", // diff bool->String
+                    appliedMigration.isSuccess(),
                     IdGenerator.gen32Uuid() //diff add
             		);
             LOG.debug("MetaData table " + table + " successfully updated to reflect changes");

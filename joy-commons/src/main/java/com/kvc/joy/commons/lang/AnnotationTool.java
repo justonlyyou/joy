@@ -13,7 +13,29 @@ public class AnnotationTool {
 
 	private AnnotationTool() {
 	}
-
+	
+	/**
+	 * 返回在指定类的类体系(向上)中，匹配类注解的类
+	 * 
+	 * @param clazz 要查找的源
+	 * @param annoClass 要找的注解类
+	 * @return 匹配类注解的类
+	 * @since 1.0.0
+	 * @author 唐玮琳
+	 * @time 2013年12月19日 下午7:33:57
+	 */
+	public static Class<?> getClassUpHierarchy(Class<?> clazz, Class<? extends Annotation> annoClass) {
+		if (clazz.equals(Object.class)) {
+			return null;
+		}
+		boolean present = clazz.isAnnotationPresent(annoClass);
+		if (present) {
+			return clazz;
+		} else {
+			return getClassUpHierarchy(clazz.getSuperclass(), annoClass);
+		}
+	}
+	
 	// vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 	// 封装org.apache.commons.lang3.AnnotationUtils
 	// vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv

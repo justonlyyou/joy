@@ -1,4 +1,4 @@
-package com.kvc.joy.core.persistence.flyway.po;
+package com.kvc.joy.core.persistence.flyway.model.po;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

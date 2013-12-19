@@ -1,6 +1,6 @@
 package com.kvc.joy.plugin.schedule.quartz.support.cron;
 
-import com.kvc.joy.plugin.schedule.quartz.model.vo.QrtzJobPlanCfgVO;
+import com.kvc.joy.plugin.schedule.quartz.model.vo.QrtzJobPlanVo;
 
 /**
  * 
@@ -8,7 +8,7 @@ import com.kvc.joy.plugin.schedule.quartz.model.vo.QrtzJobPlanCfgVO;
  */
 public class IntervalCronExpressionCreator extends AbstractCronExpressionCreator {
 
-	public IntervalCronExpressionCreator(QrtzJobPlanCfgVO plan) {
+	public IntervalCronExpressionCreator(QrtzJobPlanVo plan) {
 		super(plan);
 	}
 

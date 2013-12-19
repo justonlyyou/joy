@@ -4,7 +4,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import com.kvc.joy.commons.exception.SystemException;
-import com.kvc.joy.plugin.schedule.quartz.model.vo.QrtzJobPlanCfgVO;
+import com.kvc.joy.plugin.schedule.quartz.model.vo.QrtzJobPlanVo;
 
 /**
  * 
@@ -14,7 +14,7 @@ public class TimingCronExpressionCreator extends AbstractCronExpressionCreator {
 
 	private Calendar time;
 
-	public TimingCronExpressionCreator(QrtzJobPlanCfgVO plan) {
+	public TimingCronExpressionCreator(QrtzJobPlanVo plan) {
 		super(plan);
 		parseTime();
 	}

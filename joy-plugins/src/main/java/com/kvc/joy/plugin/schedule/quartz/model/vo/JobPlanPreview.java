@@ -8,7 +8,7 @@ import java.text.NumberFormat;
  * @author 唐玮琳
  * @time 2013-1-2 上午11:19:07
  */
-public class JobPlanPreviewVO {
+public class JobPlanPreview {
 
 	private String ordinal;
 	private String runDate;

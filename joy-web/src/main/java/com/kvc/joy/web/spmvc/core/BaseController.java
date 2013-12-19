@@ -3,6 +3,8 @@ package com.kvc.joy.web.spmvc.core;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import javax.persistence.Entity;
+
 import org.springframework.data.domain.Sort.Order;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.kvc.joy.commons.bean.IEntity;
 import com.kvc.joy.commons.exception.SystemException;
+import com.kvc.joy.commons.lang.AnnotationTool;
 import com.kvc.joy.commons.lang.GenericTool;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
@@ -17,7 +20,6 @@ import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.core.rp.pagestore.PageStore;
 import com.kvc.joy.core.rp.pagestore.PageStoreCreator;
-import com.kvc.joy.core.sysres.datasrc.model.po.TSysDataSrc;
 import com.kvc.joy.web.support.utils.HttpRequestTool;
 
 /**
@@ -47,7 +49,7 @@ public abstract class BaseController<T> {
 	
 	@RequestMapping("/get")
 	public String get(Model model) {
-		T m = loadEntity(model);
+		Object m = loadEntity(model);
 		model.addAttribute("model", m);
 		return getDetailViewName();
 	}
@@ -81,12 +83,12 @@ public abstract class BaseController<T> {
 		pageStore.query(getEntityClass());
 	}
 
-	protected T loadEntity(Model model) {
+	protected Object loadEntity(Model model) {
 		String id = HttpRequestTool.getParameter("id");
 		if (StringTool.isBlank(id)) {
 			throw new SystemException("加载实体时id参数必须指定！");
 		}
-		Class<T> entityClass = getEntityClass();
+		Class<?> entityClass = getEntityClass();
 		if (IEntity.class.isAssignableFrom(entityClass) == false) {
 			throw new SystemException("如果不想重写BaseController类的loadEntity方法，"
 					+ "继承BaseController的子类的泛型参数类型必须为实现IEntity接口的实体类！");
@@ -130,8 +132,17 @@ public abstract class BaseController<T> {
 		return store;
 	}
 
+	protected Class<?> getEntityClass() {
+		Class<T> type = getGenericType();
+		if(IEntity.class.isAssignableFrom(type)) {
+			return AnnotationTool.getClassUpHierarchy(type, Entity.class);
+		} else {
+			return type;
+		}
+	}
+	
 	@SuppressWarnings("unchecked")
-	protected Class<T> getEntityClass() {
+	protected Class<T> getGenericType() {
 		Class<?> clazz = GenericTool.getSuperClassGenricType(getClass());
 		if (clazz.equals(Object.class)) {
 			throw new SystemException("继承BaseController的子类必须指定泛型参数！");

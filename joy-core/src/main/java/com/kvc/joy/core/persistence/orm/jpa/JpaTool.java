@@ -29,6 +29,7 @@ import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.query.QueryLogics;
 import com.kvc.joy.commons.query.sort.Order;
 import com.kvc.joy.commons.support.GroupExecutor;
+import com.kvc.joy.core.persistence.entity.UuidEntity;
 import com.kvc.joy.core.rp.pagestore.PageStore;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
 
@@ -44,24 +45,25 @@ public class JpaTool extends BaseJpaDao {
 		return (JpaTool) CoreBeanFactory.getJpaTool();
 	}
 
-	public static void persist(Object engity) {
-		jpaTemplate().persist(engity);
+	public static void persist(Object entity) {
+		UuidEntity.setUuid(entity);
+		jpaTemplate().persist(entity);
 	}
 
-	public static <T> T merge(T engity) {
-		return jpaTemplate().merge(engity);
+	public static <T> T merge(T entity) {
+		return jpaTemplate().merge(entity);
 	}
 
-	public static void remove(Object engity) {
-		jpaTemplate().remove(engity);
+	public static void remove(Object entity) {
+		jpaTemplate().remove(entity);
 	}
 
 	public static void flush() {
 		jpaTemplate().flush();
 	}
 
-	public static void refresh(Object engity) {
-		jpaTemplate().refresh(engity);
+	public static void refresh(Object entity) {
+		jpaTemplate().refresh(entity);
 	}
 
 	/**

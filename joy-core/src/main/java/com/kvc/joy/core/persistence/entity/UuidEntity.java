@@ -5,6 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 import com.kvc.joy.commons.bean.IEntity;
+import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.support.IdGenerator;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 
@@ -20,12 +21,14 @@ public class UuidEntity implements IEntity<String> {
 	protected String id;
 
 	public UuidEntity() {
-		this.id = IdGenerator.gen32Uuid();
 	}
 
 	@Override
 	public int hashCode() {
-		return id.hashCode();
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
 	}
 
 	@Override
@@ -34,11 +37,15 @@ public class UuidEntity implements IEntity<String> {
 			return true;
 		if (obj == null)
 			return false;
-		if (!(obj instanceof UuidEntity)) {
+		if (getClass() != obj.getClass())
 			return false;
-		}
 		UuidEntity other = (UuidEntity) obj;
-		return getId().equals(other.getId());
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
 	}
 	
 	@Id
@@ -50,6 +57,16 @@ public class UuidEntity implements IEntity<String> {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+	
+	public static void setUuid(Object entity) {
+		if (entity instanceof UuidEntity) {
+			UuidEntity uuidEntity = (UuidEntity)entity;
+			String id = uuidEntity.getId();
+			if (StringTool.isBlank(id)) {
+				uuidEntity.setId(IdGenerator.gen32Uuid());
+			}
+		}
 	}
 
 }

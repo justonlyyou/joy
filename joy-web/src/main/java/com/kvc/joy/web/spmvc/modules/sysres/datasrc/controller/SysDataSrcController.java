@@ -14,7 +14,7 @@ import com.kvc.joy.web.spmvc.core.BaseController;
  */
 @Controller
 @RequestMapping("/sysDataSrc")
-public class SysDataSrcController extends BaseController<TSysDataSrc>{
+public class SysDataSrcController extends BaseController<TSysDataSrc> {
 
 	@Override
 	protected String getCurrentViewName() {

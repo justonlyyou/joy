@@ -26,6 +26,7 @@ import com.kvc.joy.commons.bean.IEntity;
 import com.kvc.joy.commons.collections.MapTool;
 import com.kvc.joy.commons.lang.ArrayTool;
 import com.kvc.joy.commons.support.GroupExecutor;
+import com.kvc.joy.core.persistence.entity.UuidEntity;
 import com.kvc.joy.core.spring.utils.SpringBeanTool;
 
 /**
@@ -60,11 +61,13 @@ public class HibernateTool extends BaseHibernateDao {
 		return result;
 	}
 
-	public static void persist(Object engity) {
-		getInstance().saveOrUpdate(engity);
+	public static void persist(Object entity) {
+		UuidEntity.setUuid(entity);
+		getInstance().saveOrUpdate(entity);
 	}
 
 	public void saveOrUpdate(Object obj) {
+		UuidEntity.setUuid(obj);
 		getSession().saveOrUpdate(obj);
 	}
 

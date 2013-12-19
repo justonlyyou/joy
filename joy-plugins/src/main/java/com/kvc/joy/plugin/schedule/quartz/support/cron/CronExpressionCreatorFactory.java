@@ -1,6 +1,6 @@
 package com.kvc.joy.plugin.schedule.quartz.support.cron;
 
-import com.kvc.joy.plugin.schedule.quartz.model.vo.QrtzJobPlanCfgVO;
+import com.kvc.joy.plugin.schedule.quartz.model.vo.QrtzJobPlanVo;
 
 /**
  * 
@@ -11,7 +11,7 @@ public class CronExpressionCreatorFactory {
 	private CronExpressionCreatorFactory() {
 	}
 
-	public static ICronExpressionCreator getCreator(QrtzJobPlanCfgVO planVo)  {
+	public static ICronExpressionCreator getCreator(QrtzJobPlanVo planVo)  {
 //		ScheduleConfigMode scheduleMode = ScheduleConfigMode.enumOf(planVo.getScheduleMode());
 //		switch (scheduleMode) {
 //		case TIMING_ONCE:
