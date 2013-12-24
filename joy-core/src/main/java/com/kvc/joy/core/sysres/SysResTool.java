@@ -1,5 +1,6 @@
 package com.kvc.joy.core.sysres;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -84,6 +85,24 @@ public class SysResTool {
 	 * @return
 	 * @since 1.0.0
 	 * @author 唐玮琳
+	 * @time 2013年12月24日 下午9:57:10
+	 */
+	public static String getCodeCategory(String codeTableId) {
+		Map<String, CodeRecord> allCodeAndTrans = getAllCodeAndTrans(codeTableId);
+		if (allCodeAndTrans.isEmpty()) {
+			return "";
+		}
+		Collection<CodeRecord> values = allCodeAndTrans.values();
+		return values.iterator().next().getCodeCategory();
+	}
+	
+	/**
+	 * 
+	 * 
+	 * @param codeTableId
+	 * @return
+	 * @since 1.0.0
+	 * @author 唐玮琳
 	 * @time 2013年12月9日 上午12:26:45
 	 */
 	public static Map<String, String> getAllCodeAndTransStr(String codeTableId) {
@@ -138,13 +157,13 @@ public class SysResTool {
 							boolean bool = BooleanTool.toBoolean(code);
 							String trans = YesNot.enumOfBool(bool).getTrans();
 							String order = bool ? "0" : "1";
-							result = new CodeRecord(code, trans, null, order);
+							result = new CodeRecord(code, trans, null, order, "");
 						} else {
 							ICodeEnum e = (ICodeEnum) EnumTool.enumOf(enumClass, code);
 							if(e != null) {
 								String trans = e.getTrans();
 								String order = ((Enum) e).ordinal() + "";
-								result = new CodeRecord(code, trans, null, order);
+								result = new CodeRecord(code, trans, null, order, "");
 							}
 						}
 					} else {
@@ -153,7 +172,7 @@ public class SysResTool {
 				}
 			}
 			if(result == null) {
-				result = new CodeRecord(code, code, null, null);
+				result = new CodeRecord(code, code, null, null, "");
 			}
 		}
 		
@@ -188,7 +207,7 @@ public class SysResTool {
 					for (Entry<String, String> entry : map.entrySet()) {
 						String code = entry.getKey();
 						String trans = entry.getValue();
-						CodeRecord codeRecord = new CodeRecord(code, trans, null, index + "");
+						CodeRecord codeRecord = new CodeRecord(code, trans, null, index + "", "");
 						codeMap.put(code, codeRecord);
 						index++;
 					}

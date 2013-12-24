@@ -97,6 +97,8 @@ public class SysCodeService implements ISysCodeService {
 		String codeFieldName = codeDic.getCodeField();
 		String parentCodeField = codeDic.getParentField();
 		String orderByField = StringTool.isBlank(codeDic.getOrderField()) ? codeFieldName : codeDic.getOrderField();
+		String codeCategory = null;
+		String groupingCommentField = codeDic.getGroupingCommentField();
 		String where = "1=1";
 		String activeField = codeDic.getActiveField();
 		if (StringTool.isNotBlank(activeField)) {
@@ -109,6 +111,8 @@ public class SysCodeService implements ISysCodeService {
 		if (codeDic.getId().equals(codeTableId) == false) {
 			String groupingField = codeDic.getGroupingField();
 			where += " AND " + groupingField + " = '" + codeTableId + "'";
+		} else {
+			codeCategory = codeDic.getTableComment();
 		}
 		String sql = MessageFormat.format(sqlPattern, codeDic.getTableName().toLowerCase(), where, orderByField);
 		PreparedStatement statement = null;
@@ -121,8 +125,11 @@ public class SysCodeService implements ISysCodeService {
 				String code = rs.getString(codeFieldName);
 				String trans = rs.getString(transFieldName);
 				String parentCode = StringTool.isBlank(parentCodeField) ? null : rs.getString(parentCodeField);
+				if(codeCategory == null && StringTool.isNotBlank(groupingCommentField)) {
+					codeCategory = rs.getString(groupingCommentField);
+				}
 				String order = rs.getString(orderByField);
-				CodeRecord codeRecord = new CodeRecord(code, trans, parentCode, order);
+				CodeRecord codeRecord = new CodeRecord(code, trans, parentCode, order, codeCategory);
 				codes.add(codeRecord);
 			}
 			if (codes.isEmpty() == false || codeDic.getId().equals(codeTableId)) {

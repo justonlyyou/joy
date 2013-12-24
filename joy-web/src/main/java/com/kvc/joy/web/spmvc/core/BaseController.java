@@ -60,7 +60,7 @@ public abstract class BaseController<T> {
 	}
 	
 	@RequestMapping("/edit")
-	public String edit(Model model) {
+	public String edit(Model model,  @ModelAttribute("command") T command) {
 		return getEditViewName();
 	}
 	

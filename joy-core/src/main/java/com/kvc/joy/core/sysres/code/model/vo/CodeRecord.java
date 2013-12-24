@@ -14,12 +14,14 @@ public class CodeRecord implements Serializable {
 	private String trans;
 	private String parentCode;
 	private String order;
+	private String codeCategory;
 	
-	public CodeRecord(String code, String trans, String parentCode, String order) {
+	public CodeRecord(String code, String trans, String parentCode, String order, String codeCategory) {
 		this.code = code;
 		this.trans = trans;
 		this.parentCode = parentCode;
 		this.order = order;
+		this.codeCategory = codeCategory;
 	}
 
 	public String getCode() {
@@ -54,6 +56,14 @@ public class CodeRecord implements Serializable {
 		this.order = order;
 	}
 	
+	public String getCodeCategory() {
+		return codeCategory;
+	}
+
+	public void setCodeCategory(String codeCategory) {
+		this.codeCategory = codeCategory;
+	}
+
 	@Override
 	public String toString() {
 		return "(" + code + " : " + trans + ")";

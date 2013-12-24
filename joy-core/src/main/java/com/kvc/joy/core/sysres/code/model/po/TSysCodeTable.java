@@ -29,7 +29,7 @@ public class TSysCodeTable extends UuidCrudEntity {
 	private String activeField; // 是否启用字段
 	private String deletedField; // 是否删除字段
 	private String groupingField; // 组字段名(多种代码放同一表时区分用)
-	private String groupingComment; // 组注释
+	private String groupingCommentField; // 组注释
 	private TSysDataSrc dataSrc; // 数据源
 
 	// Constructors
@@ -162,13 +162,13 @@ public class TSysCodeTable extends UuidCrudEntity {
 	}
 
 	@Column(length = 64)
-	@Comment("分组注释")
-	public String getGroupingComment() {
-		return groupingComment;
+	@Comment("分组注释字段")
+	public String getGroupingCommentField() {
+		return groupingCommentField;
 	}
 
-	public void setGroupingComment(String groupingComment) {
-		this.groupingComment = groupingComment;
+	public void setGroupingCommentField(String groupingCommentField) {
+		this.groupingCommentField = groupingCommentField;
 	}
 
 }

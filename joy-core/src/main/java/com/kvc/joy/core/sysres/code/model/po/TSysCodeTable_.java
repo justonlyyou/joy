@@ -25,7 +25,7 @@ public class TSysCodeTable_ extends UuidCrudEntity_ {
 	public static volatile SingularAttribute<TSysCodeTable, String> pinyinField;
 	public static volatile SingularAttribute<TSysCodeTable, String> segmentRule;
 	public static volatile SingularAttribute<TSysCodeTable, String> groupingField;
-	public static volatile SingularAttribute<TSysCodeTable, String> groupingComment;
+	public static volatile SingularAttribute<TSysCodeTable, String> groupingCommentField;
 	public static volatile SingularAttribute<TSysCodeTable, String> activeField;
 	public static volatile SingularAttribute<TSysCodeTable, String> deletedField;
 	public static volatile SingularAttribute<TSysCodeTable, TSysDataSrc> dataSrc;

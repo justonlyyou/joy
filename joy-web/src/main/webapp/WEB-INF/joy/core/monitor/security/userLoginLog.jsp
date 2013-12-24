@@ -47,11 +47,7 @@
 							</td>
 							<td>&nbsp;&nbsp;</td>
 							<td>
-								<form:select class="form-control" path="loginStateCode" title="登陆状态" data-joy-props="operator:'='">
-									<form:option value="">-- 登陆状态 --</form:option>
-									<joy:codeOptions enumClass="com.kvc.joy.plugin.security.login.support.enums.LoginState" 
-										selectedValue="${loginStateCode}" showEmptyOption="false"/>
-								</form:select>
+								<joy:codeSelect cssClass="form-control" path="loginStateCode" tableId="login_state"/>
 							</td>
 							<td>&nbsp;&nbsp;</td>
 							<td>

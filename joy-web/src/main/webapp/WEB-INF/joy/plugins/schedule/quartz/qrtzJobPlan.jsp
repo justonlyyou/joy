@@ -46,10 +46,7 @@
 							</div>
 							<label for="runState" class="col-sm-1 control-label">运行状态</label>
 							<div class="col-sm-2">
-								<form:select class="form-control" path="runState" data-joy-props="operator:'='">
-									<joy:codeOptions selectedValue="${runState}"
-										enumClass="com.kvc.joy.plugin.schedule.quartz.support.enums.JobRunState"/>
-								</form:select>
+								<joy:codeSelect cssClass="form-control" path="runState" tableId="job_run_state" />
 							</div>
 							<div class="col-sm-3">
 								<form:button id="submitBtn" class="btn btn-default">

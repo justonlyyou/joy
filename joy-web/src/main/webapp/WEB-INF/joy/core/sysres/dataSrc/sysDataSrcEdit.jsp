@@ -29,12 +29,12 @@
 			class="table table-condensed table-hover table-bordered joy-detail-table">
 			<tr>
         		<td>数据源名称</td>
-        		<td><input type="text" class="form-control input-sm" name="model.name"></td>
+        		<td><form:input cssClass="form-control input-sm" path="name" /></td>
         		<td>数据库类型</td>
         		<td>
-					<select class="form-control  input-sm" name="model.dbType">
+        			<form:select path="dbType" cssClass="form-control  input-sm">
 						<joy:codeOptions enumClass="com.kvc.joy.core.persistence.jdbc.support.enums.RdbType" />
-					</select>
+					</form:select>
 				</td>
         	</tr>
         	<tr>
