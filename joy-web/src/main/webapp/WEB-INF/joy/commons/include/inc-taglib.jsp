@@ -9,4 +9,5 @@
 <c:set var="ctx" value="${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}"/>
 <c:set var="staticCtx" value="${ctx}/static"/>
 <c:set var="joyCtx" value="${ctx}/static/joy"/>
+<c:set var="cssCtx" value="${ctx}/static/joy/css/bootstrap"/>
 <c:set var="thirdCtx" value="${ctx}/static/3rd"/>
