@@ -15,21 +15,17 @@
  */
 package com.kvc.joy.commons.scanner.classpath;
 
-import java.io.IOException;
-import java.lang.reflect.Modifier;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
-
 import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.io.FileTool;
 import com.kvc.joy.commons.lang.ClassTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.scanner.support.Resource;
+
+import java.io.IOException;
+import java.lang.reflect.Modifier;
+import java.net.URL;
+import java.util.*;
 
 /**
  * ClassPath scanner.

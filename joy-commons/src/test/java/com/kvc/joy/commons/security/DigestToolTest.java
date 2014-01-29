@@ -1,10 +1,9 @@
 package com.kvc.joy.commons.security;
 
-import java.io.IOException;
-
+import com.kvc.joy.commons.lang.string.EncodeTool;
 import org.junit.Test;
 
-import com.kvc.joy.commons.lang.string.EncodeTool;
+import java.io.IOException;
 
 /**
  * 

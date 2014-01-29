@@ -1,9 +1,8 @@
 package com.kvc.joy.commons.log.slf4j;
 
-import org.slf4j.LoggerFactory;
-
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogCreator;
+import org.slf4j.LoggerFactory;
 
 /**
  * 

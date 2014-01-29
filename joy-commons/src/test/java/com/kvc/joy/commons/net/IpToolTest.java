@@ -1,10 +1,9 @@
 package com.kvc.joy.commons.net;
 
-import java.util.List;
-
 import junit.framework.Assert;
-
 import org.junit.Test;
+
+import java.util.List;
 
 /**
  * 

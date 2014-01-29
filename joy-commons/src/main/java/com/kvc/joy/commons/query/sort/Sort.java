@@ -1,13 +1,13 @@
 package com.kvc.joy.commons.query.sort;
 
+import com.kvc.joy.commons.collections.CollectionTool;
+import com.kvc.joy.commons.exception.SystemException;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
-
-import com.kvc.joy.commons.collections.CollectionTool;
-import com.kvc.joy.commons.exception.SystemException;
 
 /**
  * 

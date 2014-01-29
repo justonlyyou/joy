@@ -1,10 +1,10 @@
 package com.kvc.joy.commons.lang;
 
+import org.apache.commons.lang3.SerializationException;
+
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.Serializable;
-
-import org.apache.commons.lang3.SerializationException;
 
 /**
  * 序列化工具类

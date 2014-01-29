@@ -1,13 +1,13 @@
 package com.kvc.joy.commons.collections;
 
+import com.kvc.joy.commons.lang.ArrayTool;
+import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.query.QueryLogicOperator;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-
-import com.kvc.joy.commons.lang.ArrayTool;
-import com.kvc.joy.commons.lang.string.StringTool;
-import com.kvc.joy.commons.query.QueryLogicOperator;
 
 /**
  * 

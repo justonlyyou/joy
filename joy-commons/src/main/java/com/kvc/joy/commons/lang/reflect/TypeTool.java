@@ -1,14 +1,10 @@
 package com.kvc.joy.commons.lang.reflect;
 
-import java.lang.reflect.GenericArrayType;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-import java.lang.reflect.TypeVariable;
-import java.lang.reflect.WildcardType;
+import org.apache.commons.lang3.ClassUtils;
+
+import java.lang.reflect.*;
 import java.util.Map;
 import java.util.Set;
-
-import org.apache.commons.lang3.ClassUtils;
 
 /**
  * <p>

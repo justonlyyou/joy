@@ -1,16 +1,15 @@
 package com.kvc.joy.commons.exception;
 
+import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
+import org.apache.commons.lang3.exception.ExceptionUtils;
+
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
-import org.apache.commons.lang3.exception.ExceptionUtils;
-
-import com.kvc.joy.commons.lang.string.StringTool;
-import com.kvc.joy.commons.log.Log;
-import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * <p>
@@ -344,7 +343,7 @@ public class ExceptionTool {
 	 * 
 	 * @param throwable 要检查的异常，可以为null
 	 * @param type 要查找的异常类型, 匹配子类型, null将返回-1
-	 * @param 开始查找的异常链的下标，负数时将当作0，大于异常链中异常总个数时返回-1
+	 * @param fromIndex 开始查找的异常链的下标，负数时将当作0，大于异常链中异常总个数时返回-1
 	 * @return 匹配的异常在异常链中的下标, 任意参数为null或开始查找的下标大于异常链中异常总个数或没找到都将返回-1
 	 * @since 1.0.0
 	 * @author 唐玮琳

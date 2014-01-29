@@ -3,14 +3,11 @@
  */
 package com.kvc.joy.commons.lang;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 import junit.framework.Assert;
-
 import org.junit.Test;
 
-import com.kvc.joy.commons.lang.ArrayTool;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * <p>

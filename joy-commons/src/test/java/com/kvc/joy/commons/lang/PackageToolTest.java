@@ -1,14 +1,10 @@
 package com.kvc.joy.commons.lang;
 
-import java.util.Set;
-
+import com.kvc.joy.commons.lang.string.StringTool;
 import junit.framework.Assert;
-
 import org.junit.Test;
 
-import com.kvc.joy.commons.lang.BooleanTool;
-import com.kvc.joy.commons.lang.PackageTool;
-import com.kvc.joy.commons.lang.string.StringTool;
+import java.util.Set;
 
 /**
  * 

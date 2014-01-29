@@ -1,20 +1,15 @@
 package com.kvc.joy.commons.lang;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
-
-import org.apache.commons.collections.FastHashMap;
-
 import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.math.NumberTool;
+import org.apache.commons.collections.FastHashMap;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * 日期操作工具类

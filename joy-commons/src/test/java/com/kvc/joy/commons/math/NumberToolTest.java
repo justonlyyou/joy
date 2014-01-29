@@ -1,10 +1,7 @@
 package com.kvc.joy.commons.math;
 
 import junit.framework.Assert;
-
 import org.junit.Test;
-
-import com.kvc.joy.commons.math.NumberTool;
 
 /**
  * 

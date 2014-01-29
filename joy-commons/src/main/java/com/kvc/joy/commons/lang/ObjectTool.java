@@ -1,9 +1,9 @@
 package com.kvc.joy.commons.lang;
 
-import java.util.Comparator;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.CloneFailedException;
+
+import java.util.Comparator;
 
 /**
  * 对象处理工具类

@@ -4,8 +4,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import com.kvc.joy.commons.bean.IEntity;
-
 /**
  * 
  * @author 唐玮琳

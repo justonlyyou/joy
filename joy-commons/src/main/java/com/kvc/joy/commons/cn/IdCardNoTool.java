@@ -1,15 +1,15 @@
 package com.kvc.joy.commons.cn;
 
+import com.kvc.joy.commons.enums.Sex;
+import com.kvc.joy.commons.lang.CharTool;
+import com.kvc.joy.commons.lang.string.StringTool;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
-import com.kvc.joy.commons.enums.Sex;
-import com.kvc.joy.commons.lang.CharTool;
-import com.kvc.joy.commons.lang.string.StringTool;
 
 /**
  * 身份证工具类.

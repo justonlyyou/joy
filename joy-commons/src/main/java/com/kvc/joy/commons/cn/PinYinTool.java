@@ -1,12 +1,11 @@
 package com.kvc.joy.commons.cn;
 
+import com.kvc.joy.commons.exception.SystemException;
 import net.sourceforge.pinyin4j.PinyinHelper;
 import net.sourceforge.pinyin4j.format.HanyuPinyinCaseType;
 import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat;
 import net.sourceforge.pinyin4j.format.HanyuPinyinToneType;
 import net.sourceforge.pinyin4j.format.HanyuPinyinVCharType;
-
-import com.kvc.joy.commons.exception.SystemException;
 
 /**
  * 拼音工具类

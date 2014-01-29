@@ -1,9 +1,9 @@
 package com.kvc.joy.commons.exception;
 
-import java.text.MessageFormat;
-
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
+
+import java.text.MessageFormat;
 
 /**
  * 

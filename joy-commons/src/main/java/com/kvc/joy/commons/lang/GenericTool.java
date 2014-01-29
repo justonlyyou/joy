@@ -1,14 +1,14 @@
 package com.kvc.joy.commons.lang;
 
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.kvc.joy.commons.log.Log;
-import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * 泛型工具类

@@ -1,11 +1,8 @@
 package com.kvc.joy.commons.data.xml;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.StringWriter;
-
+import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
@@ -14,9 +11,7 @@ import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 
-import com.kvc.joy.commons.lang.string.StringTool;
-import com.kvc.joy.commons.log.Log;
-import com.kvc.joy.commons.log.LogFactory;
+import java.io.*;
 
 /**
  * DOM4J操作工具类

@@ -1,7 +1,8 @@
 package com.kvc.joy.commons.lang.string;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * 

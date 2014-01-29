@@ -3,17 +3,14 @@
  */
 package com.kvc.joy.commons.lang;
 
+import com.kvc.joy.commons.bean.Pair;
+import junit.framework.Assert;
+import org.junit.Test;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Map;
-
-import junit.framework.Assert;
-
-import org.junit.Test;
-
-import com.kvc.joy.commons.bean.Pair;
-import com.kvc.joy.commons.lang.GenericTool;
 
 /**
  * <p>

@@ -1,11 +1,8 @@
 package com.kvc.joy.commons.bean;
 
-import junit.framework.Assert;
-
-import org.junit.Test;
-
-import com.kvc.joy.commons.bean.Single;
 import com.kvc.joy.commons.support.ICommand;
+import junit.framework.Assert;
+import org.junit.Test;
 
 /**
  * com.kvc.joy.common.bean.Single单元测试用例

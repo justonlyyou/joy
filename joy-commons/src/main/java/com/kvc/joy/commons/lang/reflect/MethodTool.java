@@ -1,15 +1,14 @@
 package com.kvc.joy.commons.lang.reflect;
 
+import com.kvc.joy.commons.exception.SystemException;
+import org.apache.commons.lang3.StringUtils;
+
 import java.beans.BeanInfo;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.apache.commons.lang3.StringUtils;
-
-import com.kvc.joy.commons.exception.SystemException;
 
 /**
  * <p>

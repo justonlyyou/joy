@@ -1,8 +1,8 @@
 package com.kvc.joy.commons.enums;
 
-import java.util.Map;
-
 import com.kvc.joy.commons.lang.BooleanTool;
+
+import java.util.Map;
 
 
 /**

@@ -1,12 +1,11 @@
 package com.kvc.joy.commons.security;
 
+import com.kvc.joy.commons.lang.string.EncodeTool;
+import junit.framework.Assert;
 import org.junit.Test;
 
-import com.kvc.joy.commons.lang.string.EncodeTool;
-
-import junit.framework.Assert;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * 

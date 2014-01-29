@@ -1,10 +1,8 @@
 package com.kvc.joy.commons.cn;
 
-import junit.framework.Assert;
-
-import org.junit.Test;
-
 import com.kvc.joy.commons.enums.Sex;
+import junit.framework.Assert;
+import org.junit.Test;
 
 /**
  * 

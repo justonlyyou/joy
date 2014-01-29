@@ -3,14 +3,11 @@
  */
 package com.kvc.joy.commons.lang.string;
 
-import java.util.Locale;
-import java.util.ResourceBundle;
-
 import junit.framework.Assert;
-
 import org.junit.Test;
 
-import com.kvc.joy.commons.lang.string.I18nTool;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 /**
  * <p>

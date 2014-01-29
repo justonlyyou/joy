@@ -1,14 +1,13 @@
 package com.kvc.joy.commons.io;
 
-import java.io.File;
-import java.util.Collection;
-
+import com.kvc.joy.commons.enums.CaseSensitivity;
+import com.kvc.joy.commons.exception.SystemException;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOCase;
 
-import com.kvc.joy.commons.enums.CaseSensitivity;
-import com.kvc.joy.commons.exception.SystemException;
+import java.io.File;
+import java.util.Collection;
 
 /**
  * <p>
@@ -590,7 +589,7 @@ public class FilenameTool {
 	 * 输出结果在不同操作系统上将是一致的。
 	 * </p>
 	 * 
-	 * @param 待查找的路径, null将返回null
+	 * @param filename 待查找的路径, null将返回null
 	 * @return 不带前缀的路径, 没有将返回空串，路径无效或为null将返回null
 	 * @since 1.0.0
 	 * @author 唐玮琳

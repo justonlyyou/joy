@@ -1,9 +1,9 @@
 package com.kvc.joy.commons.math;
 
+import org.apache.commons.lang3.math.NumberUtils;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
-
-import org.apache.commons.lang3.math.NumberUtils;
 
 /**
  * 数值工具类
@@ -319,7 +319,7 @@ public class NumberTool {
 	 * </pre>
 	 * 
 	 * @param str 要转换的字符串，可以为null，为null将返回0
-	 * @param 字符串为null时返回的默认值
+	 * @param defaultValue 字符串为null时返回的默认值
 	 * @return 字符串的short表示，字符串为null或转换失败时将返回指定的默认值
 	 * @since 1.0.0
 	 * @author 唐玮琳

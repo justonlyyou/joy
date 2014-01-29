@@ -1,15 +1,12 @@
 package com.kvc.joy.commons.collections;
 
+import junit.framework.Assert;
+import org.junit.Test;
+
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
-
-import junit.framework.Assert;
-
-import org.junit.Test;
-
-import com.kvc.joy.commons.collections.SetTool;
 
 /**
  * 

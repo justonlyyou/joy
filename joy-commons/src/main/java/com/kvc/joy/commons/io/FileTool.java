@@ -1,12 +1,11 @@
 package com.kvc.joy.commons.io;
 
-import java.io.File;
-import java.io.FileFilter;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.Reader;
+import com.kvc.joy.commons.exception.SystemException;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.LineIterator;
+import org.apache.commons.io.filefilter.IOFileFilter;
+
+import java.io.*;
 import java.math.BigInteger;
 import java.net.URL;
 import java.nio.charset.Charset;
@@ -15,12 +14,6 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.zip.Checksum;
-
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.LineIterator;
-import org.apache.commons.io.filefilter.IOFileFilter;
-
-import com.kvc.joy.commons.exception.SystemException;
 
 /**
  * <p>
@@ -1787,7 +1780,7 @@ public class FileTool {
 	 * 
 	 * @param file 要写入的文件
 	 * @param encoding 要使用的编码, {@code null} 将使用平台默认的编码
-	 * @param 要写入的容器, {@code null} 将写入空行
+	 * @param lines 要写入的容器, {@code null} 将写入空行
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * 						UnsupportedEncodingException 如果指定的编码不被虚拟机支持
@@ -1815,7 +1808,7 @@ public class FileTool {
 	 * 
 	 * @param file 要写入的文件
 	 * @param encoding 要使用的编码, {@code null} 将使用平台默认的编码
-	 * @param 要写入的容器, {@code null} 将写入空行
+	 * @param lines 要写入的容器, {@code null} 将写入空行
 	 * @param append 数据是否被拼接到文件末尾，而不是替换原文件的内容
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
@@ -1843,7 +1836,7 @@ public class FileTool {
 	 * </p>
 	 * 
 	 * @param file 要写入的文件
-	 * @param 要写入的容器, {@code null} 将写入空行
+	 * @param lines 要写入的容器, {@code null} 将写入空行
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0

@@ -1,25 +1,13 @@
 package com.kvc.joy.commons.collections;
 
-import java.io.PrintStream;
-import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Properties;
-import java.util.ResourceBundle;
-import java.util.SortedMap;
-
-import org.apache.commons.collections.Factory;
-import org.apache.commons.collections.KeyValue;
-import org.apache.commons.collections.MapUtils;
-import org.apache.commons.collections.Predicate;
-import org.apache.commons.collections.Transformer;
+import org.apache.commons.collections.*;
 import org.apache.commons.collections.map.MultiValueMap;
 import org.apache.commons.collections.map.TransformedMap;
 import org.apache.commons.collections.map.TransformedSortedMap;
+
+import java.io.PrintStream;
+import java.text.NumberFormat;
+import java.util.*;
 
 /**
  * Map工具类

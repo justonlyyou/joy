@@ -1,17 +1,5 @@
 package com.kvc.joy.commons.collections;
 
-import java.text.MessageFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
-import org.josql.Query;
-import org.josql.QueryExecutionException;
-import org.josql.QueryParseException;
-
 import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.lang.ArrayTool;
 import com.kvc.joy.commons.lang.string.StringTool;
@@ -19,6 +7,13 @@ import com.kvc.joy.commons.query.Paging;
 import com.kvc.joy.commons.query.QueryLogic;
 import com.kvc.joy.commons.query.QueryLogics;
 import com.kvc.joy.commons.query.sort.Order;
+import org.josql.Query;
+import org.josql.QueryExecutionException;
+import org.josql.QueryParseException;
+
+import java.text.MessageFormat;
+import java.util.*;
+import java.util.Map.Entry;
 
 /**
  * 

@@ -1,15 +1,11 @@
 package com.kvc.joy.commons.support;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.kvc.joy.commons.bean.TreeNode;
 import junit.framework.Assert;
-
 import org.junit.Test;
 
-import com.kvc.joy.commons.bean.TreeNode;
-import com.kvc.joy.commons.support.IListToTreeRestrict;
-import com.kvc.joy.commons.support.ListToTreeConvertor;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 

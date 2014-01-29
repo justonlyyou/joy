@@ -15,6 +15,10 @@
  */
 package com.kvc.joy.commons.scanner.classpath;
 
+import com.kvc.joy.commons.exception.SystemException;
+import com.kvc.joy.commons.io.IoTool;
+import com.kvc.joy.commons.scanner.support.Resource;
+
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -22,10 +26,6 @@ import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.nio.charset.Charset;
-
-import com.kvc.joy.commons.exception.SystemException;
-import com.kvc.joy.commons.io.IoTool;
-import com.kvc.joy.commons.scanner.support.Resource;
 
 /**
  * A resource on the classpath.

@@ -3,15 +3,12 @@
  */
 package com.kvc.joy.commons.lang;
 
-import java.util.Calendar;
-import java.util.Date;
-
 import junit.framework.Assert;
-
 import org.junit.Before;
 import org.junit.Test;
 
-import com.kvc.joy.commons.lang.DateTool;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * <p>

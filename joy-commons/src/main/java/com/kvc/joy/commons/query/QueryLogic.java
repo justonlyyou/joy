@@ -1,7 +1,5 @@
 package com.kvc.joy.commons.query;
 
-import com.kvc.joy.commons.lang.string.StringTool;
-
 /**
  * 
  * @author 唐玮琳

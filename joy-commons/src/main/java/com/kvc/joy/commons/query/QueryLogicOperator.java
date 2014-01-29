@@ -1,10 +1,10 @@
 package com.kvc.joy.commons.query;
 
-import java.io.Serializable;
-
 import com.kvc.joy.commons.enums.EnumTool;
 import com.kvc.joy.commons.enums.ICodeEnum;
 import com.kvc.joy.commons.lang.string.StringTool;
+
+import java.io.Serializable;
 
 /**
  * 

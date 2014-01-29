@@ -15,18 +15,13 @@
  */
 package com.kvc.joy.commons.scanner.filesystem;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.nio.charset.Charset;
-
 import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.io.IoTool;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.scanner.support.Resource;
+
+import java.io.*;
+import java.nio.charset.Charset;
 
 /**
  * A resource on the filesystem.

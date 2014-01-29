@@ -1,8 +1,8 @@
 package com.kvc.joy.commons.query.sort;
 
-import java.util.Locale;
-
 import com.kvc.joy.commons.exception.SystemException;
+
+import java.util.Locale;
 
 
 /**

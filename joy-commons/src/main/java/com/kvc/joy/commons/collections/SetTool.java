@@ -1,16 +1,11 @@
 package com.kvc.joy.commons.collections;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
-import java.util.SortedSet;
-
+import com.kvc.joy.commons.lang.ArrayTool;
 import org.apache.commons.collections.Predicate;
 import org.apache.commons.collections.SetUtils;
 import org.apache.commons.collections.Transformer;
 
-import com.kvc.joy.commons.lang.ArrayTool;
+import java.util.*;
 
 /**
  * Set工具类
@@ -382,7 +377,7 @@ public class SetTool {
 	 * 不要使用原来的集合, 因为它是一个可以添加未转换的对象的后门.
 	 * </p>
 	 * 
-	 * @param list 要被转换的集合, 不能为null
+	 * @param set 要被转换的集合, 不能为null
 	 * @param transformer 使用的转换器, 不能为null
 	 * @return 转换后的集合
 	 * @throws IllegalArgumentException 如果任意参数null

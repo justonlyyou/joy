@@ -1,16 +1,15 @@
 package com.kvc.joy.commons.collections;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
-
+import com.kvc.joy.commons.lang.ArrayTool;
 import org.apache.commons.collections.Factory;
 import org.apache.commons.collections.ListUtils;
 import org.apache.commons.collections.Predicate;
 import org.apache.commons.collections.Transformer;
 
-import com.kvc.joy.commons.lang.ArrayTool;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * List工具类

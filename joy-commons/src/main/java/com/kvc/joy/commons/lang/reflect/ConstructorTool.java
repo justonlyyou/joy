@@ -1,8 +1,8 @@
 package com.kvc.joy.commons.lang.reflect;
 
-import java.lang.reflect.Constructor;
-
 import com.kvc.joy.commons.exception.SystemException;
+
+import java.lang.reflect.Constructor;
 
 /**
  * <p>
