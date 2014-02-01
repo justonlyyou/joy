@@ -3,17 +3,14 @@
  */
 package com.kvc.joy.commons.lang.reflect;
 
+import com.kvc.joy.commons.bean.Pair;
+import junit.framework.Assert;
+import org.junit.Test;
+
 import java.lang.reflect.Method;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
-import junit.framework.Assert;
-
-import org.junit.Test;
-
-import com.kvc.joy.commons.bean.Pair;
-import com.kvc.joy.commons.lang.reflect.MethodTool;
 
 /**
  * <p>
@@ -32,8 +29,8 @@ public class MethodToolTest {
 		for (Method method : readMethods) {
 			methodNameSet.add(method.getName());
 		}
-		Assert.assertTrue(methodNameSet.contains("getFirst"));
-		Assert.assertTrue(methodNameSet.contains("getSecond"));
+		Assert.assertTrue(methodNameSet.contains("getLeft"));
+		Assert.assertTrue(methodNameSet.contains("getRight"));
 	}
 	
 	@Test

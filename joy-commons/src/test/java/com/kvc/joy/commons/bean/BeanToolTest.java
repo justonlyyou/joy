@@ -1,19 +1,10 @@
 package com.kvc.joy.commons.bean;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-
 import junit.framework.Assert;
-
 import org.junit.Before;
 import org.junit.Test;
 
-import com.kvc.joy.commons.bean.BeanTool;
-import com.kvc.joy.commons.bean.Pair;
+import java.util.*;
 
 /**
  * 
@@ -118,20 +109,20 @@ public class BeanToolTest {
 	public void testCopyPropertiesByMap() {
 		 Class<Pair> destClass = Pair.class;
 		 Pair<String, List<String>> srcObj = new Pair<String, List<String>>();
-		 srcObj.setFirst("first");
+		 srcObj.setLeft("left");
 		 List<String> list = new ArrayList<String>();
 		 list.add("1");
 		 list.add("2");
-		 srcObj.setSecond(list);
+		 srcObj.setRight(list);
 		 
 		 Map<String, String> propertyMap = new HashMap<String, String>();
-		 propertyMap.put("first", "second"); // first属性的值拷贝到second
-		 propertyMap.put("second[0]", "first"); // second属性的值拷贝到first
+		 propertyMap.put("left", "right"); // left属性的值拷贝到right
+		 propertyMap.put("right[0]", "left"); // right属性的值拷贝到left
 		
 		 Pair dest = BeanTool.copyProperties(destClass, srcObj, propertyMap);
 		 
-		 Assert.assertEquals(srcObj.getFirst(), dest.getSecond());
-		 Assert.assertEquals(srcObj.getSecond().get(0), dest.getFirst());
+		 Assert.assertEquals(srcObj.getLeft(), dest.getRight());
+		 Assert.assertEquals(srcObj.getRight().get(0), dest.getLeft());
 	}
 	
 	@Test

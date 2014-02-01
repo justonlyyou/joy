@@ -1,13 +1,10 @@
 package com.kvc.joy.commons.lang.string;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import junit.framework.Assert;
-
 import org.junit.Test;
 
-import com.kvc.joy.commons.lang.string.StringTool;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * StringUtils单元测试类
@@ -64,18 +61,18 @@ public class StringToolTest {
 	}
 	
 	@Test
-	public void testHumpToUnderline() {
-		Assert.assertEquals("", StringTool.humpToUnderline(null));
-		Assert.assertEquals("", StringTool.humpToUnderline(""));
-		Assert.assertEquals("HUMP_TO_UNDERLINE", StringTool.humpToUnderline("humpToUnderline"));
+	public void testHumpToUnderscore() {
+		Assert.assertEquals("", StringTool.humpToUnderscore(null));
+		Assert.assertEquals("", StringTool.humpToUnderscore(""));
+		Assert.assertEquals("HUMP_TO_UNDERLINE", StringTool.humpToUnderscore("humpToUnderline"));
 	}
 	
 	@Test
-	public void testUnderlineToHump() {
-		Assert.assertEquals("", StringTool.underlineToHump(null));
-		Assert.assertEquals("", StringTool.underlineToHump(""));
-		Assert.assertEquals("humpToUnderline", StringTool.underlineToHump("HUMP_TO_UNDERLINE"));
-		Assert.assertFalse("HumpToUnderline".equals(StringTool.underlineToHump("HUMP_TO_UNDERLINE")));
+	public void testUnderscoreToHump() {
+		Assert.assertEquals("", StringTool.underscoreToHump(null));
+		Assert.assertEquals("", StringTool.underscoreToHump(""));
+		Assert.assertEquals("humpToUnderline", StringTool.underscoreToHump("HUMP_TO_UNDERLINE"));
+		Assert.assertFalse("HumpToUnderline".equals(StringTool.underscoreToHump("HUMP_TO_UNDERLINE")));
 	}
 	
 

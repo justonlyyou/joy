@@ -1,16 +1,11 @@
 package com.kvc.joy.commons.lang.string;
 
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.Locale;
-import java.util.Map;
-import java.util.ResourceBundle;
-import java.util.Set;
-
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.scanner.classpath.ClassPathScanner;
 import com.kvc.joy.commons.scanner.support.Resource;
+
+import java.util.*;
 
 /**
  * 国际化工具
@@ -107,11 +102,10 @@ public class I18nTool {
 	 */
 	public static void changeLocale(Locale locale) {
 		Set<String> baseNameSet = bundleMap.keySet();
-		bundleMap.clear();
+        Locale.setDefault(locale);
 		for (String baseName : baseNameSet) {
 			bundle(baseName, locale);
 		}
-		Locale.setDefault(locale);
 	}
 
 	/**

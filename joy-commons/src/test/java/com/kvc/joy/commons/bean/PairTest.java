@@ -1,13 +1,10 @@
 package com.kvc.joy.commons.bean;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import junit.framework.Assert;
-
 import org.junit.Test;
 
-import com.kvc.joy.commons.bean.Pair;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * com.kvc.joy.common.bean.Pair单元测试用例
@@ -21,8 +18,8 @@ public class PairTest {
 	public void testPutToMap() {
 		Pair<Integer, String> pair = new Pair<Integer, String>();
 		// 使用setter
-		pair.setFirst(1);
-		pair.setSecond("one");
+		pair.setLeft(1);
+		pair.setRight("one");
 
 		Map<Integer, String> map = new HashMap<Integer, String>();
 		map.put(2, "two");

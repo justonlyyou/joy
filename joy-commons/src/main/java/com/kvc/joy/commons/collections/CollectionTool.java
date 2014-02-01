@@ -1,27 +1,15 @@
 package com.kvc.joy.commons.collections;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.apache.commons.beanutils.PropertyUtils;
-import org.apache.commons.collections.BoundedCollection;
-import org.apache.commons.collections.Closure;
-import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.collections.Predicate;
-import org.apache.commons.collections.Transformer;
-
 import com.kvc.joy.commons.bean.BeanTool;
 import com.kvc.joy.commons.bean.IEntity;
 import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.lang.ArrayTool;
 import com.kvc.joy.commons.lang.reflect.MethodTool;
 import com.kvc.joy.commons.lang.string.StringTool;
+import org.apache.commons.beanutils.PropertyUtils;
+import org.apache.commons.collections.*;
+
+import java.util.*;
 
 /**
  * Collection工具类
@@ -47,7 +35,7 @@ public class CollectionTool {
 	 * @author 唐玮琳
 	 * @date 2012-5-28 下午02:12:54
 	 */
-	public static <E extends IEntity<T>, T> Map<T, E> toEntityMap(Collection<? extends E> entities) {
+	public static <T, E extends IEntity<T>> Map<T, E> toEntityMap(Collection<? extends E> entities) {
 		if (isEmpty(entities)) {
 			return new HashMap<T, E>(0);
 		}

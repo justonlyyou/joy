@@ -1,10 +1,9 @@
 package com.kvc.joy.commons.enums;
 
-import java.util.Map;
-
 import junit.framework.Assert;
-
 import org.junit.Test;
+
+import java.util.Map;
 
 /**
  * 
@@ -117,7 +116,7 @@ public class EnumToolTest {
 	
 	@Test
 	public void getCodeEnumClass() {
-		Class<? extends Enum<? extends Enum<?>>> codeEnumClass = EnumTool.getCodeEnumClass(enumClassStr);
+		Class<? extends ICodeEnum> codeEnumClass = EnumTool.getCodeEnumClass(enumClassStr);
 		Assert.assertTrue(codeEnumClass == enumClass);
 		
 		try {

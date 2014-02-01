@@ -1,16 +1,15 @@
 package com.kvc.joy.commons.enums;
 
-import java.util.EnumSet;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.apache.commons.lang3.EnumUtils;
-
 import com.kvc.joy.commons.exception.ExceptionTool;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
+import org.apache.commons.lang3.EnumUtils;
+
+import java.util.EnumSet;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 枚举工具类
@@ -30,15 +29,16 @@ public class EnumTool {
 	 * 根据枚举类型和编码，取得对应的枚举
 	 * </p>
 	 *  
-	 * @param enumClass 枚举类型, 不能为null
-	 * @param code 编码，可以为null
-	 * @return 枚举，根据编码找不到对应枚举时返回null
+	 *
+     * @param enumClass 枚举类型, 不能为null
+     * @param code 编码，可以为null
+     * @return 枚举，根据编码找不到对应枚举时返回null
 	 * @throws IllegalArgumentException enumClass参数为null时
 	 * @since 1.0.0
 	 * @author 唐玮琳
 	 * @time 2013-5-12 下午11:35:02
 	 */
-	public static <E extends Enum<E> & ICodeEnum> E enumOf(Class<E> enumClass, String code) {
+	public static <E extends ICodeEnum> E enumOf(Class<E> enumClass, String code) {
 		if(enumClass == null) {
 			throw new IllegalArgumentException("enumClass参数不能为null");
 		}
@@ -65,8 +65,8 @@ public class EnumTool {
 	 * @author 唐玮琳
 	 * @time 2013-5-12 下午11:54:52
 	 */
-	public static <E extends Enum<E> & ICodeEnum> E enumOf(String enumClass, String code) {
-		Class<E> enumClazz = getCodeEnumClass(enumClass);
+	public static ICodeEnum enumOf(String enumClass, String code) {
+		Class<? extends ICodeEnum> enumClazz = getCodeEnumClass(enumClass);
 		return enumOf(enumClazz, code);
 	}
 	
@@ -82,13 +82,13 @@ public class EnumTool {
 	 * @author 唐玮琳
 	 * @time 2013-5-12 下午11:35:37
 	 */
-	public static <E extends Enum<E> & ICodeEnum> Map<String, String> getCodeMap(Class<E> enumClass) {
+	public static Map<String, String> getCodeMap(Class<? extends ICodeEnum> enumClass) {
 		if (enumClass == null) {
 			throw new IllegalArgumentException("enumClass参数不能为null！");
 		}
-		E[] enumConstants = enumClass.getEnumConstants();
+		ICodeEnum[] enumConstants = enumClass.getEnumConstants();
 		Map<String, String> codeMap = new LinkedHashMap<String, String>(enumConstants.length);
-		for (E e : enumConstants) {
+		for (ICodeEnum e : enumConstants) {
 			codeMap.put(e.getCode(), e.getTrans());
 		}
     	return codeMap;
@@ -106,8 +106,8 @@ public class EnumTool {
 	 * @author 唐玮琳
 	 * @time 2013-5-12 下午11:36:06
 	 */
-	public static <E extends Enum<E> & ICodeEnum> Map<String, String> getCodeMap(String enumClass) {
-		Class<E> enumClazz = getCodeEnumClass(enumClass);
+	public static Map<String, String> getCodeMap(String enumClass) {
+		Class<? extends ICodeEnum> enumClazz = getCodeEnumClass(enumClass);
 		return getCodeMap(enumClazz);
 	}
 	
@@ -124,7 +124,7 @@ public class EnumTool {
 	 * @time 2013-5-12 下午11:36:20
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public static <E extends Enum<E> & ICodeEnum> Class<E> getCodeEnumClass(String enumClass) {
+	public static Class<? extends ICodeEnum> getCodeEnumClass(String enumClass) {
 		if (StringTool.isBlank(enumClass)) {
 			throw new IllegalArgumentException("enumClass参数不能为null！");
 		}

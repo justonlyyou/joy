@@ -1,29 +1,25 @@
 package com.kvc.joy.commons.bean;
 
-import java.beans.BeanInfo;
-import java.beans.Introspector;
-import java.beans.PropertyDescriptor;
-import java.io.Serializable;
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.apache.commons.beanutils.BeanUtils;
-import org.apache.commons.beanutils.PropertyUtils;
-import org.apache.commons.lang3.SerializationException;
-
 import com.kvc.joy.commons.exception.ExceptionTool;
 import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.lang.SerializationTool;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
+import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.beanutils.ConvertUtils;
+import org.apache.commons.beanutils.PropertyUtils;
+import org.apache.commons.beanutils.converters.DateConverter;
+import org.apache.commons.lang3.SerializationException;
+
+import java.beans.BeanInfo;
+import java.beans.Introspector;
+import java.beans.PropertyDescriptor;
+import java.io.Serializable;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.util.*;
+import java.util.Map.Entry;
 
 /**
  * Bean操作工具类
@@ -35,6 +31,12 @@ import com.kvc.joy.commons.log.LogFactory;
 public class BeanTool {
 
 	protected static final Log logger = LogFactory.getLog(BeanTool.class);
+
+    static {
+        ConvertUtils.register(new DateConverter(null), java.util.Date.class);
+        ConvertUtils.register(new DateConverter(null), java.sql.Date.class);
+        ConvertUtils.register(new DateConverter(null), java.sql.Timestamp.class);
+    }
 
 	private BeanTool() {
 	}

@@ -1,7 +1,5 @@
 package com.kvc.joy.commons.query;
 
-import javax.persistence.Transient;
-
 import com.kvc.joy.commons.query.sort.Sort;
 
 
@@ -216,7 +214,6 @@ public class Paging implements java.io.Serializable { // implements Pageable {
 		this.midEndPage = midEndPage;
 	}
 
-	@Transient
 	public Sort getSort() {
 		return sort;
 	}
