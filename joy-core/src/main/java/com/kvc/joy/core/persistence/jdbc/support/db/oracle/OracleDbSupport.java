@@ -1,15 +1,15 @@
 package com.kvc.joy.core.persistence.jdbc.support.db.oracle;
 
-import java.sql.Connection;
-import java.sql.Types;
-import java.text.MessageFormat;
-
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbTable;
 import com.kvc.joy.core.persistence.jdbc.support.db.DbSupport;
 import com.kvc.joy.core.persistence.jdbc.support.db.Schema;
 import com.kvc.joy.core.persistence.jdbc.support.db.SqlStatementBuilder;
 import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
+
+import java.sql.Connection;
+import java.sql.Types;
+import java.text.MessageFormat;
 
 /**
  * Oracle-specific support.

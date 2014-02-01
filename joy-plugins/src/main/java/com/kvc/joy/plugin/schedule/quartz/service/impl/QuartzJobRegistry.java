@@ -1,16 +1,15 @@
 package com.kvc.joy.plugin.schedule.quartz.service.impl;
 
-import static org.quartz.JobBuilder.newJob;
-
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
+import com.kvc.joy.plugin.schedule.quartz.service.IQuartzJobRegistry;
+import com.kvc.joy.plugin.schedule.quartz.support.utils.QuartzTool;
 import org.quartz.Job;
 import org.quartz.JobDetail;
 import org.quartz.SchedulerException;
 import org.quartz.Trigger;
 
-import com.kvc.joy.commons.log.Log;
-import com.kvc.joy.commons.log.LogFactory;
-import com.kvc.joy.plugin.schedule.quartz.service.IQuartzJobRegistry;
-import com.kvc.joy.plugin.schedule.quartz.support.utils.QuartzTool;
+import static org.quartz.JobBuilder.newJob;
 
 /**
  * 

@@ -1,26 +1,18 @@
 package com.kvc.joy.plugin.security.erbac.service.impl;
 
-import java.util.List;
-
-import javax.annotation.Resource;
-
-import org.apache.shiro.authc.AccountException;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.AuthenticationInfo;
-import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.authc.SimpleAuthenticationInfo;
-import org.apache.shiro.authc.UnknownAccountException;
-import org.apache.shiro.authc.UsernamePasswordToken;
+import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
+import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser;
+import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser_;
+import com.kvc.joy.plugin.security.erbac.service.IUserPermissionService;
+import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 
-import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
-import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser;
-import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser_;
-import com.kvc.joy.plugin.security.erbac.service.IUserPermissionService;
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * 

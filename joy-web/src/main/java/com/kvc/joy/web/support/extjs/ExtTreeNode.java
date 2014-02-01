@@ -1,10 +1,10 @@
 package com.kvc.joy.web.support.extjs;
 
+import com.kvc.joy.commons.bean.TreeNode;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.kvc.joy.commons.bean.TreeNode;
 
 /**
  * Extjs树结点类(Ext.data.NodeInterface)对应的POJO

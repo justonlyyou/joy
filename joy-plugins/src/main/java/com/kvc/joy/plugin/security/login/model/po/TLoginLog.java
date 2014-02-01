@@ -1,15 +1,14 @@
 package com.kvc.joy.plugin.security.login.model.po;
 
+import com.kvc.joy.core.persistence.entity.UuidEntity;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
+import com.kvc.joy.plugin.security.login.support.enums.LoginState;
+import org.apache.commons.lang3.StringUtils;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-
-import org.apache.commons.lang3.StringUtils;
-
-import com.kvc.joy.core.persistence.entity.UuidEntity;
-import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
-import com.kvc.joy.plugin.security.login.support.enums.LoginState;
 
 @Entity
 @Table(name = "t_login_log")

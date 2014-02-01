@@ -1,15 +1,11 @@
 package com.kvc.joy.core.ehcache.support;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
+
+import java.util.*;
 
 /**
  * EhCache缓存工厂

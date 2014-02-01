@@ -1,16 +1,15 @@
 package com.kvc.joy.core.persistence.orm.jpa;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.kvc.joy.commons.query.QueryLogic;
+import com.kvc.joy.commons.query.QueryLogicOperator;
+import com.kvc.joy.commons.query.QueryLogics;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.Path;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-
-import com.kvc.joy.commons.query.QueryLogic;
-import com.kvc.joy.commons.query.QueryLogicOperator;
-import com.kvc.joy.commons.query.QueryLogics;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 

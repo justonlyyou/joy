@@ -1,16 +1,15 @@
 package com.kvc.joy.plugin.image.captcha.service.impl;
 
-import java.awt.image.BufferedImage;
-import java.awt.image.RenderedImage;
-import java.util.Date;
-
-import org.apache.commons.lang3.StringUtils;
-
 import com.google.code.kaptcha.Producer;
 import com.kvc.joy.commons.bean.Pair;
 import com.kvc.joy.commons.lang.DateTool;
 import com.kvc.joy.core.init.support.JoyPropeties;
 import com.kvc.joy.plugin.image.captcha.service.ICaptchaService;
+import org.apache.commons.lang3.StringUtils;
+
+import java.awt.image.BufferedImage;
+import java.awt.image.RenderedImage;
+import java.util.Date;
 
 /**
  * 验证码服务

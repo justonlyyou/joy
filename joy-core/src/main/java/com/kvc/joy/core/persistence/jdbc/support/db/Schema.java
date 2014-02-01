@@ -1,12 +1,12 @@
 package com.kvc.joy.core.persistence.jdbc.support.db;
 
+import com.kvc.joy.commons.exception.SystemException;
+import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.kvc.joy.commons.exception.SystemException;
-import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
 
 /**
  * Represents a database schema.

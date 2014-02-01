@@ -1,18 +1,16 @@
 package com.kvc.joy.web.spmvc.modules.plugins.report.jasperreports.controller;
 
-import java.lang.reflect.Array;
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-
+import com.kvc.joy.commons.lang.string.StringTool;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.kvc.joy.commons.lang.string.StringTool;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.lang.reflect.Array;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * JasperReports Controller，用户处理JasperReports的请求，

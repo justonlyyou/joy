@@ -1,15 +1,15 @@
 package com.kvc.joy.core.persistence.jdbc.support.db;
 
+import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.kvc.joy.commons.lang.string.StringTool;
-import com.kvc.joy.commons.log.Log;
-import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * Sql script containing a series of statements terminated by semi-columns (;). Single-line (--) and multi-line (/* * /)

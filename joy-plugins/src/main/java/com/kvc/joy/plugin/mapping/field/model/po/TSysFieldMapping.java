@@ -1,17 +1,9 @@
 package com.kvc.joy.plugin.mapping.field.model.po;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
 import com.kvc.joy.commons.bean.IEntity;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
+
+import javax.persistence.*;
 
 /**
  * 字段映射信息

@@ -1,16 +1,5 @@
 package com.kvc.joy.plugin.support;
 
-import org.activiti.engine.FormService;
-import org.activiti.engine.HistoryService;
-import org.activiti.engine.IdentityService;
-import org.activiti.engine.ManagementService;
-import org.activiti.engine.RepositoryService;
-import org.activiti.engine.RuntimeService;
-import org.activiti.engine.TaskService;
-import org.apache.shiro.mgt.SecurityManager;
-import org.quartz.Scheduler;
-import org.springframework.core.task.TaskExecutor;
-
 import com.google.code.kaptcha.Producer;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
 import com.kvc.joy.core.spring.utils.SpringBeanTool;
@@ -23,6 +12,10 @@ import com.kvc.joy.plugin.security.login.service.ILoginService;
 import com.kvc.joy.plugin.security.login.service.ILogoutLogService;
 import com.kvc.joy.plugin.security.login.service.ILogoutService;
 import com.kvc.joy.plugin.seqgen.service.ISequenceGenerator;
+import org.activiti.engine.*;
+import org.apache.shiro.mgt.SecurityManager;
+import org.quartz.Scheduler;
+import org.springframework.core.task.TaskExecutor;
 
 /**
  * 各种组件Bean的工厂

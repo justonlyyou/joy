@@ -1,12 +1,5 @@
 package com.kvc.joy.core.persistence.jdbc.service.impl;
 
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
@@ -14,6 +7,13 @@ import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbPrimaryKey;
 import com.kvc.joy.core.persistence.jdbc.model.vo.RdbConnection;
 import com.kvc.joy.core.persistence.jdbc.service.IMdRdbPrimaryKeyService;
 import com.kvc.joy.core.persistence.jdbc.support.utils.MdRdbTool;
+
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 

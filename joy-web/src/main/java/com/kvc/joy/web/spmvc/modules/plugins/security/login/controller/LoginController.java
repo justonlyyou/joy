@@ -1,11 +1,5 @@
 package com.kvc.joy.web.spmvc.modules.plugins.security.login.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.kvc.joy.commons.bean.Pair;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.plugin.image.captcha.consts.CaptchaConsts;
@@ -13,6 +7,11 @@ import com.kvc.joy.plugin.security.login.support.vo.LoginVo;
 import com.kvc.joy.plugin.support.PluginBeanFactory;
 import com.kvc.joy.web.support.utils.HttpRequestTool;
 import com.kvc.joy.web.support.utils.HttpSessionTool;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 

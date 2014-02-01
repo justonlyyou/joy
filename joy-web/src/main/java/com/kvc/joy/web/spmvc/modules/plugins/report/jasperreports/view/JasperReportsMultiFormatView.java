@@ -1,13 +1,9 @@
 package com.kvc.joy.web.spmvc.modules.plugins.report.jasperreports.view;
 
+import org.springframework.web.servlet.view.jasperreports.*;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import org.springframework.web.servlet.view.jasperreports.AbstractJasperReportsView;
-import org.springframework.web.servlet.view.jasperreports.JasperReportsCsvView;
-import org.springframework.web.servlet.view.jasperreports.JasperReportsHtmlView;
-import org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView;
-import org.springframework.web.servlet.view.jasperreports.JasperReportsXlsView;
 
 /**
  * 

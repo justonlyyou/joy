@@ -1,5 +1,10 @@
 package com.kvc.joy.web.support.extjs;
 
+import com.kvc.joy.commons.lang.string.StringTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
+import com.kvc.joy.web.support.utils.HttpRequestTool;
+
 import java.beans.BeanInfo;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
@@ -7,11 +12,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.kvc.joy.commons.lang.string.StringTool;
-import com.kvc.joy.commons.log.Log;
-import com.kvc.joy.commons.log.LogFactory;
-import com.kvc.joy.web.support.utils.HttpRequestTool;
 
 /**
  * Extjs模型Action，主要提供将POJO转为Extjs的Model，这样不用每个POJO都写一个Extjs的Model

@@ -8,12 +8,11 @@
  */
 package com.kvc.joy.web.support.filter.gzip;
 
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.zip.GZIPOutputStream;
-
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletResponse;
 
 public class GZIPResponseStream extends ServletOutputStream {
 	protected ByteArrayOutputStream baos = null;

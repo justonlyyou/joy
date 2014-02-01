@@ -5,21 +5,15 @@
  */
 package com.kvc.joy.web.support.utils;
 
-import java.io.UnsupportedEncodingException;
+import com.kvc.joy.commons.lang.string.EncodeTool;
+import org.apache.commons.lang3.Validate;
+
+import javax.servlet.ServletRequest;
 import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.StringTokenizer;
 import java.util.TreeMap;
-
-import javax.servlet.ServletRequest;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.commons.lang3.Validate;
-
-import com.kvc.joy.commons.lang.string.EncodeTool;
 
 /**
  * Http与Servlet工具类.

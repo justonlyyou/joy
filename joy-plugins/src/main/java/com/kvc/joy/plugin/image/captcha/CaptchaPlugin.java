@@ -1,9 +1,8 @@
 package com.kvc.joy.plugin.image.captcha;
 
-import org.springframework.stereotype.Component;
-
 import com.kvc.joy.core.init.service.IJoyPlugin;
 import com.kvc.joy.core.init.support.JoyPropeties;
+import org.springframework.stereotype.Component;
 
 /**
  * 

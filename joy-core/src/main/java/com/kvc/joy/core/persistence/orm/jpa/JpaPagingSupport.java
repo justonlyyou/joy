@@ -1,6 +1,7 @@
 package com.kvc.joy.core.persistence.orm.jpa;
 
-import java.util.List;
+import com.kvc.joy.commons.query.Paging;
+import com.kvc.joy.core.rp.pagestore.PageStore;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -8,9 +9,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.persistence.criteria.Selection;
-
-import com.kvc.joy.commons.query.Paging;
-import com.kvc.joy.core.rp.pagestore.PageStore;
+import java.util.List;
 
 /**
  * 

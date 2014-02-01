@@ -1,10 +1,10 @@
 package com.kvc.joy.core.rp.pagestore;
 
-import javax.persistence.Transient;
-
 import com.kvc.joy.commons.query.Paging;
 import com.kvc.joy.commons.query.QueryLogics;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
+
+import javax.persistence.Transient;
 
 /**
  * 

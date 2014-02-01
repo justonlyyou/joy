@@ -1,10 +1,9 @@
 package com.kvc.joy.web.spmvc.modules.monitor.log.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.kvc.joy.core.persistence.flyway.model.po.TSysDbSchemaVersion;
 import com.kvc.joy.web.spmvc.core.BaseController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * 

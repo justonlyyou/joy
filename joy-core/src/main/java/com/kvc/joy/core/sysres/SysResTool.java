@@ -1,12 +1,5 @@
 package com.kvc.joy.core.sysres;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
 import com.kvc.joy.commons.enums.EnumTool;
 import com.kvc.joy.commons.enums.ICodeEnum;
 import com.kvc.joy.commons.enums.YesNot;
@@ -19,6 +12,9 @@ import com.kvc.joy.core.spring.utils.CoreBeanFactory;
 import com.kvc.joy.core.sysres.code.model.vo.CodeRecord;
 import com.kvc.joy.core.sysres.datasrc.model.po.TSysDataSrc;
 import com.kvc.joy.core.sysres.menu.model.po.TSysMenu;
+
+import java.util.*;
+import java.util.Map.Entry;
 
 /**
  * 
@@ -152,7 +148,7 @@ public class SysResTool {
 				} else {
 					enumClass = adaptEnumClass(enumClass);
 					if (enumClass.matches("^([a-zA-Z][\\w]*[.][a-zA-Z][\\w]+)[.]*.*")) {
-						Class<? extends Enum<? extends Enum<?>>> codeEnumClass = EnumTool.getCodeEnumClass(enumClass);
+						Class<? extends ICodeEnum> codeEnumClass = EnumTool.getCodeEnumClass(enumClass);
 						if (codeEnumClass == YesNot.class) {
 							boolean bool = BooleanTool.toBoolean(code);
 							String trans = YesNot.enumOfBool(bool).getTrans();

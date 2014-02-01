@@ -1,20 +1,13 @@
 package com.kvc.joy.core.sysres.datasrc.model.po;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.Transient;
-
 import com.kvc.joy.core.persistence.entity.UuidCrudEntity;
 import com.kvc.joy.core.persistence.jdbc.model.vo.IMdRdbDataSrc;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 import com.kvc.joy.core.sysres.code.model.po.TSysCodeTable;
+
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * 数据源

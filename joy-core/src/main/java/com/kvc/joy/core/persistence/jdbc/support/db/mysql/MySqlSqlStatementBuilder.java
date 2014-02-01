@@ -1,10 +1,10 @@
 package com.kvc.joy.core.persistence.jdbc.support.db.mysql;
 
-import java.util.regex.Pattern;
-
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.core.persistence.jdbc.support.db.Delimiter;
 import com.kvc.joy.core.persistence.jdbc.support.db.SqlStatementBuilder;
+
+import java.util.regex.Pattern;
 
 /**
  * SqlStatementBuilder supporting MySQL-specific delimiter changes.

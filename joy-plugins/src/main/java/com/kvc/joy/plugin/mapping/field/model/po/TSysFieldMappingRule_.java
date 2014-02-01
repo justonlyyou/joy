@@ -3,11 +3,10 @@
  */
 package com.kvc.joy.plugin.mapping.field.model.po;
 
-import java.util.Set;
-
 import javax.persistence.metamodel.SetAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
+import java.util.Set;
 
 /**
  * 字段映射规则元模型

@@ -1,12 +1,12 @@
 package com.kvc.joy.plugin.security.erbac.model.po;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
 import com.kvc.joy.commons.support.IListToTreeRestrict;
 import com.kvc.joy.core.persistence.entity.UuidCrudEntity;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "t_erbac_organization")

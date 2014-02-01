@@ -3,13 +3,13 @@
  */
 package com.kvc.joy.core.persistence.jdbc.model.vo;
 
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.SQLException;
-
 import com.kvc.joy.core.persistence.jdbc.support.db.DbSupport;
 import com.kvc.joy.core.persistence.jdbc.support.db.DbSupportFactory;
 import com.kvc.joy.core.persistence.jdbc.support.enums.RdbType;
+
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.SQLException;
 
 /**
  * <p>

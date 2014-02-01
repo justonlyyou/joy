@@ -1,25 +1,18 @@
 package com.kvc.joy.plugin.security.erbac.dao.impl;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.kvc.joy.core.persistence.orm.jpa.BaseJpaDao;
+import com.kvc.joy.plugin.security.erbac.dao.IErbacUserRepository;
+import com.kvc.joy.plugin.security.erbac.model.po.TErbacGroup;
+import com.kvc.joy.plugin.security.erbac.model.po.TErbacGroup_;
+import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser;
+import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser_;
 
 import javax.persistence.Tuple;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Join;
 import javax.persistence.criteria.JoinType;
 import javax.persistence.criteria.Root;
-
-import com.kvc.joy.core.persistence.orm.jpa.BaseJpaDao;
-import com.kvc.joy.core.persistence.orm.jpa.JpaPagingSupport;
-import com.kvc.joy.core.rp.pagestore.PageStoreFactory;
-import com.kvc.joy.plugin.security.erbac.dao.IErbacUserRepository;
-import com.kvc.joy.plugin.security.erbac.model.po.TErbacGroup;
-import com.kvc.joy.plugin.security.erbac.model.po.TErbacGroup_;
-import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser;
-import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser_;
+import java.util.*;
 
 
 /**

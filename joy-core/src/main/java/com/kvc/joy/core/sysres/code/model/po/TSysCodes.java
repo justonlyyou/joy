@@ -1,11 +1,11 @@
 package com.kvc.joy.core.sysres.code.model.po;
 
+import com.kvc.joy.core.persistence.entity.UuidCrudEntity;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-
-import com.kvc.joy.core.persistence.entity.UuidCrudEntity;
-import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 
 /**
  * 

@@ -1,17 +1,16 @@
 package com.kvc.joy.web.spmvc.modules.sysres.menu.controller;
 
-import java.util.List;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.kvc.joy.commons.bean.TreeNode;
 import com.kvc.joy.commons.data.json.JsonTool;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
 import com.kvc.joy.core.sysres.menu.model.po.TSysMenu;
 import com.kvc.joy.plugin.security.erbac.support.utils.UserTool;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 /**
  * 

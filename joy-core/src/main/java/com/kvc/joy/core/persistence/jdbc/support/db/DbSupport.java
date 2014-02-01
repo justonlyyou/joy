@@ -1,5 +1,10 @@
 package com.kvc.joy.core.persistence.jdbc.support.db;
 
+import com.kvc.joy.commons.exception.SystemException;
+import com.kvc.joy.commons.lang.ArrayTool;
+import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
+import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbTable;
+
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
@@ -8,11 +13,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-
-import com.kvc.joy.commons.exception.SystemException;
-import com.kvc.joy.commons.lang.ArrayTool;
-import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
-import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbTable;
 
 /**
  * Abstraction for database-specific functionality.

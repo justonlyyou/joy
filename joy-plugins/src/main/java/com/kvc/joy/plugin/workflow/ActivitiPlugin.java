@@ -1,10 +1,9 @@
 package com.kvc.joy.plugin.workflow;
 
-import org.activiti.engine.ProcessEngines;
-import org.springframework.stereotype.Component;
-
 import com.kvc.joy.core.init.service.IJoyPlugin;
 import com.kvc.joy.core.init.support.JoyPropeties;
+import org.activiti.engine.ProcessEngines;
+import org.springframework.stereotype.Component;
 
 /**
  * 

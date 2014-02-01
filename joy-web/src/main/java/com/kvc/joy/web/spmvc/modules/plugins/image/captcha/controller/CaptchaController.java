@@ -1,23 +1,21 @@
 package com.kvc.joy.web.spmvc.modules.plugins.image.captcha.controller;
 
-import java.awt.image.RenderedImage;
-
-import javax.imageio.ImageIO;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.kvc.joy.commons.bean.Pair;
+import com.kvc.joy.commons.lang.DateTool;
+import com.kvc.joy.plugin.image.captcha.consts.CaptchaConsts;
+import com.kvc.joy.plugin.support.PluginBeanFactory;
+import com.kvc.joy.web.support.utils.HttpSessionTool;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.kvc.joy.commons.bean.Pair;
-import com.kvc.joy.commons.lang.DateTool;
-import com.kvc.joy.plugin.image.captcha.consts.CaptchaConsts;
-import com.kvc.joy.plugin.support.PluginBeanFactory;
-import com.kvc.joy.web.support.utils.HttpSessionTool;
+import javax.imageio.ImageIO;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.awt.image.RenderedImage;
 
 /**
  * 

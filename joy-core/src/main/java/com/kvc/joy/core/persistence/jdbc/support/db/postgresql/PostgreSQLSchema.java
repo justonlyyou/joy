@@ -1,14 +1,14 @@
 package com.kvc.joy.core.persistence.jdbc.support.db.postgresql;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
 import com.kvc.joy.core.persistence.jdbc.support.db.DbSupport;
 import com.kvc.joy.core.persistence.jdbc.support.db.Schema;
 import com.kvc.joy.core.persistence.jdbc.support.db.Table;
 import com.kvc.joy.core.persistence.jdbc.support.db.Type;
 import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * PostgreSQL implementation of Schema.

@@ -1,10 +1,9 @@
 package com.kvc.joy.plugin.monitor.jdbc;
 
-import com.kvc.joy.commons.lang.string.StringTool;
-
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.filter.Filter;
 import ch.qos.logback.core.spi.FilterReply;
+import com.kvc.joy.commons.lang.string.StringTool;
 
 /**
  * 

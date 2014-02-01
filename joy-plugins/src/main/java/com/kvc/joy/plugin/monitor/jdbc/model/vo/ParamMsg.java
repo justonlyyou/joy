@@ -1,11 +1,10 @@
 package com.kvc.joy.plugin.monitor.jdbc.model.vo;
 
-import java.util.List;
-
-import org.springframework.util.StringUtils;
-
 import com.kvc.joy.commons.log.ILogParam;
 import com.kvc.joy.plugin.monitor.jdbc.IPreparedSqlConvertor;
+import org.springframework.util.StringUtils;
+
+import java.util.List;
 
 /**
  * @author <b>唐玮琳</b>

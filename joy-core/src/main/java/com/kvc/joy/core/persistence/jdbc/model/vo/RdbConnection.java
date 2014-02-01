@@ -1,8 +1,8 @@
 package com.kvc.joy.core.persistence.jdbc.model.vo;
 
-import java.sql.Connection;
-
 import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
+
+import java.sql.Connection;
 
 /**
  * 

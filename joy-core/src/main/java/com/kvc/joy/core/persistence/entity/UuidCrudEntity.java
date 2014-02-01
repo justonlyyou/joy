@@ -1,10 +1,10 @@
 package com.kvc.joy.core.persistence.entity;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
-
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.DefaultValue;
+
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 
 /**
  * 

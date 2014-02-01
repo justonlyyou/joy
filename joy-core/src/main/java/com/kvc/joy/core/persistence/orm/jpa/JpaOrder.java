@@ -1,9 +1,9 @@
 package com.kvc.joy.core.persistence.orm.jpa;
 
+import com.kvc.joy.commons.query.sort.Direction;
+
 import javax.persistence.criteria.Expression;
 import javax.persistence.metamodel.SingularAttribute;
-
-import com.kvc.joy.commons.query.sort.Direction;
 
 public class JpaOrder extends com.kvc.joy.commons.query.sort.Order {
 

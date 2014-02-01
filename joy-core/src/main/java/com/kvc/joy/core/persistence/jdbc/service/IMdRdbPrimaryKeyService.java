@@ -1,9 +1,9 @@
 package com.kvc.joy.core.persistence.jdbc.service;
 
-import java.io.Serializable;
-
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbPrimaryKey;
 import com.kvc.joy.core.persistence.jdbc.model.vo.RdbConnection;
+
+import java.io.Serializable;
 
 /**
  * 

@@ -2,6 +2,8 @@
 */.project
 */.classpath
 */.externalToolBuilders
+*/.iml
+*/.idea
 
 /logs
 

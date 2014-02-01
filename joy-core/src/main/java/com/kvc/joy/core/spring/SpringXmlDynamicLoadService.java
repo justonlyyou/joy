@@ -1,15 +1,14 @@
 package com.kvc.joy.core.spring;
 
+import com.kvc.joy.commons.lang.ArrayTool;
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.stereotype.Service;
-
-import com.kvc.joy.commons.lang.ArrayTool;
-import com.kvc.joy.commons.log.Log;
-import com.kvc.joy.commons.log.LogFactory;
 
 /**
  * 

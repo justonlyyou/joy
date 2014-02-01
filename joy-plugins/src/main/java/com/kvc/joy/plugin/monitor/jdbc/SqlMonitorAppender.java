@@ -2,7 +2,6 @@ package com.kvc.joy.plugin.monitor.jdbc;
 
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.AppenderBase;
-
 import com.kvc.joy.plugin.monitor.jdbc.model.vo.ParamMsg;
 import com.kvc.joy.plugin.support.PluginBeanFactory;
 

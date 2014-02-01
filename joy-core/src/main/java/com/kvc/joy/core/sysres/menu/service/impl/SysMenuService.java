@@ -1,10 +1,5 @@
 package com.kvc.joy.core.sysres.menu.service.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.commons.lang3.StringUtils;
-
 import com.kvc.joy.commons.bean.TreeNode;
 import com.kvc.joy.commons.collections.ListTool;
 import com.kvc.joy.commons.lang.string.StringTool;
@@ -16,6 +11,10 @@ import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.core.sysres.menu.model.po.TSysMenu;
 import com.kvc.joy.core.sysres.menu.model.po.TSysMenu_;
 import com.kvc.joy.core.sysres.menu.service.ISysMenuService;
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SysMenuService implements ISysMenuService {
 

@@ -1,10 +1,9 @@
 package com.kvc.joy.plugin.security.login;
 
-import org.springframework.stereotype.Component;
-
 import com.kvc.joy.core.init.service.IJoyPlugin;
 import com.kvc.joy.core.init.support.JoyPropeties;
 import com.kvc.joy.plugin.security.login.model.po.TLoginLog;
+import org.springframework.stereotype.Component;
 
 /**
  * 

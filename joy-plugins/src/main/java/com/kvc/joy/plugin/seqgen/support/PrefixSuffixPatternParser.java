@@ -1,5 +1,8 @@
 package com.kvc.joy.plugin.seqgen.support;
 
+import com.kvc.joy.commons.bean.Pair;
+import com.kvc.joy.commons.lang.string.StringTool;
+
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -7,9 +10,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-
-import com.kvc.joy.commons.bean.Pair;
-import com.kvc.joy.commons.lang.string.StringTool;
 
 /**
  * <pre>

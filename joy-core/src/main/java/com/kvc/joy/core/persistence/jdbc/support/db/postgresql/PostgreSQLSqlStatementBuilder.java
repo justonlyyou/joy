@@ -1,9 +1,9 @@
 package com.kvc.joy.core.persistence.jdbc.support.db.postgresql;
 
+import com.kvc.joy.core.persistence.jdbc.support.db.SqlStatementBuilder;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import com.kvc.joy.core.persistence.jdbc.support.db.SqlStatementBuilder;
 
 /**
  * SqlStatementBuilder supporting PostgreSQL specific syntax.

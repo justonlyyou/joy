@@ -1,16 +1,5 @@
 package com.kvc.joy.core.persistence.jdbc.support;
 
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.Table;
-import javax.persistence.Transient;
-
 import com.kvc.joy.commons.lang.PackageTool;
 import com.kvc.joy.commons.lang.reflect.MethodTool;
 import com.kvc.joy.commons.lang.string.StringTool;
@@ -21,7 +10,12 @@ import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumnComment;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbTable;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.DefaultValue;
-import com.kvc.joy.plugin.security.erbac.model.po.TErbacOrganization;
+
+import javax.persistence.*;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 /**
  * <p>
@@ -154,13 +148,5 @@ public class EntityCommentAndDefaultValueScanner {
 		}
 		return null;
 	}
-
-	public static void main(String[] args) {
-//		EntityCommentAndDefaultValueScanner.scan("com.kvc.joy.core.ehcache.model.po");
-		List<MdRdbColumn> columnList = EntityCommentAndDefaultValueScanner.scanColumnCommentAndDefaultValue(TErbacOrganization.class);
-		System.out.println("columnList: "+columnList.size());
-	}
-	
-	
 
 }

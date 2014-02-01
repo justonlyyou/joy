@@ -1,27 +1,21 @@
 package com.kvc.joy.core.persistence.orm.jpa;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.annotation.Resource;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Expression;
-import javax.persistence.criteria.Path;
-import javax.persistence.criteria.Root;
-
-import org.springframework.orm.jpa.JpaTemplate;
-import org.springframework.orm.jpa.support.JpaDaoSupport;
-
 import com.kvc.joy.commons.bean.Pair;
 import com.kvc.joy.commons.exception.ExceptionTool;
 import com.kvc.joy.commons.lang.GenericTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.query.sort.Order;
+import org.springframework.orm.jpa.JpaTemplate;
+import org.springframework.orm.jpa.support.JpaDaoSupport;
+
+import javax.annotation.Resource;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class BaseJpaDao<T> extends JpaDaoSupport {
 

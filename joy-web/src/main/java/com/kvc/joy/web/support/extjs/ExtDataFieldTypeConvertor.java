@@ -1,10 +1,10 @@
 package com.kvc.joy.web.support.extjs;
 
+import com.kvc.joy.commons.lang.ClassTool;
+
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
-import com.kvc.joy.commons.lang.ClassTool;
 
 /**
  * Extjs数据字段类型转换器，支持将Java类型(基础类及其包装类)转换为Extjs的数据字段类型

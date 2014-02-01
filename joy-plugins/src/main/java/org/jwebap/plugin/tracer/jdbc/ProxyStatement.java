@@ -1,16 +1,11 @@
 package org.jwebap.plugin.tracer.jdbc;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.SQLWarning;
-import java.sql.Statement;
-
-import org.jwebap.core.Trace;
-
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.plugin.monitor.jdbc.model.vo.ParamMsg;
+import org.jwebap.core.Trace;
+
+import java.sql.*;
 
 
 public class ProxyStatement extends Trace implements Statement {

@@ -1,15 +1,14 @@
 package com.kvc.joy.core.sysres.code.dao;
 
-import java.util.List;
+import com.kvc.joy.core.persistence.orm.jpa.BaseJpaDao;
+import com.kvc.joy.core.sysres.code.model.po.TSysCodeTable;
+import com.kvc.joy.core.sysres.code.model.po.TSysCodeTable_;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-
-import com.kvc.joy.core.persistence.orm.jpa.BaseJpaDao;
-import com.kvc.joy.core.sysres.code.model.po.TSysCodeTable;
-import com.kvc.joy.core.sysres.code.model.po.TSysCodeTable_;
+import java.util.List;
 
 /**
  * 

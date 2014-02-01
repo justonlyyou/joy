@@ -1,13 +1,5 @@
 package com.kvc.joy.plugin.security.login.dao;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.Expression;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
-
 import com.kvc.joy.commons.bean.Pair;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.query.sort.Direction;
@@ -16,6 +8,13 @@ import com.kvc.joy.core.persistence.orm.jpa.BaseJpaDao;
 import com.kvc.joy.plugin.security.login.model.po.TLoginLog;
 import com.kvc.joy.plugin.security.login.model.po.TLoginLog_;
 import com.kvc.joy.plugin.security.login.support.enums.LoginState;
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.Expression;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 

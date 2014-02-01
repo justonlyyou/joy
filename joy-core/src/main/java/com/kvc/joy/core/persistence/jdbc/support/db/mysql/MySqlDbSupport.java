@@ -1,14 +1,5 @@
 package com.kvc.joy.core.persistence.jdbc.support.db.mysql;
 
-import java.math.BigDecimal;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Types;
-import java.text.MessageFormat;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.lang.ArrayTool;
 import com.kvc.joy.commons.lang.string.StringTool;
@@ -18,6 +9,15 @@ import com.kvc.joy.core.persistence.jdbc.support.db.DbSupport;
 import com.kvc.joy.core.persistence.jdbc.support.db.Schema;
 import com.kvc.joy.core.persistence.jdbc.support.db.SqlStatementBuilder;
 import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
+
+import java.math.BigDecimal;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Types;
+import java.text.MessageFormat;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Mysql-specific support.

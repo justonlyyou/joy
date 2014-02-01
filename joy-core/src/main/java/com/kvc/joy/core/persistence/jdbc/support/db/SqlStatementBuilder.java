@@ -1,9 +1,9 @@
 package com.kvc.joy.core.persistence.jdbc.support.db;
 
+import com.kvc.joy.commons.lang.string.StringTool;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import com.kvc.joy.commons.lang.string.StringTool;
 
 /**
  * Builds a SQL statement, one line at a time.

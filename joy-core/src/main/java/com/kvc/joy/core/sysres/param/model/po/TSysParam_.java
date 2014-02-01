@@ -3,10 +3,10 @@
  */
 package com.kvc.joy.core.sysres.param.model.po;
 
+import com.kvc.joy.core.persistence.entity.UuidCrudEntity_;
+
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
-
-import com.kvc.joy.core.persistence.entity.UuidCrudEntity_;
 
 /**
  * 系统参数元模型

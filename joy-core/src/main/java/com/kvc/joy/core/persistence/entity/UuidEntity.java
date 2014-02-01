@@ -1,13 +1,13 @@
 package com.kvc.joy.core.persistence.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
-
 import com.kvc.joy.commons.bean.IEntity;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.support.IdGenerator;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 /**
  * 主键生成策略是UUID的实体基类

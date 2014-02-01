@@ -1,14 +1,13 @@
 package com.kvc.joy.core.spring.utils;
 
-import java.util.Map;
-
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Service;
 
-import com.kvc.joy.commons.log.Log;
-import com.kvc.joy.commons.log.LogFactory;
+import java.util.Map;
 
 /**
  * Spring Bean工具类，同时它负责spring上下文注入

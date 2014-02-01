@@ -1,9 +1,9 @@
 package com.kvc.joy.plugin.security.login.model.po;
 
+import com.kvc.joy.core.persistence.entity.UuidEntity_;
+
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
-
-import com.kvc.joy.core.persistence.entity.UuidEntity_;
 
 @StaticMetamodel(TLoginLog.class)
 public class TLoginLog_ extends UuidEntity_ {

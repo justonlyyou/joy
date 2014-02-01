@@ -1,9 +1,5 @@
 package com.kvc.joy.core.persistence.jdbc.support.db;
 
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.SQLException;
-
 import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
@@ -15,6 +11,10 @@ import com.kvc.joy.core.persistence.jdbc.support.db.mysql.MySqlDbSupport;
 import com.kvc.joy.core.persistence.jdbc.support.db.oracle.OracleDbSupport;
 import com.kvc.joy.core.persistence.jdbc.support.db.postgresql.PostgreSQLDbSupport;
 import com.kvc.joy.core.persistence.jdbc.support.db.sqlserver.SQLServerDbSupport;
+
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.SQLException;
 
 /**
  * Factory for obtaining the correct DbSupport instance for the current connection.

@@ -1,17 +1,11 @@
 package com.kvc.joy.plugin.mapping.field.model.po;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
 import com.kvc.joy.core.persistence.entity.UuidEntity;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
+
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * 字段映射规则

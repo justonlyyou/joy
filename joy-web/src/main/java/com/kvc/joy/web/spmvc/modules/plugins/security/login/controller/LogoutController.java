@@ -1,11 +1,10 @@
 package com.kvc.joy.web.spmvc.modules.plugins.security.login.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.kvc.joy.plugin.security.login.support.enums.LogoutMethod;
 import com.kvc.joy.plugin.support.PluginBeanFactory;
 import com.kvc.joy.web.support.utils.HttpRequestTool;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * 

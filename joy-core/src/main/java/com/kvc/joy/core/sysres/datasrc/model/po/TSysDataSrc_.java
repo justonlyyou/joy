@@ -1,13 +1,12 @@
 package com.kvc.joy.core.sysres.datasrc.model.po;
 
-import java.util.Set;
+import com.kvc.joy.core.persistence.entity.UuidCrudEntity_;
+import com.kvc.joy.core.sysres.code.model.po.TSysCodeTable;
 
 import javax.persistence.metamodel.SetAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
-
-import com.kvc.joy.core.persistence.entity.UuidCrudEntity_;
-import com.kvc.joy.core.sysres.code.model.po.TSysCodeTable;
+import java.util.Set;
 
 /**
  * 

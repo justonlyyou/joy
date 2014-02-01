@@ -25,9 +25,47 @@
 		<hibernate.version>4.2.6.Final</hibernate.version>
 		<activiti.version>5.12</activiti.version>
 		<quartz.version>2.2.1</quartz.version>
-		
+        <junit.version>4.8.2</junit.version>
+        <slf4j.version>1.7.5</slf4j.version>
+        <josql.version>2.2</josql.version>
+        <gentlywebutils.version>1.1</gentlywebutils.version>
+        <commons.lang3.version>3.1</commons.lang3.version>
+        <commons.io.version>2.4</commons.io.version>
+        <commons.fileupload.version>1.2.2</commons.fileupload.version>
+        <commons.digester.version>2.1</commons.digester.version>
+        <commons.collections.version>3.2.1</commons.collections.version>
+        <commons.codec.version>1.7</commons.codec.version>
+        <commons.betwixt.version>0.8</commons.betwixt.version>
+        <commons.beanutils.version>1.8.3</commons.beanutils.version>
+        <commons.dbcp.version>20030825.184428</commons.dbcp.version>
+        <commons.pool.version>20030825.184428</commons.pool.version>
+        <dom4j.version>1.6.1</dom4j.version>
+        <javax.validation.version>1.1.0.CR3</javax.validation.version>
+        <javax.persistence.version>2.0.0</javax.persistence.version>
+        <ehcache.version>2.7.0</ehcache.version>
+        <spring.data.commons.version>1.5.0.RELEASE</spring.data.commons.version>
+        <spring.data.jpa.version>1.3.0.RELEASE</spring.data.jpa.version>
+        <jwebap.version>0.6.1</jwebap.version>
+        <jwebap.tracer.version>0.6.1</jwebap.tracer.version>
+        <shiro.version>1.2.1</shiro.version>
+        <jasperreports.version>5.0.1</jasperreports.version>
+        <itext.version>4.2.0</itext.version>
+        <jxl.version>2.6.12</jxl.version>
+        <pinyin4j.version>2.5.0</pinyin4j.version>
 		<kaptcha.version>2.3.2</kaptcha.version>
 		<flyway.version>2.2.1</flyway.version>
+        <mysql.connector.version>5.1.24</mysql.connector.version>
+        <servlet.version>2.5</servlet.version>
+        <jsp.version>2.0</jsp.version>
+        <jstl.version>1.1.2</jstl.version>
+        <taglibs.version>1.1.2</taglibs.version>
+        <hibernate.validator.version>5.0.0.CR4</hibernate.validator.version>
+
+        <plugin.maven.resources.version>2.4</plugin.maven.resources.version>
+        <plugin.maven.compiler.version>3.1</plugin.maven.compiler.version>
+        <plugin.plexus.compiler.eclipse.version>2.0</plugin.plexus.compiler.eclipse.version>
+        <plugin.maven.war.version>2.3</plugin.maven.war.version>
+        <plugin.jetty.version>7.6.10.v20130312</plugin.jetty.version>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -48,20 +86,20 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.8.2</version>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
-			<version>20030825.184428</version>
+			<version>${commons.dbcp.version}</version>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>commons-pool</groupId>
 			<artifactId>commons-pool</artifactId>
-			<version>20030825.184428</version>
+			<version>${commons.pool.version}</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -73,7 +111,7 @@
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-api</artifactId>
-				<version>1.7.5</version>
+				<version>${slf4j.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>ch.qos.logback</groupId>
@@ -90,12 +128,22 @@
 				<artifactId>slf4j-jcl</artifactId>
 				<version>${logback.version}</version>
 			</dependency>
+            <dependency>
+                <groupId>org.josql</groupId>
+                <artifactId>josql</artifactId>
+                <version>${josql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gentlyweb.utils</groupId>
+                <artifactId>gentlyWEB-utils</artifactId>
+                <version>${gentlywebutils.version}</version>
+            </dependency>
 			
 			
 			<dependency>
 				<groupId>net.sourceforge.pinyin4j</groupId>
 				<artifactId>pinyin4j</artifactId>
-				<version>2.5.0</version>
+				<version>${pinyin4j.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
@@ -120,53 +168,53 @@
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-lang3</artifactId>
-				<version>3.1</version>
+				<version>${commons.lang3.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-io</groupId>
 				<artifactId>commons-io</artifactId>
-				<version>2.4</version>
+				<version>${commons.io.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>commons-fileupload</groupId>
 				<artifactId>commons-fileupload</artifactId>
-				<version>1.2.2</version>
+				<version>${commons.fileupload.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-digester</groupId>
 				<artifactId>commons-digester</artifactId>
-				<version>2.1</version>
+				<version>${commons.digester.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-collections</groupId>
 				<artifactId>commons-collections</artifactId>
-				<version>3.2.1</version>
+				<version>${commons.collections.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-codec</groupId>
 				<artifactId>commons-codec</artifactId>
-				<version>1.7</version>
+				<version>${commons.codec.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-betwixt</groupId>
 				<artifactId>commons-betwixt</artifactId>
-				<version>0.8</version>
+				<version>${commons.betwixt.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-beanutils</groupId>
 				<artifactId>commons-beanutils</artifactId>
-				<version>1.8.3</version>
+				<version>${commons.beanutils.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>dom4j</groupId>
 				<artifactId>dom4j</artifactId>
-				<version>1.6.1</version>
+				<version>${dom4j.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>javax.validation</groupId>
 				<artifactId>validation-api</artifactId>
-				<version>1.1.0.CR3</version>
+				<version>${javax.validation.version}</version>
 			</dependency>
 
 
@@ -174,13 +222,19 @@
 			<dependency>
 				<groupId>org.eclipse.persistence</groupId>
 				<artifactId>javax.persistence</artifactId>
-				<version>2.0.0</version>
+				<version>${javax.persistence.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>net.sf.ehcache.internal</groupId>
 				<artifactId>ehcache-core</artifactId>
-				<version>2.7.0</version>
+				<version>${ehcache.version}</version>
 			</dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connector.version}</version>
+                <scope>provided</scope>
+            </dependency>
 
 			<dependency>
 				<groupId>org.springframework</groupId>
@@ -235,7 +289,7 @@
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-commons</artifactId>
-				<version>1.5.0.RELEASE</version>
+				<version>${spring.data.commons.version}</version>
 				<exclusions>
 					<exclusion>
 						<groupId>org.slf4j</groupId>
@@ -246,7 +300,7 @@
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-jpa</artifactId>
-				<version>1.3.0.RELEASE</version>
+				<version>${spring.data.jpa.version}</version>
 			</dependency>
 
 
@@ -270,18 +324,18 @@
 			<dependency>
 				<groupId>org.jwebap</groupId>
 				<artifactId>jwebap</artifactId>
-				<version>0.6.1</version>
+				<version>${jwebap.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.jwebap</groupId>
 				<artifactId>jwebap-tracer</artifactId>
-				<version>0.6.1</version>
+				<version>${jwebap.tracer.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.apache.shiro</groupId>
 				<artifactId>shiro-all</artifactId>
-				<version>1.2.1</version>
+				<version>${shiro.version}</version>
 				<exclusions>
 					<exclusion>
 						<groupId>org.apache.shiro</groupId>
@@ -290,8 +344,6 @@
 				</exclusions>
 			</dependency>
 
-			<!-- <dependency> <groupId>org.quartz-scheduler</groupId> <artifactId>quartz-parent</artifactId> <version>${quartz.version}</version> 
-				</dependency> -->
 			<dependency>
 				<groupId>org.quartz-scheduler</groupId>
 				<artifactId>quartz</artifactId>
@@ -301,18 +353,18 @@
 			<dependency>
 				<groupId>net.sf.jasperreports</groupId>
 				<artifactId>jasperreports</artifactId>
-				<version>5.0.1</version>
+				<version>${jasperreports.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.lowagie</groupId>
 				<artifactId>itext</artifactId>
-				<version>4.2.0</version>
+				<version>${itext.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>net.sourceforge.jexcelapi</groupId>
 				<artifactId>jxl</artifactId>
-				<version>2.6.12</version>
+				<version>${jxl.version}</version>
 			</dependency>
 			
 			<dependency>
@@ -327,6 +379,42 @@
 				<version>${flyway.version}</version>
 			</dependency>
 
+            <!-- web -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>${servlet.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet.jsp</groupId>
+                <artifactId>jsp-api</artifactId>
+                <version>${jsp.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>jstl</groupId>
+                <artifactId>jstl</artifactId>
+                <version>${jstl.version}</version>
+                <!-- 			<scope>provided</scope> -->
+            </dependency>
+            <dependency>
+                <groupId>taglibs</groupId>
+                <artifactId>standard</artifactId>
+                <version>${taglibs.version}</version>
+                <!-- 			<scope>provided</scope> -->
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator-annotation-processor</artifactId>
+                <version>${hibernate.validator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate.validator.version}</version>
+            </dependency>
+
 			<!-- test -->
 			<dependency>
 				<groupId>org.springframework</groupId>
@@ -336,23 +424,6 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
-	<!-- <build> -->
-	<!-- <pluginManagement> -->
-	<!-- <plugins> -->
-	<!-- <plugin> -->
-	<!-- <groupId>org.apache.maven.plugins</groupId> -->
-	<!-- <artifactId>maven-compiler-plugin</artifactId> -->
-	<!-- <configuration> -->
-	<!-- <source>1.6</source> -->
-	<!-- <target>1.6</target> -->
-	<!-- </configuration> -->
-	<!-- </plugin> -->
-
-	<!-- </plugins> -->
-	<!-- </pluginManagement> -->
-	<!-- </build> -->
-
 
 	<build>
 		<!-- 工程路径结构设置 -->
@@ -375,7 +446,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.4</version>
+				<version>${plugin.maven.resources.version}</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
 				</configuration>
@@ -383,7 +454,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
+				<version>${plugin.maven.compiler.version}</version>
 				<configuration>
 					<compilerId>eclipse</compilerId>
 					<compilerVersion>1.6</compilerVersion>
@@ -400,94 +471,15 @@
 					<dependency>
 						<groupId>org.codehaus.plexus</groupId>
 						<artifactId>plexus-compiler-eclipse</artifactId>
-						<version>2.0</version>
+						<version>${plugin.plexus.compiler.eclipse.version}</version>
 					</dependency>
 				</dependencies>
-			</plugin>
-
-			<!-- <plugin> -->
-			<!-- <groupId>org.apache.tomcat.maven</groupId> -->
-			<!-- <artifactId>tomcat6-maven-plugin</artifactId> -->
-			<!-- <version>2.1</version> -->
-			<!-- <configuration> -->
-			<!-- <contextReloadable>true</contextReloadable> -->
-			<!-- </configuration> -->
-			<!-- </plugin> -->
-
-			<!-- eclipse插件设置 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.9</version>
-				<configuration>
-					<addVersionToProjectName>false</addVersionToProjectName>
-					<useProjectReferences>false</useProjectReferences>
-					<encoding>UTF-8</encoding><!-- 项目编码设置 -->
-					<wtpmanifest>false</wtpmanifest>
-					<wtpapplicationxml>true</wtpapplicationxml>
-					<wtpversion>2.0</wtpversion>
-					<additionalBuildcommands>
-						<!-- 项目属�?设置，相当于配置.project，以下配置为，此工程将使用以下去建构java构建，maven构建，validation构建 -->
-						<buildcommand>org.eclipse.jdt.core.javabuilder</buildcommand>
-						<buildcommand>org.eclipse.wst.validation.validationbuilder</buildcommand>
-						<buildcommand>org.eclipse.m2e.core.maven2Builder</buildcommand>
-						<buildcommand>org.eclipse.wst.common.project.facet.core.builder</buildcommand><!-- 如果是war工程，请加入此行，它会标识此工程可以部署 -->
-						<buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
-					</additionalBuildcommands>
-					<additionalProjectnatures>
-						<!--项目属�?设置，同时配�?project,相关.settings目录下的配置。它标识工程为：spring工程，maven工程，java工程,modulecore木有研究 -->
-						<nature>org.springframework.ide.eclipse.core.springnature</nature>
-						<nature>org.eclipse.m2e.core.maven2Nature</nature>
-						<nature>org.eclipse.jdt.core.javanature</nature>
-						<nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>
-
-						<projectnature>org.eclipse.jdt.core.javanature</projectnature>
-						<projectnature>org.eclipse.m2e.core.maven2Nature</projectnature>
-						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
-					</additionalProjectnatures>
-					<classpathContainers>
-						<!--,classth配置，将加入默认的jre,以及maven路径 -->
-						<classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>
-						<classpathContainer>org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER</classpathContainer>
-						<nature>org.eclipse.wst.common.project.facet.core.nature</nature><!-- war项目，设置可通过tomcat设置的项�? -->
-					</classpathContainers>
-					<additionalProjectFacets>
-						<!-- 这个很重要，从b工程点C工程的class,可以直接到C工程，�?不是点到.class文件；同时可以热替换a.war下的b.jar -->
-						<resolveWorkspaceProjects>true</resolveWorkspaceProjects>
-					</additionalProjectFacets>
-				</configuration>
 			</plugin>
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>org.apache.maven.plugins</groupId>
-										<artifactId>maven-compiler-plugin</artifactId>
-										<versionRange>[3.1,)</versionRange>
-										<goals>
-											<goal>compile</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore></ignore>
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
-
 
 </project>

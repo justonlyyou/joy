@@ -1,19 +1,17 @@
 package com.kvc.joy.core.persistence.orm.jpa;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
+import com.kvc.joy.core.spring.utils.SpringBeanTool;
 import org.springframework.orm.jpa.EntityManagerHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
-import com.kvc.joy.commons.log.Log;
-import com.kvc.joy.commons.log.LogFactory;
-import com.kvc.joy.core.spring.utils.SpringBeanTool;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 @Service
 public class OpenEntityManagerHandler implements InvocationHandler {

@@ -1,21 +1,13 @@
 package com.kvc.joy.plugin.security.erbac.model.po;
 
-import java.util.Collection;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.Transient;
-
 import com.kvc.joy.commons.enums.Sex;
 import com.kvc.joy.core.persistence.entity.UuidCrudEntity;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.DefaultValue;
 import com.kvc.joy.plugin.security.erbac.support.enums.UserStatus;
+
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name = "t_erbac_user")

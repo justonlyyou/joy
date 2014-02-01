@@ -1,9 +1,8 @@
 package com.kvc.joy.plugin.persistence.hibernate;
 
-import org.springframework.stereotype.Component;
-
 import com.kvc.joy.core.init.service.IJoyPlugin;
 import com.kvc.joy.core.init.support.JoyPropeties;
+import org.springframework.stereotype.Component;
 
 /**
  * 

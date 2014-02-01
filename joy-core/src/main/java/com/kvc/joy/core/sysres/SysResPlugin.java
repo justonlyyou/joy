@@ -1,8 +1,7 @@
 package com.kvc.joy.core.sysres;
 
-import org.springframework.stereotype.Component;
-
 import com.kvc.joy.core.init.service.IJoyPlugin;
+import org.springframework.stereotype.Component;
 
 /**
  * 

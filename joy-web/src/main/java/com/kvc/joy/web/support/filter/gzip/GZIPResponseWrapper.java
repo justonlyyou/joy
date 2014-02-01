@@ -8,13 +8,12 @@
  */
 package com.kvc.joy.web.support.filter.gzip;
 
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletResponseWrapper;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 
 public class GZIPResponseWrapper extends HttpServletResponseWrapper {
 	protected HttpServletResponse origResponse = null;

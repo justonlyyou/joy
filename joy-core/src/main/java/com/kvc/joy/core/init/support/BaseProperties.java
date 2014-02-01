@@ -1,12 +1,11 @@
 package com.kvc.joy.core.init.support;
 
-import java.io.IOException;
-import java.util.Properties;
-
-import org.springframework.core.io.support.PropertiesLoaderUtils;
-
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
+import org.springframework.core.io.support.PropertiesLoaderUtils;
+
+import java.io.IOException;
+import java.util.Properties;
 
 /**
  * 

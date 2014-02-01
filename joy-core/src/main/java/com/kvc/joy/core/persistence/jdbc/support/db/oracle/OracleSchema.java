@@ -1,8 +1,5 @@
 package com.kvc.joy.core.persistence.jdbc.support.db.oracle;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
@@ -10,6 +7,9 @@ import com.kvc.joy.core.persistence.jdbc.support.db.DbSupport;
 import com.kvc.joy.core.persistence.jdbc.support.db.Schema;
 import com.kvc.joy.core.persistence.jdbc.support.db.Table;
 import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Oracle implementation of Schema.

@@ -1,15 +1,5 @@
 package com.kvc.joy.core.init.service.impl;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Set;
-
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.config.BeanPostProcessor;
-import org.springframework.stereotype.Service;
-
 import com.googlecode.flyway.core.Flyway;
 import com.kvc.joy.commons.lang.PackageTool;
 import com.kvc.joy.commons.lang.string.StringTool;
@@ -19,6 +9,11 @@ import com.kvc.joy.core.init.service.IJoyPlugin;
 import com.kvc.joy.core.init.service.ISystemInitService;
 import com.kvc.joy.core.init.support.JoyPropeties;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.stereotype.Service;
+
+import java.util.*;
 
 /**
  * 

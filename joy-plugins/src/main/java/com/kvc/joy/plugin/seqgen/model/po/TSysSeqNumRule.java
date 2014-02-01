@@ -1,15 +1,10 @@
 package com.kvc.joy.plugin.seqgen.model.po;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 import com.kvc.joy.commons.bean.IEntity;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.DefaultValue;
+
+import javax.persistence.*;
 
 /**
  * 序列号生成规则对象模型

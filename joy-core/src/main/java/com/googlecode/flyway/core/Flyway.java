@@ -15,24 +15,11 @@
  */
 package com.googlecode.flyway.core;
 
-import java.sql.Connection;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-
-import javax.sql.DataSource;
-
 import com.googlecode.flyway.core.api.FlywayException;
 import com.googlecode.flyway.core.api.MigrationInfo;
 import com.googlecode.flyway.core.api.MigrationInfoService;
 import com.googlecode.flyway.core.api.MigrationVersion;
-import com.googlecode.flyway.core.command.DbClean;
-import com.googlecode.flyway.core.command.DbInit;
-import com.googlecode.flyway.core.command.DbMigrate;
-import com.googlecode.flyway.core.command.DbSchemas;
-import com.googlecode.flyway.core.command.DbValidate;
+import com.googlecode.flyway.core.command.*;
 import com.googlecode.flyway.core.dbsupport.DbSupport;
 import com.googlecode.flyway.core.dbsupport.DbSupportFactory;
 import com.googlecode.flyway.core.dbsupport.Schema;
@@ -51,6 +38,10 @@ import com.googlecode.flyway.core.util.logging.Log;
 import com.googlecode.flyway.core.util.logging.LogFactory;
 import com.googlecode.flyway.core.validation.ValidationErrorMode;
 import com.googlecode.flyway.core.validation.ValidationMode;
+
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.util.*;
 
 /**
  * This is the centre point of Flyway, and for most users, the only class they will ever have to deal with.

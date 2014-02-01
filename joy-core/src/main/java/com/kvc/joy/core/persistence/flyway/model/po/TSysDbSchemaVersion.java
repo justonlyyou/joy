@@ -1,12 +1,12 @@
 package com.kvc.joy.core.persistence.flyway.model.po;
 
+import com.kvc.joy.commons.bean.IEntity;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import com.kvc.joy.commons.bean.IEntity;
-import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 
 /**
  * 

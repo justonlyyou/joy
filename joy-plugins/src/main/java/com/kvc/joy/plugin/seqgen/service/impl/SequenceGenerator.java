@@ -1,16 +1,5 @@
 package com.kvc.joy.plugin.seqgen.service.impl;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.util.Calendar;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.kvc.joy.commons.bean.Pair;
 import com.kvc.joy.commons.enums.YesNot;
 import com.kvc.joy.commons.lang.DateTool;
@@ -25,6 +14,12 @@ import com.kvc.joy.plugin.seqgen.support.CycleProcessor;
 import com.kvc.joy.plugin.seqgen.support.PrefixSuffixPatternParser;
 import com.kvc.joy.plugin.seqgen.support.SeqNumStat;
 import com.kvc.joy.plugin.seqgen.support.SequenceCache;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.*;
 
 /**
  * 序列号生成器

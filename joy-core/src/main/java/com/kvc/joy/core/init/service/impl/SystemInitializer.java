@@ -1,15 +1,14 @@
 package com.kvc.joy.core.init.service.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.kvc.joy.commons.log.Log;
+import com.kvc.joy.commons.log.LogFactory;
+import com.kvc.joy.core.init.service.ISystemInitService;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Service;
 
-import com.kvc.joy.commons.log.Log;
-import com.kvc.joy.commons.log.LogFactory;
-import com.kvc.joy.core.init.service.ISystemInitService;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 

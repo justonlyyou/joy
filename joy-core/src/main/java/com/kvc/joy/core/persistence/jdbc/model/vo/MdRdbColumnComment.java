@@ -1,8 +1,8 @@
 package com.kvc.joy.core.persistence.jdbc.model.vo;
 
-import java.io.Serializable;
-
 import com.kvc.joy.commons.lang.string.StringTool;
+
+import java.io.Serializable;
 
 /**
  * 列注释 格式：briefDesc, [detailDesc,][ {"codeId":"xxx"}]

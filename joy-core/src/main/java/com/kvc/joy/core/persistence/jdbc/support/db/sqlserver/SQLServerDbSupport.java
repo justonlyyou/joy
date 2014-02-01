@@ -1,8 +1,5 @@
 package com.kvc.joy.core.persistence.jdbc.support.db.sqlserver;
 
-import java.sql.Connection;
-import java.sql.Types;
-
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
@@ -10,6 +7,9 @@ import com.kvc.joy.core.persistence.jdbc.support.db.DbSupport;
 import com.kvc.joy.core.persistence.jdbc.support.db.Schema;
 import com.kvc.joy.core.persistence.jdbc.support.db.SqlStatementBuilder;
 import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
+
+import java.sql.Connection;
+import java.sql.Types;
 
 /**
  * SQLServer-specific support.

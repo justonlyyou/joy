@@ -1,24 +1,20 @@
 package com.kvc.joy.plugin.monitor.jdbc.service.impl;
 
-import org.hibernate.Hibernate;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.kvc.joy.commons.exception.ExceptionTool;
 import com.kvc.joy.commons.lang.DateTool;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
-import com.kvc.joy.commons.log.slf4j.Slf4jLog;
 import com.kvc.joy.core.init.support.AppPropeties;
 import com.kvc.joy.core.init.support.JoyPropeties;
 import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
-import com.kvc.joy.plugin.monitor.jdbc.SqlMonitorAppender;
 import com.kvc.joy.plugin.monitor.jdbc.model.po.TSysSqlLog;
 import com.kvc.joy.plugin.monitor.jdbc.model.vo.ParamMsg;
 import com.kvc.joy.plugin.monitor.jdbc.service.ISysSqlLogService;
 import com.kvc.joy.plugin.persistence.hibernate.HibernateTool;
 import com.kvc.joy.plugin.support.PluginBeanFactory;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * 系统sql执行性能日志服务

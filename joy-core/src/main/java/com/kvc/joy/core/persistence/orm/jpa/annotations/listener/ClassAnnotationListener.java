@@ -3,11 +3,10 @@
  */
 package com.kvc.joy.core.persistence.orm.jpa.annotations.listener;
 
-import java.lang.annotation.Annotation;
+import com.kvc.joy.core.persistence.orm.jpa.annotations.AbstractWithTable;
 
 import javax.persistence.PrePersist;
-
-import com.kvc.joy.core.persistence.orm.jpa.annotations.AbstractWithTable;
+import java.lang.annotation.Annotation;
 
 /**
  * 类级注解监听器

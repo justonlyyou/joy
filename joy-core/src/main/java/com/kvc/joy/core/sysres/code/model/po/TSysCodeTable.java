@@ -1,16 +1,11 @@
 package com.kvc.joy.core.sysres.code.model.po;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
 import com.kvc.joy.core.persistence.entity.UuidCrudEntity;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.DefaultValue;
 import com.kvc.joy.core.sysres.datasrc.model.po.TSysDataSrc;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "t_sys_code_table")

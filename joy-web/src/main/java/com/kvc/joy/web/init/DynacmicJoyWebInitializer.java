@@ -3,8 +3,6 @@ package com.kvc.joy.web.init;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
-import org.springframework.web.WebApplicationInitializer;
-
 /**
  * 
  * @since 1.0.0

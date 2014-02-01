@@ -1,9 +1,9 @@
 package com.kvc.joy.core.persistence.flyway.service.impl;
 
-import javax.sql.DataSource;
-
 import com.googlecode.flyway.core.Flyway;
 import com.kvc.joy.core.persistence.flyway.service.IRdbObjectsInitService;
+
+import javax.sql.DataSource;
 
 /**
  * 

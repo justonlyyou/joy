@@ -1,11 +1,5 @@
 package com.kvc.joy.core.spring.utils;
 
-import org.springframework.cache.ehcache.EhCacheCacheManager;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.orm.jpa.JpaTemplate;
-import org.springframework.orm.jpa.JpaTransactionManager;
-import org.springframework.transaction.TransactionDefinition;
-
 import com.kvc.joy.core.ehcache.support.IEhCacheHolder;
 import com.kvc.joy.core.persistence.flyway.service.IRdbObjectsInitService;
 import com.kvc.joy.core.persistence.jdbc.dao.BaseJdbcDao;
@@ -21,6 +15,11 @@ import com.kvc.joy.core.sysres.datasrc.service.ISysDataSrcService;
 import com.kvc.joy.core.sysres.menu.service.ISysMenuService;
 import com.kvc.joy.core.sysres.param.model.po.TSysParam;
 import com.kvc.joy.core.sysres.param.service.ISysParamService;
+import org.springframework.cache.ehcache.EhCacheCacheManager;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.orm.jpa.JpaTemplate;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.transaction.TransactionDefinition;
 
 /**
  * 基础Spring Bean的工厂

@@ -1,9 +1,9 @@
 package com.kvc.joy.core.persistence.jdbc.model.vo;
 
+import com.kvc.joy.core.persistence.jdbc.support.enums.RdbObjectType;
+
 import java.io.Serializable;
 import java.util.Collection;
-
-import com.kvc.joy.core.persistence.jdbc.support.enums.RdbObjectType;
 
 /**
  * 

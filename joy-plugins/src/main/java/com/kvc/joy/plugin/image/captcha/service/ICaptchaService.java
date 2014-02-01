@@ -1,8 +1,8 @@
 package com.kvc.joy.plugin.image.captcha.service;
 
-import java.awt.image.RenderedImage;
-
 import com.kvc.joy.commons.bean.Pair;
+
+import java.awt.image.RenderedImage;
 
 /**
  * 验证码服务接口

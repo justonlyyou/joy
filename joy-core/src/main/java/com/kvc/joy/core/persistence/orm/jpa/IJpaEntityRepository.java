@@ -1,18 +1,16 @@
 package com.kvc.joy.core.persistence.orm.jpa;
 
-import java.io.Serializable;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-
-import javax.persistence.metamodel.SingularAttribute;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import com.kvc.joy.commons.bean.IEntity;
 import com.kvc.joy.commons.query.sort.Order;
 import com.kvc.joy.core.persistence.repositories.IEntityRepository;
 import com.kvc.joy.core.rp.pagestore.PageStore;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import javax.persistence.metamodel.SingularAttribute;
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 

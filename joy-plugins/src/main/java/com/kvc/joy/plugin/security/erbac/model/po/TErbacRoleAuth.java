@@ -1,16 +1,10 @@
 package com.kvc.joy.plugin.security.erbac.model.po;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.persistence.Transient;
-
 import com.kvc.joy.core.persistence.entity.UuidEntity;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 import com.kvc.joy.plugin.security.erbac.support.enums.AuthorityType;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "t_erbac_role_auth")

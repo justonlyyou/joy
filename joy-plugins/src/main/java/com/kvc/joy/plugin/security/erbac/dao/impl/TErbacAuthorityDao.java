@@ -1,15 +1,14 @@
 package com.kvc.joy.plugin.security.erbac.dao.impl;
 
-import java.util.List;
+import com.kvc.joy.core.persistence.orm.jpa.BaseJpaDao;
+import com.kvc.joy.plugin.security.erbac.model.po.TErbacAuthority;
+import com.kvc.joy.plugin.security.erbac.model.po.TErbacAuthority_;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-
-import com.kvc.joy.core.persistence.orm.jpa.BaseJpaDao;
-import com.kvc.joy.plugin.security.erbac.model.po.TErbacAuthority;
-import com.kvc.joy.plugin.security.erbac.model.po.TErbacAuthority_;
+import java.util.List;
 
 /**
  * 

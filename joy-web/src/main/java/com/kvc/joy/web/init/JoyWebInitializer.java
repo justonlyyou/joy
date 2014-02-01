@@ -1,11 +1,5 @@
 package com.kvc.joy.web.init;
 
-import javax.servlet.ServletContext;
-import javax.servlet.ServletContextEvent;
-
-import org.springframework.web.context.ConfigurableWebApplicationContext;
-import org.springframework.web.context.ContextLoaderListener;
-
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.support.ICommand;
@@ -15,6 +9,11 @@ import com.kvc.joy.core.init.service.impl.JoyPluginsInitializer;
 import com.kvc.joy.core.init.support.JoyPropeties;
 import com.kvc.joy.core.sysres.param.service.BaseSystemParameter;
 import com.kvc.joy.plugin.monitor.jdbc.JwebapJdbcPlugin;
+import org.springframework.web.context.ConfigurableWebApplicationContext;
+import org.springframework.web.context.ContextLoaderListener;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletContextEvent;
 
 /**
  * 

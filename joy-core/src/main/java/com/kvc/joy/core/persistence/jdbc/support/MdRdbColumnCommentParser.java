@@ -1,14 +1,14 @@
 package com.kvc.joy.core.persistence.jdbc.support;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import com.kvc.joy.commons.bean.BeanTool;
 import com.kvc.joy.commons.data.json.JsonTool;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumnComment;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 关系数据库列注释解析器

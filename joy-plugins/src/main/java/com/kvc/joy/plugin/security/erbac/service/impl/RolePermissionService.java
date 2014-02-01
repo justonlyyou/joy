@@ -1,10 +1,10 @@
 package com.kvc.joy.plugin.security.erbac.service.impl;
 
-import java.util.List;
-
 import com.kvc.joy.plugin.security.erbac.model.po.TErbacAuthority;
 import com.kvc.joy.plugin.security.erbac.model.vo.ErbacPermission;
 import com.kvc.joy.plugin.security.erbac.service.IRolePermissionService;
+
+import java.util.List;
 
 /**
  * 

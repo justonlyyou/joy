@@ -1,9 +1,8 @@
 package com.kvc.joy.core.persistence.flyway;
 
-import org.springframework.stereotype.Component;
-
 import com.kvc.joy.core.init.service.IJoyPlugin;
 import com.kvc.joy.core.persistence.flyway.model.po.TSysDbSchemaVersion;
+import org.springframework.stereotype.Component;
 
 /**
  * 

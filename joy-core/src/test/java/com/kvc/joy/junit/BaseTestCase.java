@@ -1,20 +1,5 @@
 package com.kvc.joy.junit;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import junit.framework.TestCase;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
-
-import com.kvc.joy.commons.support.ICommand;
-import com.kvc.joy.core.init.service.IJoyInitializer;
-import com.kvc.joy.core.init.service.impl.JoyInitializer;
-import com.kvc.joy.core.spring.utils.SpringBeanUtils;
-
 /**
  * <p>
  * core包的测试用例基类 <br>

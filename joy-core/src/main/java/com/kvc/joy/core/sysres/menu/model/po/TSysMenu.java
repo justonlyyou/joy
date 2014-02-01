@@ -1,17 +1,11 @@
 package com.kvc.joy.core.sysres.menu.model.po;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Transient;
-
 import com.kvc.joy.commons.bean.IEntity;
 import com.kvc.joy.commons.support.IListToTreeRestrict;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.DefaultValue;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "t_sys_menu")

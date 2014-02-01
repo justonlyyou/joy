@@ -1,10 +1,6 @@
 package com.kvc.joy.core.persistence.orm.jpa.annotations;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Inherited;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
 /**
  * 表示某个属性的值是无符号数

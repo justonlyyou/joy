@@ -1,29 +1,18 @@
 package org.jwebap.plugin.tracer.jdbc;
 
-import java.io.InputStream;
-import java.io.Reader;
-import java.math.BigDecimal;
-import java.sql.Array;
-import java.sql.Blob;
-import java.sql.Clob;
-import java.sql.NClob;
-import java.sql.PreparedStatement;
-import java.sql.Ref;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.RowId;
-import java.sql.SQLException;
-import java.sql.SQLXML;
-import java.util.Calendar;
-
-import org.jwebap.core.Trace;
-
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.plugin.monitor.jdbc.IPreparedSqlConvertor;
 import com.kvc.joy.plugin.monitor.jdbc.PreparedSqlConvertor;
 import com.kvc.joy.plugin.monitor.jdbc.model.vo.ParamMsg;
+import org.jwebap.core.Trace;
+
+import java.io.InputStream;
+import java.io.Reader;
+import java.math.BigDecimal;
+import java.sql.*;
+import java.util.Calendar;
 
 
 /**

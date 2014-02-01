@@ -1,9 +1,8 @@
 package com.kvc.joy.plugin.security.erbac.support.utils;
 
+import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
-
-import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser;
 
 /**
  * 

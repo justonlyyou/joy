@@ -1,16 +1,16 @@
 package com.kvc.joy.plugin.seqgen.support;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-
 import com.kvc.joy.commons.bean.Pair;
 import com.kvc.joy.commons.enums.TimeUnit;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.plugin.seqgen.model.po.TSysSeqNum;
 import com.kvc.joy.plugin.seqgen.model.po.TSysSeqNumRule;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * 周期处理

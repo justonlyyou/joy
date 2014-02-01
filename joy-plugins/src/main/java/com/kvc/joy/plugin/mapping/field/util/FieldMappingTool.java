@@ -1,11 +1,5 @@
 package com.kvc.joy.plugin.mapping.field.util;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 import com.kvc.joy.commons.bean.BeanTool;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
@@ -13,6 +7,8 @@ import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.plugin.mapping.field.dao.TCfgFieldMappingRuleDao;
 import com.kvc.joy.plugin.mapping.field.model.po.TSysFieldMapping;
 import com.kvc.joy.plugin.mapping.field.model.po.TSysFieldMappingRule;
+
+import java.util.*;
 
 /**
  * 字段映射规则数据访问对象

@@ -1,12 +1,11 @@
 package com.kvc.joy.plugin.security.erbac.model.po;
 
-import java.util.Collection;
+import com.kvc.joy.core.persistence.entity.UuidCrudEntity_;
 
 import javax.persistence.metamodel.CollectionAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
-
-import com.kvc.joy.core.persistence.entity.UuidCrudEntity_;
+import java.util.Collection;
 
 @StaticMetamodel(TErbacUser.class)
 public class TErbacUser_ extends UuidCrudEntity_ {

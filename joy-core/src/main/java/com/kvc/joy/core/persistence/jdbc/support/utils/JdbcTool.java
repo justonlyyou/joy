@@ -1,23 +1,5 @@
 package com.kvc.joy.core.persistence.jdbc.support.utils;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import javax.sql.DataSource;
-
-import org.springframework.jdbc.core.JdbcTemplate;
-
 import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
@@ -30,6 +12,13 @@ import com.kvc.joy.core.persistence.jdbc.support.db.RowMapper;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
 import com.kvc.joy.core.sysres.datasrc.model.po.TSysDataSrc;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+import java.sql.*;
+import java.util.*;
 
 /**
  * 

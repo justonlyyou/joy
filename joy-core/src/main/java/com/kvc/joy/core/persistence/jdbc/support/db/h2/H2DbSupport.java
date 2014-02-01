@@ -1,14 +1,14 @@
 package com.kvc.joy.core.persistence.jdbc.support.db.h2;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Types;
-
 import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.core.persistence.jdbc.support.db.DbSupport;
 import com.kvc.joy.core.persistence.jdbc.support.db.Schema;
 import com.kvc.joy.core.persistence.jdbc.support.db.SqlStatementBuilder;
 import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Types;
 
 /**
  * H2 database specific support
