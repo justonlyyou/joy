@@ -34,11 +34,8 @@ public class CaptchaService implements ICaptchaService {
 
 	@Override
 	public boolean validateCode(String captcha, String genCaptcha) {
-		if (StringUtils.isNotBlank(captcha)) {
-			return captcha.toUpperCase().equals(genCaptcha.toUpperCase());
-		}
-		return false;
-	}
+        return StringUtils.isNotBlank(captcha) && captcha.toUpperCase().equals(genCaptcha.toUpperCase());
+    }
 	
 	@Override
 	public boolean validateTime(String genDate) {

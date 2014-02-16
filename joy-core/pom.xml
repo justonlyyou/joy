@@ -17,6 +17,10 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<scope>test</scope>
 		</dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-jpamodelgen</artifactId>
+        </dependency>
 		<dependency>
 			<groupId>com.kvc.joy</groupId>
 			<artifactId>joy-commons</artifactId>
@@ -92,5 +96,20 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 	</dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <compilerArguments>
+                        <processor>org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor</processor>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

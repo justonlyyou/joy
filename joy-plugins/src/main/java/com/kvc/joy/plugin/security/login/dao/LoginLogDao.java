@@ -41,7 +41,7 @@ public class LoginLogDao extends BaseJpaDao<TLoginLog> {
 			@Override
 			public Expression<Boolean> getRestriction(CriteriaBuilder cb, Root<TLoginLog> root) {
 				return cb.and(
-						cb.equal(root.get(TLoginLog_.userAccount), account), 
+						cb.equal(root.get(TLoginLog_.userAccount), account),
 						cb.equal(root.get(TLoginLog_.loginStateCode), LoginState.PASSWORD_ERR.getCode()),
 						cb.greaterThan(root.get(TLoginLog_.loginTime), fromTime),
 						cb.lessThan(root.get(TLoginLog_.loginTime), toTime)
@@ -68,8 +68,8 @@ public class LoginLogDao extends BaseJpaDao<TLoginLog> {
 			@Override
 			public Expression<Boolean> getRestriction(CriteriaBuilder cb, Root<TLoginLog> root) {
 				return cb.and(
-						cb.equal(root.get(TLoginLog_.userAccount), account), 
-						cb.or(cb.equal(root.get(TLoginLog_.loginStateCode), LoginState.SUCCESS.getCode()), 
+						cb.equal(root.get(TLoginLog_.userAccount), account),
+						cb.or(cb.equal(root.get(TLoginLog_.loginStateCode), LoginState.SUCCESS.getCode()),
 								cb.equal(root.get(TLoginLog_.loginStateCode), LoginState.PASSWORD_ERR.getCode())),
 						cb.between(root.get(TLoginLog_.loginTime), fromTime, toTime)
 						);
@@ -115,7 +115,7 @@ public class LoginLogDao extends BaseJpaDao<TLoginLog> {
 				predicates.add(cb.equal(root.get(TLoginLog_.userId), userId));
 				predicates.add(cb.equal(root.get(TLoginLog_.loginStateCode), LoginState.SUCCESS.getCode()));
 				if (StringTool.isNotBlank(curLogId)) {
-					predicates.add(cb.notEqual(root.get(TLoginLog_.id), curLogId));	
+					predicates.add(cb.notEqual(root.get(TLoginLog_.id), curLogId));
 				}
 				return cb.and(predicates.toArray(new Predicate[predicates.size()]));
 			}

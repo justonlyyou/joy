@@ -60,6 +60,7 @@
         <jstl.version>1.1.2</jstl.version>
         <taglibs.version>1.1.2</taglibs.version>
         <hibernate.validator.version>5.0.0.CR4</hibernate.validator.version>
+        <hibernate.jpamodelgen.version>4.3.1.Final</hibernate.jpamodelgen.version>
 
         <plugin.maven.resources.version>2.4</plugin.maven.resources.version>
         <plugin.maven.compiler.version>3.1</plugin.maven.compiler.version>
@@ -128,6 +129,16 @@
 				<artifactId>slf4j-jcl</artifactId>
 				<version>${logback.version}</version>
 			</dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-jdk14</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.josql</groupId>
                 <artifactId>josql</artifactId>
@@ -218,7 +229,7 @@
 			</dependency>
 
 
-			<!-- core -->
+			<!-- joy-core -->
 			<dependency>
 				<groupId>org.eclipse.persistence</groupId>
 				<artifactId>javax.persistence</artifactId>
@@ -302,6 +313,12 @@
 				<artifactId>spring-data-jpa</artifactId>
 				<version>${spring.data.jpa.version}</version>
 			</dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-jpamodelgen</artifactId>
+                <version>${hibernate.jpamodelgen.version}</version>
+                <scope>provided</scope>
+            </dependency>
 
 
 			<!-- plugin -->
@@ -462,6 +479,9 @@
 					<source>1.6</source>
 					<target>1.6</target>
 					<encoding>UTF-8</encoding>
+                    <compilerArguments>
+                        <processor>org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor</processor>
+                    </compilerArguments>
 					<compilerArgument>-Xlint:all</compilerArgument>
 					<!-- <showWarnings>true</showWarnings> -->
 					<showDeprecation>true</showDeprecation>
