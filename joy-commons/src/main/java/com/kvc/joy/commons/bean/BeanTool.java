@@ -143,7 +143,7 @@ public class BeanTool {
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T> T copyProperties(Object srcObj, Class<T> targetClass) {
-		Object target = null;
+		Object target;
 		try {
 			target = targetClass.newInstance();
 			copyProperties(target, srcObj);
@@ -261,7 +261,7 @@ public class BeanTool {
 	 * @author 唐玮琳
 	 * @time 2012-11-8 下午5:07:38
 	 */
-	public static <T> List<T> batchCopyProperties(Class<T> targetClass, Collection<? extends Object> srcObjs) {
+	public static <T> List<T> batchCopyProperties(Class<T> targetClass, Collection<?> srcObjs) {
 		List<T> targetList = new ArrayList<T>(srcObjs.size());
 		for (Object srcObj : srcObjs) {
 			targetList.add(copyProperties(srcObj, targetClass));

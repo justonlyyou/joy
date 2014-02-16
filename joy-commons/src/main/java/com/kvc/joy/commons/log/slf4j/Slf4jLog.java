@@ -50,7 +50,7 @@ public class Slf4jLog implements Log {
 		log.error(e.getMessage(), e);
 	}
 	
-	private final String getMsg(String message, Object... args) {
+	private String getMsg(String message, Object... args) {
 		if (args != null && args.length != 0) {
 			return MessageFormat.format(message, args);	
 		}

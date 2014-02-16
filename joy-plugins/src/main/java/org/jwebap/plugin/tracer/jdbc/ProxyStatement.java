@@ -29,11 +29,10 @@ public class ProxyStatement extends Trace implements Statement {
 			child = new Trace(this);
 			child.setContent(sql);
 			rs = _stmt.executeQuery(sql);
-
-		} catch (SQLException e) {
-			throw e;
 		} finally {
-			child.inActive();
+            if (child != null) {
+                child.inActive();
+            }
 			//TODO
 			logInfoToDb(child);
 		}
@@ -48,14 +47,11 @@ public class ProxyStatement extends Trace implements Statement {
 			child = new Trace(this);
 			child.setContent(sql);
 			tag = _stmt.execute(sql);
-
-		} catch (SQLException e) {
-			throw e;
 		} finally {
-
-			child.inActive();
-			//TODO
-			logInfoToDb(child);
+            if(child != null) {
+                child.inActive();
+                logInfoToDb(child);
+            }
 		}
 		return tag;
 	}
@@ -69,12 +65,11 @@ public class ProxyStatement extends Trace implements Statement {
 			child.setContent(sql);
 			tag = _stmt.executeUpdate(sql);
 
-		} catch (SQLException e) {
-			throw e;
 		} finally {
-			child.inActive();
-			//TODO
-			logInfoToDb(child);
+            if(child != null) {
+                child.inActive();
+                logInfoToDb(child);
+            }
 		}
 		return tag;
 	}
@@ -101,238 +96,135 @@ public class ProxyStatement extends Trace implements Statement {
 	}
 
 	public boolean isClosed() throws SQLException {
-		if (_closed) {
-			return true;
-		}
-		return false;
-	}
+        return _closed;
+    }
 
 	public ResultSet getResultSet() throws SQLException {
 		checkOpen();
-		try {
-			return _stmt.getResultSet();
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        return _stmt.getResultSet();
+    }
 
 	public int getMaxFieldSize() throws SQLException {
 		checkOpen();
-		try {
-			return _stmt.getMaxFieldSize();
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        return _stmt.getMaxFieldSize();
+    }
 
 	public void setMaxFieldSize(int max) throws SQLException {
 		checkOpen();
-		try {
-			_stmt.setMaxFieldSize(max);
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        _stmt.setMaxFieldSize(max);
+    }
 
 	public int getMaxRows() throws SQLException {
 		checkOpen();
-		try {
-			return _stmt.getMaxRows();
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        return _stmt.getMaxRows();
+    }
 
 	public void setMaxRows(int max) throws SQLException {
 		checkOpen();
-		try {
-			_stmt.setMaxRows(max);
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        _stmt.setMaxRows(max);
+    }
 
 	public void setEscapeProcessing(boolean enable) throws SQLException {
 		checkOpen();
-		try {
-			_stmt.setEscapeProcessing(enable);
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        _stmt.setEscapeProcessing(enable);
+    }
 
 	public int getQueryTimeout() throws SQLException {
 		checkOpen();
-		try {
-			return _stmt.getQueryTimeout();
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        return _stmt.getQueryTimeout();
+    }
 
 	public void setQueryTimeout(int seconds) throws SQLException {
 		checkOpen();
-		try {
-			_stmt.setQueryTimeout(seconds);
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        _stmt.setQueryTimeout(seconds);
+    }
 
 	public void cancel() throws SQLException {
 		checkOpen();
-		try {
-			_stmt.cancel();
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        _stmt.cancel();
+    }
 
 	public SQLWarning getWarnings() throws SQLException {
 		checkOpen();
-		try {
-			return _stmt.getWarnings();
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        return _stmt.getWarnings();
+    }
 
 	public void clearWarnings() throws SQLException {
 		checkOpen();
-		try {
-			_stmt.clearWarnings();
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        _stmt.clearWarnings();
+    }
 
 	public void setCursorName(String name) throws SQLException {
 		checkOpen();
-		try {
-			_stmt.setCursorName(name);
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        _stmt.setCursorName(name);
+    }
 
 	public int getUpdateCount() throws SQLException {
 		checkOpen();
-		try {
-			return _stmt.getUpdateCount();
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        return _stmt.getUpdateCount();
+    }
 
 	public boolean getMoreResults() throws SQLException {
 		checkOpen();
-		try {
-			return _stmt.getMoreResults();
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        return _stmt.getMoreResults();
+    }
 
 	public void setFetchDirection(int direction) throws SQLException {
 		checkOpen();
-		try {
-			_stmt.setFetchDirection(direction);
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        _stmt.setFetchDirection(direction);
+    }
 
 	public int getFetchDirection() throws SQLException {
 		checkOpen();
-		try {
-			return _stmt.getFetchDirection();
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        return _stmt.getFetchDirection();
+    }
 
 	public void setFetchSize(int rows) throws SQLException {
 		checkOpen();
-		try {
-			_stmt.setFetchSize(rows);
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        _stmt.setFetchSize(rows);
+    }
 
 	public int getFetchSize() throws SQLException {
 		checkOpen();
-		try {
-			return _stmt.getFetchSize();
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        return _stmt.getFetchSize();
+    }
 
 	public int getResultSetConcurrency() throws SQLException {
 		checkOpen();
-		try {
-			return _stmt.getResultSetConcurrency();
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        return _stmt.getResultSetConcurrency();
+    }
 
 	public int getResultSetType() throws SQLException {
 		checkOpen();
-		try {
-			return _stmt.getResultSetType();
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        return _stmt.getResultSetType();
+    }
 
 	public void addBatch(String sql) throws SQLException {
 		checkOpen();
-		try {
-			_stmt.addBatch(sql);
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        _stmt.addBatch(sql);
+    }
 
 	public void clearBatch() throws SQLException {
 		checkOpen();
-		try {
-			_stmt.clearBatch();
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        _stmt.clearBatch();
+    }
 
 	public int[] executeBatch() throws SQLException {
 		checkOpen();
-		try {
-			return _stmt.executeBatch();
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        return _stmt.executeBatch();
+    }
 
 	// ------------------- JDBC 3.0 -----------------------------------------
 
 	public boolean getMoreResults(int current) throws SQLException {
 		checkOpen();
-		try {
-			return _stmt.getMoreResults(current);
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        return _stmt.getMoreResults(current);
+    }
 
 	public ResultSet getGeneratedKeys() throws SQLException {
 		checkOpen();
-		try {
-			return _stmt.getGeneratedKeys();
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        return _stmt.getGeneratedKeys();
+    }
 
 	public int executeUpdate(String sql, int autoGeneratedKeys) throws SQLException {
 		checkOpen();
@@ -340,12 +232,11 @@ public class ProxyStatement extends Trace implements Statement {
 		try {
 			child = new Trace(this);
 			return _stmt.executeUpdate(sql, autoGeneratedKeys);
-		} catch (SQLException e) {
-			throw e;
-		}finally{
-			//TODO
-			child.inActive();
-			logInfoToDb(child);
+		} finally{
+            if(child != null) {
+                child.inActive();
+                logInfoToDb(child);
+            }
 		}
 	}
 
@@ -355,12 +246,11 @@ public class ProxyStatement extends Trace implements Statement {
 		try {
 			child = new Trace(this);
 			return _stmt.executeUpdate(sql, columnIndexes);
-		} catch (SQLException e) {
-			throw e;
-		}finally{
-			//TODO
-			child.inActive();
-			logInfoToDb(child);
+		} finally{
+            if(child != null) {
+                child.inActive();
+                logInfoToDb(child);
+            }
 		}
 	}
 
@@ -370,12 +260,11 @@ public class ProxyStatement extends Trace implements Statement {
 		try {
 			child = new Trace(this);
 			return _stmt.executeUpdate(sql, columnNames);
-		} catch (SQLException e) {
-			throw e;
-		}finally{
-			//TODO
-			child.inActive();
-			logInfoToDb(child);
+		} finally{
+            if(child != null) {
+                child.inActive();
+                logInfoToDb(child);
+            }
 		}
 	}
 
@@ -385,12 +274,11 @@ public class ProxyStatement extends Trace implements Statement {
 		try {
 			child = new Trace(this);
 			return _stmt.execute(sql, autoGeneratedKeys);
-		} catch (SQLException e) {
-			throw e;
-		}finally{
-			//TODO
-			child.inActive();
-			logInfoToDb(child);
+		} finally{
+            if(child != null) {
+                child.inActive();
+                logInfoToDb(child);
+            }
 		}
 	}
 
@@ -400,12 +288,11 @@ public class ProxyStatement extends Trace implements Statement {
 		try {
 			child = new Trace(this);
 			return _stmt.execute(sql, columnIndexes);
-		} catch (SQLException e) {
-			throw e;
-		}finally{
-			//TODO
-			child.inActive();
-			logInfoToDb(child);
+		} finally{
+            if(child != null) {
+                child.inActive();
+                logInfoToDb(child);
+            }
 		}
 	}
 
@@ -415,23 +302,18 @@ public class ProxyStatement extends Trace implements Statement {
 		try {
 			child = new Trace(this);
 			return _stmt.execute(sql, columnNames);
-		} catch (SQLException e) {
-			throw e;
-		}finally{
-			//TODO
-			child.inActive();
-			logInfoToDb(child);
+		} finally{
+            if(child != null) {
+                child.inActive();
+                logInfoToDb(child);
+            }
 		}
 	}
 
 	public int getResultSetHoldability() throws SQLException {
 		checkOpen();
-		try {
-			return _stmt.getResultSetHoldability();
-		} catch (SQLException e) {
-			throw e;
-		}
-	}
+        return _stmt.getResultSetHoldability();
+    }
 
 	public Connection getConnection() throws SQLException {
 		checkOpen();
@@ -453,11 +335,8 @@ public class ProxyStatement extends Trace implements Statement {
 	/**校验是否需要记录,对于记录日志表的sql语句不持久化*/
 	protected boolean verify(Trace trace){
 		//日志表
-		if(trace.getContent().toUpperCase().indexOf("T_SYS_SQL_LOG") != -1){
-			return false;
-		}
-		return true;
-	}
+        return trace.getContent().toUpperCase().contains("T_SYS_SQL_LOG");
+    }
 
 	public boolean isWrapperFor(Class<?> arg0) throws SQLException {
 		// TODO Auto-generated method stub
@@ -469,12 +348,12 @@ public class ProxyStatement extends Trace implements Statement {
 		return null;
 	}
 
-	public void closeOnCompletion() throws SQLException {
+	public void closeOnCompletion() {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public boolean isCloseOnCompletion() throws SQLException {
+	public boolean isCloseOnCompletion() {
 		// TODO Auto-generated method stub
 		return false;
 	}

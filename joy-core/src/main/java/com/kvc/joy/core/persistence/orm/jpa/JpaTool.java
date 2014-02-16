@@ -133,7 +133,6 @@ public class JpaTool extends BaseJpaDao {
 	 * in查询
 	 * 
 	 * @param entityClass 实体类
-	 * @param attr 字段
 	 * @param values 字段值集合
 	 * @return 指定类名对象的结果列表
 	 */
@@ -263,8 +262,8 @@ public class JpaTool extends BaseJpaDao {
 	/**
 	 * 根据类和多个字段查询进行or条件查询
 	 * 
-	 * @param clazz 实体类
-	 * @param fieldMap Map<字段名，字段名>
+	 * @param entityClass 实体类
+	 * @param attrMap Map<字段名，字段名>
 	 * @param orders 排序规则
 	 * @return 指定类名对象的结果列表
 	 */
@@ -275,8 +274,8 @@ public class JpaTool extends BaseJpaDao {
 	/**
 	 * 根据类和多个字段查询进行or条件查询
 	 * 
-	 * @param clazz 实体类
-	 * @param fieldMap Map<字段名，字段名>
+	 * @param entityClass 实体类
+	 * @param attrMap Map<字段名，字段名>
 	 * @param orders 排序规则
 	 * @return 指定类名对象的结果列表
 	 */

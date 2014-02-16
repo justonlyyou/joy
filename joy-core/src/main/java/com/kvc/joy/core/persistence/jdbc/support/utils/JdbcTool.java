@@ -29,7 +29,7 @@ import java.util.*;
 public class JdbcTool extends BaseJdbcDao {
 
 	protected static final Log logger = LogFactory.getLog(JdbcTool.class);
-	private static Map<String, DataSource> dataSourceMap = new HashMap<String, DataSource>();
+	private static final Map<String, DataSource> dataSourceMap = new HashMap<String, DataSource>();
 
 	private JdbcTool() {
 	}
@@ -174,11 +174,13 @@ public class JdbcTool extends BaseJdbcDao {
 					context = new InitialContext();
 					dataSource = (DataSource) context.lookup(jndi);
 				} catch (NamingException e) {
-					try {
-						dataSource = (DataSource) context.lookup("java:comp/env/" + jndi);
-					} catch (NamingException ex) {
-						logger.error("以JNDI: " + jndi + "获取数据源失败！", ex);
-					}
+                    if(context != null) {
+                        try {
+                            dataSource = (DataSource) context.lookup("java:comp/env/" + jndi);
+                        } catch (NamingException ex) {
+                            logger.error("以JNDI: " + jndi + "获取数据源失败！", ex);
+                        }
+                    }
 				}
 			}
 			if (dataSource != null) {
@@ -188,7 +190,7 @@ public class JdbcTool extends BaseJdbcDao {
 		return dataSource;
 	}
 
-	public static final JdbcTemplate jdbcTemplate() {
+	public static JdbcTemplate jdbcTemplate() {
 		return getInstance().getJdbcTemplate();
 	}
 

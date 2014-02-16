@@ -40,7 +40,7 @@ public class JoyRuntimeException extends RuntimeException {
 		}
 	}
 
-	private final void handleMessageWithoutLog(String pattern, Object... args) {
+	private void handleMessageWithoutLog(String pattern, Object... args) {
 		detailMessage = MessageFormat.format(pattern, args);
 	}
 

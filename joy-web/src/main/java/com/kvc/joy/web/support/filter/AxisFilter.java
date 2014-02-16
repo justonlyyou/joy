@@ -30,8 +30,7 @@ public class AxisFilter implements Filter{
 			filterChain.doFilter(req, resp);
 		} else {
 			logger.info("该请求[IP：" + clientIP + "]未在授权范围");
-			return;
-		}
+        }
 	}
 	public static String getIpAddr(HttpServletRequest request) {
 		String ip = request.getHeader("x-forwarded-for");

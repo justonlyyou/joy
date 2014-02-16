@@ -19,7 +19,7 @@ public class SetToolTest {
 	@Test
 	@SuppressWarnings("unchecked")
 	public void newHashSet() {
-		Set<? extends Object> hashSet = SetTool.newHashSet("1", 2, 3.0);
+		Set<?> hashSet = SetTool.newHashSet("1", 2, 3.0);
 		Assert.assertTrue(hashSet instanceof HashSet);
 		Assert.assertEquals(3, hashSet.size());
 		Assert.assertTrue(hashSet.contains("1"));
@@ -30,10 +30,10 @@ public class SetToolTest {
 	@Test
 	@SuppressWarnings("unchecked")
 	public void newLinkedSet() {
-		Set<? extends Object> linkedHashSet = SetTool.newLinkedHashSet("1", 2, 3.0);
+		Set<?> linkedHashSet = SetTool.newLinkedHashSet("1", 2, 3.0);
 		Assert.assertTrue(linkedHashSet instanceof LinkedHashSet);
 		Assert.assertEquals(3, linkedHashSet.size());
-		Iterator<? extends Object> iterator = linkedHashSet.iterator();
+		Iterator<?> iterator = linkedHashSet.iterator();
 		Assert.assertEquals("1", iterator.next());
 		Assert.assertEquals(2, iterator.next());
 		Assert.assertEquals(3.0, iterator.next());

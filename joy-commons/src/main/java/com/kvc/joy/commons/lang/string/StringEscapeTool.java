@@ -51,7 +51,7 @@ public class StringEscapeTool {
 	 * @author 唐玮琳
 	 * @time 2013-5-1 下午9:50:32
 	 */
-	public static final String escapeJava(String input) {
+	public static String escapeJava(String input) {
 		return org.apache.commons.lang3.StringEscapeUtils.escapeJava(input);
 	}
 
@@ -92,7 +92,7 @@ public class StringEscapeTool {
 	 * @author 唐玮琳
 	 * @time 2013-5-1 下午9:57:15
 	 */
-	public static final String escapeEcmaScript(String input) {
+	public static String escapeEcmaScript(String input) {
 		return org.apache.commons.lang3.StringEscapeUtils.escapeEcmaScript(input);
 	}
 
@@ -111,7 +111,7 @@ public class StringEscapeTool {
 	 * @author 唐玮琳
 	 * @time 2013-5-1 下午10:05:47
 	 */
-	public static final String unescapeJava(String input) {
+	public static String unescapeJava(String input) {
 		return org.apache.commons.lang3.StringEscapeUtils.unescapeJava(input);
 	}
 
@@ -131,7 +131,7 @@ public class StringEscapeTool {
 	 * @author 唐玮琳
 	 * @time 2013-5-1 下午10:07:58
 	 */
-	public static final String unescapeEcmaScript(String input) {
+	public static String unescapeEcmaScript(String input) {
 		return org.apache.commons.lang3.StringEscapeUtils.unescapeEcmaScript(input);
 	}
 
@@ -169,7 +169,7 @@ public class StringEscapeTool {
 	 * @author 唐玮琳
 	 * @time 2013-5-1 下午10:15:52
 	 */
-	public static final String escapeHtml4(String input) {
+	public static String escapeHtml4(String input) {
 		return org.apache.commons.lang3.StringEscapeUtils.escapeHtml4(input);
 	}
 
@@ -187,7 +187,7 @@ public class StringEscapeTool {
 	 * @author 唐玮琳
 	 * @time 2013-5-1 下午10:16:40
 	 */
-	public static final String escapeHtml3(String input) {
+	public static String escapeHtml3(String input) {
 		return org.apache.commons.lang3.StringEscapeUtils.escapeHtml3(input);
 	}
 
@@ -211,7 +211,7 @@ public class StringEscapeTool {
 	 * @author 唐玮琳
 	 * @time 2013-5-1 下午10:21:09
 	 */
-	public static final String unescapeHtml4(String input) {
+	public static String unescapeHtml4(String input) {
 		return org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(input);
 	}
 
@@ -226,7 +226,7 @@ public class StringEscapeTool {
 	 * @author 唐玮琳
 	 * @time 2013-5-1 下午10:21:38
 	 */
-	public static final String unescapeHtml3(String input) {
+	public static String unescapeHtml3(String input) {
 		return org.apache.commons.lang3.StringEscapeUtils.unescapeHtml3(input);
 	}
 
@@ -256,7 +256,7 @@ public class StringEscapeTool {
 	 * @author 唐玮琳
 	 * @time 2013-5-1 下午10:26:08
 	 */
-	public static final String escapeXml(String input) {
+	public static String escapeXml(String input) {
 		return org.apache.commons.lang3.StringEscapeUtils.escapeXml(input);
 	}
 
@@ -281,7 +281,7 @@ public class StringEscapeTool {
 	 * @author 唐玮琳
 	 * @time 2013-5-1 下午10:28:22
 	 */
-	public static final String unescapeXml(String input) {
+	public static String unescapeXml(String input) {
 		return org.apache.commons.lang3.StringEscapeUtils.unescapeXml(input);
 	}
 
@@ -315,7 +315,7 @@ public class StringEscapeTool {
 	 * @author 唐玮琳
 	 * @time 2013-5-1 下午10:35:07
 	 */
-	public static final String escapeCsv(String input) {
+	public static String escapeCsv(String input) {
 		return org.apache.commons.lang3.StringEscapeUtils.escapeCsv(input);
 	}
 
@@ -345,7 +345,7 @@ public class StringEscapeTool {
 	 * @author 唐玮琳
 	 * @time 2013-5-1 下午10:40:45
 	 */
-	public static final String unescapeCsv(String input) {
+	public static String unescapeCsv(String input) {
 		return org.apache.commons.lang3.StringEscapeUtils.unescapeCsv(input);
 	}
 

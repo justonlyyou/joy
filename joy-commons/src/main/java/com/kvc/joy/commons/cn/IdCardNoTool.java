@@ -35,7 +35,7 @@ public class IdCardNoTool {
 	private static final int MIN = 1930;
 	
 	/** 台湾身份首字母对应数字 */
-	private static Map<String, Integer> twFirstCode = new HashMap<String, Integer>();
+	private static final Map<String, Integer> twFirstCode = new HashMap<String, Integer>();
 //	/** 香港身份首字母对应数字 */
 //	private static Map<String, Integer> hkFirstCode = new HashMap<String, Integer>();
 	
@@ -99,7 +99,7 @@ public class IdCardNoTool {
 			return null;
 		}
 		
-		String idCard18 = "";
+		String idCard18;
 		if (isNumber(idCardNo15)) {
 			// 获取出生年月日
 			String birthday = idCardNo15.substring(6, 12);
@@ -118,18 +118,16 @@ public class IdCardNoTool {
 			idCard18 = idCardNo15.substring(0, 6) + sYear + idCardNo15.substring(8);
 			// 转换字符数组
 			char[] cArr = idCard18.toCharArray();
-			if (cArr != null) {
-				int[] iCard = converCharToInt(cArr);
-				int iSum17 = getPowerSum(iCard);
-				// 获取校验位
-				String sVal = getCheckCode18(iSum17);
-				if (sVal.length() > 0) {
-					idCard18 += sVal;
-				} else {
-					return null;
-				}
-			}
-		} else {
+            int[] iCard = converCharToInt(cArr);
+            int iSum17 = getPowerSum(iCard);
+            // 获取校验位
+            String sVal = getCheckCode18(iSum17);
+            if (sVal.length() > 0) {
+                idCard18 += sVal;
+            } else {
+                return null;
+            }
+        } else {
 			return null;
 		}
 		return idCard18;
@@ -151,12 +149,9 @@ public class IdCardNoTool {
 		if(StringTool.isBlank(str)) {
 			return false;
 		}
-		if (isIdCardNo18(str) || isIdCardNo15(str) || isHkIdCardNo(str) || 
-				isMacauIdCardNo(str)|| isTwIdCardNo(str)) {
-			return true;
-		}
-		return false;
-	}
+        return isIdCardNo18(str) || isIdCardNo15(str) || isHkIdCardNo(str) ||
+                isMacauIdCardNo(str) || isTwIdCardNo(str);
+    }
 
 	/**
 	 * <p>
@@ -183,18 +178,16 @@ public class IdCardNoTool {
 			String code18 = str.substring(17, MAINLAND_ID_MAX_LENGTH);
 			if (isNumber(code17)) {
 				char[] cArr = code17.toCharArray();
-				if (cArr != null) {
-					int[] iCard = converCharToInt(cArr);
-					int iSum17 = getPowerSum(iCard);
-					// 获取校验位
-					String val = getCheckCode18(iSum17);
-					if (val.length() > 0) {
-						if (val.equalsIgnoreCase(code18)) {
-							bTrue = true;
-						}
-					}
-				}
-			}
+                int[] iCard = converCharToInt(cArr);
+                int iSum17 = getPowerSum(iCard);
+                // 获取校验位
+                String val = getCheckCode18(iSum17);
+                if (val.length() > 0) {
+                    if (val.equalsIgnoreCase(code18)) {
+                        bTrue = true;
+                    }
+                }
+            }
 		}
 		return bTrue;
 	}
@@ -279,7 +272,7 @@ public class IdCardNoTool {
 			sum = sum + Integer.valueOf(c + "") * iflag;
 			iflag--;
 		}
-		return (sum % 10 == 0 ? 0 : (10 - sum % 10)) == Integer.valueOf(end) ? true : false;
+		return (sum % 10 == 0 ? 0 : (10 - sum % 10)) == Integer.valueOf(end);
 	}
 
 	/**
@@ -313,13 +306,13 @@ public class IdCardNoTool {
 		}
 		
 		String card = str.replaceAll("[\\(|\\)]", "");
-		Integer sum = 0;
+		Integer sum;
 		if (card.length() == 9) {
-			sum = (Integer.valueOf(card.substring(0, 1).toUpperCase().toCharArray()[0]) - 55) * 9
-					+ (Integer.valueOf(card.substring(1, 2).toUpperCase().toCharArray()[0]) - 55) * 8;
+			sum = ((int) card.substring(0, 1).toUpperCase().toCharArray()[0] - 55) * 9
+					+ ((int) card.substring(1, 2).toUpperCase().toCharArray()[0] - 55) * 8;
 			card = card.substring(1, 9);
 		} else {
-			sum = 522 + (Integer.valueOf(card.substring(0, 1).toUpperCase().toCharArray()[0]) - 55) * 8;
+			sum = 522 + ((int) card.substring(0, 1).toUpperCase().toCharArray()[0] - 55) * 8;
 		}
 		String mid = card.substring(1, 7);
 		String end = card.substring(7, 8);
@@ -334,7 +327,7 @@ public class IdCardNoTool {
 		} else {
 			sum = sum + Integer.valueOf(end);
 		}
-		return (sum % 11 == 0) ? true : false;
+		return (sum % 11 == 0);
 	}
 
 	/**
@@ -350,12 +343,8 @@ public class IdCardNoTool {
 	 * @time 2013-5-14 下午10:51:20
 	 */
 	public static boolean isMacauIdCardNo(String str) {
-		if(StringTool.isBlank(str)) {
-			return false;
-		}
-		
-		return str.matches("^[1|5|7][0-9]{6}\\(?[0-9A-Z]\\)?$");
-	}
+        return !StringTool.isBlank(str) && str.matches("^[1|5|7][0-9]{6}\\(?[0-9A-Z]\\)?$");
+    }
 	
 	private static int[] converCharToInt(char[] ca) {
 		int len = ca.length;
@@ -451,7 +440,7 @@ public class IdCardNoTool {
 			return Sex.UNKNOWN;
 		}
 		
-		Sex sGender = Sex.UNKNOWN;
+		Sex sGender;
 		if (idCardNo.length() == MAINLAND_ID_MIN_LENGTH) {
 			idCardNo = convert15To18(idCardNo);
 		}
@@ -501,10 +490,10 @@ public class IdCardNoTool {
 	/**
 	 * 判断是否为数字串
 	 * @since 1.0.0
-	 * @author June
+	 * @author 唐玮琳
 	 */
 	private static boolean isNumber(String str) {
-		return StringTool.isBlank(str) ? false : str.matches("^[0-9]*$");
+		return !StringTool.isBlank(str) && str.matches("^[0-9]*$");
 	}
 
 	/**

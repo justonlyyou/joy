@@ -71,7 +71,7 @@ public class TimingCronExpressionCreator extends AbstractCronExpressionCreator {
 		return numToString(year);
 	}
 
-	private final String numToString(Number num) {
+	private String numToString(Number num) {
 		return String.valueOf(num == null ? 0L : num);
 	}
 

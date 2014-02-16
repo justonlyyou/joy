@@ -19,7 +19,7 @@ public class ListToolTest {
 	@Test
 	@SuppressWarnings("unchecked")
 	public void newArrayList() {
-		List<? extends Object> arrayList = ListTool.newArrayList("1", 2, 3.0);
+		List<?> arrayList = ListTool.newArrayList("1", 2, 3.0);
 		Assert.assertTrue(arrayList instanceof ArrayList);
 		Assert.assertEquals(3, arrayList.size());
 		Assert.assertEquals("1", arrayList.get(0));
@@ -30,7 +30,7 @@ public class ListToolTest {
 	@Test
 	@SuppressWarnings("unchecked")
 	public void newLinkedList() {
-		List<? extends Object> linkedList = ListTool.newLinkedList("1", 2, 3.0);
+		List<?> linkedList = ListTool.newLinkedList("1", 2, 3.0);
 		Assert.assertTrue(linkedList instanceof LinkedList);
 		Assert.assertEquals(3, linkedList.size());
 		Assert.assertEquals("1", linkedList.get(0));

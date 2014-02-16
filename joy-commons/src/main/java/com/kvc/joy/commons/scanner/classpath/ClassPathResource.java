@@ -34,7 +34,7 @@ public class ClassPathResource implements Comparable<ClassPathResource>, Resourc
 	/**
 	 * The location of the resource on the classpath.
 	 */
-	private String location;
+	private final String location;
 
 	/**
 	 * Creates a new ClassPathResource.
@@ -109,11 +109,9 @@ public class ClassPathResource implements Comparable<ClassPathResource>, Resourc
 
 		ClassPathResource that = (ClassPathResource) o;
 
-		if (!location.equals(that.location))
-			return false;
+        return location.equals(that.location);
 
-		return true;
-	}
+    }
 
 	@Override
 	public int hashCode() {
