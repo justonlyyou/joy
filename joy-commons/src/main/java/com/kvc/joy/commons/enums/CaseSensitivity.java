@@ -17,8 +17,8 @@ public enum CaseSensitivity implements ICodeEnum {
 	INSENSITIVE("2", "不敏感"),
 	SYSTEM("3", "依赖于系统");
 	
-	private String code;
-	private String desc;
+	private final String code;
+	private final String desc;
 	
 	CaseSensitivity(String code, String desc) {
 		this.code = code;

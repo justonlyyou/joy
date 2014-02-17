@@ -14,10 +14,10 @@ public class PreparedSqlConvertor implements IPreparedSqlConvertor {
 
 	protected static final Log logger = LogFactory.getLog(PreparedSqlConvertor.class);
 	/** 预编译sql语句 */
-	private String sql;
+	private final String sql;
 
 	/** 预编译参数 */
-	private List<String> params = new ArrayList<String>();
+	private final List<String> params = new ArrayList<String>();
 
 	public PreparedSqlConvertor(String sql) {
 		this.sql = sql;
@@ -52,7 +52,7 @@ public class PreparedSqlConvertor implements IPreparedSqlConvertor {
 
 	public String convert() {
 		int len = sql.length();
-		StringBuffer t = new StringBuffer(len * 2);
+		StringBuilder t = new StringBuilder(len * 2);
 		try {
 			if (params != null) {
 				int i = 1, limit = 0, base = 0;

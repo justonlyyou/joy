@@ -27,11 +27,8 @@ public class ArrayTool {
 	 * @time 2013年11月22日 下午11:16:02
 	 */
 	public static boolean isArray(Object obj) {
-		if (obj == null) {
-			return false;
-		}
-		return obj.getClass().isArray();
-	}
+        return obj != null && obj.getClass().isArray();
+    }
 
 	/**
 	 * <p>
@@ -3801,7 +3798,7 @@ public class ArrayTool {
 	 * @time 2013-4-30 上午09:44:11
 	 */
 	public static <T> T[] add(T[] array, int index, T element) {
-		return org.apache.commons.lang3.ArrayUtils.add(array, element);
+		return org.apache.commons.lang3.ArrayUtils.add(array, index, element);
 	}
 
 	/**
@@ -3835,7 +3832,7 @@ public class ArrayTool {
 	 * @time 2013-4-30 上午09:44:11
 	 */
 	public static boolean[] add(boolean[] array, int index, boolean element) {
-		return org.apache.commons.lang3.ArrayUtils.add(array, element);
+		return org.apache.commons.lang3.ArrayUtils.add(array, index, element);
 	}
 
 	/**
@@ -3870,7 +3867,7 @@ public class ArrayTool {
 	 * @time 2013-4-30 上午09:44:11
 	 */
 	public static char[] add(char[] array, int index, char element) {
-		return org.apache.commons.lang3.ArrayUtils.add(array, element);
+		return org.apache.commons.lang3.ArrayUtils.add(array, index, element);
 	}
 
 	/**
@@ -3904,7 +3901,7 @@ public class ArrayTool {
 	 * @time 2013-4-30 上午09:44:11
 	 */
 	public static byte[] add(byte[] array, int index, byte element) {
-		return org.apache.commons.lang3.ArrayUtils.add(array, element);
+		return org.apache.commons.lang3.ArrayUtils.add(array, index, element);
 	}
 
 	/**
@@ -3938,7 +3935,7 @@ public class ArrayTool {
 	 * @time 2013-4-30 上午09:44:11
 	 */
 	public static short[] add(short[] array, int index, short element) {
-		return org.apache.commons.lang3.ArrayUtils.add(array, element);
+		return org.apache.commons.lang3.ArrayUtils.add(array, index, element);
 	}
 
 	/**
@@ -3972,7 +3969,7 @@ public class ArrayTool {
 	 * @time 2013-4-30 上午09:44:11
 	 */
 	public static int[] add(int[] array, int index, int element) {
-		return org.apache.commons.lang3.ArrayUtils.add(array, element);
+		return org.apache.commons.lang3.ArrayUtils.add(array, index, element);
 	}
 
 	/**
@@ -4006,7 +4003,7 @@ public class ArrayTool {
 	 * @time 2013-4-30 上午09:44:11
 	 */
 	public static long[] add(long[] array, int index, long element) {
-		return org.apache.commons.lang3.ArrayUtils.add(array, element);
+		return org.apache.commons.lang3.ArrayUtils.add(array, index, element);
 	}
 
 	/**
@@ -4040,7 +4037,7 @@ public class ArrayTool {
 	 * @time 2013-4-30 上午09:44:11
 	 */
 	public static float[] add(float[] array, int index, float element) {
-		return org.apache.commons.lang3.ArrayUtils.add(array, element);
+		return org.apache.commons.lang3.ArrayUtils.add(array, index, element);
 	}
 
 	/**
@@ -4074,7 +4071,7 @@ public class ArrayTool {
 	 * @time 2013-4-30 上午09:44:11
 	 */
 	public static double[] add(double[] array, int index, double element) {
-		return org.apache.commons.lang3.ArrayUtils.add(array, element);
+		return org.apache.commons.lang3.ArrayUtils.add(array, index, element);
 	}
 
 	/**

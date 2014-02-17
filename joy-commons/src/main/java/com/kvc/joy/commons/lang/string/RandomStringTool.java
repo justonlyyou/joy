@@ -16,7 +16,7 @@ public class RandomStringTool {
 	private RandomStringTool() {
 	}
 
-	private static SecureRandom random = new SecureRandom();
+	private static final SecureRandom random = new SecureRandom();
 
 	/**
 	 * <p>

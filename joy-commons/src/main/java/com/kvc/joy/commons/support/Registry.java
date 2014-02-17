@@ -16,7 +16,7 @@ public class Registry {
 	/**
 	 * 所有注册的对象Map
 	 */
-	private static Map<String, List<Object>> map = new HashMap<String, List<Object>>();
+	private static final Map<String, List<Object>> map = new HashMap<String, List<Object>>();
 
 	private Registry() {
 	}

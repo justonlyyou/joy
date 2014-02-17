@@ -98,7 +98,7 @@ public abstract class BaseController<T> {
 		Map<String, String[]> parameterMap = HttpRequestTool.getParameterMap();
 		for (Entry<String, String[]> entry : parameterMap.entrySet()) {
 			String[] values = entry.getValue();
-			Object value = null;
+			Object value;
 			if (values.length == 0) {
 				value = "";
 			} else if (values.length == 1) {

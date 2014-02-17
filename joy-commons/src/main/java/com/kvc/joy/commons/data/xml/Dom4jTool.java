@@ -272,7 +272,7 @@ public class Dom4jTool {
 
 		String strValue = node.attributeValue(attributeName);
 		if (StringTool.isNotBlank(strValue)) {
-			int value = 0;
+			int value;
 			try {
 				value = Integer.parseInt(strValue);
 			} catch (NumberFormatException e) {
@@ -408,14 +408,12 @@ public class Dom4jTool {
 			logger.error(e);
 			return null;
 		} finally {
-			if (writer != null) {
-				try {
-					writer.close();
-				} catch (IOException e) {
-					logger.error(e);
-				}
-			}
-		}
+            try {
+                writer.close();
+            } catch (IOException e) {
+                logger.error(e);
+            }
+        }
 		return out.toString();
 	}
 

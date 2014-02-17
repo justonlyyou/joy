@@ -6,11 +6,11 @@
     http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
 	<jpa:repositories base-package="com.kvc.joy.**.dao" factory-class="com.kvc.joy.core.persistence.orm.jpa.JpaEntityRepositoryFactoryBean">
-		<!-- <jpa:repository id="iErbacUserDao" custom-impl-ref="erbacUserRepository" /> --> <!-- ??? com.kvc.joy.**.dao.IErbacUserDao no found ??? -->
+		<!-- <jpa:repository id="iUserBasicDao" custom-impl-ref="erbacUserRepository" /> --> <!-- ??? com.kvc.joy.**.dao.IErbacUserDao no found ??? -->
 	</jpa:repositories>
 
 	<!-- <jpa:repositories base-package="com.kvc.joy.core.security.erbac.dao" factory-class="com.kvc.joy.core.persistence.orm.jpa.JpaEntityRepositoryFactoryBean">
-		<jpa:repository id="iErbacUserDao" custom-impl-ref="erbacUserRepository" /> -->  <!-- ??? factory-class去掉会报 no propety or found for TErbacUser ??? -->
+		<jpa:repository id="iUserBasicDao" custom-impl-ref="erbacUserRepository" /> -->  <!-- ??? factory-class去掉会报 no propety or found for TErbacUser ??? -->
 	<!--</jpa:repositories>-->
 
 	<!-- 

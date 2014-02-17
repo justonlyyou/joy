@@ -24,23 +24,23 @@ public class HsqlSchema extends Schema {
     }
 
     @Override
-    protected boolean doExists() throws SQLException {
+    protected boolean doExists() {
         return JdbcTool.queryForInt(dbSupport.getConnection(), "SELECT COUNT (*) FROM information_schema.system_schemas WHERE table_schem=?", name) > 0;
     }
 
     @Override
-    protected boolean doEmpty() throws SQLException {
+    protected boolean doEmpty() {
         return allTables().length == 0;
     }
 
     @Override
-    protected void doCreate() throws SQLException {
+    protected void doCreate() {
         String user = JdbcTool.queryForString(dbSupport.getConnection(), "SELECT USER() FROM (VALUES(0))");
         JdbcTool.execute(dbSupport.getConnection(), "CREATE SCHEMA " + dbSupport.quote(name) + " AUTHORIZATION " + user);
     }
 
     @Override
-    protected void doDrop() throws SQLException {
+    protected void doDrop() {
     	JdbcTool.execute(dbSupport.getConnection(), "DROP SCHEMA " + dbSupport.quote(name) + " CASCADE");
     }
 
@@ -61,7 +61,7 @@ public class HsqlSchema extends Schema {
      * @return The drop statements.
      * @throws SQLException when the drop statements could not be generated.
      */
-    private List<String> generateDropStatementsForSequences() throws SQLException {
+    private List<String> generateDropStatementsForSequences() {
         List<String> sequenceNames = JdbcTool.queryForStringList(dbSupport.getConnection(), 
                 "SELECT SEQUENCE_NAME FROM INFORMATION_SCHEMA.SYSTEM_SEQUENCES where SEQUENCE_SCHEMA = ?", name);
 

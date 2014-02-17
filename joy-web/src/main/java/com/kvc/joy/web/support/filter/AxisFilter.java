@@ -3,7 +3,7 @@ package com.kvc.joy.web.support.filter;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
-import com.kvc.joy.plugin.security.login.support.ipmatch.IpMatchFacility;
+import com.kvc.joy.plugin.security.user.support.ipmatch.IpMatchFacility;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;

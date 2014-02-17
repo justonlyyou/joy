@@ -27,7 +27,7 @@ public class QuartzTriggersHolder implements IQuartzTriggersHolder {
 	
 	@Autowired
 	private TQrtzJobPlanCfgDao qrtzJobPlanCfgDao;
-	private Map<TriggerKey, Trigger> triggerMap = new HashMap<TriggerKey, Trigger>();
+	private final Map<TriggerKey, Trigger> triggerMap = new HashMap<TriggerKey, Trigger>();
 	
 	public void loadTriggers() {
 		List<TQrtzJobPlan> plans = qrtzJobPlanCfgDao.getEffectPlans();

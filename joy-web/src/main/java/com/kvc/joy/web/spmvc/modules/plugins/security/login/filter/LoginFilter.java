@@ -3,8 +3,8 @@ package com.kvc.joy.web.spmvc.modules.plugins.security.login.filter;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
-import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser;
-import com.kvc.joy.plugin.security.login.support.ipmatch.IpMatchFacility;
+import com.kvc.joy.plugin.security.user.model.po.TUserBasic;
+import com.kvc.joy.plugin.security.user.support.ipmatch.IpMatchFacility;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -44,8 +44,8 @@ public class LoginFilter implements Filter {
 		HttpSession httpSession = httpRequest.getSession();
 
 		String uri = httpRequest.getRequestURI();
-		TErbacUser user = (TErbacUser) httpSession.getAttribute(TErbacUser.HTTP_SESSION_USER_ID);
-		if (user == null && !uri.contains(loginPage) && !uri.endsWith("login.do") && (uri.endsWith(".jsp") || uri.endsWith(".do"))) { // TODO
+		TUserBasic user = (TUserBasic) httpSession.getAttribute(TUserBasic.HTTP_SESSION_USER_ID);
+		if (user == null && !uri.contains(loginPage) && !uri.endsWith("user.do") && (uri.endsWith(".jsp") || uri.endsWith(".do"))) { // TODO
 			request.getRequestDispatcher(loginPage).forward(request, response);
 //			httpResponse.sendRedirect(httpRequest.getContextPath() + "/" +loginPage);
 		} else {

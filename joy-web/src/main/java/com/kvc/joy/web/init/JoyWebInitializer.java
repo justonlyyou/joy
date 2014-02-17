@@ -24,7 +24,7 @@ public class JoyWebInitializer extends ContextLoaderListener {
 
 	private static final Log logger = LogFactory.getLog(JoyWebInitializer.class);
 
-	private IJoyInitializer joyInitializer = new JoyInitializer();
+	private final IJoyInitializer joyInitializer = new JoyInitializer();
 	
 	@Override
 	public void contextInitialized(ServletContextEvent event) {

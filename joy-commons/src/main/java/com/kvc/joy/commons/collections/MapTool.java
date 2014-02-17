@@ -327,7 +327,7 @@ public class MapTool {
 	 * @time 2013-5-9 下午10:58:31
 	 */
 	public static <K> Byte getByte( Map<K, ?> map, K key, Byte defaultValue ) {
-    	return MapUtils.getByteValue(map, key);
+    	return MapUtils.getByteValue(map, key, defaultValue);
     }
 
 	/**

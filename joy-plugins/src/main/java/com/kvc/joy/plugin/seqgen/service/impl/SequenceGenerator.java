@@ -30,7 +30,7 @@ public class SequenceGenerator implements ISequenceGenerator {
 
 	protected static final Log log = LogFactory.getLog(SequenceGenerator.class);
 
-	private static Map<String, SequenceCache> cacheSeq = new HashMap<String, SequenceCache>();
+	private static final Map<String, SequenceCache> cacheSeq = new HashMap<String, SequenceCache>();
 	
 	/**
 	 * 当前服务是否在运行，用来作服务在多台机子上迁移用
@@ -78,7 +78,7 @@ public class SequenceGenerator implements ISequenceGenerator {
 		}
 
 		long curSeq = getSequenceNo(seqNumId);
-		return fillPattern(curSeq, seqCache, seqNum);
+		return fillPattern(curSeq, seqNum);
 	}
 	
 	/**
@@ -90,7 +90,7 @@ public class SequenceGenerator implements ISequenceGenerator {
 		SequenceCache seqCache = cacheSeq.get(seqNumId);
 		TSysSeqNum seqNum = seqCache.getSeqNum();
 		long curSeq = seqCache.getRealSeqNum();
-		return fillPattern(curSeq, seqCache, seqNum);
+		return fillPattern(curSeq, seqNum);
 	}
 	
 	/**
@@ -103,11 +103,11 @@ public class SequenceGenerator implements ISequenceGenerator {
 		return seqCache.getRealSeqNum();
 	}
 	
-	public String fillPattern(long curSeq, SequenceCache seqCache, TSysSeqNum seqNum) {
+	public String fillPattern(long curSeq, TSysSeqNum seqNum) {
 		String curSeqStr = curSeq + "";
 		TSysSeqNumRule tSysSeqNumRule = seqNum.getSeqRule();
 		Integer length = tSysSeqNumRule.getLength();
-		if (length != null && length.intValue() != 0) {
+		if (length != null && length != 0) {
 			String pattern = StringTool.rightPad("", length, "0");
 			NumberFormat format = new DecimalFormat(pattern);
 			curSeqStr = format.format(curSeq);
@@ -119,7 +119,7 @@ public class SequenceGenerator implements ISequenceGenerator {
 	}
 	
 	private long getSequenceNo(String seqNunId) {
-		long nextNum = 0;
+		long nextNum;
 		SequenceCache seqCache = (SequenceCache) cacheSeq.get(seqNunId);
 		TSysSeqNum tSysSeqNum = seqCache.getSeqNum();
 		

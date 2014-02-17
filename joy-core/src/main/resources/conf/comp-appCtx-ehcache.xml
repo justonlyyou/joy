@@ -25,9 +25,7 @@
 	<!-- <cache:annotation-driven cache-manager="ehCacheCacheManager" proxy-target-class="false" mode="proxy"/> -->
 
 	<bean id="cacheManagerFactory" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" p:shared="false">
-		<property name="configLocation">
-			<value>classpath:/conf/ehcache.xml</value>
-		</property>
+		<property name="configLocation" value="classpath:/conf/ehcache.xml"/>
 	</bean>
 
 	<bean id="ehCacheCacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager" p:cacheManager-ref="cacheManagerFactory" />

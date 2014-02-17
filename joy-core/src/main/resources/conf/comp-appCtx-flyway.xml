@@ -5,9 +5,7 @@
        default-autowire="byName">
 
  	<bean id="rdbObjectsInitService" class="com.kvc.joy.core.persistence.flyway.service.impl.RdbObjectsInitService">
- 		<property name="locations">
- 			<value>${flyway.locations}</value>
- 		</property>
+ 		<property name="locations" value="${flyway.locations}"/>
  	</bean>
 
 </beans>

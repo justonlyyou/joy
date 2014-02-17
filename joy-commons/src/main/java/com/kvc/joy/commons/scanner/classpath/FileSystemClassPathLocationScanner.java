@@ -68,15 +68,17 @@ public class FileSystemClassPathLocationScanner implements ClassPathLocationScan
 		Set<String> resourceNames = new TreeSet<String>();
 
 		File[] files = folder.listFiles();
-		for (File file : files) {
-			if (file.canRead()) {
-				if (file.isDirectory()) {
-					resourceNames.addAll(findResourceNamesFromFileSystem(classPathRootOnDisk, scanRootLocation, file));
-				} else {
-					resourceNames.add(toResourceNameOnClasspath(classPathRootOnDisk, file));
-				}
-			}
-		}
+        if (files != null) {
+            for (File file : files) {
+                if (file.canRead()) {
+                    if (file.isDirectory()) {
+                        resourceNames.addAll(findResourceNamesFromFileSystem(classPathRootOnDisk, scanRootLocation, file));
+                    } else {
+                        resourceNames.add(toResourceNameOnClasspath(classPathRootOnDisk, file));
+                    }
+                }
+            }
+        }
 
 		return resourceNames;
 	}

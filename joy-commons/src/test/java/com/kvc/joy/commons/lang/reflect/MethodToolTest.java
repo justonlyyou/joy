@@ -49,7 +49,7 @@ public class MethodToolTest {
 
 	public static class TestBean extends ParentBean<String, Long> {
 		/** 没有getter/setter的field */
-		private int privateField = 1;
+		private final int privateField = 1;
 		/** 有getter/setter的field */
 		private int publicField = 1;
 

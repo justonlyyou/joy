@@ -85,21 +85,23 @@ public class FileSystemScanner {
 	 * @return The resource names;
 	 * @throws IOException when the folder could not be read.
 	 */
-	private Set<String> findResourceNamesFromFileSystem(String scanRootLocation, File folder) throws IOException {
+	private Set<String> findResourceNamesFromFileSystem(String scanRootLocation, File folder) {
 		LOG.debug("Scanning for resources in path: " + folder.getPath() + " (" + scanRootLocation + ")");
 
 		Set<String> resourceNames = new TreeSet<String>();
 
 		File[] files = folder.listFiles();
-		for (File file : files) {
-			if (file.canRead()) {
-				if (file.isDirectory()) {
-					resourceNames.addAll(findResourceNamesFromFileSystem(scanRootLocation, file));
-				} else {
-					resourceNames.add(file.getPath());
-				}
-			}
-		}
+        if (files != null) {
+            for (File file : files) {
+                if (file.canRead()) {
+                    if (file.isDirectory()) {
+                        resourceNames.addAll(findResourceNamesFromFileSystem(scanRootLocation, file));
+                    } else {
+                        resourceNames.add(file.getPath());
+                    }
+                }
+            }
+        }
 
 		return resourceNames;
 	}

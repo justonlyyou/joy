@@ -3,6 +3,7 @@ package com.kvc.joy.plugin.security.erbac.model.po;
 import com.kvc.joy.core.persistence.entity.UuidEntity;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 import com.kvc.joy.plugin.security.erbac.support.enums.AuthorityType;
+import com.kvc.joy.plugin.security.user.model.po.TUserBasic;
 
 import javax.persistence.*;
 
@@ -12,7 +13,7 @@ import javax.persistence.*;
 public class TErbacUserAuth extends UuidEntity {
 
 	private AuthorityType authorityType;
-	private TErbacUser user;
+	private TUserBasic user;
 	private TErbacAuthority authority;
 
 	@Transient
@@ -37,11 +38,11 @@ public class TErbacUserAuth extends UuidEntity {
 	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.REFRESH }, optional = false)
 	@JoinColumn(name = "USER_ID")
 	@Comment("用户ID")
-	public TErbacUser getUser() {
+	public TUserBasic getUser() {
 		return user;
 	}
 
-	public void setUser(TErbacUser user) {
+	public void setUser(TUserBasic user) {
 		this.user = user;
 	}
 

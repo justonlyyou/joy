@@ -7,7 +7,7 @@ public abstract class Function extends SchemaObject {
     /**
      * The arguments of the function.
      */
-    protected String[] args;
+    protected final String[] args;
 
     /**
      * Creates a new function with this name within this schema.

@@ -26,8 +26,8 @@ public abstract class Schema {
     /**
      * Creates a new schema.
      *
-     * @param dbSupport    The database-specific support.
-     * @param name         The name of the schema.
+     * @param dbSupport The database-specific support.
+     * @param name      The name of the schema.
      */
     public Schema(DbSupport dbSupport, String name) {
         this.dbSupport = dbSupport;
@@ -47,11 +47,7 @@ public abstract class Schema {
      * @return {@code true} if it does, {@code false} if not.
      */
     public boolean exists() {
-        try {
-            return doExists();
-        } catch (SQLException e) {
-            throw new SystemException(e, "Unable to check whether schema " + this + " exists");
-        }
+        return doExists();
     }
 
     /**
@@ -60,7 +56,7 @@ public abstract class Schema {
      * @return {@code true} if it does, {@code false} if not.
      * @throws SQLException when the check failed.
      */
-    protected abstract boolean doExists() throws SQLException;
+    protected abstract boolean doExists();
 
     /**
      * Checks whether this schema is empty.
@@ -68,11 +64,7 @@ public abstract class Schema {
      * @return {@code true} if it is, {@code false} if isn't.
      */
     public boolean empty() {
-        try {
-            return doEmpty();
-        } catch (SQLException e) {
-            throw new SystemException(e, "Unable to check whether schema " + this + " is empty");
-        }
+        return doEmpty();
     }
 
     /**
@@ -81,17 +73,13 @@ public abstract class Schema {
      * @return {@code true} if it is, {@code false} if isn't.
      * @throws SQLException when the check failed.
      */
-    protected abstract boolean doEmpty() throws SQLException;
+    protected abstract boolean doEmpty();
 
     /**
      * Creates this schema in the database.
      */
     public void create() {
-        try {
-            doCreate();
-        } catch (SQLException e) {
-            throw new SystemException(e, "Unable to create schema " + this);
-        }
+        doCreate();
     }
 
     /**
@@ -99,17 +87,13 @@ public abstract class Schema {
      *
      * @throws SQLException when the creation failed.
      */
-    protected abstract void doCreate() throws SQLException;
+    protected abstract void doCreate();
 
     /**
      * Drops this schema from the database.
      */
     public void drop() {
-        try {
-            doDrop();
-        } catch (SQLException e) {
-            throw new SystemException(e, "Unable to drop schema " + this);
-        }
+        doDrop();
     }
 
     /**
@@ -117,7 +101,7 @@ public abstract class Schema {
      *
      * @throws SQLException when the drop failed.
      */
-    protected abstract void doDrop() throws SQLException;
+    protected abstract void doDrop();
 
     /**
      * Cleans all the objects in this schema.
@@ -215,11 +199,7 @@ public abstract class Schema {
      * @return All types in the schema.
      */
     public final Function[] allFunctions() {
-        try {
-            return doAllFunctions();
-        } catch (SQLException e) {
-            throw new SystemException(e, "Unable to retrieve all functions in schema " + this);
-        }
+        return doAllFunctions();
     }
 
     /**
@@ -228,7 +208,7 @@ public abstract class Schema {
      * @return All functions in the schema.
      * @throws SQLException when the retrieval failed.
      */
-    protected Function[] doAllFunctions() throws SQLException {
+    protected Function[] doAllFunctions() {
         return new Function[0];
     }
 

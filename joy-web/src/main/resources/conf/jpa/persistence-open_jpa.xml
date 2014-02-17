@@ -4,7 +4,7 @@
     http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" version="1.0">
 
 	<persistence-unit name="OPEN_JPA" transaction-type="RESOURCE_LOCAL">
-		<provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+		<!--<provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>-->
 		
 		<!--   
 		<class>com.kvc.common.core.security.rbac.po.TRbacAuthority</class>

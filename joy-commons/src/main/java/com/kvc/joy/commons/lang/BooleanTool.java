@@ -510,7 +510,7 @@ public class BooleanTool {
 	 * @time 2013-4-30 下午4:45:52
 	 */
 	public static Integer toIntegerObject(Boolean bool, Integer trueValue, Integer falseValue, Integer nullValue) {
-		return org.apache.commons.lang3.BooleanUtils.toIntegerObject(bool);
+		return org.apache.commons.lang3.BooleanUtils.toIntegerObject(bool, trueValue, falseValue, nullValue);
 	}
 
 	// String to Boolean methods

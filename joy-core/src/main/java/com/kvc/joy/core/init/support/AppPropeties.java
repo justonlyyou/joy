@@ -8,7 +8,7 @@ package com.kvc.joy.core.init.support;
  */
 public class AppPropeties extends BaseProperties {
 
-	private static AppPropeties self = new AppPropeties();
+	private static final AppPropeties self = new AppPropeties();
 	public static String VERSION;
 	public static String NAME;
 	public static String NAME_ABBR;

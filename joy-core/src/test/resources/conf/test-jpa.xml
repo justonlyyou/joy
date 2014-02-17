@@ -5,9 +5,7 @@
 
 	<!-- 业务库JPA模版 -->
 	<bean id="jpaTemplate" class="org.springframework.orm.jpa.JpaTemplate">
-		<property name="entityManagerFactory">
-			<ref bean="entityManagerFactory" />
-		</property>
+		<property name="entityManagerFactory" ref="entityManagerFactory"/>
 	</bean>
 	
 	<bean id="entityManagerFactory"

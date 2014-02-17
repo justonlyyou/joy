@@ -1,6 +1,6 @@
 package com.kvc.joy.plugin.security.erbac.support.utils;
 
-import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser;
+import com.kvc.joy.plugin.security.user.model.po.TUserBasic;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 
@@ -23,10 +23,10 @@ public class UserTool {
 	 * @author 唐玮琳
 	 * @time 2013年10月5日 下午4:28:07
 	 */
-	public static TErbacUser getCurrentUser() {
+	public static TUserBasic getCurrentUser() {
 		Subject subject = SecurityUtils.getSubject();
 		Object principal = subject.getPrincipal();
-		return (TErbacUser) principal;
+		return (TUserBasic) principal;
 	}
 
 }

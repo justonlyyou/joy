@@ -3,7 +3,7 @@ package com.kvc.joy.web.spmvc.modules.plugins.security.login.controller;
 import com.kvc.joy.commons.bean.Pair;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.plugin.image.captcha.consts.CaptchaConsts;
-import com.kvc.joy.plugin.security.login.support.vo.LoginVo;
+import com.kvc.joy.plugin.security.user.support.vo.UserLoginVo;
 import com.kvc.joy.plugin.support.PluginBeanFactory;
 import com.kvc.joy.web.support.utils.HttpRequestTool;
 import com.kvc.joy.web.support.utils.HttpSessionTool;
@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class LoginController {
 
-	private static final String LOGIN_VIEW_NAME = "joy/plugins/login/login";
+	private static final String LOGIN_VIEW_NAME = "joy/plugins/user/user";
 
 	// @Resource
 	// private ICaptchaService captchaService;
@@ -38,7 +38,7 @@ public class LoginController {
 			}
 		}
 
-		LoginVo loginVo = createLoginVo(username, password, captcha, rememberMe, captchaRequire);
+		UserLoginVo loginVo = createLoginVo(username, password, captcha, rememberMe, captchaRequire);
 		return PluginBeanFactory.getLoginService().login(loginVo);
 	}
 
@@ -57,9 +57,9 @@ public class LoginController {
 		return "index.jsp";
 	}
 
-	private LoginVo createLoginVo(String username, String password, String captcha, String rememberMe,
+	private UserLoginVo createLoginVo(String username, String password, String captcha, String rememberMe,
 			boolean captchaRequire) {
-		LoginVo loginVo = new LoginVo();
+		UserLoginVo loginVo = new UserLoginVo();
 		loginVo.setUserAccount(username);
 		loginVo.setUserPassword(password);
 		 loginVo.setRememberMe(StringTool.isNotBlank(rememberMe) ? "1" : "0");

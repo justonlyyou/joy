@@ -208,7 +208,7 @@ import java.util.concurrent.locks.ReentrantLock;
 	public boolean containsValue(Object value) {
 		processQueue();
 		Collection values = values();
-		return values != null && values.contains(value);
+		return values.contains(value);
 	}
 
 	public void putAll(Map<? extends K, ? extends V> m) {

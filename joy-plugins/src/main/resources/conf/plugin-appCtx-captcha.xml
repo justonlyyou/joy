@@ -25,9 +25,7 @@
 	</bean>
 	
 	<bean id="captchaService" class="com.kvc.joy.plugin.image.captcha.service.impl.CaptchaService">
-		<property name="captchaProducer">
-			<ref bean="captchaProducer"/>
-		</property>
+		<property name="captchaProducer" ref="captchaProducer"/>
 	</bean>
 
 </beans>

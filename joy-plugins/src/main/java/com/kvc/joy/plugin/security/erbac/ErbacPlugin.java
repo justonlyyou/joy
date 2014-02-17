@@ -2,7 +2,7 @@ package com.kvc.joy.plugin.security.erbac;
 
 import com.kvc.joy.core.init.service.IJoyPlugin;
 import com.kvc.joy.core.init.support.JoyPropeties;
-import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser;
+import com.kvc.joy.plugin.security.user.model.po.TUserBasic;
 import org.springframework.stereotype.Component;
 
 /**
@@ -47,7 +47,7 @@ public class ErbacPlugin implements IJoyPlugin {
 
 	@Override
 	public String getPoPackage() {
-		return TErbacUser.class.getPackage().getName();
+		return TUserBasic.class.getPackage().getName();
 	}
 
 	@Override

@@ -45,8 +45,8 @@ public enum QueryLogicOperator implements ICodeEnum, Serializable{
 		this.desc = desc;
 	}
 
-	private String code;
-	private String desc;
+	private final String code;
+	private final String desc;
 	
 	public String getCode() {
 		return code;

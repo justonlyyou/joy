@@ -113,7 +113,7 @@ public class MdRdbAlterReverseSyncService implements IMdRdbAlterReverseSyncServi
 		if(sqlList.isEmpty() == false && logger.isDebugEnabled()) {
 			StringBuilder sb = new StringBuilder("\n实体表结构更新SQL语句如下: \n");
 			for (String sql : sqlList) {
-				sb.append(sql + "\n");
+				sb.append(sql).append("\n");
 			}
 			logger.debug(sb.toString());
 		}
@@ -122,7 +122,7 @@ public class MdRdbAlterReverseSyncService implements IMdRdbAlterReverseSyncServi
 		} else {
 			logger.info("开始更新实体表结构...");
 			long start = System.currentTimeMillis();
-			String[] sqls = sqlList.toArray(new String[0]);
+			String[] sqls = sqlList.toArray(new String[sqlList.size()]);
 			JdbcTool.jdbcTemplate().batchUpdate(sqls);
 			long end = System.currentTimeMillis();
 			logger.info("实体表结构更新完成，共执行" + sqlList.size() + "条SQL语句，耗时" + ((end - start) / 1000) + "秒。");

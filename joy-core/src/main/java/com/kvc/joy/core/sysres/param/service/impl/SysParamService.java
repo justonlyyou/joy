@@ -29,7 +29,7 @@ public class SysParamService implements ISysParamService {
 	public TSysParam get(String paramName) {
 		Map<String, Object> map = new HashMap<String, Object>(2);
 		map.put(TSysParam_.paramName.getName(), paramName);
-		map.put(TSysParam_.deleted.getName(), Boolean.valueOf(false));
+		map.put(TSysParam_.deleted.getName(), false);
 		List<TSysParam> results = JpaTool.andSearch(TSysParam.class, map);
 		if(results.isEmpty()) {
 			return null;

@@ -13,8 +13,8 @@ import java.util.Map;
  */
 public class EnumToolTest {
 	
-	private Class<TimeUnit> enumClass = TimeUnit.class;
-	private String enumClassStr = TimeUnit.class.getName();
+	private final Class<TimeUnit> enumClass = TimeUnit.class;
+	private final String enumClassStr = TimeUnit.class.getName();
 	
 	@Test
 	public void enumOf() {

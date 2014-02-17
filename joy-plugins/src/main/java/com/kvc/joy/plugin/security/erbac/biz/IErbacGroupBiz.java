@@ -2,7 +2,7 @@ package com.kvc.joy.plugin.security.erbac.biz;
 
 import com.kvc.joy.commons.bean.TreeNode;
 import com.kvc.joy.plugin.security.erbac.model.po.TErbacGroup;
-import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser;
+import com.kvc.joy.plugin.security.user.model.po.TUserBasic;
 
 import java.util.Collection;
 import java.util.List;
@@ -33,7 +33,7 @@ public interface IErbacGroupBiz {
 	 * @author 唐玮琳
 	 * @time 2012-5-3 下午10:24:10
 	 */
-	Collection<TErbacUser> getGroupUsers(String groupId) ;
+	Collection<TUserBasic> getGroupUsers(String groupId) ;
 	
 	/**
 	 * 根据组id，取得该组下所有的用户(包含本身和其所有孩子组的用户)
@@ -43,7 +43,7 @@ public interface IErbacGroupBiz {
 	 * @author 唐玮琳
 	 * @time 2012-5-3 下午10:33:39
 	 */
-	Map<TErbacGroup, Collection<TErbacUser>> getAllGroupUsers(String groupId);
+	Map<TErbacGroup, Collection<TUserBasic>> getAllGroupUsers(String groupId);
 	
 	/**
 	 * 从组中移除用户

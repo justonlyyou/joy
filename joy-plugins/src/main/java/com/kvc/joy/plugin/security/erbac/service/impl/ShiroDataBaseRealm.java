@@ -1,7 +1,7 @@
 package com.kvc.joy.plugin.security.erbac.service.impl;
 
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
-import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser;
+import com.kvc.joy.plugin.security.user.model.po.TUserBasic;
 import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser_;
 import com.kvc.joy.plugin.security.erbac.service.IUserPermissionService;
 import org.apache.shiro.authc.*;
@@ -32,7 +32,7 @@ public class ShiroDataBaseRealm extends AuthorizingRealm {
 			throw new AuthorizationException("Principal对象不能为空");
 		}
 
-		TErbacUser user = (TErbacUser) principals.fromRealm(getName()).iterator().next();
+		TUserBasic user = (TUserBasic) principals.fromRealm(getName()).iterator().next();
 		List<String> permissions = userPermissionService.getPermissionStringExps(user.getId());
 
 		SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
@@ -50,7 +50,7 @@ public class ShiroDataBaseRealm extends AuthorizingRealm {
 			throw new AccountException("用户名不能为空");
 		}
 
-		TErbacUser user = JpaTool.uniqueResult(JpaTool.search(TErbacUser.class, TErbacUser_.account, username));
+		TUserBasic user = JpaTool.uniqueResult(JpaTool.search(TUserBasic.class, TErbacUser_.account, username));
 		if (user == null) {
 			throw new UnknownAccountException("用户不存在");
 		}

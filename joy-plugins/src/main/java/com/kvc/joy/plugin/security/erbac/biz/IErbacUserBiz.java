@@ -1,7 +1,7 @@
 package com.kvc.joy.plugin.security.erbac.biz;
 
 import com.kvc.joy.plugin.security.erbac.model.po.TErbacGroup;
-import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser;
+import com.kvc.joy.plugin.security.user.model.po.TUserBasic;
 
 import java.util.Collection;
 import java.util.List;
@@ -18,14 +18,14 @@ public interface IErbacUserBiz {
 	/**
 	 * 取得所有有效的用户
 	 * 
-	 * @return List<TErbacUser>
+	 * @return List<TUserBasic>
 	 * @author 唐玮琳
 	 * @time 2012-5-8 下午11:21:06
 	 */
-	List<TErbacUser> getAllActiveUsers();
+	List<TUserBasic> getAllActiveUsers();
 	
-	TErbacUser getUser(String account, String password);
+	TUserBasic getUser(String account, String password);
 	
-	Map<TErbacGroup, Collection<TErbacUser>> getUsersByGroupIds(Collection<String> groudIds);
+	Map<TErbacGroup, Collection<TUserBasic>> getUsersByGroupIds(Collection<String> groudIds);
 	
 }

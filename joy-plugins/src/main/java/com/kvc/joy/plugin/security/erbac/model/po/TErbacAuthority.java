@@ -23,7 +23,7 @@ public class TErbacAuthority extends UuidCrudEntity {
 	private Collection<TErbacRoleAuth> roleAuths; // 角色权限关系
 	private Collection<TErbacGroupAuth> groupAuths; // 组权限关系
 //	private Collection<TErbacRole> roles; // 角色
-//	private Collection<TErbacUser> users; // 用户
+//	private Collection<TUserBasic> users; // 用户
 //	private Collection<TErbacGroup> groups; // 组
 
 	@Column(name="AUTH_NAME", length=64, nullable=false)
@@ -62,11 +62,11 @@ public class TErbacAuthority extends UuidCrudEntity {
 
 //	@ManyToMany(cascade = CascadeType.REFRESH, mappedBy = "authorities",// 通过维护端的属性关联
 //			fetch = FetchType.LAZY)
-//	public Collection<TErbacUser> getUsers() {
+//	public Collection<TUserBasic> getUsers() {
 //		return users;
 //	}
 //
-//	public void setUsers(Collection<TErbacUser> users) {
+//	public void setUsers(Collection<TUserBasic> users) {
 //		this.users = users;
 //	}
 	

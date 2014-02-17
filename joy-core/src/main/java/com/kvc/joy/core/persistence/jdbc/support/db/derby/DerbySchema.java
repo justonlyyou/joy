@@ -32,17 +32,17 @@ public class DerbySchema extends Schema {
     }
 
     @Override
-    protected boolean doEmpty() throws SQLException {
+    protected boolean doEmpty() {
         return allTables().length == 0;
     }
 
     @Override
-    protected void doCreate() throws SQLException {
+    protected void doCreate() {
         JdbcTool.execute(dbSupport.getConnection(), "CREATE SCHEMA " + dbSupport.quote(name));
     }
 
     @Override
-    protected void doDrop() throws SQLException {
+    protected void doDrop() {
         clean();
         JdbcTool.execute(dbSupport.getConnection(), "DROP SCHEMA " + dbSupport.quote(name) + " RESTRICT");
     }
@@ -74,7 +74,7 @@ public class DerbySchema extends Schema {
      * @return The list of statements.
      * @throws SQLException when the statements could not be generated.
      */
-    private List<String> generateDropStatementsForConstraints() throws SQLException {
+    private List<String> generateDropStatementsForConstraints() {
         List<Map<String, String>> results = JdbcTool.queryForList(dbSupport.getConnection(), 
         		"SELECT c.constraintname, t.tablename FROM sys.sysconstraints c" +
                 " INNER JOIN sys.systables t ON c.tableid = t.tableid" +

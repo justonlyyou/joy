@@ -187,7 +187,7 @@ public class SysResTool {
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static Map<String, CodeRecord> getAllCodeAndTrans(String codeTableId, String enumClass) {
-		Map<String, CodeRecord> codeMap = null;
+		Map<String, CodeRecord> codeMap;
 		if (StringTool.isNotBlank(codeTableId)) {
 			codeMap = getAllCodeAndTrans(codeTableId);
 		} else {

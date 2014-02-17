@@ -15,5 +15,5 @@ public interface RowMapper<T> {
      * @return The corresponding object.
      * @throws SQLException when reading the resultset failed.
      */
-    T mapRow(final ResultSet rs) throws SQLException;
+    T mapRow(final ResultSet rs);
 }

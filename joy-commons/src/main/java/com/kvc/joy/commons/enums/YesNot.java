@@ -18,8 +18,8 @@ public enum YesNot implements ICodeEnum {
 	
 	public static final String CODE_TABLE_ID = "yes_not";
 	
-	private boolean bool;
-	private String binary;
+	private final boolean bool;
+	private final String binary;
 	private String trans;
 	
 	private YesNot(boolean bool, String binary, String trans) {

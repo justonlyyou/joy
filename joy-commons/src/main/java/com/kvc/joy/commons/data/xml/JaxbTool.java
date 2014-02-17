@@ -33,7 +33,7 @@ import java.util.concurrent.ConcurrentMap;
  */
 public class JaxbTool {
 
-	private static ConcurrentMap<Class<?>, JAXBContext> jaxbContexts = new ConcurrentHashMap<Class<?>, JAXBContext>();
+	private static final ConcurrentMap<Class<?>, JAXBContext> jaxbContexts = new ConcurrentHashMap<Class<?>, JAXBContext>();
 
 	private JaxbTool() {
 	}

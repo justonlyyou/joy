@@ -19,8 +19,8 @@ import java.util.*;
 public class PageStoreCreator {
 
 	protected static final Log logger = LogFactory.getLog(PageStoreCreator.class);
-	private Map<String, String> paramMap;
-	private Map<String, String> returnMap = new HashMap<String, String>(0);
+	private final Map<String, String> paramMap;
+	private final Map<String, String> returnMap = new HashMap<String, String>(0);
 
 	public PageStoreCreator(Map<String, String> paramMap) {
 		this.paramMap = paramMap;

@@ -24,7 +24,7 @@ public class JpaEntityRepositoryFactoryBean<R extends JpaRepository<T, I>, T ext
 
 	private static class JpaEntityRepositoryFactory<T extends IEntity<I>, I extends Serializable> extends JpaRepositoryFactory {
 
-		private EntityManager entityManager;
+		private final EntityManager entityManager;
 
 		public JpaEntityRepositoryFactory(EntityManager entityManager) {
 			super(entityManager);

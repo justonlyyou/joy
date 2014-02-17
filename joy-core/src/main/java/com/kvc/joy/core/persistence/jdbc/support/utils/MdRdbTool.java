@@ -284,7 +284,7 @@ public class MdRdbTool {
 	 */
 	public static Map<String, MdRdbTable> getRelationalObjects(RdbConnection conn, RdbObjectType... objTypes) {
 		Map<String, MdRdbTable> tableMap = CoreBeanFactory.getMdRdbTableCacheService().getTables(conn);
-		return filterRelationalObject(tableMap);
+		return filterRelationalObject(tableMap, objTypes);
 	}
 	
 	private static Map<String, MdRdbTable> filterRelationalObject(Map<String, MdRdbTable> tableMap, RdbObjectType... objTypes) {

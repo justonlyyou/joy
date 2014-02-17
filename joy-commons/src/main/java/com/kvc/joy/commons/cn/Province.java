@@ -49,9 +49,9 @@ public enum Province implements ICodeEnum {
 	XIANG_GANG("81", "香港", "港"),
 	AO_MEN("82", "澳门", "澳");
 	
-	private String code;
-	private String trans;
-	private String abbr;
+	private final String code;
+	private final String trans;
+	private final String abbr;
 	
 	Province(String code, String trans, String abbr) {
 		this.code = code;

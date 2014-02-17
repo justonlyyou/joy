@@ -6,10 +6,7 @@ import org.apache.commons.collections.ListUtils;
 import org.apache.commons.collections.Predicate;
 import org.apache.commons.collections.Transformer;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * List工具类
@@ -39,9 +36,7 @@ public class ListTool {
 			return new ArrayList<T>(0);
 		}
 		List<T> list = new ArrayList<T>(elems.length);
-		for (T elem : elems) {
-			list.add(elem);
-		}
+        Collections.addAll(list, elems);
 		return list;
 	}
 
@@ -61,9 +56,7 @@ public class ListTool {
 			return new LinkedList<T>();
 		}
 		List<T> list = new LinkedList<T>();
-		for (T elem : elems) {
-			list.add(elem);
-		}
+        Collections.addAll(list, elems);
 		return list;
 	}
 	

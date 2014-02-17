@@ -28,9 +28,8 @@ public class JoyMappingExceptionResolver extends SimpleMappingExceptionResolver 
 		// Expose ModelAndView for chosen error view.
 		String viewName = determineViewName(ex, request);
 		if (viewName != null) {// JSP格式返回
-			if (!(request.getHeader("accept").indexOf("application/json") > -1 || (request
-					.getHeader("X-Requested-With") != null && request.getHeader("X-Requested-With").indexOf(
-					"XMLHttpRequest") > -1))) {
+			if (!(request.getHeader("accept").contains("application/json") || (request
+					.getHeader("X-Requested-With") != null && request.getHeader("X-Requested-With").contains("XMLHttpRequest")))) {
 				// 如果不是异步请求
 				// Apply HTTP status code for error views, if specified.
 				// Only apply it if we're processing a top-level request.

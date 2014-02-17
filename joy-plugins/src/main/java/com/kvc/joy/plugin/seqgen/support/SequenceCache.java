@@ -13,13 +13,13 @@ public class SequenceCache {
 	
 	private long realSeqNum; // 实时的序列号
 	private long cacheSeqNum; // 缓存中的序列号
-	private int cacheSize; // 缓存大小
-	private int increment; // 增量
-	private long maxNum; // 号码最大值
-	private long startNum; // 开始号码
+	private final int cacheSize; // 缓存大小
+	private final int increment; // 增量
+	private final long maxNum; // 号码最大值
+	private final long startNum; // 开始号码
 	private boolean newCycle;
 	
-	private TSysSeqNum seqNum;	
+	private final TSysSeqNum seqNum;
 	protected static final Log logger = LogFactory.getLog(SequenceCache.class);
 	
 	public SequenceCache(TSysSeqNum seqNum) {

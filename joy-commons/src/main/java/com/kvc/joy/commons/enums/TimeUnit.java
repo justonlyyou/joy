@@ -23,7 +23,7 @@ public enum TimeUnit implements ICodeEnum {
 	
 	public static final String CODE_TABLE_ID = "time_unit";
 	
-	private String code;
+	private final String code;
 	private String desc;
 	
 	TimeUnit(String code, String desc) {

@@ -13,7 +13,7 @@ public enum AuthorityType implements ICodeEnum {
 	
 	public static final String CODE_TABLE_ID = "authority_type";
 
-	private String code;
+	private final String code;
 
 	AuthorityType(String code) {
 		this.code = code;

@@ -378,9 +378,9 @@ public class CollectionToolTest {
 		List<Object> list = new ArrayList<Object>();
 		list.add(bean1);
 		list.add(bean2);
-		List<String> result = CollectionTool.extractToList(list, "id");
+		List<Integer> result = CollectionTool.extractToList(list, "id");
 		Assert.assertEquals(2, result.size());
-		Assert.assertEquals(1, result.get(0));
+		Assert.assertEquals(1, result.get(0).intValue());
 	}
 
 	@Test

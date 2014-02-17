@@ -18,8 +18,8 @@ public enum RdbObjectType implements ICodeEnum {
 	SYNONYM("synonym", "同义词"),
 	ALIAS("alias", "别名");
 	
-	private String code;
-	private String desc;
+	private final String code;
+	private final String desc;
 
 	RdbObjectType(String code, String desc) {
 		this.code = code;

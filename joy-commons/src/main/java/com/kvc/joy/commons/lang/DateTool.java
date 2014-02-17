@@ -73,7 +73,7 @@ public class DateTool {
 	// 用于缓存SimpleDateFormat，以便快速索引
 	private static final FastHashMap datePartenMap = new FastHashMap();
 	// 用于解决SimpleDateFormat的线程安全问题
-	private static ThreadLocal<FastHashMap> threadLocal = new ThreadLocal<FastHashMap>() {
+	private static final ThreadLocal<FastHashMap> threadLocal = new ThreadLocal<FastHashMap>() {
 		protected synchronized FastHashMap initialValue() {
 			return (FastHashMap) datePartenMap.clone();
 		}
@@ -283,10 +283,8 @@ public class DateTool {
 			int bornMonth = cal1.get(Calendar.MONTH);
 			
 			Calendar cal = Calendar.getInstance();
-			if (focus != null) {
-				cal.setTime(focus);
-			}
-			int currYear = cal.get(Calendar.YEAR);
+            cal.setTime(focus);
+            int currYear = cal.get(Calendar.YEAR);
 			int currMonth = cal.get(Calendar.MONTH);
 			
 			int age = currYear - bornYear;

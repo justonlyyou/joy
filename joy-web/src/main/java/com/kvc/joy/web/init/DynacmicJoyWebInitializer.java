@@ -13,7 +13,7 @@ import javax.servlet.ServletException;
 public class DynacmicJoyWebInitializer { //implements WebApplicationInitializer {
 
 //	@Override
-	public void onStartup(ServletContext servletContext) throws ServletException {
+	public void onStartup(ServletContext servletContext) {
 //		new WebConfig(servletContext).config();
 		
 //		ContextConfigLocationHandler contextConfigLocationHandler = new ContextConfigLocationHandler();

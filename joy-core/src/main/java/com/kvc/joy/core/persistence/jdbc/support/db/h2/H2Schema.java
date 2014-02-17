@@ -34,7 +34,7 @@ public class H2Schema extends Schema {
     }
 
     @Override
-    protected boolean doEmpty() throws SQLException {
+    protected boolean doEmpty() {
         return allTables().length == 0;
     }
 
@@ -134,7 +134,7 @@ public class H2Schema extends Schema {
      * @return The names of the objects.
      * @throws java.sql.SQLException when the object names could not be listed.
      */
-    private List<String> listObjectNames(String objectType, String querySuffix) throws SQLException {
+    private List<String> listObjectNames(String objectType, String querySuffix) {
         String query = "SELECT " + objectType + "_NAME FROM INFORMATION_SCHEMA." + objectType + "s WHERE " + objectType + "_schema = ?";
         if (StringTool.isNotBlank(querySuffix)) {
             query += " AND " + querySuffix;

@@ -5,7 +5,7 @@
 
 	<persistence-unit name="ECLIPSE_LINK" transaction-type="RESOURCE_LOCAL">
 
-		<class>de.vogella.jpa.simple.model.Todo</class>
+		<!--<class></class>-->
 		
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />

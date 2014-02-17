@@ -55,13 +55,13 @@ public class JobPlanPreviewer {
 
 	public String previewAsString(int count) {
 		List<JobPlanPreview> previewList = preview(count);
-		String plan = null;
+		String plan;
 		if (previewList.isEmpty()) {
 			plan = "从现在起无任何执行计划！";
 		} else {
 			StringBuilder plans = new StringBuilder();
 			for (JobPlanPreview preview : previewList) {
-				plans.append(preview + "</br>");
+				plans.append(preview).append("</br>");
 			}
 			plan = plans.toString();
 		}

@@ -11,7 +11,7 @@ import com.kvc.joy.plugin.schedule.quartz.model.vo.QrtzJobPlanVo;
  */
 public abstract class AbstractCronExpressionCreator implements ICronExpressionCreator {
 
-	protected QrtzJobPlanVo plan;
+	protected final QrtzJobPlanVo plan;
 	protected static final Log logger = LogFactory.getLog(AbstractCronExpressionCreator.class);
 
 	public AbstractCronExpressionCreator(QrtzJobPlanVo plan) {

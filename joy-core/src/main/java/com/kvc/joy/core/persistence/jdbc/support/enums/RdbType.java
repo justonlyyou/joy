@@ -27,8 +27,8 @@ public enum RdbType implements ICodeEnum {
 	H2("12", "H2"),
 	HSQL("13", "HSQL");
 
-	private String code;
-	private String name;
+	private final String code;
+	private final String name;
 
 	RdbType(String code, String name) {
 		this.code = code;

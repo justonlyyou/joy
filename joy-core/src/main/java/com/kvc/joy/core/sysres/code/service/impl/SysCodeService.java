@@ -47,7 +47,7 @@ public class SysCodeService implements ISysCodeService {
 			}
 			
 			// 存在排序值为空默认按编码升序排序
-			if (codes.isEmpty() == false) {
+			if (codes != null && codes.isEmpty() == false) {
 				Map<String, Object> propMap = new HashMap<String, Object>(2);
 				propMap.put("order", null);
 				propMap.put("order", "");

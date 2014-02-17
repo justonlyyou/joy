@@ -30,7 +30,7 @@ public class FileSystemResource implements Resource, Comparable<FileSystemResour
     /**
      * The location of the resource on the filesystem.
      */
-    private File location;
+    private final File location;
 
     /**
      * Creates a new ClassPathResource.

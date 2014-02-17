@@ -18,7 +18,7 @@ public class TSysFieldMapping implements IEntity<String> {
 	private String field1; // 对象1的字段
 	private String field2; // 对象2的字段
 	private String fieldType; // 字段类型
-	private String desc;   // 字段描述
+	private String remark;   // 字段描述
 	private TSysFieldMappingRule rule;
 	
 	@Id
@@ -53,14 +53,14 @@ public class TSysFieldMapping implements IEntity<String> {
 		this.field2 = field2;
 	}
 
-	@Column(name = "DESCRIPTION", length = 128, nullable = false)
+	@Column(length = 128, nullable = false)
 	@Comment("描述")
-	public String getDesc() {
-		return desc;
+	public String getRemark() {
+		return remark;
 	}
 
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setRemark(String desc) {
+		this.remark = desc;
 	}
 
 	@Column(length = 2, nullable = false)

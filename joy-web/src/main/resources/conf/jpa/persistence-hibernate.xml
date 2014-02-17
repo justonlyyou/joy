@@ -23,7 +23,7 @@
       	<class>com.kvc.joy.plugin.seqgen.po.TSysSeqNum</class>
       	<class>com.kvc.joy.plugin.seqgen.po.TSysSeqNumRule</class>
       	<class>com.kvc.joy.plugin.seqgen.po.TSysSeqNumStat</class>
-      	<class>com.kvc.joy.plugin.security.login.model.po.TLoginLog</class>
+      	<class>com.kvc.joy.plugin.security.usermodel.po.TUserLoginLog</class>
       	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacAuthority</class>
       	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacGroup</class>
       	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacGroupAuth</class>
@@ -31,7 +31,7 @@
       	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacOrganization</class>
       	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacRole</class>
       	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacRoleAuth</class>
-      	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacUser</class>
+      	<class>com.kvc.joy.plugin.security.user.model.po.TUserBasicc/class>
       	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacUserAuth</class>
       	 -->
         

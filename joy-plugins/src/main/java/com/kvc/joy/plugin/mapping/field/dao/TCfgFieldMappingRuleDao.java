@@ -14,7 +14,7 @@ import java.util.List;
 public class TCfgFieldMappingRuleDao {
 
 	public List<TSysFieldMappingRule> loadAllFieldMappingRules() {
-		List<TSysFieldMappingRule> ruleList = null;
+		List<TSysFieldMappingRule> ruleList;
 		try {
 			
 			ruleList = JpaTool.searchAll(TSysFieldMappingRule.class);

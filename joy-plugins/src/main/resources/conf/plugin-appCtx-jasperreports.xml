@@ -18,18 +18,14 @@
 		<property name="suffix" value="${plugin.report.jasperreports.jasper.suffix}" />
 
 		<!-- dataSources参数的key -->
-		<property name="reportDataKey">
-			<value>datasource</value>
-		</property>
+		<property name="reportDataKey" value="datasource"/>
 		<property name="exporterParameters">
 			<map>
 				<!-- 这个参数比较重要，对于生成html时，jasperReport查找图片的位置 -->
-				<entry key="net.sf.jasperreports.engine.export.JRHtmlExporterParameter.IMAGES_URI">
-					<value>${plugin.report.jasperreports.export.images.dir}</value>
-				</entry>
-				<entry key="net.sf.jasperreports.engine.export.JRHtmlExporterParameter.CHARACTER_ENCODING">
-					<value>${plugin.report.jasperreports.export.encoding}</value>
-				</entry>
+				<entry key="net.sf.jasperreports.engine.export.JRHtmlExporterParameter.IMAGES_URI"
+                       value="${plugin.report.jasperreports.export.images.dir}"/>
+				<entry key="net.sf.jasperreports.engine.export.JRHtmlExporterParameter.CHARACTER_ENCODING"
+                       value="${plugin.report.jasperreports.export.encoding}"/>
 				<entry key="net.sf.jasperreports.engine.export.JRXlsExporterParameter.IS_ONE_PAGE_PER_SHEET">
 					<bean id="java.lang.Boolean.TRUE" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
 				</entry>

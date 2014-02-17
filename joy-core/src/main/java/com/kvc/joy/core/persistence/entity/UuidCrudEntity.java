@@ -23,7 +23,7 @@ public class UuidCrudEntity extends UuidEntity implements ICrudEntity<String> {
 	protected String deleteTime;
 	protected String deleteUser;
 	protected String deleteDept;
-	protected String desc;
+	protected String remark;
 	protected String deleted;
 	protected String active;
 	protected String builtIn;
@@ -163,14 +163,14 @@ public class UuidCrudEntity extends UuidEntity implements ICrudEntity<String> {
 		this.builtIn = builtIn;
 	}
 	
-	@Column(name = "DESCRIPTION")
+	@Column
 	@Comment("描述")
-	public String getDesc() {
-		return desc;
+	public String getRemark() {
+		return remark;
 	}
 
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setRemark(String desc) {
+		this.remark = desc;
 	}
 
 }

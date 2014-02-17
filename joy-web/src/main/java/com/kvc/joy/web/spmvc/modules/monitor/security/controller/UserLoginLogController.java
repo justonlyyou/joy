@@ -1,6 +1,6 @@
 package com.kvc.joy.web.spmvc.modules.monitor.security.controller;
 
-import com.kvc.joy.plugin.security.login.model.po.TLoginLog;
+import com.kvc.joy.plugin.security.user.model.po.TUserLoginLog;
 import com.kvc.joy.web.spmvc.core.BaseController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/userLoginLog")
-public class UserLoginLogController extends BaseController<TLoginLog> {
+public class UserLoginLogController extends BaseController<TUserLoginLog> {
 
 	@Override
 	protected String getCurrentViewName() {

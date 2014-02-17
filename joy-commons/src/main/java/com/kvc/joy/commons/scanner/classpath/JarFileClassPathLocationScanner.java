@@ -87,7 +87,7 @@ public class JarFileClassPathLocationScanner implements ClassPathLocationScanner
      * @return The resource names.
      * @throws java.io.IOException when reading the jar file failed.
      */
-    private Set<String> findResourceNamesFromJarFile(JarFile jarFile, String location) throws IOException {
+    private Set<String> findResourceNamesFromJarFile(JarFile jarFile, String location) {
         Set<String> resourceNames = new TreeSet<String>();
 
         Enumeration<JarEntry> entries = jarFile.entries();

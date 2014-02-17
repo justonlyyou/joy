@@ -25,12 +25,12 @@ public class DB2Schema extends Schema {
     }
 
     @Override
-    protected boolean doExists() throws SQLException {
+    protected boolean doExists() {
         return JdbcTool.queryForInt(dbSupport.getConnection(), "SELECT COUNT(*) FROM syscat.schemata WHERE schemaname=?", name) > 0;
     }
 
     @Override
-    protected boolean doEmpty() throws SQLException {
+    protected boolean doEmpty() {
     	Connection conn = dbSupport.getConnection();
         int objectCount = JdbcTool.queryForInt(conn, "select count(*) from syscat.tables where tabschema = ?", name);
         objectCount += JdbcTool.queryForInt(conn, "select count(*) from syscat.views where viewschema = ?", name);
@@ -47,7 +47,7 @@ public class DB2Schema extends Schema {
     }
 
     @Override
-    protected void doDrop() throws SQLException {
+    protected void doDrop() {
         clean();
         JdbcTool.execute(dbSupport.getConnection(), "DROP SCHEMA " + dbSupport.quote(name) + " RESTRICT");
     }
@@ -139,7 +139,7 @@ public class DB2Schema extends Schema {
      * @return The statements.
      * @throws SQLException when the drop statements could not be built.
      */
-    private List<String> buildDropStatements(final String dropPrefix, final String query, String schema) throws SQLException {
+    private List<String> buildDropStatements(final String dropPrefix, final String query, String schema) {
         List<String> dropStatements = new ArrayList<String>();
         List<String> dbObjects = JdbcTool.queryForStringList(dbSupport.getConnection(), query);
         for (String dbObject : dbObjects) {
@@ -160,7 +160,7 @@ public class DB2Schema extends Schema {
     }
 
     @Override
-    protected Function[] doAllFunctions() throws SQLException {
+    protected Function[] doAllFunctions() {
         List<Map<String, String>> rows = JdbcTool.queryForList(dbSupport.getConnection(), 
                 "select p.SPECIFICNAME, p.FUNCNAME," +
                         " substr( xmlserialize( xmlagg( xmltext( concat( ', ', TYPENAME ) ) ) as varchar( 1024 ) ), 3 ) as PARAMS" +

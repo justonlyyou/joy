@@ -51,7 +51,7 @@ Ext.onReady(function() {
 		if (form.isValid()) {
 			form.submit({
 //				clientValidation : true,
-				url : 'login/Login/login.do',
+				url : 'user/Login/user.do',
 				method : 'POST',
 				success : function(form, action) {
 					document.location = "app.do";

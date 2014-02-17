@@ -7,9 +7,7 @@ import com.kvc.joy.commons.security.CryptoTool;
 import com.kvc.joy.commons.security.DigestTool;
 import org.apache.commons.lang3.ObjectUtils;
 
-import java.util.Iterator;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 字符串操作工具类
@@ -43,8 +41,10 @@ public class StringTool {
 		String[] searchList = null;
 		String[] replacementList = null;
 		if (MapTool.isNotEmpty(map)) {
-			searchList = map.keySet().toArray(new String[0]);
-			replacementList = map.values().toArray(new String[0]);
+            Set<String> set = map.keySet();
+            searchList = set.toArray(new String[set.size()]);
+            Collection<String> col = map.values();
+            replacementList = col.toArray(new String[col.size()]);
 		}
 		return replaceEach(text, searchList, replacementList);
 	}
@@ -134,7 +134,7 @@ public class StringTool {
 		String[] groups = new String[groupLen];
 		for (int i = 0; i < groupLen; i++) {
 			int beginIndex = i * eachCount;
-			int endIndex = 0;
+			int endIndex;
 			if (i == groupLen - 1) { // 最后一组
 				endIndex = strLen;
 			} else {
@@ -3094,7 +3094,7 @@ public class StringTool {
 	 * @time 2013-4-7 下午9:39:14
 	 */
 	public static String rightPad(String str, int size, String padStr) {
-		return org.apache.commons.lang3.StringUtils.rightPad(padStr, size, padStr);
+		return org.apache.commons.lang3.StringUtils.rightPad(str, size, padStr);
 	}
 
 	/**
@@ -3174,7 +3174,7 @@ public class StringTool {
 	 * @time 2013-4-7 下午9:42:05
 	 */
 	public static String leftPad(String str, int size, String padStr) {
-		return org.apache.commons.lang3.StringUtils.leftPad(padStr, size, padStr);
+		return org.apache.commons.lang3.StringUtils.leftPad(str, size, padStr);
 	}
 
 	/**
@@ -3274,7 +3274,7 @@ public class StringTool {
 	 * @time 2013-4-7 下午9:52:23
 	 */
 	public static String center(String str, int size, String padStr) {
-		return org.apache.commons.lang3.StringUtils.center(padStr, size, padStr);
+		return org.apache.commons.lang3.StringUtils.center(str, size, padStr);
 	}
 
 	// Case conversion
@@ -3954,7 +3954,7 @@ public class StringTool {
 	 * @time 2013-4-7 下午11:13:50
 	 */
 	public static String abbreviate(String str, int offset, int maxWidth) {
-		return org.apache.commons.lang3.StringUtils.abbreviate(str, maxWidth);
+		return org.apache.commons.lang3.StringUtils.abbreviate(str, offset, maxWidth);
 	}
 
 	/**

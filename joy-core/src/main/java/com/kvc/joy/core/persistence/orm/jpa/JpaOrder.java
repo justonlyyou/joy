@@ -7,9 +7,9 @@ import javax.persistence.metamodel.SingularAttribute;
 
 public class JpaOrder extends com.kvc.joy.commons.query.sort.Order {
 
-	private boolean ascending;
+	private final boolean ascending;
 	private SingularAttribute<?, ?> attribute;
-	private String propertyName;
+	private final String propertyName;
 
 	public String toString() {
 		return propertyName + ' ' + (ascending ? "asc" : "desc");

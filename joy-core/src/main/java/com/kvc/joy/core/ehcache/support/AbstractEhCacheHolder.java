@@ -31,9 +31,9 @@ public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V
 	 */
 	@SuppressWarnings("unchecked")
 	public V get(K key) {
-		V entity = null;
+		V entity;
 		try {
-			Element element = null;
+			Element element;
 			element = getCache().get(key);
 			if (element == null) {
 				entity = loadEntity(key);

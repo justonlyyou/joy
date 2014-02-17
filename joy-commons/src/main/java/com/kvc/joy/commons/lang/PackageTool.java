@@ -219,8 +219,8 @@ public class PackageTool {
 	private static class Action {
 
 		private boolean retrieveClass = true;
-		private Set<Class<?>> classes = new LinkedHashSet<Class<?>>();
-		private Set<String> pkgs = new LinkedHashSet<String>();
+		private final Set<Class<?>> classes = new LinkedHashSet<Class<?>>();
+		private final Set<String> pkgs = new LinkedHashSet<String>();
 
 		public Action(boolean retrieveClass) {
 			this.retrieveClass = retrieveClass;

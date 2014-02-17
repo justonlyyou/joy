@@ -6,16 +6,12 @@
 
 	<bean id="sysParamService" class="com.kvc.joy.core.sysres.param.service.impl.SysParamService" />
 	<bean id="sysParamCacheService" class="com.kvc.joy.core.sysres.param.service.impl.SysParamCacheService">
-		<property name="sysParamService">
-			<ref bean="sysParamService"/>
-		</property>
+		<property name="sysParamService" ref="sysParamService"/>
 	</bean>
 	
 	<bean id="sysCodeService" class="com.kvc.joy.core.sysres.code.service.impl.SysCodeService" />
 	<bean id="sysCodeCacheService" class="com.kvc.joy.core.sysres.code.service.impl.SysCodeCacheService">
-		<property name="sysCodeService">
-			<ref bean="sysCodeService"/>
-		</property>
+		<property name="sysCodeService" ref="sysCodeService"/>
 	</bean>
 	
 	<bean id="sysDataSrcService" class="com.kvc.joy.core.sysres.datasrc.service.impl.SysDataSrcService" />

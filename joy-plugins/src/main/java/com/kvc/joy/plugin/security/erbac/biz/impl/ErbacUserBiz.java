@@ -1,9 +1,9 @@
 package com.kvc.joy.plugin.security.erbac.biz.impl;
 
 import com.kvc.joy.plugin.security.erbac.biz.IErbacUserBiz;
-import com.kvc.joy.plugin.security.erbac.dao.IErbacUserDao;
+import com.kvc.joy.plugin.security.user.dao.IUserBasicDao;
 import com.kvc.joy.plugin.security.erbac.model.po.TErbacGroup;
-import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser;
+import com.kvc.joy.plugin.security.user.model.po.TUserBasic;
 
 import java.util.Collection;
 import java.util.List;
@@ -17,23 +17,23 @@ import java.util.Map;
  */
 public class ErbacUserBiz implements IErbacUserBiz {
 
-	private IErbacUserDao iErbacUserDao;
+	private IUserBasicDao iUserBasicDao;
 
-	public List<TErbacUser> getAllActiveUsers() {
+	public List<TUserBasic> getAllActiveUsers() {
 		// TODO
 		return null;
 	}
 
-	public TErbacUser getUser(String account, String password) {
-		return iErbacUserDao.findByAccountAndPassword(account, password);
+	public TUserBasic getUser(String account, String password) {
+		return iUserBasicDao.findByAccountAndPassword(account, password);
 	}
 
-	public void setiErbacUserDao(IErbacUserDao iErbacUserDao) {
-		this.iErbacUserDao = iErbacUserDao;
+	public void setiUserBasicDao(IUserBasicDao iUserBasicDao) {
+		this.iUserBasicDao = iUserBasicDao;
 	}
 
-	public Map<TErbacGroup, Collection<TErbacUser>> getUsersByGroupIds(Collection<String> groudIds) {
-		return iErbacUserDao.getUsersByGroupIds(groudIds);
+	public Map<TErbacGroup, Collection<TUserBasic>> getUsersByGroupIds(Collection<String> groudIds) {
+		return iUserBasicDao.getUsersByGroupIds(groudIds);
 	}
 
 }

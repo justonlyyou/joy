@@ -35,7 +35,7 @@ public class MdRdbColumnService implements IMdRdbColumnService {
 		Connection conn = connection.getConnection();
 		try {
 			DatabaseMetaData metaData = conn.getMetaData();
-			columnMap = loadColumns(conn, metaData, tableName);
+			columnMap = loadColumns(metaData, tableName);
 
 			// 设置主键标识
 			List<String> pks = MdRdbPrimaryKeyService.getPrimaryKey(metaData, tableName);
@@ -53,7 +53,7 @@ public class MdRdbColumnService implements IMdRdbColumnService {
 		return columnMap;
 	}
 
-	private Map<String, MdRdbColumn> loadColumns(Connection conn, DatabaseMetaData metaData, String tableName)
+	private Map<String, MdRdbColumn> loadColumns(DatabaseMetaData metaData, String tableName)
 			throws SQLException {
 		Map<String, MdRdbColumn> columnMap = new LinkedHashMap<String, MdRdbColumn>() {
 

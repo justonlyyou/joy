@@ -28,7 +28,7 @@ public abstract class AbstractExcelImporter implements IExcelImporter {
 	/**
 	 * List<字段名>
 	 */
-	protected List<String> fieldList = new ArrayList<String>();
+	protected final List<String> fieldList = new ArrayList<String>();
 
 	/**
 	 * 上传的excel文件的输入流
@@ -169,7 +169,7 @@ public abstract class AbstractExcelImporter implements IExcelImporter {
 	 * 检查数据合法性
 	 * @throws ValidateException
 	 */
-	protected abstract void check() throws ValidateException;
+	protected abstract void check();
 
 	/**
 	 * 检查导入的值

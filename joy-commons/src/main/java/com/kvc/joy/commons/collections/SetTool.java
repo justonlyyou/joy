@@ -35,9 +35,7 @@ public class SetTool {
 			return new HashSet<T>(0); 
 		}
 		Set<T> set = new HashSet<T>(elems.length);
-		for (T elem : elems) {
-			set.add(elem);			
-		}
+        Collections.addAll(set, elems);
 		return set;
 	}
 	
@@ -57,9 +55,7 @@ public class SetTool {
 			return new LinkedHashSet<T>(0); 
 		}
 		Set<T> set = new LinkedHashSet<T>(elems.length);
-		for (T elem : elems) {
-			set.add(elem);			
-		}
+        Collections.addAll(set, elems);
 		return set;
 	}
 

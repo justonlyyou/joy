@@ -3,6 +3,7 @@ package com.kvc.joy.plugin.security.erbac.model.po;
 import com.kvc.joy.commons.support.IListToTreeRestrict;
 import com.kvc.joy.core.persistence.entity.UuidCrudEntity;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
+import com.kvc.joy.plugin.security.user.model.po.TUserBasic;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -14,7 +15,7 @@ public class TErbacRole extends UuidCrudEntity implements IListToTreeRestrict<St
 
 	private String parentId; // 父角色id
 	private String name; // 角色名
-	private Collection<TErbacUser> users; // 用户
+	private Collection<TUserBasic> users; // 用户
 	private Collection<TErbacGroup> groups; // 组
 	// private Collection<TErbacAuthority> authorities; // 权限
 	private Collection<TErbacRoleAuth> roleAuths; // 角色权限关系
@@ -34,12 +35,12 @@ public class TErbacRole extends UuidCrudEntity implements IListToTreeRestrict<St
 	inverseJoinColumns = @JoinColumn(name = "USER_ID"),// 被维护端外键
 	joinColumns = @JoinColumn(name = "ROLE_ID"))
 	// 维护端外键
-	public Collection<TErbacUser> getUsers() {
+	public Collection<TUserBasic> getUsers() {
 		return users;
 	}
 
-	public void setUsers(Collection<TErbacUser> tErbacUsers) {
-		this.users = tErbacUsers;
+	public void setUsers(Collection<TUserBasic> tUserBasics) {
+		this.users = tUserBasics;
 	}
 
 	// @ManyToMany(cascade = CascadeType.REFRESH)

@@ -11,7 +11,7 @@ public enum AuthResourceType implements ICodeEnum {
 	/** 类的方法 */
 	METHOD("02");
 	
-	private String code;
+	private final String code;
 	
 	public static final String CODE_TABLE_ID = "auth_res_type";
 	

@@ -459,7 +459,7 @@ public class FieldTool {
 	 */
 	public static void writeStaticField(Class<?> cls, String fieldName, Object value, boolean forceAccess) {
 		try {
-			org.apache.commons.lang3.reflect.FieldUtils.writeStaticField(cls, fieldName, value);
+			org.apache.commons.lang3.reflect.FieldUtils.writeStaticField(cls, fieldName, value, forceAccess);
 		} catch (Exception e) {
 			throw new SystemException(e);
 		}

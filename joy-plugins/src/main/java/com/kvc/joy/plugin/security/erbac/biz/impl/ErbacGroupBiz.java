@@ -11,7 +11,7 @@ import com.kvc.joy.plugin.security.erbac.biz.IErbacUserBiz;
 import com.kvc.joy.plugin.security.erbac.dao.IErbacGroupDao;
 import com.kvc.joy.plugin.security.erbac.model.po.TErbacGroup;
 import com.kvc.joy.plugin.security.erbac.model.po.TErbacGroup_;
-import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser;
+import com.kvc.joy.plugin.security.user.model.po.TUserBasic;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
@@ -37,7 +37,7 @@ public class ErbacGroupBiz implements IErbacGroupBiz {
 		return treeNode;
 	}
 
-	public Collection<TErbacUser> getGroupUsers(String groupId) {
+	public Collection<TUserBasic> getGroupUsers(String groupId) {
 		if (groupId != null) {
 			TErbacGroup group = iErbacGroupDao.findOne(groupId);
 			if (group != null) {
@@ -46,7 +46,7 @@ public class ErbacGroupBiz implements IErbacGroupBiz {
 				logger.warn("组#" + groupId + "不存在！");
 			}
 		}
-		return new ArrayList<TErbacUser>(0);
+		return new ArrayList<TUserBasic>(0);
 	}
 
 	public boolean removeUsersFromGroup(Map<String, Collection<String>> groupAndUserIdsMap) {
@@ -54,9 +54,9 @@ public class ErbacGroupBiz implements IErbacGroupBiz {
 		for (Entry<String, Collection<String>> entry : entrySet) {
 			String groupId = entry.getKey();
 			TErbacGroup group = iErbacGroupDao.findOne(groupId);
-			Collection<TErbacUser> users = group.getUsers();
-			Map<String, TErbacUser> userMap = new HashMap<String, TErbacUser>(users.size());
-			for (TErbacUser user : users) {
+			Collection<TUserBasic> users = group.getUsers();
+			Map<String, TUserBasic> userMap = new HashMap<String, TUserBasic>(users.size());
+			for (TUserBasic user : users) {
 				userMap.put(user.getId(), user);
 			}
 
@@ -69,7 +69,7 @@ public class ErbacGroupBiz implements IErbacGroupBiz {
 		return true;
 	}
 
-	public Map<TErbacGroup, Collection<TErbacUser>> getAllGroupUsers(String groupId) {
+	public Map<TErbacGroup, Collection<TUserBasic>> getAllGroupUsers(String groupId) {
 		List<TErbacGroup> groupList = iErbacGroupDao.search(TErbacGroup_.parentId, groupId);
 		Map<String, TErbacGroup> groupMap = CollectionTool.toEntityMap(groupList);
 		Set<String> groudIds = new HashSet<String>(groupMap.keySet());
@@ -80,7 +80,7 @@ public class ErbacGroupBiz implements IErbacGroupBiz {
 	public boolean addUsers(String groupId, Collection<String> userIds) {
 		TErbacGroup group = iErbacGroupDao.findOne(groupId);
 		if (group != null) {
-			List<TErbacUser> users = JpaTool.inSearch(TErbacUser.class, userIds);
+			List<TUserBasic> users = JpaTool.inSearch(TUserBasic.class, userIds);
 			group.getUsers().addAll(users);
 			JpaTool.persist(group);
 		}

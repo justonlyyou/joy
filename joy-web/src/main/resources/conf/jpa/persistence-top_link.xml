@@ -6,9 +6,9 @@
     
     <persistence-unit name="TOP_LINK" transaction-type="RESOURCE_LOCAL">
         
-		<provider>
+		<!--<provider>
         	oracle.toplink.essentials.PersistenceProvider
-    	</provider>
+    	</provider>-->
     	
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		

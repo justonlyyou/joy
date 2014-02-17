@@ -17,7 +17,7 @@ import java.util.*;
 public class I18nTool {
 
 	private static final String DEFAULT_BASE_PATH = "conf/i18n/";
-	private static Map<String, ResourceBundle> bundleMap = new LinkedHashMap<String, ResourceBundle>();
+	private static final Map<String, ResourceBundle> bundleMap = new LinkedHashMap<String, ResourceBundle>();
 	private static final Log logger = LogFactory.getLog(I18nTool.class);
 
 	static {

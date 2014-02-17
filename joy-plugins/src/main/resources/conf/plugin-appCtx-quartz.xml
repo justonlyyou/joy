@@ -30,9 +30,7 @@
 	<bean id="quartzTriggersHolder" class="com.kvc.joy.plugin.schedule.quartz.service.impl.QuartzTriggersHolder"/>
 	
 	<bean id="quartzJobRegistry" class="com.kvc.joy.plugin.schedule.quartz.service.impl.QuartzJobRegistry">
-		<property name="quartzTriggersHolder">
-			<ref bean="quartzTriggersHolder"/>
-		</property>
+		<property name="quartzTriggersHolder" ref="quartzTriggersHolder"/>
 	</bean>
 
 </beans>

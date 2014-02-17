@@ -18,7 +18,7 @@ import java.util.List;
 @Service
 public class SystemInitializer implements ISystemInitService, BeanPostProcessor {
 
-	private List<ISystemInitService> initServiceList = new ArrayList<ISystemInitService>();
+	private final List<ISystemInitService> initServiceList = new ArrayList<ISystemInitService>();
 	protected static final Log logger = LogFactory.getLog(SystemInitializer.class);
 
 	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {

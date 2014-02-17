@@ -7,10 +7,10 @@ import com.kvc.joy.plugin.image.captcha.service.ICaptchaService;
 import com.kvc.joy.plugin.monitor.jdbc.service.ISysSqlLogService;
 import com.kvc.joy.plugin.schedule.quartz.service.IQuartzJobRegistry;
 import com.kvc.joy.plugin.schedule.quartz.service.IQuartzTriggersHolder;
-import com.kvc.joy.plugin.security.login.service.ILoginLogService;
-import com.kvc.joy.plugin.security.login.service.ILoginService;
-import com.kvc.joy.plugin.security.login.service.ILogoutLogService;
-import com.kvc.joy.plugin.security.login.service.ILogoutService;
+import com.kvc.joy.plugin.security.user.service.IUserLoginLogService;
+import com.kvc.joy.plugin.security.user.service.IUserLoginService;
+import com.kvc.joy.plugin.security.user.service.IUserLogoutLogService;
+import com.kvc.joy.plugin.security.user.service.IUserLogoutService;
 import com.kvc.joy.plugin.seqgen.service.ISequenceGenerator;
 import org.activiti.engine.*;
 import org.apache.shiro.mgt.SecurityManager;
@@ -82,20 +82,20 @@ public class PluginBeanFactory extends CoreBeanFactory {
 		return (ICaptchaService) SpringBeanTool.getBean("captchaService");
 	}
 	
-	public static ILoginService getLoginService() {
-		return (ILoginService) SpringBeanTool.getBean("loginService");
+	public static IUserLoginService getLoginService() {
+		return (IUserLoginService) SpringBeanTool.getBean("loginService");
 	}
 	
-	public static ILoginLogService getLoginLogService() {
-		return (ILoginLogService) SpringBeanTool.getBean("loginLogService");
+	public static IUserLoginLogService getLoginLogService() {
+		return (IUserLoginLogService) SpringBeanTool.getBean("loginLogService");
 	}
 	
-	public static ILogoutService getLogoutService() {
-		return (ILogoutService) SpringBeanTool.getBean("logoutService");
+	public static IUserLogoutService getLogoutService() {
+		return (IUserLogoutService) SpringBeanTool.getBean("logoutService");
 	}
 	
-	public static ILogoutLogService getLogoutLogService() {
-		return (ILogoutLogService) SpringBeanTool.getBean("logoutLogService");
+	public static IUserLogoutLogService getLogoutLogService() {
+		return (IUserLogoutLogService) SpringBeanTool.getBean("logoutLogService");
 	}
 	
 	public static ISysSqlLogService getSysSqlLogService() {

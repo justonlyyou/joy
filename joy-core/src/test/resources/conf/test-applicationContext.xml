@@ -54,14 +54,12 @@
 
 	<!-- <bean id="simpleUrlHandlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"> <property name="interceptors"> <list> 
 		<ref bean="openEntityManagerInViewInterceptor" /> </list> </property> <property name="mappings"> <props> <prop key="hello.html"> helloController </prop> 
-		<prop key="login.html"> loginAction </prop> <prop key="userManager.html"> userController </prop> <prop key="userList.html"> userListController </prop> 
+		<prop key="user.html"> loginAction </prop> <prop key="userManager.html"> userController </prop> <prop key="userList.html"> userListController </prop>
 		</props> </property> </bean> -->
 
 	<!-- Spring拦截器(AOP) -->
 	<bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
-		<property name="beanNames">
-			<value>dataSource</value>
-		</property>
+		<property name="beanNames" value="dataSource"/>
 		<property name="interceptorNames">
 			<list>
 				<value>dataSourceAdvice</value>
@@ -71,9 +69,7 @@
 
 	<!-- 数据源通知，主要为了设置AutoCommit为false -->
 	<bean id="dataSourceAdvice" class="com.kvc.joy.core.persistence.support.DataSourceAdvice">
-		<property name="autoCommit">
-			<value>${db.autoCommit}</value>
-		</property>
+		<property name="autoCommit" value="${db.autoCommit}"/>
 	</bean>
 
 	<tx:annotation-driven transaction-manager="transactionManager" />

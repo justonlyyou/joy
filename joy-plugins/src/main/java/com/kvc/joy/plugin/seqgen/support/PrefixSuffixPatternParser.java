@@ -36,11 +36,11 @@ public class PrefixSuffixPatternParser {
 	/**
 	 * Pair(前缀模板，前缀参数值串)
 	 */
-	private Pair<String, String> prefixPair;
+	private final Pair<String, String> prefixPair;
 	/**
 	 * Pair(后缀模板，后缀参数值串)
 	 */
-	private Pair<String, String> suffixPair;
+	private final Pair<String, String> suffixPair;
 	/**
 	 * 当前系统时间
 	 */

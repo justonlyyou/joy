@@ -19,7 +19,7 @@ import java.util.Date;
  */
 public class CycleProcessor {
 	
-	private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat(TSysSeqNum.TIME_DB_FMT_STR);
+	private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat(TSysSeqNum.TIME_DB_FMT_STR);
 	protected static final Log logger = LogFactory.getLog(CycleProcessor.class);
 
 	public static Pair<Boolean, Calendar> processCycle(SequenceCache seqCache) {
@@ -121,7 +121,7 @@ public class CycleProcessor {
 			flag = 1;
 		}
 
-		int months = 0;
+		int months;
 		int fromYear = fromCal.get(Calendar.YEAR);
 		int toYear = toCal.get(Calendar.YEAR);
 		int fromMonth = fromCal.get(Calendar.MONTH);

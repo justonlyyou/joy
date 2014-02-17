@@ -128,7 +128,7 @@ public class EnumTool {
 		if (StringTool.isBlank(enumClass)) {
 			throw new IllegalArgumentException("enumClass参数不能为null！");
 		}
-		Class enumClazz = null;
+		Class enumClazz;
 		try {
 			enumClazz = Class.forName(enumClass);
 		} catch (ClassNotFoundException e) {

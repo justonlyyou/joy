@@ -31,7 +31,7 @@ public class TSysFieldMappingRule extends UuidEntity {
 	
 	private String object1; // 对象1的名称
 	private String object2; // 对象2的名称
-	private String desc;    // 描述
+	private String remark;    // 描述
 	private String objectType; // 对象类型
 	private Set<TSysFieldMapping> fieldMappingSet = new HashSet<TSysFieldMapping>();
 
@@ -55,14 +55,14 @@ public class TSysFieldMappingRule extends UuidEntity {
 		this.object2 = object2;
 	}
 
-	@Column(name = "DESCRIPTION", length = 128, nullable = false)
+	@Column(length = 128, nullable = false)
 	@Comment("描述")
-	public String getDesc() {
-		return desc;
+	public String getRemark() {
+		return remark;
 	}
 
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setRemark(String desc) {
+		this.remark = desc;
 	}
 
 	@Column(length = 2, nullable = false)

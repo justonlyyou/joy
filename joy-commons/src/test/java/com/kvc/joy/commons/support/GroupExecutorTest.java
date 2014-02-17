@@ -30,7 +30,7 @@ public class GroupExecutorTest {
 			@Override
 			protected void groupExecute(List<Integer> subList) {
 				if(subList.isEmpty() == false) {
-					sb.append(subList.get(0) + ",");	
+					sb.append(subList.get(0)).append(",");
 				}
 			}
 

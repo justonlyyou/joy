@@ -5,17 +5,17 @@
        default-autowire="byName">
 
 	<!-- 登陆服务 -->
-	<bean id="loginService" class="com.kvc.joy.plugin.security.login.service.impl.LoginService" />
+	<bean id="loginService" class="com.kvc.joy.plugin.security.user.service.impl.UserLoginService" />
 	
 	<!-- 登陆日志服务 -->
-	<bean id="loginLogService" class="com.kvc.joy.plugin.security.login.service.impl.LoginLogService" />
+	<bean id="loginLogService" class="com.kvc.joy.plugin.security.user.service.impl.UserLoginLogService" />
 	
 	<!-- 登出服务 -->
-	<bean id="logoutService" class="com.kvc.joy.plugin.security.login.service.impl.LogoutService" />
+	<bean id="logoutService" class="com.kvc.joy.plugin.security.user.service.impl.UserLogoutService" />
 	
 	<!-- 登出日志服务 -->
-	<bean id="logoutLogService" class="com.kvc.joy.plugin.security.login.service.impl.LogoutLogService" />
+	<bean id="logoutLogService" class="com.kvc.joy.plugin.security.user.service.impl.UserLogoutLogService" />
 	
-	<bean id="loginLogDao" class="com.kvc.joy.plugin.security.login.dao.LoginLogDao" />
+	<bean id="loginLogDao" class="com.kvc.joy.plugin.security.user.dao.UserLoginLogDao" />
 
 </beans>

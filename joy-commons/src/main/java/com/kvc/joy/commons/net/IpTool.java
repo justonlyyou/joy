@@ -74,7 +74,7 @@ public class IpTool {
 		}
 		
 		long temp = 0;
-		String cur = "";
+		String cur;
 		int pos = ipv4.indexOf(".", 0);
 		while (pos != -1) {
 			cur = ipv4.substring(0, pos);
@@ -110,7 +110,7 @@ public class IpTool {
 			result = ipv4Long & MASK;
 			temp = String.valueOf(result) + "." + temp;
 		}
-		return temp.toString();
+		return temp;
 	}
 	
 	/**

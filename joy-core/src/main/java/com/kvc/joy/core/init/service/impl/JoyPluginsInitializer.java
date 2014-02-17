@@ -1,6 +1,7 @@
 package com.kvc.joy.core.init.service.impl;
 
 import com.googlecode.flyway.core.Flyway;
+import com.kvc.joy.commons.exception.ServiceException;
 import com.kvc.joy.commons.lang.PackageTool;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
@@ -23,8 +24,8 @@ import java.util.*;
 @Service
 public class JoyPluginsInitializer implements ISystemInitService, BeanPostProcessor {
 
-	private List<IJoyPlugin> components = new ArrayList<IJoyPlugin>();
-	private static Log logger = LogFactory.getLog(JoyPluginsInitializer.class);
+	private final List<IJoyPlugin> components = new ArrayList<IJoyPlugin>();
+	private static final Log logger = LogFactory.getLog(JoyPluginsInitializer.class);
 
 	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
 		if (bean instanceof IJoyPlugin) {
@@ -102,10 +103,11 @@ public class JoyPluginsInitializer implements ISystemInitService, BeanPostProces
 				try {
 					IJoyPlugin plugin = (IJoyPlugin) clazz.newInstance();
 					if(plugin.isEnabled()) {
-						String loaction = plugin.getCtxConfLocation();
-						sb.append(",").append(loaction);
+						String location = plugin.getCtxConfLocation();
+						sb.append(",").append(location);
 					}
 				} catch (Exception e) {
+                    throw new ServiceException(e);
 				}
 			}
 		}

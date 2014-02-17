@@ -19,7 +19,7 @@ import java.util.Map;
  */
 public class JpaEntityRepository<T extends IEntity<ID>, ID extends Serializable> extends SimpleJpaRepository<T, ID> implements IJpaEntityRepository<T, ID> {
 
-	private Class<T> entityClass;
+	private final Class<T> entityClass;
 
 	public JpaEntityRepository(Class<T> domainClass, EntityManager em) {
 		super(domainClass, em);

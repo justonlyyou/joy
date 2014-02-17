@@ -9,12 +9,12 @@ public class SqlStatement {
 	 * The original line number where the statement was located in the script it
 	 * came from.
 	 */
-	private int lineNumber;
+	private final int lineNumber;
 
 	/**
 	 * The sql to send to the database.
 	 */
-	private String sql;
+	private final String sql;
 
 	/**
 	 * Creates a new sql statement.

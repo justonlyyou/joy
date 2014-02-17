@@ -1005,7 +1005,7 @@ public class FileTool {
 	 */
 	public static void copyDirectory(File srcDir, File destDir, FileFilter filter, boolean preserveFileDate) {
 		try {
-			FileUtils.copyDirectory(srcDir, destDir, preserveFileDate);
+			FileUtils.copyDirectory(srcDir, destDir, filter, preserveFileDate);
 		} catch (Exception e) {
 			throw new SystemException(e);
 		}
@@ -1517,7 +1517,7 @@ public class FileTool {
 	 */
 	public static void writeStringToFile(File file, String data, Charset encoding, boolean append) {
 		try {
-			FileUtils.writeStringToFile(file, data, append);
+			FileUtils.writeStringToFile(file, data, encoding, append);
 		} catch (Exception e) {
 			throw new SystemException(e);
 		}
@@ -1790,7 +1790,7 @@ public class FileTool {
 	 */
 	public static void writeLines(File file, String encoding, Collection<?> lines) {
 		try {
-			FileUtils.writeLines(file, lines);
+			FileUtils.writeLines(file, encoding, lines);
 		} catch (Exception e) {
 			throw new SystemException(e);
 		}
@@ -1901,7 +1901,7 @@ public class FileTool {
 	 */
 	public static void writeLines(File file, String encoding, Collection<?> lines, String lineEnding) {
 		try {
-			FileUtils.writeLines(file, lines, lineEnding);
+			FileUtils.writeLines(file, encoding, lines, lineEnding);
 		} catch (Exception e) {
 			throw new SystemException(e);
 		}

@@ -39,17 +39,17 @@ alert("kkkkkkkk");
 //		} ],
 //		buttons : [ {
 //			text : '登陆',
-//			handler : login
+//			handler : user
 //		}, {
 //			text : '重置',
 //			handler : reset
 //		} ]
 //	});
 //
-//	function login() {
+//	function user() {
 //		formPanel.getForm().submit({
 //			clientValidation : true,
-//			url : 'login.do',
+//			url : 'user.do',
 //			method : 'POST',
 //			success : function(form, action) {
 //				document.location = "app.do";

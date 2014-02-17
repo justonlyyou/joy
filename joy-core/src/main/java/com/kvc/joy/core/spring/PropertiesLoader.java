@@ -27,7 +27,7 @@ public class PropertiesLoader {
 
 	protected static final Log logger = LogFactory.getLog(PropertiesLoader.class);
 
-	private static ResourceLoader resourceLoader = new DefaultResourceLoader();
+	private static final ResourceLoader resourceLoader = new DefaultResourceLoader();
 
 	private final Properties properties;
 

@@ -525,7 +525,7 @@ public class ClassTool {
 	 * @time 2013-4-30 下午9:55:21
 	 */
 	public static boolean isAssignable(Class<?> cls, Class<?> toClass, boolean autoboxing) {
-		return org.apache.commons.lang3.ClassUtils.isAssignable(cls, toClass);
+		return org.apache.commons.lang3.ClassUtils.isAssignable(cls, toClass, autoboxing);
 	}
 
 	/**
@@ -638,7 +638,7 @@ public class ClassTool {
 	 */
 	public static Class<?> getClass(ClassLoader classLoader, String className, boolean initialize) {
 		try {
-			return org.apache.commons.lang3.ClassUtils.getClass(className, initialize);
+			return org.apache.commons.lang3.ClassUtils.getClass(classLoader, className, initialize);
 		} catch (Exception e) {
 			logger.error(e, e.getMessage());
 		}
@@ -661,7 +661,7 @@ public class ClassTool {
 	 */
 	public static Class<?> getClass(ClassLoader classLoader, String className) {
 		try {
-			return org.apache.commons.lang3.ClassUtils.getClass(className);
+			return org.apache.commons.lang3.ClassUtils.getClass(classLoader, className);
 		} catch (Exception e) {
 			logger.error(e);
 		}

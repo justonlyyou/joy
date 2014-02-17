@@ -140,7 +140,7 @@
 	<!-- loginfilter
 	<filter>
 		<filter-name>loginfilter</filter-name>
-		<filter-class>com.kvc.joy.core.security.login.support.LoginFilter</filter-class>
+		<filter-class>com.kvc.joy.core.security.user.support.LoginFilter</filter-class>
 		<init-param>
 			<param-name>ipZone</param-name>
 			<param-value>
@@ -149,7 +149,7 @@
 		</init-param>
 		<init-param>
 			<param-name>loginPage</param-name>
-			<param-value>joy/extjs/security/login/jsp/login.jsp</param-value>
+			<param-value>joy/extjs/security/user/jsp/user.jsp</param-value>
 		</init-param>
 	</filter>
 	<filter-mapping>

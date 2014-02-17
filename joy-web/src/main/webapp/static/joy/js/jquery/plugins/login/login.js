@@ -29,7 +29,7 @@ define(['joy','jqValidate'], function(joy) {
 				$.ajax({
 	                cache: true,
 	                type: "POST",
-	                url: "login",
+	                url: "user",
 	                data: $('#loginForm').serialize(),
 	                async: false,
 	                error: function(request) {

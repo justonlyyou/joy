@@ -8,6 +8,8 @@
  */
 package com.kvc.joy.web.support.filter.gzip;
 
+import com.kvc.joy.commons.exception.ServiceException;
+
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletResponseWrapper;
@@ -16,11 +18,10 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 
 public class GZIPResponseWrapper extends HttpServletResponseWrapper {
-	protected HttpServletResponse origResponse = null;
 
-	protected ServletOutputStream stream = null;
-
-	protected PrintWriter writer = null;
+	protected HttpServletResponse origResponse;
+	protected ServletOutputStream stream;
+	protected PrintWriter writer;
 
 	public GZIPResponseWrapper(HttpServletResponse response) {
 		super(response);
@@ -41,6 +42,7 @@ public class GZIPResponseWrapper extends HttpServletResponseWrapper {
 				}
 			}
 		} catch (IOException e) {
+            throw new ServiceException(e);
 		}
 	}
 

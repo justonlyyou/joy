@@ -13,7 +13,7 @@ public enum UserStatus implements ICodeEnum {
 	
 	public static final String CODE_TABLE_ID = "user_status";
 	
-	private String code;
+	private final String code;
 	
 	UserStatus(String code) {
 		this.code = code;

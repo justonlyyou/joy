@@ -242,7 +242,7 @@ public class CollectionQueryTool {
 			}
 		}
 
-		Query q = parse(MessageFormat.format(sqlPattern, className, where, getOrderStrs(orders.toArray(new Order[0]))));
+		Query q = parse(MessageFormat.format(sqlPattern, className, where, getOrderStrs(orders.toArray(new Order[orders.size()]))));
 		List<T> resultList = getResults(q, beans);
 
 		Paging paging = queryLogics.getPaging();

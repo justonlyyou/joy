@@ -1,6 +1,6 @@
 package com.kvc.joy.web.support.utils;
 
-import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser;
+import com.kvc.joy.plugin.security.user.model.po.TUserBasic;
 
 import javax.servlet.http.HttpSession;
 
@@ -18,8 +18,8 @@ public class HttpSessionTool {
 		return HttpRequestTool.getRequest().getSession();
 	}
 
-	public static TErbacUser getUser() {
-		return (TErbacUser) getSession().getAttribute("userId");
+	public static TUserBasic getUser() {
+		return (TUserBasic) getSession().getAttribute("userId");
 	}
 
 }

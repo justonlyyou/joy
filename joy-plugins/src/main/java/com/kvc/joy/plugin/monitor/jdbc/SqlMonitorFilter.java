@@ -17,13 +17,12 @@ public class SqlMonitorFilter extends Filter<ILoggingEvent> {
 	
 	@Override
 	public FilterReply decide(ILoggingEvent event) {
-		System.out.println("time: "+filterTime);
 		if(StringTool.isBlank(filterTime)) {
 			return FilterReply.DENY;
 		}
 		Long time = Long.valueOf(filterTime);
 		if(time > 0) {
-			
+			//TODO
 		}
 		
 		if (event.getMessage() != null && event.getMessage().contains("sample")) {

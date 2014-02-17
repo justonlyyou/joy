@@ -39,7 +39,7 @@ public class HibernateTool extends BaseHibernateDao {
 	}
 
 	public <T> T getObjById(Class<T> clazz, Serializable id) {
-		T result = null;
+		T result;
 		// try {
 		result = (T) getSession().get(clazz, id);
 		// } catch (ObjectNotFoundException e) {
@@ -273,7 +273,7 @@ public class HibernateTool extends BaseHibernateDao {
 	public static List search(final Class clazz, final String fieldName, final Order... orders) {
 		List<String> fieldNameList = new ArrayList<String>(1);
 		fieldNameList.add(fieldName);
-		return search(clazz, fieldNameList);
+		return search(clazz, fieldNameList, orders);
 	}
 
 	/**

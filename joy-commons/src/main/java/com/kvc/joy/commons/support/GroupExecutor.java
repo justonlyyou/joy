@@ -28,8 +28,8 @@ import java.util.List;
  */
 public abstract class GroupExecutor<E> {
 
-	private int groupSize; // 每组大小
-	private Collection<E> elems;
+	private final int groupSize; // 每组大小
+	private final Collection<E> elems;
 
 	/**
 	 * 构造器，分组大小默认为1000
