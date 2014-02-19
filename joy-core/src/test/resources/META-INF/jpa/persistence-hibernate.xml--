@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+    http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" version="1.0">
+    
+    <persistence-unit name="HIBERNATE" transaction-type="RESOURCE_LOCAL">
+        
+        <!-- provider>org.eclipse.persistence.jpa.PersistenceProvider</provider-->
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<!-- <jar-file>joy-core-1.0.0-SNAPSHOT.jar</jar-file> -->
+		
+      	<class>com.kvc.joy.core.ehcache.model.po.TSysCacheCfg</class>
+      	<class>com.kvc.joy.core.sysres.code.po.TSysMdCodeTableDic</class>
+      	<class>com.kvc.joy.core.sysres.datasrc.model.po.TSysMdDataSrc</class>
+      	<class>com.kvc.joy.core.sysres.menu.po.TSysMenu</class>
+      	<class>com.kvc.joy.core.sysres.param.po.TSysParam</class>
+      	<!-- <class>com.kvc.joy.plugin.mapping.field.po.TSysFieldMapping</class>
+      	<class>com.kvc.joy.plugin.mapping.field.po.TSysFieldMappingRule</class>
+      	<class>com.kvc.joy.plugin.monitor.jdbc.model.po.TSysSqlLog</class>
+      	<class>com.kvc.joy.plugin.schedule.quartz.model.po.TQrtzJobPlanCfg</class>
+      	<class>com.kvc.joy.plugin.seqgen.po.TSysSeqNum</class>
+      	<class>com.kvc.joy.plugin.seqgen.po.TSysSeqNumRule</class>
+      	<class>com.kvc.joy.plugin.seqgen.po.TSysSeqNumStat</class>
+      	<class>com.kvc.joy.plugin.security.login.model.po.TLoginLog</class>
+      	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacAuthority</class>
+      	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacGroup</class>
+      	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacGroupAuth</class>
+      	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacGroupUser</class>
+      	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacOrganization</class>
+      	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacRole</class>
+      	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacRoleAuth</class>
+      	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacUser</class>
+      	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacUserAuth</class> -->
+        
+        <properties>
+        <!-- 
+             <property name="hibernate.connection.driver_class"                 value="com.mysql.jdbc.Driver" />
+             <property name="hibernate.connection.url"     value="jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=utf-8" />
+             <property name="hibernate.connection.username"                 value="root" />
+             <property name="hibernate.connection.password"                 value="tangwl" />
+             
+             <property name="hibernate.connection.provider_class" value="org.hibernate.connection.C3P0ConnectionProvider"/>
+             <property name="hibernate.c3p0.max_size" value="100"/>
+             <property name="hibernate.c3p0.min_size"  value="20"/>
+             <property name="hibernate.c3p0.timeout"   value="120"/>
+             <property name="hibernate.c3p0.max_statements" value="0"/>
+             <property name="hibernate.c3p0.idle_test_period"  value="120"/>
+             <property name="hibernate.c3p0.acquire_increment" value="5"/>
+
+             <property name="hibernate.cache.provider_class" value="org.hibernate.cache.EhCacheProvider"/>
+             <property name="hibernate.cache.use_query_cache" value="false"/>
+            
+             <property name="hibernate.show_sql" value="false"/>  
+             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+             <property name="hibernate.connection.datasource" value="${db.jndi}"/>
+             -->
+             
+             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+             
+             <property name="hibernate.connection.remarksReporting" value="true" />
+             
+             <property name="hibernate.useUnicode" value="true"/>
+             <property name="hibernate.characterEncoding" value="utf8"/>
+             <!-- <property name="hibernate.hbm2ddl.auto" value="update"/> -->
+             <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy"/>
+
+         </properties>
+        
+    </persistence-unit>
+</persistence>
