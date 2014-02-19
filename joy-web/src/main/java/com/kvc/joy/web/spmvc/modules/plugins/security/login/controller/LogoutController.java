@@ -20,7 +20,7 @@ public class LogoutController {
 	public String logout() {
 		String logoutMethodCode = HttpRequestTool.getParameter(JOY_KEY__LOGOUT_METHOD_CODE);
 		LogoutMethod logoutMethod = LogoutMethod.enumOf(logoutMethodCode);
-		PluginBeanFactory.getLogoutService().logout(null, logoutMethod, null);
+		PluginBeanFactory.getUserLogoutService().logout(null, logoutMethod, null);
 		return "redirect:login";
 	}
 	

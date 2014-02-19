@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context docBase="E:\WS\joy-bootstrap\web\" path="/joy"
-					reloadable="false">
+<Context docBase="..\" path="/joy" reloadable="false">
 					<!-- oracle -->
 					<!-- <Resource name="JDBC/FRAME" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:frame" 
 						username="kevice" password="tangwl" driverClassName="oracle.jdbc.driver.OracleDriver" 

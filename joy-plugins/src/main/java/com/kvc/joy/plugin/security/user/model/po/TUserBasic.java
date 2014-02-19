@@ -24,7 +24,7 @@ public class TUserBasic extends UuidCrudEntity  {
 	private String name; // 姓名
 	private Sex sex; // 性别
 	private String password; // 密码
-	private UserStatus stauts; // 状态
+	private UserStatus status; // 状态
 	private String online; // 是否在线
 	private Integer loginCount; // 登录次数
 	private String lastLoginTime; // 最后一次登录时间
@@ -65,21 +65,21 @@ public class TUserBasic extends UuidCrudEntity  {
 
 	@Column(length = 2, nullable = false)
 	@Comment(value="状态代码", codeId="user_status")
-	public String getStautsCode() {
-		return stauts == null ? null : stauts.getCode();
+	public String getStatusCode() {
+		return status == null ? null : status.getCode();
 	}
 
-	public void setStautsCode(String stautsCode) {
-		this.stauts = UserStatus.enumOf(stautsCode);
+	public void setStatusCode(String statusCode) {
+		this.status = UserStatus.enumOf(statusCode);
 	}
 
 	@Transient
-	public UserStatus getStauts() {
-		return stauts;
+	public UserStatus getStatus() {
+		return status;
 	}
 
-	public void setStauts(UserStatus stauts) {
-		this.stauts = stauts;
+	public void setStatus(UserStatus status) {
+		this.status = status;
 	}
 
 	@Column(length = 1, nullable = false)
@@ -179,16 +179,4 @@ public class TUserBasic extends UuidCrudEntity  {
 		this.online = online;
 	}
 	
-	
-
-//	@Id
-//	@Column(length = 32)
-//	public String getId() {
-//		return id;
-//	}
-//
-//	public void setId(String id) {
-//		this.id = id;
-//	}
-
 }

@@ -145,7 +145,7 @@ public abstract class AbstractExcelImporter implements IExcelImporter {
 
 	/**
 	 * 导入
-	 * @param xlsFile
+	 * @param inputStream
 	 * @return
 	 */
 	public String doImport(InputStream inputStream) {
@@ -158,7 +158,7 @@ public abstract class AbstractExcelImporter implements IExcelImporter {
 			try {
 				check();
 				save();
-			} catch (ValidateException ex) {
+			} catch (Exception ex) {
 				msg = ex.getMessage();
 			}
 		}

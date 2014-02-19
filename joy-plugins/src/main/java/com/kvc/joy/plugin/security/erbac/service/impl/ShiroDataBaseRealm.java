@@ -2,7 +2,7 @@ package com.kvc.joy.plugin.security.erbac.service.impl;
 
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.plugin.security.user.model.po.TUserBasic;
-import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser_;
+import com.kvc.joy.plugin.security.user.model.po.TUserBasic_;
 import com.kvc.joy.plugin.security.erbac.service.IUserPermissionService;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationException;
@@ -50,7 +50,7 @@ public class ShiroDataBaseRealm extends AuthorizingRealm {
 			throw new AccountException("用户名不能为空");
 		}
 
-		TUserBasic user = JpaTool.uniqueResult(JpaTool.search(TUserBasic.class, TErbacUser_.account, username));
+		TUserBasic user = JpaTool.uniqueResult(JpaTool.search(TUserBasic.class, TUserBasic_.account, username));
 		if (user == null) {
 			throw new UnknownAccountException("用户不存在");
 		}

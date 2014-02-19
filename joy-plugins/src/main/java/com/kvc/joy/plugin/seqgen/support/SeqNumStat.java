@@ -28,7 +28,7 @@ public class SeqNumStat {
 			statSeqNum.setPeriodCount(seqRule.getPeriodCount());
 			statSeqNum.setMaxNum(seqCache.getRealSeqNum());
 			ISequenceGenerator sequenceGenerator = (ISequenceGenerator) SpringBeanTool.getBean("sequenceGenerator");
-			statSeqNum.setMaxFullNum(sequenceGenerator.fillPattern(seqCache.getRealSeqNum(), seqCache, seqNum));
+			statSeqNum.setMaxFullNum(sequenceGenerator.fillPattern(seqCache.getRealSeqNum(), seqNum));
 			statSeqNum.setNumCount(numCount);
 			statSeqNum.setPeriodStartTime(seqNum.getCurPeriodStartTime());
 			statSeqNum.setStatTime(DateTool.currentDate(DateTool.UNFMT_yyyyMMddHHmmss));

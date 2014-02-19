@@ -99,7 +99,7 @@ public class JoyPluginsInitializer implements ISystemInitService, BeanPostProces
 		Set<Class<?>> classes = PackageTool.getClassesInPackage("com.kvc.joy.core", true);
 		classes.addAll(PackageTool.getClassesInPackage("com.kvc.joy.plugin", true));
 		for (Class<?> clazz : classes) {
-			if (clazz.getName().endsWith("Plugin") && IJoyPlugin.class.isAssignableFrom(clazz)) {
+			if (clazz.getName().endsWith("Plugin") && IJoyPlugin.class.isAssignableFrom(clazz) && clazz != IJoyPlugin.class) {
 				try {
 					IJoyPlugin plugin = (IJoyPlugin) clazz.newInstance();
 					if(plugin.isEnabled()) {
@@ -107,6 +107,7 @@ public class JoyPluginsInitializer implements ISystemInitService, BeanPostProces
 						sb.append(",").append(location);
 					}
 				} catch (Exception e) {
+                    e.printStackTrace();
                     throw new ServiceException(e);
 				}
 			}

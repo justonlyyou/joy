@@ -34,7 +34,7 @@ public class UserPlugin implements IJoyPlugin {
 
 	@Override
 	public boolean isEnabled() {
-		return JoyPropeties.PLUGIN_LOGIN_ENABLED;
+		return JoyPropeties.PLUGIN_USER_ENABLED;
 	}
 
 	@Override

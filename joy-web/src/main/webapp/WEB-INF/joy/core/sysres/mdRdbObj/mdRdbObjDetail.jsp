@@ -70,9 +70,9 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${model.columns}" var="p" varStatus="stauts">
+				<c:forEach items="${model.columns}" var="p" varStatus="status">
 					<tr>
-						<td class="joy-table-seq-col">${stauts.index+1}</td>
+						<td class="joy-table-seq-col">${status.index+1}</td>
 						<td><joy:listOperations id="${model.dsId}-${model.name}-${p.name}" showEditOp="false" showDeleteOp="false"/></td>
 						<td>${p.name}</td>
 						<td>${p.comment.briefDesc}</td>

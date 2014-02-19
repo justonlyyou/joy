@@ -54,7 +54,7 @@ public class UserLoginService implements IUserLoginService {
 		if (errMsg == null) {
 			loginVo.setLoginState(LoginState.SUCCESS);
 			TUserLoginLog logOnLogin = loginLogService.logOnLogin(loginVo);
-			PluginBeanFactory.getLogoutService().mendLogoutLogOnLogin(logOnLogin);
+			PluginBeanFactory.getUserLogoutService().mendLogoutLogOnLogin(logOnLogin);
 		}
 		
 		//TODO 多处登陆
@@ -78,9 +78,9 @@ public class UserLoginService implements IUserLoginService {
 		if (validateTime == false) {
 			errMsg = "验证码已过期，请重新获取.";
 		} else {
-			boolean sucess = PluginBeanFactory.getCaptchaService().validateCode(
+			boolean success = PluginBeanFactory.getCaptchaService().validateCode(
 					loginVo.getCaptchaServer(), loginVo.getCaptchaClient());
-			if (sucess == false) {
+			if (success == false) {
 				errMsg = "验证码不正确.";
 			}
 		}

@@ -32,9 +32,9 @@ public class JoyPropeties extends BaseProperties {
 	public static String PLUGIN_ERBAC_SUCCESS_URL;
 	public static String PLUGIN_ERBAC_UNAUTHORIZED_URL;
 	public static String PLUGIN_ERBAC_HASH_ALGORITHM;
-	public static boolean PLUGIN_LOGIN_ENABLED;
-	public static Integer PLUGIN_LOGIN_PASSWORD_ERROR_ALLOW_COUNT;
-	public static Integer PLUGIN_LOGIN_PASSWORD_ERROR_PERIOD_HOUR;
+	public static boolean PLUGIN_USER_ENABLED;
+	public static Integer PLUGIN_USER_PASSWORD_ERROR_ALLOW_COUNT;
+	public static Integer PLUGIN_USER_PASSWORD_ERROR_PERIOD_HOUR;
 	public static boolean PLUGIN_SPRING_MVC_ENABLED;
 	public static boolean PLUGIN_WORKFLOW_ENABLED;
 	public static boolean PLUGIN_MAPPING_FIELD_ENABLED;
@@ -88,9 +88,9 @@ public class JoyPropeties extends BaseProperties {
 		PLUGIN_ERBAC_SUCCESS_URL = getStr("plugin.erbac.successUrl");
 		PLUGIN_ERBAC_UNAUTHORIZED_URL = getStr("plugin.erbac.unauthorizedUrl");
 		PLUGIN_ERBAC_HASH_ALGORITHM = getStr("plugin.erbac.hashAlgorithm");
-		PLUGIN_LOGIN_ENABLED = getBool("plugin.user.enabled");
-		PLUGIN_LOGIN_PASSWORD_ERROR_ALLOW_COUNT = getInt("plugin.user.password.error.allow.count");
-		PLUGIN_LOGIN_PASSWORD_ERROR_PERIOD_HOUR = getInt("plugin.user.password.error.period.hour");
+		PLUGIN_USER_ENABLED = getBool("plugin.user.enabled");
+		PLUGIN_USER_PASSWORD_ERROR_ALLOW_COUNT = getInt("plugin.user.password.error.allow.count");
+		PLUGIN_USER_PASSWORD_ERROR_PERIOD_HOUR = getInt("plugin.user.password.error.period.hour");
 		PLUGIN_SPRING_MVC_ENABLED = getBool("plugin.spring.mvc.enabled");
 		PLUGIN_WORKFLOW_ENABLED = getBool("plugin.workflow.enabled");
 		PLUGIN_MAPPING_FIELD_ENABLED = getBool("plugin.mapping.field.enabled");

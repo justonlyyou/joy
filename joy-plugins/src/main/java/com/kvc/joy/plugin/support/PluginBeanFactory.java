@@ -82,20 +82,20 @@ public class PluginBeanFactory extends CoreBeanFactory {
 		return (ICaptchaService) SpringBeanTool.getBean("captchaService");
 	}
 	
-	public static IUserLoginService getLoginService() {
-		return (IUserLoginService) SpringBeanTool.getBean("loginService");
+	public static IUserLoginService getUserLoginService() {
+		return (IUserLoginService) SpringBeanTool.getBean("userLoginService");
 	}
 	
-	public static IUserLoginLogService getLoginLogService() {
-		return (IUserLoginLogService) SpringBeanTool.getBean("loginLogService");
+	public static IUserLoginLogService getUserLoginLogService() {
+		return (IUserLoginLogService) SpringBeanTool.getBean("userLoginLogService");
 	}
 	
-	public static IUserLogoutService getLogoutService() {
-		return (IUserLogoutService) SpringBeanTool.getBean("logoutService");
+	public static IUserLogoutService getUserLogoutService() {
+		return (IUserLogoutService) SpringBeanTool.getBean("userLogoutService");
 	}
 	
-	public static IUserLogoutLogService getLogoutLogService() {
-		return (IUserLogoutLogService) SpringBeanTool.getBean("logoutLogService");
+	public static IUserLogoutLogService getUserLogoutLogService() {
+		return (IUserLogoutLogService) SpringBeanTool.getBean("userLogoutLogService");
 	}
 	
 	public static ISysSqlLogService getSysSqlLogService() {

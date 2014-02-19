@@ -51,11 +51,11 @@ public class UserLoginLogService implements IUserLoginLogService {
 	 */
 	@Override
 	public boolean shouldCaptchaRequire(String account) {
-		int hour = JoyPropeties.PLUGIN_LOGIN_PASSWORD_ERROR_PERIOD_HOUR;
+		int hour = JoyPropeties.PLUGIN_USER_PASSWORD_ERROR_PERIOD_HOUR;
 		Date now = new Date();
 		String fromTime = DateTool.formatDate(DateTool.addHours(now, -hour), DateTool.UNFMT_yyyyMMddHHmmss);
 		String toTime = DateTool.formatDate(now, DateTool.UNFMT_yyyyMMddHHmmss);
-		int maxErrorCount = JoyPropeties.PLUGIN_LOGIN_PASSWORD_ERROR_ALLOW_COUNT - 1;
+		int maxErrorCount = JoyPropeties.PLUGIN_USER_PASSWORD_ERROR_ALLOW_COUNT - 1;
 		return userLoginLogDao.isPasswordErrorFrequently(account, fromTime, toTime, maxErrorCount);
 	}
 

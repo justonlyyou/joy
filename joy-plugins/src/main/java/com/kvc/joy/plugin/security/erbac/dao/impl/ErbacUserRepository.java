@@ -5,7 +5,7 @@ import com.kvc.joy.plugin.security.erbac.dao.IErbacUserRepository;
 import com.kvc.joy.plugin.security.erbac.model.po.TErbacGroup;
 import com.kvc.joy.plugin.security.erbac.model.po.TErbacGroup_;
 import com.kvc.joy.plugin.security.user.model.po.TUserBasic;
-import com.kvc.joy.plugin.security.erbac.model.po.TErbacUser_;
+import com.kvc.joy.plugin.security.user.model.po.TUserBasic_;
 
 import javax.persistence.Tuple;
 import javax.persistence.criteria.*;
@@ -23,7 +23,7 @@ public class ErbacUserRepository extends BaseJpaDao<TUserBasic> implements IErba
 		Map<TErbacGroup, Collection<TUserBasic>> resultMap = new HashMap<TErbacGroup, Collection<TUserBasic>>();
 		CriteriaQuery<Tuple> q = getCriteriaBuilder().createTupleQuery();
 		Root<TUserBasic> c = q.from(TUserBasic.class);
-		CollectionJoin<TUserBasic, TErbacGroup> o = c.join(TErbacUser_.groups, JoinType.LEFT);
+		CollectionJoin<TUserBasic, TErbacGroup> o = c.join(TUserBasic_.groups, JoinType.LEFT);
 		q.select(getCriteriaBuilder().tuple(c, o));
 		q.where(o.get(TErbacGroup_.id.getName()).in(groudIds));
 //		q.orderBy(convertOrder(c, PageStoreFactory.curQueryLogics().getOrderArray()));

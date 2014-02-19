@@ -74,9 +74,9 @@
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach items="${pageStore.result}" var="p" varStatus="stauts">
+							<c:forEach items="${pageStore.result}" var="p" varStatus="status">
 								<tr>
-									<td class="joy-table-seq-col">${stauts.index+1}</td>
+									<td class="joy-table-seq-col">${status.index+1}</td>
 									<td><joy:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false"/></td>
 									<td>${p.costTime}</td>
 									<td><joy:timeFormatter timeStr="${p.logTime}" realFmt="yyyyMMddHHmmssSSS" displayFmt="yyyy-MM-dd HH:mm:ss SSS"/></td>

@@ -74,9 +74,9 @@
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach items="${pageStore.result}" var="p" varStatus="stauts">
+							<c:forEach items="${pageStore.result}" var="p" varStatus="status">
 								<tr>
-									<td class="joy-table-seq-col">${stauts.index+1}</td>
+									<td class="joy-table-seq-col">${status.index+1}</td>
 									<td><joy:listOperations id="${p.dsId}-${p.name}" showEditOp="false" showDeleteOp="false"/></td>
 									<td>${p.name}</td>
 									<td>${p.comment}</td>

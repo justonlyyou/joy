@@ -31,7 +31,7 @@ public class LoginController {
 	public String login(@RequestParam("username") String username, @RequestParam("password") String password,
 			@RequestParam(value = "captcha", required = false) String captcha,
 			@RequestParam(value = "rememberMe", required = false) String rememberMe) {
-		boolean captchaRequire = PluginBeanFactory.getLoginLogService().shouldCaptchaRequire(username);
+		boolean captchaRequire = PluginBeanFactory.getUserLoginLogService().shouldCaptchaRequire(username);
 		if (StringTool.isBlank(captcha)) {
 			if (captchaRequire) {
 				return "captchaRequire";
@@ -39,12 +39,12 @@ public class LoginController {
 		}
 
 		UserLoginVo loginVo = createLoginVo(username, password, captcha, rememberMe, captchaRequire);
-		return PluginBeanFactory.getLoginService().login(loginVo);
+		return PluginBeanFactory.getUserLoginService().login(loginVo);
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login() {
-		boolean hasLogin = PluginBeanFactory.getLoginService().hasLogin();
+		boolean hasLogin = PluginBeanFactory.getUserLoginService().hasLogin();
 		if (hasLogin) {
 			return "redirect:";
 		} else {

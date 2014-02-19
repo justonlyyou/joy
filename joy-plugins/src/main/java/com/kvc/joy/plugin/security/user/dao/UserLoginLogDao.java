@@ -6,7 +6,7 @@ import com.kvc.joy.commons.query.sort.Direction;
 import com.kvc.joy.commons.query.sort.Order;
 import com.kvc.joy.core.persistence.orm.jpa.BaseJpaDao;
 import com.kvc.joy.plugin.security.user.model.po.TUserLoginLog;
-import com.kvc.joy.plugin.security.user.model.po.TLoginLog_;
+import com.kvc.joy.plugin.security.user.model.po.TUserLoginLog_;
 import com.kvc.joy.plugin.security.user.support.enums.LoginState;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -41,10 +41,10 @@ public class UserLoginLogDao extends BaseJpaDao<TUserLoginLog> {
 			@Override
 			public Expression<Boolean> getRestriction(CriteriaBuilder cb, Root<TUserLoginLog> root) {
 				return cb.and(
-						cb.equal(root.get(TLoginLog_.userAccount), account),
-						cb.equal(root.get(TLoginLog_.loginStateCode), LoginState.PASSWORD_ERR.getCode()),
-						cb.greaterThan(root.get(TLoginLog_.loginTime), fromTime),
-						cb.lessThan(root.get(TLoginLog_.loginTime), toTime)
+						cb.equal(root.get(TUserLoginLog_.userAccount), account),
+						cb.equal(root.get(TUserLoginLog_.loginStateCode), LoginState.PASSWORD_ERR.getCode()),
+						cb.greaterThan(root.get(TUserLoginLog_.loginTime), fromTime),
+						cb.lessThan(root.get(TUserLoginLog_.loginTime), toTime)
 						);
 			}
 		});
@@ -68,10 +68,10 @@ public class UserLoginLogDao extends BaseJpaDao<TUserLoginLog> {
 			@Override
 			public Expression<Boolean> getRestriction(CriteriaBuilder cb, Root<TUserLoginLog> root) {
 				return cb.and(
-						cb.equal(root.get(TLoginLog_.userAccount), account),
-						cb.or(cb.equal(root.get(TLoginLog_.loginStateCode), LoginState.SUCCESS.getCode()),
-								cb.equal(root.get(TLoginLog_.loginStateCode), LoginState.PASSWORD_ERR.getCode())),
-						cb.between(root.get(TLoginLog_.loginTime), fromTime, toTime)
+						cb.equal(root.get(TUserLoginLog_.userAccount), account),
+						cb.or(cb.equal(root.get(TUserLoginLog_.loginStateCode), LoginState.SUCCESS.getCode()),
+								cb.equal(root.get(TUserLoginLog_.loginStateCode), LoginState.PASSWORD_ERR.getCode())),
+						cb.between(root.get(TUserLoginLog_.loginTime), fromTime, toTime)
 						);
 			}
 			
@@ -82,7 +82,7 @@ public class UserLoginLogDao extends BaseJpaDao<TUserLoginLog> {
 			
 			@Override
 			public Order[] getOrders() {
-				return new Order[] {new Order(TLoginLog_.loginTime.getName(), Direction.DESC)};
+				return new Order[] {new Order(TUserLoginLog_.loginTime.getName(), Direction.DESC)};
 			}
 			
 		});
@@ -112,10 +112,10 @@ public class UserLoginLogDao extends BaseJpaDao<TUserLoginLog> {
 			@Override
 			public Expression<Boolean> getRestriction(CriteriaBuilder cb, Root<TUserLoginLog> root) {
 				List<Predicate> predicates = new ArrayList<Predicate>(4);
-				predicates.add(cb.equal(root.get(TLoginLog_.userId), userId));
-				predicates.add(cb.equal(root.get(TLoginLog_.loginStateCode), LoginState.SUCCESS.getCode()));
+				predicates.add(cb.equal(root.get(TUserLoginLog_.userId), userId));
+				predicates.add(cb.equal(root.get(TUserLoginLog_.loginStateCode), LoginState.SUCCESS.getCode()));
 				if (StringTool.isNotBlank(curLogId)) {
-					predicates.add(cb.notEqual(root.get(TLoginLog_.id), curLogId));
+					predicates.add(cb.notEqual(root.get(TUserLoginLog_.id), curLogId));
 				}
 				return cb.and(predicates.toArray(new Predicate[predicates.size()]));
 			}
@@ -127,7 +127,7 @@ public class UserLoginLogDao extends BaseJpaDao<TUserLoginLog> {
 			
 			@Override
 			public Order[] getOrders() {
-				return new Order[] {new Order(TLoginLog_.loginTime.getName(), Direction.DESC)};
+				return new Order[] {new Order(TUserLoginLog_.loginTime.getName(), Direction.DESC)};
 			}
 		});
 		return uniqueResult(result);

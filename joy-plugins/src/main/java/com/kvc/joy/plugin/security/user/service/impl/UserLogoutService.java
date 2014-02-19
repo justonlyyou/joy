@@ -3,7 +3,7 @@ package com.kvc.joy.plugin.security.user.service.impl;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.plugin.security.user.model.po.TUserLoginLog;
 import com.kvc.joy.plugin.security.user.model.po.TUserLogoutLog;
-import com.kvc.joy.plugin.security.user.model.po.TLogoutLog_;
+import com.kvc.joy.plugin.security.user.model.po.TUserLogoutLog_;
 import com.kvc.joy.plugin.security.user.service.IUserLoginLogService;
 import com.kvc.joy.plugin.security.user.service.IUserLogoutLogService;
 import com.kvc.joy.plugin.security.user.service.IUserLogoutService;
@@ -34,7 +34,7 @@ public class UserLogoutService implements IUserLogoutService {
 		TUserLoginLog preLoginSuccessLog = loginLogService.getPreLoginSuccessLog(logOnLogin.getId());
 		if (preLoginSuccessLog != null) {
 			String loginLogId = preLoginSuccessLog.getId();
-			List<TUserLogoutLog> logoutLogs = JpaTool.search(TUserLogoutLog.class, TLogoutLog_.loginLogId, loginLogId);
+			List<TUserLogoutLog> logoutLogs = JpaTool.search(TUserLogoutLog.class, TUserLogoutLog_.loginLogId, loginLogId);
 			if (logoutLogs.isEmpty()) {
 				String logoutTime = preLoginSuccessLog.getLoginTime();
 				logoutLogService.logout(loginLogId, LogoutMethod.OTHERS, logoutTime);

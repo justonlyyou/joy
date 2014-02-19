@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byName">
+
+	<!-- 登陆服务 -->
+	<bean id="userLoginService" class="com.kvc.joy.plugin.security.user.service.impl.UserLoginService" />
+	
+	<!-- 登陆日志服务 -->
+	<bean id="userLoginLogService" class="com.kvc.joy.plugin.security.user.service.impl.UserLoginLogService" />
+	
+	<!-- 登出服务 -->
+	<bean id="userLogoutService" class="com.kvc.joy.plugin.security.user.service.impl.UserLogoutService" />
+	
+	<!-- 登出日志服务 -->
+	<bean id="userLogoutLogService" class="com.kvc.joy.plugin.security.user.service.impl.UserLogoutLogService" />
+	
+	<bean id="userLoginLogDao" class="com.kvc.joy.plugin.security.user.dao.UserLoginLogDao" />
+
+</beans>
