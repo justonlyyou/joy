@@ -17,7 +17,6 @@ import com.kvc.joy.core.sysres.param.model.po.TSysParam;
 import com.kvc.joy.core.sysres.param.service.ISysParamService;
 import org.springframework.cache.ehcache.EhCacheCacheManager;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.orm.jpa.JpaTemplate;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
 
@@ -40,10 +39,6 @@ public class CoreBeanFactory {
 
 	public static JdbcTemplate getJdbcTemplate() {
 		return (JdbcTemplate) SpringBeanTool.getBean("jdbcTemplate");
-	}
-
-	public static JpaTemplate getJpaTemplate() {
-		return (JpaTemplate) SpringBeanTool.getBean("jpaTemplate");
 	}
 
 	public static TransactionDefinition getTransactionDefinition() {

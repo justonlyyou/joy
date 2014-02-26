@@ -19,7 +19,7 @@
 
 	<properties>
 		<joy.version>1.0.0-SNAPSHOT</joy.version>
-		<springframework.version>3.2.4.RELEASE</springframework.version>
+		<springframework.version>4.0.2.RELEASE</springframework.version>
 		<logback.version>1.0.13</logback.version>
 		<jackson.version>2.1.4</jackson.version>
 		<hibernate.version>4.2.6.Final</hibernate.version>
@@ -55,7 +55,7 @@
 		<kaptcha.version>2.3.2</kaptcha.version>
 		<flyway.version>2.2.1</flyway.version>
         <mysql.connector.version>5.1.24</mysql.connector.version>
-        <servlet.version>2.5</servlet.version>
+        <servlet.version>3.1.0</servlet.version>
         <jsp.version>2.0</jsp.version>
         <jstl.version>1.1.2</jstl.version>
         <taglibs.version>1.1.2</taglibs.version>
@@ -400,7 +400,7 @@
             <!-- web -->
             <dependency>
                 <groupId>javax.servlet</groupId>
-                <artifactId>servlet-api</artifactId>
+                <artifactId>javax.servlet-api</artifactId>
                 <version>${servlet.version}</version>
                 <scope>provided</scope>
             </dependency>
@@ -474,11 +474,11 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${plugin.maven.compiler.version}</version>
 				<configuration>
-					<compilerId>eclipse</compilerId>
-					<compilerVersion>1.6</compilerVersion>
+					<compilerId>javac</compilerId>
+					<compilerVersion>1.7</compilerVersion>
 					<!-- <fork>true</fork> -->
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.7</source>
+					<target>1.7</target>
 					<encoding>UTF-8</encoding>
                     <compilerArguments>
                         <processor>org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor</processor>

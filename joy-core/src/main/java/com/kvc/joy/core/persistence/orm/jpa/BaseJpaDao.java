@@ -6,8 +6,6 @@ import com.kvc.joy.commons.lang.GenericTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.query.sort.Order;
-import org.springframework.orm.jpa.JpaTemplate;
-import org.springframework.orm.jpa.support.JpaDaoSupport;
 
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
@@ -17,7 +15,7 @@ import javax.persistence.criteria.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseJpaDao<T> extends JpaDaoSupport {
+public abstract class BaseJpaDao<T> {
 
 	protected static final Log log = LogFactory.getLog(BaseJpaDao.class);
 
@@ -98,12 +96,7 @@ public abstract class BaseJpaDao<T> extends JpaDaoSupport {
 		return result;
 	}
 
-	@Resource
-	public void setJPATemplate(JpaTemplate jpaTemplate) {
-		super.setJpaTemplate(jpaTemplate);
-	}
-
-	protected abstract class JPACallBack<T> {
+    protected abstract class JPACallBack<T> {
 		
 		public abstract Expression<Boolean> getRestriction(CriteriaBuilder cb, Root<T> root);
 		

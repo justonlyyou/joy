@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://java.sun.com/xml/ns/javaee"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-         id="WebApp_ID" version="2.5" metadata-complete="true"> <!-- 添加 metadata-complete="true" 属性,否则jetty会扫描代码中的注解 -->
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         id="WebApp_ID" version="3.0" metadata-complete="true"> <!-- 添加 metadata-complete="true" 属性,否则jetty会扫描代码中的注解 -->
 	
 	<display-name>JOY</display-name> <!-- #modify# -->
 	
@@ -34,10 +34,13 @@
 	<listener>
 	    <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
 	</listener>
-	
-	<listener>
-		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
-	</listener>
+
+    <!-- Spring 刷新Introspector防止内存泄露 -->
+    <listener>
+        <listener-class>
+            org.springframework.web.util.IntrospectorCleanupListener
+        </listener-class>
+    </listener>
 
 	<!-- spring mvc -->
 	<servlet>
@@ -104,14 +107,7 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
     
-    <!-- Spring 刷新Introspector防止内存泄露 -->
-	<listener>
-		<listener-class>
-			org.springframework.web.util.IntrospectorCleanupListener
-		</listener-class>
-	</listener>
-    
-	<!-- shiro security filter --> 
+	<!-- shiro security filter -->
 	<filter>
 <!--  		 这里的filter-name要和spring的applicationContext-shiro.xml里的 org.apache.shiro.spring.web.ShiroFilterFactoryBean的bean name相同  -->
 		 <filter-name>shiroSecurityFilter</filter-name>

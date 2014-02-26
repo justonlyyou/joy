@@ -9,6 +9,7 @@
 package com.kvc.joy.web.support.filter.gzip;
 
 import javax.servlet.ServletOutputStream;
+import javax.servlet.WriteListener;
 import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -82,4 +83,14 @@ public class GZIPResponseStream extends ServletOutputStream {
 	public void reset() {
 		// noop
 	}
+
+    @Override
+    public boolean isReady() {
+        return true;
+    }
+
+    @Override
+    public void setWriteListener(WriteListener writeListener) {
+
+    }
 }

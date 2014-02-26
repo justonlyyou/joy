@@ -3,11 +3,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<!-- 业务库JPA模版 -->
-	<bean id="jpaTemplate" class="org.springframework.orm.jpa.JpaTemplate">
-		<property name="entityManagerFactory" ref="entityManagerFactory"/>
-	</bean>
-	
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />

@@ -9,11 +9,8 @@ import com.kvc.joy.commons.support.GroupExecutor;
 import com.kvc.joy.core.persistence.entity.UuidEntity;
 import com.kvc.joy.core.rp.pagestore.PageStore;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
-import org.springframework.orm.jpa.JpaCallback;
-import org.springframework.orm.jpa.JpaTemplate;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -39,23 +36,23 @@ public class JpaTool extends BaseJpaDao {
 
 	public static void persist(Object entity) {
 		UuidEntity.setUuid(entity);
-		jpaTemplate().persist(entity);
+		getEntityMgr().persist(entity);
 	}
 
 	public static <T> T merge(T entity) {
-		return jpaTemplate().merge(entity);
+		return getEntityMgr().merge(entity);
 	}
 
 	public static void remove(Object entity) {
-		jpaTemplate().remove(entity);
+		getEntityMgr().remove(entity);
 	}
 
 	public static void flush() {
-		jpaTemplate().flush();
+		getEntityMgr().flush();
 	}
 
 	public static void refresh(Object entity) {
-		jpaTemplate().refresh(entity);
+		getEntityMgr().refresh(entity);
 	}
 
 	/**
@@ -66,7 +63,7 @@ public class JpaTool extends BaseJpaDao {
 	 * @return 实体对象
 	 */
 	public static <T> T get(Class<T> entityClass, Object id) {
-		return jpaTemplate().find(entityClass, id);
+		return getEntityMgr().find(entityClass, id);
 	}
 
 	// /**
@@ -77,7 +74,7 @@ public class JpaTool extends BaseJpaDao {
 	// * @return 实体代理
 	// */
 	// public static <T> T load(Class<T> entityClass, Object id) {
-	// return jpaTemplate().load(entityClass, id);
+	// return getEntityMgr().load(entityClass, id);
 	// }
 
 	/**
@@ -356,13 +353,8 @@ public class JpaTool extends BaseJpaDao {
 	 * @return 查询结果列表
 	 */
 	public static List<?> findBySql(final String sql) {
-		return jpaTemplate().execute(new JpaCallback<List>() {
-
-			public List doInJpa(EntityManager em) throws PersistenceException {
-				Query query = em.createNativeQuery(sql);
-				return query.getResultList();
-			}
-		});
+        Query query = getEntityMgr().createNativeQuery(sql);
+        return query.getResultList();
 	}
 
 	private static <T, E> Map<String, Object> convertMap(Map<SingularAttribute<? super T, E>, E> attrMap) {
@@ -376,10 +368,6 @@ public class JpaTool extends BaseJpaDao {
 	@SuppressWarnings("unchecked")
 	private static final <T> List<javax.persistence.criteria.Order> processOrder(final Root<T> root, final Order... orders) {
 		return getInstance().convertOrder(root, orders);
-	}
-
-	public static final JpaTemplate jpaTemplate() {
-		return getInstance().getJpaTemplate();
 	}
 
 	public static final EntityManager getEntityMgr() {
