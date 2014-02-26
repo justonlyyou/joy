@@ -7,7 +7,7 @@ define(['joy/commons/ClassTool' ], function(ClassTool) {
 
 		createClass : function(props) {
 			return ClassTool.extend(props);
-		},
+		}
 
 	};
 

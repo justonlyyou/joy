@@ -17,7 +17,7 @@ import com.kvc.joy.plugin.security.user.support.enums.LogoutMethod;
  */
 public class UserLogoutLogService implements IUserLogoutLogService {
 
-	private IUserLoginLogService loginLogService;
+	private IUserLoginLogService userLoginLogService;
 
 	@Override
 	public void logout(String loginLogId, LogoutMethod logoutMethod, String logoutTime) {
@@ -29,7 +29,7 @@ public class UserLogoutLogService implements IUserLogoutLogService {
 		String userId = UserTool.getCurrentUser().getId();
 		logoutLog.setUserId(userId);
 		if (loginLogId == null) {
-			TUserLoginLog loginLog = loginLogService.onLogout(logoutTime);
+			TUserLoginLog loginLog = userLoginLogService.onLogout(logoutTime);
 			if (loginLog != null) {
 				loginLogId = loginLog.getId();
 			}
@@ -39,8 +39,8 @@ public class UserLogoutLogService implements IUserLogoutLogService {
 		JpaTool.persist(logoutLog);
 	}
 
-	public void setLoginLogService(IUserLoginLogService loginLogService) {
-		this.loginLogService = loginLogService;
+	public void setUserLoginLogService(IUserLoginLogService userLoginLogService) {
+		this.userLoginLogService = userLoginLogService;
 	}
 
 }

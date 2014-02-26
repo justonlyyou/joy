@@ -168,7 +168,7 @@ public class MetaDataTableImpl implements MetaDataTable {
             		);
             LOG.debug("MetaData table " + table + " successfully updated to reflect changes");
         } catch (SQLException e) {
-            throw new FlywayException("Unable to insert row for version '" + version + "' in metadata table " + table, e);
+            throw new FlywayException("!Unable to insert row for version '" + version + "' in metadata table " + table, e);
         }
     }
 

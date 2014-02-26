@@ -22,20 +22,20 @@ $, win, ready = {
 	times: 0
 };
 
-//获取当前路径
-ready.getPath = function(){
-	var js = document.scripts || $('script'), jsPath = js[js.length - 1].src;
-	return jsPath.substring(0, jsPath.lastIndexOf("/") + 1);
-};
-
-//载入css
+////获取当前路径
+//ready.getPath = function(){
+//	var js = document.scripts || $('script'), jsPath = js[js.length - 1].src;
+//	return jsPath.substring(0, jsPath.lastIndexOf("/") + 1);
+//};
+//
+////载入css
 ready.load = function(){
-	pathType && (pathUrl = this.getPath());
-	var head = $('head')[0], link = document.createElement("link");
-	link.setAttribute('type', 'text/css');
-	link.setAttribute('rel', 'stylesheet');
-	link.setAttribute('href', pathUrl +'skin/layer.css');
-	head.appendChild(link);
+//	pathType && (pathUrl = this.getPath());
+//	var head = $('head')[0], link = document.createElement("link");
+//	link.setAttribute('type', 'text/css');
+//	link.setAttribute('rel', 'stylesheet');
+//	link.setAttribute('href', pathUrl +'skin/layer.css');
+//	head.appendChild(link);
 };
 
 

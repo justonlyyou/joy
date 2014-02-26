@@ -11,10 +11,6 @@
 
 <title>${joyFn:getAppProperty('app.name')}登录</title>
 
-<script type="text/javascript">
-	curl(['joy/plugins/user/user', 'css!joyCss/plugins/user/user']);
-</script>
-
 </head>
 
 <body>
@@ -44,6 +40,10 @@
 		</div>
 		
 	</div>
+
+    <script type="text/javascript">
+        curl(['joy/plugins/login/login', 'css!joyCss/plugins/login/login']);
+    </script>
 
 </body>
 </html>

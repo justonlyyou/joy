@@ -22,7 +22,7 @@ import org.apache.shiro.subject.Subject;
  */
 public class UserLoginService implements IUserLoginService {
 	
-	private IUserLoginLogService loginLogService;
+	private IUserLoginLogService userLoginLogService;
 	private final Log log = LogFactory.getLog(getClass());
 
 	@Override
@@ -34,7 +34,7 @@ public class UserLoginService implements IUserLoginService {
 			errMsg = validateCaptcha(loginVo);
 			if (errMsg != null) {
 				loginVo.setLoginState(LoginState.CAPTCHA_ERR);
-				loginLogService.logOnLogin(loginVo);
+				userLoginLogService.logOnLogin(loginVo);
 				return errMsg;
 			}	
 		}
@@ -53,7 +53,7 @@ public class UserLoginService implements IUserLoginService {
 		
 		if (errMsg == null) {
 			loginVo.setLoginState(LoginState.SUCCESS);
-			TUserLoginLog logOnLogin = loginLogService.logOnLogin(loginVo);
+			TUserLoginLog logOnLogin = userLoginLogService.logOnLogin(loginVo);
 			PluginBeanFactory.getUserLogoutService().mendLogoutLogOnLogin(logOnLogin);
 		}
 		
@@ -105,12 +105,12 @@ public class UserLoginService implements IUserLoginService {
 			log.error(ice);
 			errMsg = "用户名或密码错误！";
 			loginVo.setLoginState(LoginState.PASSWORD_ERR);
-			loginLogService.logOnLogin(loginVo);
+			userLoginLogService.logOnLogin(loginVo);
 		} catch (LockedAccountException lae) {
 			log.error(lae);
 			errMsg = "您的帐号已被锁定！";
 			loginVo.setLoginState(LoginState.ACCOUNT_LOCK);
-			loginLogService.logOnLogin(loginVo);
+			userLoginLogService.logOnLogin(loginVo);
 		} catch (AuthenticationException ae) {
 			log.error(ae);
 			errMsg = "授权发生异常！";
@@ -121,8 +121,8 @@ public class UserLoginService implements IUserLoginService {
 		return errMsg;
 	}
 	
-	public void setLoginLogService(IUserLoginLogService loginLogService) {
-		this.loginLogService = loginLogService;
+	public void setUserLoginLogService(IUserLoginLogService userLoginLogService) {
+		this.userLoginLogService = userLoginLogService;
 	}
 
 }

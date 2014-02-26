@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
-<%@ include file="/WEB-INF/joy/commons/include/inc-all.jsp"%>
+<%--<%@ include file="/WEB-INF/joy/commons/include/inc-all.jsp"%>--%>
 
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -10,21 +10,6 @@
 <meta name="author" content="Kevice">
 
 <title>主页底部</title>
-
-<style type="text/css">
-.copy-right {
-	padding: 10px;
-	text-align: center;
-	margin-top: 5px;
-	margin-bottom: 1px;
-	background-color: #f7f7f9;
-  	border: 1px solid #e1e1e8;
-  	border-radius: 4px;
-}
-</style>
-<script type="text/javascript">
-</script>
-
 </head>
 
 <body>
@@ -34,5 +19,9 @@
 			${joyFn:getAppProperty('app.copyRight.author')}
 			${joyFn:getAppProperty('app.version')}
 	</div>
+
+    <script type="text/javascript">
+        curl(['css!joyCss/commons/home/footerNav']);
+    </script>
 </body>
 </html>

@@ -25,7 +25,7 @@ define(["jquery"], function($) {
 					}
 				}
 			});
-		}
+		},
 
 		_processPaginationTag : function() {
 			if($(".joy-pagination").length != 0) {
@@ -33,7 +33,7 @@ define(["jquery"], function($) {
 					gotoPage(1);
 				});	
 			}
-		}
+		},
 
 		_gotoPage : function(n,s){
 			if(!isNaN(n)) {
@@ -52,7 +52,7 @@ define(["jquery"], function($) {
 			$("form").attr("action", action);
 			$("form").submit();
 			return false;
-		}
+		},
 
 		_processOrderColumnTag : function() {
 			if($('label[id^=_joy_id__order_column_]').length != 0) {
@@ -94,16 +94,16 @@ define(["jquery"], function($) {
 					});
 				});
 			}
-		}
+		},
 
 		currentMenu : function() {
 			var json = $(window.parent.document).find("iframe[id=mainFrame]").attr("name");
 			return eval("("+ json + ")");
-		}
+		},
 
 		currentMenuId : function() {
 			return currentMenu().menuId;
-		}
+		},
 
 		currentMenuText : function() {
 			return currentMenu().menuText;

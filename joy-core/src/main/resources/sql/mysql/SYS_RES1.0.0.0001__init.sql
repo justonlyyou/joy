@@ -8,39 +8,39 @@ values ('JOY_CODES',1,1,null,null,null,null,null,null,0,null,null,null,null,'ACT
 
 /* 布尔代码 */
 insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`remark`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
-values (''JOY_YES_NOT_0','1','1',null,null,null,null,null,null,'0',null,null,null,null,'0','布尔','yes_not','2',null,'fou',null,'否','not');
+values ('JOY_YES_NOT_0','1','1',null,null,null,null,null,null,'0',null,null,null,null,'0','布尔','yes_not','2',null,'fou',null,'否','not');
 insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`remark`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
-values (''JOY_YES_NOT_1','1','1',null,null,null,null,null,null,'0',null,null,null,null,'1','布尔','yes_not','1',null,'shi',null,'是','yes');
+values ('JOY_YES_NOT_1','1','1',null,null,null,null,null,null,'0',null,null,null,null,'1','布尔','yes_not','1',null,'shi',null,'是','yes');
 
 /* 性别代码 */
 insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`remark`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
-values (''JOY_SEX_0','1','1',null,null,null,null,null,null,'0',null,null,null,null,'0','性别','sex','9',null,'wei zhi de xing bei',null,'未知的性别','unknown');
+values ('JOY_SEX_0','1','1',null,null,null,null,null,null,'0',null,null,null,null,'0','性别','sex','9',null,'wei zhi de xing bei',null,'未知的性别','unknown');
 insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`remark`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
-values (''JOY_SEX_1','1','1',null,null,null,null,null,null,'0',null,null,null,null,'1','性别','sex','1',null,'nan',null,'男','male');
+values ('JOY_SEX_1','1','1',null,null,null,null,null,null,'0',null,null,null,null,'1','性别','sex','1',null,'nan',null,'男','male');
 insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`remark`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
-values (''JOY_SEX_2','1','1',null,null,null,null,null,null,'0',null,null,null,null,'2','性别','sex','2',null,'nv',null,'女','female');
+values ('JOY_SEX_2','1','1',null,null,null,null,null,null,'0',null,null,null,null,'2','性别','sex','2',null,'nv',null,'女','female');
 insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`remark`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
-values (''JOY_SEX_9','1','1',null,null,null,null,null,null,'0',null,null,null,null,'9','性别','sex','10',null,'wei shuo ming de xing bei',null,'未说明的性别','untold');
+values ('JOY_SEX_9','1','1',null,null,null,null,null,null,'0',null,null,null,null,'9','性别','sex','10',null,'wei shuo ming de xing bei',null,'未说明的性别','untold');
 
 /* 周期类型代码 */
 insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`remark`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
-values (''JOY_TIME_UNIT_1','1','1',null,null,null,null,null,null,'0',null,null,null,null,'1','周期类型','time_unit',null,null,'nian',null,'年','year');
+values ('JOY_TIME_UNIT_1','1','1',null,null,null,null,null,null,'0',null,null,null,null,'1','周期类型','time_unit',null,null,'nian',null,'年','year');
 insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`remark`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
-values (''JOY_TIME_UNIT_2','1','1',null,null,null,null,null,null,'0',null,null,null,null,'2','周期类型','time_unit',null,null,'yue',null,'月','month');
+values ('JOY_TIME_UNIT_2','1','1',null,null,null,null,null,null,'0',null,null,null,null,'2','周期类型','time_unit',null,null,'yue',null,'月','month');
 insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`remark`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
-values (''JOY_TIME_UNIT_3','1','1',null,null,null,null,null,null,'0',null,null,null,null,'3','周期类型','time_unit',null,null,'zhou',null,'周','week');
+values ('JOY_TIME_UNIT_3','1','1',null,null,null,null,null,null,'0',null,null,null,null,'3','周期类型','time_unit',null,null,'zhou',null,'周','week');
 insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`remark`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
-values (''JOY_TIME_UNIT_4','1','1',null,null,null,null,null,null,'0',null,null,null,null,'4','周期类型','time_unit',null,null,'ri',null,'日','day');
+values ('JOY_TIME_UNIT_4','1','1',null,null,null,null,null,null,'0',null,null,null,null,'4','周期类型','time_unit',null,null,'ri',null,'日','day');
 insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`remark`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
-values (''JOY_TIME_UNIT_5','1','1',null,null,null,null,null,null,'0',null,null,null,null,'5','周期类型','time_unit',null,null,'xiao shi',null,'小时','hour');
+values ('JOY_TIME_UNIT_5','1','1',null,null,null,null,null,null,'0',null,null,null,null,'5','周期类型','time_unit',null,null,'xiao shi',null,'小时','hour');
 insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`remark`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
-values (''JOY_TIME_UNIT_6','1','1',null,null,null,null,null,null,'0',null,null,null,null,'6','周期类型','time_unit',null,null,'fen zhong',null,'分钟','minute');
+values ('JOY_TIME_UNIT_6','1','1',null,null,null,null,null,null,'0',null,null,null,null,'6','周期类型','time_unit',null,null,'fen zhong',null,'分钟','minute');
 insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`remark`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
-values (''JOY_TIME_UNIT_7','1','1',null,null,null,null,null,null,'0',null,null,null,null,'7','周期类型','time_unit',null,null,'miao',null,'秒','second');
+values ('JOY_TIME_UNIT_7','1','1',null,null,null,null,null,null,'0',null,null,null,null,'7','周期类型','time_unit',null,null,'miao',null,'秒','second');
 insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`remark`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
-values (''JOY_TIME_UNIT_8','1','1',null,null,null,null,null,null,'0',null,null,null,null,'8','周期类型','time_unit',null,null,'hao miao',null,'毫秒','millisecond');
+values ('JOY_TIME_UNIT_8','1','1',null,null,null,null,null,null,'0',null,null,null,null,'8','周期类型','time_unit',null,null,'hao miao',null,'毫秒','millisecond');
 insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`remark`,`update_dept`,`update_time`,`update_user`,`code`,`group_comment`,`group_id`,`ordinal`,`parent_code`,`pin_yin`,`segment_rule`,`trans`,`trnas_en_us`) 
-values (''JOY_TIME_UNIT_9','1','1',null,null,null,null,null,null,'0',null,null,null,null,'9','周期类型','time_unit',null,null,'wei miao',null,'微秒','microsecond');
+values ('JOY_TIME_UNIT_9','1','1',null,null,null,null,null,null,'0',null,null,null,null,'9','周期类型','time_unit',null,null,'wei miao',null,'微秒','microsecond');
 
 
 /* 初始化系统参数 */

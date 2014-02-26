@@ -1,0 +1,15 @@
+html,body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+.mainFrame {
+    border: 1px solid #e1e1e8;
+    border-radius: 4px;
+    /* 	background-color: #f7f7f9; */
+    padding-left:10px;
+    padding-top:10px;
+    padding-right:10px;
+}

@@ -1,0 +1,17 @@
+1. layer.js
+    注释以下代码，不让layer自动加载其css，因为用curl加载该js时css的路径计算将错误。改用curl显视加载。
+    ////获取当前路径
+    //ready.getPath = function(){
+    //	var js = document.scripts || $('script'), jsPath = js[js.length - 1].src;
+    //	return jsPath.substring(0, jsPath.lastIndexOf("/") + 1);
+    //};
+    //
+    ////载入css
+    ready.load = function(){
+    //	pathType && (pathUrl = this.getPath());
+    //	var head = $('head')[0], link = document.createElement("link");
+    //	link.setAttribute('type', 'text/css');
+    //	link.setAttribute('rel', 'stylesheet');
+    //	link.setAttribute('href', pathUrl +'skin/layer.css');
+    //	head.appendChild(link);
+    };

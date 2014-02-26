@@ -1,5 +1,5 @@
-define(['joy','jqValidate'], function(joy) {
-	
+curl(['jqValidate'], function() {
+
 	$("#loginForm").validate({
 			onfocusout: true,
 			rules : {
@@ -29,11 +29,11 @@ define(['joy','jqValidate'], function(joy) {
 				$.ajax({
 	                cache: true,
 	                type: "POST",
-	                url: "user",
+	                url: "login",
 	                data: $('#loginForm').serialize(),
 	                async: false,
 	                error: function(request) {
-	                    alert("连接不上服务器！");
+	                    alert("连接不上服务器或服务器内部错误！");
 	                },
 	                success: function(data) {
 	                	if(data == null || data == "") {

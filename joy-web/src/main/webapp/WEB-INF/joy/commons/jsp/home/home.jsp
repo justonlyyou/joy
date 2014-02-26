@@ -10,29 +10,6 @@
 <meta name="author" content="Kevice">
 
 <title>${joyFn:getAppProperty('app.name')}</title>
-
-<style type="text/css">
-html,body {
-	height: 100%;
-	width: 100%;
-	padding: 0;
-	margin: 0;
-	border: 0;
-}
-.mainFrame {
-	border: 1px solid #e1e1e8;
-	border-radius: 4px;
-/* 	background-color: #f7f7f9; */
-	padding-left:10px;
-	padding-top:10px;
-	padding-right:10px;
-}
-
-</style>
-
-<script type="text/javascript">
-</script>
-
 </head>
 
 <body>
@@ -58,5 +35,10 @@ html,body {
 				</tr>
 			</table>
 		</div>
+
+
+        <script type="text/javascript">
+            curl(['css!joyCss/commons/home/home']);
+        </script>
 </body>
 </html>

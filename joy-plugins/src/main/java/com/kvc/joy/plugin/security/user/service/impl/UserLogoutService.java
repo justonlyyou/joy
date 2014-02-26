@@ -22,32 +22,32 @@ import java.util.List;
 @Transactional
 public class UserLogoutService implements IUserLogoutService {
 	
-	private IUserLogoutLogService logoutLogService;
-	private IUserLoginLogService loginLogService;
+	private IUserLogoutLogService userLogoutLogService;
+	private IUserLoginLogService userLoginLogService;
 
 	public void logout(String loginLogId, LogoutMethod logoutMethod, String logoutTime) {
-		logoutLogService.logout(loginLogId, logoutMethod, logoutTime);
+		userLogoutLogService.logout(loginLogId, logoutMethod, logoutTime);
 		SecurityUtils.getSubject().logout();
 	}
 	
 	public void mendLogoutLogOnLogin(TUserLoginLog logOnLogin) {
-		TUserLoginLog preLoginSuccessLog = loginLogService.getPreLoginSuccessLog(logOnLogin.getId());
+		TUserLoginLog preLoginSuccessLog = userLoginLogService.getPreLoginSuccessLog(logOnLogin.getId());
 		if (preLoginSuccessLog != null) {
 			String loginLogId = preLoginSuccessLog.getId();
 			List<TUserLogoutLog> logoutLogs = JpaTool.search(TUserLogoutLog.class, TUserLogoutLog_.loginLogId, loginLogId);
 			if (logoutLogs.isEmpty()) {
 				String logoutTime = preLoginSuccessLog.getLoginTime();
-				logoutLogService.logout(loginLogId, LogoutMethod.OTHERS, logoutTime);
+				userLogoutLogService.logout(loginLogId, LogoutMethod.OTHERS, logoutTime);
 			}
 		}
 	}
 
-	public void setLogoutLogService(IUserLogoutLogService logoutLogService) {
-		this.logoutLogService = logoutLogService;
+	public void setUserLogoutLogService(IUserLogoutLogService userLogoutLogService) {
+		this.userLogoutLogService = userLogoutLogService;
 	}
 	
-	public void setLoginLogService(IUserLoginLogService loginLogService) {
-		this.loginLogService = loginLogService;
+	public void setUserLoginLogService(IUserLoginLogService userLoginLogService) {
+		this.userLoginLogService = userLoginLogService;
 	}
 	
 }

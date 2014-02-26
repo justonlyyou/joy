@@ -80,36 +80,7 @@
 	</form:form>
 	
 	<script type="text/javascript">
-		$(function() {
-			$("#newBtn").bind("click", function(e) {
-				e.preventDefault();
-				addRecord();
-			});
-		});
-		
-		function addRecord() {
-			$.layer({
-			    type : 2,
-			    title : '系统数据源新增',
-			    iframe : {src : '${ctx}/sysDataSrc/add'},
-			    area : ['750px' , '500px'],
-			    offset : ['50px','']
-			});
-		}
-	
-		function showDetail(id) {
-			$.layer({
-			    type : 2,
-			    title : '系统数据源详情',
-			    iframe : {src : '${ctx}/sysDataSrc/get?id='+id},
-			    area : ['750px' , '500px'],
-			    offset : ['50px','']
-			});
-		}
-		
-		function editRecord(id) {
-			
-		}
+        curl(['joy/core/sysres/sysDataSrc']);
 	</script>
 
 </body>
