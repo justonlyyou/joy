@@ -37,8 +37,6 @@
         <commons.codec.version>1.7</commons.codec.version>
         <commons.betwixt.version>0.8</commons.betwixt.version>
         <commons.beanutils.version>1.8.3</commons.beanutils.version>
-        <commons.dbcp.version>20030825.184428</commons.dbcp.version>
-        <commons.pool.version>20030825.184428</commons.pool.version>
         <dom4j.version>1.6.1</dom4j.version>
         <javax.validation.version>1.1.0.CR3</javax.validation.version>
         <javax.persistence.version>2.0.0</javax.persistence.version>
@@ -61,6 +59,7 @@
         <taglibs.version>1.1.2</taglibs.version>
         <hibernate.validator.version>5.0.0.CR4</hibernate.validator.version>
         <hibernate.jpamodelgen.version>4.3.1.Final</hibernate.jpamodelgen.version>
+        <druid.version>1.0.2</druid.version>
 
         <plugin.maven.resources.version>2.4</plugin.maven.resources.version>
         <plugin.maven.compiler.version>3.1</plugin.maven.compiler.version>
@@ -89,20 +88,7 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>commons-dbcp</groupId>
-			<artifactId>commons-dbcp</artifactId>
-			<version>${commons.dbcp.version}</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-pool</groupId>
-			<artifactId>commons-pool</artifactId>
-			<version>${commons.pool.version}</version>
-			<scope>test</scope>
+			<!--<scope>test</scope>-->
 		</dependency>
 
 	</dependencies>
@@ -396,6 +382,12 @@
 				<artifactId>flyway-core</artifactId>
 				<version>${flyway.version}</version>
 			</dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
 
             <!-- web -->
             <dependency>

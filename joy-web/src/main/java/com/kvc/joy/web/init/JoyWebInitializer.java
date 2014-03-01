@@ -8,7 +8,7 @@ import com.kvc.joy.core.init.service.impl.JoyInitializer;
 import com.kvc.joy.core.init.service.impl.JoyPluginsInitializer;
 import com.kvc.joy.core.init.support.JoyPropeties;
 import com.kvc.joy.core.sysres.param.service.BaseSystemParameter;
-import com.kvc.joy.plugin.monitor.jdbc.JwebapJdbcPlugin;
+import com.kvc.joy.plugin.monitor.jdbc.jwebap.JwebapJdbcPlugin;
 import org.springframework.web.context.ConfigurableWebApplicationContext;
 import org.springframework.web.context.ContextLoaderListener;
 

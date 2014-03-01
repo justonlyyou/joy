@@ -21,9 +21,11 @@
 	</context:component-scan>
 
 	<!-- 业务库数据源定义 -->
+    <!---->
 	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
 		<property name="jndiName" value="${db.jndi}"/>
 	</bean>
+
 
 	<!-- 定义一个切入点，使事务在它的切入点内有效 
 	<aop:config>

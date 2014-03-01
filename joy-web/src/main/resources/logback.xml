@@ -34,7 +34,7 @@
       </appender>
        -->
     
-	<appender name="SQL_MONITOR_APPENDER" class="com.kvc.joy.plugin.monitor.jdbc.SqlMonitorAppender">
+	<appender name="SQL_MONITOR_APPENDER" class="com.kvc.joy.plugin.monitor.jdbc.jwebap.SqlMonitorAppender">
 	</appender>
     
     <!-- Output to Database -->

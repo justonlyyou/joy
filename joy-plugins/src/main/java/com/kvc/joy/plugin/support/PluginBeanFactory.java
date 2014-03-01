@@ -4,7 +4,7 @@ import com.google.code.kaptcha.Producer;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
 import com.kvc.joy.core.spring.utils.SpringBeanTool;
 import com.kvc.joy.plugin.image.captcha.service.ICaptchaService;
-import com.kvc.joy.plugin.monitor.jdbc.service.ISysSqlLogService;
+import com.kvc.joy.plugin.monitor.jdbc.jwebap.service.ISysSqlLogService;
 import com.kvc.joy.plugin.schedule.quartz.service.IQuartzJobRegistry;
 import com.kvc.joy.plugin.schedule.quartz.service.IQuartzTriggersHolder;
 import com.kvc.joy.plugin.security.user.service.IUserLoginLogService;

@@ -1,17 +1,11 @@
 db.jndi =java:comp/env/JDBC/JOY
 db.autoCommit=false
 
-junit.db.driverClassName=com.mysql.jdbc.Driver
-junit.db.url=jdbc:mysql://localhost:3306/joy
-junit.db.username=root
-junit.db.password=tangwl
-
 jpa.persistenceXml=/conf/jpa/persistence-hibernate.xml
 #supports: Hibernate, OpenJPA, TopLink, EclipseLink
 jpa.vendorAdapterClass=org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter
 jpa.showSql=true
 jpa.generateDdl=true
-
 
 plugin.ehcache.enabled=true
 plugin.seqgen.enabled=true

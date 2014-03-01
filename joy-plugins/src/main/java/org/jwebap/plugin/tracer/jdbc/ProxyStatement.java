@@ -2,7 +2,7 @@ package org.jwebap.plugin.tracer.jdbc;
 
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
-import com.kvc.joy.plugin.monitor.jdbc.model.vo.ParamMsg;
+import com.kvc.joy.plugin.monitor.jdbc.jwebap.model.vo.ParamMsg;
 import org.jwebap.core.Trace;
 
 import java.sql.*;

@@ -12,23 +12,12 @@
 		<context:exclude-filter type="aspectj" expression="com.kvc.joy.**.web" />
 	</context:component-scan>
 
-
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
 				<value>classpath*:/conf/joy.properties</value>
 			</list>
 		</property>
-	</bean>
-
-	<!-- 业务库数据源定义 -->
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
-		lazy-init="default" destroy-method="close">
-		<property name="driverClassName" value="${junit.db.driverClassName}" />
-		<property name="url" value="${junit.db.url}" />
-		<property name="username" value="${junit.db.username}" />
-		<property name="password" value="${junit.db.password}" />
-		<!-- <property name="defaultAutoCommit" value="false" /> -->
 	</bean>
 
 	<!-- 业务库JDBC模版 -->
@@ -79,6 +68,5 @@
 	</bean>
 
 	<import resource="test-jpa.xml" />
-
 
 </beans>

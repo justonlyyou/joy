@@ -22,7 +22,7 @@
       	<class>com.kvc.joy.core.sysres.param.po.TSysParam</class>
       	<class>com.kvc.joy.plugin.mapping.field.po.TSysFieldMapping</class>
       	<class>com.kvc.joy.plugin.mapping.field.po.TSysFieldMappingRule</class>
-      	<class>com.kvc.joy.plugin.monitor.jdbc.model.po.TSysSqlLog</class>
+      	<class>com.kvc.joy.plugin.monitor.jdbc.jwebap.model.po.TSysSqlLog</class>
       	<class>com.kvc.joy.plugin.schedule.quartz.model.po.TQrtzJobPlan</class>
       	<class>com.kvc.joy.plugin.seqgen.po.TSysSeqNum</class>
       	<class>com.kvc.joy.plugin.seqgen.po.TSysSeqNumRule</class>

@@ -178,5 +178,9 @@ public class TUserBasic extends UuidCrudEntity  {
 	public void setOnline(String online) {
 		this.online = online;
 	}
-	
+
+    @Override
+    public String toString() {
+        return account;
+    }
 }

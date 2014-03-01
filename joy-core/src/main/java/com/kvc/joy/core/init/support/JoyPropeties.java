@@ -13,10 +13,6 @@ public class JoyPropeties extends BaseProperties {
 	public static String DB_JNDI;
 	public static boolean DB_AUTOCOMMIT;
 	public static String DB_DATASOURCEID;
-	public static String JUNIT_DB_DRIVERCLASSNAME;
-	public static String JUNIT_DB_URL;
-	public static String JUNIT_DB_USERNAME;
-	public static String JUNIT_DB_PASSWORD;
 	public static String JPA_PERSISTENCEXML;
 	public static String JPA_VENDORADAPTERCLASS;
 	public static boolean JPA_SHOWSQL;
@@ -53,6 +49,7 @@ public class JoyPropeties extends BaseProperties {
 	public static Integer PLUGIN_CAPTCHA_KAPTCHA_TEXTPRODUCER_CHAR_LENGTH;
 	public static String PLUGIN_CAPTCHA_KAPTCHA_TEXTPRODUCER_FONT_NAMES;
 	public static String FLYWAY_SQLMIGRATIONPREFIX;
+    public static boolean PLUGIN_DRUID_ENABLED;
 
 	private JoyPropeties() {
 	}
@@ -69,10 +66,6 @@ public class JoyPropeties extends BaseProperties {
 		DB_JNDI = getStr("db.jndi");
 		DB_AUTOCOMMIT = getBool("db.autoCommit");
 		DB_DATASOURCEID = getStr("db.dataSourceId");
-		JUNIT_DB_DRIVERCLASSNAME = getStr("junit.db.driverClassName");
-		JUNIT_DB_URL = getStr("junit.db.url");
-		JUNIT_DB_USERNAME = getStr("junit.db.username");
-		JUNIT_DB_PASSWORD = getStr("junit.db.password");
 		JPA_PERSISTENCEXML = getStr("jpa.persistenceXml");
 		JPA_VENDORADAPTERCLASS = getStr("jpa.vendorAdapterClass");
 		JPA_SHOWSQL = getBool("jpa.showSql");
@@ -109,6 +102,7 @@ public class JoyPropeties extends BaseProperties {
 		PLUGIN_CAPTCHA_KAPTCHA_TEXTPRODUCER_CHAR_LENGTH = getInt("plugin.captcha.kaptcha.textproducer.char.length");
 		PLUGIN_CAPTCHA_KAPTCHA_TEXTPRODUCER_FONT_NAMES = getStr("plugin.captcha.kaptcha.textproducer.font.names");
 		FLYWAY_SQLMIGRATIONPREFIX = getStr("flyway.sqlMigrationPrefix");
+        PLUGIN_DRUID_ENABLED = getBool("plugin.druid.enabled");
 	}
 
 	@Override

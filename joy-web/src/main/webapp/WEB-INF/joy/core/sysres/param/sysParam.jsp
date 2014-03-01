@@ -74,7 +74,7 @@
 									<td><joy:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false"/></td>
 									<td>${p.paramName}</td>
 									<td>${p.paramValue}</td>
-									<td>${p.desc}</td>
+									<td>${p.remark}</td>
 									<td><joy:codeTrans code="${p.encrypt}" enumClass="bool" /></td>
 								</tr>
 							</c:forEach>
