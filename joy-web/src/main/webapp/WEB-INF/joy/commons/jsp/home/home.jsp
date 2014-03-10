@@ -10,8 +10,8 @@
 <meta name="author" content="Kevice">
 
 <title>${joyFn:getAppProperty('app.name')}</title>
-    <script type="text/javascript" src="${thirdCtx}/comet/core.js"></script>
-    <script type="text/javascript" src="${thirdCtx}/comet/comet.js"></script>
+   <%-- <script type="text/javascript" src="${thirdCtx}/comet/core.js"></script>
+    <script type="text/javascript" src="${thirdCtx}/comet/comet.js"></script>--%>
 </head>
 
 <body>
@@ -38,18 +38,8 @@
 			</table>
 		</div>
 
-
         <script type="text/javascript">
             curl(['css!joyCss/commons/home/home']);
-            var comet = new Auto.Comet({
-                url : "test.comet",
-                accept : function(data) {
-                    console.info(data);
-                }
-            });
-            comet.connection({
-                userId : 'kevice'
-            });
         </script>
 </body>
 </html>

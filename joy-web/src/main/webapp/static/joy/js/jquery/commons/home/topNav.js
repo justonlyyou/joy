@@ -1,4 +1,4 @@
-curl(['jsrender'], function() {
+curl(['jsrender', 'joy/commons/Comet'], function(jsrender, Comet) {
 
     $.ajax({
         cache: true,
@@ -21,6 +21,16 @@ curl(['jsrender'], function() {
                 }
             });
         }
+    });
+
+    var comet = new Comet({
+        url : 'test.comet',
+        accept : function(data) {
+            console.info(data);
+        }
+    });
+    comet.connection({
+        userId : 'kevice'
     });
 
     function openPage(url, itemId, text) {

@@ -144,7 +144,11 @@ public class SocketDispatcherServlet extends AbstractDispatcherServlet {
 	private static void receiveMessage(ConnectionManager socketManager,
 			HttpServletRequest request, HttpServletResponse response) {
 		String connectionId = getConnectionId(request);
-		socketManager.receiveMessage(connectionId, request, response);
+        if (StringTool.isNotBlank(connectionId)) {
+            socketManager.receiveMessage(connectionId, request, response);
+        } else {
+            // 未创建连接
+        }
 	}
 
 	/**
