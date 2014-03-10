@@ -62,9 +62,11 @@ public class JoyPluginsInitializer implements ISystemInitService, BeanPostProces
 				// sql脚本安装
 				Flyway flyway = CoreBeanFactory.getRdbObjectsInitService().createFlyway();
 				String migrationPrefix = component.getSqlMigrationPrefix();
-				flyway.setSqlMigrationPrefix(migrationPrefix);
-				CoreBeanFactory.getRdbObjectsInitService().migrate(flyway);
-				
+                if (StringTool.isNotBlank(migrationPrefix)) {
+                    flyway.setSqlMigrationPrefix(migrationPrefix);
+                    CoreBeanFactory.getRdbObjectsInitService().migrate(flyway);
+                }
+
 				try {
 					component.startup();
 					logger.info("JOY平台插件【{0}】启动成功。", component.getName());
@@ -79,8 +81,10 @@ public class JoyPluginsInitializer implements ISystemInitService, BeanPostProces
 		// 应用sql脚本安装
 		Flyway flyway = CoreBeanFactory.getRdbObjectsInitService().createFlyway();
 		String migrationPrefix = JoyPropeties.FLYWAY_SQLMIGRATIONPREFIX;
-		flyway.setSqlMigrationPrefix(migrationPrefix);
-		CoreBeanFactory.getRdbObjectsInitService().migrate(flyway);
+        if (StringTool.isNotBlank(migrationPrefix)) {
+            flyway.setSqlMigrationPrefix(migrationPrefix);
+            CoreBeanFactory.getRdbObjectsInitService().migrate(flyway);
+        }
 	}
 
 	protected void register(IJoyPlugin component) {

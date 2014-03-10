@@ -34,8 +34,6 @@ public class JoyPropeties extends BaseProperties {
 	public static boolean PLUGIN_SPRING_MVC_ENABLED;
 	public static boolean PLUGIN_WORKFLOW_ENABLED;
 	public static boolean PLUGIN_MAPPING_FIELD_ENABLED;
-	public static boolean PLUGIN_CHART_ENABLED;
-	public static boolean PLUGIN_NOTICE_ENABLED;
 	public static boolean PLUGIN_REPORT_JASPERREPORTS_ENABLED;
 	public static boolean PLUGIN_CAPTCHA_ENABLED;
 	public static int 	PLUGIN_CAPTCHA_TIMEOUT;
@@ -50,6 +48,7 @@ public class JoyPropeties extends BaseProperties {
 	public static String PLUGIN_CAPTCHA_KAPTCHA_TEXTPRODUCER_FONT_NAMES;
 	public static String FLYWAY_SQLMIGRATIONPREFIX;
     public static boolean PLUGIN_DRUID_ENABLED;
+    public static boolean PLUGIN_COMET_ENABLED;
 
 	private JoyPropeties() {
 	}
@@ -87,8 +86,6 @@ public class JoyPropeties extends BaseProperties {
 		PLUGIN_SPRING_MVC_ENABLED = getBool("plugin.spring.mvc.enabled");
 		PLUGIN_WORKFLOW_ENABLED = getBool("plugin.workflow.enabled");
 		PLUGIN_MAPPING_FIELD_ENABLED = getBool("plugin.mapping.field.enabled");
-		PLUGIN_CHART_ENABLED = getBool("plugin.chart.enabled");
-		PLUGIN_NOTICE_ENABLED = getBool("plugin.notice.enabled");
 		PLUGIN_REPORT_JASPERREPORTS_ENABLED = getBool("plugin.report.jasperreports.enabled");
 		PLUGIN_CAPTCHA_ENABLED = getBool("plugin.captcha.enabled");
 		PLUGIN_CAPTCHA_TIMEOUT = getInt("plugin.captcha.timeout");
@@ -103,6 +100,7 @@ public class JoyPropeties extends BaseProperties {
 		PLUGIN_CAPTCHA_KAPTCHA_TEXTPRODUCER_FONT_NAMES = getStr("plugin.captcha.kaptcha.textproducer.font.names");
 		FLYWAY_SQLMIGRATIONPREFIX = getStr("flyway.sqlMigrationPrefix");
         PLUGIN_DRUID_ENABLED = getBool("plugin.druid.enabled");
+        PLUGIN_COMET_ENABLED = getBool("plugin.comet.enabled");
 	}
 
 	@Override

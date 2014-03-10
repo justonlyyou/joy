@@ -12,7 +12,8 @@ mvn install:install-file -Dfile=E:\repository\leak-jar\jar\JoSQL-2.2.jar -Dgroup
 mvn install:install-file -Dfile=E:\repository\leak-jar\jar\gentlyWEB-utils-1.1.jar -DgroupId=com.gentlyweb.utils -DartifactId=gentlyWEB-utils -Dversion=1.1 -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
 
 
-
+mvn install:install-file -Dfile=E:\repository\leak-jar\jar\auto-comet-1.0beta.jar -DgroupId=auto-comet -DartifactId=auto-comet -Dversion=1.0beta -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
+mvn install:install-file -Dfile=E:\repository\leak-jar\jar\auto-comet-spring-1.0beta.jar -DgroupId=auto-comet -DartifactId=auto-comet-spring -Dversion=1.0beta -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
 
 
 
