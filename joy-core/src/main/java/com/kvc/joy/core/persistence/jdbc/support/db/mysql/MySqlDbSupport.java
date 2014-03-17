@@ -13,6 +13,7 @@ import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.sql.Types;
 import java.text.MessageFormat;
 import java.util.HashMap;
@@ -179,4 +180,13 @@ public class MySqlDbSupport extends DbSupport {
 			throw new SystemException(e);
 		}
 	}
+
+    @Override
+    public boolean isTableExists(String name) {
+        String sql = "SHOW TABLES LIKE ?";
+        String result = JdbcTool.queryForString(connection, sql, name);
+        return result != null;
+    }
+
+
 }

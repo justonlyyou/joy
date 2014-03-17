@@ -45,14 +45,14 @@ public class WebConfig {
 //	}
 //
 ////	private void decorateJwebap() {
-////		if (JoyPropeties.jwebapJdbcEnabled) {
+////		if (JoyProperties.jwebapJdbcEnabled) {
 ////			servletContext.setInitParameter("jwebap-config", "WEB-INF/classes/conf/jwebap.xml");
 ////			new JwebapListener().contextInitialized(contextEvent);
 ////		}
 ////	}
 //
 //	private void configSpringMvc() {
-//		if (JoyPropeties.PLUGIN_SPRING_MVC_ENABLED) {
+//		if (JoyProperties.PLUGIN_SPRING_MVC_ENABLED) {
 //			//TODO ???? 启动正常，但访问不了
 //			final String SERVLET_NAME = "springMVC";
 //			Dynamic dynamic = servletContext.addServlet(SERVLET_NAME, org.springframework.web.servlet.DispatcherServlet.class);
@@ -66,7 +66,7 @@ public class WebConfig {
 //	}
 //	
 //	private void configShiro() {
-//		if (JoyPropeties.PLUGIN_ERBAC_ENABLED) {
+//		if (JoyProperties.PLUGIN_ERBAC_ENABLED) {
 //			javax.servlet.FilterRegistration.Dynamic shiroSecurityFilter = servletContext.addFilter("shiroSecurityFilter", 
 //						org.springframework.web.filter.DelegatingFilterProxy.class);
 //			shiroSecurityFilter.setInitParameter("targetFilterLifecycle", "true");

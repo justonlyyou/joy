@@ -11,11 +11,13 @@
 						maxIdle="3" maxWait="-1" maxActive="50" /> -->
 
 					<!-- MySQL -->
-                    <!---->
+                    <!--
 					<Resource driverClassName="com.mysql.jdbc.Driver"
 						maxActive="50" maxIdle="3" maxWait="-1" name="JDBC/JOY" 
 						type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/joy"
 						username="root" password="tangwl"/>
+						-->
+
 
 
                     <!---->
@@ -23,15 +25,17 @@
                               factory="com.alibaba.druid.pool.DruidDataSourceFactory"
                               auth="Container"
                               type="javax.sql.DataSource"
-                              username="root" password="tangwl"
-
+                              url="jdbc:mysql://localhost:3306/joy"
+                              username="root"
+                              password="FNKUf9TW7do7P9HKqMIA3LnKOi6Biu/cZaxhD160LmerwDo1G6Ik/zXASQd7J08x73PhJJHdY92m0gNvb3Jn+A=="
                               maxActive="100"
                               maxIdle="30"
                               maxWait="10000"
                               testOnBorrow="false"
                               initialSize="10"
-                              filters="stat,slf4j"
-                              url="jdbc:mysql://localhost:3306/joy"/>
+                              filters="stat,slf4j,config"
+                              connectionProperties="config.decrypt=true"
+                              />
 
 
 </Context>

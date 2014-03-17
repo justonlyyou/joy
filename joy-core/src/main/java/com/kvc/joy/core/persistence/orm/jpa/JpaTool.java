@@ -6,7 +6,7 @@ import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.query.QueryLogics;
 import com.kvc.joy.commons.query.sort.Order;
 import com.kvc.joy.commons.support.GroupExecutor;
-import com.kvc.joy.core.persistence.entity.UuidEntity;
+import com.kvc.joy.core.persistence.support.entity.UuidEntity;
 import com.kvc.joy.core.rp.pagestore.PageStore;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
 

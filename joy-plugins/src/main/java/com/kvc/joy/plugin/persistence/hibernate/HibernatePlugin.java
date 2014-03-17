@@ -1,7 +1,7 @@
 package com.kvc.joy.plugin.persistence.hibernate;
 
 import com.kvc.joy.core.init.service.IJoyPlugin;
-import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.core.init.support.properties.JoyProperties;
 import org.springframework.stereotype.Component;
 
 /**
@@ -35,7 +35,7 @@ public class HibernatePlugin implements IJoyPlugin {
 
 	@Override
 	public boolean isEnabled() {
-		return JoyPropeties.PLUGIN_PERSISTENCE_HIBERNATE_ENABLED;
+		return JoyProperties.PLUGIN_PERSISTENCE_HIBERNATE_ENABLED;
 	}
 
 	@Override

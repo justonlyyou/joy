@@ -405,13 +405,13 @@ public class Dom4jTool {
 		try {
 			writer.write(elem);
 		} catch (IOException e) {
-			logger.error(e);
+			logger.error("将Element元素转化为xml字符串出错！", e);
 			return null;
 		} finally {
             try {
                 writer.close();
             } catch (IOException e) {
-                logger.error(e);
+                logger.error("关闭XMLWriter出错！", e);
             }
         }
 		return out.toString();
@@ -422,7 +422,7 @@ public class Dom4jTool {
 			try {
 				in.close();
 			} catch (IOException e) {
-				logger.error(e);
+				logger.error("关闭InputStream出错！", e);
 			}
 		}
 	}

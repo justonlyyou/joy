@@ -4,7 +4,7 @@ import com.kvc.joy.commons.bean.IEntity;
 import com.kvc.joy.commons.collections.MapTool;
 import com.kvc.joy.commons.lang.ArrayTool;
 import com.kvc.joy.commons.support.GroupExecutor;
-import com.kvc.joy.core.persistence.entity.UuidEntity;
+import com.kvc.joy.core.persistence.support.entity.UuidEntity;
 import com.kvc.joy.core.spring.utils.SpringBeanTool;
 import org.hibernate.Query;
 import org.hibernate.SQLQuery;

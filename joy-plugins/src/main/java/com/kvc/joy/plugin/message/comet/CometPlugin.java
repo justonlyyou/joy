@@ -1,7 +1,7 @@
 package com.kvc.joy.plugin.message.comet;
 
 import com.kvc.joy.core.init.service.IJoyPlugin;
-import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.core.init.support.properties.JoyProperties;
 import org.springframework.stereotype.Component;
 
 /**
@@ -44,7 +44,7 @@ public class CometPlugin implements IJoyPlugin {
 
     @Override
     public boolean isEnabled() {
-        return JoyPropeties.PLUGIN_COMET_ENABLED;
+        return JoyProperties.PLUGIN_COMET_ENABLED;
     }
 
     @Override

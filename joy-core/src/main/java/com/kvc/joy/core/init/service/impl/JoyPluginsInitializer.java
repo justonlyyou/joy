@@ -8,7 +8,7 @@ import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.init.service.IJoyPlugin;
 import com.kvc.joy.core.init.service.ISystemInitService;
-import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.core.init.support.properties.JoyProperties;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
@@ -80,7 +80,7 @@ public class JoyPluginsInitializer implements ISystemInitService, BeanPostProces
 		
 		// 应用sql脚本安装
 		Flyway flyway = CoreBeanFactory.getRdbObjectsInitService().createFlyway();
-		String migrationPrefix = JoyPropeties.FLYWAY_SQLMIGRATIONPREFIX;
+		String migrationPrefix = JoyProperties.FLYWAY_SQLMIGRATIONPREFIX;
         if (StringTool.isNotBlank(migrationPrefix)) {
             flyway.setSqlMigrationPrefix(migrationPrefix);
             CoreBeanFactory.getRdbObjectsInitService().migrate(flyway);

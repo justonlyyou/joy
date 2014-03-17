@@ -1,6 +1,6 @@
 package com.kvc.joy.plugin.schedule.quartz.model.po;
 
-import com.kvc.joy.core.persistence.entity.UuidCrudEntity;
+import com.kvc.joy.core.persistence.support.entity.UuidCrudEntity;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 
 import javax.persistence.Column;

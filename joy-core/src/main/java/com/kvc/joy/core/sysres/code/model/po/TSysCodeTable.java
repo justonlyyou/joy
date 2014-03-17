@@ -1,6 +1,6 @@
 package com.kvc.joy.core.sysres.code.model.po;
 
-import com.kvc.joy.core.persistence.entity.UuidCrudEntity;
+import com.kvc.joy.core.persistence.support.entity.UuidCrudEntity;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.DefaultValue;
 import com.kvc.joy.core.sysres.datasrc.model.po.TSysDataSrc;

@@ -268,4 +268,15 @@ public abstract class DbSupport {
 		return commentMap;
 	}
 
+    /**
+     * 判断指定表是否存在
+     *
+     * @param name 表名
+     * @return true: 存在，false：不存在
+     * @since 1.0.0
+     * @author 唐玮琳
+     * @time 2014年03月16日 18:38:57
+     */
+    public abstract boolean isTableExists(String name);
+
 }

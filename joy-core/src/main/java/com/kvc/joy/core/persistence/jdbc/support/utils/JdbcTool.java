@@ -4,7 +4,7 @@ import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
-import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.core.init.support.properties.JoyProperties;
 import com.kvc.joy.core.persistence.jdbc.dao.BaseJdbcDao;
 import com.kvc.joy.core.persistence.jdbc.model.vo.IMdRdbDataSrc;
 import com.kvc.joy.core.persistence.jdbc.support.db.DbSupportFactory;
@@ -49,8 +49,8 @@ public class JdbcTool extends BaseJdbcDao {
 	 */
 	public static Connection getConnectionByDsId(String dsId) {
 		IMdRdbDataSrc mdRdbConn = JpaTool.get(TSysDataSrc.class, dsId);
-		if (mdRdbConn == null && JoyPropeties.DB_DATASOURCEID.equals(dsId)) {
-			return getConnectionByJndi(JoyPropeties.DB_JNDI);
+		if (mdRdbConn == null && JoyProperties.DB_DATASOURCEID.equals(dsId)) {
+			return getConnectionByJndi(JoyProperties.DB_JNDI);
 		}
 		return getConnection(mdRdbConn);
 	}
@@ -112,48 +112,54 @@ public class JdbcTool extends BaseJdbcDao {
 	 * @param conn 数据连接
 	 */
 	public static void closeConnection(Connection conn) {
-		try {
-			if (conn != null && conn.isClosed() == false) {
-				conn.close();
-			}
-		} catch (SQLException e) {
-			logger.error(e);
-		}
+        if (conn != null) {
+            try {
+                if (conn.isClosed() == false) {
+                    conn.close();
+                }
+            } catch (SQLException e) {
+                logger.error("关闭数据连接出错！", e);
+            }
+        }
 	}
-	
+
 	/**
+	 * 关闭Statement
 	 * 
-	 * 
-	 * @param statement
+	 * @param statement Statement
 	 * @since 1.0.0
 	 * @author 唐玮琳
 	 * @time 2013年11月23日 下午8:45:59
 	 */
 	public static void closeStatement(Statement statement) {
-        try {
-        	if (statement != null) {
-        		statement.close();
-        	}
-        } catch (SQLException e) {
-            logger.error(e);
+        if (statement != null) {
+            try {
+                if (statement.isClosed() == false) {
+                    statement.close();
+                }
+            } catch (SQLException e) {
+                logger.error("关闭Statement出错！", e);
+            }
         }
     }
 
 	/**
+	 * 关闭ResultSet
 	 * 
-	 * 
-	 * @param resultSet
+	 * @param resultSet ResultSet
 	 * @since 1.0.0
 	 * @author 唐玮琳
 	 * @time 2013年11月23日 下午8:45:16
 	 */
     public static void closeResultSet(ResultSet resultSet) {
-        try {
-        	if (resultSet != null) {
-        		resultSet.close();
-        	}
-        } catch (SQLException e) {
-            logger.error(e);
+        if (resultSet != null) {
+            try {
+                if (resultSet.isClosed() == false) {
+                    resultSet.close();
+                }
+            } catch (SQLException e) {
+                logger.error("关闭ResultSet出错！", e);
+            }
         }
     }
 
@@ -163,6 +169,7 @@ public class JdbcTool extends BaseJdbcDao {
 	 * @param jndi jndi名称
 	 * @return
 	 * @author 唐玮琳
+     * @since 1.0.0
 	 * @time 2013-2-8 下午2:59:18
 	 */
 	public static DataSource getDataSourceByJndi(String jndi) {
@@ -348,6 +355,33 @@ public class JdbcTool extends BaseJdbcDao {
         	throw new SystemException(e);
         } finally {
         	JdbcTool.closeStatement(statement);
+        }
+    }
+
+    /**
+     * 批量执行
+     *
+     * @param conn 连接
+     * @param sqls sql语句集合
+     * @author 唐玮琳
+     * @since 1.0.0
+     * @time 2013-2-8 下午2:59:18
+     */
+    public static void executeBatch(Connection conn, Collection<String> sqls) {
+        Statement statement = null;
+        try {
+            statement = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            conn.setAutoCommit(false);
+            for(String sql : sqls) {
+                if (StringTool.isNotBlank(sql)) {
+                    statement.execute(sql.trim());
+                }
+            }
+            conn.commit();
+        } catch (Exception e) {
+            throw new SystemException(e);
+        } finally {
+            JdbcTool.closeStatement(statement);
         }
     }
 

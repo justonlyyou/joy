@@ -8,10 +8,11 @@
            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
-	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<bean class="com.kvc.joy.core.init.support.properties.JoyPropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
-				<value>classpath*:/conf/joy.properties</value>
+				<value>classpath*:/conf/db.properties</value>
+                <value>classpath*:/conf/app.properties</value>
 			</list>
 		</property>
 	</bean>
@@ -21,10 +22,10 @@
 	</context:component-scan>
 
 	<!-- 业务库数据源定义 -->
-    <!---->
 	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
 		<property name="jndiName" value="${db.jndi}"/>
 	</bean>
+
 
 	<!-- 定义一个切入点，使事务在它的切入点内有效
 	<aop:config>

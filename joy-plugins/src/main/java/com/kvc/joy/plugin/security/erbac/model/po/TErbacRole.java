@@ -1,7 +1,7 @@
 package com.kvc.joy.plugin.security.erbac.model.po;
 
 import com.kvc.joy.commons.support.IListToTreeRestrict;
-import com.kvc.joy.core.persistence.entity.UuidCrudEntity;
+import com.kvc.joy.core.persistence.support.entity.UuidCrudEntity;
 import com.kvc.joy.core.persistence.orm.jpa.annotations.Comment;
 import com.kvc.joy.plugin.security.user.model.po.TUserBasic;
 

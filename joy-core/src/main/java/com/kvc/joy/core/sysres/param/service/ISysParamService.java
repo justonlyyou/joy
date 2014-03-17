@@ -19,6 +19,15 @@ public interface ISysParamService {
 	 * @time 2013-2-7 下午10:43:48
 	 */
 	Map<String, TSysParam> get();
+
+    /**
+     * 获取所有property参数
+     *
+     * @return
+     * @author 唐玮琳
+     * @time 2014-3-16 15:43:48
+     */
+    Map<String, TSysParam> getProperties();
 	
 	/**
 	 * 根据参数名获取参数信息

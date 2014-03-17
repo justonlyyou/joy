@@ -1,7 +1,7 @@
 package com.kvc.joy.plugin.image.captcha;
 
 import com.kvc.joy.core.init.service.IJoyPlugin;
-import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.core.init.support.properties.JoyProperties;
 import org.springframework.stereotype.Component;
 
 /**
@@ -33,7 +33,7 @@ public class CaptchaPlugin implements IJoyPlugin {
 
 	@Override
 	public boolean isEnabled() {
-		return JoyPropeties.PLUGIN_CAPTCHA_ENABLED;
+		return JoyProperties.PLUGIN_CAPTCHA_ENABLED;
 	}
 
 	@Override

@@ -1,7 +1,7 @@
 package com.kvc.joy.plugin.report.jasperreports;
 
 import com.kvc.joy.core.init.service.IJoyPlugin;
-import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.core.init.support.properties.JoyProperties;
 import org.springframework.stereotype.Component;
 
 /**
@@ -34,7 +34,7 @@ public class JasperReportsPlugin implements IJoyPlugin {
 
 	@Override
 	public boolean isEnabled() {
-		return JoyPropeties.PLUGIN_REPORT_JASPERREPORTS_ENABLED;
+		return JoyProperties.PLUGIN_REPORT_JASPERREPORTS_ENABLED;
 	}
 
 	@Override

@@ -1,7 +1,7 @@
 package com.kvc.joy.plugin.security.user;
 
 import com.kvc.joy.core.init.service.IJoyPlugin;
-import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.core.init.support.properties.JoyProperties;
 import com.kvc.joy.plugin.security.user.model.po.TUserLoginLog;
 import org.springframework.stereotype.Component;
 
@@ -34,7 +34,7 @@ public class UserPlugin implements IJoyPlugin {
 
 	@Override
 	public boolean isEnabled() {
-		return JoyPropeties.PLUGIN_USER_ENABLED;
+		return JoyProperties.PLUGIN_USER_ENABLED;
 	}
 
 	@Override

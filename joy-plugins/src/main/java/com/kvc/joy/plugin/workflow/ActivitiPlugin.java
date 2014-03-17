@@ -1,7 +1,7 @@
 package com.kvc.joy.plugin.workflow;
 
 import com.kvc.joy.core.init.service.IJoyPlugin;
-import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.core.init.support.properties.JoyProperties;
 import org.activiti.engine.ProcessEngines;
 import org.springframework.stereotype.Component;
 
@@ -35,7 +35,7 @@ public class ActivitiPlugin implements IJoyPlugin {
 
 	@Override
 	public boolean isEnabled() {
-		return JoyPropeties.PLUGIN_WORKFLOW_ENABLED;
+		return JoyProperties.PLUGIN_WORKFLOW_ENABLED;
 	}
 
 	@Override

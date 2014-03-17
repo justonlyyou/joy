@@ -86,4 +86,9 @@ public class PostgreSQLDbSupport extends DbSupport {
 	public int getNullType() {
 		return Types.NULL;
 	}
+
+    @Override
+    public boolean isTableExists(String name) {
+        return false;//TODO
+    }
 }

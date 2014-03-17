@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<auto-comet xmlns="http://www.auto.org/schema/comet"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:spring="http://www.auto.org/schema/comet/spring"
+            xsi:schemaLocation="http://www.auto.org/schema/comet http://www.auto.org/schema/comet/auto-comet-1.0.xsd
+        http://www.auto.org/schema/comet/spring http://www.auto.org/schema/comet/auto-comet-spring-1.0.xsd">
+    <!--连接超时配置，单位为分钟。 -->
+    <timeout value="120"/>
+
+    <!--配置一个comet服务，你也可以将它理解为一个通道。 -->
+    <!--request:请求uri -->
+    <!--handler:socket处理器，socket处理器必须实现org.auto.comet.SocketHandler接口 -->
+    <comet request="/test.comet"
+           handler="com.kvc.joy.web.spmvc.modules.plugins.message.comet.TestSocketHandler"/>
+
+</auto-comet>

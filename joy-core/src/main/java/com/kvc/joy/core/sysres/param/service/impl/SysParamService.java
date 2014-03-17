@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * 
@@ -26,7 +27,21 @@ public class SysParamService implements ISysParamService {
 		 return map;
 	}
 
-	public TSysParam get(String paramName) {
+    @Override
+    public Map<String, TSysParam> getProperties() {
+        Map<String, TSysParam> paramMap = get();
+        Map<String, TSysParam> propertyMap = new HashMap<String, TSysParam>();
+        Set<Map.Entry<String,TSysParam>> entries = paramMap.entrySet();
+        for (Map.Entry<String,TSysParam> entry : entries) {
+            TSysParam param = entry.getValue();
+            if ("1".equals(param.getEncrypt())) {
+                propertyMap.put(entry.getKey(), param);
+            }
+        }
+        return propertyMap;
+    }
+
+    public TSysParam get(String paramName) {
 		Map<String, Object> map = new HashMap<String, Object>(2);
 		map.put(TSysParam_.paramName.getName(), paramName);
 		map.put(TSysParam_.deleted.getName(), false);

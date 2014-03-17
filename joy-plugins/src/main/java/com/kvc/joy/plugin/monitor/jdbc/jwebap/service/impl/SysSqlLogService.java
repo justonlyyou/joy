@@ -5,8 +5,8 @@ import com.kvc.joy.commons.lang.DateTool;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
-import com.kvc.joy.core.init.support.AppPropeties;
-import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.core.init.support.properties.AppProperties;
+import com.kvc.joy.core.init.support.properties.JoyProperties;
 import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.plugin.monitor.jdbc.jwebap.model.po.TSysSqlLog;
@@ -42,7 +42,7 @@ public class SysSqlLogService implements ISysSqlLogService {
 	@Override
 	public void saveLog(ParamMsg param) {
 		long costTime = param.getCostTime();
-		Integer filterTime = JoyPropeties.PLUGIN_JWEBAP_JDBC_FILTERTIME;
+		Integer filterTime = JoyProperties.PLUGIN_JWEBAP_JDBC_FILTERTIME;
 		String sql = param.getSql().toLowerCase();
 		if (costTime >= filterTime && (sql.startsWith("select") || sql.startsWith("update") 
 				|| sql.startsWith("insert") || sql.startsWith("delete"))) {
@@ -82,7 +82,7 @@ public class SysSqlLogService implements ISysSqlLogService {
 			return null;
 		}
 
-		sqlLog.setAppName(AppPropeties.NAME_ABBR);
+		sqlLog.setAppName(AppProperties.NAME_ABBR);
 		sqlLog.setSqlText(sql);
 		if (StringTool.isNotBlank(fullSql)) {
 			sqlLog.setFullSql(fullSql);
@@ -114,8 +114,8 @@ public class SysSqlLogService implements ISysSqlLogService {
 	}
 	
 	private void setLogLocation(TSysSqlLog sqlLog) {
-		if (JoyPropeties.PLUGIN_JWEBAP_JDBC_LOGPOSITION) {
-			String classPrefix = AppPropeties.CLASS_PREFIX;
+		if (JoyProperties.PLUGIN_JWEBAP_JDBC_LOGPOSITION) {
+			String classPrefix = AppProperties.CLASS_PREFIX;
 			Class<?>[] persistToolClasses = {JpaTool.class, HibernateTool.class, JdbcTool.class};
 			StackTraceElement elem = ExceptionTool.findFirstStackTraceElem(classPrefix, logger.getClass(), persistToolClasses);
 			if (elem != null) {

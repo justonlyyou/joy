@@ -3,7 +3,7 @@ package com.kvc.joy.core.persistence.jdbc.service.impl;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
-import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.core.init.support.properties.JoyProperties;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbColumnComment;
 import com.kvc.joy.core.persistence.jdbc.model.vo.MdRdbTable;
@@ -43,9 +43,9 @@ public class MdRdbAlterReverseSyncService implements IMdRdbAlterReverseSyncServi
 
 	protected List<String> genTableCommentSql(List<MdRdbTable> tables) {
 		List<String> sqlList = new ArrayList<String>();
-		Connection conn = JdbcTool.getConnectionByDsId(JoyPropeties.DB_DATASOURCEID);
+		Connection conn = JdbcTool.getConnectionByDsId(JoyProperties.DB_DATASOURCEID);
 		try {
-			RdbConnection rdbConnection = new RdbConnection(JoyPropeties.DB_DATASOURCEID, conn);
+			RdbConnection rdbConnection = new RdbConnection(JoyProperties.DB_DATASOURCEID, conn);
 			Map<String, MdRdbTable> tableMap = MdRdbTool.getTables(rdbConnection);
 			for (MdRdbTable table : tables) {
 				String tableComment = table.getComment();
@@ -68,9 +68,9 @@ public class MdRdbAlterReverseSyncService implements IMdRdbAlterReverseSyncServi
 	
 	protected List<String> genColumnCommentSql(List<MdRdbTable> tables) {
 		List<String> sqlList = new ArrayList<String>();
-		Connection conn = JdbcTool.getConnectionByDsId(JoyPropeties.DB_DATASOURCEID);
+		Connection conn = JdbcTool.getConnectionByDsId(JoyProperties.DB_DATASOURCEID);
 		try {
-			RdbConnection rdbConnection = new RdbConnection(JoyPropeties.DB_DATASOURCEID, conn);
+			RdbConnection rdbConnection = new RdbConnection(JoyProperties.DB_DATASOURCEID, conn);
 			DbSupport dbSupport = DbSupportFactory.createDbSupport(conn);
 			for (MdRdbTable table : tables) {
 				Map<String, MdRdbColumn> columnMap = MdRdbTool.getColumns(rdbConnection, table.getName());

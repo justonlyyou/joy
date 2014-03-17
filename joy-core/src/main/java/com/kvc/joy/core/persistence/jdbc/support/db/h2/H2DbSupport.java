@@ -91,4 +91,9 @@ public class H2DbSupport extends DbSupport {
 	public int getNullType() {
 		return Types.VARCHAR;
 	}
+
+    @Override
+    public boolean isTableExists(String name) {
+        return false;//TODO
+    }
 }

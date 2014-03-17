@@ -3,7 +3,7 @@ package com.kvc.joy.plugin.security.user.service.impl;
 import com.kvc.joy.commons.bean.BeanTool;
 import com.kvc.joy.commons.lang.DateTool;
 import com.kvc.joy.commons.lang.string.StringTool;
-import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.core.init.support.properties.JoyProperties;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.plugin.security.user.dao.UserLoginLogDao;
 import com.kvc.joy.plugin.security.user.model.po.TUserBasic;
@@ -51,11 +51,11 @@ public class UserLoginLogService implements IUserLoginLogService {
 	 */
 	@Override
 	public boolean shouldCaptchaRequire(String account) {
-		int hour = JoyPropeties.PLUGIN_USER_PASSWORD_ERROR_PERIOD_HOUR;
+		int hour = JoyProperties.PLUGIN_USER_PASSWORD_ERROR_PERIOD_HOUR;
 		Date now = new Date();
 		String fromTime = DateTool.formatDate(DateTool.addHours(now, -hour), DateTool.UNFMT_yyyyMMddHHmmss);
 		String toTime = DateTool.formatDate(now, DateTool.UNFMT_yyyyMMddHHmmss);
-		int maxErrorCount = JoyPropeties.PLUGIN_USER_PASSWORD_ERROR_ALLOW_COUNT - 1;
+		int maxErrorCount = JoyProperties.PLUGIN_USER_PASSWORD_ERROR_ALLOW_COUNT - 1;
 		return userLoginLogDao.isPasswordErrorFrequently(account, fromTime, toTime, maxErrorCount);
 	}
 

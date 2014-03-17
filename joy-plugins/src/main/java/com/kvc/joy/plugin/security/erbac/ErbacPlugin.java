@@ -1,7 +1,7 @@
 package com.kvc.joy.plugin.security.erbac;
 
 import com.kvc.joy.core.init.service.IJoyPlugin;
-import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.core.init.support.properties.JoyProperties;
 import com.kvc.joy.plugin.security.user.model.po.TUserBasic;
 import org.springframework.stereotype.Component;
 
@@ -20,7 +20,7 @@ public class ErbacPlugin implements IJoyPlugin {
 	public void startup() {
 		// EhCacheManager shiroCacheManager =
 		// PluginBeanFactory.getShiroCacheManager();
-		// if (JoyPropeties.ehchcheEnabled) {
+		// if (JoyProperties.ehchcheEnabled) {
 		// EhCacheManagerFactoryBean ehCacheManagerFactory =
 		// PluginBeanFactory.getEhCacheManagerFactory();
 		// shiroCacheManager.setCacheManager(ehCacheManagerFactory.getObject());
@@ -33,7 +33,7 @@ public class ErbacPlugin implements IJoyPlugin {
 	}
 
 	public boolean isEnabled() {
-		return JoyPropeties.PLUGIN_ERBAC_ENABLED;
+		return JoyProperties.PLUGIN_ERBAC_ENABLED;
 	}
 
 	public int getInitPriority() {

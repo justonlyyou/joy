@@ -2,7 +2,7 @@ package com.kvc.joy.plugin.schedule.quartz;
 
 import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.core.init.service.IJoyPlugin;
-import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.core.init.support.properties.JoyProperties;
 import com.kvc.joy.plugin.schedule.quartz.model.po.TQrtzJobPlan;
 import com.kvc.joy.plugin.schedule.quartz.support.utils.QuartzTool;
 import com.kvc.joy.plugin.support.PluginBeanFactory;
@@ -51,7 +51,7 @@ public class QuartzPlugin implements IJoyPlugin {
 	}
 
 	public boolean isEnabled() {
-		return JoyPropeties.PLUGIN_QUARTZ_ENABLED;
+		return JoyProperties.PLUGIN_QUARTZ_ENABLED;
 	}
 
 	public int getInitPriority() {

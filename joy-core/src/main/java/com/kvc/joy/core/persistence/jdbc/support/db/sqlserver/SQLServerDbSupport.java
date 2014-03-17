@@ -15,7 +15,7 @@ import java.sql.Types;
  * SQLServer-specific support.
  */
 public class SQLServerDbSupport extends DbSupport {
-	
+
     private static final Log LOG = LogFactory.getLog(SQLServerDbSupport.class);
 
     /**
@@ -92,4 +92,9 @@ public class SQLServerDbSupport extends DbSupport {
 	public int getNullType() {
 		return Types.VARCHAR;
 	}
+
+    @Override
+    public boolean isTableExists(String name) {
+        return false;//TODO
+    }
 }

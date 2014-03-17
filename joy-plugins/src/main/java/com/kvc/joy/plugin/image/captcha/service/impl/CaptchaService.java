@@ -3,7 +3,7 @@ package com.kvc.joy.plugin.image.captcha.service.impl;
 import com.google.code.kaptcha.Producer;
 import com.kvc.joy.commons.bean.Pair;
 import com.kvc.joy.commons.lang.DateTool;
-import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.core.init.support.properties.JoyProperties;
 import com.kvc.joy.plugin.image.captcha.service.ICaptchaService;
 import org.apache.commons.lang3.StringUtils;
 
@@ -42,7 +42,7 @@ public class CaptchaService implements ICaptchaService {
 		if (StringUtils.isNotBlank(genDate)) {
 			Date date = DateTool.parseDate(genDate, DateTool.UNFMT_yyyyMMddHHmmss);
 			long timesToNow = Math.abs(DateTool.timesToNow(date));
-			return timesToNow < JoyPropeties.PLUGIN_CAPTCHA_TIMEOUT * 1000;
+			return timesToNow < JoyProperties.PLUGIN_CAPTCHA_TIMEOUT * 1000;
 		}
 		return false;
 	}

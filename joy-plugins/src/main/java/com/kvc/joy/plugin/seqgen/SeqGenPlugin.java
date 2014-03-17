@@ -1,7 +1,7 @@
 package com.kvc.joy.plugin.seqgen;
 
 import com.kvc.joy.core.init.service.IJoyPlugin;
-import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.core.init.support.properties.JoyProperties;
 import com.kvc.joy.plugin.seqgen.model.po.TSysSeqNumRule;
 import org.springframework.stereotype.Component;
 
@@ -26,7 +26,7 @@ public class SeqGenPlugin implements IJoyPlugin {
 	}
 
 	public boolean isEnabled() {
-		return JoyPropeties.PLUGIN_SEQGEN_ENABLED;
+		return JoyProperties.PLUGIN_SEQGEN_ENABLED;
 	}
 
 	public int getInitPriority() {

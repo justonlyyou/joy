@@ -6,10 +6,14 @@ import com.kvc.joy.commons.enums.YesNot;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.support.ICommand;
+import com.kvc.joy.core.init.dao.impl.JoyPropertiesDao;
 import com.kvc.joy.core.init.service.IJoyInitializer;
 import com.kvc.joy.core.init.service.ISystemInitService;
+import com.kvc.joy.core.init.support.properties.JoyProperties;
 import com.kvc.joy.core.spring.utils.SpringBeanTool;
 import com.kvc.joy.core.sysres.SysResTool;
+
+import java.util.Properties;
 
 /**
  * 
@@ -24,6 +28,11 @@ public class JoyInitializer implements IJoyInitializer {
 	@Override
 	public void beforeContextInit(ICommand command) {
 		logger.info("beforeContextInit...");
+
+        // 初始化表T_JOY_PROPERTIES，并加载该表的properties
+        Properties dbProperties = new JoyPropertiesDao().initTable();
+        JoyProperties.setDbProperties(dbProperties);
+
 		if (command != null) {
 			command.execute();
 		}

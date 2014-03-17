@@ -14,7 +14,7 @@
   <function>
     <description>获取平台属性文件(joy.properties)参数值</description>
     <name>getJoyProperty</name>
-    <function-class>com.kvc.joy.core.init.support.JoyPropeties</function-class>
+    <function-class>com.kvc.joy.core.init.support.properties.JoyProperties</function-class>
     <function-signature>java.lang.String property(java.lang.String)</function-signature>
     <example>${joyFn:getJoyProperty(property)}</example>
   </function>
@@ -22,7 +22,7 @@
   <function>
     <description>获取应用属性文件(app.properties)参数值</description>
     <name>getAppProperty</name>
-    <function-class>com.kvc.joy.core.init.support.AppPropeties</function-class>
+    <function-class>com.kvc.joy.core.init.support.properties.AppProperties</function-class>
     <function-signature>java.lang.String property(java.lang.String)</function-signature>
     <example>${joyFn:getAppProperty(property)}</example>
   </function>

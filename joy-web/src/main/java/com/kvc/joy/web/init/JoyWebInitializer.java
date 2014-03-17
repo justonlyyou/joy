@@ -6,7 +6,7 @@ import com.kvc.joy.commons.support.ICommand;
 import com.kvc.joy.core.init.service.IJoyInitializer;
 import com.kvc.joy.core.init.service.impl.JoyInitializer;
 import com.kvc.joy.core.init.service.impl.JoyPluginsInitializer;
-import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.core.init.support.properties.JoyProperties;
 import com.kvc.joy.core.sysres.param.service.BaseSystemParameter;
 import com.kvc.joy.plugin.monitor.jdbc.jwebap.JwebapJdbcPlugin;
 import org.springframework.web.context.ConfigurableWebApplicationContext;
@@ -95,7 +95,7 @@ public class JoyWebInitializer extends ContextLoaderListener {
 	}
 
 	protected static void initJwebap() {
-		if (JoyPropeties.PLUGIN_JWEBAP_JDBC_ENABLED) {
+		if (JoyProperties.PLUGIN_JWEBAP_JDBC_ENABLED) {
 			JwebapJdbcPlugin.preInit();
 		}
 	}

@@ -3,7 +3,7 @@ package com.kvc.joy.core.persistence.jdbc.support.utils;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
-import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.core.init.support.properties.JoyProperties;
 import com.kvc.joy.core.persistence.jdbc.model.vo.*;
 import com.kvc.joy.core.persistence.jdbc.support.enums.RdbObjectType;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
@@ -40,7 +40,7 @@ public class MdRdbTool {
 	 */
 	public static DbMetaData getDbMetaData(String dsId) {
 		if (StringTool.isBlank(dsId)) {
-			dsId = JoyPropeties.DB_DATASOURCEID;
+			dsId = JoyProperties.DB_DATASOURCEID;
 		}
 		Connection conn = JdbcTool.getConnectionByDsId(dsId);
 		DbMetaData dbMetaData = null;
@@ -111,7 +111,7 @@ public class MdRdbTool {
 			return null;
 		}
 		if (StringTool.isBlank(dsId)) {
-			dsId = JoyPropeties.DB_DATASOURCEID;
+			dsId = JoyProperties.DB_DATASOURCEID;
 		}
 		RdbConnection connection = new RdbConnection(dsId);
 		try {
@@ -150,7 +150,7 @@ public class MdRdbTool {
 			return null;
 		}
 		if (StringTool.isBlank(dsId)) {
-			dsId = JoyPropeties.DB_DATASOURCEID;
+			dsId = JoyProperties.DB_DATASOURCEID;
 		}
 		Map<String, MdRdbColumn> columns = getColumns(dsId, tableName);
 		return columns.get(columnName.toLowerCase());
@@ -186,7 +186,7 @@ public class MdRdbTool {
 			return null;
 		}
 		if (StringTool.isBlank(dsId)) {
-			dsId = JoyPropeties.DB_DATASOURCEID;
+			dsId = JoyProperties.DB_DATASOURCEID;
 		}
 		RdbConnection connection = new RdbConnection(dsId);
 		try {
@@ -225,7 +225,7 @@ public class MdRdbTool {
 			return null;
 		}
 		if (StringTool.isBlank(dsId)) {
-			dsId = JoyPropeties.DB_DATASOURCEID;
+			dsId = JoyProperties.DB_DATASOURCEID;
 		}
 		RdbConnection connection = new RdbConnection(dsId);
 		try {
@@ -262,7 +262,7 @@ public class MdRdbTool {
 	 */
 	public static Map<String, MdRdbTable> getRelationalObjects(String dsId, RdbObjectType... objTypes) {
 		if (StringTool.isBlank(dsId)) {
-			dsId = JoyPropeties.DB_DATASOURCEID;
+			dsId = JoyProperties.DB_DATASOURCEID;
 		}
 		RdbConnection connection = new RdbConnection(dsId);
 		try {

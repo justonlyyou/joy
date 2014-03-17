@@ -2,7 +2,7 @@ package com.kvc.joy.plugin.monitor.jdbc.druid;
 
 import com.alibaba.druid.filter.config.ConfigTools;
 import com.kvc.joy.core.init.service.IJoyPlugin;
-import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.core.init.support.properties.JoyProperties;
 import org.springframework.stereotype.Component;
 
 /**
@@ -45,7 +45,7 @@ public class DruidPlugin implements IJoyPlugin {
 
     @Override
     public boolean isEnabled() {
-        return JoyPropeties.PLUGIN_DRUID_ENABLED;
+        return JoyProperties.PLUGIN_DRUID_ENABLED;
     }
 
     @Override

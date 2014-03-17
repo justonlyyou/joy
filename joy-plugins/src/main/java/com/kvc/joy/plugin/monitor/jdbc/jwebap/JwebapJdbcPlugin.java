@@ -1,7 +1,7 @@
 package com.kvc.joy.plugin.monitor.jdbc.jwebap;
 
 import com.kvc.joy.core.init.service.IJoyPlugin;
-import com.kvc.joy.core.init.support.JoyPropeties;
+import com.kvc.joy.core.init.support.properties.JoyProperties;
 import com.kvc.joy.plugin.monitor.jdbc.jwebap.model.po.TSysSqlLog;
 import org.jwebap.startup.Startup;
 import org.springframework.stereotype.Component;
@@ -34,7 +34,7 @@ public class JwebapJdbcPlugin implements IJoyPlugin {
 	}
 
 	public boolean isEnabled() {
-		return JoyPropeties.PLUGIN_JWEBAP_JDBC_ENABLED;
+		return JoyProperties.PLUGIN_JWEBAP_JDBC_ENABLED;
 	}
 
 	public int getInitPriority() {
