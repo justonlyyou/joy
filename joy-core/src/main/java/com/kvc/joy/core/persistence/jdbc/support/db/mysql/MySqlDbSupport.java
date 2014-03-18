@@ -181,12 +181,4 @@ public class MySqlDbSupport extends DbSupport {
 		}
 	}
 
-    @Override
-    public boolean isTableExists(String name) {
-        String sql = "SHOW TABLES LIKE ?";
-        String result = JdbcTool.queryForString(connection, sql, name);
-        return result != null;
-    }
-
-
 }

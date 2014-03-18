@@ -17,6 +17,8 @@ public class JoyProperties extends BaseProperties {
 	public static String DB_JNDI;
 	public static boolean DB_AUTOCOMMIT;
 	public static String DB_DATASOURCEID;
+    public static String DB_TYPE;
+
 	public static String JPA_PERSISTENCEXML;
 	public static String JPA_VENDORADAPTERCLASS;
 	public static boolean JPA_SHOWSQL;
@@ -69,6 +71,7 @@ public class JoyProperties extends BaseProperties {
 		DB_JNDI = getStr("db.jndi");
 		DB_AUTOCOMMIT = getBool("db.autoCommit");
 		DB_DATASOURCEID = getStr("db.dataSourceId");
+        DB_TYPE = getStr("db.type");
 	}
 
     protected void initDbProperties() {

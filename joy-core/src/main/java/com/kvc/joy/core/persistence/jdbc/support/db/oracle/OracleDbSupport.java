@@ -104,8 +104,4 @@ public class OracleDbSupport extends DbSupport {
 		return MessageFormat.format(ALTER_COLUMN_DEFAULT_VALUE_SQL, table.getName(), columnName, defaultValue);
 	}
 
-    @Override
-    public boolean isTableExists(String name) {
-        return false;//TODO
-    }
 }

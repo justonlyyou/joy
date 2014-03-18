@@ -62,7 +62,7 @@ public enum RdbType implements ICodeEnum {
 		if (StringTool.isNotBlank(name)) {
 			RdbType[] values = RdbType.values();
 			for (RdbType rdbType : values) {
-				if (rdbType.getName().equals(name)) {
+				if (rdbType.getName().equalsIgnoreCase(name)) {
 					return rdbType;
 				}
 			}

@@ -10,6 +10,7 @@ import com.kvc.joy.core.init.dao.IJoyPropertiesDao;
 import com.kvc.joy.core.init.support.properties.JoyProperties;
 import com.kvc.joy.core.persistence.jdbc.support.db.DbSupport;
 import com.kvc.joy.core.persistence.jdbc.support.db.DbSupportFactory;
+import com.kvc.joy.core.persistence.jdbc.support.db.Table;
 import com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool;
 
 import java.sql.Connection;
@@ -32,7 +33,8 @@ public class JoyPropertiesDao implements IJoyPropertiesDao {
      */
     protected boolean isTableExists(Connection connection) {
         DbSupport dbSupport = DbSupportFactory.createDbSupport(connection);
-        boolean exists = dbSupport.isTableExists(TABLE_NAME);
+        Table table = dbSupport.getCurrentSchema().getTable(TABLE_NAME);
+        boolean exists = table.exists();
         log.debug("表" + TABLE_NAME + "是否存在：" + exists);
         return exists;
     }

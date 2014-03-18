@@ -75,8 +75,4 @@ public class DB2DbSupport extends DbSupport {
 		return Types.VARCHAR;
 	}
 
-    @Override
-    public boolean isTableExists(String name) {
-        return false;//TODO
-    }
 }

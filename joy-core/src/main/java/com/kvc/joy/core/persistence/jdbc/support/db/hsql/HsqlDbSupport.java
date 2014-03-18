@@ -94,8 +94,4 @@ public class HsqlDbSupport extends DbSupport {
 		return Types.VARCHAR;
 	}
 
-    @Override
-    public boolean isTableExists(String name) {
-        return false;//TODO
-    }
 }

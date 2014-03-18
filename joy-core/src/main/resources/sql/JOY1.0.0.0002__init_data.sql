@@ -3,7 +3,7 @@ insert into t_joy_properties values ('jpa.persistenceXml','classpath*:/META-INF/
 insert into t_joy_properties values ('jpa.vendorAdapterClass','org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter','org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter','jpa实现的提供商适配器全类名，目前支持：Hibernate, OpenJPA, TopLink, EclipseLink');
 insert into t_joy_properties values ('jpa.showSql','true','true','jpa是否打印执行的sql，打开有助于排查问题，仅消耗一丁点性能');
 insert into t_joy_properties values ('jpa.generateDdl','true','true','jpa根据实体反向生成数据库表结构开关，不建议关闭，它只占用服务器启动时间，不占用系统正常运行资源');
-insert into t_joy_properties values ('flyway.locations','sql,','sql/mysql,','各版本数据库脚本存放的总目录，其下会有如mysql、oracle等目录，这些目录下放的是sql脚本的文件,多个以半角逗号分隔，至少要包括"sql"(它是joy脚本总目录)');
+insert into t_joy_properties values ('flyway.locations','sql,','sql,','各版本数据库脚本存放的总目录，其下会有如mysql、oracle等目录，这些目录下放的是sql脚本的文件,多个以半角逗号分隔，至少要包括"sql"(它是joy内置脚本总目录)');
 insert into t_joy_properties values ('flyway.sqlMigrationPrefix','V','V','应用系统(不是joy)数据库脚本文件名的前缀');
 insert into t_joy_properties values ('plugin.persistence.hibernate.enabled','true','true','是否启用hibernate插件');
 insert into t_joy_properties values ('plugin.seqgen.enabled','true','true','是否启用seqgen(序列号生成器)插件');
