@@ -51,8 +51,7 @@
 							<tr>
 								<th class="joy-table-seq-col" width="30px">#</th>
 								<th width="70px">操作</th>
-								<th>
-								<joy:orderColumn property="id" columnName="数据源ID" defaultOrder="ASC" /></th>
+								<th><joy:orderColumn property="id" columnName="数据源ID" /></th>
 								<th><joy:orderColumn property="name" columnName="数据源名称" /></th>
 								<th>JNDI</th>
 								<th>URL</th>
@@ -80,7 +79,7 @@
 	</form:form>
 	
 	<script type="text/javascript">
-        curl(['joy/core/sysres/sysDataSrc']);
+        curl(['joy/core/sysres/dataSrc/sysDataSrc']);
 	</script>
 
 </body>

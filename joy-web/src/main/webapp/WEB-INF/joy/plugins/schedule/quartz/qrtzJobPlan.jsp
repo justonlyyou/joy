@@ -10,19 +10,6 @@
 <meta name="author" content="Kevice">
 
 <title>任务调度计划管理页面</title>
-
-<script type="text/javascript">
-	function showDetail(id) {
-		$.layer({
-		    type : 2,
-		    title : '任务调度计划详情',
-		    iframe : {src : '${ctx}/qrtzJobPlan/get?id='+id},
-		    area : ['750px' , '466px'],
-		    offset : ['50px','']
-		});
-	}
-</script>
-
 </head>
 
 <body>
@@ -97,6 +84,10 @@
 			</div>
 		</div>
 	</form:form>
+
+    <script type="text/javascript">
+        curl(['joy/plugins/schedule/qrtzJobPlan']);
+    </script>
 
 </body>
 </html>

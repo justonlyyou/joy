@@ -11,16 +11,15 @@
 						maxIdle="3" maxWait="-1" maxActive="50" /> -->
 
 					<!-- MySQL -->
-                    <!--
+                    <!---->
 					<Resource driverClassName="com.mysql.jdbc.Driver"
 						maxActive="50" maxIdle="3" maxWait="-1" name="JDBC/JOY" 
 						type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/joy"
 						username="root" password="tangwl"/>
-						-->
 
 
 
-                    <!---->
+                    <!--
                     <Resource name="JDBC/JOY"
                               factory="com.alibaba.druid.pool.DruidDataSourceFactory"
                               auth="Container"
@@ -36,6 +35,6 @@
                               filters="stat,slf4j,config"
                               connectionProperties="config.decrypt=true"
                               />
-
+                    -->
 
 </Context>

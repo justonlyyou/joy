@@ -10,19 +10,6 @@
 <meta name="author" content="Kevice">
 
 <title>关系数据库对象管理页面</title>
-
-<script type="text/javascript">
-	function showDetail(id) {
-		$.layer({
-		    type : 2,
-		    title : '关系数据库对象详情',
-		    iframe : {src : '${ctx}/mdRdbObj/get?id='+id},
-		    area : ['850px' , '500px'],
-		    offset : ['50px','']
-		});
-	}
-</script>
-
 </head>
 
 <body>
@@ -92,6 +79,10 @@
 			</div>
 		</div>
 	</form:form>
+
+    <script type="text/javascript">
+        curl(['joy/core/sysres/mdRdbObj/mdRdbObj']);
+    </script>
 
 </body>
 </html>

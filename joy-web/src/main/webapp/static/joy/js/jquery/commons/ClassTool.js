@@ -1,3 +1,6 @@
+/**
+ * 原版实现者为John Resig http://ejohn.org/
+ */
 define(function() {
 	  "use strict";
 	  var fnTest = /xyz/.test(function(){xyz;}) ? /\b_super\b/ : /.*/;

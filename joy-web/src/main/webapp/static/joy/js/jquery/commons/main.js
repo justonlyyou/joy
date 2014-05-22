@@ -1,5 +1,5 @@
 curl = {
-	baseUrl : getWebRootPath()+'/static',
+	baseUrl : joy.getWebRootPath()+'/static',
 	pluginPath: "3rd/curl/curl/plugin",
 	paths : {
 		jquery : '3rd/jquery/jquery/jquery',
@@ -36,7 +36,7 @@ curl = {
 	packages : {
 		'joy' : {
 			location : 'joy/js/jquery',
-			main : 'commons/joy',
+//			main : 'commons/joy',
 			config : {}
 		},
 		'joyCss' : {
@@ -45,5 +45,6 @@ curl = {
 			config : {}
 		}
 	},
-	preloads: ['jquery', 'joy']
+//	preloads: ['jquery', 'joy']
+    preloads: ['jquery']
 };

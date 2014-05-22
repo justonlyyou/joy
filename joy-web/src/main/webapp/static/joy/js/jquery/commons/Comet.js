@@ -1,9 +1,9 @@
 /**
  * 原版的实现者为auto-comet的作者XiaohangHu
  */
-define(['joy' ], function(joy) {
+define(['joy/commons/ClassTool'], function(ClassTool) {
 
-    return joy.createClass({
+    return ClassTool.extend({
 
         /** 请求参数名：同步 */
         SYNCHRONIZE_KEY : "_S_COMET",

@@ -4,11 +4,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>500 Oops!</title>
-	<script type="text/javascript">
-		$(function(){
-			$("#center-div").center(true);
-		})
-	</script>
 	<style type="text/css">
 	body {
 		margin: 0;

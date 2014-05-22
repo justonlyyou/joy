@@ -30,7 +30,7 @@ curl(['jsrender', 'joy/commons/Comet'], function(jsrender, Comet) {
         }
     });
     comet.connection({
-        userId : 'kevice'
+        userId : 'kevice' //TODO
     });
 
     function openPage(url, itemId, text) {
@@ -47,30 +47,6 @@ curl(['jsrender', 'joy/commons/Comet'], function(jsrender, Comet) {
             $("#mainFrame").attr("src", url);
             $("#mainFrame").attr("name", "{menuId:'"+itemId+"',menuText:'"+text+"'}");
         }
-    }
-
-    function exit() {
-        $.layer({
-            shade : [0], //不显示遮罩
-            area : ['250px','auto'],
-            dialog : {
-                msg:'您确定要退出系统？',
-                btns : 2,
-                type : -1,
-                btn : ['确定','取消'],
-                yes : function(){
-                    $.ajax({
-                        url: "${ctx}/logout?_joy_key__logout_method_code=11",
-                        error: function(request) {
-                            alert("发生未预期的错误！");
-                        },
-                        success: function(data) {
-                            window.location.reload();
-                        }
-                    });
-                }
-            }
-        });
     }
 	
 });

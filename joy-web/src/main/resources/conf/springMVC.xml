@@ -180,10 +180,10 @@
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
 	</mvc:interceptors>
 
-	<!-- 文件上传 -->
+	<!-- 文件上传
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" p:defaultEncoding="UTF-8"
 		p:maxUploadSize="5000000" p:uploadTempDir="upload/temp" />
-
+    -->
 
 	<!-- 静态资源映射 -->
 	<!-- 使用默认的Servlet来响应静态文件 -->

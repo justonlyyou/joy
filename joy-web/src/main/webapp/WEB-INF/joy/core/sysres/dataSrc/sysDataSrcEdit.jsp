@@ -16,10 +16,10 @@
 <body>
 	<div class="joy-search-bar">
 		<button id="submitBtn" class="btn btn-default">
-			<i class="fa fa-search"></i>&nbsp;查询
+			<i class="fa fa-save"></i>&nbsp;保存
 		</button>
 		<button id="newBtn" class="btn btn-default">
-			<i class="fa fa-plus"></i>&nbsp;新增
+			<i class="fa fa-times"></i>&nbsp;关闭
 		</button>
 	</div>
 

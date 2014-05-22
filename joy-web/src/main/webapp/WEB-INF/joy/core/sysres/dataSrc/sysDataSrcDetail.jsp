@@ -75,7 +75,7 @@
         	</tr>
         	<tr>
         		<td>描述</td>
-        		<td colspan="3">${model.desc}</td>
+        		<td colspan="3">${model.remark}</td>
         	</tr>
 		</table>
 		

@@ -10,21 +10,6 @@
 <meta name="author" content="Kevice">
 
 <title>SQL脚本安装日志管理页面</title>
-
-<script type="text/javascript">
-	function showDetail(id) {
-		$.layer({
-			type : 2,
-			title : '脚本安装日志详情',
-			iframe : {
-				src : '${ctx}/sqlScriptInstallLog/get?id=' + id
-			},
-			area : [ '750px', '466px' ],
-			offset : [ '50px', '' ]
-		});
-	}
-</script>
-
 </head>
 
 <body>
@@ -102,5 +87,10 @@
 		</div>
 	</form:form>
 
+    <%--//TODO--%>
+    <script src="${thirdCtx}/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript">
+        curl(['joy/core/monitor/log/sqlScriptInstallLog']);
+    </script>
 </body>
 </html>

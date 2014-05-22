@@ -10,19 +10,6 @@
 <meta name="author" content="Kevice">
 
 <title>系统参数管理页面</title>
-
-<script type="text/javascript">
-	function showDetail(id) {
-		$.layer({
-		    type : 2,
-		    title : '系统参数详情',
-		    iframe : {src : '${ctx}/sysParam/get?id='+id},
-		    area : ['750px' , '466px'],
-		    offset : ['50px','']
-		});
-	}
-</script>
-
 </head>
 
 <body>
@@ -88,5 +75,8 @@
 		</div>
 	</form:form>
 
+    <script type="text/javascript">
+        curl(['joy/core/sysres/param/param']);
+    </script>
 </body>
 </html>

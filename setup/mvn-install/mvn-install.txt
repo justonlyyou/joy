@@ -1,20 +1,18 @@
-mvn install:install-file -Dfile=E:\repository\leak-jar\jar\pinyin4j-2.5.0.jar -DgroupId=net.sourceforge.pinyin4j -DartifactId=pinyin4j -Dversion=2.5.0 -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
+mvn install:install-file -Dfile=K:\IdeaProjects\joy\setup\mvn-install\pinyin4j-2.5.0.jar -DgroupId=net.sourceforge.pinyin4j -DartifactId=pinyin4j -Dversion=2.5.0 -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
 
-mvn install:install-file -Dfile=E:\repository\leak-jar\jar\activiti-engine-5.12.jar -DgroupId=org.activiti -DartifactId=activiti-engine -Dversion=5.12 -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
-mvn install:install-file -Dfile=E:\repository\leak-jar\jar\activiti-spring-5.12.jar -DgroupId=org.activiti -DartifactId=activiti-spring -Dversion=5.12 -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
+mvn install:install-file -Dfile=K:\IdeaProjects\joy\setup\mvn-install\activiti-engine-5.12.jar -DgroupId=org.activiti -DartifactId=activiti-engine -Dversion=5.12 -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
+mvn install:install-file -Dfile=K:\IdeaProjects\joy\setup\mvn-install\activiti-spring-5.12.jar -DgroupId=org.activiti -DartifactId=activiti-spring -Dversion=5.12 -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
 
-mvn install:install-file -Dfile=E:\repository\leak-jar\jar\jwebap_0.6.1.jar -DgroupId=org.jwebap -DartifactId=jwebap -Dversion=0.6.1 -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
-mvn install:install-file -Dfile=E:\repository\leak-jar\jar\tracer_0.6.1.jar -DgroupId=org.jwebap -DartifactId=jwebap-tracer -Dversion=0.6.1 -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
+mvn install:install-file -Dfile=K:\IdeaProjects\joy\setup\mvn-install\jwebap_0.6.1.jar -DgroupId=org.jwebap -DartifactId=jwebap -Dversion=0.6.1 -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
+mvn install:install-file -Dfile=K:\IdeaProjects\joy\setup\mvn-install\tracer_0.6.1.jar -DgroupId=org.jwebap -DartifactId=jwebap-tracer -Dversion=0.6.1 -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
 
-mvn install:install-file -Dfile=E:\repository\leak-jar\jar\kaptcha-2.3.2.jar -DgroupId=com.google.code.kaptcha -DartifactId=google-kaptcha -Dversion=2.3.2 -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
+mvn install:install-file -Dfile=K:\IdeaProjects\joy\setup\mvn-install\kaptcha-2.3.2.jar -DgroupId=com.google.code.kaptcha -DartifactId=google-kaptcha -Dversion=2.3.2 -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
 
-mvn install:install-file -Dfile=E:\repository\leak-jar\jar\JoSQL-2.2.jar -DgroupId=org.josql -DartifactId=josql -Dversion=2.2 -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
-mvn install:install-file -Dfile=E:\repository\leak-jar\jar\gentlyWEB-utils-1.1.jar -DgroupId=com.gentlyweb.utils -DartifactId=gentlyWEB-utils -Dversion=1.1 -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
+mvn install:install-file -Dfile=K:\IdeaProjects\joy\setup\mvn-install\JoSQL-2.2.jar -DgroupId=org.josql -DartifactId=josql -Dversion=2.2 -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
+mvn install:install-file -Dfile=K:\IdeaProjects\joy\setup\mvn-install\gentlyWEB-utils-1.1.jar -DgroupId=com.gentlyweb.utils -DartifactId=gentlyWEB-utils -Dversion=1.1 -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
 
 
-mvn install:install-file -Dfile=E:\repository\leak-jar\jar\auto-comet-1.0beta.jar -DgroupId=auto-comet -DartifactId=auto-comet -Dversion=1.0beta -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
-mvn install:install-file -Dfile=E:\repository\leak-jar\jar\auto-comet-spring-1.0beta.jar -DgroupId=auto-comet -DartifactId=auto-comet-spring -Dversion=1.0beta -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
-
+mvn install:install-file -Dfile=K:\IdeaProjects\joy\setup\mvn-install\statistics-1.0.1.jar -DgroupId=org.terracotta.internal -DartifactId=statistics -Dversion=1.1 -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
 
 
 

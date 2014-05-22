@@ -1,16 +1,6 @@
 <%@ include file="/WEB-INF/joy/commons/include/inc-taglib.jsp"%>
 
-<script>
-    function getWebRootPath() {
-        var webroot=document.location.href;
-        webroot=webroot.substring(webroot.indexOf('//')+2,webroot.length);
-        webroot=webroot.substring(webroot.indexOf('/')+1,webroot.length);
-        webroot=webroot.substring(0,webroot.indexOf('/'));
-        var rootpath="/"+webroot;
-        return rootpath;
-    }
-</script>
-
+<script src="${joyCtx}/js/jquery/commons/joy.js"></script>
 <script src="${joyCtx}/js/jquery/commons/main.js"></script>
 <script data-curl-run="" src="${thirdCtx}/curl/curl.js"></script>
 

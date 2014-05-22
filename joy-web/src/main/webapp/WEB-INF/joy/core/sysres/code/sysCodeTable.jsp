@@ -10,19 +10,6 @@
 <meta name="author" content="Kevice">
 
 <title>系统代码管理页面</title>
-
-<script type="text/javascript">
-	function showDetail(id) {
-		$.layer({
-		    type : 2,
-		    title : '系统代码详情',
-		    iframe : {src : '${ctx}/sysCodeTable/get?id='+id},
-		    area : ['750px' , '466px'],
-		    offset : ['50px','']
-		});
-	}
-</script>
-
 </head>
 
 <body>
@@ -91,6 +78,10 @@
 			</div>
 		</div>
 	</form>
+
+    <script type="text/javascript">
+        curl(['joy/core/sysres/code/code']);
+    </script>
 
 </body>
 </html>

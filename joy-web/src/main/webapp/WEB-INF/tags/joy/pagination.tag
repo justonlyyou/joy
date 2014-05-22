@@ -14,9 +14,9 @@
 			<li class="disabled"><a href="#">« 上一页</a></li>
 		</c:if>
 		<c:if test="${pageStore.paging.firstPage == false}">
-			<li><a href="javascript:gotoPage(${pageStore.paging.prePage}, ${pageStore.paging.pageSize});">« 上一页</a></li>
+			<li><a href="javascript:joy.mgmtPage.gotoPage(${pageStore.paging.prePage}, ${pageStore.paging.pageSize});">« 上一页</a></li>
 		</c:if>
-		
+
 		<c:if test="${pageStore.paging.midBeginPage > pageStore.paging.first}">
 			<c:set var="end" value="${pageStore.paging.midBeginPage}"/>
 			<c:if test="${pageStore.paging.first + pageStore.paging.slider < pageStore.paging.midBeginPage}">
@@ -24,14 +24,14 @@
 			</c:if>
 			<c:set var="index" />
 			<c:forEach var="i" begin="${pageStore.paging.first}" end="${end-1}" step="1">
-				<li><a href="javascript:gotoPage(${i}, ${pageStore.paging.pageSize});">${i+1-pageStore.paging.first}</a></li>
+				<li><a href="javascript:joy.mgmtPage.gotoPage(${i}, ${pageStore.paging.pageSize});">${i+1-pageStore.paging.first}</a></li>
 				<c:set var="index" value="${i}"/>
 			</c:forEach>
 			<c:if test="${index < pageStore.paging.midBeginPage}">
 				<li class="disabled"><a href="#">...</a></li>
 			</c:if>
 		</c:if>
-		
+
 		<c:if test="${pageStore.paging.totalCount == null}">
 			<li class="disabled"><a href="#">0</a></li>
 		</c:if>
@@ -40,7 +40,7 @@
 				<li class="active"><a href="#">${i+1-pageStore.paging.first}</a></li>
 			</c:if>
 			<c:if test="${i != pageStore.paging.pageNumber && pageStore.paging.totalCount > 0}">
-				<li><a href="javascript:gotoPage(${i}, ${pageStore.paging.pageSize});">${i+1-pageStore.paging.first}</a></li>
+				<li><a href="javascript:joy.mgmtPage.gotoPage(${i}, ${pageStore.paging.pageSize});">${i+1-pageStore.paging.first}</a></li>
 			</c:if>
 		</c:forEach>
 
@@ -51,14 +51,14 @@
 		</c:if>
 
 		<c:forEach var="i" begin="${endPageIndex+1}" end="${pageStore.paging.last}" step="1">
-			<li><a href="javascript:gotoPage(${i}, ${pageStore.paging.pageSize});">${i+1-pageStore.paging.first}</a></li>
+			<li><a href="javascript:joy.mgmtPage.gotoPage(${i}, ${pageStore.paging.pageSize});">${i+1-pageStore.paging.first}</a></li>
 		</c:forEach>
-		
+
 		<c:if test="${pageStore.paging.pageNumber == pageStore.paging.last}">
 			<li class="disabled"><a href="#">下一页 »</a></li>
 		</c:if>
 		<c:if test="${pageStore.paging.pageNumber != pageStore.paging.last}">
-			<li><a href="javascript:gotoPage(${pageStore.paging.nextPage}, ${pageStore.paging.pageSize});">下一页 »</a></li>
+			<li><a href="javascript:joy.mgmtPage.gotoPage(${pageStore.paging.nextPage}, ${pageStore.paging.pageSize});">下一页 »</a></li>
 		</c:if>
 	</ul>
 	
