@@ -1,6 +1,6 @@
-curl(['joy/commons/BaseMgmtPage'], function(BaseMgmtPage) {
+define(['joy/commons/BaseMgmtPage'], function(BaseMgmtPage) {
 
-    var mgmtPage = BaseMgmtPage.extend({
+    return BaseMgmtPage.extend({
 
         init : function() {
             this._super();
@@ -25,7 +25,5 @@ curl(['joy/commons/BaseMgmtPage'], function(BaseMgmtPage) {
         }
 
     });
-
-    joy.mgmtPage = new mgmtPage();
 
 });

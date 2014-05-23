@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="系统参数详情页面">
-<meta name="author" content="Kevice">
+<meta name="author" content="唐玮琳">
 
 <title>系统参数详情</title>
 
@@ -30,7 +30,7 @@
         	</tr>
         	<tr>
         		<td>参数说明</td>
-        		<td>${model.desc}</td>
+        		<td>${model.remark}</td>
         		<td>默认值</td>
         		<td>${model.defaultValue}</td>
         	</tr>

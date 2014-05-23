@@ -9,19 +9,11 @@ define(['joy/commons/BaseMgmtPage'], function(BaseMgmtPage) {
         showDetail : function(id) {
             $.layer({
                 type : 2,
-                title : '系统参数详情',
-                iframe : {src : joy.getWebRootPath()+'/sysParam/get?id='+id},
-                area : ['850px' , '500px'],
+                title : '关系数据库对象字段详情',
+                iframe : {src : joy.getWebRootPath()+'/mdRdbCol/get?id='+id},
+                area : ['650px' , '400px'],
                 offset : ['30px','']
             });
-        },
-
-        editRecord : function(id) {
-            alert("//TODO")
-        },
-
-        deleteRecord : function(id) {
-            alert("//TODO")
         }
 
     });

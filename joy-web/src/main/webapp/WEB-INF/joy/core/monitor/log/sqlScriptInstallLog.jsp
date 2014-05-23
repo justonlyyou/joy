@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="SQL脚本安装日志管理页面">
-<meta name="author" content="Kevice">
+<meta name="author" content="唐玮琳">
 
 <title>SQL脚本安装日志管理页面</title>
 </head>
@@ -26,7 +26,7 @@
 							<td>
 								安装时间：
 							</td>
-							<joy:timeRangePicker property="installedOn" realFmt="yyyyMMddHHmmssSSS"/>
+							<joy:timeRangePicker property="installedOn" origFmt="yyyyMMddHHmmssSSS"/>
 							<td>
 								&nbsp;版本域：
 							</td>
@@ -69,10 +69,10 @@
 							<c:forEach items="${pageStore.result}" var="p" varStatus="status">
 								<tr>
 									<td class="joy-table-seq-col">${status.index+1}</td>
-									<td><joy:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false" /></td>
+									<td><joy:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false" pageObj="mgmtPage"/></td>
 									<td>${p.versionDomain}</td>
 									<td>${p.version}</td>
-									<td><joy:timeFormatter timeStr="${p.installedOn}" realFmt="yyyyMMddHHmmssSSS" /></td> 
+									<td><joy:timeFormatter timeStr="${p.installedOn}" origFmt="yyyyMMddHHmmssSSS" /></td>
 									<td>${p.script}</td>
 									<td><joy:codeTrans code="${p.success}" enumClass="bool" /></td>
 								</tr>
@@ -81,7 +81,7 @@
 					</table>
 				</div>
 
-				<joy:pagination />
+                <joy:pagination pageObj="mgmtPage"/>
 
 			</div>
 		</div>
@@ -90,7 +90,9 @@
     <%--//TODO--%>
     <script src="${thirdCtx}/My97DatePicker/WdatePicker.js"></script>
     <script type="text/javascript">
-        curl(['joy/core/monitor/log/sqlScriptInstallLog']);
+        curl(['joy/core/monitor/log/sqlScriptInstallLog'], function(MgmtPage) {
+            mgmtPage = new MgmtPage();
+        });
     </script>
 </body>
 </html>

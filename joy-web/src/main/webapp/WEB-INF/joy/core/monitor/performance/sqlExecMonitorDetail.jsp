@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="脚本执行详情页面">
-<meta name="author" content="Kevice">
+<meta name="author" content="唐玮琳">
 
 <title>脚本执行详情</title>
 
@@ -22,7 +22,7 @@
 			class="table table-condensed table-hover table-bordered joy-detail-table">
 			<tr>
         		<td>日志时间</td>
-        		<td><joy:timeFormatter timeStr="${model.logTime}" realFmt="yyyyMMddHHmmssSSS" displayFmt="yyyy-MM-dd HH:mm:ss SSS"/></td>
+        		<td><joy:timeFormatter timeStr="${model.logTime}" origFmt="yyyyMMddHHmmssSSS" displayFmt="yyyy-MM-dd HH:mm:ss SSS"/></td>
         	</tr>
         	<tr>
         		<td>耗时(毫秒)</td>

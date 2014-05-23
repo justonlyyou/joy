@@ -1,5 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
-<%--<%@ include file="/WEB-INF/joy/commons/include/inc-all.jsp"%>--%>
 
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -7,19 +6,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="主页顶部水平导航栏">
-<meta name="author" content="Kevice">
+<meta name="author" content="唐玮琳">
 
 <title>主页顶部水平导航栏</title>
-
 </head>
 
 <body>
 	<nav class="navbar navbar-default" role="navigation" style="margin-bottom:5px;">
-		<div class="navbar-header navbar-brand" style="padding:0 10px 0 10px;">
+		<div class="navbar-header navbar-brand" style="padding: 10px 1px 10px 1px;">
 			<h5 title="${joyFn:getAppProperty('app.name')}">
 				<b><font size="5">J</font></b>
 <%-- 				<i class="${joyFn:getAppProperty('app.icon.class')}"></i> --%>
-    <i class="fa fa-smile-o fa-2x"></i>
+        <i class="fa fa-smile-o fa-2x"></i>
 				<b><font size="5">Y</font></b>
 			</h5>
 		</div>
@@ -27,72 +25,24 @@
 			<ul id="topMenu" class="nav navbar-nav"></ul>
 			<ul class="nav navbar-nav navbar-right" >
 				<li class="dropdown">
-					<a href="javascript:exit()" title="退出"><i class="fa fa-power-off"></i></a>
+					<a href="javascript:topNav.exit()" title="退出"><i class="fa fa-power-off"></i></a>
 				</li>
 			</ul>
 		</div>
 	</nav>
 
-    <script type="text/javascript">
-        curl(['joy/commons/home/topNav', 'css!joyCss/commons/home/topNav']);
-    </script>
-
     <script id="topMenuTmpl" type="text/x-jsrender">
         {{for m}}
             <li id="menuItem{{:object.id}}">
-                <a href='javascript:toggleMenuItem({{:object.id}});fetchLeftMenus({{:object.id}})'>{{:object.text}}</a>
+                <a href='javascript:topNav.toggleMenuItem({{:object.id}});topNav.fetchLeftMenus({{:object.id}})'>{{:object.text}}</a>
             </li>
         {{/for}}
     </script>
 
     <script type="text/javascript">
-        function toggleMenuItem(itemId) {
-            $("#topMenu li").removeClass("active");
-            $("#menuItem"+itemId).addClass("active");
-        }
-
-        function fetchLeftMenus(parentId) {
-            $.ajax({
-                cache: true,
-                type: "POST",
-                url: "sysMenu/fetchSubMenus",
-                async: false,
-                data: "parentId="+parentId,
-                error: function(request) {
-                    alert("发生未预期的错误！");
-                },
-                success: function(data) {
-                    var json = eval(data);
-                    var html = $("#accordionTmpl").render({m:json});
-                    $("#accordion").html(html);
-                }
-            });
-        }
-
-        function exit() {
-            alert("//TODO")
-            <%--$.layer({--%>
-                <%--shade : [0], //不显示遮罩--%>
-                <%--area : ['250px','auto'],--%>
-                <%--dialog : {--%>
-                    <%--msg:'您确定要退出系统？',--%>
-                    <%--btns : 2,--%>
-                    <%--type : -1,--%>
-                    <%--btn : ['确定','取消'],--%>
-                    <%--yes : function(){--%>
-                        <%--$.ajax({--%>
-                            <%--url: "${ctx}/logout?_joy_key__logout_method_code=11",--%>
-                            <%--error: function(request) {--%>
-                                <%--alert("发生未预期的错误！");--%>
-                            <%--},--%>
-                            <%--success: function(data) {--%>
-                                <%--window.location.reload();--%>
-                            <%--}--%>
-                        <%--});--%>
-                    <%--}--%>
-                <%--}--%>
-            <%--});--%>
-        }
+        curl(['joy/commons/home/topNav', 'css!joyCss/commons/home/topNav'], function(TopNav) {
+            topNav = new TopNav();
+        });
     </script>
 
 </body>

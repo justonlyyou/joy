@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="脚本安装详情页面">
-<meta name="author" content="Kevice">
+<meta name="author" content="唐玮琳">
 
 <title>脚本安装详情</title>
 
@@ -40,7 +40,7 @@
         	</tr>
         	<tr>
         		<td>安装时间</td>
-        		<td><joy:timeFormatter timeStr="${model.installedOn}" realFmt="yyyyMMddHHmmssSSS" displayFmt="yyyy-MM-dd HH:mm:ss SSS"/></td>
+        		<td><joy:timeFormatter timeStr="${model.installedOn}" origFmt="yyyyMMddHHmmssSSS" displayFmt="yyyy-MM-dd HH:mm:ss SSS"/></td>
         		<td>安装用户</td>
         		<td>${model.installedBy}</td>
         	</tr>

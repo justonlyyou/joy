@@ -9,19 +9,11 @@ define(['joy/commons/BaseMgmtPage'], function(BaseMgmtPage) {
         showDetail : function(id) {
             $.layer({
                 type : 2,
-                title : '脚本安装日志详情',
-                iframe : {src : joy.getWebRootPath()+'/sqlScriptInstallLog/get?id='+id},
+                title : 'SQL脚本安装日志详情',
+                iframe : {src : joy.getWebRootPath()+'/sqlExecMonitor/get?id='+id},
                 area : ['750px' , '466px'],
                 offset : ['30px','']
             });
-        },
-
-        editRecord : function(id) {
-            alert("//TODO")
-        },
-
-        deleteRecord : function(id) {
-            alert("//TODO")
         }
 
     });

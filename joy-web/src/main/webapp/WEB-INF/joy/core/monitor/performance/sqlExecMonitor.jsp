@@ -7,22 +7,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="SQL脚本安装日志管理页面">
-<meta name="author" content="Kevice">
+<meta name="author" content="唐玮琳">
 
 <title>SQL脚本安装日志管理页面</title>
-
-<script type="text/javascript">
-	function showDetail(id) {
-		$.layer({
-		    type : 2,
-		    title : 'SQL脚本安装日志详情',
-		    iframe : {src : '${ctx}/sqlExecMonitor/get?id='+id},
-		    area : ['750px' , '466px'],
-		    offset : ['50px','']
-		});
-	}
-</script>
-
 </head>
 
 <body>
@@ -39,7 +26,7 @@
 							<td>
 								执行时间：
 							</td>
-							<joy:timeRangePicker property="logTime" realFmt="yyyyMMddHHmmssSSS"/>
+							<joy:timeRangePicker property="logTime" origFmt="yyyyMMddHHmmssSSS"/>
 							<td>
 								&nbsp;耗时大于：
 							</td>
@@ -77,9 +64,9 @@
 							<c:forEach items="${pageStore.result}" var="p" varStatus="status">
 								<tr>
 									<td class="joy-table-seq-col">${status.index+1}</td>
-									<td><joy:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false"/></td>
+									<td><joy:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false" pageObj="mgmtPage"/></td>
 									<td>${p.costTime}</td>
-									<td><joy:timeFormatter timeStr="${p.logTime}" realFmt="yyyyMMddHHmmssSSS" displayFmt="yyyy-MM-dd HH:mm:ss SSS"/></td>
+									<td><joy:timeFormatter timeStr="${p.logTime}" origFmt="yyyyMMddHHmmssSSS" displayFmt="yyyy-MM-dd HH:mm:ss SSS"/></td>
 									<td>${p.appName}</td>
 									<td>${fn:split(p.className, ".")[fn:length(fn:split(p.className, ".")) - 1]}</td>
 									<td>${p.methodName}</td>
@@ -90,11 +77,19 @@
 					</table>
 				</div>
 
-				<joy:pagination />
+                <joy:pagination pageObj="mgmtPage"/>
 
 			</div>
 		</div>
 	</form:form>
+
+    <%--//TODO--%>
+    <script src="${thirdCtx}/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript">
+        curl(['joy/core/monitor/performance/sqlExecMonitor'], function(MgmtPage) {
+            mgmtPage = new MgmtPage();
+        });
+    </script>
 
 </body>
 </html>

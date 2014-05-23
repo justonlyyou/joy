@@ -11,7 +11,7 @@ package com.kvc.joy.commons.exception;
 public class SystemException extends JoyRuntimeException {
 
     public SystemException(String message, Throwable e) {
-        super(message, e);
+        super(e, message);
     }
 
 	public SystemException(String message, Object... args) {

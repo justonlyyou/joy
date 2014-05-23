@@ -1,4 +1,4 @@
-curl(['jqValidate'], function() {
+define(['jqValidate'], function() {
 
 	$("#loginForm").validate({
 			onfocusout: true,

@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="关系数据库对象管理页面">
-<meta name="author" content="Kevice">
+<meta name="author" content="唐玮琳">
 
 <title>关系数据库对象管理页面</title>
 </head>
@@ -64,7 +64,7 @@
 							<c:forEach items="${pageStore.result}" var="p" varStatus="status">
 								<tr>
 									<td class="joy-table-seq-col">${status.index+1}</td>
-									<td><joy:listOperations id="${p.dsId}-${p.name}" showEditOp="false" showDeleteOp="false"/></td>
+									<td><joy:listOperations id="${p.dsId}-${p.name}" showEditOp="false" showDeleteOp="false" pageObj="mgmtPage"/></td>
 									<td>${p.name}</td>
 									<td>${p.comment}</td>
 									<td>${p.type}</td>
@@ -74,14 +74,16 @@
 					</table>
 				</div>
 
-				<joy:pagination />
+				<joy:pagination pageObj="mgmtPage"/>
 
 			</div>
 		</div>
 	</form:form>
 
     <script type="text/javascript">
-        curl(['joy/core/sysres/mdRdbObj/mdRdbObj']);
+        curl(['joy/core/sysres/mdRdbObj/mdRdbObj'], function(MgmtPage) {
+            mgmtPage = new MgmtPage();
+        });
     </script>
 
 </body>

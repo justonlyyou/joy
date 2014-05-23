@@ -7,22 +7,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="关系数据库对象详情页面">
-<meta name="author" content="Kevice">
+<meta name="author" content="唐玮琳">
 
 <title>关系数据库对象详情</title>
-
-<script type="text/javascript">
-	function showDetail(id) {
-		$.layer({
-		    type : 2,
-		    title : '关系数据库对象字段详情',
-		    iframe : {src : '${ctx}/mdRdbCol/get?id='+id},
-		    area : ['650px' , '400px'],
-		    offset : ['40px','']
-		});
-	}
-</script>
-
 </head>
 
 <body>
@@ -73,7 +60,7 @@
 				<c:forEach items="${model.columns}" var="p" varStatus="status">
 					<tr>
 						<td class="joy-table-seq-col">${status.index+1}</td>
-						<td><joy:listOperations id="${model.dsId}-${model.name}-${p.name}" showEditOp="false" showDeleteOp="false"/></td>
+						<td><joy:listOperations id="${model.dsId}-${model.name}-${p.name}" showEditOp="false" showDeleteOp="false" pageObj="detailPage"/></td>
 						<td>${p.name}</td>
 						<td>${p.comment.briefDesc}</td>
 						<td><joy:codeTrans code="${p.key}" enumClass="bool" /></td>
@@ -87,6 +74,12 @@
 			</tbody>
 		</table>
 	</div>
+
+    <script type="text/javascript">
+        curl(['joy/core/sysres/mdRdbObj/mdRdbObjDetail'], function(MgmtPage) {
+            detailPage = new MgmtPage();
+        });
+    </script>
 	
 </body>
 </html>
