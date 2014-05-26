@@ -352,7 +352,7 @@ public class JdbcTool extends BaseJdbcDao {
             statement = prepareStatement(conn, sql, params);
             statement.execute();
         } catch (Exception e) {
-        	throw new SystemException(e);
+        	throw new SystemException(e, "执行语句：" + sql + " 出错！");
         } finally {
         	JdbcTool.closeStatement(statement);
         }
@@ -374,6 +374,7 @@ public class JdbcTool extends BaseJdbcDao {
             conn.setAutoCommit(false);
             for(String sql : sqls) {
                 if (StringTool.isNotBlank(sql)) {
+                    System.out.println("sql: "+sql);
                     statement.execute(sql.trim());
                 }
             }

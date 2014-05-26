@@ -76,7 +76,9 @@ public class SysMenuService implements ISysMenuService {
 	@Override
 	public List<TSysMenu> getMenuPath(String menuId) {
 		List<TSysMenu> paths = new ArrayList<TSysMenu>(4);
-		findMenuPath(null, paths, menuId);
+        if(StringTool.isNotBlank(menuId)) { // 菜单id为空不做处理，主要为了方便调试
+            findMenuPath(null, paths, menuId);
+        }
 		return ListTool.reverse(paths);
 	}
 	

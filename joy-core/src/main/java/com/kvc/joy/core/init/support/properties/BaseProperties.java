@@ -2,6 +2,7 @@ package com.kvc.joy.core.init.support.properties;
 
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
+import com.kvc.joy.commons.scanner.classpath.ClassPathScanner;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
 
 import java.io.IOException;
@@ -21,6 +22,7 @@ public abstract class BaseProperties {
 	protected Properties getProperties() {
 		if (properties == null) {
 			try {
+                //TODO 现在文件不存在不会报错，只是properties为empty
 				properties = PropertiesLoaderUtils.loadAllProperties(getPropertiesFile());
 			} catch (IOException e) {
 				logger.error(e, "加载" + getPropertiesFile() + "文件出错！");

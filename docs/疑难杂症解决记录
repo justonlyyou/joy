@@ -64,6 +64,8 @@ jar中配置文件放在“/”(根目录)下时，通过classpath*加载配置�
 6. method.getAnnotation(class) 有时会取不到方法上的注解，换一下方法的位置就行，原因不解。
 	如TErbacOrganization的getParentId()，放在最前面死活不行，移到后面就没问题。
 
+7. tomcat 7.0.33 跑不了
+
 	
 	
 	
