@@ -134,9 +134,9 @@ public class JdbcTool extends BaseJdbcDao {
 	public static void closeStatement(Statement statement) {
         if (statement != null) {
             try {
-                if (statement.isClosed() == false) {
+//                if (statement.isClosed() == false) { // isClosed是JDBC新规范引入的抽象方法，有些jbdc驱动未实现它会报错，如ojdbc14, ojdbc5_g等
                     statement.close();
-                }
+//                }
             } catch (SQLException e) {
                 logger.error("关闭Statement出错！", e);
             }
@@ -154,9 +154,9 @@ public class JdbcTool extends BaseJdbcDao {
     public static void closeResultSet(ResultSet resultSet) {
         if (resultSet != null) {
             try {
-                if (resultSet.isClosed() == false) {
+//                if (resultSet.isClosed() == false) { // isClosed是JDBC新规范引入的抽象方法，有些jbdc驱动未实现它会报错，如ojdbc14, ojdbc5_g等
                     resultSet.close();
-                }
+//                }
             } catch (SQLException e) {
                 logger.error("关闭ResultSet出错！", e);
             }
