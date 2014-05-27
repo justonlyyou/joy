@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-1-3 上午12:11:50
  */
 public class MdRdbTableCacheService implements IMdRdbTableService {

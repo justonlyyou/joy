@@ -13,7 +13,7 @@ import java.util.Set;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-7 下午10:37:10
  */
 public class SysParamService implements ISysParamService {

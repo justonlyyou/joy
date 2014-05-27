@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-13 上午12:35:36
  */
 public class EnumToolTest {

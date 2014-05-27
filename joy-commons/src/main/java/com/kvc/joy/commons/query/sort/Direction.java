@@ -8,7 +8,7 @@ import java.util.Locale;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年11月20日 下午11:18:30
  */
 public enum Direction {

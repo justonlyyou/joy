@@ -1,7 +1,7 @@
 package com.kvc.joy.plugin.security.user.service;
 
 /**
- * @author 唐玮琳
+ * @author Kevice
  * @time 14-2-18 下午8:51
  * @since 1.0.0
  */

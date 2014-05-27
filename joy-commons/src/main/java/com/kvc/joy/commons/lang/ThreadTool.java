@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  * 线程相关工具类
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @version 2013-01-15
  */
 public class ThreadTool {
@@ -28,7 +28,7 @@ public class ThreadTool {
 	 * 
 	 * @param millis 休眠的毫秒数
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午10:59:55
 	 */
 	public static void sleep(long millis) {
@@ -47,7 +47,7 @@ public class ThreadTool {
 	 * @param duration 休眠的时间值
 	 * @param unit 休眠的时间单位
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午11:03:08
 	 */
 	public static void sleep(long duration, TimeUnit unit) {
@@ -70,7 +70,7 @@ public class ThreadTool {
 	 * @param shutdownNowTimeout 现在关闭超时时间
 	 * @param timeUnit 时间单位
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午11:05:31
 	 */
 	public static void gracefulShutdown(ExecutorService pool, int shutdownTimeout, int shutdownNowTimeout,
@@ -103,7 +103,7 @@ public class ThreadTool {
 	 * @param timeout 超时时间
 	 * @param timeUnit 时间单位
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午11:09:48
 	 */
 	public static void normalShutdown(ExecutorService pool, int timeout, TimeUnit timeUnit) {

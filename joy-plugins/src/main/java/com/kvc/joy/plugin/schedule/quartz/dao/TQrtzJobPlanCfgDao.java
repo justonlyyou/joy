@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-17 下午6:58:25
  */
 public class TQrtzJobPlanCfgDao extends BaseJpaDao<TQrtzJobPlan> {

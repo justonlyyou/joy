@@ -4,7 +4,7 @@ package com.kvc.joy.plugin.image.captcha.consts;
  * 验证码插件的常量
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年9月28日 下午10:28:16
  */
 public interface CaptchaConsts {

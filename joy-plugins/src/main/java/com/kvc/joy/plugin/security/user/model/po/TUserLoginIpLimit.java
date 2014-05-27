@@ -12,7 +12,7 @@ import javax.persistence.Transient;
 /**
  * 用户登陆IP限制
  *
- * @author 唐玮琳
+ * @author Kevice
  * @time 14-2-17 下午11:15
  * @since 1.0.0
  */

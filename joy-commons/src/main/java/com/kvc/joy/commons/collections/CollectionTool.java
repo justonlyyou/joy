@@ -15,7 +15,7 @@ import java.util.*;
  * Collection工具类
  * 
  * @since 1.0.0
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public class CollectionTool {
 
@@ -32,7 +32,7 @@ public class CollectionTool {
 	 * @param entities 实体容器, 可以为null, 为null将返回空的map
 	 * @return Map<id，实体对象>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @date 2012-5-28 下午02:12:54
 	 */
 	public static <T, E extends IEntity<T>> Map<T, E> toEntityMap(Collection<? extends E> entities) {
@@ -60,7 +60,7 @@ public class CollectionTool {
 	 * 						InvocationTargetException 对被调用方法的包装异常 <br>
 	 * 						IllegalAccessException 如果请求的方法不能通过反射访问
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @date 2012-5-28 下午02:41:25
 	 */
 	public static <E> Map<Object, E> toEntityMap(Collection<? extends E> entities, String propertyName) {
@@ -98,7 +98,7 @@ public class CollectionTool {
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问
 	 * @author calvin
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 下午10:10:36
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -141,7 +141,7 @@ public class CollectionTool {
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问
 	 * @author calvin
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 下午10:15:24
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -177,7 +177,7 @@ public class CollectionTool {
 	 * @throws IllegalArgumentException 如果属性名为空
 	 * @author calvin
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 下午10:22:23
 	 */
 	public static String extractToString(Collection<?> collection, String propertyName, String separator) {
@@ -205,7 +205,7 @@ public class CollectionTool {
 	 * @return 用分隔符连接的每个元素的toString值
 	 * @author calvin
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 下午10:25:42
 	 */
 	public static String convertToString(Collection<?> collection, String separator) {
@@ -229,7 +229,7 @@ public class CollectionTool {
 	 * @return 加上前缀和后缀的每个元素的toString值的连接串
 	 * @author calvin
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 下午10:28:56
 	 */
 	public static String convertToString(Collection<?> collection, String prefix, String postfix) {
@@ -258,7 +258,7 @@ public class CollectionTool {
 	 * @return 指定容器的第一个元素
 	 * @author calvin
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 下午10:30:45
 	 */
 	public static <T> T getFirst(Collection<? extends T> collection) {
@@ -278,7 +278,7 @@ public class CollectionTool {
 	 * @return 指定容器的最后一个元素
 	 * @author calvin
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 下午10:32:03
 	 */
 	@SuppressWarnings("unchecked")
@@ -322,7 +322,7 @@ public class CollectionTool {
 	 * @return 两个容器的并集
 	 * @see Collection#addAll
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-27 下午8:56:31
 	 */
 	@SuppressWarnings("rawtypes")
@@ -343,7 +343,7 @@ public class CollectionTool {
 	 * @see Collection#retainAll
 	 * @see #containsAny
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-27 下午8:59:58
 	 */
 	@SuppressWarnings("rawtypes")
@@ -370,7 +370,7 @@ public class CollectionTool {
 	 * @param b 第二个容器, 不能为null
 	 * @return 两个容器交集的补集
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午9:56:35
 	 */
 	@SuppressWarnings("rawtypes")
@@ -392,7 +392,7 @@ public class CollectionTool {
 	 * @return 两个容器的差集
 	 * @see Collection#removeAll
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午10:05:28
 	 */
 	@SuppressWarnings("rawtypes")
@@ -410,7 +410,7 @@ public class CollectionTool {
 	 * @return <code>true</code> 如果两个容器的差集不为空
 	 * @see #intersection
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午10:07:27
 	 */
 	public static boolean containsAny(Collection<?> coll1, Collection<?> coll2) {
@@ -425,7 +425,7 @@ public class CollectionTool {
 	 * @param coll 要计算相同元素出现次数的容器, 不能为null
 	 * @return Map<容器中的元素, 出现的次数>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午10:14:46
 	 */
 	@SuppressWarnings("unchecked")
@@ -444,7 +444,7 @@ public class CollectionTool {
 	 * @see #isProperSubCollection
 	 * @see Collection#containsAll
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午10:18:35
 	 */
 	public static boolean isSubCollection(Collection<?> a, Collection<?> b) {
@@ -469,7 +469,7 @@ public class CollectionTool {
 	 * @see #isSubCollection
 	 * @see Collection#containsAll
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午10:29:44
 	 */
 	public static boolean isProperSubCollection(Collection<?> a, Collection<?> b) {
@@ -486,7 +486,7 @@ public class CollectionTool {
 	 * @param b 第二个容器, 不能为null
 	 * @return <code>true</code> 如果两个容器的大小及其包含的元素全部相等
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午10:32:45
 	 */
 	public static boolean isEqualCollection(Collection<?> a, Collection<?> b) {
@@ -502,7 +502,7 @@ public class CollectionTool {
 	 * @param coll 被查找的容器
 	 * @return 指定对象在容器中出现的次数
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午10:33:52
 	 */
 	public static int cardinality(Object obj, Collection<?> coll) {
@@ -518,7 +518,7 @@ public class CollectionTool {
 	 * @param predicate 使用的条件, 可以为null
 	 * @return 满足给定条件的第一个对象, 如果任意参数为null, 或没有找到, 将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午10:38:57
 	 */
 	@SuppressWarnings("unchecked")
@@ -538,7 +538,7 @@ public class CollectionTool {
 	 * @param collection 要操作的容器, 可以为null
 	 * @param closure 要执行的操作, 可以为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午10:43:10
 	 */
 	public static void forAllDo(Collection<?> collection, Closure closure) {
@@ -557,7 +557,7 @@ public class CollectionTool {
 	 * @param collection 要操作的容器, 可以为null
 	 * @param predicate 过滤条件, 可以为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午10:46:10
 	 */
 	public static void filter(Collection<?> collection, Predicate predicate) {
@@ -584,7 +584,7 @@ public class CollectionTool {
 	 * @param collection 要操作的容器, 可以为null
 	 * @param transformer 转换器, 可以为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午10:54:56
 	 */
 	public static void transform(Collection<?> collection, Transformer transformer) {
@@ -604,7 +604,7 @@ public class CollectionTool {
 	 * @param predicate 使用的条件, 可以为null
 	 * @return 器中满足指定条件的元素个数
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午10:56:58
 	 */
 	public static int countMatches(Collection<?> inputCollection, Predicate predicate) {
@@ -624,7 +624,7 @@ public class CollectionTool {
 	 * @param predicate 使用的条件, 可以为null
 	 * @return true: 存在满足条件的元素
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午10:58:32
 	 */
 	public static boolean exists(Collection<?> collection, Predicate predicate) {
@@ -645,7 +645,7 @@ public class CollectionTool {
 	 * @return 一个包含匹配的元素的新容器
 	 * @throws NullPointerException 如果输入的容器为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午11:00:57
 	 */
 	@SuppressWarnings("unchecked")
@@ -666,7 +666,7 @@ public class CollectionTool {
 	 * @param predicate 使用的条件, 可以为null
 	 * @param outputCollection 输出的容器, 不可以为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午11:03:20
 	 */
 	public static void select(Collection<?> inputCollection, Predicate predicate, Collection<?> outputCollection) {
@@ -687,7 +687,7 @@ public class CollectionTool {
 	 * @return 一个包含未匹配的元素的新容器
 	 * @throws NullPointerException 如果输入的容器为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午11:05:47
 	 */
 	@SuppressWarnings("unchecked")
@@ -708,7 +708,7 @@ public class CollectionTool {
 	 * @param predicate 使用的条件, 可以为null
 	 * @param outputCollection 输出的容器, 不可以为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午11:06:58
 	 */
 	public static void selectRejected(Collection<?> inputCollection, Predicate predicate, Collection<?> outputCollection) {
@@ -729,7 +729,7 @@ public class CollectionTool {
 	 * @return 转换后的新容器
 	 * @throws NullPointerException 如果输入的容器为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午11:10:09
 	 */
 	@SuppressWarnings({ "rawtypes" })
@@ -750,7 +750,7 @@ public class CollectionTool {
 	 * @param transformer 使用的转换器, 可以为null
 	 * @return 转换后的容器
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午11:12:14
 	 */
 	@SuppressWarnings({ "rawtypes" })
@@ -773,7 +773,7 @@ public class CollectionTool {
 	 * @return 输出的容器
 	 * @throws NullPointerException 如果输出容器为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午11:17:14
 	 */
 	@SuppressWarnings("unchecked")
@@ -797,7 +797,7 @@ public class CollectionTool {
 	 * @return 输出的容器
 	 * @throws NullPointerException 如果输出容器为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午11:18:40
 	 */
 	@SuppressWarnings("unchecked")
@@ -817,7 +817,7 @@ public class CollectionTool {
 	 * @return true: 如果容器有被改变
 	 * @throws NullPointerException 如果容器为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午11:20:58
 	 */
 	public static <T> boolean addIgnoreNull(Collection<? extends T> collection, T object) {
@@ -833,7 +833,7 @@ public class CollectionTool {
 	 * @param iterator 要添加的元素的迭代器, 不能为null
 	 * @throws NullPointerException 如果任意参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午11:26:40
 	 */
 	public static <T> void addAll(Collection<? extends T> collection, Iterator<T> iterator) {
@@ -849,7 +849,7 @@ public class CollectionTool {
 	 * @param enumeration 要添加的元素的枚举, 不能为null
 	 * @throws NullPointerException 如果任意参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午11:28:22
 	 */
 	public static <T> void addAll(Collection<? extends T> collection, Enumeration<T> enumeration) {
@@ -865,7 +865,7 @@ public class CollectionTool {
 	 * @param elements 要添加的元素的数组, 可以为null， 为null将什么也不做
 	 * @throws NullPointerException 如果容器参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午11:29:03
 	 */
 	public static <T> void addAll(Collection<? extends T> collection, T... elements) {
@@ -896,7 +896,7 @@ public class CollectionTool {
 	 * @throws IndexOutOfBoundsException 如果下标非法
 	 * @throws IllegalArgumentException 如果对象的类型不支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午11:42:50
 	 */
 	public static Object get(Object object, int index) {
@@ -922,7 +922,7 @@ public class CollectionTool {
 	 * @return 指定对象的大小
 	 * @throws IllegalArgumentException 如果对象的类型不支持或对象为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午11:45:04
 	 */
 	public static int size(Object object) {
@@ -952,7 +952,7 @@ public class CollectionTool {
 	 * @return true: 如果为空
 	 * @throws IllegalArgumentException 如果对象的类型不支持或对象为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午11:49:42
 	 */
 	public static boolean sizeIsEmpty(Object object) {
@@ -972,7 +972,7 @@ public class CollectionTool {
 	 * @param coll 待检查的容器, 可以为null
 	 * @return true: 如果为空或null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午11:51:28
 	 */
 	public static boolean isEmpty(Collection<?> coll) {
@@ -991,7 +991,7 @@ public class CollectionTool {
 	 * @param coll 待检查的容器, 可以为null
 	 * @return true: 如果非空或非null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午11:52:17
 	 */
 	public static boolean isNotEmpty(Collection<?> coll) {
@@ -1007,7 +1007,7 @@ public class CollectionTool {
 	 * @param array 待反转的数组(调用后本身会被反转)，可以为null，为null将什么也不做
 	 * @return 反转后的数组(与调用后的参数同一数组)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午11:52:53
 	 */
 	public static Object[] reverseArray(Object[] array) {
@@ -1034,7 +1034,7 @@ public class CollectionTool {
 	 * @return true: 如果容器已满
 	 * @throws NullPointerException 如果容器为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 下午12:00:39
 	 */
 	public static boolean isFull(Collection<?> coll) {
@@ -1058,7 +1058,7 @@ public class CollectionTool {
 	 * @return 容器能容纳的最大元素个数, 如果没有返回-1
 	 * @throws NullPointerException 如果容器为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 下午12:03:42
 	 */
 	public static int maxSize(Collection<?> coll) {
@@ -1077,7 +1077,7 @@ public class CollectionTool {
 	 * @return 一个由所有在<code>collection</code>中同时至少出现一次在<code>retain</code>的元素组成的容器
 	 * @throws NullPointerException 如果任意参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 下午12:15:15
 	 */
 	public static Collection<?> retainAll(Collection<?> collection, Collection<?> retain) {
@@ -1096,7 +1096,7 @@ public class CollectionTool {
 	 * @return 一个由<code>collection</code>容器中所有除了在<code>remove</code>出现的元素组成的容器
 	 * @throws NullPointerException 如果任意参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 下午12:21:29
 	 */
 	@SuppressWarnings("rawtypes")
@@ -1133,7 +1133,7 @@ public class CollectionTool {
 	 * @return 同步的容器
 	 * @throws IllegalArgumentException 如果容器为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 下午12:25:11
 	 */
 	@SuppressWarnings("unchecked")
@@ -1154,7 +1154,7 @@ public class CollectionTool {
 	 * @return 一个不可修改的容器
 	 * @throws IllegalArgumentException 如果容器为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 下午12:26:59
 	 */
 	@SuppressWarnings("unchecked")
@@ -1176,7 +1176,7 @@ public class CollectionTool {
 	 * @return 满足指定条件的容器
 	 * @throws IllegalArgumentException 如果任意参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 下午12:32:23
 	 */
 	@SuppressWarnings("unchecked")
@@ -1197,7 +1197,7 @@ public class CollectionTool {
 	 * @param type 返回容器的元素类型
 	 * @return 指定类型的容器
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 下午12:35:38
 	 */
 	@SuppressWarnings("unchecked")
@@ -1221,7 +1221,7 @@ public class CollectionTool {
 	 * @return 转换后的容器
 	 * @throws IllegalArgumentException 如果任意参数null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 下午12:38:59
 	 */
 	@SuppressWarnings("rawtypes")

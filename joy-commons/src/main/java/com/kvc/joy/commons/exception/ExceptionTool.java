@@ -17,7 +17,7 @@ import java.util.Set;
  * </p>
  * 
  * @since 1.0.0
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public class ExceptionTool {
 
@@ -32,7 +32,7 @@ public class ExceptionTool {
 	 * 
 	 * @param clazz 类，为null将什么也不做
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-13 下午7:36:59
 	 */
 	public static void printStackTraceOnNotCallByClass(Class<?> clazz) {
@@ -64,7 +64,7 @@ public class ExceptionTool {
 	 * </p>
 	 * 
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-13 下午7:38:59
 	 */
 	public static void printStackTrace() {
@@ -85,7 +85,7 @@ public class ExceptionTool {
 	 * @param excludeClasses 排除的类，为null或空将不排除任何类
 	 * @return 首次出现类名包含给定字符串的栈轨迹元素，找不到或指定的类名为null或空将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-13 下午7:40:46
 	 */
 	public static StackTraceElement findFirstStackTraceElem(String str, Class<?> fromClass, Class<?>... excludeClasses) {
@@ -127,7 +127,7 @@ public class ExceptionTool {
 	 * @param e 异常，可以为null，为null将返回null
 	 * @return 最近一个不是SystemException的异常，指定异常为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 下午11:49:20
 	 */
 	public static Throwable unwrapSystemException(Throwable e) {
@@ -145,7 +145,7 @@ public class ExceptionTool {
 	 * @param e 异常，可以为null，为null将返回null
 	 * @return 包装了指定异常的RuntimeException，指定异常为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-13 下午7:53:35
 	 */
 	public static RuntimeException toRuntimeException(Throwable e) {
@@ -168,7 +168,7 @@ public class ExceptionTool {
 	 * @param causeExceptionClasses 底层异常的可变数组, 可以为null，为null或为空将返回null
 	 * @return true: 指定的异常是由指定的底层异常之一引起的， 否则为false
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-13 下午7:54:24
 	 */
 	public static boolean isCausedBy(Throwable ex, Class<? extends Throwable>... causeExceptionClasses) {
@@ -203,7 +203,7 @@ public class ExceptionTool {
 	 * @param throwable 要查找根异常的异常, 可以为null
 	 * @return 指定异常的根异常, 如果没有找到或输入null则返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-13 下午8:03:22
 	 */
 	public static Throwable getRootCause(Throwable throwable) {
@@ -225,7 +225,7 @@ public class ExceptionTool {
 	 * @param throwable 要检查的异常，可以为null
 	 * @return 异常数量, 输入null将返回0
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-13 下午8:19:45
 	 */
 	public static int getThrowableCount(Throwable throwable) {
@@ -241,7 +241,7 @@ public class ExceptionTool {
 	 * @param throwable 要检查的异常，可以为null，为null时将返回空数组
 	 * @return 异常数组，不会为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-13 下午8:22:26
 	 */
 	public static Throwable[] getThrowables(Throwable throwable) {
@@ -256,7 +256,7 @@ public class ExceptionTool {
 	 * @param throwable 要检查的异常，可以为null，为null时将返回空列表
 	 * @return 异常列表，不会为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-13 下午8:23:26
 	 */
 	public static List<Throwable> getThrowableList(Throwable throwable) {
@@ -278,7 +278,7 @@ public class ExceptionTool {
 	 * @param clazz 要查找的异常类型, 子类型不匹配, null将返回-1 
 	 * @return 匹配的异常在异常链中的下标, 任意参数为null或没找到都将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-14 下午7:29:52
 	 */
 	public static int indexOfThrowable(Throwable throwable, Class<?> clazz) {
@@ -301,7 +301,7 @@ public class ExceptionTool {
 	 * @param fromIndex 开始查找的异常链的下标，负数时将当作0，大于异常链中异常总个数时返回-1
 	 * @return 匹配的异常在异常链中的下标, 任意参数为null或开始查找的下标大于异常链中异常总个数或没找到都将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-14 下午7:40:31
 	 */
 	public static int indexOfThrowable(Throwable throwable, Class<?> clazz, int fromIndex) {
@@ -323,7 +323,7 @@ public class ExceptionTool {
 	 * @param type 要查找的异常类型, 匹配子类型, null将返回-1 
 	 * @return 匹配的异常在异常链中的下标, 任意参数为null或没找到都将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-14 下午9:28:27
 	 */
 	public static int indexOfType(Throwable throwable, Class<?> type) {
@@ -346,7 +346,7 @@ public class ExceptionTool {
 	 * @param fromIndex 开始查找的异常链的下标，负数时将当作0，大于异常链中异常总个数时返回-1
 	 * @return 匹配的异常在异常链中的下标, 任意参数为null或开始查找的下标大于异常链中异常总个数或没找到都将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-14 下午9:30:49
 	 */
 	public static int indexOfType(Throwable throwable, Class<?> type, int fromIndex) {
@@ -375,7 +375,7 @@ public class ExceptionTool {
 	 * 
 	 * @param throwable 要输出的异常, 可以为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-14 下午9:55:53
 	 */
 	public static void printRootCauseStackTrace(Throwable throwable) {
@@ -405,7 +405,7 @@ public class ExceptionTool {
 	 * @param stream 要输出到的流, 不能为null
 	 * @throws IllegalArgumentException 如果stream参数为<code>null</code> 
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-14 下午9:53:20
 	 */
 	public static void printRootCauseStackTrace(Throwable throwable, PrintStream stream) {
@@ -435,7 +435,7 @@ public class ExceptionTool {
 	 * @param writer 要输出到的writer, 不能为null
 	 * @throws IllegalArgumentException 如果writer参数为<code>null</code>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-14 下午9:52:03
 	 */
 	public static void printRootCauseStackTrace(Throwable throwable, PrintWriter writer) {
@@ -457,7 +457,7 @@ public class ExceptionTool {
 	 * @param throwable 要检查的异常，可以为null，为null时返回空数组
 	 * @return 栈轨迹帧数组, 不会为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-13 下午10:21:47
 	 */
 	public static String[] getRootCauseStackTrace(Throwable throwable) {
@@ -473,7 +473,7 @@ public class ExceptionTool {
 	 * @param wrapperFrames 包装异常的栈轨迹
 	 * @throws IllegalArgumentException 如果任意参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-13 下午9:47:07
 	 */
 	public static void removeCommonFrames(List<String> causeFrames, List<String> wrapperFrames) {
@@ -494,7 +494,7 @@ public class ExceptionTool {
 	 * @param throwable 要检查的异常
 	 * @return 由异常的<code>printStackTrace(PrintWriter)</code>方法生成的栈轨迹 
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-13 下午9:44:05
 	 */
 	public static String getStackTrace(Throwable throwable) {
@@ -514,7 +514,7 @@ public class ExceptionTool {
 	 * @param throwable 要检查的异常，可以为null，为null时将返回空数组
 	 * @return 堆栈帧的数组，不会为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-13 下午9:21:35
 	 */
 	public static String[] getStackFrames(Throwable throwable) {
@@ -534,7 +534,7 @@ public class ExceptionTool {
 	 * @param th 要获取消息的异常，为null将返回空串
 	 * @return 异常消息，不会为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-13 下午8:38:16
 	 */
 	public static String getMessage(Throwable th) {
@@ -554,7 +554,7 @@ public class ExceptionTool {
 	 * @param th 要获取消息的异常，为null将返回空串
 	 * @return 异常消息，不会为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-13 下午8:38:16
 	 */
 	public static String getRootCauseMessage(Throwable th) {

@@ -13,7 +13,7 @@ import java.util.List;
  * 类工具
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-8 下午9:08:31
  */
 public class ClassTool {
@@ -32,7 +32,7 @@ public class ClassTool {
 	 * @param instance cglib加强过的对象
 	 * @return 经过cglib加强过的对象的真实类型, 如果传入的对象为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-2 下午10:21:02
 	 */
 	public static Class<?> getUserClass(Object instance) {
@@ -75,7 +75,7 @@ public class ClassTool {
      * @param className 全限定类名
      * @return 类是否存在并且可被加载
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013年11月20日 上午12:42:57
      */
     public static boolean isPresent(String className) {
@@ -94,7 +94,7 @@ public class ClassTool {
      * @param aClass 要获取位置的类
      * @return 类文件的绝对路径
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013年11月20日 上午12:45:58
      */
     public static String getLocationOnDisk(Class<?> aClass) {
@@ -122,7 +122,7 @@ public class ClassTool {
 	 * @param valueIfNull 当对象为空时返回的值
 	 * @return 扣掉包名的简短类名, 或null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午8:19:22
 	 */
 	public static String getShortClassName(Object object, String valueIfNull) {
@@ -142,7 +142,7 @@ public class ClassTool {
 	 * @param cls 要获取的类名的类
 	 * @return 扣掉包名的简短类名, 或空串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午8:29:28
 	 */
 	public static String getShortClassName(Class<?> cls) {
@@ -165,7 +165,7 @@ public class ClassTool {
 	 * @param className 要获取的类名的字符串
 	 * @return 扣掉包名的简短类名, 或空串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午8:33:03
 	 */
 	public static String getShortClassName(String className) {
@@ -181,7 +181,7 @@ public class ClassTool {
 	 * @return 扣掉包名的简短类名
 	 * @see Class#getSimpleName()
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午8:34:36
 	 */
 	public static String getSimpleName(Class<?> cls) {
@@ -198,7 +198,7 @@ public class ClassTool {
 	 * @return 扣掉包名的简短类名
 	 * @see Class#getSimpleName()
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午8:36:13
 	 */
 	public static String getSimpleName(Object object, String valueIfNull) {
@@ -216,7 +216,7 @@ public class ClassTool {
 	 * @param valueIfNull 当<code>object</code>为null时要返回的值
 	 * @return 对象的包名, 或null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午8:37:51
 	 */
 	public static String getPackageName(Object object, String valueIfNull) {
@@ -231,7 +231,7 @@ public class ClassTool {
 	 * @param cls 要获取类名的类, 可以为null
 	 * @return 类的包名或空串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午8:39:17
 	 */
 	public static String getPackageName(Class<?> cls) {
@@ -254,7 +254,7 @@ public class ClassTool {
 	 * @param className 类名, 可以为 {@code null}
 	 * @return 包名或空串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午8:42:17
 	 */
 	public static String getPackageName(String className) {
@@ -271,7 +271,7 @@ public class ClassTool {
 	 * @param cls 要查找的类, 可以为 {@code null}
 	 * @return 包括所有父类的List, 按类继承体系从下到上的顺序排序, 类为null将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午8:46:13
 	 */
 	public static List<Class<?>> getAllSuperclasses(Class<?> cls) {
@@ -290,7 +290,7 @@ public class ClassTool {
 	 * @param cls 要查找的类, 可以为 {@code null}
 	 * @return 包含接口的List, 类为null将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午8:52:25
 	 */
 	public static List<Class<?>> getAllInterfaces(Class<?> cls) {
@@ -311,7 +311,7 @@ public class ClassTool {
 	 * @param classNames List<类名>
 	 * @return List<类>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午9:06:14
 	 */
 	public static List<Class<?>> convertClassNamesToClasses(List<String> classNames) {
@@ -330,7 +330,7 @@ public class ClassTool {
 	 * @param classes List<类>
 	 * @return List<类名>, 如果传入的list为null将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午9:09:38
 	 */
 	public static List<String> convertClassesToClassNames(List<Class<?>> classes) {
@@ -373,7 +373,7 @@ public class ClassTool {
 	 * @param toClassArray 试图被赋值的类的数组, 可以为 {@code null}
 	 * @return {@code true} 如果可以赋值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午9:38:22
 	 */
 	public static boolean isAssignable(Class<?>[] classArray, Class<?>... toClassArray) {
@@ -411,7 +411,7 @@ public class ClassTool {
 	 * @param autoboxing 处理基本类型和包装类型时, 是否显示的使用自动装箱/拆箱
 	 * @return {@code true} 如果可以赋值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午9:41:49
 	 */
 	public static boolean isAssignable(Class<?>[] classArray, Class<?>[] toClassArray, boolean autoboxing) {
@@ -427,7 +427,7 @@ public class ClassTool {
 	 * @param type 待检测的类或null
 	 * @return true: 如果给定的类型为基本类型, 或基本类型的包装类
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午9:49:24
 	 */
 	public static boolean isPrimitiveOrWrapper(Class<?> type) {
@@ -442,7 +442,7 @@ public class ClassTool {
 	 * @param type 待检测的类或null
 	 * @return true: 如果给定的类型为基本类型的包装类
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午9:50:48
 	 */
 	public static boolean isPrimitiveWrapper(Class<?> type) {
@@ -483,7 +483,7 @@ public class ClassTool {
 	 * @param toClass 试图被赋值的类, null将返回false
 	 * @return {@code true}: 如果可以赋值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午9:53:46
 	 */
 	public static boolean isAssignable(Class<?> cls, Class<?> toClass) {
@@ -521,7 +521,7 @@ public class ClassTool {
 	 * @param autoboxing 处理基本类型和包装类型时, 是否显示的使用自动装箱/拆箱
 	 * @return {@code true}: 如果可以赋值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午9:55:21
 	 */
 	public static boolean isAssignable(Class<?> cls, Class<?> toClass, boolean autoboxing) {
@@ -540,7 +540,7 @@ public class ClassTool {
 	 * @param cls 待转化的类型, 可以为null
 	 * @return {@code cls}的包装类型, 或{@code cls}如果{@code cls}不是基本类型, null将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午9:58:59
 	 */
 	public static Class<?> primitiveToWrapper(Class<?> cls) {
@@ -555,7 +555,7 @@ public class ClassTool {
 	 * @param classes 待转化的类型可变数组, 可以为null或空数组
 	 * @return 包装类数组, 如果源类型不是基本类型, 数组将直接放入该类型. null将返回{@code null}, 空数组将返回空数组.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午10:02:24
 	 */
 	public static Class<?>[] primitivesToWrappers(Class<?>... classes) {
@@ -575,7 +575,7 @@ public class ClassTool {
 	 * @return 如果{@code cls}为包装类型, 返回对应的基本类型, 否则返回null
 	 * @see #primitiveToWrapper(Class)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午10:10:42
 	 */
 	public static Class<?> wrapperToPrimitive(Class<?> cls) {
@@ -595,7 +595,7 @@ public class ClassTool {
 	 * @return 基本类型数组, 如果源类型不是包装类, 数组将直接放入该类型. null将返回{@code null}, 空数组将返回空数组.
 	 * @see #wrapperToPrimitive(Class)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午10:12:54
 	 */
 	public static Class<?>[] wrappersToPrimitives(Class<?>... classes) {
@@ -612,7 +612,7 @@ public class ClassTool {
 	 * @param cls 待检查的类, 可以为null
 	 * @return {@code true}: 如果定的类为内部类或为静态的嵌套类, false: 如果不是或为{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午10:15:25
 	 */
 	public static boolean isInnerClass(Class<?> cls) {
@@ -633,7 +633,7 @@ public class ClassTool {
 	 * @return 类
 	 * @throws ClassNotFoundException 如果对应类找不到
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午10:21:13
 	 */
 	public static Class<?> getClass(ClassLoader classLoader, String className, boolean initialize) {
@@ -656,7 +656,7 @@ public class ClassTool {
 	 * @return 类
 	 * @throws ClassNotFoundException 如果对应类找不到
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午10:22:32
 	 */
 	public static Class<?> getClass(ClassLoader classLoader, String className) {
@@ -678,7 +678,7 @@ public class ClassTool {
 	 * @return 类
 	 * @throws ClassNotFoundException 如果对应类找不到
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午10:23:50
 	 */
 	public static Class<?> getClass(String className) {
@@ -701,7 +701,7 @@ public class ClassTool {
 	 * @return 类
 	 * @throws ClassNotFoundException 如果对应类找不到
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午10:24:41
 	 */
 	public static Class<?> getClass(String className, boolean initialize) {
@@ -734,7 +734,7 @@ public class ClassTool {
 	 * @throws SecurityException 如果有违反安全性的事发生
 	 * @throws NoSuchMethodException 如果方法在指定的类中找不到, 或该方法不满足要求
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午10:32:31
 	 */
 	public static Method getPublicMethod(Class<?> cls, String methodName, Class<?>... parameterTypes) {
@@ -761,7 +761,7 @@ public class ClassTool {
 	 * @param array {@code Object} 数组
 	 * @return {@code Class} 数组, {@code null} 将返回 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午10:47:49
 	 */
 	public static Class<?>[] toClass(Object... array) {
@@ -779,7 +779,7 @@ public class ClassTool {
 	 * @param valueIfNull 对象为null时要返回的值
 	 * @return 对象的规范名(扣掉包名), 或null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午10:51:24
 	 */
 	public static String getShortCanonicalName(Object object, String valueIfNull) {
@@ -794,7 +794,7 @@ public class ClassTool {
 	 * @param cls 类
 	 * @return 类的规范名(扣掉包名), 或空串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午10:52:13
 	 */
 	public static String getShortCanonicalName(Class<?> cls) {
@@ -813,7 +813,7 @@ public class ClassTool {
 	 * @param canonicalName 规范名
 	 * @return 类的规范名(扣掉包名), 或空串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午10:54:43
 	 */
 	public static String getShortCanonicalName(String canonicalName) {
@@ -831,7 +831,7 @@ public class ClassTool {
 	 * @param valueIfNull 对象为null时要返回的值
 	 * @return 对象的包名, 或null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午10:56:14
 	 */
 	public static String getPackageCanonicalName(Object object, String valueIfNull) {
@@ -846,7 +846,7 @@ public class ClassTool {
 	 * @param cls 类, 可以为null
 	 * @return 包名, 或null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午10:56:52
 	 */
 	public static String getPackageCanonicalName(Class<?> cls) {
@@ -869,7 +869,7 @@ public class ClassTool {
 	 * @param canonicalName 规范名 , 可以为null
 	 * @return 包名或空串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午10:58:12
 	 */
 	public static String getPackageCanonicalName(String canonicalName) {

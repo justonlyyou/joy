@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * 列注释 格式：briefDesc, [detailDesc,][ {"codeId":"xxx"}]
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-5 下午11:26:43
  */
 public class MdRdbColumnComment implements Serializable {

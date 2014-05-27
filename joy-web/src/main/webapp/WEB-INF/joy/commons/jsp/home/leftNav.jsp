@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="主页左侧垂直导航栏">
-    <meta name="author" content="唐玮琳">
+    <meta name="author" content="Kevice">
 
     <title>主页左侧垂直导航栏</title>
     <script src="${thirdCtx}/jquery/jquery/jquery.js"></script>
@@ -30,7 +30,7 @@
                             <ul class="nav nav-pills nav-stacked">
                                 {{for children}}
                                     <li id="leafItem{{:object.id}}" class="{{if object.active == 1}}active{{/if}}">
-                                        <a href="javascript:leftNav.openPage('{{:object.url}}',{{:object.id}},'{{:object.text}}')">{{:object.text}}</a>
+                                        <a href="javascript:leftNav.openPage('{{:object.url}}','{{:object.id}}','{{:object.text}}')">{{:object.text}}</a>
                                     </li>
                                 {{/for}}
                             </ul>

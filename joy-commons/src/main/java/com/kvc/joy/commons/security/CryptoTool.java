@@ -23,7 +23,7 @@ import java.util.Arrays;
  * </p>
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-18 下午4:02:07
  */
 public class CryptoTool {
@@ -53,7 +53,7 @@ public class CryptoTool {
 	 * @return 签名后的字节数组
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:04:31
 	 */
 	public static byte[] hmacSha1(byte[] input, byte[] key) {
@@ -78,7 +78,7 @@ public class CryptoTool {
 	 * @return true: HMAC-SHA1签名正确
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:07:45
 	 */
 	public static boolean isMacValid(byte[] expected, byte[] input, byte[] key) {
@@ -95,7 +95,7 @@ public class CryptoTool {
 	 * @return HMAC-SHA1密钥
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:08:32
 	 */
 	public static byte[] generateHmacSha1Key() {
@@ -120,7 +120,7 @@ public class CryptoTool {
 	 * @return 加密后的字符串字节数组表示
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:09:18
 	 */
 	public static byte[] aesEncrypt(byte[] input, byte[] key) {
@@ -138,7 +138,7 @@ public class CryptoTool {
 	 * @return 加密后的字符串字节数组表示
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:10:15
 	 */
 	public static byte[] aesEncrypt(byte[] input, byte[] key, byte[] iv) {
@@ -155,7 +155,7 @@ public class CryptoTool {
 	 * @return 原始字符串
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:11:09
 	 */
 	public static String aesDecrypt(byte[] input, byte[] key) {
@@ -174,7 +174,7 @@ public class CryptoTool {
 	 * @return 原始字符串
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:12:08
 	 */
 	public static String aesDecrypt(byte[] input, byte[] key, byte[] iv) {
@@ -193,7 +193,7 @@ public class CryptoTool {
 	 * @return 无编码的字节数组
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:12:49
 	 */
 	private static byte[] aes(byte[] input, byte[] key, int mode) {
@@ -219,7 +219,7 @@ public class CryptoTool {
 	 * @return 无编码的字节数组
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:13:53
 	 */
 	private static byte[] aes(byte[] input, byte[] key, byte[] iv, int mode) {
@@ -242,7 +242,7 @@ public class CryptoTool {
 	 * @return AES密钥
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:14:38
 	 */
 	public static byte[] generateAesKey() {
@@ -258,7 +258,7 @@ public class CryptoTool {
 	 * @return AES密钥
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:15:16
 	 */
 	public static byte[] generateAesKey(int keysize) {
@@ -280,7 +280,7 @@ public class CryptoTool {
 	 * @return 向量的字节数组
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:16:26
 	 */
 	public static byte[] generateIV() {
@@ -295,7 +295,7 @@ public class CryptoTool {
 	 * @param data 字节数组
 	 * @return 十六进制表示的字符数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月1日 下午9:41:41
 	 */
 	public static char[] encodeHex(byte[] data) {
@@ -317,7 +317,7 @@ public class CryptoTool {
 	 * @param bytes 十六进制编码的字节数组
 	 * @return 解码后的字节数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月1日 下午9:46:31
 	 */
 	public static byte[] decodeHex(byte[] bytes) {

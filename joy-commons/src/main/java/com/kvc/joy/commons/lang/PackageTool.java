@@ -19,7 +19,7 @@ import java.util.jar.JarFile;
  * java包工具类
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-10 下午9:01:06
  */
 public class PackageTool {
@@ -38,7 +38,7 @@ public class PackageTool {
 	 * @param recursive 是否循环迭代
 	 * @return Set<类>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-10 下午9:23:38
 	 */
 	public static Set<Class<?>> getClassesInPackage(String pkg, boolean recursive) {
@@ -57,7 +57,7 @@ public class PackageTool {
 	 * @param recursive 是否递归地获取子包
 	 * @return Set<包名>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-11 下午11:06:40
 	 */
 	public static Set<String> getPackages(String pkgPattern, boolean recursive) {

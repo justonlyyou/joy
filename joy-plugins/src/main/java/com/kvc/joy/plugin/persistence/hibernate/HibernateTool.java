@@ -20,7 +20,7 @@ import java.util.Map.Entry;
 /**
  * Hibernate工具类
  * 
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 @Transactional
 public class HibernateTool extends BaseHibernateDao {
@@ -51,17 +51,44 @@ public class HibernateTool extends BaseHibernateDao {
 
 	public static void persist(Object entity) {
 		UuidEntity.setUuid(entity);
-		getInstance().saveOrUpdate(entity);
+        getSession().saveOrUpdate(entity);
 	}
 
-	public void saveOrUpdate(Object obj) {
-		UuidEntity.setUuid(obj);
-		getSession().saveOrUpdate(obj);
-	}
+    @Transactional
+    public void persistWithTx(Object entity) {
+        persist(entity);
+    }
+
+    public static void batchPersist(Collection<?> entities) {
+        for(Object entity : entities) {
+            persist(entity);
+        }
+    }
+
+    @Transactional
+    public void batchPersistWithTx(Collection<?> entities) {
+        batchPersist(entities);
+    }
 
 	public static void remove(Object obj) {
 		getInstance().delete(obj);
 	}
+
+    @Transactional
+    public void removeWithTx(Object entity) {
+        remove(entity);
+    }
+
+    public static void batchRemove(Collection<?> entities) {
+        for(Object entity : entities) {
+            remove(entity);
+        }
+    }
+
+    @Transactional
+    public void batchRemoveWithTx(Collection<?> entities) {
+        batchRemove(entities);
+    }
 
 	public void delete(Object obj) {
 		getSession().delete(obj);
@@ -95,7 +122,7 @@ public class HibernateTool extends BaseHibernateDao {
 	 * 批量保存对象，默认每1000条提交一次并清空缓存
 	 * 
 	 * @param objects 待保存的对象集合
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @date 2012-5-16 下午02:16:16
 	 */
 	public static void batchSave(Collection<?> objects) {
@@ -106,7 +133,7 @@ public class HibernateTool extends BaseHibernateDao {
 	 * 批量保存对象，按指定批量大小提交一次并清空缓存
 	 * 
 	 * @param objects 待保存的对象集合
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @date 2012-5-16 下午02:17:44
 	 */
 	public static void batchSave(Collection<?> objects, int batchSize) {
@@ -120,7 +147,7 @@ public class HibernateTool extends BaseHibernateDao {
 	 * 批量删除对象
 	 * 
 	 * @param objects 待删除的对象集合
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @date 2012-5-16 下午02:22:37
 	 */
 	public static void batchDelete(Collection<?> objects) {
@@ -334,7 +361,7 @@ public class HibernateTool extends BaseHibernateDao {
 	 * @param params 参数值可变数组
 	 * @return 成功修改或删除的数据条数
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月2日 下午10:34:06
 	 */
 	public static int executeByHql(final String hql, final Object... params) {
@@ -358,7 +385,7 @@ public class HibernateTool extends BaseHibernateDao {
 	 * @param params 参数名与值的对应关系
 	 * @return 成功修改或删除的数据条数
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月2日 下午10:34:06
 	 */
 	public static int executeByHql(final String hql, final Map<String, Object> params) {
@@ -378,7 +405,7 @@ public class HibernateTool extends BaseHibernateDao {
 	 * 
 	 * @param criteria Criteria
 	 * @param orders 排序规则
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @date 2012-3-2 下午06:57:03
 	 */
 	private static void addOrder(final DetachedCriteria criteria, final Order... orders) {

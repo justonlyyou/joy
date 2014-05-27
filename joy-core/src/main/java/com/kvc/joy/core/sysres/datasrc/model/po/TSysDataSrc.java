@@ -12,7 +12,7 @@ import java.util.Set;
 /**
  * 数据源
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-8 下午9:26:10
  */
 @Entity

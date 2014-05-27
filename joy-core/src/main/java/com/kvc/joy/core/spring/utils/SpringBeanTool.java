@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * Spring Bean工具类，同时它负责spring上下文注入
  * 
- * @author 唐玮琳
+ * @author Kevice
  */
 @Service
 public class SpringBeanTool implements ApplicationContextAware {

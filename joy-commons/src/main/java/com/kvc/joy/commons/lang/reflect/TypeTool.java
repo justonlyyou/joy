@@ -12,7 +12,7 @@ import java.util.Set;
  * </p>
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-2 下午10:59:49
  */
 public class TypeTool {
@@ -34,7 +34,7 @@ public class TypeTool {
 	 * @param toType 目标类型
 	 * @return <code>true</code> 如果 <code>type</code> 能够被赋值给 <code>toType</code>.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午6:24:58
 	 */
 	public static boolean isAssignable(Type type, Type toType) {
@@ -50,7 +50,7 @@ public class TypeTool {
 	 * @param type 指定的要获取类型参数的主题参数化类型
 	 * @return 类型参数的map
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午6:35:42
 	 */
 	public static Map<TypeVariable<?>, Type> getTypeArguments(ParameterizedType type) {
@@ -81,7 +81,7 @@ public class TypeTool {
 	 * @return a map of the type assignments for the type variables in each type in the inheritance hierarchy from
 	 *         <code>type</code> to <code>toClass</code> inclusive.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午7:08:57
 	 */
 	public static Map<TypeVariable<?>, Type> getTypeArguments(Type type, Class<?> toClass) {
@@ -107,7 +107,7 @@ public class TypeTool {
 	 * @return a map of the type assignments that could be determined for the type variables in each type in the
 	 *         inheritance hierarchy from <code>type</code> to <code>toClass</code> inclusive.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午7:23:41
 	 */
 	public static Map<TypeVariable<?>, Type> determineTypeArguments(Class<?> cls, ParameterizedType superType) {
@@ -123,7 +123,7 @@ public class TypeTool {
 	 * @param type 目标类型
 	 * @return true 如果<code>value</code> 为 <code>type</code>的一个实例
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午8:02:45
 	 */
 	public static boolean isInstance(Object value, Type type) {
@@ -154,7 +154,7 @@ public class TypeTool {
 	 * @param bounds 代表通配符或类型变量的上限类型的数组
 	 * @return 一个包含去除了冗余的上限类型的类型数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午8:12:13
 	 */
 	public static Type[] normalizeUpperBounds(Type[] bounds) {
@@ -170,7 +170,7 @@ public class TypeTool {
 	 * @param typeVariable 主题类型变量 
 	 * @return 一个包含类型变量边界的非空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午8:18:17
 	 */
 	public static Type[] getImplicitBounds(TypeVariable<?> typeVariable) {
@@ -186,7 +186,7 @@ public class TypeTool {
 	 * @param wildcardType 主题通配符类型
 	 * @return 一个包含通配符的上限边界的非空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午8:22:26
 	 */
 	public static Type[] getImplicitUpperBounds(WildcardType wildcardType) {
@@ -202,7 +202,7 @@ public class TypeTool {
 	 * @param wildcardType 主题通配符类型
 	 * @return 一个包含通配符的下限边界的非空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午8:24:03
 	 */
 	public static Type[] getImplicitLowerBounds(WildcardType wildcardType) {
@@ -219,7 +219,7 @@ public class TypeTool {
 	 * @param typeVarAssigns 指定的要被分配给类型变量的潜在类型
 	 * @return 是否指定的类型能被赋值给各自的类型变量 
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午8:32:15
 	 */
 	public static boolean typesSatisfyVariables(Map<TypeVariable<?>, Type> typeVarAssigns) {
@@ -237,7 +237,7 @@ public class TypeTool {
 	 * @param assigningType type to be resolved against
 	 * @return the resolved <code>Class</code> object or <code>null</code> if the type could not be resolved
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午8:52:38
 	 */
 	public static Class<?> getRawType(Type type, Type assigningType) {
@@ -252,7 +252,7 @@ public class TypeTool {
 	 * @param type 要检测的类型
 	 * @return <code>true</code> 如果 <code>type</code> 为数组类型 或 {@link GenericArrayType}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午8:53:54
 	 */
 	public static boolean isArrayType(Type type) {
@@ -267,7 +267,7 @@ public class TypeTool {
 	 * @param type 要检测的类型
 	 * @return 元素类型或如果指定的类型不是一个数组类型时返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午8:55:35
 	 */
 	public static Type getArrayComponentType(Type type) {

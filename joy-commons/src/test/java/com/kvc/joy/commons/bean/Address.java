@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-3 下午8:32:19
  */
 public class Address implements Serializable {

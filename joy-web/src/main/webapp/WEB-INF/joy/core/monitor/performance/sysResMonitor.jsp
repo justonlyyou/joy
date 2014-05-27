@@ -7,22 +7,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="SQL脚本安装日志管理页面">
-<meta name="author" content="唐玮琳">
+<meta name="author" content="Kevice">
 
 <title>SQL脚本安装日志管理页面</title>
-
-<script type="text/javascript">
-	function showDetail(id) {
-		$.layer({
-		    type : 2,
-		    title : 'SQL脚本安装日志详情',
-		    iframe : {src : '${ctx}/sqlScriptInstallLog/get?id='+id},
-		    area : ['750px' , '466px'],
-		    offset : ['50px','']
-		});
-	}
-</script>
-
 </head>
 
 <body>

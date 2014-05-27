@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年11月20日 下午11:16:17
  */
 public class Order implements Serializable {

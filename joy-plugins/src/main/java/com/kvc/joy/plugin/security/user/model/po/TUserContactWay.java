@@ -10,7 +10,7 @@ import javax.persistence.Table;
 /**
  * 用户联系方式
  *
- * @author 唐玮琳
+ * @author Kevice
  * @time 14-2-17 下午9:19
  * @since 1.0.0
  */

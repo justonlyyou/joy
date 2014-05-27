@@ -156,7 +156,7 @@ public abstract class DbSupport {
 	 * 
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月24日 上午10:58:48
 	 */
 	public String getSysDateFunction() {
@@ -170,7 +170,7 @@ public abstract class DbSupport {
 	 * @param javaDateFormat
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月24日 上午11:23:44
 	 */
 	public String getDateToStringFunction(String dbDateFunc, String javaDateFormat) {
@@ -186,7 +186,7 @@ public abstract class DbSupport {
 	 * 
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月24日 下午3:55:15
 	 */
 	public abstract int getNullType();
@@ -197,7 +197,7 @@ public abstract class DbSupport {
 	 * @param table
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月24日 下午9:06:31
 	 */
 	public String getAlterTableCommentSql(MdRdbTable table) {
@@ -212,7 +212,7 @@ public abstract class DbSupport {
 	 * @param columnInDb
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月24日 下午9:00:09
 	 */
 	public String getAlterColumnCommentSql(MdRdbTable table, MdRdbColumn column, MdRdbColumn columnInDb) {
@@ -227,7 +227,7 @@ public abstract class DbSupport {
 	 * @param columnInDb
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月24日 下午9:01:33
 	 */
 	public String getAlterColumnDefaultValueSql(MdRdbTable table, MdRdbColumn column, MdRdbColumn columnInDb) {
@@ -240,7 +240,7 @@ public abstract class DbSupport {
 	 * @param tableNames
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月24日 下午9:38:57
 	 */
 	public Map<String, String> getTableComments(String... tableNames) {

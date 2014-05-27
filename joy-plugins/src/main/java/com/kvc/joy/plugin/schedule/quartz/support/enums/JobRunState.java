@@ -6,7 +6,7 @@ import com.kvc.joy.core.sysres.SysResTool;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-1-2 下午10:23:45
  */
 public enum JobRunState implements ICodeEnum {

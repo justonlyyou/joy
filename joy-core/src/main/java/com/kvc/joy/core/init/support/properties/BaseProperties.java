@@ -11,7 +11,7 @@ import java.util.Properties;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年10月3日 下午11:53:39
  */
 public abstract class BaseProperties {

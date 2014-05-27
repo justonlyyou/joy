@@ -18,7 +18,7 @@ import java.util.Properties;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-15 下午11:37:01
  */
 public class JoyInitializer implements IJoyInitializer {

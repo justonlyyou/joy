@@ -9,7 +9,7 @@ import java.text.MessageFormat;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年11月20日 上午1:22:59
  */
 public class Slf4jLog implements Log {

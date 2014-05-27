@@ -7,7 +7,7 @@ import org.apache.shiro.subject.Subject;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年10月5日 下午4:17:32
  */
 public class UserTool {
@@ -20,7 +20,7 @@ public class UserTool {
 	 * 
 	 * @return TErbacUser对象
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月5日 下午4:28:07
 	 */
 	public static TUserBasic getCurrentUser() {

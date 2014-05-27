@@ -25,7 +25,7 @@ import java.util.Map.Entry;
  * Bean操作工具类
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-3 下午11:49:27
  */
 public class BeanTool {
@@ -55,7 +55,7 @@ public class BeanTool {
 	 * @throws SerializationException (运行时) 如果序列化失败
 	 * @see SerializationTool#clone()
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-3 下午11:49:27
 	 */
 	public static <T extends Serializable> T deepClone(T bean) {
@@ -72,7 +72,7 @@ public class BeanTool {
 	 * @param propertyMap 字段映射 Map<源对象属性名，目标对象属性名>
 	 * @return 目标类的对象
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 上午8:45:50
 	 */
 	public static <T> T copyProperties(Class<T> destClass, Object srcObj, Map<String, String> propertyMap) {
@@ -100,7 +100,7 @@ public class BeanTool {
 	 * @param propertyMap 字段映射 Map<源对象属性名，目标对象属性名>
 	 * @return 目标类的对象
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午5:55:28
 	 */
 	public static void copyProperties(Object destObj, Object srcObj, Map<String, String> propertyMap) {
@@ -138,7 +138,7 @@ public class BeanTool {
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问
 	 *             InstantiationException 实例化异常
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-7 下午9:20:28
 	 */
 	@SuppressWarnings("unchecked")
@@ -164,7 +164,7 @@ public class BeanTool {
 	 *             InvocationTargetException 对被调用方法的包装异常 <br>
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-7 下午9:22:28
 	 */
 	public static <T> void copyPropertiesExcludeId(IEntity<T> src, IEntity<T> dest) {
@@ -191,7 +191,7 @@ public class BeanTool {
 	 *             NoSuchMethodException 如果找不到指定的可访问的方法 <br>
 	 *             IntrospectionException 内省异常
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-7 下午9:15:59
 	 */
 	public static void copyPropertiesExclude(Object source, Object target, String... excludeProperties) {
@@ -234,7 +234,7 @@ public class BeanTool {
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问
 	 *             InstantiationException 实例化异常
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午5:29:57
 	 */
 	@SuppressWarnings("unchecked")
@@ -258,7 +258,7 @@ public class BeanTool {
 	 * @param srcObjs 源对象集合
 	 * @return List<目标类对象>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-11-8 下午5:07:38
 	 */
 	public static <T> List<T> batchCopyProperties(Class<T> targetClass, Collection<?> srcObjs) {
@@ -286,7 +286,7 @@ public class BeanTool {
 	 *             NoSuchMethodException 如果找不到指定的可访问的方法 <br>
 	 *             InstantiationException 实例化异常
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-3 下午7:15:43
 	 */
 	@SuppressWarnings("unchecked")
@@ -309,7 +309,7 @@ public class BeanTool {
 	 *             InvocationTargetException 对被调用方法的包装异常 <br>
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问 <br>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-3 下午7:36:06
 	 */
 	public static void copyProperties(Object orig, Object dest) {
@@ -332,7 +332,7 @@ public class BeanTool {
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问 <br>
 	 *             NoSuchMethodException 如果找不到指定的可访问的方法 <br>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-3 下午7:38:06
 	 */
 	public static void copyPropertiesWithoutCast(Object orig, Object dest) {
@@ -355,7 +355,7 @@ public class BeanTool {
 	 *             InvocationTargetException 对被调用方法的包装异常 <br>
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问 <br>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-3 下午7:47:10
 	 */
 	public static void copyProperty(Object bean, String name, Object value) {
@@ -378,7 +378,7 @@ public class BeanTool {
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问 <br>
 	 *             NoSuchMethodException 如果找不到指定的可访问的方法 <br>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-3 下午8:21:13
 	 */
 	@SuppressWarnings("unchecked")
@@ -403,7 +403,7 @@ public class BeanTool {
 	 *             IllegalAccessException 如果请求的方法不能通过反射访问 <br>
 	 *             NoSuchMethodException 如果找不到指定的可访问的方法 <br>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-3 下午10:58:36
 	 */
 	public static Object getProperty(Object bean, String name) {

@@ -6,7 +6,7 @@ import java.util.Map;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-3 下午8:32:42
  */
 public class Person implements IEntity<String> {

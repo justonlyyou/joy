@@ -9,7 +9,7 @@ import com.kvc.joy.commons.enums.ICodeEnum;
  * </p>
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-14 下午11:32:46
  */
 public enum Province implements ICodeEnum {
@@ -50,7 +50,7 @@ public enum Province implements ICodeEnum {
 	AO_MEN("82", "澳门", "澳");
 	
 	private final String code;
-	private final String trans;
+	private String trans;
 	private final String abbr;
 	
 	Province(String code, String trans, String abbr) {
@@ -58,15 +58,17 @@ public enum Province implements ICodeEnum {
 		this.trans = trans;
 		this.abbr = abbr;
 	}
-	
+
+    @Override
 	public String getCode() {
 		return code;
 	}
 
+    @Override
 	public String getTrans() {
 		return trans;
 	}
-	
+
 	public String getAbbr() {
 		return abbr;
 	}

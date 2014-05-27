@@ -8,7 +8,7 @@ import java.io.IOException;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-18 下午4:24:12
  */
 public class DigestToolTest {

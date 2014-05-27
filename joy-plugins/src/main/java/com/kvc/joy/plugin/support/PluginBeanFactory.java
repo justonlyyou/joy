@@ -21,7 +21,7 @@ import org.springframework.core.task.TaskExecutor;
  * 各种组件Bean的工厂
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-7 下午10:33:48
  */
 public class PluginBeanFactory extends CoreBeanFactory {
@@ -111,7 +111,7 @@ public class PluginBeanFactory extends CoreBeanFactory {
 	 * 
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年9月21日 下午6:39:43
 	 */
 	public static Producer getCaptchaProducer() {

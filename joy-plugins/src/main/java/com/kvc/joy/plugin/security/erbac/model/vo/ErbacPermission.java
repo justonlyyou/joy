@@ -5,7 +5,7 @@ import com.kvc.joy.plugin.security.erbac.support.utils.ShiroPermissionExpTool;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-22 下午11:31:49
  */
 public class ErbacPermission {

@@ -13,6 +13,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.*;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public abstract class BaseJpaDao<T> {
@@ -24,6 +25,14 @@ public abstract class BaseJpaDao<T> {
 
 	public BaseJpaDao() {
 	}
+
+//    public abstract void persistWithTx(Object entity);
+//
+//    public abstract void batchPersistWithTx(Collection<?> entities);
+//
+//    public abstract void removeWithTx(Object entity);
+//
+//    public abstract void batchRemoveWithTx(Collection<?> entities);
 
 	@SuppressWarnings("unchecked")
 	protected Class<T> getEntityClass() {
@@ -60,7 +69,7 @@ public abstract class BaseJpaDao<T> {
 	 * @param callBack 回调
 	 * @return 结果数
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月1日 上午12:13:21
 	 */
 	protected long count(JPACallBack<T> callBack) {
@@ -419,4 +428,7 @@ public abstract class BaseJpaDao<T> {
 		return orderList;
 	}
 
+    public void setEm(EntityManager em) {
+        this.em = em;
+    }
 }

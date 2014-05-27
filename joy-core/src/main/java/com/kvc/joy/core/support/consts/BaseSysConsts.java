@@ -2,7 +2,7 @@ package com.kvc.joy.core.support.consts;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-8 上午12:18:53
  */
 public interface BaseSysConsts {

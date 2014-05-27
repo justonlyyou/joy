@@ -7,7 +7,7 @@ import java.util.Map;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-18 上午12:02:53
  */
 public interface IQuartzTriggersHolder {
@@ -15,7 +15,7 @@ public interface IQuartzTriggersHolder {
 	/**
 	 * 
 	 * 
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-18 上午12:04:13
 	 */
 	void loadTriggers();
@@ -24,7 +24,7 @@ public interface IQuartzTriggersHolder {
 	 * 
 	 * 
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-18 上午12:04:16
 	 */
 	Map<TriggerKey, Trigger> getTriggerMap();
@@ -34,7 +34,7 @@ public interface IQuartzTriggersHolder {
 	 * 
 	 * @param triggerId
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-18 上午12:04:20
 	 */
 	Trigger getTrigger(String triggerId);

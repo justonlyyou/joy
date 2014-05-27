@@ -20,7 +20,7 @@ import java.util.*;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-1-2 下午10:38:44
  */
 public class MdRdbColumnService implements IMdRdbColumnService {
@@ -76,7 +76,7 @@ public class MdRdbColumnService implements IMdRdbColumnService {
 	 * @param columns 字段结果集
 	 * @return 数据字段对象
 	 * @throws SQLException
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-11-9 上午10:15:07
 	 */
 	private static MdRdbColumn createColumn(ResultSet columns) throws SQLException {

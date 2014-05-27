@@ -28,7 +28,7 @@ import java.util.Set;
  * </pre>
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-10 下午8:24:53
  */
 public class EntityCommentAndDefaultValueScanner {
@@ -43,7 +43,7 @@ public class EntityCommentAndDefaultValueScanner {
 	 * 
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-12 下午10:56:45
 	 */
 	public static List<MdRdbTable> scan(String... pkgs) {

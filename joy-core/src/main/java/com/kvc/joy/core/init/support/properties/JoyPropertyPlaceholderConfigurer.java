@@ -9,7 +9,7 @@ import java.util.Properties;
 
 /**
  *
- * @author 唐玮琳
+ * @author Kevice
  * @time 14-3-16 下午3:28
  * @since 1.0.0
  */

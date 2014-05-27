@@ -6,7 +6,7 @@ import java.io.File;
  * 系统工具类
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-9 下午9:04:55
  */
 public class SystemTool {
@@ -27,7 +27,7 @@ public class SystemTool {
 	 * @throws SecurityException 如果安全管理器存在并且它的 {@code checkPropertyAccess} 方法不允许访问特别的系统属性
 	 * @see System#getProperty(String)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午10:52:45
 	 */
 	public static File getJavaHome() {
@@ -43,7 +43,7 @@ public class SystemTool {
 	 * @throws SecurityException 如果安全管理器存在并且它的 {@code checkPropertyAccess} 方法不允许访问特别的系统属性
 	 * @see System#getProperty(String)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午10:53:40
 	 */
 	public static File getJavaIoTmpDir() {
@@ -61,7 +61,7 @@ public class SystemTool {
 	 * @throws SecurityException 如果安全管理器存在并且它的 {@code checkPropertyAccess} 方法不允许访问特别的系统属性
 	 * @see System#getProperty(String)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午10:55:22
 	 */
 	public static File getUserDir() {
@@ -77,7 +77,7 @@ public class SystemTool {
 	 * @throws SecurityException 如果安全管理器存在并且它的 {@code checkPropertyAccess} 方法不允许访问特别的系统属性
 	 * @see System#getProperty(String)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午10:55:30
 	 */
 	public static File getUserHome() {
@@ -90,7 +90,7 @@ public class SystemTool {
 	 * @return {@code true} 如果 {@code JAVA_AWT_HEADLESS} 为 {@code "true"}, 否则返回 {@code false}.
 	 * @see #JAVA_AWT_HEADLESS
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午10:56:37
 	 */
 	public static boolean isJavaAwtHeadless() {

@@ -7,7 +7,7 @@ import java.util.Collection;
 
 /**
  * 
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public class MdRdbTable implements Comparable<MdRdbTable>, Serializable {
 

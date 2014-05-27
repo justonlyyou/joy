@@ -20,7 +20,7 @@ package com.kvc.joy.commons.bean;
  * </pre>
  * 
  * @since 1.0.0
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public class Single<T> {
 

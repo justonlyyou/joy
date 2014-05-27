@@ -18,7 +18,7 @@ import java.util.Date;
 /**
  * 登陆日志服务
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-17 下午9:03:02
  */
 public class UserLoginLogService implements IUserLoginLogService {

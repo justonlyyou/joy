@@ -14,7 +14,7 @@ import java.util.Map;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-26 下午10:36:28
  */
 public interface IJpaEntityRepository<T extends IEntity<ID>, ID extends Serializable> extends IEntityRepository<T, ID>, JpaRepository<T, ID> {
@@ -24,7 +24,7 @@ public interface IJpaEntityRepository<T extends IEntity<ID>, ID extends Serializ
 	 * 
 	 * @param orders
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-6-26 下午8:19:33
 	 */
 	List<T> searchAll(Order... orders);
@@ -35,7 +35,7 @@ public interface IJpaEntityRepository<T extends IEntity<ID>, ID extends Serializ
 	 * @param attr
 	 * @param values
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-6-26 下午8:19:28
 	 */
 	List<T> inSearch(String attr, Collection<?> values, Order... orders);
@@ -45,7 +45,7 @@ public interface IJpaEntityRepository<T extends IEntity<ID>, ID extends Serializ
 	 * 
 	 * @param values
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-6-26 下午8:26:33
 	 */
 	List<T> inSearch(Collection<?> values, Order... orders);
@@ -57,7 +57,7 @@ public interface IJpaEntityRepository<T extends IEntity<ID>, ID extends Serializ
 	 * @param value
 	 * @param orders
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-6-26 下午8:50:02
 	 */
 	List<T> search(String attr, Object value, Order... orders);
@@ -66,7 +66,7 @@ public interface IJpaEntityRepository<T extends IEntity<ID>, ID extends Serializ
 	 * 
 	 * 
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-6-26 下午8:51:24
 	 */
 	List<T> pagingSearch(PageStore pageStore);
@@ -77,7 +77,7 @@ public interface IJpaEntityRepository<T extends IEntity<ID>, ID extends Serializ
 	 * @param attrMap
 	 * @param orders
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-6-26 下午8:53:27
 	 */
 	List<T> andSearch(Map<String, Object> attrMap, Order... orders);
@@ -88,7 +88,7 @@ public interface IJpaEntityRepository<T extends IEntity<ID>, ID extends Serializ
 	 * @param attrMap
 	 * @param orders
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-6-26 下午8:54:03
 	 */
 	List<T> orSearch(Map<String, Object> attrMap, Order... orders);
@@ -100,7 +100,7 @@ public interface IJpaEntityRepository<T extends IEntity<ID>, ID extends Serializ
 	 * @param values
 	 * @param orders
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-6-27 下午9:12:08
 	 */
 	<E> List<T> inSearch(SingularAttribute<? super T, E> attr, Collection<E> values, Order... orders);
@@ -112,7 +112,7 @@ public interface IJpaEntityRepository<T extends IEntity<ID>, ID extends Serializ
 	 * @param value
 	 * @param orders
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-6-27 下午9:17:44
 	 */
 	<F> List<T> search(SingularAttribute<? super T, F> attr, F value, Order... orders);
@@ -123,7 +123,7 @@ public interface IJpaEntityRepository<T extends IEntity<ID>, ID extends Serializ
 	 * @param attrMap
 	 * @param orders
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-6-27 下午9:18:37
 	 */
 	<E> List<T> andQuery(Map<SingularAttribute<? super T, E>, E> attrMap, Order... orders);
@@ -134,7 +134,7 @@ public interface IJpaEntityRepository<T extends IEntity<ID>, ID extends Serializ
 	 * @param attrMap
 	 * @param orders
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-6-27 下午9:20:01
 	 */
 	<E> List<T> orQuery(Map<SingularAttribute<? super T, E>, E> attrMap, Order... orders);
@@ -144,7 +144,7 @@ public interface IJpaEntityRepository<T extends IEntity<ID>, ID extends Serializ
 	 * 
 	 * @param sql
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-6-27 下午9:21:17
 	 */
 	List<?> findBySql(String sql);
@@ -154,7 +154,7 @@ public interface IJpaEntityRepository<T extends IEntity<ID>, ID extends Serializ
 	 * 
 	 * @param sequence
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-6-27 下午9:22:00
 	 */
 	long querySequence(final String sequence);

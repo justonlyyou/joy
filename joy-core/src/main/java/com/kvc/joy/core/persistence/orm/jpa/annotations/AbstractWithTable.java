@@ -17,7 +17,7 @@ import java.lang.annotation.*;
  *   public String field; <br> 
  * } <br>
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-5-2 下午7:27:31
  */
 @Target({ElementType.TYPE}) 

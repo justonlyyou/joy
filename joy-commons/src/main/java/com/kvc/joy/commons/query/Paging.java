@@ -6,7 +6,7 @@ import com.kvc.joy.commons.query.sort.Sort;
 /**
  * 分页接口
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-5 下午10:34:04
  */
 public class Paging implements java.io.Serializable { // implements Pageable {

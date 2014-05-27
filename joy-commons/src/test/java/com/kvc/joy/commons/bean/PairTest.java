@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * com.kvc.joy.common.bean.Pair单元测试用例
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-2 下午9:06:48
  */
 public class PairTest {

@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  * 
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public class TimingCronExpressionCreator extends AbstractCronExpressionCreator {
 

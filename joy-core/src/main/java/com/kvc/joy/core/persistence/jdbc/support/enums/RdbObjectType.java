@@ -5,7 +5,7 @@ import com.kvc.joy.commons.enums.ICodeEnum;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-12-28 下午11:32:54
  */
 public enum RdbObjectType implements ICodeEnum {
@@ -19,22 +19,24 @@ public enum RdbObjectType implements ICodeEnum {
 	ALIAS("alias", "别名");
 	
 	private final String code;
-	private final String desc;
+	private String desc;
 
 	RdbObjectType(String code, String desc) {
 		this.code = code;
 		this.desc = desc;
 	}
 
+    @Override
 	public String getCode() {
 		return code;
 	}
 
+    @Override
 	public String getTrans() {
 		return desc;
 	}
 
-	public static RdbObjectType enumOf(String code) {
+    public static RdbObjectType enumOf(String code) {
 		return EnumTool.enumOf(RdbObjectType.class, code);
 	}
 	

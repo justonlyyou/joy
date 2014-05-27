@@ -10,7 +10,7 @@ import javax.persistence.Table;
 /**
  * 序列号统计对象模型
  * 
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 @Entity
 @Table(name = "t_sys_seq_num_stat")

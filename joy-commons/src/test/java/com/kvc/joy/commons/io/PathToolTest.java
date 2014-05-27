@@ -5,7 +5,7 @@ import org.junit.Test;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-18 下午11:57:13
  */
 public class PathToolTest {

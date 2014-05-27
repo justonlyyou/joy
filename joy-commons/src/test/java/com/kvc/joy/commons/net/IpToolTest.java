@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-16 下午7:59:08
  */
 public class IpToolTest {

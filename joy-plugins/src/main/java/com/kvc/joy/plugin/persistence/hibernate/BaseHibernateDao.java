@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * 基于的Hibernate数据访问对象基类
  * 
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public abstract class BaseHibernateDao<T> {
 

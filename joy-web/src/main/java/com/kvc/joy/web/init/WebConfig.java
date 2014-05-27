@@ -5,7 +5,7 @@ package com.kvc.joy.web.init;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-5 上午12:26:15
  */
 public class WebConfig {

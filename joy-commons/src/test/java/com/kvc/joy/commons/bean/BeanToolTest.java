@@ -8,7 +8,7 @@ import java.util.*;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-2 下午10:31:15
  */
 public class BeanToolTest {

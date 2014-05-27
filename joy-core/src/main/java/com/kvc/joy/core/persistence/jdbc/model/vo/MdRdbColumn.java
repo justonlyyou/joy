@@ -22,7 +22,7 @@ import java.math.BigDecimal;
  *   obj.method();
  * </pre>
  * 
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public class MdRdbColumn implements Serializable {
 

@@ -8,7 +8,7 @@ import java.util.Map;
  * </p>
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-1 下午11:20:11
  */
 public enum Sex implements ICodeEnum {

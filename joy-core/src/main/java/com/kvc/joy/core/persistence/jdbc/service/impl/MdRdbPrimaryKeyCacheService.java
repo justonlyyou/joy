@@ -7,7 +7,7 @@ import org.springframework.cache.annotation.Cacheable;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-3 下午9:30:40
  */
 public class MdRdbPrimaryKeyCacheService implements IMdRdbPrimaryKeyService {

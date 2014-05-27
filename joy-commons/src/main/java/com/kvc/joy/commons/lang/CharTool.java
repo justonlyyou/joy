@@ -5,7 +5,7 @@ package com.kvc.joy.commons.lang;
  * 字符处理工具类
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-9 下午8:32:48
  */
 public class CharTool {
@@ -35,7 +35,7 @@ public class CharTool {
      * @param str 要处理的字符串
      * @return 第一个字符对应的Character对象
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午7:17:44
 	 */
     public static Character toCharacterObject(String str) {
@@ -58,7 +58,7 @@ public class CharTool {
      * @return 转化后的char
      * @throws IllegalArgumentException 如果参数为{@code null}
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-4-30 下午7:20:16
      */
     public static char toChar(Character ch) {
@@ -80,7 +80,7 @@ public class CharTool {
      * @param defaultValue 默认值
      * @return Character参数的char值 或 返回默认值参数如果Character参数为null的话
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-4-30 下午7:22:40
      */
     public static char toChar(Character ch, char defaultValue) {
@@ -104,7 +104,7 @@ public class CharTool {
      * @return 第一个字符对应的Character对象
      * @throws IllegalArgumentException 如果字符串为null或空串将返抛出一个异常
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-4-30 下午7:28:06
      */
     public static char toChar(String str) {
@@ -127,7 +127,7 @@ public class CharTool {
      * @param defaultValue 默认值
      * @return 第一个字符对应的char值 或 返回默认值参数如果Character参数为null或空串的话
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-4-30 下午7:28:16
      */
     public static char toChar(String str, char defaultValue) {
@@ -149,7 +149,7 @@ public class CharTool {
      * @return the 字符的int值
      * @throws IllegalArgumentException 如果字符不是一个ASCII码数值
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-4-30 下午7:31:34
      */
     public static int toIntValue(char ch) {
@@ -170,7 +170,7 @@ public class CharTool {
      * @param defaultValue 默认值
      * @return 字符的int值
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-4-30 下午7:33:23
      */
     public static int toIntValue(char ch, int defaultValue) {
@@ -192,7 +192,7 @@ public class CharTool {
      * @return 字符的int值
      * @throws IllegalArgumentException 果字符不是一个ASCII码数值或者为null
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-4-30 下午7:36:07
      */
     public static int toIntValue(Character ch) {
@@ -214,7 +214,7 @@ public class CharTool {
      * @param defaultValue 默认值
      * @return 字符的int值
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-4-30 下午7:37:06
      */
     public static int toIntValue(Character ch, int defaultValue) {
@@ -239,7 +239,7 @@ public class CharTool {
      * @param ch 要转化的char
      * @return 包含一个给定字符的字符串
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-4-30 下午7:39:00
      */
     public static String toString(char ch) {
@@ -266,7 +266,7 @@ public class CharTool {
      * @param ch 要转化的char
      * @return 包含一个给定字符的字符串
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-4-30 下午7:40:29
      */
     public static String toString(Character ch) {
@@ -287,7 +287,7 @@ public class CharTool {
      * @param ch 要转化的char
      * @return 字符对应Unicode编码的字符串
       * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-4-30 下午7:42:26
      */
     public static String unicodeEscaped(char ch) {
@@ -310,7 +310,7 @@ public class CharTool {
      * @param ch 要转化的Character, 可以为null
      * @return 字符对应Unicode编码的字符串, 传入的参数为null将返回null
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-4-30 下午7:44:29
      */
     public static String unicodeEscaped(Character ch) {
@@ -335,7 +335,7 @@ public class CharTool {
      * @param ch 要检测的char
      * @return true: 如果ASCII码值小于128
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-4-30 下午7:52:09
      */
     public static boolean isAscii(char ch) {
@@ -359,7 +359,7 @@ public class CharTool {
      * @param ch 要检测的char
      * @return true: 如果ASCII码值介于32和126之间
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-4-30 下午7:53:41
      */
     public static boolean isAsciiPrintable(char ch) {
@@ -383,7 +383,7 @@ public class CharTool {
      * @param ch 要检测的char
      * @return true: 如果ASCII码值介于32和127之间 
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-4-30 下午7:56:14
      */
     public static boolean isAsciiControl(char ch) {
@@ -407,7 +407,7 @@ public class CharTool {
      * @param ch 要检测的char
      * @return true: 如果ASCII码值介于65和90之间(大写字母)或97和122之间(小写字母)
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-4-30 下午7:59:51
      */
     public static boolean isAsciiAlpha(char ch) {
@@ -431,7 +431,7 @@ public class CharTool {
      * @param ch 要检测的char
      * @return true: 如果ASCII码值介于65和90
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-4-30 下午8:00:45
      */
     public static boolean isAsciiAlphaUpper(char ch) {
@@ -455,7 +455,7 @@ public class CharTool {
      * @param ch 要检测的char
      * @return true: 如果ASCII码值介于97和122之间
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-4-30 下午8:01:40
      */
     public static boolean isAsciiAlphaLower(char ch) {
@@ -479,7 +479,7 @@ public class CharTool {
      * @param ch 要检测的char
      * @return true: 如果ASCII码值介于48和57之间
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-4-30 下午8:03:01
      */
     public static boolean isAsciiNumeric(char ch) {
@@ -503,7 +503,7 @@ public class CharTool {
      * @param ch 要检测的char
      * @return true: 如果ASCII码值介于48和57之间(数字)或65和90之间(大写字母)或97和122之间(小写字母)
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-4-30 下午8:07:04
      */
     public static boolean isAsciiAlphanumeric(char ch) {

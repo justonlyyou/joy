@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-24 下午7:49:41
  */
 @Controller

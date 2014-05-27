@@ -4,7 +4,7 @@ import org.quartz.Scheduler;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-17 下午6:46:04
  */
 public class QuartzTool {

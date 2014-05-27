@@ -7,7 +7,7 @@ import java.text.MessageFormat;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年11月24日 上午11:40:43
  */
 public class MySqlDateFormatter implements IDateFormatter {

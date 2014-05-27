@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-2 下午10:51:20
  */
 public class GroupExecutorTest {

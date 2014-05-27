@@ -6,7 +6,7 @@ import java.net.ConnectException;
  * 服务层抛出的异常
  * 
  * @since 1.0.0
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public class ServiceException extends JoyRuntimeException {
 

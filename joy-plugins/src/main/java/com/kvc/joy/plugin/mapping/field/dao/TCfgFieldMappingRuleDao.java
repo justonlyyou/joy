@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 字段映射规则数据访问对象
  * 
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public class TCfgFieldMappingRuleDao {
 

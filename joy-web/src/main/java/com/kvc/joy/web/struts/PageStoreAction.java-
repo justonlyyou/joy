@@ -6,7 +6,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-15 下午10:35:52
  */
 public class PageStoreAction extends ActionSupport {

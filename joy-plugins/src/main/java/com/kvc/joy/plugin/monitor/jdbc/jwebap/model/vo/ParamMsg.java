@@ -7,7 +7,7 @@ import org.springframework.util.StringUtils;
 import java.util.List;
 
 /**
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public class ParamMsg implements ILogParam {
 

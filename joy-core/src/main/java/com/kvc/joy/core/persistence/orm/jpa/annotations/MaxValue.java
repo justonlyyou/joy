@@ -5,7 +5,7 @@ import java.lang.annotation.*;
 /**
  * 字段最大值注解
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-5-2 下午7:48:36
  */
 @Target({ElementType.FIELD})

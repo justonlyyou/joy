@@ -8,7 +8,7 @@ import com.kvc.joy.core.sysres.SysResTool;
  * 登陆状态枚举
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年9月29日 下午11:41:03
  */
 public enum LoginState implements ICodeEnum {

@@ -4,7 +4,7 @@ import javax.swing.JPasswordField;
 import javax.swing.text.Document;
 
 /**
- * @author  <b>唐玮琳</b>
+ * @author  <b>Kevice</b>
  */
 public class XPasswordField extends JPasswordField {
 

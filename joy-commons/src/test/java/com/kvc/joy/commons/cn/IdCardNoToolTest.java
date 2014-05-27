@@ -7,7 +7,7 @@ import org.junit.Test;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-14 下午10:04:15
  */
 public class IdCardNoToolTest {

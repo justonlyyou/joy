@@ -9,7 +9,7 @@ import com.kvc.joy.core.sysres.SysResTool;
  * 注意应该在子类调用该类的init方法，否则该类的参数不会被初始化。<br>
  * 这些参数几乎都是事先存在数据库、配置文件中，然后调用init方法进行初始化的。<br>
  * 某些参数是在该类定义，但必须由各应用进行初始化的。
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public class BaseSystemParameter {
 

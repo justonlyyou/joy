@@ -2,7 +2,7 @@ package com.kvc.joy.commons.query;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-22 上午12:00:28
  */
 public class QueryLogic implements java.io.Serializable {

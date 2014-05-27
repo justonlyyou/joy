@@ -13,7 +13,7 @@ import java.util.*;
  * Map工具类
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-6 上午10:17:58
  */
 public class MapTool {
@@ -34,7 +34,7 @@ public class MapTool {
 	 * @param key 要查找的key
 	 * @return Map中的值, 如果map参数为null将返回<code>null</code>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午9:16:00
 	 */
 	@SuppressWarnings("unchecked")
@@ -51,7 +51,7 @@ public class MapTool {
 	 * @param key 要查找的key
 	 * @return 指定key的值的toString, 如果map参数为null将返回<code>null</code>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午9:36:08
 	 */
 	public static <K> String getString(final Map<K, ?> map, final K key) {
@@ -73,7 +73,7 @@ public class MapTool {
 	 * @param key 要查找的key
 	 * @return 指定key的值的布尔值, 如果map参数为null将返回<code>null</code>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午9:51:27
 	 */
 	public static <K> Boolean getBoolean(final Map<K, ?> map, final K key) {
@@ -95,7 +95,7 @@ public class MapTool {
 	 * @param key 要查找的key
 	 * @return 指定key的值的数值结果, 如果map参数为null将返回<code>null</code>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午9:56:59
 	 */
 	public static <K> Number getNumber(final Map<K, ?> map, final K key) {
@@ -115,7 +115,7 @@ public class MapTool {
 	 * @param key 要查找的key
 	 * @return 指定key的值的字节值, 如果map参数为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:21:00
 	 */
 	public static <K> Byte getByte(final Map<K, ?> map, final K key) {
@@ -135,7 +135,7 @@ public class MapTool {
 	 * @param key 要查找的key
 	 * @return 指定key的值的短整型值, 如果map参数为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:27:06
 	 */
 	public static <K> Short getShort(final Map<K, ?> map, final K key) {
@@ -155,7 +155,7 @@ public class MapTool {
 	 * @param key 要查找的key
 	 * @return 指定key的值的整型值, 如果map参数为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:30:14
 	 */
 	public static <K> Integer getInteger(final Map<K, ?> map, final K key) {
@@ -175,7 +175,7 @@ public class MapTool {
 	 * @param key 要查找的key
 	 * @return 指定key的值的长整型值, 如果map参数为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:30:34
 	 */
 	public static <K> Long getLong(final Map<K, ?> map, final K key) {
@@ -195,7 +195,7 @@ public class MapTool {
 	 * @param key 要查找的key
 	 * @return 指定key的值的浮点值, 如果map参数为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:31:34
 	 */
 	public static <K> Float getFloat(final Map<K, ?> map, final K key) {
@@ -215,7 +215,7 @@ public class MapTool {
 	 * @param key 要查找的key
 	 * @return 指定key的值的双精度浮点值, 如果map参数为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:32:54
 	 */
 	public static <K> Double getDouble(final Map<K, ?> map, final K key) {
@@ -235,7 +235,7 @@ public class MapTool {
 	 * @param key 要查找的key
 	 * @return 指定key的Map, 如果map参数为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:35:25
 	 */
 	@SuppressWarnings("rawtypes")
@@ -255,7 +255,7 @@ public class MapTool {
 	 * @param defaultValue 对应key的值为null时要返回的默认值
 	 * @return map中key对应的值, 如果为null返回指定的默认值，map为null返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:41:18
 	 */
 	public static <K> Object getObject( Map<K, ?> map, K key, Object defaultValue ) {
@@ -272,7 +272,7 @@ public class MapTool {
 	 * @param defaultValue 对应key的值为null时要返回的默认值
 	 * @return map中key对应的值的String值，如果为原值为null、map为null或转换失败返回指定的默认值 
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:48:08
 	 */
 	public static <K> String getString( Map<K, ?> map, K key, String defaultValue ) {
@@ -289,7 +289,7 @@ public class MapTool {
 	 * @param defaultValue 对应key的值为null时要返回的默认值
 	 * @return map中key对应的值的Boolean值，如果为原值为null、map为null或转换失败返回指定的默认值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:56:07
 	 */
 	public static <K> Boolean getBoolean( Map<K, ?> map, K key, Boolean defaultValue ) {
@@ -306,7 +306,7 @@ public class MapTool {
 	 * @param defaultValue 对应key的值为null时要返回的默认值
 	 * @return map中key对应的值的Number值，如果为原值为null、map为null或转换失败返回指定的默认值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:57:07
 	 */
 	public static <K> Number getNumber( Map<K, ?> map, K key, Number defaultValue ) {
@@ -323,7 +323,7 @@ public class MapTool {
 	 * @param defaultValue 对应key的值为null时要返回的默认值
 	 * @return map中key对应的值的Byte值，如果为原值为null、map为null或转换失败返回指定的默认值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:58:31
 	 */
 	public static <K> Byte getByte( Map<K, ?> map, K key, Byte defaultValue ) {
@@ -340,7 +340,7 @@ public class MapTool {
 	 * @param defaultValue 对应key的值为null时要返回的默认值
 	 * @return map中key对应的值的Short值，如果为原值为null、map为null或转换失败返回指定的默认值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:59:15
 	 */
 	public static <K> Short getShort( Map<K, ?> map, K key, Short defaultValue ) {
@@ -357,7 +357,7 @@ public class MapTool {
 	 * @param defaultValue 对应key的值为null时要返回的默认值
 	 * @return map中key对应的值的Integer值，如果为原值为null、map为null或转换失败返回指定的默认值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:59:59
 	 */
 	public static <K> Integer getInteger( Map<K, ?> map, K key, Integer defaultValue ) {
@@ -374,7 +374,7 @@ public class MapTool {
 	 * @param defaultValue 对应key的值为null时要返回的默认值
 	 * @return map中key对应的值的Long值，如果为原值为null、map为null或转换失败返回指定的默认值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午11:01:04
 	 */
 	public static <K> Long getLong( Map<K, ?> map, K key, Long defaultValue ) {
@@ -391,7 +391,7 @@ public class MapTool {
 	 * @param defaultValue 对应key的值为null时要返回的默认值
 	 * @return map中key对应的值的Float值，如果为原值为null、map为null或转换失败返回指定的默认值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午11:02:21
 	 */
 	public static <K> Float getFloat( Map<K, ?> map, K key, Float defaultValue ) {
@@ -408,7 +408,7 @@ public class MapTool {
 	 * @param defaultValue 对应key的值为null时要返回的默认值
 	 * @return map中key对应的值的Double值，如果为原值为null、map为null或转换失败返回指定的默认值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午11:02:59
 	 */
 	public static <K> Double getDouble( Map<K, ?> map, K key, Double defaultValue ) {
@@ -425,7 +425,7 @@ public class MapTool {
 	 * @param defaultValue 对应key的值为null时要返回的默认值
 	 * @return map中key对应的值的Map值，如果为原值为null、map为null或转换失败返回指定的默认值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午11:04:55
 	 */
 	@SuppressWarnings("rawtypes")
@@ -451,7 +451,7 @@ public class MapTool {
 	 * @param key 要查找的key
 	 * @return 指定key的值的布尔值, 如果map参数为null将返回<code>false</code>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午9:51:27
 	 */
 	public static <K> boolean getBooleanValue(final Map<K, ?> map, final K key) {
@@ -471,7 +471,7 @@ public class MapTool {
 	 * @param key 要查找的key
 	 * @return 指定key的值的字节值, 如果map参数为null将返回0
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:21:00
 	 */
 	public static <K> byte getByteValue(final Map<K, ?> map, final K key) {
@@ -491,7 +491,7 @@ public class MapTool {
 	 * @param key 要查找的key
 	 * @return 指定key的值的短整型值, 如果map参数为null将返回0
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:27:06
 	 */
 	public static <K> short getShortValue(final Map<K, ?> map, final K key) {
@@ -521,7 +521,7 @@ public class MapTool {
 	 * @param key 要查找的key
 	 * @return 指定key的值的整型值, 如果map参数为null将返回0
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:30:14
 	 */
 	public static <K> int getIntValue(final Map<K, ?> map, final K key) {
@@ -541,7 +541,7 @@ public class MapTool {
 	 * @param key 要查找的key
 	 * @return 指定key的值的长整型值, 如果map参数为null将返回0L
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:30:34
 	 */
 	public static <K> long getLongValue(final Map<K, ?> map, final K key) {
@@ -561,7 +561,7 @@ public class MapTool {
 	 * @param key 要查找的key
 	 * @return 指定key的值的浮点值, 如果map参数为null将返回0.0F
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:31:34
 	 */
 	public static <K> float getFloatValue(final Map<K, ?> map, final K key) {
@@ -581,7 +581,7 @@ public class MapTool {
 	 * @param key 要查找的key
 	 * @return 指定key的值的双精度浮点值, 如果map参数为null将返回0.0
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:32:54
 	 */
 	public static <K> double getDoubleValue(final Map<K, ?> map, final K key) {
@@ -606,7 +606,7 @@ public class MapTool {
 	 * @param defaultValue 对应key的值为null或转换失败时要返回的默认值
 	 * @return map中key对应的值的Boolean值，如果map为null或转换失败时返回指定的默认值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:56:07
 	 */
 	public static <K> boolean getBooleanValue(final Map<K, ?> map, final K key, boolean defaultValue) {
@@ -623,7 +623,7 @@ public class MapTool {
 	 * @param defaultValue 对应key的值为null或转换失败时要返回的默认值
 	 * @return map中key对应的值的byte值，如果map为null或转换失败时返回指定的默认值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:58:31
 	 */
 	public static <K> byte getByteValue(final Map<K, ?> map, final K key, byte defaultValue) {
@@ -640,7 +640,7 @@ public class MapTool {
 	 * @param defaultValue 对应key的值为null或转换失败时要返回的默认值
 	 * @return map中key对应的值的short值，如果map为null或转换失败时返回指定的默认值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:58:31
 	 */
 	public static <K> short getShortValue(final Map<K, ?> map, final K key, short defaultValue) {
@@ -657,7 +657,7 @@ public class MapTool {
 	 * @param defaultValue 对应key的值为null或转换失败时要返回的默认值
 	 * @return map中key对应的值的int值，如果map为null或转换失败时返回指定的默认值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:58:31
 	 */
 	public static <K> int getIntValue(final Map<K, ?> map, final K key, int defaultValue) {
@@ -674,7 +674,7 @@ public class MapTool {
 	 * @param defaultValue 对应key的值为null或转换失败时要返回的默认值
 	 * @return map中key对应的值的long值，如果map为null或转换失败时返回指定的默认值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:58:31
 	 */
 	public static <K> long getLongValue(final Map<K, ?> map, final K key, long defaultValue) {
@@ -691,7 +691,7 @@ public class MapTool {
 	 * @param defaultValue 对应key的值为null或转换失败时要返回的默认值
 	 * @return map中key对应的值的float值，如果map为null或转换失败时返回指定的默认值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:58:31
 	 */
 	public static <K> float getFloatValue(final Map<K, ?> map, final K key, float defaultValue) {
@@ -708,7 +708,7 @@ public class MapTool {
 	 * @param defaultValue 对应key的值为null或转换失败时要返回的默认值
 	 * @return map中key对应的值的double值，如果map为null或转换失败时返回指定的默认值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午10:58:31
 	 */
 	public static <K> double getDoubleValue(final Map<K, ?> map, final K key, double defaultValue) {
@@ -725,7 +725,7 @@ public class MapTool {
 	 * @param map 要转化为Properties的Map, 可以为null
 	 * @return Properties对象
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午11:27:46
 	 */
 	public static Properties toProperties(final Map<?, ?> map) {
@@ -740,7 +740,7 @@ public class MapTool {
 	 * @param resourceBundle 要转化为Map的ResourceBundle, 可以为null
 	 * @return HashMap
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午11:31:39
 	 */
 	@SuppressWarnings("unchecked")
@@ -772,7 +772,7 @@ public class MapTool {
 	 * @param map 要打印的map, 可以为null，如果为null将输出"null"
 	 * @throws NullPointerException 如果stream参数为<code>null</code>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午11:39:24
 	 */
 	public static void verbosePrint(PrintStream out, Object label, Map<?, ?> map) {
@@ -798,7 +798,7 @@ public class MapTool {
 	 * @param map 要打印的map, 可以为null，如果为null将输出"null"
 	 * @throws NullPointerException 如果stream参数为<code>null</code>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-9 下午11:39:24
 	 */
 	public static void debugPrint(PrintStream out, Object label, Map<?, ?> map) {
@@ -821,7 +821,7 @@ public class MapTool {
 	 * @param map 要反转的Map, 可以为null
 	 * @return 一个包含反转后的数据的新HashMap，转入的map为null将返回空的HashMap
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-10 下午9:00:25
 	 */
 	@SuppressWarnings("unchecked")
@@ -850,7 +850,7 @@ public class MapTool {
 	 * @param key map的key
 	 * @param value map的value，null将被转换为空串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-10 下午10:04:59
 	 */
 	public static <K> void safeAddToMap(Map<K, ?> map, K key, Object value) {
@@ -904,7 +904,7 @@ public class MapTool {
 	 * @throws IllegalArgumentException 如果子数组或使用的匹配的实体的条目某一个项是无效的
 	 * @throws ClassCastException 如果数组的内容混合的
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-10 下午10:30:33
 	 */
 	@SuppressWarnings("unchecked")
@@ -924,7 +924,7 @@ public class MapTool {
 	 * @param map 待检查的Map, 可以为null
 	 * @return true 指定的map为null或空
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-10 下午10:34:33
 	 */
 	public static boolean isEmpty(Map<?, ?> map) {
@@ -939,7 +939,7 @@ public class MapTool {
 	 * @param map 待检查的Map, 可以为null
 	 * @return true 指定的map为非null且非空
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-10 下午10:34:33
 	 */
 	public static boolean isNotEmpty(Map<?, ?> map) {
@@ -977,7 +977,7 @@ public class MapTool {
 	 * @return 同步的Map
 	 * @throws IllegalArgumentException 如果指定的map为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-10 下午10:44:23
 	 */
 	@SuppressWarnings("unchecked")
@@ -998,7 +998,7 @@ public class MapTool {
 	 * @return 一个不可修改的Map
 	 * @throws IllegalArgumentException 如果指定的map为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-10 下午10:48:34
 	 */
 	@SuppressWarnings("unchecked")
@@ -1022,7 +1022,7 @@ public class MapTool {
 	 * @return 满足指定条件的Map
 	 * @throws IllegalArgumentException 如果指定的map为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-10 下午10:52:13
 	 */
 	@SuppressWarnings("unchecked")
@@ -1045,7 +1045,7 @@ public class MapTool {
 	 * @return 满足指定类型的实体组成的Map
 	 * @throws IllegalArgumentException 如果任意参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-10 下午10:55:58
 	 */
 	@SuppressWarnings("unchecked")
@@ -1078,7 +1078,7 @@ public class MapTool {
 	 * @return 转换后的Map
 	 * @throws IllegalArgumentException 如果指定的map为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-10 下午11:07:50
 	 */
 	@SuppressWarnings("rawtypes")
@@ -1098,7 +1098,7 @@ public class MapTool {
 	 * @throws IllegalArgumentException 如果指定的Map为null
 	 * @throws UnsupportedOperationException 如果试图从返回的Map中添加或移除元素
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-11 上午10:31:26
 	 */
 	@SuppressWarnings("unchecked")
@@ -1138,7 +1138,7 @@ public class MapTool {
 	 * @return 指定Map的"懒惰"map
 	 * @throws IllegalArgumentException 如果任意参数null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-11 上午10:38:14
 	 */
 	@SuppressWarnings("unchecked")
@@ -1187,7 +1187,7 @@ public class MapTool {
 	 * @return 指定Map的"懒惰"map
 	 * @throws IllegalArgumentException 如果任意参数null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-11 下午12:53:19
 	 */
 	@SuppressWarnings("unchecked")
@@ -1209,7 +1209,7 @@ public class MapTool {
 	 * @return 排过序的Map
 	 * @throws IllegalArgumentException 如果指定的Map为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-11 下午6:02:22
 	 */
 	@SuppressWarnings("unchecked")
@@ -1226,7 +1226,7 @@ public class MapTool {
 	 * @return 一个多值的Map，它的value的类型为ArrayList
 	 * @see MultiValueMap
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-11 下午6:25:10
 	 */
 	@SuppressWarnings("unchecked")
@@ -1244,7 +1244,7 @@ public class MapTool {
 	 * @return 一个多值的Map，它的value的类型为指定的collectionClass
 	 * @see MultiValueMap
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-11 下午7:09:37
 	 */
 	@SuppressWarnings("unchecked")
@@ -1263,7 +1263,7 @@ public class MapTool {
 	 * @return 一个多值的Map，它的value的类型为指定的集合工厂创建的集合
 	 * @see MultiValueMap
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-11 下午7:32:57
 	 */
 	@SuppressWarnings("unchecked")
@@ -1302,7 +1302,7 @@ public class MapTool {
 	 * @return 指定map的同步map
 	 * @throws IllegalArgumentException 如果指定的map为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-11 下午7:45:30
 	 */
 	@SuppressWarnings("unchecked")
@@ -1323,7 +1323,7 @@ public class MapTool {
 	 * @return 一个不可修改的有序Map
 	 * @throws IllegalArgumentException 如果指定的map为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-11 下午7:48:05
 	 */
 	@SuppressWarnings("unchecked")
@@ -1347,7 +1347,7 @@ public class MapTool {
 	 * @return 满足指定条件的有序Map
 	 * @throws IllegalArgumentException 如果任意参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-11 下午8:08:53
 	 */
 	@SuppressWarnings("unchecked")
@@ -1369,7 +1369,7 @@ public class MapTool {
 	 * @param valueType 可以添加到返回的map中的value的类型, 不能为null
 	 * @return 指定key类型和value类型的有序Map
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-11 下午9:38:11
 	 */
 	@SuppressWarnings("unchecked")
@@ -1398,7 +1398,7 @@ public class MapTool {
 	 * @return 包含指定map的元素的新的具有转换功能的map
 	 * @throws IllegalArgumentException 如果任意参数null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-11 下午9:58:30
 	 */
 	@SuppressWarnings("rawtypes")
@@ -1418,7 +1418,7 @@ public class MapTool {
 	 * @throws IllegalArgumentException 如果指定的有序Map为null
 	 * @throws UnsupportedOperationException 如果试图从返回的有序Map中添加或移除元素
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-11 下午10:04:35
 	 */
 	@SuppressWarnings("unchecked")
@@ -1458,7 +1458,7 @@ public class MapTool {
 	 * @return 指定Map的"懒惰"map
 	 * @throws IllegalArgumentException 如果任意参数null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-11 下午10:09:00
 	 */
 	@SuppressWarnings("unchecked")
@@ -1507,7 +1507,7 @@ public class MapTool {
 	 * @return 指定Map的"懒惰"有序map
 	 * @throws IllegalArgumentException 如果任意参数null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-11 下午10:11:51
 	 */
 	@SuppressWarnings("unchecked")

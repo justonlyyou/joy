@@ -11,7 +11,7 @@ import com.kvc.joy.plugin.seqgen.service.ISequenceGenerator;
 /**
  * 统计序列号
  * 
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public class SeqNumStat {
 	

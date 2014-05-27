@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * 主键
  * 
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public class MdRdbPrimaryKey implements Serializable {
 

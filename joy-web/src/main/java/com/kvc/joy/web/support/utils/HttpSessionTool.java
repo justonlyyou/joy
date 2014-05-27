@@ -6,7 +6,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-14 下午10:06:47
  */
 public class HttpSessionTool {

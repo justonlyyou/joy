@@ -7,7 +7,7 @@ import com.kvc.joy.plugin.seqgen.model.po.TSysSeqNumRule;
 
 /**
  * 序列号缓存
- * @author  <b>唐玮琳</b>
+ * @author  <b>Kevice</b>
  */
 public class SequenceCache {
 	

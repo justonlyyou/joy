@@ -15,7 +15,7 @@ import java.util.Map;
  * 身份证工具类.
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  */
 public class IdCardNoTool {
 
@@ -91,7 +91,7 @@ public class IdCardNoTool {
 	 * @return 18位身份编码
 	 * @since 1.0.0
 	 * @author June
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-14 下午10:05:19
 	 */
 	public static String convert15To18(String idCardNo15) {
@@ -142,7 +142,7 @@ public class IdCardNoTool {
 	 * @return true: 为身份证号
 	 * @since 1.0.0
 	 * @author June
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-14 下午10:15:33
 	 */
 	public static boolean isIdCardNo(String str) {
@@ -162,7 +162,7 @@ public class IdCardNoTool {
 	 * @return true: 为18位身份证号
 	 * @since 1.0.0
 	 * @author June
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-14 下午10:42:48
 	 */
 	public static boolean isIdCardNo18(String str) {
@@ -201,7 +201,7 @@ public class IdCardNoTool {
 	 * @return true: 为18位身份证号
 	 * @since 1.0.0
 	 * @author June
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-14 下午10:42:48
 	 */
 	public static boolean isIdCardNo15(String str) {
@@ -246,7 +246,7 @@ public class IdCardNoTool {
 	 * @return true: 为台湾身份证号
 	 * @since 1.0.0
 	 * @author June
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-14 下午10:51:20
 	 */
 	public static boolean isTwIdCardNo(String str) {
@@ -293,7 +293,7 @@ public class IdCardNoTool {
 	 * @return true: 为香港身份证号
 	 * @since 1.0.0
 	 * @author June
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-14 下午10:51:20
 	 */
 	public static boolean isHkIdCardNo(String str) {
@@ -339,7 +339,7 @@ public class IdCardNoTool {
 	 * @return true: 为澳门身份证号
 	 * @since 1.0.0
 	 * @author June
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-14 下午10:51:20
 	 */
 	public static boolean isMacauIdCardNo(String str) {
@@ -383,7 +383,7 @@ public class IdCardNoTool {
 	 * @param iSum
 	 * @return 校验位
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-14 下午11:58:56
 	 */
 	private static String getCheckCode18(int iSum) {
@@ -399,7 +399,7 @@ public class IdCardNoTool {
 	 * @return 生日(yyyyMMdd)
 	 * @since 1.0.0
 	 * @author June
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-14 下午11:17:13
 	 */
 	public static String getBirthday(String idCardNo) {
@@ -424,7 +424,7 @@ public class IdCardNoTool {
 	 * @param idCardNo 身份证号，为null返回Sex.UNKNOWN
 	 * @return 性别枚举
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-14 下午11:25:55
 	 */
 	public static Sex getSex(String idCardNo) {
@@ -461,7 +461,7 @@ public class IdCardNoTool {
 	 * @param idCardNo 身份证号 为null或空返回null
 	 * @return 省枚举，未匹配返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 上午12:36:49
 	 */
 	public static Province getProvince(String idCardNo) {
@@ -490,7 +490,7 @@ public class IdCardNoTool {
 	/**
 	 * 判断是否为数字串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 */
 	private static boolean isNumber(String str) {
 		return !StringTool.isBlank(str) && str.matches("^[0-9]*$");

@@ -5,7 +5,7 @@ import com.kvc.joy.plugin.seqgen.model.po.TSysSeqNumRule;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年12月19日 上午12:23:19
  */
 public class SysSeqNumRuleVo extends TSysSeqNumRule {

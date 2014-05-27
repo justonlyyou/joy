@@ -47,7 +47,7 @@ public interface Socket {
 
     /**
      * 是否已经关闭
-     * @author 唐玮琳
+     * @author Kevice
      * @since  1.0.0
      * @time 2014-03-09 16:30
      */

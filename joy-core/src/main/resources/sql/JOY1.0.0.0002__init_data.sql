@@ -5,8 +5,8 @@ insert into t_joy_properties values ('jpa.showSql','true','true','jpa是否打�
 insert into t_joy_properties values ('jpa.generateDdl','true','true','jpa根据实体反向生成数据库表结构开关，不建议关闭，它只占用服务器启动时间，不占用系统正常运行资源');
 insert into t_joy_properties values ('flyway.locations','sql,','sql,','各版本数据库脚本存放的总目录，其下会有如mysql、oracle等目录，这些目录下放的是sql脚本的文件,多个以半角逗号分隔，至少要包括"sql"(它是joy内置脚本总目录)');
 insert into t_joy_properties values ('flyway.sqlMigrationPrefix','V','V','应用系统(不是joy)数据库脚本文件名的前缀');
-insert into t_joy_properties values ('plugin.persistence.hibernate.enabled','true','true','是否启用hibernate插件');
-insert into t_joy_properties values ('plugin.seqgen.enabled','true','true','是否启用seqgen(序列号生成器)插件');
+insert into t_joy_properties values ('plugin.persistence.hibernate.enabled','false','false','是否启用hibernate插件');
+insert into t_joy_properties values ('plugin.seqgen.enabled','false','false','是否启用seqgen(序列号生成器)插件');
 insert into t_joy_properties values ('plugin.jwebap.jdbc.enabled','false','false','是否启用sql监控插件');
 insert into t_joy_properties values ('plugin.jwebap.jdbc.filterTime','200','200','sql监控插件过滤时间毫秒数，只有执行时间大于该值(比较慢)的语句才会被记录到数据库中');
 insert into t_joy_properties values ('plugin.jwebap.jdbc.logPosition','true','true','sql监控插件在记录执行耗时的sql语句时是否同时记录它在java代码中的位置');
@@ -14,7 +14,7 @@ insert into t_joy_properties values ('plugin.jwebap.jdbc.threadPool.corePoolSize
 insert into t_joy_properties values ('plugin.jwebap.jdbc.threadPool.maxPoolSize','3','3','');
 insert into t_joy_properties values ('plugin.jwebap.jdbc.threadPool.queueCapacity','10','10','');
 insert into t_joy_properties values ('plugin.jwebap.jdbc.threadPool.keepAliveSeconds','900','900','');
-insert into t_joy_properties values ('plugin.druid.enabled','true','true','');
+insert into t_joy_properties values ('plugin.druid.enabled','false','false','');
 insert into t_joy_properties values ('plugin.quartz.enabled','false','false','');
 insert into t_joy_properties values ('plugin.erbac.enabled','true','true','');
 insert into t_joy_properties values ('plugin.erbac.loginUrl','login','login','');
@@ -43,4 +43,4 @@ insert into t_joy_properties values ('plugin.captcha.kaptcha.image.height','90',
 insert into t_joy_properties values ('plugin.captcha.kaptcha.session.key','code','code','');
 insert into t_joy_properties values ('plugin.captcha.kaptcha.textproducer.char.length','4','4','');
 insert into t_joy_properties values ('plugin.captcha.kaptcha.textproducer.font.names','\u5b8b\u4f53,\u6977\u4f53,\u5fae\u8f6f\u96c5\u9ed1','\u5b8b\u4f53,\u6977\u4f53,\u5fae\u8f6f\u96c5\u9ed1','');
-insert into t_joy_properties values ('plugin.comet.enabled','true','true','');
+insert into t_joy_properties values ('plugin.comet.enabled','false','false','');

@@ -27,7 +27,7 @@ import java.util.concurrent.ConcurrentMap;
  * 173)来处理XML文档的
  * </p>
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @since 1.0.0
  * @version 2013-01-15
  */
@@ -44,7 +44,7 @@ public class JaxbTool {
 	 * @param root 待序列化的根对象
 	 * @return 序列化后的xml字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午9:22:02
 	 */
 	public static String toXml(Object root) {
@@ -59,7 +59,7 @@ public class JaxbTool {
 	 * @param encoding 编码名称
 	 * @return 序列化后的xml字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午9:22:02
 	 */
 	public static String toXml(Object root, String encoding) {
@@ -75,7 +75,7 @@ public class JaxbTool {
 	 * @param encoding 编码名称
 	 * @return 序列化后的xml字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午9:22:02
 	 */
 	public static String toXml(Object root, Class<?> clazz, String encoding) {
@@ -96,7 +96,7 @@ public class JaxbTool {
 	 * @param clazz 类
 	 * @return 序列化后的xml字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午9:22:02
 	 */
 	public static String toXml(Collection<?> root, String rootName, Class<?> clazz) {
@@ -112,7 +112,7 @@ public class JaxbTool {
 	 * @param encoding 编码名称
 	 * @return 序列化后的xml字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午9:22:02
 	 */
 	public static String toXml(Collection<?> root, String rootName, Class<?> clazz, String encoding) {
@@ -141,7 +141,7 @@ public class JaxbTool {
 	 * @param clazz 实例的类型
 	 * @return 指定类的实例
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午9:29:27
 	 */
 	@SuppressWarnings("unchecked")
@@ -163,7 +163,7 @@ public class JaxbTool {
 	 * @param encoding 可为null
 	 * @return Marshaller
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午9:31:49
 	 */
 	public static Marshaller createMarshaller(Class<?> clazz, String encoding) {
@@ -192,7 +192,7 @@ public class JaxbTool {
 	 * @param clazz 类
 	 * @return UnMarshaller
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午9:33:57
 	 */
 	public static Unmarshaller createUnmarshaller(Class<?> clazz) {

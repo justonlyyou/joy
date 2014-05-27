@@ -20,7 +20,7 @@ import java.awt.image.RenderedImage;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年9月21日 下午5:39:29
  */
 @Controller

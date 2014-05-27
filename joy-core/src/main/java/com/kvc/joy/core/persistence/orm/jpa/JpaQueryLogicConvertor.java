@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-20 上午12:53:41
  */
 public class JpaQueryLogicConvertor {

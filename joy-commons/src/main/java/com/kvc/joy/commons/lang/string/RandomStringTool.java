@@ -8,7 +8,7 @@ import java.util.UUID;
  * 随机字符串工具类
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-9 下午8:49:38
  */
 public class RandomStringTool {
@@ -26,7 +26,7 @@ public class RandomStringTool {
 	 * @return 中间无"-"分割的UUID
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午5:09:52
 	 */
 	public static String uuid() {
@@ -41,7 +41,7 @@ public class RandomStringTool {
 	 * @return 随机Long
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午5:11:16
 	 */
 	public static long randomLong() {
@@ -57,7 +57,7 @@ public class RandomStringTool {
 	 * @return Base62编码的字符串
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午5:12:18
 	 */
 	public static String randomBase62(int length) {
@@ -82,7 +82,7 @@ public class RandomStringTool {
 	 * @param count 要创建的随机串的长度
 	 * @return 随机串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午8:23:52
 	 */
 	public static String random(int count) {
@@ -101,7 +101,7 @@ public class RandomStringTool {
 	 * @param count 要创建的随机串的长度
 	 * @return 随机串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午8:28:43
 	 */
 	public static String randomAscii(int count) {
@@ -120,7 +120,7 @@ public class RandomStringTool {
 	 * @param count 要创建的随机串的长度
 	 * @return 随机串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午8:31:28
 	 */
 	public static String randomAlphabetic(int count) {
@@ -139,7 +139,7 @@ public class RandomStringTool {
 	 * @param count 要创建的随机串的长度
 	 * @return 随机串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午8:32:38
 	 */
 	public static String randomAlphanumeric(int count) {
@@ -158,7 +158,7 @@ public class RandomStringTool {
 	 * @param count 要创建的随机串的长度
 	 * @return 随机串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午8:33:01
 	 */
 	public static String randomNumeric(int count) {
@@ -179,7 +179,7 @@ public class RandomStringTool {
 	 * @param numbers 如果为 {@code true}, 生成的字符将从数字中选择
 	 * @return 随机串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午8:35:31
 	 */
 	public static String random(int count, boolean letters, boolean numbers) {
@@ -202,7 +202,7 @@ public class RandomStringTool {
 	 * @param numbers 如果为 {@code true}, 生成的字符将从数字中选择
 	 * @return 随机串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午8:38:51
 	 */
 	public static String random(int count, int start, int end, boolean letters, boolean numbers) {
@@ -229,7 +229,7 @@ public class RandomStringTool {
 	 * @throws ArrayIndexOutOfBoundsException 如果指定字符集中的元素不足
 	 *             {@code (end - start) + 1} 个
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午8:47:32
 	 */
 	public static String random(int count, int start, int end, boolean letters, boolean numbers, char... chars) {
@@ -265,7 +265,7 @@ public class RandomStringTool {
 	 *             {@code (end - start) + 1} 个
 	 * @throws IllegalArgumentException 如果 {@code count} &lt; 0.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午8:49:09
 	 */
 	public static String random(int count, int start, int end, boolean letters, boolean numbers, char[] chars,
@@ -287,7 +287,7 @@ public class RandomStringTool {
 	 * @return 随机串
 	 * @throws IllegalArgumentException 如果 {@code count} &lt; 0.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午9:01:34
 	 */
 	public static String random(int count, String chars) {
@@ -308,7 +308,7 @@ public class RandomStringTool {
 	 * @return 随机串
 	 * @throws IllegalArgumentException 如果 {@code count} &lt; 0.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午9:01:42
 	 */
 	public static String random(int count, char... chars) {

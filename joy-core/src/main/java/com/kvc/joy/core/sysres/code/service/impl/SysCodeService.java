@@ -25,7 +25,7 @@ import java.util.*;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-8 下午2:15:46
  */
 public class SysCodeService implements ISysCodeService {

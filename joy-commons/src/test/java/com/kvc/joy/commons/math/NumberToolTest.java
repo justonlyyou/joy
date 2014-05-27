@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-9 下午8:06:41
  */
 public class NumberToolTest {

@@ -6,7 +6,7 @@ import java.io.Serializable;
  * 命令接口
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  */
 public interface ICommand extends Serializable {
 	

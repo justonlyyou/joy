@@ -15,7 +15,7 @@ import java.util.Map;
 
 /**
  * Extjs模型Action，主要提供将POJO转为Extjs的Model，这样不用每个POJO都写一个Extjs的Model
- * @author 唐玮琳
+ * @author Kevice
  */
 public class ExtModelAction {
 

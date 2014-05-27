@@ -7,7 +7,7 @@ import com.kvc.joy.core.sysres.SysResTool;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年10月15日 上午10:21:45
  */
 public enum LogoutMethod implements ICodeEnum {

@@ -6,7 +6,7 @@ import java.util.UUID;
  * ID生成器
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年12月2日 下午10:28:49
  */
 public class IdGenerator {
@@ -19,7 +19,7 @@ public class IdGenerator {
 	 * 
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年12月2日 下午10:29:41
 	 */
 	public static String gen32Uuid() {

@@ -10,7 +10,7 @@ import javax.persistence.Table;
 /**
  * 用户账号安全保护
  *
- * @author 唐玮琳
+ * @author Kevice
  * @time 14-2-16 上午10:44
  * @since 1.0.0
  */

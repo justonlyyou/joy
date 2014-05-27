@@ -10,7 +10,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
- * @author 唐玮琳
+ * @author Kevice
  * @time 14-3-5 下午11:30
  * @since 1.0.0
  */

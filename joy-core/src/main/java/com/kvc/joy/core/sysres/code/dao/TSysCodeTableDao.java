@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年12月15日 下午8:23:38
  */
 public class TSysCodeTableDao extends BaseJpaDao<TSysCodeTable> {

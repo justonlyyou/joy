@@ -25,7 +25,7 @@ import java.util.Set;
 		System.out.println(seqNum);
  * </pre>
  * 
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public class PrefixSuffixPatternParser {
 

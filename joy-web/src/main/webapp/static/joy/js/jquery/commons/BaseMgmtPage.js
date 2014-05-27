@@ -2,44 +2,19 @@ define(['joy/commons/BasePage', 'layer', 'css!3rd/jquery/layer/skin/layer'], fun
 	
 	return BasePage.extend({
 
-        newBtn : null,
-        queryBtn : null,
-        toggleSeniorQueryBtn : null,
-        seniorQueryBtn : null,
-        resetSeniorQueryBtn : null,
-        addNewBtn : null,
-        deleteBtn : null,
-        queryConditionForm : null,
-        seniorQueryConditionPane : null,
-        seniorQueryConditionForm : null,
-        resultGrid : null,
-        listPage : null,
-        editPage : null,
-        detailPage : null,
+        title : null,
+        $newBtn : null,
+        $form : null,
 
-        init : function() {
+        init : function(title) {
             this._super();
-            this.newBtn = $("#newBtn");
-            this.queryBtn = $("#queryBtn");
-//            this.toggleSeniorQueryBtn =  $("#toggleSeniorQueryBtn");
-//            this.seniorQueryBtn =  $("#seniorQueryBtn");
-//            this.resetSeniorQueryBtn =  $("#resetSeniorQueryBtn");
-//            this.addNewBtn =  $("#addNewBtn");
-//            this.deleteBtn =  $("#deleteBtn");
-//            this.queryConditionForm =  $("#queryConditionForm");
-//            this.seniorQueryConditionPane =  $("#seniorQueryConditionPane");
-//            this.seniorQueryConditionForm =  $("#seniorQueryConditionForm");
-//            if(this.seniorQueryConditionForm && this.resultGrid) {
-//                var ds = this.resultGrid.getDataStore();
-//                this.seniorQueryConditionForm.set("store", ds ? ds.dataStoreName : "");
-//            }
-//            this.resultGrid =  $("#resultGrid");
-//            this.listPage =  $("#listPage");
-//            this.editPage =  $("#editPage");
-//            this.detailPage =  $("#detailPage");
-//            if(this.resultGrid) {
-//                this.resultGrid.controler = this;
-//            }
+            if(title) {
+                this.title = title;
+            } else {
+                this.title = this.currentMenuText();
+            }
+            this.$newBtn = $("#newBtn");
+            this.$form = $("form");
 
             this.onPageLoad();
             this.bindEvent();
@@ -47,39 +22,19 @@ define(['joy/commons/BasePage', 'layer', 'css!3rd/jquery/layer/skin/layer'], fun
 
         bindEvent : function() {
             var _this = this;
-            if(this.newBtn) {
-                this.newBtn.bind("click", function(e) {
+            if(this.$newBtn.length) {
+                this.$newBtn.bind("click", function(e) {
                     e.preventDefault();
                     _this.addRecord();
                 });
             }
-            this.queryBtn.bind('click', this.queryConditionForm, this.query);
-//            this.seniorQueryBtn.bind('click', this.seniorQueryConditionForm, this.query);
-//            this.resetSeniorQueryBtn.bind('click', this.resetCondition);
-//            this.toggleSeniorQueryBtn.bind('click', this.toggleSeniorQuery);
-//            this.addNewBtn.bind('click', this.showEditPage);
-//            this.deleteBtn.bind('click', this.deleteRows);
-            //this.editPage.bind('click', this.createEditPage);
-            //this.detailPage.bind('click', this.createDetailPage);
         },
 
         /**
          * 执行查询
          */
         query : function(event) {
-            var queryForm = event.data;
-            // 校验表单
-            if (queryForm.validateForm()) {
-                if(queryForm === this.seniorQueryConditionForm) {
-                    this.toggleSeniorQuery();
-                }
-                // 获取查询条件
-                var condition = queryForm.getQueryCondition();
-                // 设置查询条件
-                this.resultGrid.setQueryCondition(condition);
-                // 重新加载表格数据
-                this.resultGrid.load();
-            }
+
         },
 
         onPageLoad: function () {
@@ -89,23 +44,88 @@ define(['joy/commons/BasePage', 'layer', 'css!3rd/jquery/layer/skin/layer'], fun
         },
 
         _processOperator: function () {
-            var $form = $("form");
-            var inputs = $form.find("input");
-            var selects = $form.find("select");
+            var inputs = this.$form.find("input");
+            var selects = this.$form.find("select");
             var inputables = $.merge(inputs, selects);
+            var _this = this;
             $.each(inputables, function (i, item) {
                 var propsStr = item.getAttribute("data-joy-props");
                 if (propsStr) {
                     var attrName = item.getAttribute("name");
                     var opParamName = "_joy_key__operator_" + attrName;
                     var props = eval("({" + propsStr + "})");
-                    var hidden = $form.find("input[name=" + opParamName + "]");
+                    var hidden = _this.$form.find("input[name=" + opParamName + "]");
                     if (hidden.length == 0) {
                         hidden = $("<input type='hidden' name='" + opParamName + "' value='" + props.operator + "'/>");
-                        $form.append(hidden);
+                        _this.$form.append(hidden);
                     }
                 }
             });
+        },
+
+        addRecord : function(area, offset) {
+            if(!area) {
+                area =  ['750px' , '500px'];
+            }
+            if(!offset) {
+                offset = ['30px',''];
+            }
+            $.layer({
+                type : 2,
+                title : this.title + "新增",
+                iframe : {src : 'add'},
+                area : area,
+                offset : offset
+            });
+        },
+
+        editRecord : function(id, area, offset) {
+            if(!area) {
+                area =  ['750px' , '500px'];
+            }
+            if(!offset) {
+                offset = ['30px',''];
+            }
+            $.layer({
+                type : 2,
+                title : this.title + "编辑",
+                iframe : {src : 'edit?id=' + id},
+                area : area,
+                offset : offset
+            });
+        },
+
+        showDetail : function(id, area, offset) {
+            if(!area) {
+                area =  ['750px' , '500px'];
+            }
+            if(!offset) {
+                offset = ['30px',''];
+            }
+            $.layer({
+                type : 2,
+                title : this.title + "详情",
+                iframe : {src : 'get?id=' + id},
+                area : area,
+                offset : offset
+            });
+        },
+
+        deleteRecord : function(id) {
+            if(confirm("确定要删除该记录？")) {
+                $.ajax({
+                    cache: true,
+                    type: "POST",
+                    url: 'delete?id=' + id,
+                    async: false,
+                    error: function(request) {
+                        alert("删除失败！");
+                    },
+                    success: function(data) {
+                        alert("删除成功！");
+                    }
+                });
+            }
         }
 
 	});

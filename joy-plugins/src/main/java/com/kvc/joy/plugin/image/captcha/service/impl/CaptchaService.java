@@ -15,7 +15,7 @@ import java.util.Date;
  * 验证码服务
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年9月28日 下午10:11:58
  */
 public class CaptchaService implements ICaptchaService {

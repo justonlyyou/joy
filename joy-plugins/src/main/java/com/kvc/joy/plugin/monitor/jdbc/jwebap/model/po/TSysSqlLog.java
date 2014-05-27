@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-12-15 下午7:09:20
  */
 @Entity

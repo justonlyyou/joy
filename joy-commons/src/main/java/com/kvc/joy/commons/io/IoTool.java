@@ -17,7 +17,7 @@ import java.util.List;
  * </p>
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-6 上午10:37:58
  */
 public class IoTool {
@@ -36,7 +36,7 @@ public class IoTool {
 	 * 
 	 * @param conn 要关闭的连接
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午9:18:56
 	 */
 	public static void close(URLConnection conn) {
@@ -72,7 +72,7 @@ public class IoTool {
 	 * 
 	 * @param input 要关闭的<code>Reader</code>, 可以为null或已经关闭的<code>Reader</code>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午9:22:47
 	 */
 	public static void closeQuietly(Reader input) {
@@ -107,7 +107,7 @@ public class IoTool {
 	 * 
 	 * @param output 要关闭的<code>Writer</code>, 可以为null或已经关闭的<code>Writer</code>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午9:24:25
 	 */
 	public static void closeQuietly(Writer output) {
@@ -143,7 +143,7 @@ public class IoTool {
 	 * 
 	 * @param input 要关闭的<code>InputStream</code>, 可以为null或已经关闭的<code>InputStream</code>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午9:38:20
 	 */
 	public static void closeQuietly(InputStream input) {
@@ -180,7 +180,7 @@ public class IoTool {
 	 * 
 	 * @param output 要关闭的<code>OutputStream</code>, 可以为null或已经关闭的<code>OutputStream</code>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午9:41:27
 	 */
 	public static void closeQuietly(OutputStream output) {
@@ -215,7 +215,7 @@ public class IoTool {
 	 * 
 	 * @param closeable 要关闭的<code>Closeable</code>, 可以为null或已经关闭的<code>Closeable</code>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午9:42:23
 	 */
 	public static void closeQuietly(Closeable closeable) {
@@ -250,7 +250,7 @@ public class IoTool {
 	 * 
 	 * @param sock 要关闭的<code>Socket</code>, 可以为null或已经关闭的<code>Socket</code>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午9:43:10
 	 */
 	public static void closeQuietly(Socket sock) {
@@ -285,7 +285,7 @@ public class IoTool {
 	 * 
 	 * @param selector 要关闭的<code>Selector</code>, 可以为null或已经关闭的<code>Selector</code>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午9:43:55
 	 */
 	public static void closeQuietly(Selector selector) {
@@ -320,7 +320,7 @@ public class IoTool {
 	 * 
 	 * @param sock 要关闭的<code>ServerSocket</code>, 可以为null或已经关闭的<code>ServerSocket</code>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午9:44:42
 	 */
 	public static void closeQuietly(ServerSocket sock) {
@@ -349,7 +349,7 @@ public class IoTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午9:56:06
 	 */
 	public static InputStream toBufferedInputStream(InputStream input) {
@@ -369,7 +369,7 @@ public class IoTool {
 	 * @param reader 要被包装或直接返回的Reader
 	 * @return 指定的Reader 或 指定的Reader的一个新的 {@link BufferedReader}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午9:59:23
 	 */
 	public static BufferedReader toBufferedReader(Reader reader) {
@@ -393,7 +393,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午10:02:33
 	 */
 	public static byte[] toByteArray(InputStream input) {
@@ -423,7 +423,7 @@ public class IoTool {
 	 * 						IllegalArgumentException 如果size参数小于0或大于Integer.MAX_VALUE
 	 * @see IOTool#toByteArray(java.io.InputStream, int)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午7:38:49
 	 */
 	public static byte[] toByteArray(InputStream input, long size) {
@@ -447,7 +447,7 @@ public class IoTool {
 	 * 						IOException io错误发生或<code>InputStream</code>的大小与size参数不一致时 <br>					
 	 * 						IllegalArgumentException 如果size参数小于0
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午7:41:04
 	 */
 	public static byte[] toByteArray(InputStream input, int size) {
@@ -473,7 +473,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午10:02:33
 	 */
 	public static byte[] toByteArray(Reader input) {
@@ -500,7 +500,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午10:02:33
 	 */
 	public static byte[] toByteArray(Reader input, Charset encoding) {
@@ -533,7 +533,7 @@ public class IoTool {
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午10:02:33
 	 */
 	public static byte[] toByteArray(Reader input, String encoding) {
@@ -555,7 +555,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午7:53:30
 	 */
 	public static byte[] toByteArray(URI uri) {
@@ -577,7 +577,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午7:53:30
 	 */
 	public static byte[] toByteArray(URL url) {
@@ -599,7 +599,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午7:53:30
 	 */
 	public static byte[] toByteArray(URLConnection urlConn) {
@@ -629,7 +629,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午10:02:33
 	 */
 	public static char[] toCharArray(InputStream is) {
@@ -657,7 +657,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午10:02:33
 	 */
 	public static char[] toCharArray(InputStream is, Charset encoding) {
@@ -691,7 +691,7 @@ public class IoTool {
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 指定编码不被支持时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午10:02:33
 	 */
 	public static char[] toCharArray(InputStream is, String encoding) {
@@ -717,7 +717,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午10:02:33
 	 */
 	public static char[] toCharArray(Reader input) {
@@ -746,7 +746,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午8:15:29
 	 */
 	public static String toString(InputStream input) {
@@ -775,7 +775,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午8:15:29
 	 */
 	public static String toString(InputStream input, Charset encoding) {
@@ -808,7 +808,7 @@ public class IoTool {
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 指定的编码不被支持时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午8:17:30
 	 */
 	public static String toString(InputStream input, String encoding) {
@@ -834,7 +834,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午8:19:14
 	 */
 	public static String toString(Reader input) {
@@ -855,7 +855,7 @@ public class IoTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午8:23:06
 	 */
 	public static String toString(URI uri) {
@@ -877,7 +877,7 @@ public class IoTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午8:23:14
 	 */
 	public static String toString(URI uri, Charset encoding) {
@@ -900,7 +900,7 @@ public class IoTool {
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午8:29:19
 	 */
 	public static String toString(URI uri, String encoding) {
@@ -921,7 +921,7 @@ public class IoTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午8:29:27
 	 */
 	public static String toString(URL url) {
@@ -943,7 +943,7 @@ public class IoTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午8:29:35
 	 */
 	public static String toString(URL url, Charset encoding) {
@@ -967,7 +967,7 @@ public class IoTool {
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午8:30:53
 	 */
 	public static String toString(URL url, String encoding) {
@@ -995,7 +995,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午8:35:56
 	 */
 	public static String toString(byte[] input, String encoding) {
@@ -1024,7 +1024,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午8:50:30
 	 */
 	public static List<String> readLines(InputStream input) {
@@ -1052,7 +1052,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午8:56:53
 	 */
 	public static List<String> readLines(InputStream input, Charset encoding) {
@@ -1086,7 +1086,7 @@ public class IoTool {
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午8:57:32
 	 */
 	public static List<String> readLines(InputStream input, String encoding) {
@@ -1112,7 +1112,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午8:48:03
 	 */
 	public static List<String> readLines(Reader input) {
@@ -1157,7 +1157,7 @@ public class IoTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IllegalArgumentException 如果参数为null <br>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:10:02
 	 */
 	public static LineIterator lineIterator(Reader reader) {
@@ -1198,7 +1198,7 @@ public class IoTool {
 	 * 					IllegalArgumentException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:11:43
 	 */
 	public static LineIterator lineIterator(InputStream input, Charset encoding) {
@@ -1244,7 +1244,7 @@ public class IoTool {
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:12:21
 	 */
 	public static LineIterator lineIterator(InputStream input, String encoding) {
@@ -1264,7 +1264,7 @@ public class IoTool {
 	 * @param input 待转换的CharSequence
 	 * @return 输入流
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:14:11
 	 */
 	public static InputStream toInputStream(CharSequence input) {
@@ -1280,7 +1280,7 @@ public class IoTool {
 	 * @param encoding 使用的编码，null表示平台默认的编码
 	 * @return 输入流
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:14:34
 	 */
 	public static InputStream toInputStream(CharSequence input, Charset encoding) {
@@ -1303,7 +1303,7 @@ public class IoTool {
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:15:14
 	 */
 	public static InputStream toInputStream(CharSequence input, String encoding) {
@@ -1323,7 +1323,7 @@ public class IoTool {
 	 * @param input 待转换的字符串
 	 * @return 输入流
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:17:06
 	 */
 	public static InputStream toInputStream(String input) {
@@ -1339,7 +1339,7 @@ public class IoTool {
 	 * @param encoding 使用的编码，null表示平台默认的编码
 	 * @return 输入流
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:17:12
 	 */
 	public static InputStream toInputStream(String input, Charset encoding) {
@@ -1362,7 +1362,7 @@ public class IoTool {
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:17:20
 	 */
 	public static InputStream toInputStream(String input, String encoding) {
@@ -1386,7 +1386,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:20:06
 	 */
 	public static void write(byte[] data, OutputStream output) {
@@ -1413,7 +1413,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:23:36
 	 */
 	public static void write(byte[] data, Writer output) {
@@ -1441,7 +1441,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:24:34
 	 */
 	public static void write(byte[] data, Writer output, Charset encoding) {
@@ -1475,7 +1475,7 @@ public class IoTool {
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:25:18
 	 */
 	public static void write(byte[] data, Writer output, String encoding) {
@@ -1501,7 +1501,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:26:54
 	 */
 	public static void write(char[] data, Writer output) {
@@ -1528,7 +1528,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:23:36
 	 */
 	public static void write(char[] data, OutputStream output) {
@@ -1556,7 +1556,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:30:37
 	 */
 	public static void write(char[] data, OutputStream output, Charset encoding) {
@@ -1590,7 +1590,7 @@ public class IoTool {
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:31:41
 	 */
 	public static void write(char[] data, OutputStream output, String encoding) {
@@ -1614,7 +1614,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:35:47
 	 */
 	public static void write(CharSequence data, Writer output) {
@@ -1641,7 +1641,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:36:55
 	 */
 	public static void write(CharSequence data, OutputStream output) {
@@ -1669,7 +1669,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:37:31
 	 */
 	public static void write(CharSequence data, OutputStream output, Charset encoding) {
@@ -1703,7 +1703,7 @@ public class IoTool {
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:38:03
 	 */
 	public static void write(CharSequence data, OutputStream output, String encoding) {
@@ -1727,7 +1727,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:39:36
 	 */
 	public static void write(String data, Writer output) {
@@ -1754,7 +1754,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:40:09
 	 */
 	public static void write(String data, OutputStream output) {
@@ -1782,7 +1782,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:40:46
 	 */
 	public static void write(String data, OutputStream output, Charset encoding) {
@@ -1816,7 +1816,7 @@ public class IoTool {
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:41:14
 	 */
 	public static void write(String data, OutputStream output, String encoding) {
@@ -1845,7 +1845,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时           
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:46:15
 	 */
 	public static void writeLines(Collection<?> lines, String lineEnding, OutputStream output) {
@@ -1870,7 +1870,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:46:22
 	 */
 	public static void writeLines(Collection<?> lines, String lineEnding, OutputStream output, Charset encoding) {
@@ -1900,7 +1900,7 @@ public class IoTool {
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:46:30
 	 */
 	public static void writeLines(Collection<?> lines, String lineEnding, OutputStream output, String encoding) {
@@ -1923,7 +1923,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:47:11
 	 */
 	public static void writeLines(Collection<?> lines, String lineEnding, Writer writer) {
@@ -1958,7 +1958,7 @@ public class IoTool {
 	 * 					NullPointerException 如果任意参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:52:22
 	 */
 	public static Integer copy(InputStream input, OutputStream output) {
@@ -1985,7 +1985,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:55:58
 	 */
 	public static Long copyLarge(InputStream input, OutputStream output) {
@@ -2013,7 +2013,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午9:58:46
 	 */
 	public static Long copyLarge(InputStream input, OutputStream output, byte[] buffer) {
@@ -2043,7 +2043,7 @@ public class IoTool {
 	 * 					NullPointerException 如果input 或 output参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午10:03:24
 	 */
 	public static Long copyLarge(InputStream input, OutputStream output, long inputOffset, long length) {
@@ -2074,7 +2074,7 @@ public class IoTool {
 	 * 					NullPointerException 如果input 或 output参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午10:05:47
 	 */
 	public static Long copyLarge(InputStream input, OutputStream output, final long inputOffset, final long length,
@@ -2105,7 +2105,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午10:07:40
 	 */
 	public static void copy(InputStream input, Writer output) {
@@ -2136,7 +2136,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午10:08:30
 	 */
 	public static void copy(InputStream input, Writer output, Charset encoding) {
@@ -2173,7 +2173,7 @@ public class IoTool {
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午10:09:12
 	 */
 	public static void copy(InputStream input, Writer output, String encoding) {
@@ -2208,7 +2208,7 @@ public class IoTool {
 	 * 					NullPointerException 如果input 或 output参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午10:11:56
 	 */
 	public static Integer copy(Reader input, Writer output) {
@@ -2235,7 +2235,7 @@ public class IoTool {
 	 * 					NullPointerException 如果input 或 output参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午10:14:47
 	 */
 	public static Long copyLarge(Reader input, Writer output) {
@@ -2263,7 +2263,7 @@ public class IoTool {
 	 * 					NullPointerException 如果input 或 output参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午10:16:00
 	 */
 	public static Long copyLarge(Reader input, Writer output, char[] buffer) {
@@ -2293,7 +2293,7 @@ public class IoTool {
 	 * 					NullPointerException 如果input 或 output参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午10:21:08
 	 */
 	public static Long copyLarge(Reader input, Writer output, final long inputOffset, final long length) {
@@ -2324,7 +2324,7 @@ public class IoTool {
 	 * 					NullPointerException 如果input 或 output参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午10:20:48
 	 */
 	public static Long copyLarge(Reader input, Writer output, final long inputOffset, final long length, char[] buffer) {
@@ -2358,7 +2358,7 @@ public class IoTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					NullPointerException 如果input 或 output参数为null <br>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午10:28:09
 	 */
 	public static void copy(Reader input, OutputStream output) {
@@ -2394,7 +2394,7 @@ public class IoTool {
 	 * 					NullPointerException 如果input 或 output参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午10:29:38
 	 */
 	public static void copy(Reader input, OutputStream output, Charset encoding) {
@@ -2436,7 +2436,7 @@ public class IoTool {
 	 * 					IOException io错误发生时 <br>
 	 * 					UnsupportedCharsetException 如果指定的编码不被支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午10:30:42
 	 */
 	public static void copy(Reader input, OutputStream output, String encoding) {
@@ -2465,7 +2465,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午10:37:25
 	 */
 	public static Boolean contentEquals(InputStream input1, InputStream input2) {
@@ -2492,7 +2492,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午10:39:04
 	 */
 	public static Boolean contentEquals(Reader input1, Reader input2) {
@@ -2519,7 +2519,7 @@ public class IoTool {
 	 * 					NullPointerException 如果参数为null <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午10:40:37
 	 */
 	public static Boolean contentEqualsIgnoreEOL(Reader input1, Reader input2) {
@@ -2543,7 +2543,7 @@ public class IoTool {
 	 * 					IllegalArgumentException 如果toSkip参数为负数 <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午10:45:02
 	 */
 	public static Long skip(InputStream input, long toSkip) {
@@ -2569,7 +2569,7 @@ public class IoTool {
 	 * 					IllegalArgumentException 如果toSkip参数为负数 <br>
 	 * 					IOException io错误发生时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-20 下午10:47:13
 	 */
 	public static Long skip(Reader input, long toSkip) {
@@ -2598,7 +2598,7 @@ public class IoTool {
 	 * 					IllegalArgumentException 如果指定的字节数为负数 <br>
 	 * 					EOFException 如果要跳过的字节数不正确
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午7:25:38
 	 */
 	public static void skipFully(InputStream input, long toSkip) {
@@ -2627,7 +2627,7 @@ public class IoTool {
 	 * 					IllegalArgumentException 如果指定的字符数为负数 <br>
 	 * 					EOFException 如果要跳过的字符数不正确
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午7:27:40
 	 */
 	public static void skipFully(Reader input, long toSkip) {
@@ -2652,7 +2652,7 @@ public class IoTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException 读取时发生错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午7:32:39
 	 */
 	public static Integer read(Reader input, char[] buffer, int offset, int length) {
@@ -2675,7 +2675,7 @@ public class IoTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException 读取时发生错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午7:33:34
 	 */
 	public static Integer read(Reader input, char[] buffer) {
@@ -2700,7 +2700,7 @@ public class IoTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException 读取时发生错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午7:35:01
 	 */
 	public static Integer read(InputStream input, byte[] buffer, int offset, int length) {
@@ -2723,7 +2723,7 @@ public class IoTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 					IOException 读取时发生错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午7:33:34
 	 */
 	public static Integer read(InputStream input, byte[] buffer) {
@@ -2753,7 +2753,7 @@ public class IoTool {
 	 * 					IllegalArgumentException 如果指定的字符数为负数 <br>
 	 * 					EOFException 如果要跳过的字符数不正确
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午7:41:36
 	 */
 	public static void readFully(Reader input, char[] buffer, int offset, int length) {
@@ -2781,7 +2781,7 @@ public class IoTool {
 	 * 					IllegalArgumentException 如果指定的字符数为负数 <br>
 	 * 					EOFException 如果要跳过的字符数不正确
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午7:41:36
 	 */
 	public static void readFully(Reader input, char[] buffer) {
@@ -2811,7 +2811,7 @@ public class IoTool {
 	 * 					IllegalArgumentException 如果指定的字节数为负数 <br>
 	 * 					EOFException 如果要跳过的字节数不正确
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午7:41:36
 	 */
 	public static void readFully(InputStream input, byte[] buffer, int offset, int length) {
@@ -2839,7 +2839,7 @@ public class IoTool {
 	 * 					IllegalArgumentException 如果指定的字节数为负数 <br>
 	 * 					EOFException 如果要跳过的字节数不正确
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午7:41:36
 	 */
 	public static void readFully(InputStream input, byte[] buffer) {

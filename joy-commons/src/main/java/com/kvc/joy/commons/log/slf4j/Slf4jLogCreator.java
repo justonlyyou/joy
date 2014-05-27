@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年11月20日 上午1:21:59
  */
 public class Slf4jLogCreator implements LogCreator {

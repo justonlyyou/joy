@@ -2,7 +2,7 @@ package com.kvc.joy.web.support.extjs;
 
 /**
  * Extjs数据字段类(Ext.data.Field)对应的POJO
- * @author 唐玮琳
+ * @author Kevice
  */
 public class ExtDataField {
 

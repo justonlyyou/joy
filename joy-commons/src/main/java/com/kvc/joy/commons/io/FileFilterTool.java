@@ -17,7 +17,7 @@ import java.util.Set;
  * </p>
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-19 上午10:20:29
  */
 public class FileFilterTool {
@@ -42,7 +42,7 @@ public class FileFilterTool {
 	 * @throws IllegalArgumentException 如果过滤器为{@code null}，或<code>files</code>包含
 	 *             {@code null} 值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午7:54:23
 	 */
 	public static File[] filter(IOFileFilter filter, File... files) {
@@ -60,7 +60,7 @@ public class FileFilterTool {
 	 * @throws IllegalArgumentException 如果过滤器为{@code null}，或<code>files</code>包含
 	 *             {@code null} 值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午7:57:45
 	 */
 	public static File[] filter(IOFileFilter filter, Iterable<File> files) {
@@ -87,7 +87,7 @@ public class FileFilterTool {
 	 * @throws IllegalArgumentException 如果过滤器为{@code null}，或<code>files</code>包含
 	 *             {@code null} 值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:00:16
 	 */
 	public static List<File> filterList(IOFileFilter filter, Iterable<File> files) {
@@ -114,7 +114,7 @@ public class FileFilterTool {
 	 * @throws IllegalArgumentException 如果过滤器为{@code null}，或<code>files</code>包含
 	 *             {@code null} 值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:05:20
 	 */
 	public static List<File> filterList(IOFileFilter filter, File... files) {
@@ -141,7 +141,7 @@ public class FileFilterTool {
 	 * @throws IllegalArgumentException 如果过滤器为{@code null}，或<code>files</code>包含
 	 *             {@code null} 值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:07:10
 	 */
 	public static Set<File> filterSet(IOFileFilter filter, File... files) {
@@ -168,7 +168,7 @@ public class FileFilterTool {
 	 * @throws IllegalArgumentException 如果过滤器为{@code null}，或<code>files</code>包含
 	 *             {@code null} 值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:09:20
 	 */
 	public static Set<File> filterSet(IOFileFilter filter, Iterable<File> files) {
@@ -184,7 +184,7 @@ public class FileFilterTool {
 	 * @return 匹配文件名前缀的文件过滤器
 	 * @see PrefixFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:11:34
 	 */
 	public static IOFileFilter prefixFileFilter(String prefix) {
@@ -201,7 +201,7 @@ public class FileFilterTool {
 	 * @return 匹配文件名前缀的文件过滤器
 	 * @see PrefixFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:13:10
 	 */
 	public static IOFileFilter prefixFileFilter(String prefix, CaseSensitivity caseSensitivity) {
@@ -218,7 +218,7 @@ public class FileFilterTool {
 	 * @return 匹配文件名后缀的文件过滤器
 	 * @see SuffixFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:14:28
 	 */
 	public static IOFileFilter suffixFileFilter(String suffix) {
@@ -235,7 +235,7 @@ public class FileFilterTool {
 	 * @return 匹配文件名后缀的文件过滤器
 	 * @see PrefixFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:13:10
 	 */
 	public static IOFileFilter suffixFileFilter(String suffix, CaseSensitivity caseSensitivity) {
@@ -252,7 +252,7 @@ public class FileFilterTool {
 	 * @return 匹配文件名的文件过滤器
 	 * @see NameFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:16:12
 	 */
 	public static IOFileFilter nameFileFilter(String name) {
@@ -269,7 +269,7 @@ public class FileFilterTool {
 	 * @return 匹配文件名的文件过滤器
 	 * @see NameFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:16:12
 	 */
 	public static IOFileFilter nameFileFilter(String name, CaseSensitivity caseSensitivity) {
@@ -285,7 +285,7 @@ public class FileFilterTool {
 	 * @return 只接受文件目录(不能是文件)的文件过滤器
 	 * @see DirectoryFileFilter#DIRECTORY
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:20:25
 	 */
 	public static IOFileFilter directoryFileFilter() {
@@ -300,7 +300,7 @@ public class FileFilterTool {
 	 * @return 只接受文件(不能是目录)的文件过滤器
 	 * @see FileFileFilter#FILE
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:20:25
 	 */
 	public static IOFileFilter fileFileFilter() {
@@ -319,7 +319,7 @@ public class FileFilterTool {
 	 * @throws IllegalArgumentException 如果指定的过滤器数组为null或包含null的元素
 	 * @see AndFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:24:10
 	 */
 	public static IOFileFilter and(IOFileFilter... filters) {
@@ -336,7 +336,7 @@ public class FileFilterTool {
 	 * @throws IllegalArgumentException 如果指定的过滤器数组为null或包含null的元素
 	 * @see OrFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:24:10
 	 */
 	public static IOFileFilter or(IOFileFilter... filters) {
@@ -352,7 +352,7 @@ public class FileFilterTool {
 	 * @return 文件过滤器列表
 	 * @throws IllegalArgumentException 如果指定的过滤器数组为null或包含null的元素
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:25:46
 	 */
 	public static List<IOFileFilter> toList(IOFileFilter... filters) {
@@ -368,7 +368,7 @@ public class FileFilterTool {
 	 * @return 指定文件过滤器的逻辑非的文件过滤器
 	 * @see NotFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:26:58
 	 */
 	public static IOFileFilter notFileFilter(IOFileFilter filter) {
@@ -384,7 +384,7 @@ public class FileFilterTool {
 	 * @return 总是返回true的文件过滤器
 	 * @see TrueFileFilter#TRUE
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:28:07
 	 */
 	public static IOFileFilter trueFileFilter() {
@@ -399,7 +399,7 @@ public class FileFilterTool {
 	 * @return 总是返回false的文件过滤器
 	 * @see FalseFileFilter#FALSE
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:28:07
 	 */
 	public static IOFileFilter falseFileFilter() {
@@ -416,7 +416,7 @@ public class FileFilterTool {
 	 * @return 一个实现IOFileFilter接口的过滤器
 	 * @see DelegateFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:30:19
 	 */
 	public static IOFileFilter asFileFilter(FileFilter filter) {
@@ -432,7 +432,7 @@ public class FileFilterTool {
 	 * @return 一个实现IOFileFilter接口的过滤器
 	 * @see DelegateFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:31:03
 	 */
 	public static IOFileFilter asFileFilter(FilenameFilter filter) {
@@ -449,7 +449,7 @@ public class FileFilterTool {
 	 * @return 满足最后修改时间大于指定毫秒数的文件过滤器
 	 * @see AgeFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:34:03
 	 */
 	public static IOFileFilter ageFileFilter(long cutoff) {
@@ -466,7 +466,7 @@ public class FileFilterTool {
 	 * @return 更新/旧的文件过滤器
 	 * @see AgeFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:36:41
 	 */
 	public static IOFileFilter ageFileFilter(long cutoff, boolean acceptOlder) {
@@ -482,7 +482,7 @@ public class FileFilterTool {
 	 * @return 满足最后修改时间大于指定日期的文件过滤器
 	 * @see AgeFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:37:51
 	 */
 	public static IOFileFilter ageFileFilter(Date cutoffDate) {
@@ -499,7 +499,7 @@ public class FileFilterTool {
 	 * @return 更新/旧的文件过滤器
 	 * @see AgeFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:36:41
 	 */
 	public static IOFileFilter ageFileFilter(Date cutoffDate, boolean acceptOlder) {
@@ -515,7 +515,7 @@ public class FileFilterTool {
 	 * @return 只接受最后修改时间大于指定文件最后修改时间的文件过滤器
 	 * @see AgeFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:40:41
 	 */
 	public static IOFileFilter ageFileFilter(File cutoffReference) {
@@ -532,7 +532,7 @@ public class FileFilterTool {
 	 * @return 更新/旧的文件过滤器
 	 * @see AgeFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:42:01
 	 */
 	public static IOFileFilter ageFileFilter(File cutoffReference, boolean acceptOlder) {
@@ -549,7 +549,7 @@ public class FileFilterTool {
 	 * @return 只接受文件大小大于指定大小的文件过滤器
 	 * @see SizeFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:44:37
 	 */
 	public static IOFileFilter sizeFileFilter(long threshold) {
@@ -566,7 +566,7 @@ public class FileFilterTool {
 	 * @return 更大/小的文件过滤器
 	 * @see SizeFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:46:18
 	 */
 	public static IOFileFilter sizeFileFilter(long threshold, boolean acceptLarger) {
@@ -583,7 +583,7 @@ public class FileFilterTool {
 	 * @return 只接受文件大小在指定大小范围内的文件过滤器
 	 * @see SizeFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:47:43
 	 */
 	public static IOFileFilter sizeRangeFileFilter(long minSizeInclusive, long maxSizeInclusive) {
@@ -600,7 +600,7 @@ public class FileFilterTool {
 	 * @throws IllegalArgumentException 如果参数为null或空串
 	 * @see MagicNumberFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:52:01
 	 */
 	public static IOFileFilter magicNumberFileFilter(String magicNumber) {
@@ -621,7 +621,7 @@ public class FileFilterTool {
 	 * @throws IllegalArgumentException 如果参数为null或空串， 或偏移量为负数
 	 * @see MagicNumberFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:56:27
 	 */
 	public static IOFileFilter magicNumberFileFilter(String magicNumber, long offset) {
@@ -638,7 +638,7 @@ public class FileFilterTool {
 	 * @throws IllegalArgumentException 如果参数为null或长度为0
 	 * @see MagicNumberFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:52:01
 	 */
 	public static IOFileFilter magicNumberFileFilter(byte[] magicNumber) {
@@ -656,7 +656,7 @@ public class FileFilterTool {
 	 * @throws IllegalArgumentException 如果参数为null或长度为0， 或偏移量为负数
 	 * @see MagicNumberFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午8:56:27
 	 */
 	public static IOFileFilter magicNumberFileFilter(byte[] magicNumber, long offset) {
@@ -673,7 +673,7 @@ public class FileFilterTool {
 	 * @param filter 要装饰的过滤器, null表示不受限制的过滤器
 	 * @return 装饰后的过滤器, 不会为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午9:01:28
 	 */
 	public static IOFileFilter makeCVSAware(IOFileFilter filter) {
@@ -688,7 +688,7 @@ public class FileFilterTool {
 	 * @param filter 要装饰的过滤器, null表示不受限制的过滤器
 	 * @return 装饰后的过滤器, 不会为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午9:01:28
 	 */
 	public static IOFileFilter makeSVNAware(IOFileFilter filter) {
@@ -705,7 +705,7 @@ public class FileFilterTool {
 	 * @return 装饰后的过滤器, 不会为null
 	 * @see DirectoryFileFilter#DIRECTORY
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午9:04:52
 	 */
 	public static IOFileFilter makeDirectoryOnly(IOFileFilter filter) {
@@ -721,7 +721,7 @@ public class FileFilterTool {
 	 * @return 装饰后的过滤器, 不会为null
 	 * @see FileFileFilter#FILE
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午9:04:43
 	 */
 	public static IOFileFilter makeFileOnly(IOFileFilter filter) {

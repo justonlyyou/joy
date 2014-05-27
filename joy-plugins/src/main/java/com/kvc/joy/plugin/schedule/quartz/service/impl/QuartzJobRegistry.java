@@ -13,7 +13,7 @@ import static org.quartz.JobBuilder.newJob;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-17 下午8:33:29
  */
 public class QuartzJobRegistry implements IQuartzJobRegistry {

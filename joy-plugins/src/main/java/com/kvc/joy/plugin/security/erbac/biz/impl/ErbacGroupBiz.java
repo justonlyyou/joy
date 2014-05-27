@@ -20,7 +20,7 @@ import java.util.Map.Entry;
 /**
  * 组服务实现类
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-5-5 下午11:07:10
  */
 @Transactional

@@ -5,7 +5,7 @@ import com.kvc.joy.core.init.support.properties.JoyProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * @author 唐玮琳
+ * @author Kevice
  * @time 14-3-3 下午9:06
  * @since 1.0.0
  */

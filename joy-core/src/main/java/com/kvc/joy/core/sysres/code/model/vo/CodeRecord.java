@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年12月7日 下午9:22:01
  */
 public class CodeRecord implements Serializable {

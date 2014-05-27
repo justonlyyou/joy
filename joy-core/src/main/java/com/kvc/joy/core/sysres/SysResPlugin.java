@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年11月16日 下午11:46:22
  */
 @Component

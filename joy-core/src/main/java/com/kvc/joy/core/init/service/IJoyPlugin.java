@@ -2,7 +2,7 @@ package com.kvc.joy.core.init.service;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-3 下午4:10:27
  */
 public interface IJoyPlugin {
@@ -12,7 +12,7 @@ public interface IJoyPlugin {
 	 * 
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月16日 下午5:58:34
 	 */
 	String getSqlMigrationPrefix();
@@ -22,7 +22,7 @@ public interface IJoyPlugin {
 	 * 
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月16日 下午6:02:32
 	 */
 	String getPoPackage();
@@ -31,7 +31,7 @@ public interface IJoyPlugin {
 	 * 
 	 * 
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-3 下午4:11:58
 	 */
 	String getName();
@@ -40,7 +40,7 @@ public interface IJoyPlugin {
 	 * 获取初始化优先级
 	 * 
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-14 下午8:11:09
 	 */
 	int getInitPriority();
@@ -48,7 +48,7 @@ public interface IJoyPlugin {
 	/**
 	 * 
 	 * 
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-3 下午4:12:01
 	 */
 	void startup();
@@ -56,7 +56,7 @@ public interface IJoyPlugin {
 	/**
 	 * 
 	 * 
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-3 下午11:13:43
 	 */
 	void destroy();
@@ -65,7 +65,7 @@ public interface IJoyPlugin {
 	 * 
 	 * 
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-4 下午11:34:05
 	 */
 	boolean isEnabled();
@@ -75,7 +75,7 @@ public interface IJoyPlugin {
 	 * 
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月17日 上午12:33:33
 	 */
 	String getCtxConfLocation();

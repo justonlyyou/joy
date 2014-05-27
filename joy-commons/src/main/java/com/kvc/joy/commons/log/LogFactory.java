@@ -6,7 +6,7 @@ import com.kvc.joy.commons.log.slf4j.Slf4jLogCreator;
  * 
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年11月20日 上午1:18:38
  */
 public class LogFactory {
@@ -21,7 +21,7 @@ public class LogFactory {
      * 
      * @param logCreator
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013年11月20日 上午1:20:44
      */
     public static void setLogCreator(LogCreator logCreator) {
@@ -34,7 +34,7 @@ public class LogFactory {
      * @param clazz
      * @return
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013年11月20日 上午1:20:47
      */
     public static Log getLog(Class<?> clazz) {

@@ -9,7 +9,7 @@ import com.kvc.joy.plugin.seqgen.support.SequenceCache;
 /**
  * 序列号生成器接口
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-04-30 下午5:08:04
  */
 public interface ISequenceGenerator {
@@ -41,7 +41,7 @@ public interface ISequenceGenerator {
 	/**
 	 * 填充模板，仅在子类和序列号统计时调用
 	 * 
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-04-30 下午5:13:31
 	 * @param curSeq 当前序列号值(不包含前缀、后缀)
 	 * @param seqCache 序列号缓存
@@ -53,7 +53,7 @@ public interface ISequenceGenerator {
 	/**
 	 * 集群时使用，启动序列号生成服务
 	 * 
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-04-30 下午5:10:28
 	 */
 	void start();
@@ -61,7 +61,7 @@ public interface ISequenceGenerator {
 	/**
 	 * 集群时使用，停止序列号生成服务 将调用onExit()
 	 * 
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-04-30 下午5:10:54
 	 */
 	void stop();

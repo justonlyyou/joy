@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * 用户服务接口
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-5-8 下午11:10:11
  */
 public interface IErbacUserBiz {
@@ -19,7 +19,7 @@ public interface IErbacUserBiz {
 	 * 取得所有有效的用户
 	 * 
 	 * @return List<TUserBasic>
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-5-8 下午11:21:06
 	 */
 	List<TUserBasic> getAllActiveUsers();

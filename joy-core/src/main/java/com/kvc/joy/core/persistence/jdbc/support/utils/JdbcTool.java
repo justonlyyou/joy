@@ -23,7 +23,7 @@ import java.util.*;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-12-28 下午9:55:56
  */
 public class JdbcTool extends BaseJdbcDao {
@@ -44,7 +44,7 @@ public class JdbcTool extends BaseJdbcDao {
 	 * @param dsId
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月10日 下午11:21:39
 	 */
 	public static Connection getConnectionByDsId(String dsId) {
@@ -61,7 +61,7 @@ public class JdbcTool extends BaseJdbcDao {
 	 * @param jndi
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月10日 下午11:19:13
 	 */
 	public static Connection getConnectionByJndi(String jndi) {
@@ -81,7 +81,7 @@ public class JdbcTool extends BaseJdbcDao {
 	 * 
 	 * @param mdRdbConn 数据源
 	 * @return 数据库连接
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-11-2 下午2:29:43
 	 */
 	public static Connection getConnection(IMdRdbDataSrc mdRdbConn) {
@@ -128,7 +128,7 @@ public class JdbcTool extends BaseJdbcDao {
 	 * 
 	 * @param statement Statement
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月23日 下午8:45:59
 	 */
 	public static void closeStatement(Statement statement) {
@@ -148,7 +148,7 @@ public class JdbcTool extends BaseJdbcDao {
 	 * 
 	 * @param resultSet ResultSet
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月23日 下午8:45:16
 	 */
     public static void closeResultSet(ResultSet resultSet) {
@@ -168,7 +168,7 @@ public class JdbcTool extends BaseJdbcDao {
 	 * 
 	 * @param jndi jndi名称
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
      * @since 1.0.0
 	 * @time 2013-2-8 下午2:59:18
 	 */
@@ -363,7 +363,7 @@ public class JdbcTool extends BaseJdbcDao {
      *
      * @param conn 连接
      * @param sqls sql语句集合
-     * @author 唐玮琳
+     * @author Kevice
      * @since 1.0.0
      * @time 2013-2-8 下午2:59:18
      */

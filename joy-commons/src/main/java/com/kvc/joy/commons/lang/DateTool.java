@@ -15,7 +15,7 @@ import java.util.*;
  * 日期操作工具类
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-28 下午10:47:23
  */
 public class DateTool {
@@ -118,7 +118,7 @@ public class DateTool {
 	 * 
 	 * @param fmt 日期格式
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-28 下午10:47:23
 	 * 
 	 */
@@ -133,7 +133,7 @@ public class DateTool {
 	 * @param fmt 格式
 	 * @return 日期对象
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月15日 下午9:22:14
 	 */
 	 public static Date parseDate(String dateStr, String fmt) {
@@ -156,7 +156,7 @@ public class DateTool {
 	 * @param fmt 格式化串(使用本类的以"UNFMT_"或"FMT_"打头的常量)
 	 * @return 格式化后的日期字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-28 下午11:54:12
 	 */
 	public static String formatDate(Date date, String fmt) {
@@ -174,7 +174,7 @@ public class DateTool {
 	 * @param outFmt 输出格式
 	 * @return 格式化后的日期串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月28日 下午11:30:41
 	 */
 	public static String formatDate(String dateStr, String inFmt, String outFmt) {
@@ -201,7 +201,7 @@ public class DateTool {
 	 * @param date1 日期1
 	 * @param date2 日期2
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-28 下午11:15:11
 	 */
 	public static void swapDates(Date date1, Date date2) {
@@ -222,7 +222,7 @@ public class DateTool {
 	 * @param focus 参照日期, 为null当作当前日期
 	 * @return 返回focus那一天出生日期为birthday的年龄(虚岁)，如果出生日期参数为null或birthday大于focus则返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-28 下午11:44:32
 	 */
 	public static int getNominalAge(Date birthday, Date focus) {
@@ -251,7 +251,7 @@ public class DateTool {
 	 * @param birthday 出生日期
 	 * @return 返回出生日期为birthday的年龄(虚岁)，如果参数为null则返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-28 下午11:44:32
 	 */
 	public static int getNominalAge(Date birthday) {
@@ -267,7 +267,7 @@ public class DateTool {
 	 * @param focus 参照日期, 为null当作当前日期
 	 * @return 返回focus那一天出生日期为birthday的年龄(实岁)，如果出生日期参数为null或birthday大于focus则返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午3:58:26
 	 */
 	public static int getActualAge(Date birthday, Date focus) {
@@ -301,7 +301,7 @@ public class DateTool {
 	 * @param birthday 出生日期
 	 * @return 返回出生日期为birthday的年龄(周岁)，如果参数为null则返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午3:59:36
 	 */
 	public static int getActualAge(Date birthday) {
@@ -317,7 +317,7 @@ public class DateTool {
 	 * @param date2 日期2
 	 * @return 间隔的天数
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-28 下午11:28:58
 	 */
 	public static int daysBetween(Date date1, Date date2) {
@@ -337,7 +337,7 @@ public class DateTool {
 	 * @param date 指定的日期
 	 * @return 毫秒数
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月15日 下午9:10:08
 	 */
 	public static long timesToNow(Date date) {
@@ -352,7 +352,7 @@ public class DateTool {
 	 * @param fmt 格式
 	 * @return 格式化后的系统当前时间
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 上午11:01:04
 	 */
 	public static String currentDate(String fmt) {
@@ -378,7 +378,7 @@ public class DateTool {
 	 * @return true：如果两个Date对象代表相同的一天
 	 * @throws IllegalArgumentException 如果两个参数之一为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-25 下午11:36:23
 	 */
 	public static boolean isSameDay(Date date1, Date date2) {
@@ -399,7 +399,7 @@ public class DateTool {
 	 * @return true：如果两个Calendar对象代表相同的一天
 	 * @throws IllegalArgumentException 如果两个参数之一为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-25 下午11:37:23
 	 */
 	public static boolean isSameDay(Calendar cal1, Calendar cal2) {
@@ -420,7 +420,7 @@ public class DateTool {
 	 * @return true：如果两个Date对象代表同一时间
 	 * @throws IllegalArgumentException 如果两个参数之一为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-25 下午11:４1:23
 	 */
 	public static boolean isSameInstant(Date date1, Date date2) {
@@ -441,7 +441,7 @@ public class DateTool {
 	 * @return true：如果两个Calendar对象代表同一时间
 	 * @throws IllegalArgumentException 如果两个参数之一为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-25 下午11:４2:23
 	 */
 	public static boolean isSameInstant(Calendar cal1, Calendar cal2) {
@@ -462,7 +462,7 @@ public class DateTool {
 	 * @return true：如果两个Calendar对象代表同一时间
 	 * @throws IllegalArgumentException 如果两个参数之一为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-25 下午11:４5:23
 	 */
 	public static boolean isSameLocalTime(Calendar cal1, Calendar cal2) {
@@ -483,7 +483,7 @@ public class DateTool {
 	 * @return 解析后的日期对象。如果没有匹配的解析模板，将返回null
 	 * @throws IllegalArgumentException 如果两个参数之一为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-25 下午11:57:32
 	 */
 	public static Date parseDate(String str, String... parsePatterns) {
@@ -510,7 +510,7 @@ public class DateTool {
 	 * @return 解析后的日期对象。如果没有匹配的解析模板，将返回null
 	 * @throws IllegalArgumentException 如果两个参数之一为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-25 下午11:59:32
 	 */
 	public static Date parseDateStrictly(String str, String... parsePatterns) {
@@ -532,7 +532,7 @@ public class DateTool {
 	 * @return 新的Date对象
 	 * @throws IllegalArgumentException 如果Date参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 上午12:05:32
 	 */
 	public static Date addYears(Date date, int amount) {
@@ -549,7 +549,7 @@ public class DateTool {
 	 * @return 新的Date对象
 	 * @throws IllegalArgumentException 如果Date参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 上午12:06:32
 	 */
 	public static Date addMonths(Date date, int amount) {
@@ -566,7 +566,7 @@ public class DateTool {
 	 * @return 新的Date对象
 	 * @throws IllegalArgumentException 如果Date参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 上午12:07:32
 	 */
 	public static Date addWeeks(Date date, int amount) {
@@ -583,7 +583,7 @@ public class DateTool {
 	 * @return 新的Date对象
 	 * @throws IllegalArgumentException 如果Date参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 上午12:07:59
 	 */
 	public static Date addDays(Date date, int amount) {
@@ -600,7 +600,7 @@ public class DateTool {
 	 * @return 新的Date对象
 	 * @throws IllegalArgumentException 如果Date参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 上午12:08:59
 	 */
 	public static Date addHours(Date date, int amount) {
@@ -617,7 +617,7 @@ public class DateTool {
 	 * @return 新的Date对象
 	 * @throws IllegalArgumentException 如果Date参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 上午12:09:39
 	 */
 	public static Date addMinutes(Date date, int amount) {
@@ -634,7 +634,7 @@ public class DateTool {
 	 * @return 新的Date对象
 	 * @throws IllegalArgumentException 如果Date参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 上午12:09:59
 	 */
 	public static Date addSeconds(Date date, int amount) {
@@ -651,7 +651,7 @@ public class DateTool {
 	 * @return 新的Date对象
 	 * @throws IllegalArgumentException 如果Date参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 上午12:10:19
 	 */
 	public static Date addMilliseconds(Date date, int amount) {
@@ -668,7 +668,7 @@ public class DateTool {
 	 * @return 新的Date对象
 	 * @throws IllegalArgumentException 如果Date参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 上午12:13:22
 	 */
 	public static Date setYears(Date date, int amount) {
@@ -685,7 +685,7 @@ public class DateTool {
 	 * @return 新的Date对象
 	 * @throws IllegalArgumentException 如果Date参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 上午12:14:21
 	 */
 	public static Date setMonths(Date date, int amount) {
@@ -702,7 +702,7 @@ public class DateTool {
 	 * @return 新的Date对象
 	 * @throws IllegalArgumentException 如果Date参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 上午12:14:32
 	 */
 	public static Date setDays(Date date, int amount) {
@@ -719,7 +719,7 @@ public class DateTool {
 	 * @return 新的Date对象
 	 * @throws IllegalArgumentException 如果Date参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 上午12:14:55
 	 */
 	public static Date setHours(Date date, int amount) {
@@ -736,7 +736,7 @@ public class DateTool {
 	 * @return 新的Date对象
 	 * @throws IllegalArgumentException 如果Date参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 上午12:14:59
 	 */
 	public static Date setMinutes(Date date, int amount) {
@@ -753,7 +753,7 @@ public class DateTool {
 	 * @return 新的Date对象
 	 * @throws IllegalArgumentException 如果Date参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 上午12:15:09
 	 */
 	public static Date setSeconds(Date date, int amount) {
@@ -770,7 +770,7 @@ public class DateTool {
 	 * @return 新的Date对象
 	 * @throws IllegalArgumentException 如果Date参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 上午12:15:19
 	 */
 	public static Date setMilliseconds(Date date, int amount) {
@@ -786,7 +786,7 @@ public class DateTool {
 	 * @return Calendar对象
 	 * @throws NullPointerException 如果Date参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 上午12:16:19
 	 */
 	public static Calendar toCalendar(Date date) {
@@ -818,7 +818,7 @@ public class DateTool {
 	 * @throws IllegalArgumentException 如果日期参数为null
 	 * @throws ArithmeticException 如果年超过2.8亿
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 下午10:44:27
 	 */
 	public static Date round(Date date, int field) {
@@ -850,7 +850,7 @@ public class DateTool {
 	 * @throws IllegalArgumentException 如果日期参数为null
 	 * @throws ArithmeticException 如果年超过2.8亿
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 下午10:45:27
 	 */
 	public static Calendar round(Calendar date, int field) {
@@ -883,7 +883,7 @@ public class DateTool {
 	 * @throws ClassCastException 如果对象类型不是{@code Date}或{@code Calendar}
 	 * @throws ArithmeticException 如果年超过2.8亿
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 下午10:49:22
 	 */
 	public static Date round(Object date, int field) {
@@ -905,7 +905,7 @@ public class DateTool {
 	 * @throws IllegalArgumentException 如果日期参数为null
 	 * @throws ArithmeticException 如果年超过2.8亿
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 下午10:55:02
 	 */
 	public static Date truncate(Date date, int field) {
@@ -927,7 +927,7 @@ public class DateTool {
 	 * @throws IllegalArgumentException 如果日期参数为null
 	 * @throws ArithmeticException 如果年超过2.8亿
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 下午10:56:02
 	 */
 	public static Calendar truncate(Calendar date, int field) {
@@ -950,7 +950,7 @@ public class DateTool {
 	 * @throws ClassCastException 如果对象类型不是{@code Date}或{@code Calendar}
 	 * @throws ArithmeticException 如果年超过2.8亿
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 下午10:57:05
 	 */
 	public static Date truncate(Object date, int field) {
@@ -972,7 +972,7 @@ public class DateTool {
 	 * @throws IllegalArgumentException 如果日期参数为null
 	 * @throws ArithmeticException 如果年超过2.8亿
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 下午11:01:15
 	 */
 	public static Date ceiling(Date date, int field) {
@@ -994,7 +994,7 @@ public class DateTool {
 	 * @throws IllegalArgumentException 如果日期参数为null
 	 * @throws ArithmeticException 如果年超过2.8亿
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 下午11:01:35
 	 */
 	public static Calendar ceiling(Calendar date, int field) {
@@ -1017,7 +1017,7 @@ public class DateTool {
 	 * @throws ClassCastException 如果对象类型不是{@code Date}或{@code Calendar}
 	 * @throws ArithmeticException 如果年超过2.8亿
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-26 下午11:05:15
 	 */
 	public static Date ceiling(Object date, int field) {
@@ -1041,7 +1041,7 @@ public class DateTool {
 	 * @return 日期迭代器
 	 * @throws IllegalArgumentException 如果日期参数为null或范围类型参数非法
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-27 下午11:35:40
 	 */
 	public static Iterator<Calendar> iterator(Date focus, int rangeStyle) {
@@ -1065,7 +1065,7 @@ public class DateTool {
 	 * @return 日期迭代器
 	 * @throws IllegalArgumentException 如果日期参数为null或范围类型参数非法
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-27 下午11:36:04
 	 */
 	public static Iterator<Calendar> iterator(Calendar focus, int rangeStyle) {
@@ -1090,7 +1090,7 @@ public class DateTool {
 	 * @throws IllegalArgumentException 如果日期参数为null或范围类型参数非法
 	 * @throws ClassCastException 如果对象类型不是{@code Date}或{@code Calendar}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-27 下午11:39:14
 	 */
 	public static Iterator<?> iterator(Object focus, int rangeStyle) {
@@ -1127,7 +1127,7 @@ public class DateTool {
 	 * @return 片断对应的毫秒数
 	 * @throws IllegalArgumentException 两个参数之一为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-28 上午00:10:10
 	 */
 	public static long getFragmentInMilliseconds(Date date, int fragment) {
@@ -1163,7 +1163,7 @@ public class DateTool {
 	 * @return 片断对应的秒数
 	 * @throws IllegalArgumentException 两个参数之一为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-28 上午00:17:10
 	 */
 	public static long getFragmentInSeconds(Date date, int fragment) {
@@ -1200,7 +1200,7 @@ public class DateTool {
 	 * @return 片断对应的分钟数
 	 * @throws IllegalArgumentException 两个参数之一为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-28 上午00:17:15
 	 */
 	public static long getFragmentInMinutes(Date date, int fragment) {
@@ -1237,7 +1237,7 @@ public class DateTool {
 	 * @return 片断对应的分钟数
 	 * @throws IllegalArgumentException 两个参数之一为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-28 上午00:25:15
 	 */
 	public static long getFragmentInHours(Date date, int fragment) {
@@ -1273,7 +1273,7 @@ public class DateTool {
 	 * @return 片断对应的分钟数
 	 * @throws IllegalArgumentException 两个参数之一为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-28 上午00:32:15
 	 */
 	public static long getFragmentInDays(Date date, int fragment) {
@@ -1310,7 +1310,7 @@ public class DateTool {
 	 * @return 片断对应的毫秒数
 	 * @throws IllegalArgumentException 两个参数之一为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-28 上午00:33:10
 	 */
 	public static long getFragmentInMilliseconds(Calendar calendar, int fragment) {
@@ -1346,7 +1346,7 @@ public class DateTool {
 	 * @return 片断对应的秒数
 	 * @throws IllegalArgumentException 两个参数之一为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-28 上午00:33:20
 	 */
 	public static long getFragmentInSeconds(Calendar calendar, int fragment) {
@@ -1383,7 +1383,7 @@ public class DateTool {
 	 * @return 片断对应的分钟数
 	 * @throws IllegalArgumentException 两个参数之一为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-28 上午00:34:15
 	 */
 	public static long getFragmentInMinutes(Calendar calendar, int fragment) {
@@ -1420,7 +1420,7 @@ public class DateTool {
 	 * @return 片断对应的分钟数
 	 * @throws IllegalArgumentException 两个参数之一为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-28 上午00:34:35
 	 */
 	public static long getFragmentInHours(Calendar calendar, int fragment) {
@@ -1456,7 +1456,7 @@ public class DateTool {
 	 * @return 片断对应的分钟数
 	 * @throws IllegalArgumentException 两个参数之一为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-28 上午00:35:55
 	 */
 	public static long getFragmentInDays(Calendar calendar, int fragment) {
@@ -1476,7 +1476,7 @@ public class DateTool {
 	 * @see #truncate(Calendar, int)
 	 * @see #truncatedEquals(Date, Date, int)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-28 上午00:39:25
 	 */
 	public static boolean truncatedEquals(Calendar cal1, Calendar cal2, int field) {
@@ -1496,7 +1496,7 @@ public class DateTool {
 	 * @see #truncate(Calendar, int)
 	 * @see #truncatedEquals(Date, Date, int)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-28 上午00:39:45
 	 */
 	public static boolean truncatedEquals(Date date1, Date date2, int field) {
@@ -1516,7 +1516,7 @@ public class DateTool {
 	 * @see #truncate(Calendar, int)
 	 * @see #truncatedCompareTo(Date, Date, int)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-28 上午00:44:44
 	 */
 	public static int truncatedCompareTo(Calendar cal1, Calendar cal2, int field) {
@@ -1536,7 +1536,7 @@ public class DateTool {
 	 * @see #truncate(Calendar, int)
 	 * @see #truncatedCompareTo(Date, Date, int)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-28 上午00:45:12
 	 */
 	public static int truncatedCompareTo(Date date1, Date date2, int field) {

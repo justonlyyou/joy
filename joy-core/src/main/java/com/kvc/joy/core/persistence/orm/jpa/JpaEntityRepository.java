@@ -14,7 +14,7 @@ import java.util.Map;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-26 下午8:57:12
  */
 public class JpaEntityRepository<T extends IEntity<ID>, ID extends Serializable> extends SimpleJpaRepository<T, ID> implements IJpaEntityRepository<T, ID> {

@@ -7,7 +7,7 @@ import com.kvc.joy.core.sysres.SysResTool;
 /**
  * ip限制类型
  *
- * @author 唐玮琳
+ * @author Kevice
  * @time 14-2-18 下午9:04
  * @since 1.0.0
  */

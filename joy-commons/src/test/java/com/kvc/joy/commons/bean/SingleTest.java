@@ -7,7 +7,7 @@ import org.junit.Test;
 /**
  * com.kvc.joy.common.bean.Single单元测试用例
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-2 下午9:10:40
  */
 public class SingleTest {

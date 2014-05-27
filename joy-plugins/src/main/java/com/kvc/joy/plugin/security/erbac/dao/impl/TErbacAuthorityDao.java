@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-23 下午12:40:12
  */
 public class TErbacAuthorityDao extends BaseJpaDao<TErbacAuthority> {

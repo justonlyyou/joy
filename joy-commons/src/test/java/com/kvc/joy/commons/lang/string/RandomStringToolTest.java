@@ -10,7 +10,7 @@ import org.junit.Test;
  * 
  * </p>
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-1 下午9:02:53
  */
 public class RandomStringToolTest {

@@ -13,7 +13,7 @@ import com.kvc.joy.commons.lang.string.StringTool;
  * </p>
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-11-10 上午11:51:27
  */
 public enum RdbType implements ICodeEnum {
@@ -28,7 +28,7 @@ public enum RdbType implements ICodeEnum {
 	HSQL("13", "HSQL");
 
 	private final String code;
-	private final String name;
+	private String name;
 
 	RdbType(String code, String name) {
 		this.code = code;
@@ -49,7 +49,7 @@ public enum RdbType implements ICodeEnum {
 		return name;
 	}
 
-	@Override
+    @Override
 	public String toString() {
 		return name;
 	}

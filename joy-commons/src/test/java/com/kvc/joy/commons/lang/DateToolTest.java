@@ -16,7 +16,7 @@ import java.util.Date;
  * </p>
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-29 上午11:43:56
  */
 public class DateToolTest {

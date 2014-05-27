@@ -10,7 +10,7 @@ import java.lang.reflect.Field;
  * </p>
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-2 下午10:56:14
  */
 public class FieldTool {
@@ -33,7 +33,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果任意参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 上午12:06:01
 	 */
 	public static Field getField(Class<?> cls, String fieldName) {
@@ -56,7 +56,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 *  					IllegalArgumentException 如果类或字段名为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 上午12:18:15
 	 */
 	public static Field getField(final Class<?> cls, String fieldName, boolean forceAccess) {
@@ -78,7 +78,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果类或字段名为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 上午12:21:18
 	 */
 	public static Field getDeclaredField(Class<?> cls, String fieldName) {
@@ -101,7 +101,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 			IllegalArgumentException 如果类或字段名为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 上午12:22:41
 	 */
 	public static Field getDeclaredField(Class<?> cls, String fieldName, boolean forceAccess) {
@@ -122,7 +122,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						 IllegalArgumentException 如果字段为null或不是静态的或该字段不可访问
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 上午12:25:22
 	 */
 	public static Object readStaticField(Field field) {
@@ -144,7 +144,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果字段为null或不是静态的或该字段不可访问
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 上午12:27:39
 	 */
 	public static Object readStaticField(Field field, boolean forceAccess) {
@@ -166,7 +166,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果类或字段名为null, 字段找不到或不可访问
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 上午12:31:21
 	 */
 	public static Object readStaticField(Class<?> cls, String fieldName) {
@@ -189,7 +189,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果类或字段名为null, 字段找不到或不可访问
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 上午12:33:38
 	 */
 	public static Object readStaticField(Class<?> cls, String fieldName, boolean forceAccess) {
@@ -211,7 +211,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果类或字段名为null, 字段找不到或不可访问
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 上午12:35:42
 	 */
 	public static Object readDeclaredStaticField(Class<?> cls, String fieldName) {
@@ -234,7 +234,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果类或字段名为null, 字段找不到或不可访问
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 上午12:36:40
 	 */
 	public static Object readDeclaredStaticField(Class<?> cls, String fieldName, boolean forceAccess) {
@@ -256,7 +256,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果字段为null或不可访问
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午2:05:11
 	 */
 	public static Object readField(Field field, Object target) {
@@ -279,7 +279,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果字段为null或不可访问
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午2:15:27
 	 */
 	public static Object readField(Field field, Object target, boolean forceAccess) {
@@ -321,7 +321,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						llegalArgumentException 如果类或字段名为null, 或指定字段不可访问
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午2:19:07
 	 */
 	public static Object readField(Object target, String fieldName, boolean forceAccess) {
@@ -343,7 +343,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果类或字段名为null, 或指定的字段不是public的
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午2:18:59
 	 */
 	public static Object readDeclaredField(Object target, String fieldName) {
@@ -366,7 +366,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果 <code>target</code> 或 <code>fieldName</code> 为 null, 或指定的字段不是public的
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午2:21:13
 	 */
 	public static Object readDeclaredField(Object target, String fieldName, boolean forceAccess) {
@@ -387,7 +387,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果指定的字段为null或不是静态的, 或不是public的, 或为final
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午2:22:32
 	 */
 	public static void writeStaticField(Field field, Object value) {
@@ -409,7 +409,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果字段为null或不是静态的或该字段不可访问或为final
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午2:24:17
 	 */
 	public static void writeStaticField(Field field, Object value, boolean forceAccess) {
@@ -431,7 +431,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果字段找不到, 或不是静态的, 或不是public的, 或为final的
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午2:30:21
 	 */
 	public static void writeStaticField(Class<?> cls, String fieldName, Object value) {
@@ -454,7 +454,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果字段找不到, 或不是静态的, 或不可访问, 或为final的
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午2:31:31
 	 */
 	public static void writeStaticField(Class<?> cls, String fieldName, Object value, boolean forceAccess) {
@@ -476,7 +476,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果字段找不到, 或不是静态的, 或不是public的, 或为final的
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午2:33:03
 	 */
 	public static void writeDeclaredStaticField(Class<?> cls, String fieldName, Object value) {
@@ -499,7 +499,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 *						IllegalArgumentException 如果字段找不到, 或不是静态的, 或不可访问, 或为final的
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午2:34:07
 	 */
 	public static void writeDeclaredStaticField(Class<?> cls, String fieldName, Object value, boolean forceAccess) {
@@ -521,7 +521,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果字段为null, 或不可访问, 或为final的
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午2:34:59
 	 */
 	public static void writeField(Field field, Object target, Object value) {
@@ -544,7 +544,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IllegalArgumentException 如果字段为null或不可访问, 或为final的
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午2:07:12
 	 */
 	public static void writeField(Field field, Object target, Object value, boolean forceAccess) {
@@ -566,7 +566,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 			IllegalArgumentException 如果 <code>target</code> 或 <code>fieldName</code> 为 null, 或字段不可访问 
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午2:10:44
 	 */
 	public static void writeField(Object target, String fieldName, Object value) {
@@ -589,7 +589,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 *		IllegalArgumentException 如果 <code>target</code> 或 <code>fieldName</code> 为 null, 或字段不可访问 
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午2:13:14
 	 */
 	public static void writeField(Object target, String fieldName, Object value, boolean forceAccess) {
@@ -611,7 +611,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 		IllegalArgumentException 如果 <code>target</code> 或 <code>fieldName</code> 为 null, 或字段不可访问 
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午2:14:51
 	 */
 	public static void writeDeclaredField(Object target, String fieldName, Object value) {
@@ -634,7 +634,7 @@ public class FieldTool {
 	 * @throws SystemException 该异常是对下面异常的包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 		IllegalArgumentException 如果 <code>target</code> 或 <code>fieldName</code> 为 null, 或字段不可访问 
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午2:14:59
 	 */
 	public static void writeDeclaredField(Object target, String fieldName, Object value, boolean forceAccess) {

@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Extjs树结点类(Ext.data.NodeInterface)对应的POJO
  * 
- * @author 唐玮琳
+ * @author Kevice
  */
 public class ExtTreeNode implements Serializable {
 

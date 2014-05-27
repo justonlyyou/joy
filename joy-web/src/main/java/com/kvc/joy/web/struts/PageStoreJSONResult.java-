@@ -19,7 +19,7 @@ import com.opensymphony.xwork2.ActionInvocation;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-15 下午10:26:16
  */
 public class PageStoreJSONResult extends JSONResult {

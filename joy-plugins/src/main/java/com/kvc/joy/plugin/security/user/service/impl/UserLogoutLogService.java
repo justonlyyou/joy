@@ -12,7 +12,7 @@ import com.kvc.joy.plugin.security.user.support.enums.LogoutMethod;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年10月15日 下午2:32:05
  */
 public class UserLogoutLogService implements IUserLogoutLogService {

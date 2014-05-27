@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-23 下午3:02:24
  */
 public class ShiroDataBaseRealm extends AuthorizingRealm {

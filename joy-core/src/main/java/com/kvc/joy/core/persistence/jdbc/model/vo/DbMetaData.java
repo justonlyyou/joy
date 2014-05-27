@@ -17,7 +17,7 @@ import java.sql.SQLException;
  * </p>
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-11-10 上午10:49:00
  */
 public class DbMetaData {

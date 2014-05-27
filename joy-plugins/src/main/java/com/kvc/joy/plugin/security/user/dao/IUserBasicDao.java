@@ -6,7 +6,7 @@ import com.kvc.joy.plugin.security.user.model.po.TUserBasic;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-25 下午10:14:58
  */
 public interface IUserBasicDao extends IJpaEntityRepository<TUserBasic, String> , IErbacUserRepository {

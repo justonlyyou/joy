@@ -14,7 +14,7 @@ import java.util.*;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-28 下午7:55:31
  */
 public class ErbacUserRepository extends BaseJpaDao<TUserBasic> implements IErbacUserRepository {

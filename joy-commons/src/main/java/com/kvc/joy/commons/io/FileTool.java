@@ -21,7 +21,7 @@ import java.util.zip.Checksum;
  * </p>
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-6 上午10:37:31
  */
 public class FileTool {
@@ -42,7 +42,7 @@ public class FileTool {
 	 * @param names 名字可变数组
 	 * @return 文件对象
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 上午9:21:50
 	 */
 	public static File getFile(File directory, String... names) {
@@ -57,7 +57,7 @@ public class FileTool {
 	 * @param names 名字可变数组
 	 * @return 文件对象
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 上午9:21:50
 	 */
 	public static File getFile(String... names) {
@@ -71,7 +71,7 @@ public class FileTool {
 	 * 
 	 * @return 系统临时目录
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 上午9:25:18
 	 */
 	public static String getTempDirectoryPath() {
@@ -85,7 +85,7 @@ public class FileTool {
 	 * 
 	 * @return 系统临时目录文件对象
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 上午9:25:18
 	 */
 	public static File getTempDirectory() {
@@ -99,7 +99,7 @@ public class FileTool {
 	 * 
 	 * @return 系统用户根目录
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 上午9:25:18
 	 */
 	public static String getUserDirectoryPath() {
@@ -113,7 +113,7 @@ public class FileTool {
 	 * 
 	 * @return 系统用户根目录文件对象
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 上午9:25:18
 	 */
 	public static File getUserDirectory() {
@@ -145,7 +145,7 @@ public class FileTool {
      * 						IOException 如果文件对象是一个目录时
      * 						IOException 如果文件没法被读取时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 上午9:37:31
 	 */
 	public static FileInputStream openInputStream(File file) {
@@ -184,7 +184,7 @@ public class FileTool {
      * 						IOException 如果文件没法被写入时
      * 						IOException 如果父目录没法被创建时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 上午9:43:48
 	 */
 	public static FileOutputStream openOutputStream(File file) {
@@ -223,7 +223,7 @@ public class FileTool {
      * 						IOException 如果文件没法被写入时
      * 						IOException 如果父目录没法被创建时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 上午9:47:22
 	 */
 	public static FileOutputStream openOutputStream(File file, boolean append) {
@@ -257,7 +257,7 @@ public class FileTool {
 	 * @see <a href="https://issues.apache.org/jira/browse/IO-226">IO-226 -
 	 *      should the rounding be changed?</a>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 上午9:59:24
 	 */
 	public static String byteCountToDisplaySize(BigInteger size) {
@@ -283,7 +283,7 @@ public class FileTool {
 	 * @see <a href="https://issues.apache.org/jira/browse/IO-226">IO-226 -
 	 *      should the rounding be changed?</a>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 上午9:59:24
 	 */
 	public static String byteCountToDisplaySize(long size) {
@@ -302,7 +302,7 @@ public class FileTool {
 	 * 						IllegalArgumentException 指定的参数为null时
 	 * 						IOException 产生io异常时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 上午10:04:13
 	 */
 	public static void touch(File file) {
@@ -326,7 +326,7 @@ public class FileTool {
 	 * @param files 包含java.io.File实例的容器
 	 * @return 包含java.io.File实例的数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 上午10:07:00
 	 */
 	public static File[] convertFileCollectionToFileArray(Collection<File> files) {
@@ -360,7 +360,7 @@ public class FileTool {
 	 * @return 匹配的文件对应容器
 	 * @see FileFilterTool
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 上午11:32:00
 	 */
 	public static Collection<File> listFiles(File directory, IOFileFilter fileFilter, IOFileFilter dirFilter) {
@@ -385,7 +385,7 @@ public class FileTool {
 	 * @see FileFilterTool
 	 * @see org.apache.commons.io.filefilter.NameFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 上午11:40:08
 	 */
 	public static Collection<File> listFilesAndDirs(File directory, IOFileFilter fileFilter, IOFileFilter dirFilter) {
@@ -409,7 +409,7 @@ public class FileTool {
 	 * @see FileFilterTool
 	 * @see org.apache.commons.io.filefilter.NameFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 上午11:44:51
 	 */
 	public static Iterator<File> iterateFiles(File directory, IOFileFilter fileFilter, IOFileFilter dirFilter) {
@@ -437,7 +437,7 @@ public class FileTool {
 	 * @see FileFilterTool
 	 * @see org.apache.commons.io.filefilter.NameFileFilter
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 上午11:55:37
 	 */
 	public static Iterator<File> iterateFilesAndDirs(File directory, IOFileFilter fileFilter, IOFileFilter dirFilter) {
@@ -456,7 +456,7 @@ public class FileTool {
 	 * @param recursive true将查找所有子目录
 	 * @return 匹配的文件对象的容器
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 上午11:59:42
 	 */
 	public static Collection<File> listFiles(File directory, String[] extensions, boolean recursive) {
@@ -474,10 +474,10 @@ public class FileTool {
 	 * @param recursive true将查找所有子目录
 	 * @return 匹配的文件对象的迭代器
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 上午11:59:50
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午12:00:57
 	 */
 	public static Iterator<File> iterateFiles(File directory, String[] extensions, boolean recursive) {
@@ -501,7 +501,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 出现io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午12:06:52
 	 */
 	public static Boolean contentEquals(File file1, File file2) {
@@ -531,7 +531,7 @@ public class FileTool {
 	 * 						IOException 出现io错误
 	 * @see IOTool#contentEqualsIgnoreEOL(Reader, Reader)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午12:09:54
 	 */
 	public static Boolean contentEqualsIgnoreEOL(File file1, File file2, String charsetName) {
@@ -551,7 +551,7 @@ public class FileTool {
 	 * @param url 待转换的url, {@code null} 将返回 {@code null}
 	 * @return 等效的<code>File</code> 对象, 如果url协议不是<code>file</code>则返回 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午12:12:15
 	 */
 	public static File toFile(URL url) {
@@ -580,7 +580,7 @@ public class FileTool {
 	 * @throws IllegalArgumentException 如果任何url不是file
 	 * @throws IllegalArgumentException 如果任何url不能被正确编码
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午12:19:24
 	 */
 	public static File[] toFiles(URL[] urls) {
@@ -602,7 +602,7 @@ public class FileTool {
 	 * 						IOException 文件不能被转化时
 	 * 						NullPointerException 如果参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午12:22:15
 	 */
 	public static URL[] toURLs(File[] files) {
@@ -637,7 +637,7 @@ public class FileTool {
 	 * 						IOException 如果出现io错误
 	 * @see #copyFile(File, File, boolean)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午12:29:52
 	 */
 	public static void copyFileToDirectory(File srcFile, File destDir) {
@@ -672,7 +672,7 @@ public class FileTool {
 	 * 						IOException 如果出现io错误
 	 * @see #copyFile(File, File, boolean)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午3:10:35
 	 */
 	public static void copyFileToDirectory(File srcFile, File destDir, boolean preserveFileDate) {
@@ -706,7 +706,7 @@ public class FileTool {
 	 * 						IOException 如果拷贝时出现io错误
 	 * @see #copyFileToDirectory(File, File)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午3:15:36
 	 */
 	public static void copyFile(File srcFile, File destFile) {
@@ -741,7 +741,7 @@ public class FileTool {
 	 * 						IOException 如果拷贝时出现io错误
 	 * @see #copyFileToDirectory(File, File, boolean)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午3:15:36
 	 */
 	public static void copyFile(File srcFile, File destFile, boolean preserveFileDate) {
@@ -768,7 +768,7 @@ public class FileTool {
 	 * 						NullPointerException 如果任意参数为null
 	 * 						IOException 如果拷贝时出现io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午3:20:18
 	 */
 	public static Long copyFile(File input, OutputStream output) {
@@ -806,7 +806,7 @@ public class FileTool {
 	 * 						IOException 如果源目录或目标目录无效 <br>
 	 * 						IOException 如果拷贝时出现io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午3:54:11
 	 */
 	public static void copyDirectoryToDirectory(File srcDir, File destDir) {
@@ -843,7 +843,7 @@ public class FileTool {
 	 * 						IOException 如果源目录或目标目录无效 <br>
 	 * 						IOException 如果拷贝时出现io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午4:00:05
 	 */
 	public static void copyDirectory(File srcDir, File destDir) {
@@ -881,7 +881,7 @@ public class FileTool {
 	 * 						IOException 如果源目录或目标目录无效 <br>
 	 * 						IOException 如果拷贝时出现io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午4:00:05
 	 */
 	public static void copyDirectory(File srcDir, File destDir, boolean preserveFileDate) {
@@ -940,7 +940,7 @@ public class FileTool {
 	 * 						IOException 如果源目录或目标目录无效 <br>
 	 * 						IOException 如果拷贝时出现io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午4:07:42
 	 */
 	public static void copyDirectory(File srcDir, File destDir, FileFilter filter) {
@@ -1000,7 +1000,7 @@ public class FileTool {
 	 * 						IOException 如果源目录或目标目录无效 <br>
 	 * 						IOException 如果拷贝时出现io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午4:07:42
 	 */
 	public static void copyDirectory(File srcDir, File destDir, FileFilter filter, boolean preserveFileDate) {
@@ -1035,7 +1035,7 @@ public class FileTool {
 	 * 						IOException 如果目标需要被创建但是又创建不了 <br>
 	 * 						IOException 如果拷贝时发生io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午4:51:48
 	 */
 	public static void copyURLToFile(URL source, File destination) {
@@ -1067,7 +1067,7 @@ public class FileTool {
 	 * 						IOException 如果目标需要被创建但是又创建不了 <br>
 	 * 						IOException 如果拷贝时发生io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午4:51:48
 	 */
 	public static void copyURLToFile(URL source, File destination, int connectionTimeout, int readTimeout) {
@@ -1096,7 +1096,7 @@ public class FileTool {
 	 * 						IOException 如果目标需要被创建但是又创建不了 <br>
 	 * 						IOException 如果拷贝时发生io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午5:02:57
 	 */
 	public static void copyInputStreamToFile(InputStream source, File destination) {
@@ -1117,7 +1117,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 删除操作失败时 <br>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午5:03:07
 	 */
 	public static void deleteDirectory(File directory) {
@@ -1143,7 +1143,7 @@ public class FileTool {
 	 * @param file 要删除的文件或目录, 可以为 {@code null}
 	 * @return {@code true}： 如果文件或目录被成功删除，否则返回 {@code false}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午5:08:18
 	 */
 	public static boolean deleteQuietly(File file) {
@@ -1174,7 +1174,7 @@ public class FileTool {
 	 * 						IOException 检查文件时出现io错误
 	 * @see FilenameTool#directoryContains(String, String)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午5:23:06
 	 */
 	public static Boolean directoryContains(final File directory, final File child) {
@@ -1194,7 +1194,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 清除不成功时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午5:24:21
 	 */
 	public static void cleanDirectory(File directory) {
@@ -1221,7 +1221,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果文件为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午5:28:21
 	 */
 	public static boolean waitFor(File file, int seconds) {
@@ -1240,7 +1240,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						NullPointerException 如果文件为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午5:31:12
 	 */
 	public static String readFileToString(File file, Charset encoding) {
@@ -1264,7 +1264,7 @@ public class FileTool {
 	 * 						IOException 如果发生io错误
 	 * 						UnsupportedCharsetException 指定的编码不被支持时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午5:33:03
 	 */
 	public static String readFileToString(File file, String encoding) {
@@ -1285,7 +1285,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午5:35:44
 	 */
 	public static String readFileToString(File file) {
@@ -1306,7 +1306,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:15:15
 	 */
 	public static byte[] readFileToByteArray(File file) {
@@ -1328,7 +1328,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:17:25
 	 */
 	public static List<String> readLines(File file, Charset encoding) {
@@ -1351,7 +1351,7 @@ public class FileTool {
 	 * 						IOException 如果发生io错误
 	 * 						UnsupportedCharsetException 如果编码不被支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:17:25
 	 */
 	public static List<String> readLines(File file, String encoding) {
@@ -1372,7 +1372,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:17:25
 	 */
 	public static List<String> readLines(File file) {
@@ -1420,7 +1420,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:24:28
 	 */
 	public static LineIterator lineIterator(File file, String encoding) {
@@ -1442,7 +1442,7 @@ public class FileTool {
 	 * 						IOException 如果发生io错误
 	 * @see #lineIterator(File, String)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:25:32
 	 */
 	public static LineIterator lineIterator(File file) {
@@ -1466,7 +1466,7 @@ public class FileTool {
 	 * 						IOException 如果发生io错误
 	 * 						UnsupportedEncodingException 如果指定的编码不被虚拟机支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:27:40
 	 */
 	public static void writeStringToFile(File file, String data, Charset encoding) {
@@ -1489,7 +1489,7 @@ public class FileTool {
 	 * 						IOException 如果发生io错误 <br>
 	 * 						UnsupportedEncodingException 如果指定的编码不被虚拟机支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:27:40
 	 */
 	public static void writeStringToFile(File file, String data, String encoding) {
@@ -1512,7 +1512,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:27:40
 	 */
 	public static void writeStringToFile(File file, String data, Charset encoding, boolean append) {
@@ -1536,7 +1536,7 @@ public class FileTool {
 	 * 						IOException 如果发生io错误 <br>
 	 * 						UnsupportedEncodingException 如果指定的编码不被虚拟机支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:27:40
 	 */
 	public static void writeStringToFile(File file, String data, String encoding, boolean append) {
@@ -1557,7 +1557,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:27:40
 	 */
 	public static void writeStringToFile(File file, String data) {
@@ -1579,7 +1579,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:27:40
 	 */
 	public static void writeStringToFile(File file, String data, boolean append) {
@@ -1600,7 +1600,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:27:40
 	 */
 	public static void write(File file, CharSequence data) {
@@ -1622,7 +1622,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:27:40
 	 */
 	public static void write(File file, CharSequence data, boolean append) {
@@ -1644,7 +1644,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:27:40
 	 */
 	public static void write(File file, CharSequence data, Charset encoding) {
@@ -1667,7 +1667,7 @@ public class FileTool {
 	 * 						IOException 如果发生io错误 <br>
 	 * 						UnsupportedEncodingException 如果指定的编码不被虚拟机支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:27:40
 	 */
 	public static void write(File file, CharSequence data, String encoding) {
@@ -1690,7 +1690,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:27:40
 	 */
 	public static void write(File file, CharSequence data, Charset encoding, boolean append) {
@@ -1714,7 +1714,7 @@ public class FileTool {
 	 * 						IOException 如果发生io错误 <br>
 	 * 						UnsupportedEncodingException 如果指定的编码不被虚拟机支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:27:40
 	 */
 	public static void write(File file, CharSequence data, String encoding, boolean append) {
@@ -1735,7 +1735,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:27:40
 	 */
 	public static void writeByteArrayToFile(File file, byte[] data) {
@@ -1757,7 +1757,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:27:40
 	 */
 	public static void writeByteArrayToFile(File file, byte[] data, boolean append) {
@@ -1785,7 +1785,7 @@ public class FileTool {
 	 * 						IOException 如果发生io错误 <br>
 	 * 						UnsupportedEncodingException 如果指定的编码不被虚拟机支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:49:39
 	 */
 	public static void writeLines(File file, String encoding, Collection<?> lines) {
@@ -1814,7 +1814,7 @@ public class FileTool {
 	 * 						IOException 如果发生io错误 <br>
 	 * 						UnsupportedEncodingException 如果指定的编码不被虚拟机支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午6:49:39
 	 */
 	public static void writeLines(File file, String encoding, Collection<?> lines, boolean append) {
@@ -1840,7 +1840,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午7:01:39
 	 */
 	public static void writeLines(File file, Collection<?> lines) {
@@ -1867,7 +1867,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午7:06:52
 	 */
 	public static void writeLines(File file, Collection<?> lines, boolean append) {
@@ -1896,7 +1896,7 @@ public class FileTool {
 	 * 						IOException 如果发生io错误 <br>
 	 * 						UnsupportedEncodingException 如果指定的编码不被虚拟机支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午7:09:03
 	 */
 	public static void writeLines(File file, String encoding, Collection<?> lines, String lineEnding) {
@@ -1926,7 +1926,7 @@ public class FileTool {
 	 * 						IOException 如果发生io错误 <br>
 	 * 						UnsupportedEncodingException 如果指定的编码不被虚拟机支持
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午7:09:03
 	 */
 	public static void writeLines(File file, String encoding, Collection<?> lines, String lineEnding, boolean append) {
@@ -1949,7 +1949,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午7:12:33
 	 */
 	public static void writeLines(File file, Collection<?> lines, String lineEnding) {
@@ -1973,7 +1973,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果发生io错误 <br>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午7:12:33
 	 */
 	public static void writeLines(File file, Collection<?> lines, String lineEnding, boolean append) {
@@ -2003,7 +2003,7 @@ public class FileTool {
 	 * 						FileNotFoundException 如果目录或文件找不到 <br>
 	 * 						IOException 删除操作失败时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午7:27:09
 	 */
 	public static void forceDelete(File file) {
@@ -2024,7 +2024,7 @@ public class FileTool {
 	 * 						NullPointerException 如果目录或文件为{@code null} <br>
 	 * 						IOException 删除操作失败时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午7:30:55
 	 */
 	public static void forceDeleteOnExit(File file) {
@@ -2050,7 +2050,7 @@ public class FileTool {
 	 * 						NullPointerException 如果目录为{@code null} <br>
 	 * 						IOException 如果目录不能被创建或存在但不是一个目录
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午7:40:50
 	 */
 	public static void forceMkdir(File directory) {
@@ -2075,7 +2075,7 @@ public class FileTool {
 	 * @throws NullPointerException 如果参数为{@code null} <br>
 	 * @throws IllegalArgumentException 如果文件不存在
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午7:49:26
 	 */
 	public static long sizeOf(File file) {
@@ -2095,7 +2095,7 @@ public class FileTool {
 	 * @throws NullPointerException 如果参数为{@code null} <br>
 	 * @throws IllegalArgumentException 如果文件不存在
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午7:49:26
 	 */
 	public static BigInteger sizeOfAsBigInteger(File file) {
@@ -2111,7 +2111,7 @@ public class FileTool {
 	 * @return 目录的大小(字节数), 如果目录有安全限制返回0, 当总大小大于{@link Long#MAX_VALUE}时返回一个负数
 	 * @throws NullPointerException 如果参数为{@code null} <br>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午7:52:38
 	 */
 	public static long sizeOfDirectory(File directory) {
@@ -2127,7 +2127,7 @@ public class FileTool {
 	 * @return 目录的大小(字节数), 如果目录有安全限制返回0
 	 * @throws NullPointerException 如果参数为{@code null} <br>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午7:52:38
 	 */
 	public static BigInteger sizeOfDirectoryAsBigInteger(File directory) {
@@ -2146,7 +2146,7 @@ public class FileTool {
 	 * @throws IllegalArgumentException 如果参数为{@code null} <br>
 	 * @throws IllegalArgumentException 如果文件不存在
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午8:01:12
 	 */
 	public static boolean isFileNewer(File file, File reference) {
@@ -2164,7 +2164,7 @@ public class FileTool {
 	 * @throws IllegalArgumentException 如果文件为 {@code null}
 	 * @throws IllegalArgumentException 如果日期 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午8:07:51
 	 */
 	public static boolean isFileNewer(File file, Date date) {
@@ -2181,7 +2181,7 @@ public class FileTool {
 	 * @return true：如果文件存在并且在指定日期之后被修改
 	 * @throws IllegalArgumentException 如果文件为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午8:10:37
 	 */
 	public static boolean isFileNewer(File file, long timeMillis) {
@@ -2200,7 +2200,7 @@ public class FileTool {
 	 * @throws IllegalArgumentException 如果参数为{@code null}
 	 * @throws 	IllegalArgumentException 如果文件不存在
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午8:01:12
 	 */
 	public static boolean isFileOlder(File file, File reference) {
@@ -2218,7 +2218,7 @@ public class FileTool {
 	 * @throws IllegalArgumentException 如果文件为 {@code null}
 	 * @throws IllegalArgumentException 如果日期 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午8:07:51
 	 */
 	public static boolean isFileOlder(File file, Date date) {
@@ -2235,7 +2235,7 @@ public class FileTool {
 	 * @return true：如果文件存在并且在指定日期之前被修改
 	 * @throws IllegalArgumentException 如果文件为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午8:10:37
 	 */
 	public static boolean isFileOlder(File file, long timeMillis) {
@@ -2255,7 +2255,7 @@ public class FileTool {
 	 * 						IllegalArgumentException 如果指定的文件是一个目录 <br>
 	 * 						IOException 读取文件时发生io异常
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午8:18:00
 	 */
 	public static Long checksumCRC32(File file) {
@@ -2283,7 +2283,7 @@ public class FileTool {
 	 * 						IllegalArgumentException 如果指定的文件是一个目录 <br>
 	 * 						IOException 读取文件时发生io异常
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午8:52:02
 	 */
 	public static Checksum checksum(File file, Checksum checksum) {
@@ -2311,7 +2311,7 @@ public class FileTool {
 	 * 						IOException 源或目标不可用时 <br>
 	 * 						IOException 如果移动时发生io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午8:54:57
 	 */
 	public static void moveDirectory(File srcDir, File destDir) {
@@ -2340,7 +2340,7 @@ public class FileTool {
 	 * 						IOException 源或目标不可用时 <br>
 	 * 						IOException 如果移动时发生io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午8:54:57
 	 */
 	public static void moveDirectoryToDirectory(File src, File destDir, boolean createDestDir) {
@@ -2368,7 +2368,7 @@ public class FileTool {
 	 * 						IOException 源或目标不可用时 <br>
 	 * 						IOException 如果移动时发生io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午8:54:57
 	 */
 	public static void moveFile(File srcFile, File destFile) {
@@ -2397,7 +2397,7 @@ public class FileTool {
 	 * 						IOException 源或目标不可用时 <br>
 	 * 						IOException 如果移动时发生io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午8:54:57
 	 */
 	public static void moveFileToDirectory(File srcFile, File destDir, boolean createDestDir) {
@@ -2425,7 +2425,7 @@ public class FileTool {
 	 * 						IOException 源或目标不可用时 <br>
 	 * 						IOException 如果移动时发生io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午8:54:57
 	 */
 	public static void moveToDirectory(File src, File destDir, boolean createDestDir) {
@@ -2455,7 +2455,7 @@ public class FileTool {
 	 * @throws SystemException 该异常是对下面几种异常的可能包装, 要得知真正的异常请获取该异常的cause: <br>
 	 * 						IOException 如果检查时发生io错误
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-19 下午9:16:04
 	 */
 	public static Boolean isSymlink(File file) {

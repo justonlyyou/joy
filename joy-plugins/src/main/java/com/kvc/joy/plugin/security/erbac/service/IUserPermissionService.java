@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-22 下午10:59:04
  */
 public interface IUserPermissionService {
@@ -18,7 +18,7 @@ public interface IUserPermissionService {
 	 * 
 	 * @param userId 用户id
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-22 下午11:14:46
 	 */
 	List<TErbacAuthority> getPermissions(String userId);
@@ -28,7 +28,7 @@ public interface IUserPermissionService {
 	 * 
 	 * @param userId
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-23 下午3:18:09
 	 */
 	List<ErbacPermission>getPermissionExps(String userId);
@@ -38,7 +38,7 @@ public interface IUserPermissionService {
 	 * 
 	 * @param userId
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-23 下午3:19:21
 	 */
 	List<String>getPermissionStringExps(String userId);
@@ -48,7 +48,7 @@ public interface IUserPermissionService {
 	 * 
 	 * @param permission
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-23 上午12:03:13
 	 */
 	boolean isPermitted(ErbacPermission permission);

@@ -4,7 +4,7 @@ import java.lang.annotation.*;
 
 /**
  * 表示某个属性的值是无符号数
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-5-2 下午8:22:25
  */
 @Target({ElementType.FIELD}) 

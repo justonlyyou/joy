@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年9月30日 上午12:04:47
  */
 public class UserLoginLogDao extends BaseJpaDao<TUserLoginLog> {
@@ -32,7 +32,7 @@ public class UserLoginLogDao extends BaseJpaDao<TUserLoginLog> {
 	 * @param toTime 统计时间止
 	 * @return 密码错误次数
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年9月30日 上午12:14:57
 	 */
 	public long statPasswordErrorCount(final String account, final String fromTime, final String toTime) {
@@ -59,7 +59,7 @@ public class UserLoginLogDao extends BaseJpaDao<TUserLoginLog> {
 	 * @param count 连续错误的次数
 	 * @return true: 连续错误达指定的次数, false: 未达到
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月1日 上午11:08:03
 	 */
 	public boolean isPasswordErrorFrequently(final String account, final String fromTime, final String toTime, final int count) {
@@ -103,7 +103,7 @@ public class UserLoginLogDao extends BaseJpaDao<TUserLoginLog> {
 	 * @param userId 用户id
 	 * @return 前一条登陆成功的日志
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月15日 上午10:48:58
 	 */
 	public TUserLoginLog getPreLoginSuccessLog(final String curLogId, final String userId) {

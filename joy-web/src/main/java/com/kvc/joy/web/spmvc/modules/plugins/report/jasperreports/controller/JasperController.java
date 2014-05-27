@@ -16,7 +16,7 @@ import java.util.Map;
  * JasperReports Controller，用户处理JasperReports的请求，
  * 请求会根据用户访问的后缀来判断使用哪种生成方式，可接受的
  * 请问方式有xhtml(因为html已经被默认的view处理了。)、pdf、xls。<br>
- * @author 唐玮琳
+ * @author Kevice
  * @version 2013-2-27 下午11:35:16
  */
 //@RequestMapping("/jasper")

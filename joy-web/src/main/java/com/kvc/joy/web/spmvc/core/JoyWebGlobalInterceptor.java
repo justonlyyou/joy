@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年10月9日 下午9:34:09
  */
 public class JoyWebGlobalInterceptor implements HandlerInterceptor {

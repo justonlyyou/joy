@@ -4,7 +4,7 @@ package com.kvc.joy.core.persistence.jdbc.support;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-12 下午10:21:02
  */
 public class MdRdbCommentScannerTest { //extends BaseTestCase {

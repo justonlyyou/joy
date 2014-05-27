@@ -9,7 +9,7 @@ import java.util.Comparator;
  * 对象处理工具类
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-9 下午8:44:04
  */
 public class ObjectTool {
@@ -38,7 +38,7 @@ public class ObjectTool {
 	 * @param defaultValue 默认值, 可以为 {@code null}
 	 * @return 如果不是{@code null}, 返回{@code object} , 否则返回默认值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午7:01:47
 	 */
 	public static <T> T defaultIfNull(T object, T defaultValue) {
@@ -66,7 +66,7 @@ public class ObjectTool {
 	 * @param values 要测试的数组, 可以为 {@code null} 或空数组
 	 * @return {@code values} 中的第一个非 {@code null}对象, 或没有非空对象时返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午7:04:58
 	 */
 	public static <T> T firstNonNull(T... values) {
@@ -95,7 +95,7 @@ public class ObjectTool {
 	 * @param object2 第二个对象, 可以为 {@code null}
 	 * @return {@code true}: 如果两个对象相等
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午7:07:55
 	 */
 	public static boolean equals(Object object1, Object object2) {
@@ -122,7 +122,7 @@ public class ObjectTool {
 	 * @param object2 第二个对象, 可以为 {@code null}
 	 * @return {@code true}: 如果两个对象不相等
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午7:08:45
 	 */
 	public static boolean notEqual(Object object1, Object object2) {
@@ -142,7 +142,7 @@ public class ObjectTool {
 	 * @param obj 要计算哈希值的对象, 可以为 {@code null}
 	 * @return 对象的哈希值, 对象为{@code null}时将返回0
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午7:10:03
 	 */
 	public static int hashCode(Object obj) {
@@ -170,7 +170,7 @@ public class ObjectTool {
 	 * @param objects 要计算哈希值的对象可变数组, 可以为 {@code null}
 	 * @return 多个对象的哈希值, 对象为{@code null}时将返回0
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午7:14:47
 	 */
 	public static int hashCodeMulti(Object... objects) {
@@ -193,7 +193,7 @@ public class ObjectTool {
 	 * @param object 要创建toString的对象, 可以为 {@code null}
 	 * @return 默认的toString文本, {@code null} 将 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午7:20:31
 	 */
 	public static String identityToString(Object object) {
@@ -215,7 +215,7 @@ public class ObjectTool {
 	 * @param buffer 要拼接的字符串缓存
 	 * @param object 要创建toString的对象
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午7:23:36
 	 */
 	public static void identityToString(StringBuffer buffer, Object object) {
@@ -241,7 +241,7 @@ public class ObjectTool {
 	 * @param obj 要获取 {@code toString}的对象, 可以为 null
 	 * @return 对象的toString, 对象为{@code null}或空串时返回空串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午7:26:29
 	 */
 	public static String toString(Object obj) {
@@ -267,7 +267,7 @@ public class ObjectTool {
 	 * @param nullStr 对象为null时返回的字符串, 可以为 null
 	 * @return 对象的toString, 对象为{@code null}返回指定的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午7:28:22
 	 */
 	public static String toString(Object obj, String nullStr) {
@@ -290,7 +290,7 @@ public class ObjectTool {
 	 *         <li>如果所有对象都为null, 返回null
 	 *         </ul>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午7:32:16
 	 */
 	public static <T extends Comparable<? super T>> T min(T... values) {
@@ -311,7 +311,7 @@ public class ObjectTool {
 	 *         <li>如果所有对象都为null, 返回null
 	 *         </ul>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午7:33:33
 	 */
 	public static <T extends Comparable<? super T>> T max(T... values) {
@@ -328,7 +328,7 @@ public class ObjectTool {
 	 * @param c2 第一个待比较的对象, 可以为null
 	 * @return c1 < c2返回负数, c1 = c2返回0, c1 > c2返回正数
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午7:37:42
 	 */
 	public static <T extends Comparable<? super T>> int compare(T c1, T c2) {
@@ -348,7 +348,7 @@ public class ObjectTool {
 	 * @return c1 < c2返回负数, c1 = c2返回0, c1 > c2返回正数
 	 * @see java.util.Comparator#compare(Object, Object)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午7:41:31
 	 */
 	public static <T extends Comparable<? super T>> int compare(T c1, T c2, boolean nullGreater) {
@@ -366,7 +366,7 @@ public class ObjectTool {
 	 * @throws NullPointerException 如果数组为 {@code null}
 	 * @throws IllegalArgumentException 如果数组为空或包含 {@code null} 值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午7:45:42
 	 */
 	public static <T extends Comparable<? super T>> T median(T... items) {
@@ -385,7 +385,7 @@ public class ObjectTool {
 	 * @throws NullPointerException 如果数组或比较器为 {@code null}
 	 * @throws IllegalArgumentException 如果数组为空或包含 {@code null} 值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午7:47:20
 	 */
 	public static <T> T median(Comparator<T> comparator, T... items) {
@@ -403,7 +403,7 @@ public class ObjectTool {
 	 * @param items 要查找的对象可变数组
 	 * @return 出现次数最多的对象, 返回{@code null}如果对象惟一或数组参数为空或null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午7:53:37
 	 */
 	public static <T> T mode(T... items) {
@@ -422,7 +422,7 @@ public class ObjectTool {
 	 * @return 克隆后的对象, null 将返回 null
 	 * @throws CloneFailedException 克隆操作失败时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午7:56:28
 	 */
 	public static <T extends Cloneable> T clone(final T obj) {
@@ -445,7 +445,7 @@ public class ObjectTool {
 	 * @return 如果对象有实现{@link Cloneable}接口返回克隆后的对象, 否则返回对象本身
 	 * @throws CloneFailedException 如果对象有实现{@link Cloneable}接口且克隆操作失败
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午8:03:43
 	 */
 	public static <T> T cloneIfPossible(final T obj) {

@@ -13,7 +13,7 @@ import java.util.Map;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-19 下午9:45:39
  */
 public class QueryLogics implements java.io.Serializable {

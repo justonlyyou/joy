@@ -10,7 +10,7 @@ import javax.persistence.Table;
 /**
  * 用户黑名单
  *
- * @author 唐玮琳
+ * @author Kevice
  * @time 14-2-17 下午11:36
  * @since 1.0.0
  */

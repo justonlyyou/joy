@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="数据源详情页面">
-<meta name="author" content="唐玮琳">
+<meta name="author" content="Kevice">
 
 <title>数据源详情</title>
 

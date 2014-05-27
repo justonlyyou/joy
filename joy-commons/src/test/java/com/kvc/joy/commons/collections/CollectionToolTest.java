@@ -16,7 +16,7 @@ import java.util.Map;
  * </p>
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-5 下午10:36:16
  */
 public class CollectionToolTest {

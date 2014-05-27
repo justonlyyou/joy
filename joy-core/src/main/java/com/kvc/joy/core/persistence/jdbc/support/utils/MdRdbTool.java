@@ -19,7 +19,7 @@ import java.util.Set;
  * 关系数据库元数据工具类
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年11月24日 下午10:31:43
  */
 public class MdRdbTool {
@@ -35,7 +35,7 @@ public class MdRdbTool {
 	 * @param dsId
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月16日 上午1:05:04
 	 */
 	public static DbMetaData getDbMetaData(String dsId) {
@@ -58,7 +58,7 @@ public class MdRdbTool {
 	 * @param conn
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月16日 上午1:07:38
 	 */
 	public static DbMetaData getDbMetaData(Connection conn) {
@@ -76,7 +76,7 @@ public class MdRdbTool {
 	 * 
 	 * @param dsId 数据源ID
 	 * @return Map<String, MdRdbTable>
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-11-1 下午5:03:48
 	 */
 	public static Map<String, MdRdbTable> getTables(String dsId) {
@@ -89,7 +89,7 @@ public class MdRdbTool {
 	 * @param conn
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月24日 下午10:21:13
 	 */
 	public static Map<String, MdRdbTable> getTables(RdbConnection conn) {
@@ -103,7 +103,7 @@ public class MdRdbTool {
 	 * @param dsId 数据源id
 	 * @param tableName 表名
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-12-18 下午3:16:14
 	 */
 	public static Map<String, MdRdbColumn> getColumns(String dsId, String tableName) {
@@ -128,7 +128,7 @@ public class MdRdbTool {
 	 * @param tableName
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月24日 下午10:25:18
 	 */
 	public static Map<String, MdRdbColumn> getColumns(RdbConnection conn, String tableName) {
@@ -142,7 +142,7 @@ public class MdRdbTool {
 	 * @param tableName 表名
 	 * @param columnName 列名
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-12-18 下午3:21:37
 	 */
 	public static MdRdbColumn getColumn(String dsId, String tableName, String columnName) {
@@ -164,7 +164,7 @@ public class MdRdbTool {
 	 * @param columnName
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月24日 下午10:26:29
 	 */
 	public static MdRdbColumn getColumn(RdbConnection conn, String tableName, String columnName) {
@@ -178,7 +178,7 @@ public class MdRdbTool {
 	 * @param dsId 数据源id
 	 * @param tableName 表名
 	 * @return 主键对象
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-12-18 下午3:37:42
 	 */
 	public static MdRdbPrimaryKey getPrimaryKey(String dsId, String tableName) {
@@ -203,7 +203,7 @@ public class MdRdbTool {
 	 * @param tableName
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月24日 下午10:27:14
 	 */
 	public static MdRdbPrimaryKey getPrimaryKey(RdbConnection conn, String tableName) {
@@ -216,7 +216,7 @@ public class MdRdbTool {
 	 * @param dsId 数据源ID(为空取系统默认数据源id)
 	 * @param name 对象名(为空返回null)
 	 * @return MdDbTable
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @throws CacheException
 	 * @time 2012-12-14 下午4:54:03
 	 */
@@ -242,7 +242,7 @@ public class MdRdbTool {
 	 * @param name
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月24日 下午10:28:22
 	 */
 	public static MdRdbTable getRelationalObject(RdbConnection conn, String name) {
@@ -257,7 +257,7 @@ public class MdRdbTool {
 	 * @param objTypes 对象类型数组
 	 * @return Map<String, MdRdbTable>
 	 * @throws CacheException
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-12-14 下午5:26:01
 	 */
 	public static Map<String, MdRdbTable> getRelationalObjects(String dsId, RdbObjectType... objTypes) {
@@ -279,7 +279,7 @@ public class MdRdbTool {
 	 * @param objTypes
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月24日 下午10:30:04
 	 */
 	public static Map<String, MdRdbTable> getRelationalObjects(RdbConnection conn, RdbObjectType... objTypes) {

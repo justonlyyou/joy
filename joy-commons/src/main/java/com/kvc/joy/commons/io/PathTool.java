@@ -8,7 +8,7 @@ import java.net.URL;
  * </p>
  * 
  * @since 1.0.0
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public class PathTool {
 
@@ -22,7 +22,7 @@ public class PathTool {
 	 * 
 	 * @return 类路径
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午10:14:45
 	 */
 	public static String getClassesPath() {
@@ -44,7 +44,7 @@ public class PathTool {
 	 * 
 	 * @return web工程的WEB-INF目录的路径,
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午10:16:05
 	 */
 	public static String getWebInfPath() {
@@ -62,7 +62,7 @@ public class PathTool {
 	 * 
 	 * @return web工程根目录的路径,
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-21 下午10:16:05
 	 */
 	public static String getWebRootPath() {

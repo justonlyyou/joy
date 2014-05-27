@@ -16,7 +16,7 @@ import java.util.List;
  * </p>
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-2 下午10:56:28
  */
 public class MethodTool {
@@ -35,7 +35,7 @@ public class MethodTool {
 	 * @param clazz 类
 	 * @return List<方法实例>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-12 下午10:05:34
 	 */
 	public static List<Method> getReadMethods(Class<?> clazz) {
@@ -68,7 +68,7 @@ public class MethodTool {
 	 * 						IllegalAccessException 如果请求的方法不能通过反射访问
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-2 下午9:53:37
 	 */
 	public static Object invokeGetter(Object obj, String propertyName) {
@@ -91,7 +91,7 @@ public class MethodTool {
 	 * @param value setter方法的参数值
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-2 下午9:55:51
 	 */
 	public static void invokeSetter(Object obj, String propertyName, Object value) {
@@ -139,7 +139,7 @@ public class MethodTool {
 	 * 						InvocationTargetException 对被调用方法的包装异常 <br>
 	 * 						IllegalAccessException 如果请求的方法不能通过反射访问
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-3 下午11:21:04
 	 */
 	public static Object invokeMethod(Object object, String methodName, Object... args) {
@@ -173,7 +173,7 @@ public class MethodTool {
 	 * 						InvocationTargetException 对被调用方法的包装异常 <br>
 	 * 						IllegalAccessException 如果请求的方法不能通过反射访问
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-3 下午11:23:59
 	 */
 	public static Object invokeMethod(Object object, String methodName, Object[] args, Class<?>[] parameterTypes) {
@@ -202,7 +202,7 @@ public class MethodTool {
 	 * 						InvocationTargetException 对被调用方法的包装异常 <br>
 	 * 						IllegalAccessException 如果请求的方法不能通过反射访问
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-3 下午11:33:20
 	 */
 	public static Object invokeExactMethod(Object object, String methodName, Object... args) {
@@ -232,7 +232,7 @@ public class MethodTool {
 	 * 						InvocationTargetException 对被调用方法的包装异常 <br>
 	 * 						IllegalAccessException 如果请求的方法不能通过反射访问
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-3 下午11:36:56
 	 */
 	public static Object invokeExactMethod(Object object, String methodName, Object[] args, Class<?>[] parameterTypes) {
@@ -263,7 +263,7 @@ public class MethodTool {
 	 * 						InvocationTargetException 对被调用方法的包装异常 <br>
 	 * 						IllegalAccessException 如果请求的方法不能通过反射访问
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-3 下午11:39:00
 	 */
 	public static Object invokeExactStaticMethod(Class<?> cls, String methodName, Object[] args,
@@ -303,7 +303,7 @@ public class MethodTool {
 	 * 						InvocationTargetException 对被调用方法的包装异常 <br>
 	 * 						IllegalAccessException 如果请求的方法不能通过反射访问
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-3 下午11:41:27
 	 */
 	public static Object invokeStaticMethod(Class<?> cls, String methodName, Object... args) {
@@ -337,7 +337,7 @@ public class MethodTool {
 	 * 						InvocationTargetException 对被调用方法的包装异常 <br>
 	 * 						IllegalAccessException 如果请求的方法不能通过反射访问
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-3 下午11:42:41
 	 */
 	public static Object invokeStaticMethod(Class<?> cls, String methodName, Object[] args, Class<?>[] parameterTypes) {
@@ -367,7 +367,7 @@ public class MethodTool {
 	 * 						InvocationTargetException 对被调用方法的包装异常 <br>
 	 * 						IllegalAccessException 如果请求的方法不能通过反射访问
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-3 下午11:43:49
 	 */
 	public static Object invokeExactStaticMethod(Class<?> cls, String methodName, Object... args) {
@@ -393,7 +393,7 @@ public class MethodTool {
 	 * @param parameterTypes 参数类型数组
 	 * @return 可访问的方法
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-3 下午11:47:22
 	 */
 	public static Method getAccessibleMethod(Class<?> cls, String methodName, Class<?>... parameterTypes) {
@@ -409,7 +409,7 @@ public class MethodTool {
 	 * @param method 希望调用的方法
 	 * @return 可访问的方法
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-3 下午11:49:26
 	 */
 	public static Method getAccessibleMethod(Method method) {
@@ -436,7 +436,7 @@ public class MethodTool {
 	 * @param parameterTypes 可兼容的方法参数可变数组
 	 * @return 可访问的方法
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-3 下午11:56:15
 	 */
 	public static Method getMatchingAccessibleMethod(Class<?> cls, String methodName, Class<?>... parameterTypes) {

@@ -1,7 +1,7 @@
 package com.kvc.joy.swing.res.img;
 
 /**
- * @author  <b>唐玮琳</b>
+ * @author  <b>Kevice</b>
  */
 public interface MarkLocation {
 

@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-20 下午11:51:45
  */
 @IdClass(TErbacGroupUserId.class)

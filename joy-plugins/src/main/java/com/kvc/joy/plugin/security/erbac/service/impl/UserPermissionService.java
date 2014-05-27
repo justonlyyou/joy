@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-23 上午12:04:19
  */
 public class UserPermissionService implements IUserPermissionService {

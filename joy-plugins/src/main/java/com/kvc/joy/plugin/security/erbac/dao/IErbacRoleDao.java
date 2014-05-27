@@ -5,7 +5,7 @@ import com.kvc.joy.plugin.security.erbac.model.po.TErbacRole;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-27 下午8:01:46
  */
 public interface IErbacRoleDao extends IJpaEntityRepository<TErbacRole, String> {

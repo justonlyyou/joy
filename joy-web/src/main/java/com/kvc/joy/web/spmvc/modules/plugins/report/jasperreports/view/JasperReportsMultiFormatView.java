@@ -7,7 +7,7 @@ import java.util.Map;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-27 下午11:33:12
  */
 public class JasperReportsMultiFormatView extends org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView {

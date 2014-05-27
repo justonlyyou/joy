@@ -15,7 +15,7 @@ import java.util.Date;
 /**
  * 周期处理
  * 
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public class CycleProcessor {
 	

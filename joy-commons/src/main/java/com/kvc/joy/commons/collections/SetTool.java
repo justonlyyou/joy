@@ -11,7 +11,7 @@ import java.util.*;
  * Set工具类
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-6 上午10:12:53
  */
 public class SetTool {
@@ -27,7 +27,7 @@ public class SetTool {
 	 * @param elems 可变数组，可以为null, 为null将返回空的集合
 	 * @return 由可变数组元素组成的HashSet
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-7 下午9:29:08
 	 */
 	public static <T> Set<T> newHashSet(T... elems) {
@@ -47,7 +47,7 @@ public class SetTool {
 	 * @param elems 可变数组，可以为null, 为null将返回空的集合
 	 * @return 由可变数组元素组成的LinkedHashSet
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-7 下午9:32:08
 	 */
 	public static <T> Set<T> newLinkedHashSet(T... elems) {
@@ -86,7 +86,7 @@ public class SetTool {
 	 * @param set2 第二个集合, 可以为null
 	 * @return 是否两个集合相等
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午11:08:11
 	 */
 	public static boolean isEqualSet(Collection<?> set1, Collection<?> set2) {
@@ -107,7 +107,7 @@ public class SetTool {
 	 * @param set 要生成哈希值的集合， 可以为null
 	 * @return 指定集合的哈希值，如果集合为null将返回0
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午11:09:30
 	 */
 	public static int hashCodeForSet(Collection<?> set) {
@@ -142,7 +142,7 @@ public class SetTool {
 	 * @return 同步的集合
 	 * @throws IllegalArgumentException 如果集合为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午11:13:15
 	 */
 	@SuppressWarnings("unchecked")
@@ -163,7 +163,7 @@ public class SetTool {
 	 * @return 一个不可修改的集合
 	 * @throws IllegalArgumentException 如果集合为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午11:13:24
 	 */
 	@SuppressWarnings("unchecked")
@@ -186,7 +186,7 @@ public class SetTool {
 	 * @return 满足指定条件的集合
 	 * @throws IllegalArgumentException 如果任意参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午11:14:42
 	 */
 	@SuppressWarnings("unchecked")
@@ -207,7 +207,7 @@ public class SetTool {
 	 * @param type 返回集合的元素类型
 	 * @return 指定类型的集合
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午11:16:52
 	 */
 	@SuppressWarnings("unchecked")
@@ -230,7 +230,7 @@ public class SetTool {
 	 * @return 转换后的集合
 	 * @throws IllegalArgumentException 如果任意参数null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午11:18:08
 	 */
 	@SuppressWarnings("rawtypes")
@@ -252,7 +252,7 @@ public class SetTool {
 	 * @return 排过序的集合
 	 * @throws IllegalArgumentException 如果指定的集合为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午11:30:58
 	 */
 	@SuppressWarnings("unchecked")
@@ -290,7 +290,7 @@ public class SetTool {
 	 * @return 同步的有序集合
 	 * @throws IllegalArgumentException 如果集合为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午11:32:54
 	 */
 	@SuppressWarnings("unchecked")
@@ -311,7 +311,7 @@ public class SetTool {
 	 * @return 一个不可修改的有序集合
 	 * @throws IllegalArgumentException 如果集合为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午11:35:10
 	 */
 	@SuppressWarnings("unchecked")
@@ -334,7 +334,7 @@ public class SetTool {
 	 * @return 满足指定条件的有序集合
 	 * @throws IllegalArgumentException 如果任意参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午11:35:16
 	 */
 	@SuppressWarnings("unchecked")
@@ -355,7 +355,7 @@ public class SetTool {
 	 * @param type 返回集合的元素类型
 	 * @return 指定类型的有序集合
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午11:36:16
 	 */
 	@SuppressWarnings("unchecked")
@@ -378,7 +378,7 @@ public class SetTool {
 	 * @return 转换后的集合
 	 * @throws IllegalArgumentException 如果任意参数null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午11:37:20
 	 */
 	@SuppressWarnings("rawtypes")

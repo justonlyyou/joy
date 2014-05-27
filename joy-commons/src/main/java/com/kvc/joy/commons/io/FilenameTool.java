@@ -15,7 +15,7 @@ import java.util.Collection;
  * </p>
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-6 上午10:39:59
  */
 public class FilenameTool {
@@ -71,7 +71,7 @@ public class FilenameTool {
 	 * @param filename 要标准化的文件路径，null将返回null
 	 * @return 标准化后的文件路径，无效路径将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午6:57:50
 	 */
 	public static String normalize(String filename) {
@@ -122,7 +122,7 @@ public class FilenameTool {
 	 * @param unixSeparator true: 是否使用unix格式的分隔符。false: 使用windows格式的分隔符
 	 * @return 标准化后的文件路径，无效路径将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午7:05:13
 	 */
 	public static String normalize(String filename, boolean unixSeparator) {
@@ -172,7 +172,7 @@ public class FilenameTool {
 	 * @param filename 要标准化的文件路径，null将返回null
 	 * @return 标准化后的文件路径，无效路径将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午7:11:08
 	 */
 	public static String normalizeNoEndSeparator(String filename) {
@@ -222,7 +222,7 @@ public class FilenameTool {
 	 * @param unixSeparator true: 是否使用unix格式的分隔符。false: 使用windows格式的分隔符
 	 * @return 标准化后的文件路径，无效路径将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午7:22:11
 	 */
 	public static String normalizeNoEndSeparator(String filename, boolean unixSeparator) {
@@ -270,7 +270,7 @@ public class FilenameTool {
 	 * @param fullFilenameToAdd 要连接到基础路径的文件名（或路径）
 	 * @return 连接后的路径, 无效路径将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午7:41:06
 	 */
 	public static String concat(String basePath, String fullFilenameToAdd) {
@@ -301,7 +301,7 @@ public class FilenameTool {
 	 *             IOException 如果请求的方法不能通过反射访问
 	 * @see FileUtils#directoryContains(File, File)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午7:53:23
 	 */
 	public static boolean directoryContains(final String canonicalParent, final String canonicalChild) {
@@ -321,7 +321,7 @@ public class FilenameTool {
 	 * @param path 待处理的路径, 为null将返回null
 	 * @return 更新后的路径
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午7:55:31
 	 */
 	public static String separatorsToUnix(String path) {
@@ -336,7 +336,7 @@ public class FilenameTool {
 	 * @param path 待处理的路径, 为null将返回null
 	 * @return 更新后的路径
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午7:55:31
 	 */
 	public static String separatorsToWindows(String path) {
@@ -351,7 +351,7 @@ public class FilenameTool {
 	 * @param path 待处理的路径, 为null将返回null
 	 * @return 更新后的路径
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午7:55:31
 	 */
 	public static String separatorsToSystem(String path) {
@@ -396,7 +396,7 @@ public class FilenameTool {
 	 * @param filename 要查找前缀的路径, null将返回-1
 	 * @return 路径前缀的长度, 路径无效或null将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午10:04:47
 	 */
 	public static int getPrefixLength(String filename) {
@@ -419,7 +419,7 @@ public class FilenameTool {
 	 * @param filename 待查找的路径, null将返回-1
 	 * @return 最后一个目录分隔符的下标, 找不到或路径为null将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午10:10:10
 	 */
 	public static int indexOfLastSeparator(String filename) {
@@ -443,7 +443,7 @@ public class FilenameTool {
 	 * @param filename 待查找的路径, null将返回-1
 	 * @return 最后一个扩展分隔符的下标, 找不到或路径为null将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午10:15:55
 	 */
 	public static int indexOfExtension(String filename) {
@@ -484,7 +484,7 @@ public class FilenameTool {
 	 * @param filename 待查找的路径, null将返回null
 	 * @return 路径的前缀, 路径无效或为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午10:21:29
 	 */
 	public static String getPrefix(String filename) {
@@ -519,7 +519,7 @@ public class FilenameTool {
 	 * @param filename 待查找的路径, null将返回null
 	 * @return 不带前缀的路径, 没有将返回空串，路径无效或为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午10:29:16
 	 */
 	public static String getPath(String filename) {
@@ -554,7 +554,7 @@ public class FilenameTool {
 	 * @param filename 待查找的路径, null将返回null
 	 * @return 不带前缀的路径, 没有将返回空串，路径无效或为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午10:31:48
 	 */
 	public static String getPathNoEndSeparator(String filename) {
@@ -592,7 +592,7 @@ public class FilenameTool {
 	 * @param filename 待查找的路径, null将返回null
 	 * @return 不带前缀的路径, 没有将返回空串，路径无效或为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午10:34:09
 	 */
 	public static String getFullPath(String filename) {
@@ -629,7 +629,7 @@ public class FilenameTool {
 	 * @param filename 待查找的路径, null将返回null
 	 * @return 带前缀的路径, 没有将返回空串，路径无效或为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午10:35:41
 	 */
 	public static String getFullPathNoEndSeparator(String filename) {
@@ -659,7 +659,7 @@ public class FilenameTool {
 	 * @param filename 待查找的路径, null将返回null
 	 * @return 去掉路径的文件名, 没有将返回空串，路径无效或为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午10:37:29
 	 */
 	public static String getName(String filename) {
@@ -689,7 +689,7 @@ public class FilenameTool {
 	 * @param filename 待查找的路径, null将返回null
 	 * @return 去掉路径和扩展名后的文件名, 没有将返回空串，路径无效或为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午10:40:53
 	 */
 	public static String getBaseName(String filename) {
@@ -719,7 +719,7 @@ public class FilenameTool {
 	 * @param filename 要获取扩展名的文件名
 	 * @return 文件的扩展名，没有将返回空串，路径为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午10:44:25
 	 */
 	public static String getExtension(String filename) {
@@ -750,7 +750,7 @@ public class FilenameTool {
 	 * @param filename 待查找的路径, null将返回null
 	 * @return 去掉扩展名后的文件名, 路径为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午10:47:26
 	 */
 	public static String removeExtension(String filename) {
@@ -772,7 +772,7 @@ public class FilenameTool {
 	 * @return true：如果两个文件名相等， 都为null将作相等
 	 * @see IOCase#SENSITIVE
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午10:51:25
 	 */
 	public static boolean equals(String filename1, String filename2) {
@@ -793,7 +793,7 @@ public class FilenameTool {
 	 * @return true：如果两个文件名相等， 都为null将作相等
 	 * @see IOCase#SYSTEM
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午10:54:03
 	 */
 	public static boolean equalsOnSystem(String filename1, String filename2) {
@@ -815,7 +815,7 @@ public class FilenameTool {
 	 * @return true：如果两个文件名相等， 都为null将作相等
 	 * @see IOCase#SENSITIVE
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午10:56:09
 	 */
 	public static boolean equalsNormalized(String filename1, String filename2) {
@@ -837,7 +837,7 @@ public class FilenameTool {
 	 * @return true：如果两个文件名相等， 都为null将作相等
 	 * @see IOCase#SYSTEM
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午10:57:31
 	 */
 	public static boolean equalsNormalizedOnSystem(String filename1, String filename2) {
@@ -855,7 +855,7 @@ public class FilenameTool {
 	 * @param caseSensitivity 大小写比较规则, null将当作CaseSensitivity.SYSTEM
 	 * @return true：如果两个文件名相等， 都为null将作相等
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午11:08:55
 	 */
 	public static boolean equals(String filename1, String filename2, boolean normalized, CaseSensitivity caseSensitivity) {
@@ -877,7 +877,7 @@ public class FilenameTool {
 	 * @param extension 扩展名, null或空串代表对没有扩展名的检查
 	 * @return true：如果文件名的扩展名为指定的扩展名
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午11:13:44
 	 */
 	public static boolean isExtension(String filename, String extension) {
@@ -897,7 +897,7 @@ public class FilenameTool {
 	 * @param extension 扩展名数组, null或空串代表对没有扩展名的检查
 	 * @return true：如果文件名的扩展名为指定的扩展名数组中的一个
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午11:15:22
 	 */
 	public static boolean isExtension(String filename, String[] extensions) {
@@ -917,7 +917,7 @@ public class FilenameTool {
 	 * @param extension 扩展名容器, null或空串代表对没有扩展名的检查
 	 * @return true：如果文件名的扩展名为指定的扩展名容器中的一个
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午11:15:22
 	 */
 	public static boolean isExtension(String filename, Collection<String> extensions) {
@@ -949,7 +949,7 @@ public class FilenameTool {
 	 * @return true：如果匹配，两者都null当作匹配
 	 * @see IOCase#SENSITIVE
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午11:23:47
 	 */
 	public static boolean wildcardMatch(String filename, String wildcardMatcher) {
@@ -981,7 +981,7 @@ public class FilenameTool {
 	 * @return true：如果匹配，两者都null当作匹配
 	 * @see IOCase#SYSTEM
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午11:25:11
 	 */
 	public static boolean wildcardMatchOnSystem(String filename, String wildcardMatcher) {
@@ -1002,7 +1002,7 @@ public class FilenameTool {
 	 * @param caseSensitivity 大小写比较规则, null将当作CaseSensitivity.SYSTEM
 	 * @return true：如果匹配，两者都null当作匹配
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午11:27:55
 	 */
 	public static boolean wildcardMatch(String filename, String wildcardMatcher, CaseSensitivity caseSensitivity) {

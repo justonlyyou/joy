@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="关系数据库对象详情页面">
-<meta name="author" content="唐玮琳">
+<meta name="author" content="Kevice">
 
 <title>关系数据库对象详情</title>
 </head>
@@ -76,8 +76,8 @@
 	</div>
 
     <script type="text/javascript">
-        curl(['joy/core/sysres/mdRdbObj/mdRdbObjDetail'], function(MgmtPage) {
-            detailPage = new MgmtPage();
+        curl(['joy/core/sysres/mdRdbObj/mdRdbObjDetail'], function(DetailPage) {
+            detailPage = new DetailPage();
         });
     </script>
 	

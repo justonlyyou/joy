@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * 泛型工具类
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-26 下午9:13:34
  */
 public class GenericTool {
@@ -34,7 +34,7 @@ public class GenericTool {
 	 * @return 泛型参数的实际类型. 如果没有实现ParameterizedType接口，即不支持泛型，将直接返回{@code Object.class}, 如果索引越界返回null
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 上午9:47:11
 	 */
 	public static Class<?> getSuperClassGenricType(Class<?> clazz, int index) {
@@ -65,7 +65,7 @@ public class GenericTool {
 	 * @return 泛型参数的实际类型. 如果没有实现ParameterizedType接口，即不支持泛型，所以直接返回{@code Object.class}
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 上午9:58:12
 	 */
 	public static Class<?> getSuperClassGenricType(Class<?> clazz) {
@@ -82,7 +82,7 @@ public class GenericTool {
 	 * @return 泛型参数的实际类型, 如果没有实现ParameterizedType接口，即不支持泛型，将直接返回{@code Object.class}, 如果索引越界返回null
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 上午10:07:43
 	 */
 	public static Class<?> getMethodGenericReturnType(Method method, int index) {
@@ -108,7 +108,7 @@ public class GenericTool {
 	 * @return 泛型参数的实际类型, 如果没有实现ParameterizedType接口，即不支持泛型，将直接返回{@code Object.class}
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 上午10:07:43
 	 */
 	public static Class<?> getMethodGenericReturnType(Method method) {
@@ -125,7 +125,7 @@ public class GenericTool {
 	 * @return 输入参数的泛型参数的实际类型列表, 如果没有实现ParameterizedType接口，即不支持泛型，将直接返回空列表, 如果索引越界返回null
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 上午10:17:52
 	 */
 	public static List<Class<?>> getMethodGenericParameterTypes(Method method, int index) {
@@ -157,7 +157,7 @@ public class GenericTool {
 	 * @return 输入参数的泛型参数的实际类型列表, 如果没有实现ParameterizedType接口，即不支持泛型，将直接返回空列表
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 上午10:17:52
 	 */
 	public static List<Class<?>> getMethodGenericParameterTypes(Method method) {
@@ -173,7 +173,7 @@ public class GenericTool {
 	 * @param index 泛型参数所在索引, 从0开始.
 	 * @return 泛型参数的实际类型, 如果没有实现ParameterizedType接口，即不支持泛型，将直接返回{@code Object.class}, 如果索引越界返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 上午10:20:51
 	 */
 	public static Class<?> getFieldGenericType(Field field, int index) {
@@ -201,7 +201,7 @@ public class GenericTool {
 	 * @return 泛型参数的实际类型, 如果没有实现ParameterizedType接口，即不支持泛型，将直接返回{@code Object.class}
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 上午10:20:51
 	 */
 	public static Class<?> getFieldGenericType(Field field) {

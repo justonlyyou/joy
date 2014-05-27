@@ -6,7 +6,7 @@ import java.lang.annotation.Annotation;
  * 注解工具类
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-5 下午11:11:43
  */
 public class AnnotationTool {
@@ -21,7 +21,7 @@ public class AnnotationTool {
 	 * @param annoClass 要找的注解类
 	 * @return 匹配类注解的类
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年12月19日 下午7:33:57
 	 */
 	public static Class<?> getClassUpHierarchy(Class<?> clazz, Class<? extends Annotation> annoClass) {
@@ -49,7 +49,7 @@ public class AnnotationTool {
 	 * @param a2 第二个注解, {@code null} 返回 {@code false} 除非两个参数都为 {@code null}
 	 * @return {@code true} 如果两个注解相等或都为{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午2:31:25
 	 */
 	public static boolean equals(Annotation a1, Annotation a2) {
@@ -66,7 +66,7 @@ public class AnnotationTool {
 	 * @throws RuntimeException 如果在注解成员访问时产生 {@code Exception} 异常
 	 * @throws IllegalStateException 如果注解方法调用返回 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午3:14:12
 	 */
 	public static int hashCode(Annotation a) {
@@ -81,7 +81,7 @@ public class AnnotationTool {
 	 * @param a 注解
 	 * @return 注解的字符串表示, 不会为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午3:15:38
 	 */
 	public static String toString(final Annotation a) {
@@ -100,7 +100,7 @@ public class AnnotationTool {
 	 * @param type 要检查的类, 可以为 {@code null}
 	 * @return {@code true} 如果指定的类为注解的成员
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午3:22:39
 	 */
 	public static boolean isValidAnnotationMemberType(Class<?> type) {

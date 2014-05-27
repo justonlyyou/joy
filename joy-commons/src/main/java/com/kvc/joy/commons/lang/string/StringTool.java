@@ -13,7 +13,7 @@ import java.util.*;
  * 字符串操作工具类
  *
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-8 下午9:23:31
  */
 public class StringTool {
@@ -34,7 +34,7 @@ public class StringTool {
 	 * @param map Map<要查找的字符串, 用来替换的字符串>
 	 * @return 替换后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-8 下午9:23:31
 	 */
 	public static String replaceEach(String text, Map<String, String> map) {
@@ -58,7 +58,7 @@ public class StringTool {
 	 * @param str 需要转换的字符串
 	 * @return 转换后的十六进制表示的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-8 下午10:05:20
 	 */
 	public static String toHexStr(String str) {
@@ -77,7 +77,7 @@ public class StringTool {
 	 * @param hexStr 十六进制表示的字符串
 	 * @return 解码后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-8 下午10:05:20
 	 */
 	public static String decodeHexStr(String hexStr) {
@@ -94,7 +94,7 @@ public class StringTool {
 	 * @param str 待加密的字符串
 	 * @return 加密的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月1日 下午10:02:50
 	 */
 	public static String toMd5HexStr(String str) {
@@ -120,9 +120,9 @@ public class StringTool {
 	 * @param srcStr 源字符串
 	 * @param groupLen 每份长度
 	 * @return 等分后每个分组组成的数组
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-8 下午9:52:54
 	 */
 	public static String[] divideAverage(String srcStr, int groupLen) {
@@ -159,9 +159,9 @@ public class StringTool {
 	 * 
 	 * @param str “驼峰”式写法的字符串
 	 * @return “_”分割的字符串, 并且是大写的
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-8 下午9:54:54
 	 */
 	public static String humpToUnderscore(String str) {
@@ -195,9 +195,9 @@ public class StringTool {
 	 * 
 	 * @param str “_”分割的字符串
 	 * @return “驼峰”式写法的字符串
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-8 下午9:55:54
 	 */
 	public static String underscoreToHump(String str) {
@@ -241,7 +241,7 @@ public class StringTool {
 	 * @param cs 待判断的字符序列
 	 * @return {@code true} 如果字符序列为空串或为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午8:10:47
 	 */
 	public static boolean isEmpty(CharSequence cs) {
@@ -264,7 +264,7 @@ public class StringTool {
 	 * @param cs 待判断的字符序列
 	 * @return {@code true} 如果字符序列不为空串或为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午8:16:47
 	 */
 	public static boolean isNotEmpty(CharSequence cs) {
@@ -287,7 +287,7 @@ public class StringTool {
 	 * @param cs 待判断的字符序列
 	 * @return {@code true} 如果字符序列为空白、空串或为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午8:19:17
 	 */
 	public static boolean isBlank(CharSequence cs) {
@@ -310,7 +310,7 @@ public class StringTool {
 	 * @param cs 待判断的字符序列，可以为null
 	 * @return {@code true} 如果字符序列不为空白、空串或为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午8:22:17
 	 */
 	public static boolean isNotBlank(CharSequence cs) {
@@ -336,7 +336,7 @@ public class StringTool {
 	 * @param str 待处理的字符串，可以为null
 	 * @return 去除前后控制符和空白符后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午8:25:23
 	 */
 	public static String trim(String str) {
@@ -359,7 +359,7 @@ public class StringTool {
 	 * @param str 待处理的字符串，可以为null
 	 * @return 去除前后控制符和空白符后的字符串，如果是空串或null的话，将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午8:35:54
 	 */
 	public static String trimToNull(String str) {
@@ -382,7 +382,7 @@ public class StringTool {
 	 * @param str 待处理的字符串，可以为null
 	 * @return 去除前后控制符和空白符后的字符串，如果是空串或null的话，将返回空串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午8:45:54
 	 */
 	public static String trimToEmpty(String str) {
@@ -411,7 +411,7 @@ public class StringTool {
 	 * @param str 待处理的字符串，可以为null
 	 * @return 去除前后空白符后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午8:49:07
 	 */
 	public static String strip(String str) {
@@ -437,7 +437,7 @@ public class StringTool {
 	 * @param str 待处理的字符串，可以为null
 	 * @return 去除前后空白符后的字符串，如果是空串或null的话，将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午9:17:07
 	 */
 	public static String stripToNull(String str) {
@@ -463,7 +463,7 @@ public class StringTool {
 	 * @param str 待处理的字符串，可以为null
 	 * @return 去除前后空白符后的字符串，如果是空串或null的话，将返回空串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午9:17:07
 	 */
 	public static String stripToEmpty(String str) {
@@ -489,7 +489,7 @@ public class StringTool {
 	 * @param stripChars 要删除的字符集，null将被当作空白符
 	 * @return 处理后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午9:22:51
 	 */
 	public static String strip(String str, String stripChars) {
@@ -516,7 +516,7 @@ public class StringTool {
 	 * @param stripChars 要删除的字符串，null将被当作空白符
 	 * @return 处理后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午9:22:51
 	 */
 	public static String stripStart(String str, String stripChars) {
@@ -544,7 +544,7 @@ public class StringTool {
 	 * @param stripChars 要删除的字符串，null将被当作空白符
 	 * @return 处理后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午9:22:51
 	 */
 	public static String stripEnd(String str, String stripChars) {
@@ -566,7 +566,7 @@ public class StringTool {
 	 * @param strs 待处理的字符串数组，可以为null
 	 * @return 处理后的字符串数组，{@code null} 如果strs参数值为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午10:06:50
 	 */
 	public static String[] stripAll(String... strs) {
@@ -591,7 +591,7 @@ public class StringTool {
 	 * @param stripChars 要删除的字符串，null将被当作空白符
 	 * @return 处理后的字符串数组，{@code null} 如果strs参数值为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午10:13:11
 	 */
 	public static String[] stripAll(String[] strs, String stripChars) {
@@ -613,7 +613,7 @@ public class StringTool {
 	 * @param input 源字符串，可以为null，为null返回null
 	 * @return 移除重音符号后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午10:31:58
 	 */
 	public static String stripAccents(String input) {
@@ -640,7 +640,7 @@ public class StringTool {
 	 * @param cs2 字符串2，可以为null
 	 * @return {@code true} 如果两字符串相等，大小写敏感，或两者都为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午10:48:25
 	 */
 	public static boolean equals(CharSequence cs1, CharSequence cs2) {
@@ -664,7 +664,7 @@ public class StringTool {
 	 * @param cs2 字符串2，可以为null
 	 * @return {@code true} 如果两字符串相等，大小写不敏感，或两者都为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午10:53:25
 	 */
 	public static boolean equalsIgnoreCase(CharSequence str1, CharSequence str2) {
@@ -690,7 +690,7 @@ public class StringTool {
 	 * @param searchChar 要查找的字符
 	 * @return 第一次出现的位置，如果没有找到或输入seq为null，将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午11:01:25
 	 */
 	public static int indexOf(CharSequence seq, int searchChar) {
@@ -716,7 +716,7 @@ public class StringTool {
 	 * @param startPos 开始位置，负数将当作0处理
 	 * @return 第一次出现的位置，如果没有找到或输入seq为null，将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午11:18:14
 	 */
 	public static int indexOf(CharSequence seq, int searchChar, int startPos) {
@@ -743,7 +743,7 @@ public class StringTool {
 	 * @param searchSeq 要查找的字符序列，可以为null
 	 * @return 第一次出现的位置，如果没有找到或输入seq为null，将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午11:24:27
 	 */
 	public static int indexOf(CharSequence seq, CharSequence searchSeq) {
@@ -775,7 +775,7 @@ public class StringTool {
 	 * @param startPos 开始位置，负数将当作0处理
 	 * @return 第一次出现的位置，如果没有找到或输入seq为null，将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午11:31:06
 	 */
 	public static int indexOf(CharSequence seq, CharSequence searchSeq, int startPos) {
@@ -806,7 +806,7 @@ public class StringTool {
 	 * @param ordinal 匹配的序数
 	 * @return 第 ordinal 次出现的位置，如果没有找到或输入str为null，将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午11:36:47
 	 */
 	public static int ordinalIndexOf(CharSequence str, CharSequence searchStr, int ordinal) {
@@ -831,7 +831,7 @@ public class StringTool {
 	 * @param searchStr 要查找的字符序列，可以为null
 	 * @return 第一次出现的位置，如果没有找到或输入seq为null，将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-5 下午6:58:27
 	 */
 	public static int indexOfIgnoreCase(CharSequence str, CharSequence searchStr) {
@@ -862,7 +862,7 @@ public class StringTool {
 	 * @param startPos 开始位置，负数将当作0处理
 	 * @return 第一次出现的位置，如果没有找到或输入seq为null，将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-5 下午6:59:27
 	 */
 	public static int indexOfIgnoreCase(CharSequence str, CharSequence searchStr, int startPos) {
@@ -885,7 +885,7 @@ public class StringTool {
 	 * @param searchChar 要查找的字符
 	 * @return 最后一次出现的位置，如果没有找到或输入seq为null，将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-5 下午7:07:37
 	 */
 	public static int lastIndexOf(CharSequence seq, int searchChar) {
@@ -913,7 +913,7 @@ public class StringTool {
 	 * @param startPos 开始位置，负数将当作0处理; 大于待查找的字符串的长度时将查找整个字符串
 	 * @return 最后一次出现的位置，如果没有找到或输入seq为null，将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-5 下午7:18:14
 	 */
 	public static int lastIndexOf(CharSequence seq, int searchChar, int startPos) {
@@ -939,7 +939,7 @@ public class StringTool {
 	 * @param searchChar 要查找的字符串
 	 * @return 最后一次出现的位置，如果没有找到或输入seq为null，将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-5 下午7:44:37
 	 */
 	public static int lastIndexOf(CharSequence seq, CharSequence searchSeq) {
@@ -970,7 +970,7 @@ public class StringTool {
 	 * @param ordinal 开始位置，负数将当作0处理; 大于待查找的字符串的长度时将查找整个字符串
 	 * @return 最后ordina次出现的位置，如果没有找到或输入seq为null，将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-5 下午7:18:14
 	 */
 	public static int lastOrdinalIndexOf(CharSequence str, CharSequence searchStr, int ordinal) {
@@ -998,7 +998,7 @@ public class StringTool {
 	 * @param searchSeq 要查找的字符串
 	 * @param startPos 开始位置，负数将当作0处理; 大于待查找的字符串的长度时将查找整个字符串
 	 * @return 最后一次出现的位置，如果没有找到或输入seq为null，将返回-1
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-5 下午8:04:15
 	 */
 	public static int lastIndexOf(CharSequence seq, CharSequence searchSeq, int startPos) {
@@ -1022,7 +1022,7 @@ public class StringTool {
 	 * @param searchStr 要查找的字符序列，可以为null
 	 * @return 最后一次出现的位置，如果没有找到或输入seq为null，将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-5 下午8:29:27
 	 */
 	public static int lastIndexOfIgnoreCase(CharSequence str, CharSequence searchStr) {
@@ -1050,7 +1050,7 @@ public class StringTool {
 	 * @param searchStr 要查找的字符序列，可以为null
 	 * @param startPos 开始位置，负数将当作0处理; 大于待查找的字符串的长度时将查找整个字符串
 	 * @return 最后一次出现的位置，如果没有找到或输入seq为null，将返回-1
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-5 下午8:40:25
 	 */
 	public static int lastIndexOfIgnoreCase(CharSequence str, CharSequence searchStr, int startPos) {
@@ -1076,7 +1076,7 @@ public class StringTool {
 	 * @param searchChar 要查找的字符
 	 * @return true：如果字符串 seq 包含字符 searchChar, false： 如果不包含或字符串 seq 为null或空串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-5 下午8:53:03
 	 */
 	public static boolean contains(CharSequence seq, int searchChar) {
@@ -1105,7 +1105,7 @@ public class StringTool {
 	 * @param searchSeq 要查找的字符串, 可以为null
 	 * @return true：如果字符串 seq 包含字符串 searchSeq, false： 如果不包含或字符串 seq 为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午6:17:06
 	 */
 	public static boolean contains(CharSequence seq, CharSequence searchSeq) {
@@ -1132,7 +1132,7 @@ public class StringTool {
 	 * @param searchStr 要查找的字符串, 可以为null
 	 * @return true：如果字符串 str 包含(忽略大小写)字符串 searchStr, false： 如果不包含或字符串 str 为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午6:19:30
 	 */
 	public static boolean containsIgnoreCase(CharSequence str, CharSequence searchStr) {
@@ -1148,7 +1148,7 @@ public class StringTool {
 	 * @return true：如果字符串非空至少包含1个空白字符, false： 如果不包含或字符串为null或空串
 	 * @see java.lang.Character#isWhitespace
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午6:23:16
 	 */
 	public static boolean containsWhitespace(CharSequence seq) {
@@ -1178,7 +1178,7 @@ public class StringTool {
 	 * @param searchChars 要查找的字符组, 可以为null
 	 * @return 任何第一次匹配的字符的下标。如果没有找到或cs、searchChars两者之一为null，将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午6:34:21
 	 */
 	public static int indexOfAny(CharSequence cs, char... searchChars) {
@@ -1204,7 +1204,7 @@ public class StringTool {
 	 * @param searchChars 要查找的字符组, 可以为null
 	 * @return 任何第一次匹配的字符的下标。如果没有找到或cs、searchChars两者之一为null，将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午6:37:07
 	 */
 	public static int indexOfAny(CharSequence cs, String searchChars) {
@@ -1232,7 +1232,7 @@ public class StringTool {
 	 * @param searchChars 要查找的字符组, 可以为null
 	 * @return true：任何给定的字符被找到，false：未找到或cs、searchChars两者之一为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午6:41:09
 	 */
 	public static boolean containsAny(CharSequence cs, char... searchChars) {
@@ -1258,7 +1258,7 @@ public class StringTool {
 	 * @param searchChars 要查找的字符组, 可以为null
 	 * @return true：任何给定的字符被找到，false：未找到或cs、searchChars两者之一为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午6:43:44
 	 */
 	public static boolean containsAny(CharSequence cs, CharSequence searchChars) {
@@ -1287,7 +1287,7 @@ public class StringTool {
 	 * @param searchChars 要查找的字符组, 可以为null
 	 * @return 任何第一次不匹配的字符的下标。如果没有找到或cs、searchChars两者之一为null，将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午6:48:25
 	 */
 	public static int indexOfAnyBut(CharSequence cs, char... searchChars) {
@@ -1313,7 +1313,7 @@ public class StringTool {
 	 * @param searchChars 要查找的字符组, 可以为null
 	 * @return 任何第一次不匹配的字符的下标。如果没有找到或cs、searchChars两者之一为null，将返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午6:49:25
 	 */
 	public static int indexOfAnyBut(CharSequence seq, CharSequence searchChars) {
@@ -1341,7 +1341,7 @@ public class StringTool {
 	 * @param valid 有效的字符组, 可以为null
 	 * @return true: 如果cs只由valid中的字符组成或cs为空串， false: cs包含其他字符或cs为null或valid为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午7:02:27
 	 */
 	public static boolean containsOnly(CharSequence cs, char... valid) {
@@ -1368,7 +1368,7 @@ public class StringTool {
 	 * @return true: 如果cs只由validChars中的字符组成或cs为空串， false:
 	 *         cs包含其他字符或cs为null或validChars为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午7:05:08
 	 */
 	public static boolean containsOnly(CharSequence cs, String validChars) {
@@ -1397,7 +1397,7 @@ public class StringTool {
 	 * @return true: 如果cs只都不由searchChars中的字符组成或cs为null或cs为空串或searchChars为null，
 	 *         false: cs包含searchChars中的任何字符
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午7:08:58
 	 */
 	public static boolean containsNone(CharSequence cs, char... searchChars) {
@@ -1430,7 +1430,7 @@ public class StringTool {
 	 * @return true: 如果cs只都不由searchChars中的字符组成或cs为null或cs为空串或searchChars为null，
 	 *         false: cs包含searchChars中的任何字符
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午7:10:58
 	 */
 	public static boolean containsNone(CharSequence cs, String invalidChars) {
@@ -1462,7 +1462,7 @@ public class StringTool {
 	 * @return 任何第一次匹配的字符串的下标。如果没有找到或cs为null、searchChars为null或空数组，将返回-1。
 	 *         searchStrs如果有空串的元素，将返回0
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午7:17:42
 	 */
 	public static int indexOfAny(CharSequence str, CharSequence... searchStrs) {
@@ -1491,7 +1491,7 @@ public class StringTool {
 	 * @return 从后往前找任何第一次匹配的字符串的下标。如果没有找到或cs为null、searchChars为null或空数组，将返回-1。
 	 *         searchStrs如果有空串的元素，将返回0
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午7:19:46
 	 */
 	public static int lastIndexOfAny(CharSequence str, CharSequence... searchStrs) {
@@ -1519,7 +1519,7 @@ public class StringTool {
 	 * @param start 开始位置，负数表示从后往前数
 	 * @return 从开始位置开始的子串。str为null将返回null, str为空串将返回空串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午7:52:58
 	 */
 	public static String substring(String str, int start) {
@@ -1548,7 +1548,7 @@ public class StringTool {
 	 * @param end 结束位置，负数表示从后往前数
 	 * @return 从开始位置开始到结束位置的子串。str为null将返回null, str为空串或start<=end将返回空串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午8:03:59
 	 */
 	public static String substring(String str, int start, int end) {
@@ -1575,7 +1575,7 @@ public class StringTool {
 	 * @param len 子串的长度
 	 * @return 最左边的字符串, str为null将返回null, str为空串或len为负数将返回空串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午8:05:59
 	 */
 	public static String left(String str, int len) {
@@ -1600,7 +1600,7 @@ public class StringTool {
 	 * @param len 子串的长度
 	 * @return 最左边的字符串, str为null将返回null, str为空串或len为负数将返回空串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午8:06:59
 	 */
 	public static String right(String str, int len) {
@@ -1628,7 +1628,7 @@ public class StringTool {
 	 * @param len 子串的长度
 	 * @return 从 pos 位置开始的 len 个字符, str为null将返回null, str为空串或len为负数将返回空串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午8:20:02
 	 */
 	public static String mid(String str, int pos, int len) {
@@ -1658,7 +1658,7 @@ public class StringTool {
 	 * @return 第一次出现字符串 separator 前的子串。str为null将返回null，
 	 *         str或separator为空串将返回空串，separator为null或未找到将返回str
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午8:21:02
 	 */
 	public static String substringBefore(String str, String separator) {
@@ -1686,7 +1686,7 @@ public class StringTool {
 	 * @return 第一次出现字符串 separator 后的子串。str为null将返回null，
 	 *         str或separator为空串或未找到将返回空串，separator为null将返回str
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午8:21:02
 	 */
 	public static String substringAfter(String str, String separator) {
@@ -1714,7 +1714,7 @@ public class StringTool {
 	 * @return 最后一次出现字符串 separator 前的子串。str为null将返回null，
 	 *         str或separator为空串将返回空串，separator为null或未找到将返回str
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午8:25:04
 	 */
 	public static String substringBeforeLast(String str, String separator) {
@@ -1743,7 +1743,7 @@ public class StringTool {
 	 * @return 最后一次出现字符串 separator 后的子串。str为null将返回null，
 	 *         str或separator为空串或未找到将返回空串，separator为null将返回str
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午8:28:04
 	 */
 	public static String substringAfterLast(String str, String separator) {
@@ -1770,7 +1770,7 @@ public class StringTool {
 	 * @param tag 子串前后的字符串, 可以为null
 	 * @return 子串, 未找到或str为null或tag为null都将返回null，tag为空串将返回空串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午8:50:04
 	 */
 	public static String substringBetween(String str, String tag) {
@@ -1800,7 +1800,7 @@ public class StringTool {
 	 * @param close 子串后的字符串, 可以为null
 	 * @return 子串, 未找到或str为null或open/close为null都将返回null，open/close为空串将返回空串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午8:51:04
 	 */
 	public static String substringBetween(String str, String open, String close) {
@@ -1825,7 +1825,7 @@ public class StringTool {
 	 * @param close 标识子串结束的字符串, 空串返回null
 	 * @return 子串数组, 未找到返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午8:52:04
 	 */
 	public static String[] substringsBetween(String str, String open, String close) {
@@ -1853,7 +1853,7 @@ public class StringTool {
 	 * @param str 主串, 可以为null，null返回null，空串返回空数组
 	 * @return 子串数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午9:02:04
 	 */
 	public static String[] split(String str) {
@@ -1878,7 +1878,7 @@ public class StringTool {
 	 * @param separatorChar 分隔符
 	 * @return 子串数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午9:02:04
 	 */
 	public static String[] split(String str, char separatorChar) {
@@ -1904,7 +1904,7 @@ public class StringTool {
 	 * @param separatorChars 分隔符串，为null将当作空白符
 	 * @return 子串数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午9:09:04
 	 */
 	public static String[] split(String str, String separatorChars) {
@@ -1930,7 +1930,7 @@ public class StringTool {
 	 * @param max 最大结果数。0或负数表示不受限，实际结果如果大于该参数，结果将返回最后的max个元素
 	 * @return 子串数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午9:16:04
 	 */
 	public static String[] split(String str, String separatorChars, int max) {
@@ -1955,7 +1955,7 @@ public class StringTool {
 	 * @param separator 分隔串，为null将当作空白符
 	 * @return 子串数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午9:19:04
 	 */
 	public static String[] splitByWholeSeparator(String str, String separator) {
@@ -1982,7 +1982,7 @@ public class StringTool {
 	 * @param max 最大结果数。0或负数表示不受限，实际结果如果大于该参数，结果将返回最后的max个元素
 	 * @return 子串数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午9:40:04
 	 */
 	public static String[] splitByWholeSeparator(String str, String separator, int max) {
@@ -2007,7 +2007,7 @@ public class StringTool {
 	 * @param separator 分隔串，为null将当作空白符
 	 * @return 子串数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午9:49:04
 	 */
 	public static String[] splitByWholeSeparatorPreserveAllTokens(String str, String separator) {
@@ -2034,7 +2034,7 @@ public class StringTool {
 	 * @param max 最大结果数。0或负数表示不受限，实际结果如果大于该参数，结果将返回最后的max个元素
 	 * @return 子串数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午9:51:04
 	 */
 	public static String[] splitByWholeSeparatorPreserveAllTokens(String str, String separator, int max) {
@@ -2058,7 +2058,7 @@ public class StringTool {
 	 * @param str 主串, 可以为null，为null将返回null
 	 * @return 子串数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午9:58:04
 	 */
 	public static String[] splitPreserveAllTokens(String str) {
@@ -2089,7 +2089,7 @@ public class StringTool {
 	 * @param separatorChar 分隔符
 	 * @return 子串数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午10:00:04
 	 */
 	public static String[] splitPreserveAllTokens(String str, char separatorChar) {
@@ -2120,7 +2120,7 @@ public class StringTool {
 	 * @param separatorChars 分隔符串，为空或空串将被当作空白符
 	 * @return 子串数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午10:06:04
 	 */
 	public static String[] splitPreserveAllTokens(String str, String separatorChars) {
@@ -2149,7 +2149,7 @@ public class StringTool {
 	 * @param max 最大结果数。0或负数表示不受限，实际结果如果大于该参数，结果将返回最后的max个元素
 	 * @return 子串数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午10:09:24
 	 */
 	public static String[] splitPreserveAllTokens(String str, String separatorChars, int max) {
@@ -2177,7 +2177,7 @@ public class StringTool {
 	 * @param str 主串, 可以为null，为null将返回null
 	 * @return 子串数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午10:20:24
 	 */
 	public static String[] splitByCharacterType(String str) {
@@ -2205,7 +2205,7 @@ public class StringTool {
 	 * @param str 主串, 可以为null，为null将返回null
 	 * @return 子串数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午10:44:24
 	 */
 	public static String[] splitByCharacterTypeCamelCase(String str) {
@@ -2231,7 +2231,7 @@ public class StringTool {
 	 * @param elements 要连接的对象组, 可以为null，为null将返回null, 数组元素为null当空串处理
 	 * @return 连接后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午10:51:24
 	 */
 	public static <T> String join(T... elements) {
@@ -2256,7 +2256,7 @@ public class StringTool {
 	 * @param separator 分隔符
 	 * @return 连接后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午10:51:24
 	 */
 	public static String join(Object[] array, char separator) {
@@ -2281,7 +2281,7 @@ public class StringTool {
 	 * @param endIndex 结束连接的最后一个(不包括)元素的数组下标，下标越界将报错。
 	 * @return 连接后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午10:59:24
 	 */
 	public static String join(Object[] array, char separator, int startIndex, int endIndex) {
@@ -2307,7 +2307,7 @@ public class StringTool {
 	 * @param separator 分隔串, null当空串处理
 	 * @return 连接后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午11:10:24
 	 */
 	public static String join(Object[] array, String separator) {
@@ -2335,7 +2335,7 @@ public class StringTool {
 	 * @param endIndex 结束连接的最后一个(不包括)元素的数组下标，下标越界将报错。
 	 * @return 连接后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午11:12:24
 	 */
 	public static String join(Object[] array, String separator, int startIndex, int endIndex) {
@@ -2360,7 +2360,7 @@ public class StringTool {
 	 * @param separator 分隔符
 	 * @return 连接后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午11:15:24
 	 */
 	public static String join(Iterator<?> iterator, char separator) {
@@ -2385,7 +2385,7 @@ public class StringTool {
 	 * @param iterator 要连接的对象迭代器, 可以为null，为null将返回null, 元素为null当空串处理
 	 * @param separator 分隔串, null当空串处理
 	 * @return 连接后的字符串
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午11:17:24
 	 */
 	public static String join(Iterator<?> iterator, String separator) {
@@ -2410,7 +2410,7 @@ public class StringTool {
 	 * @param separator 分隔符
 	 * @return 连接后的字符串
 	 * @since 2.3
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午11:20:24
 	 */
 	public static String join(Iterable<?> iterable, char separator) {
@@ -2436,7 +2436,7 @@ public class StringTool {
 	 * @param separator 分隔串, null当空串处理
 	 * @return 连接后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-6 下午11:21:24
 	 */
 	public static String join(Iterable<?> iterable, String separator) {
@@ -2460,7 +2460,7 @@ public class StringTool {
 	 * @param str 要删除空白字符的字符串, 可以为null，为null时返回null
 	 * @return 没有空白字符的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午7:23:00
 	 */
 	public static String deleteWhitespace(String str) {
@@ -2488,7 +2488,7 @@ public class StringTool {
 	 * @param remove 要删除的子串，可以为null，为null或为空串时返回源字符串
 	 * @return 去掉开头部分的子串后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午7:27:00
 	 */
 	public static String removeStart(String str, String remove) {
@@ -2515,7 +2515,7 @@ public class StringTool {
 	 * @param remove 要删除的子串，可以为null，为null或为空串时返回源字符串
 	 * @return 去掉开头部分的子串后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午7:27:00
 	 */
 	public static String removeStartIgnoreCase(String str, String remove) {
@@ -2541,7 +2541,7 @@ public class StringTool {
 	 * @param remove 要删除的子串，可以为null，为null或为空串时返回源字符串
 	 * @return 去掉末尾的子串后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午7:34:33
 	 */
 	public static String removeEnd(String str, String remove) {
@@ -2569,7 +2569,7 @@ public class StringTool {
 	 * @param remove 要删除的子串，可以为null，为null或为空串时返回源字符串
 	 * @return 去掉末尾的子串后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午7:35:33
 	 */
 	public static String removeEndIgnoreCase(String str, String remove) {
@@ -2594,7 +2594,7 @@ public class StringTool {
 	 * @param remove 要删除的子串，可以为null，为null或为空串时返回源字符串
 	 * @return 去掉所有出现的子串后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午7:38:54
 	 */
 	public static String remove(String str, String remove) {
@@ -2617,7 +2617,7 @@ public class StringTool {
 	 * @param remove 要删除的字符
 	 * @return 去掉所有出现的指定字符后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午7:40:42
 	 */
 	public static String remove(String str, char remove) {
@@ -2649,7 +2649,7 @@ public class StringTool {
 	 * @param replacement 用来替换的字符串, 可以为null，为null时返回源字符串
 	 * @return 替换后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午7:45:51
 	 */
 	public static String replaceOnce(String text, String searchString, String replacement) {
@@ -2679,7 +2679,7 @@ public class StringTool {
 	 * @param replacement 用来替换的字符串, 可以为null，为null时返回源字符串
 	 * @return 替换后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午7:48:51
 	 */
 	public static String replace(String text, String searchString, String replacement) {
@@ -2712,7 +2712,7 @@ public class StringTool {
 	 * @param max 最大替换次数
 	 * @return 替换后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午7:51:19
 	 */
 	public static String replace(String text, String searchString, String replacement, int max) {
@@ -2743,7 +2743,7 @@ public class StringTool {
 	 * @return 替换后的字符串
 	 * @throws IllegalArgumentException 如果两个数组的长度不一致时(null或空数组是允许的)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午8:01:31
 	 */
 	public static String replaceEach(String text, String[] searchList, String[] replacementList) {
@@ -2776,7 +2776,7 @@ public class StringTool {
 	 * @throws IllegalStateException 死循环时
 	 * @throws IllegalArgumentException 如果两个数组的长度不一致时(null或空数组是允许的)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午8:16:30
 	 */
 	public static String replaceEachRepeatedly(String text, String[] searchList, String[] replacementList) {
@@ -2802,7 +2802,7 @@ public class StringTool {
 	 * @param replaceChar 用来替换的字符
 	 * @return 替换后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午8:19:49
 	 */
 	public static String replaceChars(String str, char searchChar, char replaceChar) {
@@ -2835,7 +2835,7 @@ public class StringTool {
 	 * @param replaceChars 一组用来替换的字符，可以为null，为null时当作空串
 	 * @return 替换后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午8:29:33
 	 */
 	public static String replaceChars(String str, String searchChars, String replaceChars) {
@@ -2869,7 +2869,7 @@ public class StringTool {
 	 * @param end 停止替换的位置，负数当作0，大于源字符串长度当作源字符串长度
 	 * @return 替换后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午8:45:07
 	 */
 	public static String overlay(String str, String overlay, int start, int end) {
@@ -2900,7 +2900,7 @@ public class StringTool {
 	 * @param str 被查找和替换的源字符串, 可以为null，为null时返回null，为空串时返回空串
 	 * @return 处理后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午8:49:09
 	 */
 	public static String chomp(String str) {
@@ -2931,7 +2931,7 @@ public class StringTool {
 	 * @param str 被查找和替换的源字符串, 可以为null，为null时返回null，为空串时返回空串
 	 * @return 处理后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午8:50:56
 	 */
 	public static String chop(String str) {
@@ -2961,7 +2961,7 @@ public class StringTool {
 	 * @param 重复的次数，负数当作0
 	 * @return 自相连后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午8:53:17
 	 */
 	public static String repeat(String str, int repeat) {
@@ -2987,7 +2987,7 @@ public class StringTool {
 	 * @param repeat 重复的次数，负数当作0
 	 * @return 自相连后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午8:56:18
 	 */
 	public static String repeat(String str, String separator, int repeat) {
@@ -3010,7 +3010,7 @@ public class StringTool {
 	 * @return 重复相连后的字符串
 	 * @see #repeat(String, int)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午9:33:09
 	 */
 	public static String repeat(char ch, int repeat) {
@@ -3035,7 +3035,7 @@ public class StringTool {
 	 * @param size 要求的长度，负数当作0
 	 * @return 补全长度后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午9:35:49
 	 */
 	public static String rightPad(String str, int size) {
@@ -3061,7 +3061,7 @@ public class StringTool {
 	 * @param padChar 补全的字符
 	 * @return 补全长度后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午9:37:20
 	 */
 	public static String rightPad(String str, int size, char padChar) {
@@ -3090,7 +3090,7 @@ public class StringTool {
 	 * @param padStr 补全的字符串, null或空串当作空格
 	 * @return 补全长度后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午9:39:14
 	 */
 	public static String rightPad(String str, int size, String padStr) {
@@ -3115,7 +3115,7 @@ public class StringTool {
 	 * @param size 要求的长度，负数当作0
 	 * @return 补全长度后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午9:40:22
 	 */
 	public static String leftPad(String str, int size) {
@@ -3141,7 +3141,7 @@ public class StringTool {
 	 * @param padChar 补全的字符
 	 * @return 补全长度后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午9:41:16
 	 */
 	public static String leftPad(String str, int size, char padChar) {
@@ -3170,7 +3170,7 @@ public class StringTool {
 	 * @param padStr 补全的字符串, null或空串当作空格
 	 * @return 补全长度后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午9:42:05
 	 */
 	public static String leftPad(String str, int size, String padStr) {
@@ -3183,7 +3183,7 @@ public class StringTool {
 	 * @param cs 字符序列，可以为null，null返回0
 	 * @return 字符序列的长度
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午9:43:47
 	 */
 	public static int length(CharSequence cs) {
@@ -3214,7 +3214,7 @@ public class StringTool {
 	 * @param size 要求的长度, 负数当作0，小于源字符串长度将返回源字符串
 	 * @return 补全长度后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午9:49:35
 	 */
 	public static String center(String str, int size) {
@@ -3241,7 +3241,7 @@ public class StringTool {
 	 * @param padChar 用于补全的字符
 	 * @return 补全长度后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午9:51:23
 	 */
 	public static String center(String str, int size, char padChar) {
@@ -3270,7 +3270,7 @@ public class StringTool {
 	 * @param padStr 用于补全的字符串
 	 * @return 补全长度后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午9:52:23
 	 */
 	public static String center(String str, int size, String padStr) {
@@ -3299,7 +3299,7 @@ public class StringTool {
 	 * @param str 源字符串, 可以为null，为null时返回null
 	 * @return 转换后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午9:58:59
 	 */
 	public static String upperCase(String str) {
@@ -3321,7 +3321,7 @@ public class StringTool {
 	 * @param locale 定义大小写转换规则的locale，不能为null
 	 * @return 转换后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:00:45
 	 */
 	public static String upperCase(String str, Locale locale) {
@@ -3348,7 +3348,7 @@ public class StringTool {
 	 * @param str 源字符串, 可以为null，为null时返回null
 	 * @return 转换后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:10:59
 	 */
 	public static String lowerCase(String str) {
@@ -3370,7 +3370,7 @@ public class StringTool {
 	 * @param locale 定义大小写转换规则的locale，不能为null
 	 * @return 转换后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:11:45
 	 */
 	public static String lowerCase(String str, Locale locale) {
@@ -3394,7 +3394,7 @@ public class StringTool {
 	 * @see org.apache.commons.lang3.text.WordUtils#capitalize(String)
 	 * @see #uncapitalize(String)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:14:24
 	 */
 	public static String capitalize(String str) {
@@ -3418,7 +3418,7 @@ public class StringTool {
 	 * @see org.apache.commons.lang3.text.WordUtils#uncapitalize(String)
 	 * @see #capitalize(String)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:15:16
 	 */
 	public static String uncapitalize(String str) {
@@ -3439,7 +3439,7 @@ public class StringTool {
 	 * @param str 源字符串, 可以为null，为null时返回null
 	 * @return 转换后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:17:38
 	 */
 	public static String swapCase(String str) {
@@ -3467,7 +3467,7 @@ public class StringTool {
 	 * @param sub 子串, 可以为null
 	 * @return 子串出现的次数
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:19:39
 	 */
 	public static int countMatches(CharSequence str, CharSequence sub) {
@@ -3498,7 +3498,7 @@ public class StringTool {
 	 * @param cs 待查找的字符序列，可以为null，null或空串返回false
 	 * @return true: 只包含Unicode字母
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:23:02
 	 */
 	public static boolean isAlpha(CharSequence cs) {
@@ -3523,7 +3523,7 @@ public class StringTool {
 	 * @param cs 待查找的字符序列，可以为null，null返回false，空串返回true
 	 * @return true: 非null并且只包含Unicode字母或空格
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:24:45
 	 */
 	public static boolean isAlphaSpace(CharSequence cs) {
@@ -3548,7 +3548,7 @@ public class StringTool {
 	 * @param cs 待查找的字符序列，可以为null，null或空串返回false
 	 * @return true: 只包含Unicode字母或数字
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:26:03
 	 */
 	public static boolean isAlphanumeric(CharSequence cs) {
@@ -3573,7 +3573,7 @@ public class StringTool {
 	 * @param cs 待查找的字符序列，可以为null，null返回false，空串返回true
 	 * @return true: 非null并且只包含Unicode字母、空格或数字
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:27:44
 	 */
 	public static boolean isAlphanumericSpace(CharSequence cs) {
@@ -3602,7 +3602,7 @@ public class StringTool {
 	 * @param cs 待查找的字符序列，可以为null，null返回false，空串返回true
 	 * @return true: 非null并且每个字符都在32到126的范围内
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:30:11
 	 */
 	public static boolean isAsciiPrintable(CharSequence cs) {
@@ -3628,7 +3628,7 @@ public class StringTool {
 	 * @param cs 待查找的字符序列，可以为null，null或空串返回false
 	 * @return true: 只包含Unicode数字
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:32:11
 	 */
 	public static boolean isNumeric(CharSequence cs) {
@@ -3654,7 +3654,7 @@ public class StringTool {
 	 * @param cs 待查找的字符序列，可以为null，null返回false，空串返回true
 	 * @return true: 只包含Unicode数字或空格
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:34:30
 	 */
 	public static boolean isNumericSpace(CharSequence cs) {
@@ -3678,7 +3678,7 @@ public class StringTool {
 	 * @param cs 待查找的字符序列，可以为null，null返回false，空串返回true
 	 * @return true：只包含空白字符
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:37:09
 	 */
 	public static boolean isWhitespace(CharSequence cs) {
@@ -3701,7 +3701,7 @@ public class StringTool {
 	 * @param cs 待查找的字符序列，可以为null，null或空串返回false
 	 * @return true：只包含小写字母
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:40:25
 	 */
 	public static boolean isAllLowerCase(CharSequence cs) {
@@ -3724,7 +3724,7 @@ public class StringTool {
 	 * @param cs 待查找的字符序列，可以为null，null或空串返回false
 	 * @return true：只包含大写字母
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:41:25
 	 */
 	public static boolean isAllUpperCase(CharSequence cs) {
@@ -3749,7 +3749,7 @@ public class StringTool {
 	 * @param str 待检查的字符串, 可以为null，null返回null，空串返回空串
 	 * @return 传入的字符串或null或空串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:43:47
 	 */
 	public static String defaultString(String str) {
@@ -3773,7 +3773,7 @@ public class StringTool {
 	 * @param defaultStr 默认值, 可以为null
 	 * @return 传入的字符串，如果它为null时，则返回默认的值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:47:00
 	 */
 	public static String defaultString(String str, String defaultStr) {
@@ -3799,7 +3799,7 @@ public class StringTool {
 	 * @return 传入的字符串或默认值
 	 * @see StringTool#defaultString(String, String)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:49:31
 	 */
 	public static <T extends CharSequence> T defaultIfBlank(T str, T defaultStr) {
@@ -3825,7 +3825,7 @@ public class StringTool {
 	 * @return 传入的字符串或默认值
 	 * @see StringTool#defaultString(String, String)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:50:37
 	 */
 	public static <T extends CharSequence> T defaultIfEmpty(T str, T defaultStr) {
@@ -3849,7 +3849,7 @@ public class StringTool {
 	 * @param str 源字符串, 可以为null，null返回null
 	 * @return 反转后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:53:06
 	 */
 	public static String reverse(String str) {
@@ -3873,7 +3873,7 @@ public class StringTool {
 	 * @param separatorChar 分隔符
 	 * @return 反转后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午10:56:21
 	 */
 	public static String reverseDelimited(String str, char separatorChar) {
@@ -3912,7 +3912,7 @@ public class StringTool {
 	 * @param maxWidth 返回的字符串的最大长度，必须大于等于4
 	 * @return 省略的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午11:03:41
 	 */
 	public static String abbreviate(String str, int maxWidth) {
@@ -3950,7 +3950,7 @@ public class StringTool {
 	 * @return 省略的字符串
 	 * @throws IllegalArgumentException 结果长度小于4时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午11:13:50
 	 */
 	public static String abbreviate(String str, int offset, int maxWidth) {
@@ -3986,7 +3986,7 @@ public class StringTool {
 	 * @param length 返回的字符串的最大长度
 	 * @return 省略的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午11:37:14
 	 */
 	public static String abbreviateMiddle(String str, String middle, int length) {
@@ -4015,7 +4015,7 @@ public class StringTool {
 	 * @param str2 第一个字符串, 可以为null
 	 * @return 两字符串不同的部分，相同时返回空串，两个都为null时返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午11:50:15
 	 */
 	public static String difference(String str1, String str2) {
@@ -4042,7 +4042,7 @@ public class StringTool {
 	 * @param cs2 第一个字符串, 可以为null
 	 * @return 开始不同时的下标; 如果两字符串相同返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午11:53:47
 	 */
 	public static int indexOfDifference(CharSequence cs1, CharSequence cs2) {
@@ -4077,7 +4077,7 @@ public class StringTool {
 	 * @param css 字符串数组，可以为null，为null返回-1
 	 * @return 开始不同时的下标; 如果字符串都相同返回-1
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-7 下午11:56:31
 	 */
 	public static int indexOfDifference(CharSequence... css) {
@@ -4112,7 +4112,7 @@ public class StringTool {
 	 * @param strs 字符串数组，可以为null，为null或元素都为null或没有相同前缀时返回空串，
 	 * @return 相同的前缀
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-8 上午12:01:47
 	 */
 	public static String getCommonPrefix(String... strs) {
@@ -4145,7 +4145,7 @@ public class StringTool {
 	 * @return 距离
 	 * @throws IllegalArgumentException 两参数之一为null时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-8 下午7:06:49
 	 */
 	public static int getLevenshteinDistance(CharSequence s, CharSequence t) {
@@ -4178,7 +4178,7 @@ public class StringTool {
 	 * @return 距离或-1
 	 * @throws IllegalArgumentException 两字符串之一为null或极限值为负数时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-8 下午7:15:47
 	 */
 	public static int getLevenshteinDistance(CharSequence s, CharSequence t, int threshold) {
@@ -4206,7 +4206,7 @@ public class StringTool {
 	 * @param 前缀字符串, 可以为null，为null返回false
 	 * @return true: 是字符串的前缀或两个参数都为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-8 下午7:23:38
 	 */
 	public static boolean startsWith(CharSequence str, CharSequence prefix) {
@@ -4231,7 +4231,7 @@ public class StringTool {
 	 * @param prefix 前缀字符串, 可以为null，为null返回false
 	 * @return true: 是字符串的前缀(大小写不敏感)或两个参数都为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-8 下午7:25:58
 	 */
 	public static boolean startsWithIgnoreCase(CharSequence str, CharSequence prefix) {
@@ -4256,7 +4256,7 @@ public class StringTool {
 	 * @param searchStrings 待匹配的前缀组, 可以为null
 	 * @return true: 任何一个为字符串的前缀(大小写不敏感)或两个参数都为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-8 下午7:32:27
 	 */
 	public static boolean startsWithAny(CharSequence string, CharSequence... searchStrings) {
@@ -4290,7 +4290,7 @@ public class StringTool {
 	 * @param suffix 待匹配的后缀, 可以为null
 	 * @return true: 是字符串的后缀(大小写敏感)或两个参数都为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-8 下午7:34:59
 	 */
 	public static boolean endsWith(CharSequence str, CharSequence suffix) {
@@ -4316,7 +4316,7 @@ public class StringTool {
 	 * @param suffix 待匹配的后缀, 可以为null
 	 * @return true: 是字符串的后缀(大小不写敏感)或两个参数都为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-8 下午7:36:47
 	 */
 	public static boolean endsWithIgnoreCase(CharSequence str, CharSequence suffix) {
@@ -4334,7 +4334,7 @@ public class StringTool {
 	 * @param str 源字符串, 可以为null，为null返回null
 	 * @return 替换后的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-8 下午7:42:11
 	 */
 	public static String normalizeSpace(String str) {
@@ -4359,7 +4359,7 @@ public class StringTool {
 	 * @param searchStrings 待匹配的前缀组, 可以为null或空串
 	 * @return 任何一个为字符串的后缀(大小写不敏感)或两个参数都为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-8 下午7:44:48
 	 */
 	public static boolean endsWithAny(CharSequence string, CharSequence... searchStrings) {
@@ -4375,7 +4375,7 @@ public class StringTool {
 	 * @param charsetName 字符集, 如果为null将使用平台默认的字符集
 	 * @return 字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-8 下午7:46:40
 	 */
 	public static String toString(byte[] bytes, String charsetName) {

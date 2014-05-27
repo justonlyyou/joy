@@ -21,7 +21,7 @@ public interface ISysMenuService {
 	 * @param userId
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月5日 下午5:25:18
 	 */
 	List<TreeNode<TSysMenu>> getRootMenus(String userId);
@@ -33,7 +33,7 @@ public interface ISysMenuService {
 	 * @param parentId
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月5日 下午5:25:18
 	 */
 	List<TreeNode<TSysMenu>> getSubMenus(String userId, String parentId);
@@ -44,7 +44,7 @@ public interface ISysMenuService {
 	 * @param menuId 菜单
 	 * @return List<菜单对象>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月14日 下午8:43:25
 	 */
 	List<TSysMenu> getMenuPath(String menuId);

@@ -26,7 +26,7 @@ define(['joy/commons/ClassTool'], function (ClassTool) {
         },
 
         _processPaginationTag: function () {
-            _this = this;
+            var _this = this;
             if ($(".joy-pagination").length != 0) {
                 $("#submitBtn").bind("click", function (e) {
                     _this.gotoPage(1);
@@ -35,7 +35,7 @@ define(['joy/commons/ClassTool'], function (ClassTool) {
         },
 
         _processOrderColumnTag: function () {
-            _this = this;
+            var _this = this;
             if ($('label[id^=_joy_id__order_column_]').length != 0) {
                 var $orderHiddens = $('input:hidden[id^=_joy_id__order_value_]');
                 $orderHiddens.each(function (i, item) {
@@ -78,7 +78,12 @@ define(['joy/commons/ClassTool'], function (ClassTool) {
         },
 
         currentMenu: function () {
-            var json = $(window.parent.document).find("iframe[id=mainFrame]").attr("name");
+            var win = window.parent;
+            var $node;
+            while(!($node = $(win.document).find("iframe[id=mainFrame]")).length) {
+                win = win.parent;
+            }
+            var json = $node.attr("name");
             return eval("(" + json + ")");
         },
 

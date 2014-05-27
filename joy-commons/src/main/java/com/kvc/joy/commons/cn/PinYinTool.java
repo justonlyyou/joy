@@ -11,7 +11,7 @@ import net.sourceforge.pinyin4j.format.HanyuPinyinVCharType;
  * 拼音工具类
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-3-11 下午11:04:33
  */
 public class PinYinTool {
@@ -27,7 +27,7 @@ public class PinYinTool {
 	 * @param cnStr 中文串
 	 * @return 全拼串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-3-11 下午11:04:33
 	 */
 	public static String getPinYin(String cnStr) {
@@ -61,7 +61,7 @@ public class PinYinTool {
 	 * @param cnStr 中文串
 	 * @return 拼音首字母串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-3-11 下午11:08:32
 	 */
 	public static String getPinYinHeadChars(String cnStr) {

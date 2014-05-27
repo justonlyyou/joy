@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-21 上午12:13:24
  */
 public class TErbacGroupUserId implements Serializable {

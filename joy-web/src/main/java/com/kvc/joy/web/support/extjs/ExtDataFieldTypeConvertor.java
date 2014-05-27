@@ -8,7 +8,7 @@ import java.util.Map;
 
 /**
  * Extjs数据字段类型转换器，支持将Java类型(基础类及其包装类)转换为Extjs的数据字段类型
- * @author 唐玮琳
+ * @author Kevice
  */
 public class ExtDataFieldTypeConvertor {
 

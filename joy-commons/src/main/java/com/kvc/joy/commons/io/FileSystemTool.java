@@ -9,7 +9,7 @@ import org.apache.commons.io.FileSystemUtils;
  * </p>
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-6 上午10:40:07
  */
 public class FileSystemTool {
@@ -43,7 +43,7 @@ public class FileSystemTool {
 	 * 						IllegalStateException 如果初始化时发生错误
 	 * 						IOException 如果查找剩余空间时出现io异常
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午11:49:24
 	 */
 	public static Long freeSpaceKb(String path) {
@@ -77,7 +77,7 @@ public class FileSystemTool {
 	 * 						IllegalStateException 如果初始化时发生错误
 	 * 						IOException 如果查找剩余空间时出现io异常
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午11:49:24
 	 */
 	public static Long freeSpaceKb(String path, long timeout) {
@@ -105,7 +105,7 @@ public class FileSystemTool {
 	 * 						IllegalStateException 如果初始化时发生错误
 	 * 						IOException 如果查找剩余空间时出现io异常
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午11:55:09
 	 */
 	public static Long freeSpaceKb() {
@@ -134,7 +134,7 @@ public class FileSystemTool {
 	 * 						IllegalStateException 如果初始化时发生错误
 	 * 						IOException 如果查找剩余空间时出现io异常
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午11:55:09
 	 */
 	public static Long freeSpaceKb(long timeout) {

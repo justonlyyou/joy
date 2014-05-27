@@ -14,7 +14,7 @@ import java.util.Map.Entry;
 /**
  * 抽象的EhCache缓存持有者
  * 
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V> {
 
@@ -26,7 +26,7 @@ public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V
 	 * 
 	 * @param key
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @date 2012-5-30 上午11:22:13
 	 */
 	@SuppressWarnings("unchecked")
@@ -67,7 +67,7 @@ public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V
 	 * 缓存指定对象
 	 * 
 	 * @param data
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-1-2 下午11:11:52
 	 */
 	protected void cache(Map<K, V> data) {
@@ -84,7 +84,7 @@ public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V
 	 * 
 	 * @param key 关键字(能够惟一标识一个实体)
 	 * @return 缓存的实体
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @date 2012-5-30 上午10:56:21
 	 */
 	protected abstract V loadEntity(K key);
@@ -93,7 +93,7 @@ public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V
 	 * 加载所有数据
 	 * 
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-8 下午12:17:52
 	 */
 	protected abstract Map<K, V> loadAll();
@@ -101,7 +101,7 @@ public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V
 	/**
 	 * 刷新缓存里的所有数据
 	 * 
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @date 2012-5-30 上午11:14:54
 	 */
 	public void refresh() {
@@ -113,7 +113,7 @@ public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V
 	 * 刷新缓存里指定key的数据
 	 * 
 	 * @param key
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @date 2012-5-30 上午11:21:27
 	 */
 	public void refresh(K key) {

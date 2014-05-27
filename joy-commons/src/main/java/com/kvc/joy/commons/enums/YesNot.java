@@ -9,7 +9,7 @@ import java.util.Map;
  * 逻辑真假的枚举
  * 
  * @since 1.0.0
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public enum YesNot implements ICodeEnum {
 	

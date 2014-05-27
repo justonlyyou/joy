@@ -20,7 +20,7 @@ import java.io.IOException;
  * json工具类
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-7 下午7:28:45
  */
 public class JsonTool {
@@ -38,7 +38,7 @@ public class JsonTool {
 	 * @param simpleJsonStr 简单的Json串格式化(如：{"A":"b","B":'b'} ), 为null或空将返回空串
 	 * @return 页面显示的字符串(如：A:b,B:b )
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午7:43:08
 	 */
 	public static String jsonToDisplay(String simpleJsonStr) {
@@ -61,7 +61,7 @@ public class JsonTool {
 	 * @param clazz Class
 	 * @return Class的实例，出错时返回null
 	 * @see #fromJson(String, JavaType) 如需反序列化复杂Collection如List<MyBean>
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-7 下午8:46:57
 	 */
 	public static <T> T fromJson(String json, Class<T> clazz) {
@@ -79,7 +79,7 @@ public class JsonTool {
 	 * @param mapper json转换器，为null时该方法内部将新建一个默认的转换器
 	 * @return Class的实例，出错时返回null
 	 * @see #fromJson(String, JavaType) 如需反序列化复杂Collection如List<MyBean>
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-7 下午8:46:57
 	 */
 	public static <T> T fromJson(String json, Class<T> clazz, ObjectMapper mapper) {
@@ -108,7 +108,7 @@ public class JsonTool {
 	 * @return 反序列化后的对象
 	 * @see #createCollectionType(ObjectMapper, Class, Class...)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午8:25:56
 	 */
 	public static Object fromJson(String jsonString, JavaType javaType, ObjectMapper mapper) {
@@ -137,7 +137,7 @@ public class JsonTool {
 	 * @return 反序列化后的对象
 	 * @see #createCollectionType(Class, Class...)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午8:25:56
 	 */
 	public static Object fromJson(String jsonString, JavaType javaType) {
@@ -160,7 +160,7 @@ public class JsonTool {
 	 * @param elementClasses 容器元素类型
 	 * @return 带有泛型信息的容器类型
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午8:34:30
 	 */
 	public static JavaType createCollectionType(ObjectMapper mapper, Class<?> collectionClass, Class<?>... elementClasses) {
@@ -186,7 +186,7 @@ public class JsonTool {
 	 * @param elementClasses 容器元素类型
 	 * @return 带有泛型信息的容器类型
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午8:34:30
 	 */
 	public static JavaType createCollectionType(Class<?> collectionClass, Class<?>... elementClasses) {
@@ -202,7 +202,7 @@ public class JsonTool {
 	 * @param clazz Class
 	 * 
 	 * @return Class的实例，出错时返回null
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-7 下午8:56:00
 	 */
 	public static <T> T fromJson(File jsonFile, Class<T> clazz) {
@@ -218,7 +218,7 @@ public class JsonTool {
 	 * @param clazz Class
 	 * @param mapper json转换器，为null时该方法内部将新建一个默认的转换器
 	 * @return Class的实例，出错时返回null
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-7 下午8:56:00
 	 */
 	public static <T> T fromJson(File jsonFile, Class<T> clazz, ObjectMapper mapper) {
@@ -243,7 +243,7 @@ public class JsonTool {
 	 * @param mapper json转换器，为null时该方法内部将新建一个默认的转换器
 	 * @return 序列化后的json串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午8:09:22
 	 */
 	public static String toJson(Object object, ObjectMapper mapper) {
@@ -267,7 +267,7 @@ public class JsonTool {
 	 * 					如果对象为Null, 返回"null"；如果集合为空集合, 返回"[]"
 	 * @return 序列化后的json串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午8:09:22
 	 */
 	public static String toJson(Object object) {
@@ -282,7 +282,7 @@ public class JsonTool {
 	 * @param include Include枚举元素
 	 * @return json转换器
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午7:58:32
 	 */
 	public static ObjectMapper createMapper(Include include) {
@@ -304,7 +304,7 @@ public class JsonTool {
 	 * 
 	 * @return json转换器
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午8:02:38
 	 */
 	public static ObjectMapper createNonEmptyMapper() {
@@ -318,7 +318,7 @@ public class JsonTool {
 	 * 
 	 * @return json转换器
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午8:02:38
 	 */
 	public static ObjectMapper createNonDefaultMapper() {
@@ -335,7 +335,7 @@ public class JsonTool {
 	 * @param mapper json转换器，为null时该方法内部将新建一个默认的转换器
 	 * @return 更新后的bean，失败时返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午8:42:57
 	 */
 	@SuppressWarnings("unchecked")
@@ -360,7 +360,7 @@ public class JsonTool {
 	 * @param object 待更新的bean
 	 * @return 更新后的bean，失败时返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午8:42:57
 	 */
 	public static <T> T updateBean(String jsonString, T object) {
@@ -376,7 +376,7 @@ public class JsonTool {
 	 * @param object 待序列化的对象
 	 * @return jsonP字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午8:55:10
 	 */
 	public static String toJsonP(String functionName, Object object) {
@@ -391,7 +391,7 @@ public class JsonTool {
 	 * 
 	 * @param mapper json转换器，为null将什么也不做
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午8:58:32
 	 */
 	public static void enableEnumUseToString(ObjectMapper mapper) {
@@ -409,7 +409,7 @@ public class JsonTool {
 	 * 
 	 * @param mapper json转换器，为null将什么也不做
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午9:07:33
 	 */
 	public static void enableJaxbAnnotation(ObjectMapper mapper) {
@@ -427,7 +427,7 @@ public class JsonTool {
 	 * 
 	 * @param mapper json转换器，为null将什么也不做
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-15 下午9:09:25
 	 */
 	public static void enableSimple(ObjectMapper mapper) {

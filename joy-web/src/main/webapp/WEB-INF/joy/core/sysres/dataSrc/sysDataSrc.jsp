@@ -7,13 +7,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="系统数据源管理页面">
-<meta name="author" content="唐玮琳">
+<meta name="author" content="Kevice">
 
 <title>系统数据源管理页面</title>
 
 </head>
 
-<body>
 	<form:form action="${ctx}/sysDataSrc/list" method="POST">
 		<div class="panel panel-default">
 			<div class="panel-heading">
@@ -79,7 +78,7 @@
 	</form:form>
 	
 	<script type="text/javascript">
-        curl(['joy/core/sysres/dataSrc/sysDataSrc'], function(MgmtPage) {
+        curl(['joy/commons/BaseMgmtPage'], function(MgmtPage) {
             mgmtPage = new MgmtPage();
         });
 	</script>

@@ -13,7 +13,7 @@ import java.util.Map;
  * 列表到树结构的转换器
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-5-5 下午9:00:33
  */
 public class ListToTreeConvertor {
@@ -28,7 +28,7 @@ public class ListToTreeConvertor {
 	 * 
 	 * @param objectList 结点对象列表
 	 * @return List<树根结点>
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-5-5 下午9:00:33
 	 */
 	public static <T> List<TreeNode<IListToTreeRestrict<T>>> convert(List<? extends IListToTreeRestrict<T>> objectList) {

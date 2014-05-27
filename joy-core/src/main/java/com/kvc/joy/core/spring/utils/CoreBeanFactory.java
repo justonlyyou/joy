@@ -8,6 +8,7 @@ import com.kvc.joy.core.persistence.jdbc.service.IMdRdbColumnService;
 import com.kvc.joy.core.persistence.jdbc.service.IMdRdbPrimaryKeyService;
 import com.kvc.joy.core.persistence.jdbc.service.IMdRdbTableService;
 import com.kvc.joy.core.persistence.orm.jpa.BaseJpaDao;
+import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.core.spring.SpringXmlDynamicLoadService;
 import com.kvc.joy.core.sysres.code.service.ISysCodeCacheService;
 import com.kvc.joy.core.sysres.code.service.ISysCodeService;
@@ -19,18 +20,19 @@ import org.springframework.cache.ehcache.EhCacheCacheManager;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.support.TransactionTemplate;
 
 /**
  * 基础Spring Bean的工厂
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-7 下午9:06:16
  */
 public class CoreBeanFactory {
 	
 	@SuppressWarnings("rawtypes")
-	public static BaseJpaDao getJpaTool() {
-		return (BaseJpaDao) SpringBeanTool.getBean("jpaTool");
+	public static JpaTool getJpaTool() {
+		return (JpaTool) SpringBeanTool.getBean("jpaTool");
 	}
 	
 	public static BaseJdbcDao getJdbcTool() {
@@ -49,6 +51,11 @@ public class CoreBeanFactory {
 		return (JpaTransactionManager) SpringBeanTool.getBean("transactionManager");
 	}
 
+
+    public static TransactionTemplate getTransactionTemplate() {
+        return (TransactionTemplate) SpringBeanTool.getBean("transactionTemplate");
+    }
+
 	public static ISysMenuService getSysMenuService() {
 		return (ISysMenuService) SpringBeanTool.getBean("sysMenuService");
 	}
@@ -65,7 +72,7 @@ public class CoreBeanFactory {
 	 * 关系数据库表元数据加载服务
 	 * 
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-3 下午10:00:51
 	 */
 	public static IMdRdbTableService getMdRdbTableService() {
@@ -76,7 +83,7 @@ public class CoreBeanFactory {
 	 * 关系数据库表元数据缓存服务
 	 * 
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-3 下午10:01:02
 	 */
 	public static IMdRdbTableService getMdRdbTableCacheService() {
@@ -87,7 +94,7 @@ public class CoreBeanFactory {
 	 * 关系数据库表字段元数据加载服务
 	 * 
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-3 下午10:02:21
 	 */
 	public static IMdRdbColumnService getMdRdbColumnService() {
@@ -98,7 +105,7 @@ public class CoreBeanFactory {
 	 * 关系数据库表字段元数据缓存服务
 	 * 
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-3 下午10:02:35
 	 */
 	public static IMdRdbColumnService getMdRdbColumnCacheService() {
@@ -109,7 +116,7 @@ public class CoreBeanFactory {
 	 * 关系数据库表主键元数据加载服务
 	 * 
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-3 下午10:02:49
 	 */
 	public static IMdRdbPrimaryKeyService getMdRdbPrimaryKeyService() {
@@ -120,7 +127,7 @@ public class CoreBeanFactory {
 	 * 关系数据库表主键元数据缓存服务
 	 * 
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-3 下午10:03:39
 	 */
 	public static IMdRdbPrimaryKeyService getMdRdbPrimaryKeyCacheService() {
@@ -131,7 +138,7 @@ public class CoreBeanFactory {
 	 * 系统参数服务
 	 * 
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-8 上午11:24:11
 	 */
 	public static ISysParamService getSysParamService() {
@@ -142,7 +149,7 @@ public class CoreBeanFactory {
 	 * 系统参数服务
 	 * 
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-8 上午11:24:11
 	 */
 	@SuppressWarnings("unchecked")
@@ -154,7 +161,7 @@ public class CoreBeanFactory {
 	 * 系统代码服务
 	 * 
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-8 下午8:03:02
 	 */
 	public static ISysCodeService getSysCodeService() {
@@ -169,7 +176,7 @@ public class CoreBeanFactory {
 	 * 系统代码缓存服务
 	 * 
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-8 下午8:03:02
 	 */
 	public static ISysCodeCacheService getSysCodeCacheService() {

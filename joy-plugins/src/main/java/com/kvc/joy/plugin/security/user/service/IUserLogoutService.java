@@ -6,7 +6,7 @@ import com.kvc.joy.plugin.security.user.support.enums.LogoutMethod;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年10月15日 上午10:37:45
  */
 public interface IUserLogoutService {
@@ -19,7 +19,7 @@ public interface IUserLogoutService {
 	 * @param logoutTime 登出时间
 	 * @return 登出日志
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月15日 下午2:24:59
 	 */
 	void logout(String loginLogId, LogoutMethod logoutMethod, String logoutTime);
@@ -29,7 +29,7 @@ public interface IUserLogoutService {
 	 * 
 	 * @param logOnLogin 登录日志
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月15日 下午2:47:48
 	 */
 	void mendLogoutLogOnLogin(TUserLoginLog logOnLogin);

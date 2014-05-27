@@ -4,7 +4,7 @@ import java.io.InputStream;
 
 /**
  * excel数据导入器接口
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public interface IExcelImporter {
 

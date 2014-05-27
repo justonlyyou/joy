@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-14 下午10:05:28
  */
 public class HttpRequestTool {
@@ -49,7 +49,7 @@ public class HttpRequestTool {
 	 * 
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月9日 下午10:14:50
 	 */
 	public static Map<String, String> getParameters() {
@@ -76,7 +76,7 @@ public class HttpRequestTool {
 	 * 
 	 * @return ip地址
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月1日 下午5:44:28
 	 */
 	public static String getIpAddr() {
@@ -114,7 +114,7 @@ public class HttpRequestTool {
 	 * 
 	 * @return Pair<浏览器名称，版本>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月1日 下午6:11:43
 	 */
 	public static Pair<String, String> getBrowserInfo() {
@@ -153,7 +153,7 @@ public class HttpRequestTool {
 	 * 
 	 * @return Pair<操作系统名称，版本>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月1日 下午6:12:43
 	 */
 	public static Pair<String, String> getOsInfo() {

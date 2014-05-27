@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-23 下午7:46:37
  */
 @Controller

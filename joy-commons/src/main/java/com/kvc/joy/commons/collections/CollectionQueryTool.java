@@ -18,7 +18,7 @@ import java.util.Map.Entry;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年11月22日 上午10:08:11
  */
 public class CollectionQueryTool {
@@ -33,7 +33,7 @@ public class CollectionQueryTool {
 	 * @param orders
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月22日 下午7:51:14
 	 */
 	public static <T> List<T> order(Collection<T> beans, Order... orders) {
@@ -59,7 +59,7 @@ public class CollectionQueryTool {
 	 * @param orders
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月22日 上午11:48:36
 	 */
 	public static <T, E> List<T> inQuery(Collection<T> beans, String property, Collection<E> values, Order... orders) {
@@ -93,7 +93,7 @@ public class CollectionQueryTool {
 	 * @param orders
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月22日 下午7:57:27
 	 */
 	public static <T> List<T> query(Collection<T> beans, String property, Object value, Order... orders) {
@@ -116,7 +116,7 @@ public class CollectionQueryTool {
 	 * @param orders
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月29日 下午10:51:02
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -153,7 +153,7 @@ public class CollectionQueryTool {
 	 * @param orders
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月22日 下午7:59:14
 	 */
 	public static <T> List<T> andQuery(Collection<T> beans, Map<String, Object> propertyMap, Order... orders) {
@@ -168,7 +168,7 @@ public class CollectionQueryTool {
 	 * @param orders
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月22日 下午9:18:36
 	 */
 	public static <T> List<T> orQuery(Collection<T> beans, Map<String, Object> propertyMap, Order... orders) {
@@ -216,7 +216,7 @@ public class CollectionQueryTool {
 	 * @param queryLogics
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月22日 下午11:59:14
 	 */
 	public static <T> List<T> pagingQuery(Collection<T> beans, QueryLogics queryLogics) {

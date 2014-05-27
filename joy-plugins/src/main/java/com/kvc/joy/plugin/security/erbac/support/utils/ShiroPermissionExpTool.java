@@ -7,7 +7,7 @@ import com.kvc.joy.plugin.security.erbac.model.vo.ErbacPermission;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-22 下午11:38:37
  */
 public class ShiroPermissionExpTool {
@@ -22,7 +22,7 @@ public class ShiroPermissionExpTool {
 	 * @param action
 	 * @param instance
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-22 下午11:45:28
 	 */
 	public static String createShiroPermissionExp(String domain, String action, String instance) {
@@ -37,7 +37,7 @@ public class ShiroPermissionExpTool {
 	 * 
 	 * @param authority
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-23 下午12:17:06
 	 */
 	public static String createShiroPermissionExp(TErbacAuthority authority) {
@@ -49,7 +49,7 @@ public class ShiroPermissionExpTool {
 	 * 
 	 * @param permission
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-22 下午11:47:29
 	 */
 	public static String createShiroPermissionExp(ErbacPermission permission) {
@@ -61,7 +61,7 @@ public class ShiroPermissionExpTool {
 	 * 
 	 * @param permissionExp
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-23 上午12:01:04
 	 */
 	public static ErbacPermission parsePermissionExp(String permissionExp) {

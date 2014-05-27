@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 /**
  * 字段映射信息
- * @author  唐玮琳
+ * @author  Kevice
  */
 @Entity
 @Table(name = "t_sys_field_mapping")

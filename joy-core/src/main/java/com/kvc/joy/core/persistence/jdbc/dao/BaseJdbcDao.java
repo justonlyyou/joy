@@ -7,7 +7,7 @@ import javax.annotation.Resource;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-12-28 下午9:56:23
  */
 public class BaseJdbcDao extends JdbcDaoSupport {

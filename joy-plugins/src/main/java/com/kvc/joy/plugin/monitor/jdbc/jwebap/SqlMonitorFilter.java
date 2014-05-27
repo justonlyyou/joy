@@ -7,7 +7,7 @@ import com.kvc.joy.commons.lang.string.StringTool;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-12-15 下午7:53:54
  */
 public class SqlMonitorFilter extends Filter<ILoggingEvent> {

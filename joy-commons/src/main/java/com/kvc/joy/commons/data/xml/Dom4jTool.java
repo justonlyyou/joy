@@ -17,7 +17,7 @@ import java.io.*;
  * DOM4J操作工具类
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  */
 public class Dom4jTool {
 
@@ -34,7 +34,7 @@ public class Dom4jTool {
 	 * @param in 输入流，为null将返回null
 	 * @return Document对象，参数为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 上午10:09:16
 	 */
 	public static Document readXml(InputStream in) {
@@ -62,7 +62,7 @@ public class Dom4jTool {
 	 * @param path 文件路径，为null或找不到将返回null
 	 * @return Document对象，若找不到文件路径或路径为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 上午10:11:25
 	 */
 	public static Document readXml(String path) {
@@ -93,7 +93,7 @@ public class Dom4jTool {
 	 * @param document 需要保存的document对象，为null将什么也不做
 	 * @param path 文件路径，为null或找不到将什么也不做
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 上午10:14:13
 	 */
 	public static void writeXml(Document document, String path) {
@@ -110,7 +110,7 @@ public class Dom4jTool {
 	 * @param encoding 编码，为空将什么也不做
 	 * @param format xml文档格式，为null将什么也不做
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 上午10:24:34
 	 */
 	public static void writeXml(Document document, String path, String encoding, OutputFormat format) {
@@ -154,7 +154,7 @@ public class Dom4jTool {
 	 * @param xmlStr xml格式的字符串，为空将什么也不做
 	 * @param path 文件路径，为null或找不到将什么也不做
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 上午10:26:10
 	 */
 	public static void writeXml(String xmlStr, String path) {
@@ -178,7 +178,7 @@ public class Dom4jTool {
 	 * @param encoding 编码，为空将什么也不做
 	 * @param format xml文档格式，为null将什么也不做
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 上午10:28:50
 	 */
 	public static void writeXml(String xmlStr, String path, String encoding, OutputFormat format) {
@@ -200,7 +200,7 @@ public class Dom4jTool {
 	 * @param xmlStr xml格式的字符串，为空将返回null
 	 * @return Document对象，为参数为空或不能解析为xml都将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 上午10:30:08
 	 */
 	public static Document stringToDocument(String xmlStr) {
@@ -227,7 +227,7 @@ public class Dom4jTool {
 	 * @param defaultValue 默认值，可以为null
 	 * @return 指定属性名的值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 上午10:36:39
 	 */
 	public static String getAttributeValue(Element node, String attributeName, String defaultValue) {
@@ -257,7 +257,7 @@ public class Dom4jTool {
 	 * @param defaultValue 默认值
 	 * @return 指定属性名的整型值，如果node或attributeName为空，或属性值不是整型值都将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 上午10:41:01
 	 */
 	public static Integer getIntegerAttribute(Element node, String attributeName, int defaultValue) {
@@ -296,7 +296,7 @@ public class Dom4jTool {
 	 * @return 指定属性名的布尔值，如果node或attributeName为空，或属性值不是布尔值都将返回null
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 上午10:54:27
 	 */
 	public static Boolean getBooleanAttribute(Element node, String attributeName, boolean defaultValue) {
@@ -332,7 +332,7 @@ public class Dom4jTool {
 	 * @param document 待转化的Document文档，为null将返回null
 	 * @return Document文档的xml字符串表示, document参数为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 上午10:57:17
 	 */
 	public static String asXml(Document document) {
@@ -352,7 +352,7 @@ public class Dom4jTool {
 	 * @param elem 待转化的Document文档Element对象，为null将返回null
 	 * @return Element对象的xml字符串表示, elem参数为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 上午11:00:07
 	 */
 	public static String asXml(Element elem) {
@@ -368,7 +368,7 @@ public class Dom4jTool {
 	 * @param charset 编码，为空将当作UTF-8
 	 * @return Element对象的xml字符串表示, elem参数为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 上午11:04:25
 	 */
 	public static String asXml(Element elem, String charset) {
@@ -390,7 +390,7 @@ public class Dom4jTool {
 	 * @param elem 待转化的Document文档Element对象，为null将返回null
 	 * @return Element对象的xml字符串表示, elem参数为null或转化失败都将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 上午11:12:20
 	 */
 	public static String elementToString(Element elem) {

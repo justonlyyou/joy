@@ -18,7 +18,7 @@ import java.util.Map;
  * </p>
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-1 上午9:29:01
  */
 public class GenericToolTest {

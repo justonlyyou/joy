@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年11月22日 下午10:18:52
  */
 public class CollectionQueryLogicConvertor {

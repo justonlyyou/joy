@@ -17,7 +17,7 @@ import org.apache.shiro.subject.Subject;
  * 用户登陆服务
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年9月29日 上午1:18:42
  */
 public class UserLoginService implements IUserLoginService {

@@ -10,7 +10,7 @@ import java.lang.reflect.Constructor;
  * </p>
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-2 下午10:59:33
  */
 public class ConstructorTool {
@@ -42,7 +42,7 @@ public class ConstructorTool {
 	 * 						InstantiationException 如果实例化时发生错误
 	 * @see #invokeConstructor(java.lang.Class, java.lang.Object[], java.lang.Class[])
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午5:54:24
 	 */
 	public static <T> T invokeConstructor(Class<T> cls, Object... args) {
@@ -74,7 +74,7 @@ public class ConstructorTool {
 	 * 						InstantiationException 如果实例化时发生错误
 	 * @see Constructor#newInstance
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午5:59:07
 	 */
 	public static <T> T invokeConstructor(Class<T> cls, Object[] args, Class<?>[] parameterTypes) {
@@ -105,7 +105,7 @@ public class ConstructorTool {
 	 * 						InstantiationException 如果实例化时发生错误
 	 * @see #invokeExactConstructor(java.lang.Class, java.lang.Object[], java.lang.Class[])
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午6:00:14
 	 */
 	public static <T> T invokeExactConstructor(Class<T> cls, Object... args) {
@@ -137,7 +137,7 @@ public class ConstructorTool {
 	 * 						InstantiationException 如果实例化时发生错误
 	 * @see Constructor#newInstance
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午6:01:30
 	 */
 	public static <T> T invokeExactConstructor(Class<T> cls, Object[] args, Class<?>[] parameterTypes) {
@@ -165,7 +165,7 @@ public class ConstructorTool {
 	 * @see Class#getConstructor
 	 * @see #getAccessibleConstructor(java.lang.reflect.Constructor)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午6:08:31
 	 */
 	public static <T> Constructor<T> getAccessibleConstructor(Class<T> cls, Class<?>... parameterTypes) {
@@ -186,7 +186,7 @@ public class ConstructorTool {
 	 * @return 构造器, 如果没有找到匹配的可访问的构造器则返回null
 	 * @see java.lang.SecurityManager
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午6:10:20
 	 */
 	public static <T> Constructor<T> getAccessibleConstructor(Constructor<T> ctor) {
@@ -212,7 +212,7 @@ public class ConstructorTool {
 	 * @param parameterTypes 匹配的参数类型可变数组
 	 * @return 构造器, 如果没有找到匹配的构造器则返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-4 下午6:05:54
 	 */
 	public static <T> Constructor<T> getMatchingAccessibleConstructor(Class<T> cls, Class<?>... parameterTypes) {

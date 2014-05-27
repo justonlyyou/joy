@@ -14,7 +14,7 @@ import java.util.ResourceBundle;
  * 
  * </p>
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-1 下午4:45:29
  */
 public class I18nToolTest {

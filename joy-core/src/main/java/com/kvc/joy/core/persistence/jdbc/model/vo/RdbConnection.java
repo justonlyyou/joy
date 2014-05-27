@@ -7,7 +7,7 @@ import java.sql.Connection;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年11月24日 下午10:04:24
  */
 public class RdbConnection {

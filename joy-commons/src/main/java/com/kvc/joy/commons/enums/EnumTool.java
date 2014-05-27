@@ -15,7 +15,7 @@ import java.util.Map;
  * 枚举工具类
  * 
  * @since 1.0.0
- * @author  <b>唐玮琳</b>
+ * @author  <b>Kevice</b>
  */
 public class EnumTool {
 	
@@ -35,7 +35,7 @@ public class EnumTool {
      * @return 枚举，根据编码找不到对应枚举时返回null
 	 * @throws IllegalArgumentException enumClass参数为null时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-12 下午11:35:02
 	 */
 	public static <E extends ICodeEnum> E enumOf(Class<E> enumClass, String code) {
@@ -62,7 +62,7 @@ public class EnumTool {
 	 * @return 枚举，根据编码找不到对应枚举时返回null
 	 * @throws IllegalArgumentException 参数为空或根据参数查找失败时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-12 下午11:54:52
 	 */
 	public static ICodeEnum enumOf(String enumClass, String code) {
@@ -79,7 +79,7 @@ public class EnumTool {
 	 * @return Map<表码，描述>，不会为null
 	 * @throws IllegalArgumentException 参数为null时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-12 下午11:35:37
 	 */
 	public static Map<String, String> getCodeMap(Class<? extends ICodeEnum> enumClass) {
@@ -103,7 +103,7 @@ public class EnumTool {
 	 * @return Map<表码，描述>，不会为null
 	 * @throws IllegalArgumentException 参数为空或根据参数查找失败时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-12 下午11:36:06
 	 */
 	public static Map<String, String> getCodeMap(String enumClass) {
@@ -120,7 +120,7 @@ public class EnumTool {
 	 * @return 枚举类，不会为null
 	 * @throws IllegalArgumentException 参数为空或根据参数查找失败时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-12 下午11:36:20
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -160,7 +160,7 @@ public class EnumTool {
      * @return 可修改的map, 不会为null. Map<枚举元素name，枚举元素>
      * @throws IllegalArgumentException enumClass参数为null时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-13 上午12:07:07
 	 */
     public static <E extends Enum<E>> Map<String, E> getEnumMap(Class<E> enumClass) {
@@ -180,7 +180,7 @@ public class EnumTool {
      * @return 可修改的list, 不会为null. List<枚举元素>
      * @throws IllegalArgumentException enumClass参数为null时
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-5-13 上午12:09:17
      */
     public static <E extends Enum<E>> List<E> getEnumList(Class<E> enumClass) {
@@ -204,7 +204,7 @@ public class EnumTool {
      * @param enumName   枚举元素名， null将返回false
      * @return true 如果枚举元素名有效, 否则为 false
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-5-13 上午12:14:43
      */
     public static <E extends Enum<E>> boolean isValidEnum(Class<E> enumClass, String enumName) {
@@ -225,7 +225,7 @@ public class EnumTool {
      * @param enumName   枚举元素名， null将返回null
      * @return 枚举元素, 如果没找到返回null
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-5-13 上午12:17:29
      */
     public static <E extends Enum<E>> E getEnum(Class<E> enumClass, String enumName) {
@@ -252,7 +252,7 @@ public class EnumTool {
      * @throws NullPointerException 如果 {@code enumClass} 或 {@code values} 为 {@code null}
      * @throws IllegalArgumentException 如果 {@code enumClass} 不是一个枚举类或超过64个枚举元素
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-5-13 上午12:26:12
      */
     public static <E extends Enum<E>> long generateBitVector(Class<E> enumClass, Iterable<E> values) {
@@ -279,7 +279,7 @@ public class EnumTool {
      * @throws NullPointerException 如果 {@code enumClass} 或 {@code values} 为 {@code null}
      * @throws IllegalArgumentException 如果 {@code enumClass} 不是一个枚举类或超过64个枚举元素
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-5-13 上午12:29:28
      */
     public static <E extends Enum<E>> long generateBitVector(Class<E> enumClass, E... values) {
@@ -302,7 +302,7 @@ public class EnumTool {
      * @throws NullPointerException 如果 {@code enumClass} 为 {@code null}
      * @throws IllegalArgumentException 如果 {@code enumClass} 不是一个枚举类或超过64个枚举元素
      * @since 1.0.0
-     * @author 唐玮琳
+     * @author Kevice
      * @time 2013-5-13 上午12:33:18
      */
     public static <E extends Enum<E>> EnumSet<E> processBitVector(Class<E> enumClass, long value) {

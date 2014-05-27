@@ -11,7 +11,7 @@ import java.lang.annotation.*;
  * </p>
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-11-9 下午10:28:51
  */
 @Target({ ElementType.METHOD})
@@ -24,7 +24,7 @@ public @interface DefaultValue {
 	 * 
 	 * @return 默认值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-11-09 下午10:30:42
 	 */
 	String value();

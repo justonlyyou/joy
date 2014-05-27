@@ -7,7 +7,7 @@ import java.util.Map;
  * 由两个元素组成的对象
  * 
  * @since 1.0.0
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public class Pair<L, R> implements Map.Entry<L, R>, Serializable {
 

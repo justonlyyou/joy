@@ -10,7 +10,7 @@ import java.util.Map;
  * StringUtils单元测试类
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-4 下午8:00:54
  */
 public class StringToolTest {

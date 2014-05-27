@@ -8,7 +8,7 @@ import java.util.Set;
  * 数组操作工具类
  *
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-29 下午5:20:40
  */
 public class ArrayTool {
@@ -23,7 +23,7 @@ public class ArrayTool {
 	 * @param obj 待判断的对象
 	 * @return true: 指定的对象为数组，反之为false
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月22日 下午11:16:02
 	 */
 	public static boolean isArray(Object obj) {
@@ -38,7 +38,7 @@ public class ArrayTool {
 	 * @param map 待转换的Map
 	 * @return 二维数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:46:58
 	 */
 	public static Object[][] mapToArrOfArr(Map<Object, Object> map) {
@@ -78,7 +78,7 @@ public class ArrayTool {
 	 * @param array 数组, 可以为{@code null}
 	 * @return 数组的字符串表示, 如果传入的数组参数为null将返回'{}'
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午5:20:40
 	 */
 	public static String toString(Object array) {
@@ -102,7 +102,7 @@ public class ArrayTool {
 	 * @param stringIfNull 数组为null时将要返回字符串
 	 * @return 数组的字符串表示
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午5:26:54
 	 */
 	public static String toString(Object array, String stringIfNull) {
@@ -121,7 +121,7 @@ public class ArrayTool {
 	 * @param array 要获取哈希值的数组, 数组为{@code null}将返回0
 	 * @return 数组的哈希值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午5:28:58
 	 */
 	public static int hashCode(Object array) {
@@ -141,7 +141,7 @@ public class ArrayTool {
 	 * @param array2 作为右操作数数组, 可以为{@code null}
 	 * @return {@code true} 如果两个数组相等
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午5:34:56
 	 */
 	public static boolean isEquals(Object array1, Object array2) {
@@ -176,7 +176,7 @@ public class ArrayTool {
 	 * @throws IllegalArgumentException 当数组的元素也为数组,但是包含的元素少于两个时
 	 * @throws IllegalArgumentException 当数组的元素即不是{@link java.util.Map.Entry}也不是一个Array时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午5:45:22
 	 */
 	public static Map<Object, Object> toMap(Object[] array) {
@@ -227,7 +227,7 @@ public class ArrayTool {
 	 * @param items 可变数组, 可以为null
 	 * @return 数组, 不会为null,除非传入的数组为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午6:05:14
 	 */
 	public static <T> T[] toArray(final T... items) {
@@ -253,7 +253,7 @@ public class ArrayTool {
 	 * @param array 要被浅克隆的数组, 可以为{@code null}
 	 * @return 克隆后的数组, 数组参数为{@code null}将返回{@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:03:26
 	 */
 	public static <T> T[] clone(T[] array) {
@@ -272,7 +272,7 @@ public class ArrayTool {
 	 * @param array 要被克隆的数组, 可以为{@code null}
 	 * @return 克隆后的数组, 数组参数为{@code null}将返回{@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:05:45
 	 */
 	public static long[] clone(long[] array) {
@@ -291,7 +291,7 @@ public class ArrayTool {
 	 * @param array 要被克隆的数组, 可以为{@code null}
 	 * @return 克隆后的数组, 数组参数为{@code null}将返回{@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:06:15
 	 */
 	public static int[] clone(int[] array) {
@@ -310,7 +310,7 @@ public class ArrayTool {
 	 * @param array 要被克隆的数组, 可以为{@code null}
 	 * @return 克隆后的数组, 数组参数为{@code null}将返回{@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:06:25
 	 */
 	public static short[] clone(short[] array) {
@@ -329,7 +329,7 @@ public class ArrayTool {
 	 * @param array 要被克隆的数组, 可以为{@code null}
 	 * @return 克隆后的数组, 数组参数为{@code null}将返回{@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:06:35
 	 */
 	public static char[] clone(char[] array) {
@@ -348,7 +348,7 @@ public class ArrayTool {
 	 * @param array 要被克隆的数组, 可以为{@code null}
 	 * @return 克隆后的数组, 数组参数为{@code null}将返回{@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:06:45
 	 */
 	public static byte[] clone(byte[] array) {
@@ -367,7 +367,7 @@ public class ArrayTool {
 	 * @param array 要被克隆的数组, 可以为{@code null}
 	 * @return 克隆后的数组, 数组参数为{@code null}将返回{@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:07:00
 	 */
 	public static double[] clone(double[] array) {
@@ -386,7 +386,7 @@ public class ArrayTool {
 	 * @param array 要被克隆的数组, 可以为{@code null}
 	 * @return 克隆后的数组, 数组参数为{@code null}将返回{@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:07:10
 	 */
 	public static float[] clone(float[] array) {
@@ -405,7 +405,7 @@ public class ArrayTool {
 	 * @param array 要被克隆的数组, 可以为{@code null}
 	 * @return 克隆后的数组, 数组参数为{@code null}将返回{@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:07:19
 	 */
 	public static boolean[] clone(boolean[] array) {
@@ -430,7 +430,7 @@ public class ArrayTool {
 	 * @param array 要检查 {@code null} 或 空的数组
 	 * @return 传入的数组. 如果传入的数组为null或空, 将返回通过{@code public static}定义的空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:19:32
 	 */
 	public static Object[] nullToEmpty(Object[] array) {
@@ -453,7 +453,7 @@ public class ArrayTool {
 	 * @param array 要检查 {@code null} 或 空的数组
 	 * @return 传入的数组. 如果传入的数组为null或空, 将返回通过{@code public static}定义的空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:19:37
 	 */
 	public static String[] nullToEmpty(String[] array) {
@@ -476,7 +476,7 @@ public class ArrayTool {
 	 * @param array 要检查 {@code null} 或 空的数组
 	 * @return 传入的数组. 如果传入的数组为null或空, 将返回通过{@code public static}定义的空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:19:42
 	 */
 	public static long[] nullToEmpty(long[] array) {
@@ -499,7 +499,7 @@ public class ArrayTool {
 	 * @param array 要检查 {@code null} 或 空的数组
 	 * @return 传入的数组. 如果传入的数组为null或空, 将返回通过{@code public static}定义的空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:19:52
 	 */
 	public static int[] nullToEmpty(int[] array) {
@@ -522,7 +522,7 @@ public class ArrayTool {
 	 * @param array 要检查 {@code null} 或 空的数组
 	 * @return 传入的数组. 如果传入的数组为null或空, 将返回通过{@code public static}定义的空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:20:12
 	 */
 	public static short[] nullToEmpty(short[] array) {
@@ -545,7 +545,7 @@ public class ArrayTool {
 	 * @param array 要检查 {@code null} 或 空的数组
 	 * @return 传入的数组. 如果传入的数组为null或空, 将返回通过{@code public static}定义的空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:20:22
 	 */
 	public static char[] nullToEmpty(char[] array) {
@@ -568,7 +568,7 @@ public class ArrayTool {
 	 * @param array 要检查 {@code null} 或 空的数组
 	 * @return 传入的数组. 如果传入的数组为null或空, 将返回通过{@code public static}定义的空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:20:28
 	 */
 	public static byte[] nullToEmpty(byte[] array) {
@@ -591,7 +591,7 @@ public class ArrayTool {
 	 * @param array 要检查 {@code null} 或 空的数组
 	 * @return 传入的数组. 如果传入的数组为null或空, 将返回通过{@code public static}定义的空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:20:37
 	 */
 	public static double[] nullToEmpty(double[] array) {
@@ -614,7 +614,7 @@ public class ArrayTool {
 	 * @param array 要检查 {@code null} 或 空的数组
 	 * @return 传入的数组. 如果传入的数组为null或空, 将返回通过{@code public static}定义的空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:20:44
 	 */
 	public static float[] nullToEmpty(float[] array) {
@@ -637,7 +637,7 @@ public class ArrayTool {
 	 * @param array 要检查 {@code null} 或 空的数组
 	 * @return 传入的数组. 如果传入的数组为null或空, 将返回通过{@code public static}定义的空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:21:12
 	 */
 	public static boolean[] nullToEmpty(boolean[] array) {
@@ -660,7 +660,7 @@ public class ArrayTool {
 	 * @param array 要检查 {@code null} 或 空的数组
 	 * @return 传入的数组. 如果传入的数组为null或空, 将返回通过{@code public static}定义的空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:21:21
 	 */
 	public static Long[] nullToEmpty(Long[] array) {
@@ -683,7 +683,7 @@ public class ArrayTool {
 	 * @param array 要检查 {@code null} 或 空的数组
 	 * @return 传入的数组. 如果传入的数组为null或空, 将返回通过{@code public static}定义的空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:21:29
 	 */
 	public static Integer[] nullToEmpty(Integer[] array) {
@@ -706,7 +706,7 @@ public class ArrayTool {
 	 * @param array 要检查 {@code null} 或 空的数组
 	 * @return 传入的数组. 如果传入的数组为null或空, 将返回通过{@code public static}定义的空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:21:31
 	 */
 	public static Short[] nullToEmpty(Short[] array) {
@@ -729,7 +729,7 @@ public class ArrayTool {
 	 * @param array 要检查 {@code null} 或 空的数组
 	 * @return 传入的数组. 如果传入的数组为null或空, 将返回通过{@code public static}定义的空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:24:30
 	 */
 	public static Character[] nullToEmpty(Character[] array) {
@@ -752,7 +752,7 @@ public class ArrayTool {
 	 * @param array 要检查 {@code null} 或 空的数组
 	 * @return 传入的数组. 如果传入的数组为null或空, 将返回通过{@code public static}定义的空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:24:36
 	 */
 	public static Byte[] nullToEmpty(Byte[] array) {
@@ -775,7 +775,7 @@ public class ArrayTool {
 	 * @param array 要检查 {@code null} 或 空的数组
 	 * @return 传入的数组. 如果传入的数组为null或空, 将返回通过{@code public static}定义的空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:24:45
 	 */
 	public static Double[] nullToEmpty(Double[] array) {
@@ -798,7 +798,7 @@ public class ArrayTool {
 	 * @param array 要检查 {@code null} 或 空的数组
 	 * @return 传入的数组. 如果传入的数组为null或空, 将返回通过{@code public static}定义的空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:24:53
 	 */
 	public static Float[] nullToEmpty(Float[] array) {
@@ -821,7 +821,7 @@ public class ArrayTool {
 	 * @param array 要检查 {@code null} 或 空的数组
 	 * @return 传入的数组. 如果传入的数组为null或空, 将返回通过{@code public static}定义的空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:24:59
 	 */
 	public static Boolean[] nullToEmpty(Boolean[] array) {
@@ -853,7 +853,7 @@ public class ArrayTool {
 	 * @param endIndexExclusive 结束下标(不包括). 小于开始下标将返回空数组, 大于数组长度当数组长度处理
 	 * @return 一个包含原数组的从start下标开始到end下标的元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:35:50
 	 */
 	public static <T> T[] subarray(T[] array, int startIndexInclusive, int endIndexExclusive) {
@@ -874,7 +874,7 @@ public class ArrayTool {
 	 * @param endIndexExclusive 结束下标(不包括). 小于开始下标将返回空数组, 大于数组长度当数组长度处理
 	 * @return 一个包含原数组的从start下标开始到end下标的元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:37:06
 	 */
 	public static long[] subarray(long[] array, int startIndexInclusive, int endIndexExclusive) {
@@ -895,7 +895,7 @@ public class ArrayTool {
 	 * @param endIndexExclusive 结束下标(不包括). 小于开始下标将返回空数组, 大于数组长度当数组长度处理
 	 * @return 一个包含原数组的从start下标开始到end下标的元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:37:10
 	 */
 	public static int[] subarray(int[] array, int startIndexInclusive, int endIndexExclusive) {
@@ -916,7 +916,7 @@ public class ArrayTool {
 	 * @param endIndexExclusive 结束下标(不包括). 小于开始下标将返回空数组, 大于数组长度当数组长度处理
 	 * @return 一个包含原数组的从start下标开始到end下标的元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:37:13
 	 */
 	public static short[] subarray(short[] array, int startIndexInclusive, int endIndexExclusive) {
@@ -937,7 +937,7 @@ public class ArrayTool {
 	 * @param endIndexExclusive 结束下标(不包括). 小于开始下标将返回空数组, 大于数组长度当数组长度处理
 	 * @return 一个包含原数组的从start下标开始到end下标的元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:37:17
 	 */
 	public static char[] subarray(char[] array, int startIndexInclusive, int endIndexExclusive) {
@@ -958,7 +958,7 @@ public class ArrayTool {
 	 * @param endIndexExclusive 结束下标(不包括). 小于开始下标将返回空数组, 大于数组长度当数组长度处理
 	 * @return 一个包含原数组的从start下标开始到end下标的元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:37:25
 	 */
 	public static byte[] subarray(byte[] array, int startIndexInclusive, int endIndexExclusive) {
@@ -979,7 +979,7 @@ public class ArrayTool {
 	 * @param endIndexExclusive 结束下标(不包括). 小于开始下标将返回空数组, 大于数组长度当数组长度处理
 	 * @return 一个包含原数组的从start下标开始到end下标的元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:37:36
 	 */
 	public static double[] subarray(double[] array, int startIndexInclusive, int endIndexExclusive) {
@@ -1000,7 +1000,7 @@ public class ArrayTool {
 	 * @param endIndexExclusive 结束下标(不包括). 小于开始下标将返回空数组, 大于数组长度当数组长度处理
 	 * @return 一个包含原数组的从start下标开始到end下标的元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:37:40
 	 */
 	public static float[] subarray(float[] array, int startIndexInclusive, int endIndexExclusive) {
@@ -1021,7 +1021,7 @@ public class ArrayTool {
 	 * @param endIndexExclusive 结束下标(不包括). 小于开始下标将返回空数组, 大于数组长度当数组长度处理
 	 * @return 一个包含原数组的从start下标开始到end下标的元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:38:06
 	 */
 	public static boolean[] subarray(boolean[] array, int startIndexInclusive, int endIndexExclusive) {
@@ -1043,7 +1043,7 @@ public class ArrayTool {
 	 * @param array2 第二个数组, 可以为 {@code null}
 	 * @return {@code true} 如果两个数组的长度一致, {@code null}将当作空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:43:22
 	 */
 	public static boolean isSameLength(Object[] array1, Object[] array2) {
@@ -1059,7 +1059,7 @@ public class ArrayTool {
 	 * @param array2 第二个数组, 可以为 {@code null}
 	 * @return {@code true} 如果两个数组的长度一致, {@code null}将当作空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:43:29
 	 */
 	public static boolean isSameLength(long[] array1, long[] array2) {
@@ -1075,7 +1075,7 @@ public class ArrayTool {
 	 * @param array2 第二个数组, 可以为 {@code null}
 	 * @return {@code true} 如果两个数组的长度一致, {@code null}将当作空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:43:39
 	 */
 	public static boolean isSameLength(int[] array1, int[] array2) {
@@ -1091,7 +1091,7 @@ public class ArrayTool {
 	 * @param array2 第二个数组, 可以为 {@code null}
 	 * @return {@code true} 如果两个数组的长度一致, {@code null}将当作空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:43:49
 	 */
 	public static boolean isSameLength(short[] array1, short[] array2) {
@@ -1107,7 +1107,7 @@ public class ArrayTool {
 	 * @param array2 第二个数组, 可以为 {@code null}
 	 * @return {@code true} 如果两个数组的长度一致, {@code null}将当作空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:43:55
 	 */
 	public static boolean isSameLength(char[] array1, char[] array2) {
@@ -1123,7 +1123,7 @@ public class ArrayTool {
 	 * @param array2 第二个数组, 可以为 {@code null}
 	 * @return {@code true} 如果两个数组的长度一致, {@code null}将当作空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:43:59
 	 */
 	public static boolean isSameLength(byte[] array1, byte[] array2) {
@@ -1139,7 +1139,7 @@ public class ArrayTool {
 	 * @param array2 第二个数组, 可以为 {@code null}
 	 * @return {@code true} 如果两个数组的长度一致, {@code null}将当作空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:44:07
 	 */
 	public static boolean isSameLength(double[] array1, double[] array2) {
@@ -1155,7 +1155,7 @@ public class ArrayTool {
 	 * @param array2 第二个数组, 可以为 {@code null}
 	 * @return {@code true} 如果两个数组的长度一致, {@code null}将当作空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:44:17
 	 */
 	public static boolean isSameLength(float[] array1, float[] array2) {
@@ -1171,7 +1171,7 @@ public class ArrayTool {
 	 * @param array2 第二个数组, 可以为 {@code null}
 	 * @return {@code true} 如果两个数组的长度一致, {@code null}将当作空数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:44:25
 	 */
 	public static boolean isSameLength(boolean[] array1, boolean[] array2) {
@@ -1201,7 +1201,7 @@ public class ArrayTool {
 	 * @return 数组的长度, 如果传入的数组为null, 将返回0
 	 * @throws IllegalArgumentException 如果传入的参数不是数组.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:48:35
 	 */
 	public static int getLength(Object array) {
@@ -1218,7 +1218,7 @@ public class ArrayTool {
 	 * @return {@code true} 如果数组的类型匹配
 	 * @throws IllegalArgumentException 如果任意一个数组为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:52:56
 	 */
 	public static boolean isSameType(Object array1, Object array2) {
@@ -1242,7 +1242,7 @@ public class ArrayTool {
 	 * 
 	 * @param array 要反转的数组, 可以为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:54:45
 	 */
 	public static void reverse(Object[] array) {
@@ -1260,7 +1260,7 @@ public class ArrayTool {
 	 * 
 	 * @param array 要反转的数组, 可以为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:55:08
 	 */
 	public static void reverse(long[] array) {
@@ -1278,7 +1278,7 @@ public class ArrayTool {
 	 * 
 	 * @param array 要反转的数组, 可以为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:55:16
 	 */
 	public static void reverse(int[] array) {
@@ -1296,7 +1296,7 @@ public class ArrayTool {
 	 * 
 	 * @param array 要反转的数组, 可以为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:55:21
 	 */
 	public static void reverse(short[] array) {
@@ -1314,7 +1314,7 @@ public class ArrayTool {
 	 * 
 	 * @param array 要反转的数组, 可以为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:55:27
 	 */
 	public static void reverse(char[] array) {
@@ -1332,7 +1332,7 @@ public class ArrayTool {
 	 * 
 	 * @param array 要反转的数组, 可以为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:55:33
 	 */
 	public static void reverse(byte[] array) {
@@ -1350,7 +1350,7 @@ public class ArrayTool {
 	 * 
 	 * @param array 要反转的数组, 可以为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:55:39
 	 */
 	public static void reverse(double[] array) {
@@ -1368,7 +1368,7 @@ public class ArrayTool {
 	 * 
 	 * @param array 要反转的数组, 可以为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:55:46
 	 */
 	public static void reverse(float[] array) {
@@ -1386,7 +1386,7 @@ public class ArrayTool {
 	 * 
 	 * @param array 要反转的数组, 可以为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:55:53
 	 */
 	public static void reverse(boolean[] array) {
@@ -1411,7 +1411,7 @@ public class ArrayTool {
 	 * @param objectToFind 要查找的对象, 可以为 {@code null}
 	 * @return 给定对象在数组中的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午7:59:34
 	 */
 	public static int indexOf(Object[] array, Object objectToFind) {
@@ -1436,7 +1436,7 @@ public class ArrayTool {
 	 * @param startIndex 查找的起始下标
 	 * @return 给定对象在数组中的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:02:29
 	 */
 	public static int indexOf(Object[] array, Object objectToFind, int startIndex) {
@@ -1456,7 +1456,7 @@ public class ArrayTool {
 	 * @param objectToFind 要查找的对象, 可以为 {@code null}
 	 * @return 给定对象在数组中最后一次出现的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:04:55
 	 */
 	public static int lastIndexOf(Object[] array, Object objectToFind) {
@@ -1481,7 +1481,7 @@ public class ArrayTool {
 	 * @param startIndex 开始查找的下标
 	 * @return 给定对象在数组中最后一次出现的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:11:12
 	 */
 	public static int lastIndexOf(Object[] array, Object objectToFind, int startIndex) {
@@ -1501,7 +1501,7 @@ public class ArrayTool {
 	 * @param objectToFind 要查找的对象, 可以为 {@code null}
 	 * @return {@code true} 如果数组包含给定的对象
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:12:59
 	 */
 	public static boolean contains(Object[] array, Object objectToFind) {
@@ -1523,7 +1523,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return 给定值在数组中的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:16:10
 	 */
 	public static int indexOf(long[] array, long valueToFind) {
@@ -1548,7 +1548,7 @@ public class ArrayTool {
 	 * @param startIndex 开始查找的下标
 	 * @return 给定值在数组中的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:20:42
 	 */
 	public static int indexOf(long[] array, long valueToFind, int startIndex) {
@@ -1568,7 +1568,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return 给定值在数组中最后一次出现的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:26:35
 	 */
 	public static int lastIndexOf(long[] array, long valueToFind) {
@@ -1593,7 +1593,7 @@ public class ArrayTool {
 	 * @param startIndex 开始查找的下标
 	 * @return 给定值在数组中最后一次出现的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:30:45
 	 */
 	public static int lastIndexOf(long[] array, long valueToFind, int startIndex) {
@@ -1613,7 +1613,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return {@code true} 如果数组包含给定的值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:07:44
 	 */
 	public static boolean contains(long[] array, long valueToFind) {
@@ -1635,7 +1635,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return 给定值在数组中的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:16:20
 	 */
 	public static int indexOf(int[] array, int valueToFind) {
@@ -1660,7 +1660,7 @@ public class ArrayTool {
 	 * @param startIndex 开始查找的下标
 	 * @return 给定值在数组中的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:20:49
 	 */
 	public static int indexOf(int[] array, int valueToFind, int startIndex) {
@@ -1680,7 +1680,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return 给定值在数组中最后一次出现的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:26:35
 	 */
 	public static int lastIndexOf(int[] array, int valueToFind) {
@@ -1705,7 +1705,7 @@ public class ArrayTool {
 	 * @param startIndex 开始查找的下标
 	 * @return 给定值在数组中最后一次出现的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:30:45
 	 */
 	public static int lastIndexOf(int[] array, int valueToFind, int startIndex) {
@@ -1725,7 +1725,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return {@code true} 如果数组包含给定的值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:07:44
 	 */
 	public static boolean contains(int[] array, int valueToFind) {
@@ -1747,7 +1747,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return 给定值在数组中的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:16:30
 	 */
 	public static int indexOf(short[] array, short valueToFind) {
@@ -1772,7 +1772,7 @@ public class ArrayTool {
 	 * @param startIndex 开始查找的下标
 	 * @return 给定值在数组中的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:20:57
 	 */
 	public static int indexOf(short[] array, short valueToFind, int startIndex) {
@@ -1792,7 +1792,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return 给定值在数组中最后一次出现的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:26:35
 	 */
 	public static int lastIndexOf(short[] array, short valueToFind) {
@@ -1817,7 +1817,7 @@ public class ArrayTool {
 	 * @param startIndex 开始查找的下标
 	 * @return 给定值在数组中最后一次出现的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:30:45
 	 */
 	public static int lastIndexOf(short[] array, short valueToFind, int startIndex) {
@@ -1837,7 +1837,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return {@code true} 如果数组包含给定的值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:07:44
 	 */
 	public static boolean contains(short[] array, short valueToFind) {
@@ -1859,7 +1859,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return 给定值在数组中的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:16:40
 	 */
 	public static int indexOf(char[] array, char valueToFind) {
@@ -1884,7 +1884,7 @@ public class ArrayTool {
 	 * @param startIndex 开始查找的下标
 	 * @return 给定值在数组中的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:21:12
 	 */
 	public static int indexOf(char[] array, char valueToFind, int startIndex) {
@@ -1904,7 +1904,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return 给定值在数组中最后一次出现的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:26:35
 	 */
 	public static int lastIndexOf(char[] array, char valueToFind) {
@@ -1929,7 +1929,7 @@ public class ArrayTool {
 	 * @param startIndex 开始查找的下标
 	 * @return 给定值在数组中最后一次出现的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:30:45
 	 */
 	public static int lastIndexOf(char[] array, char valueToFind, int startIndex) {
@@ -1949,7 +1949,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return {@code true} 如果数组包含给定的值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:07:44
 	 */
 	public static boolean contains(char[] array, char valueToFind) {
@@ -1971,7 +1971,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return 给定值在数组中的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:16:50
 	 */
 	public static int indexOf(byte[] array, byte valueToFind) {
@@ -1996,7 +1996,7 @@ public class ArrayTool {
 	 * @param startIndex 开始查找的下标
 	 * @return 给定值在数组中的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:21:22
 	 */
 	public static int indexOf(byte[] array, byte valueToFind, int startIndex) {
@@ -2016,7 +2016,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return 给定值在数组中最后一次出现的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:26:35
 	 */
 	public static int lastIndexOf(byte[] array, byte valueToFind) {
@@ -2041,7 +2041,7 @@ public class ArrayTool {
 	 * @param startIndex 开始查找的下标
 	 * @return 给定值在数组中最后一次出现的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:30:45
 	 */
 	public static int lastIndexOf(byte[] array, byte valueToFind, int startIndex) {
@@ -2061,7 +2061,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return {@code true} 如果数组包含给定的值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:07:44
 	 */
 	public static boolean contains(byte[] array, byte valueToFind) {
@@ -2083,7 +2083,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return 给定值在数组中的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:17:10
 	 */
 	public static int indexOf(double[] array, double valueToFind) {
@@ -2104,7 +2104,7 @@ public class ArrayTool {
 	 * @param tolerance 容差
 	 * @return 给定值在数组中的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:21:44
 	 */
 	public static int indexOf(double[] array, double valueToFind, double tolerance) {
@@ -2129,7 +2129,7 @@ public class ArrayTool {
 	 * @param startIndex 开始查找的下标
 	 * @return 给定值在数组中的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:21:32
 	 */
 	public static int indexOf(double[] array, double valueToFind, int startIndex) {
@@ -2155,7 +2155,7 @@ public class ArrayTool {
 	 * @param tolerance 容差
 	 * @return 给定值在数组中的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:21:44
 	 */
 	public static int indexOf(double[] array, double valueToFind, int startIndex, double tolerance) {
@@ -2175,7 +2175,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return 给定值在数组中最后一次出现的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:26:35
 	 */
 	public static int lastIndexOf(double[] array, double valueToFind) {
@@ -2196,7 +2196,7 @@ public class ArrayTool {
 	 * @param tolerance 容差
 	 * @return 给定值在数组中最后一次出现的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:21:44
 	 */
 	public static int lastIndexOf(double[] array, double valueToFind, double tolerance) {
@@ -2221,7 +2221,7 @@ public class ArrayTool {
 	 * @param startIndex 开始查找的下标
 	 * @return 给定值在数组中最后一次出现的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:30:45
 	 */
 	public static int lastIndexOf(double[] array, double valueToFind, int startIndex) {
@@ -2247,7 +2247,7 @@ public class ArrayTool {
 	 * @param tolerance 容差
 	 * @return 给定值在数组中最后一次出现的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:21:44
 	 */
 	public static int lastIndexOf(double[] array, double valueToFind, int startIndex, double tolerance) {
@@ -2267,7 +2267,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return {@code true} 如果数组包含给定的值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:07:44
 	 */
 	public static boolean contains(double[] array, double valueToFind) {
@@ -2288,7 +2288,7 @@ public class ArrayTool {
 	 * @param tolerance 容差值
 	 * @return {@code true} 如果数组包含容差范围中的值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:36:44
 	 */
 	public static boolean contains(double[] array, double valueToFind, double tolerance) {
@@ -2310,7 +2310,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return 给定值在数组中的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:17:20
 	 */
 	public static int indexOf(float[] array, float valueToFind) {
@@ -2335,7 +2335,7 @@ public class ArrayTool {
 	 * @param startIndex 开始查找的下标
 	 * @return 给定值在数组中的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:21:42
 	 */
 	public static int indexOf(float[] array, float valueToFind, int startIndex) {
@@ -2355,7 +2355,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return 给定值在数组中最后一次出现的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:26:35
 	 */
 	public static int lastIndexOf(float[] array, float valueToFind) {
@@ -2380,7 +2380,7 @@ public class ArrayTool {
 	 * @param startIndex 开始查找的下标
 	 * @return 给定值在数组中最后一次出现的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:30:45
 	 */
 	public static int lastIndexOf(float[] array, float valueToFind, int startIndex) {
@@ -2400,7 +2400,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return {@code true} 如果数组包含给定的值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:07:44
 	 */
 	public static boolean contains(float[] array, float valueToFind) {
@@ -2422,7 +2422,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return 给定值在数组中的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:17:30
 	 */
 	public static int indexOf(boolean[] array, boolean valueToFind) {
@@ -2447,7 +2447,7 @@ public class ArrayTool {
 	 * @param startIndex 开始查找的下标
 	 * @return 给定值在数组中的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:21:52
 	 */
 	public static int indexOf(boolean[] array, boolean valueToFind, int startIndex) {
@@ -2467,7 +2467,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return 给定值在数组中最后一次出现的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:26:35
 	 */
 	public static int lastIndexOf(boolean[] array, boolean valueToFind) {
@@ -2492,7 +2492,7 @@ public class ArrayTool {
 	 * @param startIndex 开始查找的下标
 	 * @return 给定值在数组中最后一次出现的下标, 如果没有找到或传入的数组为{@code null}, 将返回 {@link #INDEX_NOT_FOUND} ({@code -1})
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午8:30:45
 	 */
 	public static int lastIndexOf(boolean[] array, boolean valueToFind, int startIndex) {
@@ -2512,7 +2512,7 @@ public class ArrayTool {
 	 * @param valueToFind 要查找的值
 	 * @return {@code true} 如果数组包含给定的值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:07:44
 	 */
 	public static boolean contains(boolean[] array, boolean valueToFind) {
@@ -2537,7 +2537,7 @@ public class ArrayTool {
 	 * @return {@code char} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @throws NullPointerException 如果数组元素为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:42:02
 	 */
 	public static char[] toPrimitive(Character[] array) {
@@ -2557,7 +2557,7 @@ public class ArrayTool {
 	 * @param valueForNull 要替换{@code null}元素的值
 	 * @return {@code char} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:45:02
 	 */
 	public static char[] toPrimitive(Character[] array, char valueForNull) {
@@ -2576,7 +2576,7 @@ public class ArrayTool {
 	 * @param array {@code char} 数组
 	 * @return {@code Character} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:49:08
 	 */
 	public static Character[] toObject(char[] array) {
@@ -2598,7 +2598,7 @@ public class ArrayTool {
 	 * @return {@code long} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @throws NullPointerException 如果数组元素为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:42:02
 	 */
 	public static long[] toPrimitive(Long[] array) {
@@ -2618,7 +2618,7 @@ public class ArrayTool {
 	 * @param valueForNull 要替换{@code null}元素的值
 	 * @return {@code long} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:45:02
 	 */
 	public static long[] toPrimitive(Long[] array, long valueForNull) {
@@ -2637,7 +2637,7 @@ public class ArrayTool {
 	 * @param array {@code long} 数组
 	 * @return {@code Long} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:49:08
 	 */
 	public static Long[] toObject(long[] array) {
@@ -2659,7 +2659,7 @@ public class ArrayTool {
 	 * @return {@code int} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @throws NullPointerException 如果数组元素为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:42:02
 	 */
 	public static int[] toPrimitive(Integer[] array) {
@@ -2679,7 +2679,7 @@ public class ArrayTool {
 	 * @param valueForNull 要替换{@code null}元素的值
 	 * @return {@code int} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:45:02
 	 */
 	public static int[] toPrimitive(Integer[] array, int valueForNull) {
@@ -2698,7 +2698,7 @@ public class ArrayTool {
 	 * @param array {@code int} 数组
 	 * @return {@code Integer} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:49:08
 	 */
 	public static Integer[] toObject(int[] array) {
@@ -2720,7 +2720,7 @@ public class ArrayTool {
 	 * @return {@code short} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @throws NullPointerException 如果数组元素为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:42:02
 	 */
 	public static short[] toPrimitive(Short[] array) {
@@ -2740,7 +2740,7 @@ public class ArrayTool {
 	 * @param valueForNull 要替换{@code null}元素的值
 	 * @return {@code short} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:45:02
 	 */
 	public static short[] toPrimitive(Short[] array, short valueForNull) {
@@ -2759,7 +2759,7 @@ public class ArrayTool {
 	 * @param array {@code short} 数组
 	 * @return {@code Short} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:49:08
 	 */
 	public static Short[] toObject(short[] array) {
@@ -2781,7 +2781,7 @@ public class ArrayTool {
 	 * @return {@code byte} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @throws NullPointerException 如果数组元素为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:42:02
 	 */
 	public static byte[] toPrimitive(Byte[] array) {
@@ -2801,7 +2801,7 @@ public class ArrayTool {
 	 * @param valueForNull 要替换{@code null}元素的值
 	 * @return {@code byte} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:45:02
 	 */
 	public static byte[] toPrimitive(Byte[] array, byte valueForNull) {
@@ -2820,7 +2820,7 @@ public class ArrayTool {
 	 * @param array {@code byte} 数组
 	 * @return {@code Byte} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:49:08
 	 */
 	public static Byte[] toObject(byte[] array) {
@@ -2842,7 +2842,7 @@ public class ArrayTool {
 	 * @return {@code double} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @throws NullPointerException 如果数组元素为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:42:02
 	 */
 	public static double[] toPrimitive(Double[] array) {
@@ -2862,7 +2862,7 @@ public class ArrayTool {
 	 * @param valueForNull 要替换{@code null}元素的值
 	 * @return {@code double} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:45:02
 	 */
 	public static double[] toPrimitive(Double[] array, double valueForNull) {
@@ -2881,7 +2881,7 @@ public class ArrayTool {
 	 * @param array {@code double} 数组
 	 * @return {@code Double} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:49:08
 	 */
 	public static Double[] toObject(double[] array) {
@@ -2903,7 +2903,7 @@ public class ArrayTool {
 	 * @return {@code float} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @throws NullPointerException 如果数组元素为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:42:02
 	 */
 	public static float[] toPrimitive(Float[] array) {
@@ -2923,7 +2923,7 @@ public class ArrayTool {
 	 * @param valueForNull 要替换{@code null}元素的值
 	 * @return {@code float} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:45:02
 	 */
 	public static float[] toPrimitive(Float[] array, float valueForNull) {
@@ -2942,7 +2942,7 @@ public class ArrayTool {
 	 * @param array {@code float} 数组
 	 * @return {@code Float} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:49:08
 	 */
 	public static Float[] toObject(float[] array) {
@@ -2964,7 +2964,7 @@ public class ArrayTool {
 	 * @return {@code boolean} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @throws NullPointerException 如果数组元素为 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:42:02
 	 */
 	public static boolean[] toPrimitive(Boolean[] array) {
@@ -2984,7 +2984,7 @@ public class ArrayTool {
 	 * @param valueForNull 要替换{@code null}元素的值
 	 * @return {@code boolean} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:45:02
 	 */
 	public static boolean[] toPrimitive(Boolean[] array, boolean valueForNull) {
@@ -3003,7 +3003,7 @@ public class ArrayTool {
 	 * @param array {@code boolean} 数组
 	 * @return {@code Boolean} 数组, 如果传入的数组为{@code null}, 将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午9:49:08
 	 */
 	public static Boolean[] toObject(boolean[] array) {
@@ -3019,7 +3019,7 @@ public class ArrayTool {
 	 * @param array 要检测的数组
 	 * @return {@code true} 如果数组为空或{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:09:54
 	 */
 	public static boolean isEmpty(Object[] array) {
@@ -3034,7 +3034,7 @@ public class ArrayTool {
 	 * @param array 要检测的数组
 	 * @return {@code true} 如果数组为空或{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:09:54
 	 */
 	public static boolean isEmpty(long[] array) {
@@ -3049,7 +3049,7 @@ public class ArrayTool {
 	 * @param array 要检测的数组
 	 * @return {@code true} 如果数组为空或{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:09:54
 	 */
 	public static boolean isEmpty(int[] array) {
@@ -3064,7 +3064,7 @@ public class ArrayTool {
 	 * @param array 要检测的数组
 	 * @return {@code true} 如果数组为空或{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:09:54
 	 */
 	public static boolean isEmpty(short[] array) {
@@ -3079,7 +3079,7 @@ public class ArrayTool {
 	 * @param array 要检测的数组
 	 * @return {@code true} 如果数组为空或{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:09:54
 	 */
 	public static boolean isEmpty(char[] array) {
@@ -3094,7 +3094,7 @@ public class ArrayTool {
 	 * @param array 要检测的数组
 	 * @return {@code true} 如果数组为空或{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:09:54
 	 */
 	public static boolean isEmpty(byte[] array) {
@@ -3109,7 +3109,7 @@ public class ArrayTool {
 	 * @param array 要检测的数组
 	 * @return {@code true} 如果数组为空或{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:09:54
 	 */
 	public static boolean isEmpty(double[] array) {
@@ -3124,7 +3124,7 @@ public class ArrayTool {
 	 * @param array 要检测的数组
 	 * @return {@code true} 如果数组为空或{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:09:54
 	 */
 	public static boolean isEmpty(float[] array) {
@@ -3139,7 +3139,7 @@ public class ArrayTool {
 	 * @param array 要检测的数组
 	 * @return {@code true} 如果数组为空或{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:09:54
 	 */
 	public static boolean isEmpty(boolean[] array) {
@@ -3156,7 +3156,7 @@ public class ArrayTool {
 	 * @param array 要检测的数组
 	 * @return {@code true} 如果数组不为空且不为{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:12:57
 	 */
 	public static <T> boolean isNotEmpty(T[] array) {
@@ -3171,7 +3171,7 @@ public class ArrayTool {
 	 * @param array 要检测的数组
 	 * @return {@code true} 如果数组不为空且不为{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:12:57
 	 */
 	public static boolean isNotEmpty(long[] array) {
@@ -3186,7 +3186,7 @@ public class ArrayTool {
 	 * @param array 要检测的数组
 	 * @return {@code true} 如果数组不为空且不为{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:12:57
 	 */
 	public static boolean isNotEmpty(int[] array) {
@@ -3201,7 +3201,7 @@ public class ArrayTool {
 	 * @param array 要检测的数组
 	 * @return {@code true} 如果数组不为空且不为{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:12:57
 	 */
 	public static boolean isNotEmpty(short[] array) {
@@ -3216,7 +3216,7 @@ public class ArrayTool {
 	 * @param array 要检测的数组
 	 * @return {@code true} 如果数组不为空且不为{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:12:57
 	 */
 	public static boolean isNotEmpty(char[] array) {
@@ -3231,7 +3231,7 @@ public class ArrayTool {
 	 * @param array 要检测的数组
 	 * @return {@code true} 如果数组不为空且不为{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:12:57
 	 */
 	public static boolean isNotEmpty(byte[] array) {
@@ -3246,7 +3246,7 @@ public class ArrayTool {
 	 * @param array 要检测的数组
 	 * @return {@code true} 如果数组不为空且不为{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:12:57
 	 */
 	public static boolean isNotEmpty(double[] array) {
@@ -3261,7 +3261,7 @@ public class ArrayTool {
 	 * @param array 要检测的数组
 	 * @return {@code true} 如果数组不为空且不为{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:12:57
 	 */
 	public static boolean isNotEmpty(float[] array) {
@@ -3276,7 +3276,7 @@ public class ArrayTool {
 	 * @param array 要检测的数组
 	 * @return {@code true} 如果数组不为空且不为{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:12:57
 	 */
 	public static boolean isNotEmpty(boolean[] array) {
@@ -3307,7 +3307,7 @@ public class ArrayTool {
 	 * @return 新的数组. {@code null} 如果两个数组都为 {@code null}. 新数组的类型为第一个数组的类型, 除非第一个数组为null, 这样新数组的类型就为第二个数组的类型.
 	 * @throws IllegalArgumentException 如果数组类型不匹配
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:25:57
 	 */
 	public static <T> T[] addAll(T[] array1, T... array2) {
@@ -3333,7 +3333,7 @@ public class ArrayTool {
 	 * @param array2 第二个它的元素要添加到新数组的数组, 可以为 {@code null}
 	 * @return 新的数组, 如果两个数组都为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:31:26
 	 */
 	public static boolean[] addAll(boolean[] array1, boolean... array2) {
@@ -3359,7 +3359,7 @@ public class ArrayTool {
 	 * @param array2 第二个它的元素要添加到新数组的数组, 可以为 {@code null}
 	 * @return 新的数组, 如果两个数组都为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:31:26
 	 */
 	public static char[] addAll(char[] array1, char... array2) {
@@ -3385,7 +3385,7 @@ public class ArrayTool {
 	 * @param array2 第二个它的元素要添加到新数组的数组, 可以为 {@code null}
 	 * @return 新的数组, 如果两个数组都为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:31:26
 	 */
 	public static byte[] addAll(byte[] array1, byte... array2) {
@@ -3411,7 +3411,7 @@ public class ArrayTool {
 	 * @param array2 第二个它的元素要添加到新数组的数组, 可以为 {@code null}
 	 * @return 新的数组, 如果两个数组都为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:31:26
 	 */
 	public static short[] addAll(short[] array1, short... array2) {
@@ -3437,7 +3437,7 @@ public class ArrayTool {
 	 * @param array2 第二个它的元素要添加到新数组的数组, 可以为 {@code null}
 	 * @return 新的数组, 如果两个数组都为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:31:26
 	 */
 	public static int[] addAll(int[] array1, int... array2) {
@@ -3463,7 +3463,7 @@ public class ArrayTool {
 	 * @param array2 第二个它的元素要添加到新数组的数组, 可以为 {@code null}
 	 * @return 新的数组, 如果两个数组都为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:31:26
 	 */
 	public static long[] addAll(long[] array1, long... array2) {
@@ -3489,7 +3489,7 @@ public class ArrayTool {
 	 * @param array2 第二个它的元素要添加到新数组的数组, 可以为 {@code null}
 	 * @return 新的数组, 如果两个数组都为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:31:26
 	 */
 	public static float[] addAll(float[] array1, float... array2) {
@@ -3515,7 +3515,7 @@ public class ArrayTool {
 	 * @param array2 第二个它的元素要添加到新数组的数组, 可以为 {@code null}
 	 * @return 新的数组, 如果两个数组都为null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午10:31:26
 	 */
 	public static double[] addAll(double[] array1, double... array2) {
@@ -3550,7 +3550,7 @@ public class ArrayTool {
 	 *         将抛出IllegalArgumentException异常.
 	 * @throws IllegalArgumentException 如果两个输入参数都为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午11:03:57
 	 */
 	public static <T> T[] add(T[] array, T element) {
@@ -3576,7 +3576,7 @@ public class ArrayTool {
 	 * @param element 添加到最后的元素, 可以为 {@code null}
 	 * @return 一个包含所有给定数组元素及放在最后的指定的值的新数组.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午11:07:38
 	 */
 	public static boolean[] add(boolean[] array, boolean element) {
@@ -3602,7 +3602,7 @@ public class ArrayTool {
 	 * @param element 添加到最后的元素, 可以为 {@code null}
 	 * @return 一个包含所有给定数组元素及放在最后的指定的值的新数组.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午11:08:38
 	 */
 	public static byte[] add(byte[] array, byte element) {
@@ -3628,7 +3628,7 @@ public class ArrayTool {
 	 * @param element 添加到最后的元素, 可以为 {@code null}
 	 * @return 一个包含所有给定数组元素及放在最后的指定的值的新数组.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午11:08:58
 	 */
 	public static char[] add(char[] array, char element) {
@@ -3654,7 +3654,7 @@ public class ArrayTool {
 	 * @param element 添加到最后的元素, 可以为 {@code null}
 	 * @return 一个包含所有给定数组元素及放在最后的指定的值的新数组.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午11:09:38
 	 */
 	public static double[] add(double[] array, double element) {
@@ -3680,7 +3680,7 @@ public class ArrayTool {
 	 * @param element 添加到最后的元素, 可以为 {@code null}
 	 * @return 一个包含所有给定数组元素及放在最后的指定的值的新数组.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午11:10:38
 	 */
 	public static float[] add(float[] array, float element) {
@@ -3706,7 +3706,7 @@ public class ArrayTool {
 	 * @param element 添加到最后的元素, 可以为 {@code null}
 	 * @return 一个包含所有给定数组元素及放在最后的指定的值的新数组.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午11:11:38
 	 */
 	public static int[] add(int[] array, int element) {
@@ -3732,7 +3732,7 @@ public class ArrayTool {
 	 * @param element 添加到最后的元素, 可以为 {@code null}
 	 * @return 一个包含所有给定数组元素及放在最后的指定的值的新数组.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午11:11:58
 	 */
 	public static long[] add(long[] array, long element) {
@@ -3758,7 +3758,7 @@ public class ArrayTool {
 	 * @param element 添加到最后的元素, 可以为 {@code null}
 	 * @return 一个包含所有给定数组元素及放在最后的指定的值的新数组.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-29 下午11:12:11
 	 */
 	public static short[] add(short[] array, short element) {
@@ -3794,7 +3794,7 @@ public class ArrayTool {
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index > array.length).
 	 * @throws IllegalArgumentException 如果输入的数组和元素都为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午09:44:11
 	 */
 	public static <T> T[] add(T[] array, int index, T element) {
@@ -3828,7 +3828,7 @@ public class ArrayTool {
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index > array.length).
 	 * @throws IllegalArgumentException 如果输入的数组和元素都为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午09:44:11
 	 */
 	public static boolean[] add(boolean[] array, int index, boolean element) {
@@ -3863,7 +3863,7 @@ public class ArrayTool {
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index > array.length).
 	 * @throws IllegalArgumentException 如果输入的数组和元素都为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午09:44:11
 	 */
 	public static char[] add(char[] array, int index, char element) {
@@ -3897,7 +3897,7 @@ public class ArrayTool {
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index > array.length).
 	 * @throws IllegalArgumentException 如果输入的数组和元素都为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午09:44:11
 	 */
 	public static byte[] add(byte[] array, int index, byte element) {
@@ -3931,7 +3931,7 @@ public class ArrayTool {
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index > array.length).
 	 * @throws IllegalArgumentException 如果输入的数组和元素都为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午09:44:11
 	 */
 	public static short[] add(short[] array, int index, short element) {
@@ -3965,7 +3965,7 @@ public class ArrayTool {
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index > array.length).
 	 * @throws IllegalArgumentException 如果输入的数组和元素都为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午09:44:11
 	 */
 	public static int[] add(int[] array, int index, int element) {
@@ -3999,7 +3999,7 @@ public class ArrayTool {
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index > array.length).
 	 * @throws IllegalArgumentException 如果输入的数组和元素都为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午09:44:11
 	 */
 	public static long[] add(long[] array, int index, long element) {
@@ -4033,7 +4033,7 @@ public class ArrayTool {
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index > array.length).
 	 * @throws IllegalArgumentException 如果输入的数组和元素都为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午09:44:11
 	 */
 	public static float[] add(float[] array, int index, float element) {
@@ -4067,7 +4067,7 @@ public class ArrayTool {
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index > array.length).
 	 * @throws IllegalArgumentException 如果输入的数组和元素都为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午09:44:11
 	 */
 	public static double[] add(double[] array, int index, double element) {
@@ -4100,7 +4100,7 @@ public class ArrayTool {
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index >= array.length), 或如果数组参数为 {@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午10:14:02
 	 */
 	public static <T> T[] remove(T[] array, int index) {
@@ -4129,7 +4129,7 @@ public class ArrayTool {
 	 * @param element 要移除的元素
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:18:36
 	 */
 	public static <T> T[] removeElement(T[] array, Object element) {
@@ -4161,7 +4161,7 @@ public class ArrayTool {
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index >= array.length), 或如果数组参数为 {@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午10:14:02
 	 */
 	public static boolean[] remove(boolean[] array, int index) {
@@ -4189,7 +4189,7 @@ public class ArrayTool {
 	 * @param element 要移除的元素
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:18:36
 	 */
 	public static boolean[] removeElement(boolean[] array, boolean element) {
@@ -4221,7 +4221,7 @@ public class ArrayTool {
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index >= array.length), 或如果数组参数为 {@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午10:14:02
 	 */
 	public static byte[] remove(byte[] array, int index) {
@@ -4249,7 +4249,7 @@ public class ArrayTool {
 	 * @param element 要移除的元素
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:18:36
 	 */
 	public static byte[] removeElement(byte[] array, byte element) {
@@ -4281,7 +4281,7 @@ public class ArrayTool {
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index >= array.length), 或如果数组参数为 {@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午10:14:02
 	 */
 	public static char[] remove(char[] array, int index) {
@@ -4309,7 +4309,7 @@ public class ArrayTool {
 	 * @param element 要移除的元素
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:18:36
 	 */
 	public static char[] removeElement(char[] array, char element) {
@@ -4341,7 +4341,7 @@ public class ArrayTool {
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index >= array.length), 或如果数组参数为 {@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午10:14:02
 	 */
 	public static double[] remove(double[] array, int index) {
@@ -4369,7 +4369,7 @@ public class ArrayTool {
 	 * @param element 要移除的元素
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:18:36
 	 */
 	public static double[] removeElement(double[] array, double element) {
@@ -4401,7 +4401,7 @@ public class ArrayTool {
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index >= array.length), 或如果数组参数为 {@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午10:14:02
 	 */
 	public static float[] remove(float[] array, int index) {
@@ -4429,7 +4429,7 @@ public class ArrayTool {
 	 * @param element 要移除的元素
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:18:36
 	 */
 	public static float[] removeElement(float[] array, float element) {
@@ -4461,7 +4461,7 @@ public class ArrayTool {
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index >= array.length), 或如果数组参数为 {@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午10:14:02
 	 */
 	public static int[] remove(int[] array, int index) {
@@ -4489,7 +4489,7 @@ public class ArrayTool {
 	 * @param element 要移除的元素
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:18:36
 	 */
 	public static int[] removeElement(int[] array, int element) {
@@ -4521,7 +4521,7 @@ public class ArrayTool {
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index >= array.length), 或如果数组参数为 {@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午10:14:02
 	 */
 	public static long[] remove(long[] array, int index) {
@@ -4549,7 +4549,7 @@ public class ArrayTool {
 	 * @param element 要移除的元素
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:18:36
 	 */
 	public static long[] removeElement(long[] array, long element) {
@@ -4581,7 +4581,7 @@ public class ArrayTool {
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index >= array.length), 或如果数组参数为 {@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午10:14:02
 	 */
 	public static short[] remove(short[] array, int index) {
@@ -4609,7 +4609,7 @@ public class ArrayTool {
 	 * @param element 要移除的元素
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:18:36
 	 */
 	public static short[] removeElement(short[] array, short element) {
@@ -4640,7 +4640,7 @@ public class ArrayTool {
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index >= array.length), 或如果数组参数为 {@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:30:21
 	 */
 	public static <T> T[] removeAll(T[] array, int... indices) {
@@ -4670,7 +4670,7 @@ public class ArrayTool {
 	 * @param values 要从数组中移除的值
 	 * @return 一个包含原数组除了要移除的元素外的所有元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:38:01
 	 */
 	public static <T> T[] removeElements(T[] array, T... values) {
@@ -4704,7 +4704,7 @@ public class ArrayTool {
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index >= array.length), 或如果数组参数为 {@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:30:21
 	 */
 	public static byte[] removeAll(byte[] array, int... indices) {
@@ -4733,7 +4733,7 @@ public class ArrayTool {
 	 * @param values 要从数组中移除的值
 	 * @return 一个包含原数组除了要移除的元素外的所有元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:38:01
 	 */
 	public static byte[] removeElements(byte[] array, byte... values) {
@@ -4767,7 +4767,7 @@ public class ArrayTool {
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index >= array.length), 或如果数组参数为 {@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:30:21
 	 */
 	public static short[] removeAll(short[] array, int... indices) {
@@ -4796,7 +4796,7 @@ public class ArrayTool {
 	 * @param values 要从数组中移除的值
 	 * @return 一个包含原数组除了要移除的元素外的所有元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:38:01
 	 */
 	public static short[] removeElements(short[] array, short... values) {
@@ -4830,7 +4830,7 @@ public class ArrayTool {
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index >= array.length), 或如果数组参数为 {@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:30:21
 	 */
 	public static int[] removeAll(int[] array, int... indices) {
@@ -4859,7 +4859,7 @@ public class ArrayTool {
 	 * @param values 要从数组中移除的值
 	 * @return 一个包含原数组除了要移除的元素外的所有元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:38:01
 	 */
 	public static int[] removeElements(int[] array, int... values) {
@@ -4893,7 +4893,7 @@ public class ArrayTool {
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index >= array.length), 或如果数组参数为 {@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:30:21
 	 */
 	public static char[] removeAll(char[] array, int... indices) {
@@ -4922,7 +4922,7 @@ public class ArrayTool {
 	 * @param values 要从数组中移除的值
 	 * @return 一个包含原数组除了要移除的元素外的所有元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:38:01
 	 */
 	public static char[] removeElements(char[] array, char... values) {
@@ -4956,7 +4956,7 @@ public class ArrayTool {
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index >= array.length), 或如果数组参数为 {@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:30:21
 	 */
 	public static long[] removeAll(long[] array, int... indices) {
@@ -4985,7 +4985,7 @@ public class ArrayTool {
 	 * @param values 要从数组中移除的值
 	 * @return 一个包含原数组除了要移除的元素外的所有元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:38:01
 	 */
 	public static long[] removeElements(long[] array, long... values) {
@@ -5019,7 +5019,7 @@ public class ArrayTool {
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index >= array.length), 或如果数组参数为 {@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:30:21
 	 */
 	public static float[] removeAll(float[] array, int... indices) {
@@ -5048,7 +5048,7 @@ public class ArrayTool {
 	 * @param values 要从数组中移除的值
 	 * @return 一个包含原数组除了要移除的元素外的所有元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:38:01
 	 */
 	public static float[] removeElements(float[] array, float... values) {
@@ -5082,7 +5082,7 @@ public class ArrayTool {
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index >= array.length), 或如果数组参数为 {@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:30:21
 	 */
 	public static double[] removeAll(double[] array, int... indices) {
@@ -5111,7 +5111,7 @@ public class ArrayTool {
 	 * @param values 要从数组中移除的值
 	 * @return 一个包含原数组除了要移除的元素外的所有元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:38:01
 	 */
 	public static double[] removeElements(double[] array, double... values) {
@@ -5141,7 +5141,7 @@ public class ArrayTool {
 	 * @return 一个包含原数组除了指定位置对应元素外的所有元素的新数组
 	 * @throws IndexOutOfBoundsException 如果下标越界 (index < 0 || index >= array.length), 或如果数组参数为 {@code null}.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:30:21
 	 */
 	public static boolean[] removeAll(boolean[] array, int... indices) {
@@ -5170,7 +5170,7 @@ public class ArrayTool {
 	 * @param values 要从数组中移除的值
 	 * @return 一个包含原数组除了要移除的元素外的所有元素的新数组
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 上午11:38:01
 	 */
 	public static boolean[] removeElements(boolean[] array, boolean... values) {

@@ -21,7 +21,7 @@ import java.net.URLEncoder;
  * </p>
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-18 下午4:46:45
  */
 public class EncodeTool {
@@ -38,7 +38,7 @@ public class EncodeTool {
 	 * @return 编码后的字符串
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:47:25
 	 */
 	public static String encodeHex(byte[] input) {
@@ -54,7 +54,7 @@ public class EncodeTool {
 	 * @return 解码后的字节数组
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:48:19
 	 */
 	public static byte[] decodeHex(String input) {
@@ -74,7 +74,7 @@ public class EncodeTool {
 	 * @return 编码后的字符串
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:49:44
 	 */
 	public static String encodeBase64(byte[] input) {
@@ -90,7 +90,7 @@ public class EncodeTool {
 	 * @return 编码后的字符串
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:50:29
 	 */
 	public static String encodeUrlSafeBase64(byte[] input) {
@@ -106,7 +106,7 @@ public class EncodeTool {
 	 * @return 解码后的字节数组
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:50:58
 	 */
 	public static byte[] decodeBase64(String input) {
@@ -122,7 +122,7 @@ public class EncodeTool {
 	 * @return 编码后的字符串
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:51:50
 	 */
 	public static String encodeBase62(byte[] input) {
@@ -142,7 +142,7 @@ public class EncodeTool {
 	 * @return 编码完的字符串
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:53:44
 	 */
 	public static String urlEncode(String part) {
@@ -162,7 +162,7 @@ public class EncodeTool {
 	 * @return 解码后的字符串
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:54:43
 	 */
 	public static String urlDecode(String part) {

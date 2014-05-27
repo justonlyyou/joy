@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-1-2 下午11:50:15
  */
 public class MdRdbPrimaryKeyService implements IMdRdbPrimaryKeyService {
@@ -53,7 +53,7 @@ public class MdRdbPrimaryKeyService implements IMdRdbPrimaryKeyService {
 	 * @param metaData
 	 * @param tableName 表名
 	 * @return 主键字段名数组
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @throws SQLException
 	 * @time 2012-11-9 上午10:22:21
 	 */

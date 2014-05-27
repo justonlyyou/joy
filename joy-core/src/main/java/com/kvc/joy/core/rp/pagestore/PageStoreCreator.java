@@ -13,7 +13,7 @@ import java.util.*;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-21 下午11:29:45
  */
 public class PageStoreCreator {

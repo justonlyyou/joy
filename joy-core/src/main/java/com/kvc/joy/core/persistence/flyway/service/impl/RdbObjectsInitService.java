@@ -10,7 +10,7 @@ import java.io.File;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年11月13日 下午8:27:07
  */
 public class RdbObjectsInitService implements IRdbObjectsInitService {

@@ -6,7 +6,7 @@ import org.junit.Test;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-4 下午6:05:46
  */
 public class PinYinToolTest {
@@ -16,7 +16,7 @@ public class PinYinToolTest {
 	/**
 	 * 
 	 * @throws java.lang.Exception
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-4 下午6:05:46
 	 */
 	@Before

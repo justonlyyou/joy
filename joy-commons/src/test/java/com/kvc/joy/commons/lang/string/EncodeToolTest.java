@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-18 下午5:01:11
  */
 public class EncodeToolTest {

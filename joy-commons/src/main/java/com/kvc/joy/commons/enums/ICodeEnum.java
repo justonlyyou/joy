@@ -4,7 +4,7 @@ package com.kvc.joy.commons.enums;
  * 表码枚举的接口
  * 
  * @since 1.0.0
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public interface ICodeEnum {
 	

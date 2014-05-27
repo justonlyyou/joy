@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-23 上午12:07:00
  */
 public interface IRolePermissionService {
@@ -17,7 +17,7 @@ public interface IRolePermissionService {
 	 * 
 	 * @param roleId
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-22 下午11:14:46
 	 */
 	List<TErbacAuthority> getPermissions(String roleId);
@@ -28,7 +28,7 @@ public interface IRolePermissionService {
 	 * @param roleId
 	 * @param permission
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-23 上午12:03:13
 	 */
 	boolean isPermitted(String roleId, ErbacPermission permission);

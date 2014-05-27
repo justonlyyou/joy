@@ -13,7 +13,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * @author 唐玮琳
+ * @author Kevice
  * @time 14-3-6 下午11:33
  * @since 1.0.0
  */

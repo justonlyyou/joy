@@ -12,7 +12,7 @@ import java.util.Set;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-8 上午10:58:22
  */
 public class SysParamCacheService extends AbstractEhCacheHolder<String, TSysParam> implements ISysParamCacheService, ISystemInitService {

@@ -11,7 +11,7 @@ import java.util.Set;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-7 下午9:32:30
  */
 public class SetToolTest {

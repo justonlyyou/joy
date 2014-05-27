@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-12-31 下午3:59:18
  */
 public class JobPlanPreviewer {

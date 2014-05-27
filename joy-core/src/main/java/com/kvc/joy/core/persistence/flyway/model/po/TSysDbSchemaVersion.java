@@ -11,7 +11,7 @@ import javax.persistence.Table;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年11月15日 上午11:12:58
  */
 @Entity

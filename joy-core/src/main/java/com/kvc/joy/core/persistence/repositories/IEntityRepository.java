@@ -10,7 +10,7 @@ import java.util.Map;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-26 下午7:27:33
  */
 public interface IEntityRepository<T extends IEntity<ID>, ID extends Serializable> {
@@ -20,7 +20,7 @@ public interface IEntityRepository<T extends IEntity<ID>, ID extends Serializabl
 	 * 
 	 * @param orders
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-6-26 下午8:19:33
 	 */
 	Iterable<T> searchAll(Order... orders);
@@ -31,7 +31,7 @@ public interface IEntityRepository<T extends IEntity<ID>, ID extends Serializabl
 	 * @param attr
 	 * @param values
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-6-26 下午8:19:28
 	 */
 	Iterable<T> inSearch(String attr, Collection<?> values, Order... orders);
@@ -41,7 +41,7 @@ public interface IEntityRepository<T extends IEntity<ID>, ID extends Serializabl
 	 * 
 	 * @param values
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-6-26 下午8:26:33
 	 */
 	Iterable<T> inSearch(Collection<?> values, Order... orders);
@@ -53,7 +53,7 @@ public interface IEntityRepository<T extends IEntity<ID>, ID extends Serializabl
 	 * @param value
 	 * @param orders
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-6-26 下午8:50:02
 	 */
 	Iterable<T> search(String attr, Object value, Order... orders);
@@ -62,7 +62,7 @@ public interface IEntityRepository<T extends IEntity<ID>, ID extends Serializabl
 	 * 
 	 * 
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-6-26 下午8:51:24
 	 */
 	Iterable<T> pagingSearch(PageStore pageStore);
@@ -73,7 +73,7 @@ public interface IEntityRepository<T extends IEntity<ID>, ID extends Serializabl
 	 * @param attrMap
 	 * @param orders
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-6-26 下午8:53:27
 	 */
 	Iterable<T> andSearch(Map<String, Object> attrMap, Order... orders);
@@ -84,7 +84,7 @@ public interface IEntityRepository<T extends IEntity<ID>, ID extends Serializabl
 	 * @param attrMap
 	 * @param orders
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2012-6-26 下午8:54:03
 	 */
 	Iterable<T> orSearch(Map<String, Object> attrMap, Order... orders);

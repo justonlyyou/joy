@@ -8,7 +8,7 @@ import javax.persistence.MappedSuperclass;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-12-17 下午11:59:02
  */
 @MappedSuperclass

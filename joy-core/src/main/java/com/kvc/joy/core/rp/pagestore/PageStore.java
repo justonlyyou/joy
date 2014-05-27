@@ -8,7 +8,7 @@ import javax.persistence.Transient;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-15 下午10:27:36
  */
 public class PageStore {

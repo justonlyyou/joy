@@ -7,7 +7,7 @@ import com.kvc.joy.core.persistence.jdbc.support.db.DbSupport;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年11月24日 下午3:18:51
  */
 public class MdRdbColumnDefaultValueResovler {

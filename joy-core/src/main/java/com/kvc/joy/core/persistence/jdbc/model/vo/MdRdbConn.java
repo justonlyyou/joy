@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-12-28 下午11:25:31
  */
 public class MdRdbConn implements Serializable {

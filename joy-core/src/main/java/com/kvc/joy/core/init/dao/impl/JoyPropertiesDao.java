@@ -18,7 +18,7 @@ import java.text.MessageFormat;
 import java.util.*;
 
 /**
- * @author 唐玮琳
+ * @author Kevice
  * @time 14-3-17 上午7:17
  * @since 1.0.0
  */
@@ -27,7 +27,7 @@ public class JoyPropertiesDao implements IJoyPropertiesDao {
     protected Log log = LogFactory.getLog(JoyPropertiesDao.class);
 
     /**
-     * @author 唐玮琳
+     * @author Kevice
      * @time 14-3-17 上午7:17
      * @since 1.0.0
      */
@@ -40,7 +40,7 @@ public class JoyPropertiesDao implements IJoyPropertiesDao {
     }
 
     /**
-     * @author 唐玮琳
+     * @author Kevice
      * @time 14-3-17 上午7:17
      * @since 1.0.0
      */
@@ -59,7 +59,7 @@ public class JoyPropertiesDao implements IJoyPropertiesDao {
     }
 
     /**
-     * @author 唐玮琳
+     * @author Kevice
      * @time 14-3-17 上午7:17
      * @since 1.0.0
      */
@@ -71,7 +71,7 @@ public class JoyPropertiesDao implements IJoyPropertiesDao {
     }
 
     /**
-     * @author 唐玮琳
+     * @author Kevice
      * @time 14-3-17 上午7:17
      * @since 1.0.0
      */
@@ -91,7 +91,7 @@ public class JoyPropertiesDao implements IJoyPropertiesDao {
     }
 
     /**
-     * @author 唐玮琳
+     * @author Kevice
      * @time 14-3-17 上午7:17
      * @since 1.0.0
      */
@@ -124,7 +124,7 @@ public class JoyPropertiesDao implements IJoyPropertiesDao {
     }
 
     /**
-     * @author 唐玮琳
+     * @author Kevice
      * @time 14-3-17 上午7:17
      * @since 1.0.0
      */
@@ -142,7 +142,7 @@ public class JoyPropertiesDao implements IJoyPropertiesDao {
     }
 
     /**
-     * @author 唐玮琳
+     * @author Kevice
      * @time 14-3-17 上午7:17
      * @since 1.0.0
      */

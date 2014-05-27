@@ -26,7 +26,7 @@ import java.util.Map;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-10 下午8:15:48
  */
 public class MdRdbAlterReverseSyncService implements IMdRdbAlterReverseSyncService {

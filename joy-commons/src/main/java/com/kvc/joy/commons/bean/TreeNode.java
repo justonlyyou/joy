@@ -8,7 +8,7 @@ import java.util.List;
  * 通用树结点
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-5-1 下午9:24:05
  */
 public class TreeNode<T> implements Serializable {

@@ -18,7 +18,7 @@ import java.util.Map.Entry;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-7 下午10:29:32
  */
 public class SysResTool {
@@ -33,7 +33,7 @@ public class SysResTool {
 	 * 
 	 * @param paramName 系统参数名
 	 * @return 系统参数值
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-8 上午11:21:37
 	 */
 	public static String getParamValue(String paramName) {
@@ -43,7 +43,7 @@ public class SysResTool {
 	/**
 	 * 刷新所有系统参数
 	 * 
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-8 上午11:28:06
 	 */
 	public static void refreshParams() {
@@ -54,7 +54,7 @@ public class SysResTool {
 	 * 刷新某一系统参数
 	 * 
 	 * @param paramName 参数名
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-8 上午11:28:45
 	 */
 	public static void refreshParam(String paramName) {
@@ -66,7 +66,7 @@ public class SysResTool {
 	 * 
 	 * @param codeTableId 代码表id
 	 * @return Map<代码值，译文>
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-8 下午8:04:52
 	 */
 	public static Map<String, CodeRecord> getAllCodeAndTrans(String codeTableId) {
@@ -80,7 +80,7 @@ public class SysResTool {
 	 * @param codeTableId
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年12月24日 下午9:57:10
 	 */
 	public static String getCodeCategory(String codeTableId) {
@@ -98,7 +98,7 @@ public class SysResTool {
 	 * @param codeTableId
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年12月9日 上午12:26:45
 	 */
 	public static Map<String, String> getAllCodeAndTransStr(String codeTableId) {
@@ -116,7 +116,7 @@ public class SysResTool {
 	 * @param codeTableId 代码表id
 	 * @param code 代码
 	 * @return 译文
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-8 下午8:07:43
 	 */
 	public static CodeRecord translateCode(String codeTableId, String code) {
@@ -132,7 +132,7 @@ public class SysResTool {
 	 * @param enumClass 枚举类
 	 * @return 译文
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月13日 下午4:37:48
 	 */
 	@SuppressWarnings("rawtypes")
@@ -182,7 +182,7 @@ public class SysResTool {
 	 * @param enumClass 枚举类
 	 * @return Map<代码，译文>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月13日 下午5:59:18
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -221,7 +221,7 @@ public class SysResTool {
 	 * @param menuId 菜单
 	 * @return List<菜单对象>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月14日 下午8:51:22
 	 */
 	public static List<TSysMenu> getMenuPath(String menuId) {
@@ -233,7 +233,7 @@ public class SysResTool {
 	 * 
 	 * @return List<数据源对象>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年11月28日 下午4:59:01
 	 */
 	public static List<TSysDataSrc> getAllDataSrc() {

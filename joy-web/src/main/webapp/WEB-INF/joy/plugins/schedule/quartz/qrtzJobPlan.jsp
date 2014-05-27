@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="任务调度计划管理页面">
-<meta name="author" content="唐玮琳">
+<meta name="author" content="Kevice">
 
 <title>任务调度计划管理页面</title>
 </head>
@@ -33,7 +33,7 @@
 							</div>
 							<label for="runState" class="col-sm-1 control-label">运行状态</label>
 							<div class="col-sm-2">
-								<joy:codeSelect cssClass="form-control" path="runState" tableId="job_run_state" />
+								<joy:codeSelect cssClass="form-control" path="runState" emptyOptionText="请选择" tableId="run_state" />
 							</div>
 							<div class="col-sm-3">
 								<form:button id="submitBtn" class="btn btn-default">
@@ -86,7 +86,7 @@
 	</form:form>
 
     <script type="text/javascript">
-        curl(['joy/plugins/schedule/qrtzJobPlan'], function(MgmtPage) {
+        curl(['joy/commons/BaseMgmtPage'], function(MgmtPage) {
             mgmtPage = new MgmtPage();
         });
     </script>

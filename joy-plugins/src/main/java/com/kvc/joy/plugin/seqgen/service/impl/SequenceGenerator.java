@@ -23,7 +23,7 @@ import java.util.*;
 
 /**
  * 序列号生成器
- * @author  <b>唐玮琳</b>
+ * @author  <b>Kevice</b>
  */
 @Transactional(propagation=Propagation.REQUIRES_NEW)
 public class SequenceGenerator implements ISequenceGenerator {

@@ -27,15 +27,15 @@ define(['jsrender', 'joy/commons/Comet', 'joy/commons/ClassTool', 'layer', 'css!
                 }
             });
 
-            var comet = new Comet({
-                url: 'test.comet',
-                accept: function (data) {
-                    console.info(data);
-                }
-            });
-            comet.connection({
-                userId: 'kevice' //TODO
-            });
+//            var comet = new Comet({
+//                url: 'test.comet',
+//                accept: function (data) {
+//                    console.info(data);
+//                }
+//            });
+//            comet.connection({
+//                userId: 'kevice' //TODO
+//            });
         },
 
         toggleMenuItem: function (itemId) {

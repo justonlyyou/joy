@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 /**
  * 关系数据库列注释解析器
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-5 下午11:44:41
  */
 public class MdRdbColumnCommentParser {

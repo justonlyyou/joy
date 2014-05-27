@@ -9,7 +9,7 @@ import javax.persistence.*;
 /**
  * 序列号生成规则对象模型
  * 
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 @Entity
 @Table(name = "t_sys_seq_num_rule")

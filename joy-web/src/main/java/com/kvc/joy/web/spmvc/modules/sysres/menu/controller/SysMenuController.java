@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年10月5日 下午4:10:18
  */
 @Controller
@@ -27,7 +27,7 @@ public class SysMenuController {
 	 * 
 	 * @return json串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月5日 下午4:31:05
 	 */
 	@RequestMapping("/fetchAllMenus")
@@ -43,7 +43,7 @@ public class SysMenuController {
 	 * 
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月5日 下午5:12:59
 	 */
 	@RequestMapping("/fetchRootMenus")
@@ -59,7 +59,7 @@ public class SysMenuController {
 	 * 
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月5日 下午5:12:59
 	 */
 	@RequestMapping("/fetchSubMenus")

@@ -9,7 +9,7 @@ import java.util.Map;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-3 下午9:28:36
  */
 public class MdRdbColumnCacheService implements IMdRdbColumnService {

@@ -3,7 +3,7 @@ package com.kvc.joy.core.init.support.properties;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-12-29 上午12:05:15
  */
 public class AppProperties extends BaseProperties {

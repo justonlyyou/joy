@@ -5,7 +5,7 @@ import java.text.NumberFormat;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-1-2 上午11:19:07
  */
 public class JobPlanPreview {

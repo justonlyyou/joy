@@ -12,7 +12,7 @@ import javax.persistence.MappedSuperclass;
 /**
  * 主键生成策略是UUID的实体基类
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-17 下午9:45:42
  */
 @MappedSuperclass

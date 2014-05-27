@@ -10,7 +10,7 @@ import java.util.*;
 /**
  * EhCache缓存工厂
  * 
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public class EhCacheFactory {
 
@@ -41,7 +41,7 @@ public class EhCacheFactory {
 	 * @param cacheName 缓存名称
 	 * @param key 关键字
 	 * @return 缓存数据对象
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @date 2012-5-30 下午02:10:57
 	 */
 	public static Object getEntity(String cacheName, Object key) {
@@ -58,7 +58,7 @@ public class EhCacheFactory {
 	 * 
 	 * @param cacheName 缓存名称
 	 * @return List<缓存数据对象>
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @date 2012-5-30 下午02:12:10
 	 */
 	@SuppressWarnings("unchecked")
@@ -81,7 +81,7 @@ public class EhCacheFactory {
 	 * 
 	 * @param cacheName 缓存名称
 	 * @param key 关键字
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @date 2012-5-30 下午02:27:51
 	 */
 	public static void refresh(String cacheName, Object key) {
@@ -96,7 +96,7 @@ public class EhCacheFactory {
 	 * 刷新指定名称的缓存中所有key的数据
 	 * 
 	 * @param cacheName 缓存名称
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @date 2012-5-30 下午02:29:25
 	 */
 	public static void refresh(String cacheName) {
@@ -112,7 +112,7 @@ public class EhCacheFactory {
 	 * 
 	 * @param cacheName 缓存名称
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @date 2012-5-30 下午02:13:32
 	 */
 	private static IEhCacheHolder getCacheHolder(String cacheName) {

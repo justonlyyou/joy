@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * 用户服务
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-5-8 下午11:16:04
  */
 public class ErbacUserBiz implements IErbacUserBiz {

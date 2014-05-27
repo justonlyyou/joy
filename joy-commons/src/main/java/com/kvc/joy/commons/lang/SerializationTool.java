@@ -10,7 +10,7 @@ import java.io.Serializable;
  * 序列化工具类
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-9 下午8:54:14
  */
 public class SerializationTool {
@@ -38,7 +38,7 @@ public class SerializationTool {
 	 * @return 克隆后的对象
 	 * @throws SerializationException (运行时) 如果序列化失败
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午9:15:30
 	 */
 	public static <T extends Serializable> T clone(T object) {
@@ -65,7 +65,7 @@ public class SerializationTool {
 	 * @throws IllegalArgumentException 如果 {@code outputStream} 为 {@code null}
 	 * @throws SerializationException (运行时) 如果序列化失败
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午9:24:52
 	 */
 	public static void serialize(Serializable obj, OutputStream outputStream) {
@@ -81,7 +81,7 @@ public class SerializationTool {
 	 * @return 字节数组
 	 * @throws SerializationException (运行时) 如果序列化失败
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午9:26:04
 	 */
 	public static byte[] serialize(Serializable obj) {
@@ -108,7 +108,7 @@ public class SerializationTool {
 	 * @throws IllegalArgumentException 如果 {@code inputStream} 为 {@code null}
 	 * @throws SerializationException (运行时) 如果反序列化失败
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午9:28:42
 	 */
 	public static Object deserialize(InputStream inputStream) {
@@ -125,7 +125,7 @@ public class SerializationTool {
 	 * @throws IllegalArgumentException 如果 {@code objectData} 为 {@code null}
 	 * @throws SerializationException (运行时) 如果反序列化失败
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午9:30:19
 	 */
 	public static Object deserialize(byte[] objectData) {

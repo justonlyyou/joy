@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-3 下午9:39:00
  */
 public class MdRdbTableService implements IMdRdbTableService {

@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-19 下午9:51:19
  */
 public enum QueryLogicOperator implements ICodeEnum, Serializable{
@@ -46,17 +46,19 @@ public enum QueryLogicOperator implements ICodeEnum, Serializable{
 	}
 
 	private final String code;
-	private final String desc;
-	
+	private String desc;
+
+    @Override
 	public String getCode() {
 		return code;
 	}
 
+    @Override
 	public String getTrans() {
 		return desc;
 	}
-	
-	public static QueryLogicOperator enumOf(String code) {
+
+    public static QueryLogicOperator enumOf(String code) {
 		if (StringTool.isNotBlank(code)) {
 			code = code.toUpperCase();
 		}

@@ -211,7 +211,7 @@ public class AbstractPushSocket implements Socket, PushSocket {
 
     /**
      * 触发超时事件
-     * @author 唐玮琳
+     * @author Kevice
      * @since  1.0.0
      * @time 2014-03-09 18:22
      */

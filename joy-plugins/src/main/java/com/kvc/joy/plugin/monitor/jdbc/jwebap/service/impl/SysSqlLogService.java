@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
  * 系统sql执行性能日志服务
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年10月3日 下午10:22:18
  */
 public class SysSqlLogService implements ISysSqlLogService {
@@ -32,7 +32,7 @@ public class SysSqlLogService implements ISysSqlLogService {
 	 * 
 	 * @return
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月4日 下午3:48:44
 	 */
 	protected SysSqlLogService getSelf() {
@@ -65,7 +65,7 @@ public class SysSqlLogService implements ISysSqlLogService {
 	 * 
 	 * @param sqlLog
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月4日 下午3:30:49
 	 */
 	@Transactional

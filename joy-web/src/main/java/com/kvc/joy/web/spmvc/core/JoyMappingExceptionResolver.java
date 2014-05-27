@@ -13,7 +13,7 @@ import java.io.PrintWriter;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年10月2日 上午12:10:05
  */
 public class JoyMappingExceptionResolver extends SimpleMappingExceptionResolver {

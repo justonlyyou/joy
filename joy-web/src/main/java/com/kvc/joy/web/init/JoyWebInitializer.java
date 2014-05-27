@@ -17,7 +17,7 @@ import javax.servlet.ServletContextEvent;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-12-28 下午11:57:19
  */
 public class JoyWebInitializer extends ContextLoaderListener {

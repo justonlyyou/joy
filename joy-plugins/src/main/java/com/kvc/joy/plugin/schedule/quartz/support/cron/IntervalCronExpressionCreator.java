@@ -4,7 +4,7 @@ import com.kvc.joy.plugin.schedule.quartz.model.vo.QrtzJobPlanVo;
 
 /**
  * 
- * @author <b>唐玮琳</b>
+ * @author <b>Kevice</b>
  */
 public class IntervalCronExpressionCreator extends AbstractCronExpressionCreator {
 

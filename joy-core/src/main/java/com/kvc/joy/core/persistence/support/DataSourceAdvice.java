@@ -8,7 +8,7 @@ import java.sql.Connection;
 /**
  * 数据源通知，主要为了设置AutoCommit为false
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-5-29 下午11:25:57
  */
 public class DataSourceAdvice implements AfterReturningAdvice {

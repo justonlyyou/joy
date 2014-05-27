@@ -11,7 +11,7 @@ import java.lang.annotation.Annotation;
 /**
  * 类级注解监听器
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-5-2 下午8:26:14
  */
 public class ClassAnnotationListener {

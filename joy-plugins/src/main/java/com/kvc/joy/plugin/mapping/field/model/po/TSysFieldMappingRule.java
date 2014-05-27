@@ -9,7 +9,7 @@ import java.util.Set;
 
 /**
  * 字段映射规则
- * @author  唐玮琳
+ * @author  Kevice
  */
 @Entity
 @Table(name = "t_sys_field_mapping_rule")

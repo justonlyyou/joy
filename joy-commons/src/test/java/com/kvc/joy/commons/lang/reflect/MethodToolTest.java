@@ -17,7 +17,7 @@ import java.util.Set;
  * 
  * </p>
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-3 下午11:57:38
  */
 public class MethodToolTest {

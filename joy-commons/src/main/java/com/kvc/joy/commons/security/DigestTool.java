@@ -19,7 +19,7 @@ import java.security.SecureRandom;
  * </p>
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-5-18 下午4:25:48
  */
 public class DigestTool {
@@ -38,7 +38,7 @@ public class DigestTool {
 	 * @return 进行sha1散列后的字节数组
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:29:08
 	 */
 	public static byte[] sha1(byte[] input) {
@@ -55,7 +55,7 @@ public class DigestTool {
 	 * @return 进行sha1散列后的字节数组
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:30:27
 	 */
 	public static byte[] sha1(byte[] input, byte[] salt) {
@@ -73,7 +73,7 @@ public class DigestTool {
 	 * @return 进行sha1散列后的字节数组
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:33:07
 	 */
 	public static byte[] sha1(byte[] input, byte[] salt, int iterations) {
@@ -92,7 +92,7 @@ public class DigestTool {
 	 * @return 进行散列后的字节数组
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:36:35
 	 */
 	public static byte[] digest(byte[] input, String algorithm, byte[] salt, int iterations) {
@@ -124,7 +124,7 @@ public class DigestTool {
 	 * @return 加盐值字节数组
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:37:54
 	 */
 	public static byte[] generateSalt(int numBytes) {
@@ -144,7 +144,7 @@ public class DigestTool {
 	 * @return 散列后的文件字节数组
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:41:04
 	 */
 	public static byte[] md5(InputStream input) {
@@ -164,7 +164,7 @@ public class DigestTool {
 	 * @return 散列后的文件字节数组
 	 * @since 1.0.0
 	 * @author calvin
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-18 下午4:44:57
 	 */
 	public static byte[] sha1(InputStream input) {

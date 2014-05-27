@@ -9,8 +9,15 @@ import com.kvc.joy.commons.support.GroupExecutor;
 import com.kvc.joy.core.persistence.support.entity.UuidEntity;
 import com.kvc.joy.core.rp.pagestore.PageStore;
 import com.kvc.joy.core.spring.utils.CoreBeanFactory;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.TransactionCallbackWithoutResult;
+import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -26,18 +33,42 @@ import java.util.Map.Entry;
 public class JpaTool extends BaseJpaDao {
 
 	protected static final Log logger = LogFactory.getLog(JpaTool.class);
-	
+
 	private JpaTool() {
 	}
 
 	private static JpaTool getInstance() {
-		return (JpaTool) CoreBeanFactory.getJpaTool();
+		return CoreBeanFactory.getJpaTool();
 	}
 
 	public static void persist(Object entity) {
 		UuidEntity.setUuid(entity);
 		getEntityMgr().persist(entity);
 	}
+
+    public static void persistWithTx(final Object entity) {
+        CoreBeanFactory.getTransactionTemplate().execute(new TransactionCallbackWithoutResult() {
+            @Override
+            protected void doInTransactionWithoutResult(TransactionStatus status) {
+                persist(entity);
+            }
+        });
+    }
+
+    public static void batchPersist(Collection<?> entities) {
+        for(Object entity : entities) {
+            persist(entity);
+        }
+    }
+
+    public void batchPersistWithTx(final Collection<?> entities) {
+        CoreBeanFactory.getTransactionTemplate().execute(new TransactionCallbackWithoutResult() {
+            @Override
+            protected void doInTransactionWithoutResult(TransactionStatus status) {
+                batchPersist(entities);
+            }
+        });
+    }
 
 	public static <T> T merge(T entity) {
 		return getEntityMgr().merge(entity);
@@ -46,6 +77,30 @@ public class JpaTool extends BaseJpaDao {
 	public static void remove(Object entity) {
 		getEntityMgr().remove(entity);
 	}
+
+    public static void removeWithTx(final Object entity) {
+        CoreBeanFactory.getTransactionTemplate().execute(new TransactionCallbackWithoutResult() {
+            @Override
+            protected void doInTransactionWithoutResult(TransactionStatus status) {
+                remove(entity);
+            }
+        });
+    }
+
+    public static void batchRemove(Collection<?> entities) {
+        for(Object entity : entities) {
+            remove(entity);
+        }
+    }
+
+    public static void batchRemoveWithTx(final Collection<?> entities) {
+        CoreBeanFactory.getTransactionTemplate().execute(new TransactionCallbackWithoutResult() {
+            @Override
+            protected void doInTransactionWithoutResult(TransactionStatus status) {
+                batchRemove(entities);
+            }
+        });
+    }
 
 	public static void flush() {
 		getEntityMgr().flush();

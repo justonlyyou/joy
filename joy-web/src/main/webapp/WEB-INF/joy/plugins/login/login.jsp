@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="登录页面">
-<meta name="author" content="唐玮琳">
+<meta name="author" content="Kevice">
 
 <title>${joyFn:getAppProperty('app.name')}登录</title>
 

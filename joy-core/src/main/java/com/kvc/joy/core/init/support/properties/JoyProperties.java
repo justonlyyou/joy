@@ -6,7 +6,7 @@ import java.util.Properties;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-4 下午10:56:43
  */
 public class JoyProperties extends BaseProperties {

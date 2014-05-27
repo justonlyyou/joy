@@ -9,7 +9,7 @@ import com.kvc.joy.plugin.support.PluginBeanFactory;
  * 系统sql执行监控Appender
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-12-15 下午7:04:31
  */
 public class SqlMonitorAppender extends AppenderBase<ILoggingEvent> {

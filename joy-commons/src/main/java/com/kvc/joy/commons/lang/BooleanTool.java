@@ -4,7 +4,7 @@ package com.kvc.joy.commons.lang;
  * 布尔处理工具类
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-9 下午8:08:34
  */
 public class BooleanTool {
@@ -36,7 +36,7 @@ public class BooleanTool {
 	 * @param bool 要取反的布尔值, 可以为null
 	 * @return 指定布尔值的非运算结果, 输入{@code null}将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午3:32:49
 	 */
 	public static Boolean negate(Boolean bool) {
@@ -59,7 +59,7 @@ public class BooleanTool {
 	 * @param bool 要检查的布尔值, null 将返回 {@code false}
 	 * @return {@code true} 仅当输入的参数不为null并且为true时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午3:34:57
 	 */
 	public static boolean isTrue(Boolean bool) {
@@ -80,7 +80,7 @@ public class BooleanTool {
 	 * @param bool 要检查的布尔值, null 将返回 {@code true}
 	 * @return {@code true} 如果输入的参数为null或false时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午3:36:26
 	 */
 	public static boolean isNotTrue(Boolean bool) {
@@ -101,7 +101,7 @@ public class BooleanTool {
 	 * @param bool 要检查的布尔值, null 将返回 {@code false}
 	 * @return {@code true} 仅当输入的参数不为null并且为false时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午3:37:45
 	 */
 	public static boolean isFalse(Boolean bool) {
@@ -122,7 +122,7 @@ public class BooleanTool {
 	 * @param bool 要检查的布尔值, null 将返回 {@code true}
 	 * @return {@code true} 如果输入的参数为null或true时
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午3:38:53
 	 */
 	public static boolean isNotFalse(Boolean bool) {
@@ -144,7 +144,7 @@ public class BooleanTool {
 	 * @param bool 要转化的Boolean值
 	 * @return {@code true} 或 {@code false}, {@code null} 将返回 {@code false}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午3:42:59
 	 */
 	public static boolean toBoolean(Boolean bool) {
@@ -166,7 +166,7 @@ public class BooleanTool {
 	 * @param valueIfNull 布尔值为{@code null}时返回的值
 	 * @return {@code true} 或 {@code false}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午3:44:39
 	 */
 	public static boolean toBooleanDefaultIfNull(Boolean bool, boolean valueIfNull) {
@@ -189,7 +189,7 @@ public class BooleanTool {
 	 * @param value 要转化的int值
 	 * @return {@code true} 如果非0, {@code false} 如果是0
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午3:48:52
 	 */
 	public static boolean toBoolean(int value) {
@@ -210,7 +210,7 @@ public class BooleanTool {
 	 * @param value 要转化的int值
 	 * @return Boolean.TRUE 如果非0, Boolean.FALSE 如果是0
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午3:50:37
 	 */
 	public static Boolean toBooleanObject(int value) {
@@ -239,7 +239,7 @@ public class BooleanTool {
 	 * @param value 要转化的Integer值
 	 * @return Boolean.TRUE 如果非0, Boolean.FALSE 如果是0, {@code null}将返回{@code null} input
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午3:58:48
 	 */
 	public static Boolean toBooleanObject(Integer value) {
@@ -264,7 +264,7 @@ public class BooleanTool {
 	 * @return {@code true} 或 {@code false}
 	 * @throws IllegalArgumentException 如果不匹配
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午4:02:28
 	 */
 	public static boolean toBoolean(int value, int trueValue, int falseValue) {
@@ -290,7 +290,7 @@ public class BooleanTool {
 	 * @return {@code true} 或 {@code false}
 	 * @throws IllegalArgumentException 如果没有匹配
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午4:04:22
 	 */
 	public static boolean toBoolean(Integer value, Integer trueValue, Integer falseValue) {
@@ -319,7 +319,7 @@ public class BooleanTool {
 	 * @return Boolean.TRUE, Boolean.FALSE, 或 {@code null}
 	 * @throws IllegalArgumentException 如果没有匹配
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午4:07:47
 	 */
 	public static Boolean toBooleanObject(int value, int trueValue, int falseValue, int nullValue) {
@@ -348,7 +348,7 @@ public class BooleanTool {
 	 * @return Boolean.TRUE, Boolean.FALSE, 或 {@code null}
 	 * @throws IllegalArgumentException 如果没有匹配
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午4:09:57
 	 */
 	public static Boolean toBooleanObject(Integer value, Integer trueValue, Integer falseValue, Integer nullValue) {
@@ -370,7 +370,7 @@ public class BooleanTool {
 	 * @param bool 要转化的boolean值
 	 * @return {@code true}返回1, {@code false}返回0
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午4:24:20
 	 */
 	public static int toInteger(boolean bool) {
@@ -390,7 +390,7 @@ public class BooleanTool {
 	 * @param bool 要转化的boolean值
 	 * @return {@code true}返回1, {@code false}返回0
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午4:26:35
 	 */
 	public static Integer toIntegerObject(boolean bool) {
@@ -414,7 +414,7 @@ public class BooleanTool {
 	 * @param bool 要转化的Boolean值
 	 * @return {@code true}返回1, {@code false}返回0, {@code null}返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午4:27:57
 	 */
 	public static Integer toIntegerObject(Boolean bool) {
@@ -436,7 +436,7 @@ public class BooleanTool {
 	 * @param falseValue 代表 {@code false}的值
 	 * @return int值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午4:33:33
 	 */
 	public static int toInteger(boolean bool, int trueValue, int falseValue) {
@@ -460,7 +460,7 @@ public class BooleanTool {
 	 * @param nullValue 代表 {@code null}的值
 	 * @return int值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午4:35:16
 	 */
 	public static int toInteger(Boolean bool, int trueValue, int falseValue, int nullValue) {
@@ -482,7 +482,7 @@ public class BooleanTool {
 	 * @param falseValue 代表 {@code false}的值, 可以为 {@code null}
 	 * @return int值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午4:37:08
 	 */
 	public static Integer toIntegerObject(boolean bool, Integer trueValue, Integer falseValue) {
@@ -506,7 +506,7 @@ public class BooleanTool {
 	 * @param nullValue 代表 {@code null}的值, 可以为 {@code null}
 	 * @return Integer值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午4:45:52
 	 */
 	public static Integer toIntegerObject(Boolean bool, Integer trueValue, Integer falseValue, Integer nullValue) {
@@ -545,7 +545,7 @@ public class BooleanTool {
 	 * @param str 要转化的字符串
 	 * @return 字符串的布尔值, 不匹配或输入null将返回null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午4:51:44
 	 */
 	public static Boolean toBooleanObject(String str) {
@@ -580,7 +580,7 @@ public class BooleanTool {
 	 * @return 字符串的布尔值, 如果字符串匹配{@code nullString}或为{@code null}且 {@code nullString}也为{@code null}将返回{@code null},
 	 * @throws IllegalArgumentException 如果没有匹配
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午5:05:35
 	 */
 	public static Boolean toBooleanObject(String str, String trueString, String falseString, String nullString) {
@@ -618,7 +618,7 @@ public class BooleanTool {
 	 * @param str 要转化的字符串
 	 * @return 字符串的布尔值, 如果没有匹配或字符串为null将返回{@code false}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午5:14:15
 	 */
 	public static boolean toBoolean(String str) {
@@ -647,7 +647,7 @@ public class BooleanTool {
 	 * @return 字符串的布尔值
 	 * @throws IllegalArgumentException 如果没有匹配
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午5:16:17
 	 */
 	public static boolean toBoolean(String str, String trueString, String falseString) {
@@ -670,7 +670,7 @@ public class BooleanTool {
 	 * @param bool 要转化的Boolean
 	 * @return {@code 'true'}, {@code 'false'}, 或 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午5:17:59
 	 */
 	public static String toStringTrueFalse(Boolean bool) {
@@ -691,7 +691,7 @@ public class BooleanTool {
 	 * @param bool 要转化的Boolean
 	 * @return {@code 'on'}, {@code 'off'}, 或 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午5:18:46
 	 */
 	public static String toStringOnOff(Boolean bool) {
@@ -712,7 +712,7 @@ public class BooleanTool {
 	 * @param bool 要转化的Boolean
 	 * @return {@code 'yes'}, {@code 'no'}, 或 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午5:19:21
 	 */
 	public static String toStringYesNo(Boolean bool) {
@@ -736,7 +736,7 @@ public class BooleanTool {
 	 * @param nullString 代表 {@code null}的值(大小写敏感), 可以为 {@code null}
 	 * @return 输入的某个匹配的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午5:23:04
 	 */
 	public static String toString(Boolean bool, String trueString, String falseString, String nullString) {
@@ -758,7 +758,7 @@ public class BooleanTool {
 	 * @param bool 要转化的Boolean
 	 * @return {@code 'true'}, {@code 'false'}, 或 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午5:24:04
 	 */
 	public static String toStringTrueFalse(boolean bool) {
@@ -778,7 +778,7 @@ public class BooleanTool {
 	 * @param bool 要转化的Boolean
 	 * @return {@code 'on'}, {@code 'off'}, 或 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午5:24:49
 	 */
 	public static String toStringOnOff(boolean bool) {
@@ -798,7 +798,7 @@ public class BooleanTool {
 	 * @param bool 要转化的Boolean
 	 * @return {@code 'yes'}, {@code 'no'}, 或 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午5:25:32
 	 */
 	public static String toStringYesNo(boolean bool) {
@@ -820,7 +820,7 @@ public class BooleanTool {
 	 * @param falseString 代表 {@code false}的值(大小写敏感), 可以为 {@code null}
 	 * @return 输入的某个匹配的字符串
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午5:26:32
 	 */
 	public static String toString(boolean bool, String trueString, String falseString) {
@@ -847,7 +847,7 @@ public class BooleanTool {
 	 * @throws IllegalArgumentException 如果 {@code array} 为 {@code null}
 	 * @throws IllegalArgumentException 如果 {@code array} 为空.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午5:29:37
 	 */
 	public static boolean and(boolean... array) {
@@ -874,7 +874,7 @@ public class BooleanTool {
 	 * @throws IllegalArgumentException 如果 {@code array} 为空.
 	 * @throws IllegalArgumentException 如果 {@code array} 包含 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午5:30:59
 	 */
 	public static Boolean and(Boolean... array) {
@@ -900,7 +900,7 @@ public class BooleanTool {
 	 * @throws IllegalArgumentException 如果 {@code array} 为 {@code null}
 	 * @throws IllegalArgumentException 如果 {@code array} 为空.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午5:32:17
 	 */
 	public static boolean or(boolean... array) {
@@ -928,7 +928,7 @@ public class BooleanTool {
 	 * @throws IllegalArgumentException 如果 {@code array} 为空.
 	 * @throws IllegalArgumentException 如果 {@code array} 包含 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午5:33:05
 	 */
 	public static Boolean or(Boolean... array) {
@@ -954,7 +954,7 @@ public class BooleanTool {
 	 * @throws IllegalArgumentException 如果 {@code array} 为 {@code null}
 	 * @throws IllegalArgumentException 如果 {@code array} 为空.
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午5:34:09
 	 */
 	public static boolean xor(boolean... array) {
@@ -978,7 +978,7 @@ public class BooleanTool {
 	 * @throws IllegalArgumentException 如果 {@code array} 为空.
 	 * @throws IllegalArgumentException 如果 {@code array} 包含 {@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-4-30 下午5:34:41
 	 */
 	public static Boolean xor(Boolean... array) {

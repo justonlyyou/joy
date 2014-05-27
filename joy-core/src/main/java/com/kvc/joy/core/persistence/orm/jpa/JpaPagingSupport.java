@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2012-6-19 下午11:39:04
  */
 public class JpaPagingSupport {

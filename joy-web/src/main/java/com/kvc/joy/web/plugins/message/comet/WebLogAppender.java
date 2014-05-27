@@ -8,7 +8,7 @@ import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
- * @author 唐玮琳
+ * @author Kevice
  * @time 14-3-5 下午11:28
  * @since 1.0.0
  */

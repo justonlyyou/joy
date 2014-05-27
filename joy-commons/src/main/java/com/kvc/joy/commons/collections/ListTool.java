@@ -12,7 +12,7 @@ import java.util.*;
  * List工具类
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-6 下午1:39:07
  */
 public class ListTool {
@@ -28,7 +28,7 @@ public class ListTool {
 	 * @param elems 可变数组，可以为null, 为null将返回空的列表
 	 * @return 由可变数组元素组成的ArrayList
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-7 下午8:45:14
 	 */
 	public static <T> List<T> newArrayList(T... elems) {
@@ -48,7 +48,7 @@ public class ListTool {
 	 * @param elems 可变数组，可以为null, 为null将返回空的列表
 	 * @return 由可变数组元素组成的LinkedList
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-7 下午8:55:11
 	 */
 	public static <T> List<T> newLinkedList(T... elems) {
@@ -66,7 +66,7 @@ public class ListTool {
 	 * @param list 待反转的列表
 	 * @return 反转后的列表
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013年10月14日 下午9:05:42
 	 */
 	public static <T> List<T> reverse(List<T> list) {
@@ -92,7 +92,7 @@ public class ListTool {
 	 * @return 两个容器的交集
 	 * @throws NullPointerException 如果任意参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-7 下午9:17:00
 	 */
 	@SuppressWarnings("rawtypes")
@@ -115,7 +115,7 @@ public class ListTool {
 	 * @throws NullPointerException 如果任意参数为null
 	 * @return 一个包含两个容器的差集的新列表
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-5 上午10:05:28
 	 */
 	@SuppressWarnings("rawtypes")
@@ -133,7 +133,7 @@ public class ListTool {
 	 * @return 一个包含两个列表元素的和的新列表
 	 * @throws NullPointerException 如果任意参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午8:31:15
 	 */
 	@SuppressWarnings("rawtypes")
@@ -151,7 +151,7 @@ public class ListTool {
 	 * @return 一个包含两个列表并集元素的新列表
 	 * @throws NullPointerException 如果任意参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午8:40:25
 	 */
 	@SuppressWarnings("rawtypes")
@@ -186,7 +186,7 @@ public class ListTool {
 	 * @param list2 第二个列表, 可以为null
 	 * @return 是否两个列表相等
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午9:08:29
 	 */
 	public static boolean isEqualList(Collection<?> list1, Collection<?> list2) {
@@ -207,7 +207,7 @@ public class ListTool {
 	 * @param list 要生成哈希值的列表， 可以为null
 	 * @return 指定列表的哈希值，如果列表为null将返回0
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午9:13:51
 	 */
 	public static int hashCodeForList(Collection<?> list) {
@@ -229,7 +229,7 @@ public class ListTool {
 	 *         的元素组成的列表
 	 * @throws NullPointerException 如果任意参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午9:20:14
 	 */
 	@SuppressWarnings("rawtypes")
@@ -250,7 +250,7 @@ public class ListTool {
 	 * @return 一个由<code>collection</code>容器中所有除了在<code>remove</code>出现的元素组成的列表
 	 * @throws NullPointerException 如果任意参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午9:20:25
 	 */
 	@SuppressWarnings("rawtypes")
@@ -286,7 +286,7 @@ public class ListTool {
 	 * @return 同步的列表
 	 * @throws IllegalArgumentException 如果列表为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午9:23:23
 	 */
 	@SuppressWarnings("unchecked")
@@ -307,7 +307,7 @@ public class ListTool {
 	 * @return 一个不可修改的列表
 	 * @throws IllegalArgumentException 如果列表为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午9:24:13
 	 */
 	@SuppressWarnings("unchecked")
@@ -330,7 +330,7 @@ public class ListTool {
 	 * @return 满足指定条件的列表
 	 * @throws IllegalArgumentException 如果任意参数为null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午9:27:14
 	 */
 	@SuppressWarnings("unchecked")
@@ -351,7 +351,7 @@ public class ListTool {
 	 * @param type 返回列表的元素类型
 	 * @return 指定类型的列表
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午9:28:19
 	 */
 	@SuppressWarnings("unchecked")
@@ -374,7 +374,7 @@ public class ListTool {
 	 * @return 转换后的列表
 	 * @throws IllegalArgumentException 如果任意参数null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午9:31:38
 	 */
 	@SuppressWarnings("rawtypes")
@@ -414,7 +414,7 @@ public class ListTool {
 	 * @return 指定列表的"懒惰"列表
 	 * @throws IllegalArgumentException 如果任意参数null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午9:41:55
 	 */
 	@SuppressWarnings("unchecked")
@@ -434,7 +434,7 @@ public class ListTool {
 	 * @throws IllegalArgumentException 如果指定的列表为null
 	 * @throws UnsupportedOperationException 如果试图从返回的列表中添加或移除元素
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-8 下午9:45:01
 	 */
 	@SuppressWarnings("unchecked")

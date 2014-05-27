@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-2-23 上午12:08:29
  */
 public interface IGroupPermissionService {
@@ -17,7 +17,7 @@ public interface IGroupPermissionService {
 	 * 
 	 * @param groupId
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-22 下午11:14:46
 	 */
 	List<TErbacAuthority> getPermissions(String groupId);
@@ -28,7 +28,7 @@ public interface IGroupPermissionService {
 	 * @param groupId
 	 * @param permission
 	 * @return
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-2-23 上午12:03:13
 	 */
 	boolean isPermitted(String groupId, ErbacPermission permission);

@@ -12,7 +12,7 @@ import java.util.*;
 
 /**
  * 字段映射规则数据访问对象
- * @author  唐玮琳
+ * @author  Kevice
  */
 public class FieldMappingTool {
 	

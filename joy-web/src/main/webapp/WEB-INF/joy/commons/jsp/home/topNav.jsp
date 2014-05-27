@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="主页顶部水平导航栏">
-<meta name="author" content="唐玮琳">
+<meta name="author" content="Kevice">
 
 <title>主页顶部水平导航栏</title>
 </head>

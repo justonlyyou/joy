@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="系统代码管理页面">
-<meta name="author" content="唐玮琳">
+<meta name="author" content="Kevice">
 
 <title>系统代码管理页面</title>
 </head>
@@ -80,7 +80,7 @@
 	</form>
 
     <script type="text/javascript">
-        curl(['joy/core/sysres/code/code'], function(MgmtPage) {
+        curl(['joy/commons/BaseMgmtPage'], function(MgmtPage) {
             mgmtPage = new MgmtPage();
         });
     </script>

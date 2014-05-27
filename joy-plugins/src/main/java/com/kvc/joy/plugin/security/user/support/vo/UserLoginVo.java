@@ -5,7 +5,7 @@ import com.kvc.joy.plugin.security.user.model.po.TUserLoginLog;
 /**
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013年10月1日 下午5:16:14
  */
 public class UserLoginVo extends TUserLoginLog {

@@ -17,7 +17,7 @@ import java.net.UnknownHostException;
 /**
  * 登录过滤器
  * 
- * @author 唐玮琳
+ * @author Kevice
  */
 public class LoginFilter implements Filter {
 

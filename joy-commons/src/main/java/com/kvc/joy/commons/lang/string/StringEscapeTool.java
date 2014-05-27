@@ -4,7 +4,7 @@ package com.kvc.joy.commons.lang.string;
  * 字符串转义工具类
  * 
  * @since 1.0.0
- * @author 唐玮琳
+ * @author Kevice
  * @time 2013-4-9 下午9:00:18
  */
 public class StringEscapeTool {
@@ -48,7 +48,7 @@ public class StringEscapeTool {
 	 * @param input 要转义的字符串, 可以为 null
 	 * @return 转义后的字符串, {@code null}将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午9:50:32
 	 */
 	public static String escapeJava(String input) {
@@ -89,7 +89,7 @@ public class StringEscapeTool {
 	 * @param input 要转义的字符串, 可以为 null
 	 * @return 转义后的字符串, {@code null}将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午9:57:15
 	 */
 	public static String escapeEcmaScript(String input) {
@@ -108,7 +108,7 @@ public class StringEscapeTool {
 	 * @param input 要解码转义的字符串, 可以为 null
 	 * @return 一个新的解码过的字符串 {@code String}, {@code null}将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午10:05:47
 	 */
 	public static String unescapeJava(String input) {
@@ -128,7 +128,7 @@ public class StringEscapeTool {
 	 * @param input 要解码转义的字符串, 可以为 null
 	 * @return 一个新的解码过的字符串 {@code String}, {@code null}将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午10:07:58
 	 */
 	public static String unescapeEcmaScript(String input) {
@@ -166,7 +166,7 @@ public class StringEscapeTool {
 	 * @see <a href="http://www.w3.org/TR/html401/charset.html#h-5.3">HTML 4.01 Character References</a>
 	 * @see <a href="http://www.w3.org/TR/html401/charset.html#code-position">HTML 4.01 Code positions</a>
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午10:15:52
 	 */
 	public static String escapeHtml4(String input) {
@@ -184,7 +184,7 @@ public class StringEscapeTool {
 	 * @param input 要转义的{@code String} , 可以为null
 	 * @return 一个新的转义后的字符串, {@code null}将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午10:16:40
 	 */
 	public static String escapeHtml3(String input) {
@@ -208,7 +208,7 @@ public class StringEscapeTool {
 	 * @param input 要解码转义的字符串, 可以为 null
 	 * @return 一个新的解码过的字符串 {@code String}, {@code null}将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午10:21:09
 	 */
 	public static String unescapeHtml4(String input) {
@@ -223,7 +223,7 @@ public class StringEscapeTool {
 	 * @param input 要解码转义的字符串, 可以为 null
 	 * @return 一个新的解码过的字符串 {@code String}, {@code null}将返回{@code null}
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午10:21:38
 	 */
 	public static String unescapeHtml3(String input) {
@@ -253,7 +253,7 @@ public class StringEscapeTool {
 	 * @return 一个新的转义后的字符串, {@code null}将返回{@code null}
 	 * @see #unescapeXml(java.lang.String)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午10:26:08
 	 */
 	public static String escapeXml(String input) {
@@ -278,7 +278,7 @@ public class StringEscapeTool {
 	 * @return 一个新的解码过的字符串 {@code String}, {@code null}将返回{@code null}
 	 * @see #escapeXml(String)
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午10:28:22
 	 */
 	public static String unescapeXml(String input) {
@@ -312,7 +312,7 @@ public class StringEscapeTool {
 	 * @param input CSV列的值, 可以 null
 	 * @return 转义后的字符串, {@code null} 将返回 null
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午10:35:07
 	 */
 	public static String escapeCsv(String input) {
@@ -342,7 +342,7 @@ public class StringEscapeTool {
 	 * @param input CSV列的值, 可以 null
 	 * @return 解码过的CSV列的值
 	 * @since 1.0.0
-	 * @author 唐玮琳
+	 * @author Kevice
 	 * @time 2013-5-1 下午10:40:45
 	 */
 	public static String unescapeCsv(String input) {

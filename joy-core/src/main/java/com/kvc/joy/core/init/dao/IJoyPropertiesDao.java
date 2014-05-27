@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.util.Properties;
 
 /**
- * @author 唐玮琳
+ * @author Kevice
  * @time 14-3-17 上午7:15
  * @since 1.0.0
  */
@@ -17,21 +17,21 @@ public interface IJoyPropertiesDao {
     String SCRIPT_VERSION_PROPERTY = "SCRIPT_VERSION";
 
     /**
-     * @author 唐玮琳
+     * @author Kevice
      * @time 14-3-17 上午7:17
      * @since 1.0.0
      */
     String findScriptVersion(Connection connection);
 
     /**
-     * @author 唐玮琳
+     * @author Kevice
      * @time 14-3-17 上午7:17
      * @since 1.0.0
      */
     Properties findProperties(Connection connection);
 
     /**
-     * @author 唐玮琳
+     * @author Kevice
      * @time 14-3-17 上午7:17
      * @since 1.0.0
      */
