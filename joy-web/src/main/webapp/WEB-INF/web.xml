@@ -76,23 +76,23 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <servlet>
-        <servlet-name>cometDispatcher</servlet-name>
+    <!--<servlet>-->
+        <!--<servlet-name>cometDispatcher</servlet-name>-->
 
         <!--comet分发器 -->
-        <servlet-class>com.kvc.joy.plugin.message.comet.web.SocketDispatcherServlet</servlet-class>
+        <!--<servlet-class>com.kvc.joy.plugin.message.comet.web.SocketDispatcherServlet</servlet-class>-->
 
         <!--让comet服务在servlet容器启动时初始化，可以尽早发现配置错误 -->
-        <load-on-startup>2</load-on-startup>
+        <!--<load-on-startup>2</load-on-startup>-->
 
         <!--必须将DispatcherServlet配置为异步servlet -->
-        <async-supported>true</async-supported>
-    </servlet>
+        <!--<async-supported>true</async-supported>-->
+    <!--</servlet>-->
 
-    <servlet-mapping>
-        <servlet-name>cometDispatcher</servlet-name>
-        <url-pattern>*.comet</url-pattern>
-    </servlet-mapping>
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>cometDispatcher</servlet-name>-->
+        <!--<url-pattern>*.comet</url-pattern>-->
+    <!--</servlet-mapping>-->
 
     <!--async encoding filter -->
     <filter>
