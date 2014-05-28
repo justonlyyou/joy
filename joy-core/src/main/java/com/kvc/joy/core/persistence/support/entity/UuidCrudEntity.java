@@ -24,9 +24,9 @@ public class UuidCrudEntity extends UuidEntity implements ICrudEntity<String> {
 	protected String deleteUser;
 	protected String deleteDept;
 	protected String remark;
-	protected String deleted;
-	protected String active;
-	protected String builtIn;
+	protected String deleted = "0";
+	protected String active = "1";
+	protected String builtIn = "0";
 
 	@Column(length = 17)
 	@Comment("创建时间")
