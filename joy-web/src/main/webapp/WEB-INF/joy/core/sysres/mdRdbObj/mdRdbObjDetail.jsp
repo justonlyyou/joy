@@ -75,7 +75,7 @@
 		</table>
 	</div>
 
-    <joy:jsPageObj jsClass="joy/core/sysres/mdRdbObj/mdRdbObjDetail"/>
+    <joy:curl res="joy/core/sysres/mdRdbObj/mdRdbObjDetail"/>
 
 </body>
 </html>

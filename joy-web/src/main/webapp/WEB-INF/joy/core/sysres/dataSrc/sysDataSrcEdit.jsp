@@ -94,7 +94,7 @@
 
 </form:form>
 
-<joy:jsPageObj type="edit"/>
+<joy:curl type="edit"/>
 
 </body>
 </html>

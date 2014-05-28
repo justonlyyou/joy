@@ -75,7 +75,7 @@
 		</div>
 	</form:form>
 
-    <joy:jsPageObj type="mgmt"/>
+    <joy:curl type="mgmt"/>
 
 </body>
 </html>

@@ -89,7 +89,7 @@
 
     <%--//TODO--%>
     <script src="${thirdCtx}/My97DatePicker/WdatePicker.js"></script>
-    <joy:jsPageObj type="mgmt"/>
+    <joy:curl type="mgmt"/>
 
 </body>
 </html>
