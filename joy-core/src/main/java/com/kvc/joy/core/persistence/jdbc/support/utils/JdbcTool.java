@@ -374,7 +374,6 @@ public class JdbcTool extends BaseJdbcDao {
             conn.setAutoCommit(false);
             for(String sql : sqls) {
                 if (StringTool.isNotBlank(sql)) {
-                    System.out.println("sql: "+sql);
                     statement.execute(sql.trim());
                 }
             }
