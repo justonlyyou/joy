@@ -1,15 +1,20 @@
 package com.kvc.joy.web.spmvc.core;
 
 import com.kvc.joy.commons.bean.IEntity;
+import com.kvc.joy.commons.exception.ServiceException;
 import com.kvc.joy.commons.exception.SystemException;
 import com.kvc.joy.commons.lang.AnnotationTool;
+import com.kvc.joy.commons.lang.DateTool;
 import com.kvc.joy.commons.lang.GenericTool;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
+import com.kvc.joy.core.persistence.support.entity.ICrudEntity;
+import com.kvc.joy.core.persistence.support.entity.UuidCrudEntity;
 import com.kvc.joy.core.rp.pagestore.PageStore;
 import com.kvc.joy.core.rp.pagestore.PageStoreCreator;
+import com.kvc.joy.plugin.security.erbac.support.utils.UserTool;
 import com.kvc.joy.web.support.utils.HttpRequestTool;
 import org.springframework.data.domain.Sort.Order;
 import org.springframework.ui.Model;
@@ -72,6 +77,20 @@ public abstract class BaseCrudController<T> {
 
     @RequestMapping("/persist")
     public String persist(Model model,  @ModelAttribute("command") T command) {
+        if (command instanceof ICrudEntity) {
+            ICrudEntity entity = (ICrudEntity) command;
+            String now = DateTool.currentDate(DateTool.UNFMT_yyyyMMddHHmmss);
+            String userId = UserTool.getCurrentUser().getId();
+            if (entity.getId() == null || "".equals(entity.getId())) { // new
+                entity.setCreateTime(now);
+                entity.setCreateUser(userId);
+//                entity.setCreateDept(); //TODO
+            } else { // update
+                entity.setUpdateTime(now);
+                entity.setUpdateUser(userId);
+//                entity.setCreateDept(); //TODO
+            }
+        }
         JpaTool.persistWithTx(command);
         return getCurrentViewName();
     }
@@ -79,7 +98,21 @@ public abstract class BaseCrudController<T> {
 	@RequestMapping("/delete")
 	public String delete(Model model) {
         Object o = loadEntity(model);
-        JpaTool.removeWithTx(o);
+        if (o instanceof ICrudEntity) {
+            ICrudEntity entity = (ICrudEntity) o;
+            if("1".equals(entity.getBuiltIn())) {
+                throw new ServiceException("系统内置的对象不允许被删除！");
+            } else {
+                entity.setDeleted("1");
+                String now = DateTool.currentDate(DateTool.UNFMT_yyyyMMddHHmmss);
+                entity.setDeleteTime(now);
+                String userId = UserTool.getCurrentUser().getId();
+                entity.setDeleteUser(userId);
+//                entity.setDeleteDept(); //TODO
+            }
+        } else {
+            JpaTool.removeWithTx(o);
+        }
         return getCurrentViewName();
 	}
 	
