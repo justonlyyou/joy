@@ -94,11 +94,7 @@
 
 </form:form>
 
-    <script type="text/javascript">
-        curl(['joy/commons/BaseEditPage'], function(EditPage) {
-            editPage = new EditPage();
-        });
-    </script>
+<joy:jsPageObj type="edit"/>
 
 </body>
 </html>

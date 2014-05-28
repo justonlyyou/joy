@@ -1,7 +1,7 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/joy/commons/include/inc-taglib.jsp"%>
 
-<%@ attribute name="pageObj" type="java.lang.String" required="true" description="页面js对象"%>
+<%@ attribute name="pageObj" type="java.lang.String" required="false" description="页面js对象，默认为page"%>
 <%@ attribute name="id" type="java.lang.String" required="true" description="行记录的id(响应事件的参数)"%>
 <%@ attribute name="cssClass" type="java.lang.String" required="false" description="样式类"%>
 
@@ -20,6 +20,7 @@
 <%@ attribute name="exOp2Title" type="java.lang.String" required="false" description="预留操作2提示文本"%>
 <%@ attribute name="exOp2Func" type="java.lang.String" required="false" description="预留操作2响应事件名称"%>
 
+<c:set var="pageObj" value="${pageObj == null ? 'page' : pageObj}"/>
 <c:set var="detailFunc" value='${detailFunc == null ? "showDetail" : detailFunc}' />
 <c:set var="editFunc" value='${editFunc == null ? "editRecord" : editFunc}' />
 <c:set var="deleteFunc" value='${deleteFunc == null ? "deleteRecord" : deleteFunc}' />

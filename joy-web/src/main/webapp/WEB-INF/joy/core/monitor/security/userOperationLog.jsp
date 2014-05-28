@@ -10,19 +10,6 @@
 <meta name="author" content="Kevice">
 
 <title>SQL脚本安装日志管理页面</title>
-
-<script type="text/javascript">
-	function showDetail(id) {
-		$.layer({
-		    type : 2,
-		    title : 'SQL脚本安装日志详情',
-		    iframe : {src : '${ctx}/sqlScriptInstallLog/get?id='+id},
-		    area : ['750px' , '466px'],
-		    offset : ['50px','']
-		});
-	}
-</script>
-
 </head>
 
 <body>
@@ -73,7 +60,7 @@
 							<c:forEach items="${pageStore.result}" var="p" varStatus="status">
 								<tr>
 									<td class="joy-table-seq-col">${status.index+1}</td>
-									<td><joy:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false" pageObj="mgmtPage"/></td>
+									<td><joy:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false"/></td>
 									<td>${p.paramName}</td>
 									<td>${p.paramValue}</td>
 									<td>${p.desc}</td>
@@ -84,7 +71,7 @@
 					</table>
 				</div>
 
-                <joy:pagination pageObj="mgmtPage"/>
+                <joy:pagination/>
 
 			</div>
 		</div>

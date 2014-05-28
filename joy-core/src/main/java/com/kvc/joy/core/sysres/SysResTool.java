@@ -250,7 +250,9 @@ public class SysResTool {
 	private static String adaptEnumClass(String enumClass) {
 		if("bool".equalsIgnoreCase(enumClass)) {
 			enumClass = YesNot.class.getName();
-		} 
+		} else if(enumClass.matches("^([a-zA-Z][\\w]*[.][a-zA-Z][\\w]+)[.]*.*") == false) {
+
+        }
 		return enumClass;
 	}
 

@@ -64,7 +64,7 @@
 							<c:forEach items="${pageStore.result}" var="p" varStatus="status">
 								<tr>
 									<td class="joy-table-seq-col">${status.index+1}</td>
-									<td><joy:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false" pageObj="mgmtPage"/></td>
+									<td><joy:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false"/></td>
 									<td>${p.costTime}</td>
 									<td><joy:timeFormatter timeStr="${p.logTime}" origFmt="yyyyMMddHHmmssSSS" displayFmt="yyyy-MM-dd HH:mm:ss SSS"/></td>
 									<td>${p.appName}</td>
@@ -77,7 +77,7 @@
 					</table>
 				</div>
 
-                <joy:pagination pageObj="mgmtPage"/>
+                <joy:pagination/>
 
 			</div>
 		</div>
@@ -85,11 +85,7 @@
 
     <%--//TODO--%>
     <script src="${thirdCtx}/My97DatePicker/WdatePicker.js"></script>
-    <script type="text/javascript">
-        curl(['joy/commons/BaseMgmtPage'], function(MgmtPage) {
-            mgmtPage = new MgmtPage();
-        });
-    </script>
+    <joy:jsPageObj type="mgmt"/>
 
 </body>
 </html>

@@ -1,10 +1,12 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/joy/commons/include/inc-taglib.jsp"%>
 
-<%@ attribute name="pageObj" type="java.lang.String" required="true" description="页面js对象"%>
+<%@ attribute name="pageObj" type="java.lang.String" required="false" description="页面js对象，默认为page"%>
 <%@ attribute name="id" type="java.lang.String" required="false" description="分页组件ID"%>
 <%@ attribute name="simpleMode" type="java.lang.String" required="false" description="简单模式，只显示页码"%>
 <%@ attribute name="cssClass" type="java.lang.String" required="false" description="样式类"%>
+
+<c:set var="pageObj" value="${pageObj == null ? 'page' : pageObj}"/>
 
 <input id="_joy_id__paging_pageNumber" name="_joy_key__paging_pageNumber" type="hidden" value="${pageStore.paging.pageNumber}"/>
 <input id="_joy_id__paging_pageSize" name="_joy_key__paging_pageSize" type="hidden" value="${pageStore.paging.pageSize}"/>

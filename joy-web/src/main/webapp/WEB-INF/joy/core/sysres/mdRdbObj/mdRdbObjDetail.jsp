@@ -60,7 +60,7 @@
 				<c:forEach items="${model.columns}" var="p" varStatus="status">
 					<tr>
 						<td class="joy-table-seq-col">${status.index+1}</td>
-						<td><joy:listOperations id="${model.dsId}-${model.name}-${p.name}" showEditOp="false" showDeleteOp="false" pageObj="detailPage"/></td>
+						<td><joy:listOperations id="${model.dsId}-${model.name}-${p.name}" showEditOp="false" showDeleteOp="false"/></td>
 						<td>${p.name}</td>
 						<td>${p.comment.briefDesc}</td>
 						<td><joy:codeTrans code="${p.key}" enumClass="bool" /></td>
@@ -75,11 +75,7 @@
 		</table>
 	</div>
 
-    <script type="text/javascript">
-        curl(['joy/core/sysres/mdRdbObj/mdRdbObjDetail'], function(DetailPage) {
-            detailPage = new DetailPage();
-        });
-    </script>
-	
+    <joy:jsPageObj jsClass="joy/core/sysres/mdRdbObj/mdRdbObjDetail"/>
+
 </body>
 </html>

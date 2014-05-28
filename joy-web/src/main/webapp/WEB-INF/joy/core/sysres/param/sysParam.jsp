@@ -58,7 +58,7 @@
 							<c:forEach items="${pageStore.result}" var="p" varStatus="status">
 								<tr>
 									<td class="joy-table-seq-col">${status.index+1}</td>
-									<td><joy:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false" pageObj="mgmtPage"/></td>
+									<td><joy:listOperations id="${p.id}" showEditOp="false" showDeleteOp="false"/></td>
 									<td>${p.paramName}</td>
 									<td>${p.paramValue}</td>
 									<td>${p.remark}</td>
@@ -69,16 +69,13 @@
 					</table>
 				</div>
 
-                <joy:pagination pageObj="mgmtPage"/>
+                <joy:pagination/>
 
 			</div>
 		</div>
 	</form:form>
 
-    <script type="text/javascript">
-        curl(['joy/commons/BaseMgmtPage'], function(MgmtPage) {
-            mgmtPage = new MgmtPage();
-        });
-    </script>
+    <joy:jsPageObj type="mgmt"/>
+
 </body>
 </html>
