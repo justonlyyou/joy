@@ -109,6 +109,7 @@ public abstract class BaseCrudController<T> {
                 String userId = UserTool.getCurrentUser().getId();
                 entity.setDeleteUser(userId);
 //                entity.setDeleteDept(); //TODO
+                JpaTool.persistWithTx(entity);
             }
         } else {
             JpaTool.removeWithTx(o);
