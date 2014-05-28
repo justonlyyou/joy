@@ -24,7 +24,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/mdRdbObj")
-public class MdRdbObjCrudController extends BaseCrudController<MdRdbTable> {
+public class MdRdbObjController extends BaseCrudController<MdRdbTable> {
 	
 	@Override
 	protected void queryByPageStore(PageStore pageStore) {

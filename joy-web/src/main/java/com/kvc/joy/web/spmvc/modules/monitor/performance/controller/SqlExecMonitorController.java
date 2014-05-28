@@ -1,5 +1,6 @@
-package com.kvc.joy.web.spmvc.modules.monitor.security.controller;
+package com.kvc.joy.web.spmvc.modules.monitor.performance.controller;
 
+import com.kvc.joy.plugin.monitor.jdbc.jwebap.model.po.TSysSqlLog;
 import com.kvc.joy.web.spmvc.core.BaseCrudController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,12 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @time 2013年11月30日 下午11:29:09
  */
 @Controller
-@RequestMapping("/userOperationLog")
-public class UserOperationLogCrudController extends BaseCrudController {
+@RequestMapping("/sqlExecMonitor")
+public class SqlExecMonitorController extends BaseCrudController<TSysSqlLog> {
 
 	@Override
 	protected String getCurrentViewName() {
-		return "joy/core/monitor/security/userOperationLog";
+		return "joy/core/monitor/performance/sqlExecMonitor";
 	}
 
 }

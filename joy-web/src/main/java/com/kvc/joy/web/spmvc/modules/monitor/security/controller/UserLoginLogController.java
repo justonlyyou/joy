@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/userLoginLog")
-public class UserLoginLogCrudController extends BaseCrudController<TUserLoginLog> {
+public class UserLoginLogController extends BaseCrudController<TUserLoginLog> {
 
 	@Override
 	protected String getCurrentViewName() {

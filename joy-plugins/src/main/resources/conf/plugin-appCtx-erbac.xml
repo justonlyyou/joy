@@ -28,13 +28,10 @@
 	</bean>
 
 	<bean id="shiroDataBaseRealm" class="com.kvc.joy.plugin.security.erbac.service.impl.ShiroDataBaseRealm">
-		<!-- MD5加密 -->
-		<property name="credentialsMatcher">
-			<bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
-				<property name="hashAlgorithmName" value="MD5" />
-			</bean>
-		</property>
+		<property name="credentialsMatcher" ref="credentcialsMatcher"/>
 	</bean>
+
+    <bean id="credentcialsMatcher" class="com.kvc.joy.plugin.security.erbac.service.impl.JoyCredentialsMatcher"/>
 
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
 		<property name="realm" ref="shiroDataBaseRealm" />

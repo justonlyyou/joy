@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/qrtzJobPlan")
-public class QrtzJobPlanCrudController extends BaseCrudController<TQrtzJobPlan> {
+public class QrtzJobPlanController extends BaseCrudController<TQrtzJobPlan> {
 
 	@Override
 	protected String getCurrentViewName() {

@@ -92,14 +92,16 @@ public class StringTool {
 	 * 对字符串进行MD5加密后，再进行十六进制编码
 	 * 
 	 * @param str 待加密的字符串
+     * @param saltStr 盐
 	 * @return 加密的字符串
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年10月1日 下午10:02:50
 	 */
-	public static String toMd5HexStr(String str) {
+	public static String toMd5HexStr(String str, String saltStr) {
 		byte[] data = str.getBytes();
-		byte[] digest = DigestTool.digest(data, DigestTool.MD5, null, 1);
+        byte[] salt = isBlank(saltStr) ? null : saltStr.getBytes();
+		byte[] digest = DigestTool.digest(data, DigestTool.MD5, salt, 1);
 		return new String(CryptoTool.encodeHex(digest));
 	}
 
@@ -660,8 +662,8 @@ public class StringTool {
 	 * StringUtils.equalsIgnoreCase("abc", "ABC") = true
 	 * </pre>
 	 * 
-	 * @param cs1 字符串1，可以为null
-	 * @param cs2 字符串2，可以为null
+	 * @param str1 字符串1，可以为null
+	 * @param str2 字符串2，可以为null
 	 * @return {@code true} 如果两字符串相等，大小写不敏感，或两者都为null
 	 * @since 1.0.0
 	 * @author Kevice
@@ -857,8 +859,8 @@ public class StringTool {
 	 * StringUtils.indexOfIgnoreCase("abc", "", 9)        = 3
 	 * </pre>
 	 * 
-	 * @param seq 待查找的字符序列，可以为null
-	 * @param searchChar 要查找的字符序列
+	 * @param str 待查找的字符序列，可以为null
+	 * @param searchStr 要查找的字符序列
 	 * @param startPos 开始位置，负数将当作0处理
 	 * @return 第一次出现的位置，如果没有找到或输入seq为null，将返回-1
 	 * @since 1.0.0
@@ -936,7 +938,7 @@ public class StringTool {
 	 * </pre>
 	 * 
 	 * @param seq 待查找的字符序列，可以为null
-	 * @param searchChar 要查找的字符串
+	 * @param searchSeq 要查找的字符串
 	 * @return 最后一次出现的位置，如果没有找到或输入seq为null，将返回-1
 	 * @since 1.0.0
 	 * @author Kevice
@@ -966,7 +968,7 @@ public class StringTool {
 	 * </pre>
 	 * 
 	 * @param str 待查找的字符序列，可以为null
-	 * @param searchChar 要查找的字符串
+	 * @param searchStr 要查找的字符串
 	 * @param ordinal 开始位置，负数将当作0处理; 大于待查找的字符串的长度时将查找整个字符串
 	 * @return 最后ordina次出现的位置，如果没有找到或输入seq为null，将返回-1
 	 * @since 1.0.0
@@ -2958,7 +2960,7 @@ public class StringTool {
 	 * </pre>
 	 * 
 	 * @param str 源字符串, 可以为null，为null时返回null，为空串时返回空串
-	 * @param 重复的次数，负数当作0
+	 * @param repeat 重复的次数，负数当作0
 	 * @return 自相连后的字符串
 	 * @since 1.0.0
 	 * @author Kevice
@@ -3366,7 +3368,7 @@ public class StringTool {
 	 * StringUtils.lowerCase("aBc", Locale.ENGLISH) = "abc"
 	 * </pre>
 	 * 
-	 * @param 源字符串, 可以为null，为null时返回null
+	 * @param str 源字符串, 可以为null，为null时返回null
 	 * @param locale 定义大小写转换规则的locale，不能为null
 	 * @return 转换后的字符串
 	 * @since 1.0.0
@@ -4203,7 +4205,7 @@ public class StringTool {
 	 * 
 	 * @see java.lang.String#startsWith(String)
 	 * @param str 待查找的字符序列，可以为null，为null返回false
-	 * @param 前缀字符串, 可以为null，为null返回false
+	 * @param prefix 前缀字符串, 可以为null，为null返回false
 	 * @return true: 是字符串的前缀或两个参数都为null
 	 * @since 1.0.0
 	 * @author Kevice
@@ -4386,5 +4388,5 @@ public class StringTool {
 		}
 		return null;
 	}
-	
+
 }

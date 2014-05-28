@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/sysDataSrc")
-public class SysDataSrcCrudController extends BaseCrudController<TSysDataSrc> {
+public class SysDataSrcController extends BaseCrudController<TSysDataSrc> {
 
 	@Override
 	protected String getCurrentViewName() {

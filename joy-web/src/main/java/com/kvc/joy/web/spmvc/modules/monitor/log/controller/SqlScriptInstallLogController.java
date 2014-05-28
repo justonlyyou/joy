@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/sqlScriptInstallLog")
-public class SqlScriptInstallLogCrudController extends BaseCrudController<TSysDbSchemaVersion> {
+public class SqlScriptInstallLogController extends BaseCrudController<TSysDbSchemaVersion> {
 
 	@Override
 	protected String getCurrentViewName() {

@@ -6,7 +6,7 @@ values ('JOY_USER_STATUS_10','1','1',null,null,null,null,null,null,'0',null,null
 
 /* 初始化用户 */
 insert into `t_user_basic`(`id`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`update_dept`,`update_time`,`update_user`,`user_account`,`remark`,`last_login_time`,`login_count`,`user_name`,`password`,`sex_code`,`status_code`,`active`,`online`)
-values ('kevice_id',0,null,null,null,null,null,null,0,null,null,null,'kevice',null,null,null,'Kevice','1e6cc81db305cf52c0533b2692211890','1','01',1,0);
+values ('kevice_id',0,null,null,null,null,null,null,0,null,null,null,'kevice',null,null,null,'Kevice','6189808204556b0524045879df1cd739','1','01',1,0);
 
 
 /* 登陆失败原因代码 */

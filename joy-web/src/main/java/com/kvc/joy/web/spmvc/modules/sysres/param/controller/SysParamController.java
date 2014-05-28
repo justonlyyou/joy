@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/sysParam")
-public class SysParamCrudController extends BaseCrudController<TSysParam> {
+public class SysParamController extends BaseCrudController<TSysParam> {
 	
 	@Override
 	protected String getCurrentViewName() {

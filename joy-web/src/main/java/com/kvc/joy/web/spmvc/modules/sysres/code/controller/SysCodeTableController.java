@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/sysCodeTable")
-public class SysCodeTableCrudController extends BaseCrudController<TSysCodeTable> {
+public class SysCodeTableController extends BaseCrudController<TSysCodeTable> {
 
 	@Override
 	protected String getCurrentViewName() {

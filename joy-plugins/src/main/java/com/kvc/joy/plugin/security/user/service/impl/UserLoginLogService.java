@@ -32,7 +32,7 @@ public class UserLoginLogService implements IUserLoginLogService {
 		if (loginLog.getLoginTime() == null) {
 			loginLog.setLoginTime(DateTool.currentDate(DateTool.UNFMT_yyyyMMddHHmmss));
 		}
-		loginLog.setUserPassword(StringTool.toMd5HexStr(loginLog.getUserPassword()));
+		loginLog.setUserPassword(StringTool.toMd5HexStr(loginLog.getUserPassword(), loginVo.getId()));
 		TUserBasic currentUser = UserTool.getCurrentUser();
 		if (currentUser != null) {
 			loginLog.setUserId(currentUser.getId());

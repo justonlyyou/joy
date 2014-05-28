@@ -1,9 +1,9 @@
 package com.kvc.joy.plugin.security.erbac.service.impl;
 
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
+import com.kvc.joy.plugin.security.erbac.service.IUserPermissionService;
 import com.kvc.joy.plugin.security.user.model.po.TUserBasic;
 import com.kvc.joy.plugin.security.user.model.po.TUserBasic_;
-import com.kvc.joy.plugin.security.erbac.service.IUserPermissionService;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -18,6 +18,7 @@ import java.util.List;
  * 
  * @author Kevice
  * @time 2013-2-23 下午3:02:24
+ * @since 1.0.0
  */
 public class ShiroDataBaseRealm extends AuthorizingRealm {
 
@@ -57,5 +58,5 @@ public class ShiroDataBaseRealm extends AuthorizingRealm {
 
 		return new SimpleAuthenticationInfo(user, user.getPassword(), getName());
 	}
-	
+
 }

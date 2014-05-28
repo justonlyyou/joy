@@ -34,7 +34,7 @@
     <script id="topMenuTmpl" type="text/x-jsrender">
         {{for m}}
             <li id="menuItem{{:object.id}}">
-                <a href='javascript:topNav.toggleMenuItem({{:object.id}});topNav.fetchLeftMenus({{:object.id}})'>{{:object.text}}</a>
+                <a href='javascript:topNav.toggleMenuItem("{{:object.id}}");topNav.fetchLeftMenus("{{:object.id}}")'>{{:object.text}}</a>
             </li>
         {{/for}}
     </script>

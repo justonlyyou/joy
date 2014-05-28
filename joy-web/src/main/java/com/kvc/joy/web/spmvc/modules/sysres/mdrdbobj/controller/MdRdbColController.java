@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/mdRdbCol")
-public class MdRdbColCrudController extends BaseCrudController<MdRdbColumn> {
+public class MdRdbColController extends BaseCrudController<MdRdbColumn> {
 
 	@Override
 	protected String getCurrentViewName() {
