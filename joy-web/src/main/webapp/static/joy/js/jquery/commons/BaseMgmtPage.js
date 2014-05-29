@@ -118,11 +118,19 @@ define(['joy/commons/BasePage', 'layer', 'css!3rd/jquery/layer/skin/layer'], fun
                     type: "POST",
                     url: 'delete?id=' + id,
                     async: false,
-                    error: function(request) {
-                        alert("删除失败！");
+                    error: function(request, state, msg) {
+                        if(state == 'error') {
+                            alert(msg);
+                        } else {
+                            alert("删除失败！");
+                        }
                     },
                     success: function(data) {
-                        alert("删除成功！");
+                        if (data) {
+                            alert(data);
+                        } else {
+                            alert("删除成功！");
+                        }
                     }
                 });
             }

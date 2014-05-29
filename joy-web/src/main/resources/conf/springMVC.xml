@@ -207,19 +207,20 @@
 		<property name="exceptionMappings">
 	        <props>
 	          <prop key="org.apache.shiro.authz.UnauthorizedException">joy/commons/jsp/error/403</prop>
-	          <prop key="com.kvc.joy.commons.exception.SystemException">joy/commons/jsp/error/500</prop>   
-	          <prop key="com.kvc.joy.commons.exception.ServiceException">joy/commons/jsp/error/error</prop>  
+	          <!--<prop key="com.kvc.joy.commons.exception.SystemException">joy/commons/jsp/error/500</prop>   -->
+	          <prop key="com.kvc.joy.commons.exception.ServiceException">joy/commons/jsp/error/error</prop>
 	          <prop key="java.lang.exception">joy/commons/jsp/error/500</prop>
 	        </props>  
         </property>
 	</bean>
 
 	<!-- 拦截器 -->
-    <mvc:interceptors>  
-        <mvc:interceptor>  
-            <mvc:mapping path="/*" />  
-            <bean class="com.kvc.joy.web.spmvc.core.JoyWebGlobalInterceptor" />  
-        </mvc:interceptor>  
-    </mvc:interceptors>
+    <!--<mvc:interceptors>-->
+        <!--<bean class="com.kvc.joy.web.spmvc.core.JoyWebGlobalInterceptor" />-->
+        <!--<mvc:interceptor>  -->
+            <!--<mvc:mapping path="/*" />  -->
+            <!--<bean class="com.kvc.joy.web.spmvc.core.JoyWebGlobalInterceptor" />  -->
+        <!--</mvc:interceptor>  -->
+    <!--</mvc:interceptors>-->
 
 </beans>

@@ -1,5 +1,6 @@
 package com.kvc.joy.web.spmvc.core;
 
+import com.kvc.joy.commons.exception.ServiceException;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -17,7 +18,9 @@ public class JoyWebGlobalInterceptor implements HandlerInterceptor {
 	@Override
 	public void afterCompletion(HttpServletRequest req, HttpServletResponse resp, Object obj, Exception e)
 			throws Exception {
-		
+//        if(e instanceof ServiceException) {
+//            resp.getWriter().write(e.getMessage());
+//        }
 	}
 
 	@Override

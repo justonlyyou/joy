@@ -9,9 +9,13 @@ import com.kvc.joy.commons.lang.GenericTool;
 import com.kvc.joy.commons.lang.string.StringTool;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
+import com.kvc.joy.commons.query.QueryLogic;
+import com.kvc.joy.commons.query.QueryLogicOperator;
+import com.kvc.joy.commons.query.QueryLogics;
 import com.kvc.joy.core.persistence.orm.jpa.JpaTool;
 import com.kvc.joy.core.persistence.support.entity.ICrudEntity;
 import com.kvc.joy.core.persistence.support.entity.UuidCrudEntity;
+import com.kvc.joy.core.persistence.support.entity.UuidCrudEntity_;
 import com.kvc.joy.core.rp.pagestore.PageStore;
 import com.kvc.joy.core.rp.pagestore.PageStoreCreator;
 import com.kvc.joy.plugin.security.erbac.support.utils.UserTool;
@@ -20,8 +24,10 @@ import org.springframework.data.domain.Sort.Order;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.persistence.Entity;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -43,7 +49,10 @@ public abstract class BaseCrudController<T> {
 	@RequestMapping("/list")
 	public String list(Model model,  @ModelAttribute("command") T command) {
 		PageStore pageStore = getPageStore(model);
-		queryByPageStore(pageStore);
+        List<QueryLogic> conditions = pageStore.getQueryLogics().getConditions();
+        conditions.add(new QueryLogic(UuidCrudEntity_.active.getName(), QueryLogicOperator.EQ, "1"));
+        conditions.add(new QueryLogic(UuidCrudEntity_.deleted.getName(), QueryLogicOperator.EQ, "0"));
+        queryByPageStore(pageStore);
 		pageStore.getPaging().cal();
 		model.addAttribute("pageStore", pageStore);
 		addAttributes(model);
@@ -85,18 +94,20 @@ public abstract class BaseCrudController<T> {
                 entity.setCreateTime(now);
                 entity.setCreateUser(userId);
 //                entity.setCreateDept(); //TODO
+                JpaTool.persistWithTx(command);
             } else { // update
                 entity.setUpdateTime(now);
                 entity.setUpdateUser(userId);
 //                entity.setCreateDept(); //TODO
+                JpaTool.mergeWithTx(command);
             }
         }
-        JpaTool.persistWithTx(command);
         return getCurrentViewName();
     }
 	
 	@RequestMapping("/delete")
-	public String delete(Model model) {
+    @ResponseBody
+	public void delete(Model model) {
         Object o = loadEntity(model);
         if (o instanceof ICrudEntity) {
             ICrudEntity entity = (ICrudEntity) o;
@@ -114,7 +125,6 @@ public abstract class BaseCrudController<T> {
         } else {
             JpaTool.removeWithTx(o);
         }
-        return getCurrentViewName();
 	}
 	
 	protected abstract String getCurrentViewName();

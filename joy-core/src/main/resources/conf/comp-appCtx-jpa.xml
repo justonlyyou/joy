@@ -40,7 +40,6 @@
 
     <bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
         <constructor-arg ref="transactionManager" />
-        <property name="propagationBehavior" value="3"/> <!-- PROPAGATION_REQUIRES_NEW -->
     </bean>
 	
 	<bean id="jpaTool" class="com.kvc.joy.core.persistence.orm.jpa.JpaTool"/>

@@ -1,6 +1,7 @@
 package com.kvc.joy.core.persistence.orm.jpa;
 
 import com.kvc.joy.commons.bean.IEntity;
+import com.kvc.joy.commons.bean.Single;
 import com.kvc.joy.commons.log.Log;
 import com.kvc.joy.commons.log.LogFactory;
 import com.kvc.joy.commons.query.QueryLogics;
@@ -47,7 +48,8 @@ public class JpaTool extends BaseJpaDao {
 	}
 
     public static void persistWithTx(final Object entity) {
-        CoreBeanFactory.getTransactionTemplate().execute(new TransactionCallbackWithoutResult() {
+        TransactionTemplate transactionTemplate = CoreBeanFactory.getTransactionTemplate();
+        transactionTemplate.execute(new TransactionCallbackWithoutResult() {
             @Override
             protected void doInTransactionWithoutResult(TransactionStatus status) {
                 persist(entity);
@@ -73,6 +75,17 @@ public class JpaTool extends BaseJpaDao {
 	public static <T> T merge(T entity) {
 		return getEntityMgr().merge(entity);
 	}
+
+    public static <T> T mergeWithTx(final T entity) {
+        final Single<T> result = new Single();
+        CoreBeanFactory.getTransactionTemplate().execute(new TransactionCallbackWithoutResult() {
+            @Override
+            protected void doInTransactionWithoutResult(TransactionStatus status) {
+                result.setValue(merge(entity));
+            }
+        });
+        return result.getValue();
+    }
 
 	public static void remove(Object entity) {
 		getEntityMgr().remove(entity);

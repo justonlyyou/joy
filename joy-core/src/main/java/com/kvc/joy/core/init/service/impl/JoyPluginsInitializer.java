@@ -111,7 +111,6 @@ public class JoyPluginsInitializer implements ISystemInitService, BeanPostProces
 						sb.append(",").append(location);
 					}
 				} catch (Exception e) {
-                    e.printStackTrace();
                     throw new ServiceException(e);
 				}
 			}

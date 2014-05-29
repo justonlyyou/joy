@@ -53,18 +53,26 @@ define(['joy/commons/BasePage'], function(BasePage) {
             });
         },
 
-        delete : function(id) {
+        delete : function() {
             if(confirm("确定要删除该记录？")) {
                 $.ajax({
                     cache: true,
                     type: "POST",
-                    url: 'delete?id=' + id,
+                    url: 'delete?id='+this.recordId,
                     async: false,
-                    error: function(request) {
-                        alert("删除失败！");
+                    error: function(request, state, msg) {
+                        if(state == 'error') {
+                            alert(msg);
+                        } else {
+                            alert("删除失败！");
+                        }
                     },
                     success: function(data) {
-                        alert("删除成功！");
+                        if (data) {
+                            alert(data);
+                        } else {
+                            alert("删除成功！");
+                        }
                     }
                 });
             }
