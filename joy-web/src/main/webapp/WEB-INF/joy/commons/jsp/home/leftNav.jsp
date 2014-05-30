@@ -9,8 +9,8 @@
     <meta name="author" content="Kevice">
 
     <title>主页左侧垂直导航栏</title>
-    <script src="${thirdCtx}/jquery/jquery/jquery.js"></script>
-    <script src="${thirdCtx}/bootstrap/bootstrap/js/bootstrap.js"></script>
+    <script src="${thirdCtx}/jquery/jquery/jquery.min.js"></script>
+    <script src="${thirdCtx}/bootstrap/bootstrap/js/bootstrap.min.js"></script>
 </head>
 
 <body>

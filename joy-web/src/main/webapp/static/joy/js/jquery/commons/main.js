@@ -2,10 +2,10 @@ curl = {
 	baseUrl : joy.getWebRootPath()+'/static',
 	pluginPath: "3rd/curl/curl/plugin",
 	paths : {
-		jquery : '3rd/jquery/jquery/jquery',
-		bootstrap : '3rd/bootstrap/bootstrap/js/bootstrap',
+		jquery : '3rd/jquery/jquery/jquery.min',
+		bootstrap : '3rd/bootstrap/bootstrap/js/bootstrap.min',
         jqValidate : {
-            location: '3rd/jquery/validation/jquery.validate',
+            location: '3rd/jquery/validation/jquery.validate.min',
             config: {
                 loader: '3rd/curl/curl/loader/legacy',
                 exports: '$.fn.validate',
@@ -13,7 +13,7 @@ curl = {
             }
         },
         jsrender : {
-            location: '3rd/jquery/jsrender/jsrender',
+            location: '3rd/jquery/jsrender/jsrender.min',
             config: {
                 loader: '3rd/curl/curl/loader/legacy',
                 exports: '$.fn.render',
@@ -28,9 +28,8 @@ curl = {
                 requires: [ 'jquery' ]
             }
         },
-		jqAddMethods : '3rd/jquery/validation/additional-methods',
-		jqTreeTable : '3rd/jquery/treeTable/jquery.treeTable',
-		jqLayer : '3rd/jquery/layer/layer',
+		addMethods : '3rd/jquery/validation/additional-methods.min',
+		jqTreeTable : '3rd/jquery/treeTable/jquery.treeTable.min',
 		datePicker : '3rd/My97DatePicker/WdatePicker'
 	},
 	packages : {
