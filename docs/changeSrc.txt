@@ -1,17 +1,4 @@
 1. layer.js
-    注释以下代码，不让layer自动加载其css，因为用curl加载该js时css的路径计算将错误。改用curl显视加载。
-    ////获取当前路径
-    //ready.getPath = function(){
-    //	var js = document.scripts || $('script'), jsPath = js[js.length - 1].src;
-    //	return jsPath.substring(0, jsPath.lastIndexOf("/") + 1);
-    //};
-    //
-    ////载入css
-    ready.load = function(){
-    //	pathType && (pathUrl = this.getPath());
-    //	var head = $('head')[0], link = document.createElement("link");
-    //	link.setAttribute('type', 'text/css');
-    //	link.setAttribute('rel', 'stylesheet');
-    //	link.setAttribute('href', pathUrl +'skin/layer.css');
-    //	head.appendChild(link);
-    };
+    配置了layer.css的路径：
+    c=!1, //是否采用自动获取绝对路径。!1：将采用下述变量中的配置
+    d="static/3rd/jquery/layer/", //上述变量为!1才有效，当前layerjs所在目录(不用填写host，相对站点的根目录即可)。

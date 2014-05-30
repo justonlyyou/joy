@@ -21,7 +21,7 @@ curl = {
             }
         },
         layer : {
-            location: '3rd/jquery/layer/layer',
+            location: '3rd/jquery/layer/layer.min',
             config: {
                 loader: '3rd/curl/curl/loader/legacy',
                 exports: '$.fn.layer',

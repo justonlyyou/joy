@@ -49,9 +49,11 @@ public abstract class BaseCrudController<T> {
 	@RequestMapping("/list")
 	public String list(Model model,  @ModelAttribute("command") T command) {
 		PageStore pageStore = getPageStore(model);
-        List<QueryLogic> conditions = pageStore.getQueryLogics().getConditions();
-        conditions.add(new QueryLogic(UuidCrudEntity_.active.getName(), QueryLogicOperator.EQ, "1"));
-        conditions.add(new QueryLogic(UuidCrudEntity_.deleted.getName(), QueryLogicOperator.EQ, "0"));
+        if (command instanceof ICrudEntity) {
+            List<QueryLogic> conditions = pageStore.getQueryLogics().getConditions();
+            conditions.add(new QueryLogic(UuidCrudEntity_.active.getName(), QueryLogicOperator.EQ, "1"));
+            conditions.add(new QueryLogic(UuidCrudEntity_.deleted.getName(), QueryLogicOperator.EQ, "0"));
+        }
         queryByPageStore(pageStore);
 		pageStore.getPaging().cal();
 		model.addAttribute("pageStore", pageStore);

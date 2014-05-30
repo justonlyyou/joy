@@ -1,4 +1,4 @@
-define(['joy/commons/BasePage'], function(BasePage) {
+define(['joy/commons/BasePage', 'layer'], function(BasePage, layer) {
 
     return BasePage.extend({
 
@@ -36,8 +36,11 @@ define(['joy/commons/BasePage'], function(BasePage) {
 
         persist : function() {
             if(this.recordId) {
-                var hidden = $("<input type='hidden' name='id' value='" + this.recordId + "'/>");
-                this.$editForm.append(hidden);
+                var $recordIdHidden = this.$editForm.find("input[name=id]");
+                if ($recordIdHidden.length == 0) {
+                    $recordIdHidden = $("<input type='hidden' name='id' value='" + this.recordId + "'/>");
+                    this.$editForm.append($recordIdHidden);
+                }
             }
             $.ajax({
                 type: "POST",
@@ -49,6 +52,8 @@ define(['joy/commons/BasePage'], function(BasePage) {
                 },
                 success: function(data) {
                     alert("保存成功！");
+                    var index = layer.getIndex(this);
+                    layer.close(index);
                 }
             });
         },
@@ -72,6 +77,7 @@ define(['joy/commons/BasePage'], function(BasePage) {
                             alert(data);
                         } else {
                             alert("删除成功！");
+                            $.closeLayer();
                         }
                     }
                 });

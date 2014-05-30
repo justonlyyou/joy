@@ -1,4 +1,4 @@
-define(['joy/commons/BasePage', 'layer', 'css!3rd/jquery/layer/skin/layer'], function(BasePage, layer) {
+define(['joy/commons/BasePage', 'layer'], function(BasePage, layer) {
 	
 	return BasePage.extend({
 
@@ -130,6 +130,7 @@ define(['joy/commons/BasePage', 'layer', 'css!3rd/jquery/layer/skin/layer'], fun
                             alert(data);
                         } else {
                             alert("删除成功！");
+                            this.$form.submit();
                         }
                     }
                 });
