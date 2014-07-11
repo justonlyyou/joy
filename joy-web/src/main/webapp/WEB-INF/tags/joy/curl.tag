@@ -8,21 +8,21 @@
         <c:choose>
             <c:when test="${type == 'mgmt'}">
                 <script type="text/javascript">
-                    curl(['joy/commons/BaseMgmtPage'], function(Page) {
+                    curl(['joy/base/BaseMgmtPage'], function(Page) {
                         page = new Page();
                     });
                 </script>
             </c:when>
             <c:when test="${type == 'edit'}">
                 <script type="text/javascript">
-                    curl(['joy/commons/BaseEditPage'], function(Page) {
+                    curl(['joy/base/BaseEditPage'], function(Page) {
                         page = new Page();
                     });
                 </script>
             </c:when>
             <c:when test="${type == 'detail'}">
                 <script type="text/javascript">
-                    curl(['joy/commons/BaseDetailPage'], function(Page) {
+                    curl(['joy/base/BaseDetailPage'], function(Page) {
                         page = new Page();
                     });
                 </script>

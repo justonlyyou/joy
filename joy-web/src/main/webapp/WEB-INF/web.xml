@@ -165,19 +165,19 @@
 	
 	<error-page>  
         <error-code>403</error-code>  
-        <location>/WEB-INF/joy/commons/jsp/error/403.jsp</location>  
+        <location>/WEB-INF/joy/commons/error/403.jsp</location>  
     </error-page>  
     <error-page>  
         <error-code>404</error-code>  
-        <location>/WEB-INF/joy/commons/jsp/error/404.jsp</location>  
+        <location>/WEB-INF/joy/commons/error/404.jsp</location>  
     </error-page>  
     <error-page>  
         <error-code>405</error-code>  
-        <location>/WEB-INF/joy/commons/jsp/error/405.jsp</location>  
+        <location>/WEB-INF/joy/commons/error/405.jsp</location>  
     </error-page>  
     <error-page>  
         <error-code>500</error-code>  
-        <location>/WEB-INF/joy/commons/jsp/error/500.jsp</location>  
+        <location>/WEB-INF/joy/commons/error/500.jsp</location>  
     </error-page>
 	 
 	

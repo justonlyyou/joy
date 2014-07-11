@@ -17,7 +17,7 @@ public class SqlExecMonitorController extends BaseCrudController<TSysSqlLog> {
 
 	@Override
 	protected String getCurrentViewName() {
-		return "joy/core/monitor/performance/sqlExecMonitor";
+		return "joy/commons/core/monitor/performance/sqlExecMonitor";
 	}
 
 }

@@ -50,7 +50,7 @@ public class MdRdbObjController extends BaseCrudController<MdRdbTable> {
 	
 	@Override
 	protected String getCurrentViewName() {
-		return "joy/core/sysres/mdRdbObj/mdRdbObj";
+		return "joy/commons/core/sysres/mdRdbObj/mdRdbObj";
 	}
 
 }

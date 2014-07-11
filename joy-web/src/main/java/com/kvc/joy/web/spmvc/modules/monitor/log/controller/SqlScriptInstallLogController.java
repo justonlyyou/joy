@@ -17,7 +17,7 @@ public class SqlScriptInstallLogController extends BaseCrudController<TSysDbSche
 
 	@Override
 	protected String getCurrentViewName() {
-		return "joy/core/monitor/log/sqlScriptInstallLog";
+		return "joy/commons/core/monitor/log/sqlScriptInstallLog";
 	}
 
 }

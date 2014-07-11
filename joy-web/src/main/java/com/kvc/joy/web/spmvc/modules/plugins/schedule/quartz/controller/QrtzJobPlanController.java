@@ -17,7 +17,7 @@ public class QrtzJobPlanController extends BaseCrudController<TQrtzJobPlan> {
 
 	@Override
 	protected String getCurrentViewName() {
-		return "joy/plugins/schedule/quartz/qrtzJobPlan";
+		return "joy/commons/plugins/schedule/quartz/qrtzJobPlan";
 	}
 
 }

@@ -17,7 +17,7 @@ public class SysCodeTableController extends BaseCrudController<TSysCodeTable> {
 
 	@Override
 	protected String getCurrentViewName() {
-		return "joy/core/sysres/code/sysCodeTable";
+		return "joy/commons/core/sysres/code/sysCodeTable";
 	}
 
 }
