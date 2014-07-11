@@ -26,3 +26,17 @@
 /joy-web/logs
 /joy-web/src/main/webapp/WEB-INF/classes
 /joy-web/src/main/webapp/WEB-INF/lib
+
+*~
+.project
+.settings/
+joy-commons/.factorypath
+joy-commons/.gitignore
+joy-core/.factorypath
+joy-core/.gitignore
+joy-plugins/.factorypath
+joy-plugins/.gitignore
+joy-web/.factorypath
+joy-web/.gitignore
+joy-web/src/main/webapp/static/3rd/assets/
+

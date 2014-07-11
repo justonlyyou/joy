@@ -20,7 +20,7 @@ public class SysParamController extends BaseCrudController<TSysParam> {
 	
 	@Override
 	protected String getCurrentViewName() {
-		return "joy/core/sysres/param/sysParam";
+		return "joy/commons/core/sysres/param/sysParam";
 	}
 	
 	@Override

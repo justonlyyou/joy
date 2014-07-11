@@ -23,7 +23,7 @@ public class MdRdbColController extends BaseCrudController<MdRdbColumn> {
 
 	@Override
 	protected String getCurrentViewName() {
-		return "joy/core/sysres/mdRdbObj/mdRdbCol";
+		return "joy/commons/core/sysres/mdRdbObj/mdRdbCol";
 	}
 	
 	@Override

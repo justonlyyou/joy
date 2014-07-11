@@ -16,7 +16,7 @@ public class UserOperationLogController extends BaseCrudController {
 
 	@Override
 	protected String getCurrentViewName() {
-		return "joy/core/monitor/security/userOperationLog";
+		return "joy/commons/core/monitor/security/userOperationLog";
 	}
 
 }

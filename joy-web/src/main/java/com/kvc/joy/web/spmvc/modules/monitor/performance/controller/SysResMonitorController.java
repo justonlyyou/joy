@@ -16,7 +16,7 @@ public class SysResMonitorController extends BaseCrudController {
 
 	@Override
 	protected String getCurrentViewName() {
-		return "joy/core/monitor/performance/sysResMonitor";
+		return "joy/commons/core/monitor/performance/sysResMonitor";
 	}
 
 }

@@ -17,7 +17,7 @@ public class SysDataSrcController extends BaseCrudController<TSysDataSrc> {
 
 	@Override
 	protected String getCurrentViewName() {
-		return "joy/core/sysres/dataSrc/sysDataSrc";
+		return "joy/commons/core/sysres/dataSrc/sysDataSrc";
 	}
 
 }

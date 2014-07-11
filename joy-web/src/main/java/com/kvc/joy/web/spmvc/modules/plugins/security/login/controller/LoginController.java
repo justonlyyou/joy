@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class LoginController {
 
-	private static final String LOGIN_VIEW_NAME = "joy/plugins/login/login";
+	private static final String LOGIN_VIEW_NAME = "joy/commons/plugins/login/login";
 
 	// @Resource
 	// private ICaptchaService captchaService;
