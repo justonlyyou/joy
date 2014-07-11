@@ -54,11 +54,6 @@ public class XSwingUtil {
 
             @Override
             public void run() {
-//                try {
-//                    UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
-//                } catch (Exception ex) {
-//                    ex.printStackTrace();
-//                }
                 JFrame frame = new JFrame();
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.add(panel);

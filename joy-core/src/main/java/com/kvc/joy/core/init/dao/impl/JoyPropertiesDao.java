@@ -151,6 +151,9 @@ public class JoyPropertiesDao implements IJoyPropertiesDao {
         Connection connection = null;
         try {
             connection = JdbcTool.getConnectionByJndi(JoyProperties.DB_JNDI);
+            if (connection == null) {
+                throw new SystemException("连接数据库失败！JNDI：" + JoyProperties.DB_JNDI);
+            }
             List<Resource> scriptResources = getScriptResources();
             boolean exists = isTableExists(connection);
             if(exists == false) {

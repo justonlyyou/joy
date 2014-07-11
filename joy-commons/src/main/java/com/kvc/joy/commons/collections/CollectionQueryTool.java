@@ -140,7 +140,7 @@ public class CollectionQueryTool {
 		List<?> results = getResults(q, beans);
 		List resultList = new ArrayList(results.size());
 		for (Object result : results) {
-			resultList.add(((Object[]) result)[0]);
+			resultList.add(((List) result).get(0));
 		}
 		return resultList;
 	}

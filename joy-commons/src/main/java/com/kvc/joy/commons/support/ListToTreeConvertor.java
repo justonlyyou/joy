@@ -31,20 +31,20 @@ public class ListToTreeConvertor {
 	 * @author Kevice
 	 * @time 2012-5-5 下午9:00:33
 	 */
-	public static <T> List<TreeNode<IListToTreeRestrict<T>>> convert(List<? extends IListToTreeRestrict<T>> objectList) {
-		Map<T, TreeNode<IListToTreeRestrict<T>>> treeNodeMap = new HashMap<T, TreeNode<IListToTreeRestrict<T>>>(objectList.size());
-		for (IListToTreeRestrict<T> object : objectList) {
-			treeNodeMap.put(object.getId(),  new TreeNode<IListToTreeRestrict<T>>(object));
+	public static <T, E extends IListToTreeRestrict<T>> List<TreeNode<E>> convert(List<E> objectList) {
+		Map<T, TreeNode<E>> treeNodeMap = new HashMap(objectList.size());
+		for (E object : objectList) {
+			treeNodeMap.put(object.getId(),  new TreeNode<E>(object));
 		}
 
-		List<TreeNode<IListToTreeRestrict<T>>> treeNodeList = new ArrayList<TreeNode<IListToTreeRestrict<T>>>();
-		for (IListToTreeRestrict<T> group : objectList) {
-			TreeNode<IListToTreeRestrict<T>> node = treeNodeMap.get(group.getId());
-			T pId = group.getParentId();
+		List<TreeNode<E>> treeNodeList = new ArrayList();
+		for (E obj : objectList) {
+			TreeNode<E> node = treeNodeMap.get(obj.getId());
+			T pId = obj.getParentId();
 			if (pId == null || "".equals(pId)) { // 根
 				treeNodeList.add(node);
 			} else {
-				TreeNode<IListToTreeRestrict<T>> pNode = treeNodeMap.get(pId);
+				TreeNode<E> pNode = treeNodeMap.get(pId);
 				if (pNode != null) { // 存在父结点
 					node.setParentObject(pNode.getObject());
 					pNode.getChildren().add(node);

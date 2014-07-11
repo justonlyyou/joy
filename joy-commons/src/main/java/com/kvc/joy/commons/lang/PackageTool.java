@@ -154,7 +154,7 @@ public class PackageTool {
 								String className = name.substring(packageName.length() + 1, name.length() - 6);
 								try {
 									// 添加到classes
-									action.addClass(Class.forName(packageName + '.' + className));
+                                    action.addClass(Class.forName(packageName + '.' + className));
 								} catch (ClassNotFoundException e) {
 									logger.error(e);
 								}

@@ -27,20 +27,20 @@ public class ListToTreeConvertorTest {
 		list.add(new TestRecord("20", null, "根结点20"));
 		list.add(new TestRecord("21", "20", "20的子结点21"));
 		
-		List<TreeNode<IListToTreeRestrict<String>>> treeList = ListToTreeConvertor.convert(list);
+		List<TreeNode<TestRecord>> treeList = ListToTreeConvertor.convert(list);
 		
 		boolean result = treeList.size() == 2;
-		TreeNode<IListToTreeRestrict<String>> treeNode10 = treeList.get(0);
+		TreeNode<TestRecord> treeNode10 = treeList.get(0);
 		result = result && "10".equals(treeNode10.getObject().getId());
 		result = result && treeNode10.getChildren().size() == 2;
-		TreeNode<IListToTreeRestrict<String>> treeNode11 = treeNode10.getChildren().get(0);
+		TreeNode<TestRecord> treeNode11 = treeNode10.getChildren().get(0);
 		result = result && "11".equals(treeNode11.getObject().getId());
-		TreeNode<IListToTreeRestrict<String>> treeNode12 = treeNode10.getChildren().get(1);
+		TreeNode<TestRecord> treeNode12 = treeNode10.getChildren().get(1);
 		result = result && "12".equals(treeNode12.getObject().getId());
-		TreeNode<IListToTreeRestrict<String>> treeNode20 = treeList.get(1);
+		TreeNode<TestRecord> treeNode20 = treeList.get(1);
 		result = result && "20".equals(treeNode20.getObject().getId());
 		result = result && treeNode20.getChildren().size() == 1;
-		TreeNode<IListToTreeRestrict<String>> treeNode21 = treeNode20.getChildren().get(0);
+		TreeNode<TestRecord> treeNode21 = treeNode20.getChildren().get(0);
 		result = result && "21".equals(treeNode21.getObject().getId());
 		Assert.assertTrue(result);
 	}
