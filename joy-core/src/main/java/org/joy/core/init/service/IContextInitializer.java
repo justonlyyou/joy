@@ -8,7 +8,7 @@ import org.joy.commons.support.ICommand;
  * @author Kevice
  * @time 2013-4-15 下午11:27:45
  */
-public interface IJoyInitializer {
+public interface IContextInitializer {
 	
 	/**
 	 * 

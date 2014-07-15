@@ -1,7 +1,7 @@
 package org.joy.plugin.schedule.quartz;
 
 import org.joy.commons.exception.SystemException;
-import org.joy.core.init.service.IJoyPlugin;
+import org.joy.core.init.service.IPlugin;
 import org.joy.core.init.support.properties.JoyProperties;
 import org.joy.plugin.schedule.quartz.model.po.TQrtzJobPlan;
 import org.joy.plugin.schedule.quartz.support.utils.QuartzTool;
@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
  * @time 2013-2-5 上午12:47:00
  */
 @Component
-public class QuartzPlugin implements IJoyPlugin {
+public class QuartzPlugin implements IPlugin {
 
 	public static Scheduler scheduler;
 

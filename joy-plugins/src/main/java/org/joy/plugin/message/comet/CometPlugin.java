@@ -1,6 +1,6 @@
 package org.joy.plugin.message.comet;
 
-import org.joy.core.init.service.IJoyPlugin;
+import org.joy.core.init.service.IPlugin;
 import org.joy.core.init.support.properties.JoyProperties;
 import org.springframework.stereotype.Component;
 
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @since 1.0.0
  */
 @Component
-public class CometPlugin implements IJoyPlugin {
+public class CometPlugin implements IPlugin {
 
     @Override
     public String getSqlMigrationPrefix() {

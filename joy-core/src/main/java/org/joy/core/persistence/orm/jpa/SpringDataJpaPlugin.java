@@ -1,6 +1,6 @@
 package org.joy.core.persistence.orm.jpa;
 
-import org.joy.core.init.service.IJoyPlugin;
+import org.joy.core.init.service.IPlugin;
 import org.springframework.stereotype.Component;
 
 /**
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @time 2013-2-16 下午8:48:42
  */
 @Component
-public class SpringDataJpaPlugin implements IJoyPlugin {
+public class SpringDataJpaPlugin implements IPlugin {
 
 	@Override
 	public String getName() {

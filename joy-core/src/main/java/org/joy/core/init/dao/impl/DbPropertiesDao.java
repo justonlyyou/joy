@@ -6,7 +6,7 @@ import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
 import org.joy.commons.scanner.classpath.ClassPathScanner;
 import org.joy.commons.scanner.support.Resource;
-import org.joy.core.init.dao.IJoyPropertiesDao;
+import org.joy.core.init.dao.IDbPropertiesDao;
 import org.joy.core.init.support.properties.JoyProperties;
 import org.joy.core.persistence.jdbc.support.db.DbSupport;
 import org.joy.core.persistence.jdbc.support.db.DbSupportFactory;
@@ -22,9 +22,9 @@ import java.util.*;
  * @time 14-3-17 上午7:17
  * @since 1.0.0
  */
-public class JoyPropertiesDao implements IJoyPropertiesDao {
+public class DbPropertiesDao implements IDbPropertiesDao {
 
-    protected Log log = LogFactory.getLog(JoyPropertiesDao.class);
+    protected Log log = LogFactory.getLog(DbPropertiesDao.class);
 
     /**
      * @author Kevice

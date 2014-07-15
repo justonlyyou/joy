@@ -1,6 +1,6 @@
 package org.joy.plugin.image.captcha;
 
-import org.joy.core.init.service.IJoyPlugin;
+import org.joy.core.init.service.IPlugin;
 import org.joy.core.init.support.properties.JoyProperties;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @time 2013年9月21日 下午5:28:21
  */
 @Component
-public class CaptchaPlugin implements IJoyPlugin {
+public class CaptchaPlugin implements IPlugin {
 
 	@Override
 	public String getName() {

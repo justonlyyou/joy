@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Kevice
  * @time 2013年10月9日 下午9:34:09
  */
-public class JoyWebGlobalInterceptor implements HandlerInterceptor {
+public class WebGlobalInterceptor implements HandlerInterceptor {
 
 	@Override
 	public void afterCompletion(HttpServletRequest req, HttpServletResponse resp, Object obj, Exception e)

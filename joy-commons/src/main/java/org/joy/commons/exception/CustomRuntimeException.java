@@ -2,7 +2,6 @@ package org.joy.commons.exception;
 
 import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
-import org.joy.commons.log.Log;
 
 import java.text.MessageFormat;
 
@@ -12,28 +11,28 @@ import java.text.MessageFormat;
  * @author Kevice
  * @time 2013年11月20日 下午11:55:25
  */
-public class JoyRuntimeException extends RuntimeException {
+public class CustomRuntimeException extends RuntimeException {
 
 	protected String detailMessage;
-	protected static final Log logger = LogFactory.getLog(JoyRuntimeException.class);
+	protected static final Log logger = LogFactory.getLog(CustomRuntimeException.class);
 
-	public JoyRuntimeException(String message, Object... args) {
+	public CustomRuntimeException(String message, Object... args) {
 		fillInStackTrace();
 		handleMessageWithoutLog(message, args);
 		logger.error(detailMessage);
 	}
 	
-	public JoyRuntimeException(Throwable ex) {
+	public CustomRuntimeException(Throwable ex) {
 		this(ex, ex.getMessage());
 	}
 
-	public JoyRuntimeException(Throwable cause, String message, Object... args) {
+	public CustomRuntimeException(Throwable cause, String message, Object... args) {
 		fillInStackTrace();
 		handleMessageWithoutLog(message, args);
 		logger.error(cause, detailMessage);
 	}
 
-	public JoyRuntimeException(Throwable cause, boolean log, String message, Object... args) {
+	public CustomRuntimeException(Throwable cause, boolean log, String message, Object... args) {
 		fillInStackTrace();
 		handleMessageWithoutLog(message, args);
 		if (log) {

@@ -16,9 +16,9 @@ import java.io.PrintWriter;
  * @time 2013年10月2日 上午12:10:05
  * @since 1.0.0
  */
-public class JoyMappingExceptionResolver extends SimpleMappingExceptionResolver {
+public class MappingExceptionResolver extends SimpleMappingExceptionResolver {
 
-    protected static final Log logger = LogFactory.getLog(JoyMappingExceptionResolver.class);
+    protected static final Log logger = LogFactory.getLog(MappingExceptionResolver.class);
 
     @Override
     protected ModelAndView doResolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {

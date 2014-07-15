@@ -194,7 +194,7 @@
 	<mvc:resources mapping="#{rpe.resourceRoot}/**" location="/" cache-period="31536000" />
 
 	<!-- 总错误处理 -->
-	<bean id="exceptionResolver" class="org.joy.web.spmvc.core.JoyMappingExceptionResolver">
+	<bean id="exceptionResolver" class="org.joy.web.spmvc.core.MappingExceptionResolver">
 		<!-- <property name="defaultErrorView">
 			<value>joy/commons/jsp/error</value>
 		</property>

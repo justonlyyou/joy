@@ -4,7 +4,7 @@ import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
 import org.joy.core.ehcache.model.po.TSysCacheCfg;
 import org.joy.core.ehcache.model.po.TSysCacheCfg_;
-import org.joy.core.init.service.IJoyPlugin;
+import org.joy.core.init.service.IPlugin;
 import org.joy.core.persistence.orm.jpa.JpaTool;
 import org.joy.core.spring.utils.CoreBeanFactory;
 import net.sf.ehcache.Cache;
@@ -22,7 +22,7 @@ import java.util.List;
  * @time 2013-2-3 下午4:24:32
  */
 @Component
-public class EhCachePlugin implements IJoyPlugin {
+public class EhCachePlugin implements IPlugin {
 
 	protected static final Log logger = LogFactory.getLog(EhCachePlugin.class);
 

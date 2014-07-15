@@ -31,7 +31,7 @@
 		<property name="credentialsMatcher" ref="credentcialsMatcher"/>
 	</bean>
 
-    <bean id="credentcialsMatcher" class="org.joy.plugin.security.erbac.service.impl.JoyCredentialsMatcher"/>
+    <bean id="credentcialsMatcher" class="org.joy.plugin.security.erbac.service.impl.Md5CredentialsMatcher"/>
 
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
 		<property name="realm" ref="shiroDataBaseRealm" />

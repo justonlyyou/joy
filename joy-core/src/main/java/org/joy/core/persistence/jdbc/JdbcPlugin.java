@@ -1,6 +1,6 @@
 package org.joy.core.persistence.jdbc;
 
-import org.joy.core.init.service.IJoyPlugin;
+import org.joy.core.init.service.IPlugin;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @time 2013年11月16日 下午11:32:29
  */
 @Component
-public class JdbcPlugin implements IJoyPlugin {
+public class JdbcPlugin implements IPlugin {
 
 	@Override
 	public String getSqlMigrationPrefix() {

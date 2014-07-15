@@ -13,9 +13,9 @@ import java.util.Properties;
  * @time 14-3-16 下午3:28
  * @since 1.0.0
  */
-public class JoyPropertyPlaceholderConfigurer extends PropertyPlaceholderConfigurer {
+public class DbPropertyPlaceholderConfigurer extends PropertyPlaceholderConfigurer {
 
-    protected Log log = LogFactory.getLog(JoyPropertyPlaceholderConfigurer.class);
+    protected Log log = LogFactory.getLog(DbPropertyPlaceholderConfigurer.class);
 
     @Override
     protected Properties mergeProperties() throws IOException {

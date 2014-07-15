@@ -116,7 +116,7 @@
 
     <!-- 定义spring配置  -->
 	<listener>  
-       <listener-class>org.joy.web.init.JoyWebInitializer</listener-class>
+       <listener-class>org.joy.web.init.WebInitializer</listener-class>
     </listener>  
 	
 	<listener>

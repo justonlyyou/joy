@@ -1,6 +1,6 @@
 package org.joy.plugin.monitor.jdbc.jwebap;
 
-import org.joy.core.init.service.IJoyPlugin;
+import org.joy.core.init.service.IPlugin;
 import org.joy.core.init.support.properties.JoyProperties;
 import org.joy.plugin.monitor.jdbc.jwebap.model.po.TSysSqlLog;
 import org.jwebap.startup.Startup;
@@ -14,7 +14,7 @@ import java.net.URL;
  * @time 2013-2-5 上午12:39:07
  */
  @Component
-public class JwebapJdbcPlugin implements IJoyPlugin {
+public class JwebapJdbcPlugin implements IPlugin {
 
 	public String getName() {
 		return "Jwebap JDBC监控";

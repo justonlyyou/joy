@@ -6,8 +6,8 @@ import org.joy.commons.enums.YesNot;
 import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
 import org.joy.commons.support.ICommand;
-import org.joy.core.init.dao.impl.JoyPropertiesDao;
-import org.joy.core.init.service.IJoyInitializer;
+import org.joy.core.init.dao.impl.DbPropertiesDao;
+import org.joy.core.init.service.IContextInitializer;
 import org.joy.core.init.service.ISystemInitService;
 import org.joy.core.init.support.properties.JoyProperties;
 import org.joy.core.spring.utils.SpringBeanTool;
@@ -21,16 +21,16 @@ import java.util.Properties;
  * @author Kevice
  * @time 2013-4-15 下午11:37:01
  */
-public class JoyInitializer implements IJoyInitializer {
+public class ContextInitializer implements IContextInitializer {
 
-	protected static final Log logger = LogFactory.getLog(JoyInitializer.class);
+	protected static final Log logger = LogFactory.getLog(ContextInitializer.class);
 
 	@Override
 	public void beforeContextInit(ICommand command) {
 		logger.info("beforeContextInit...");
 
         // 初始化表T_JOY_PROPERTIES，并加载该表的properties
-        Properties dbProperties = new JoyPropertiesDao().initTable();
+        Properties dbProperties = new DbPropertiesDao().initTable();
         JoyProperties.setDbProperties(dbProperties);
 
 		if (command != null) {
@@ -55,7 +55,7 @@ public class JoyInitializer implements IJoyInitializer {
 			command.execute();
 		}
 		
-		ISystemInitService compStartupService = (ISystemInitService) SpringBeanTool.getBean("joyPluginsInitializer");
+		ISystemInitService compStartupService = (ISystemInitService) SpringBeanTool.getBean("pluginsInitializer");
 		compStartupService.init();
 		
 		ISystemInitService sysInitService = (ISystemInitService) SpringBeanTool.getBean("systemInitializer");

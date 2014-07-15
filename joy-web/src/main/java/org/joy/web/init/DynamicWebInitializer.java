@@ -10,7 +10,7 @@ import javax.servlet.ServletException;
  * @time 2013年10月29日 下午10:08:13
  */
 //TODO
-public class DynamicJoyWebInitializer { //implements WebApplicationInitializer {
+public class DynamicWebInitializer { //implements WebApplicationInitializer {
 
 //	@Override
 	public void onStartup(ServletContext servletContext) {

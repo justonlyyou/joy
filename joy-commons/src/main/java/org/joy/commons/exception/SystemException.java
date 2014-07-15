@@ -8,7 +8,7 @@ package org.joy.commons.exception;
  * @author Kevice
  * @time 2013年10月2日 上午12:01:33
  */
-public class SystemException extends JoyRuntimeException {
+public class SystemException extends CustomRuntimeException {
 
     public SystemException(String message, Throwable e) {
         super(e, message);

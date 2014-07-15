@@ -5,7 +5,7 @@ package org.joy.core.init.service;
  * @author Kevice
  * @time 2013-2-3 下午4:10:27
  */
-public interface IJoyPlugin {
+public interface IPlugin {
 	
 	/**
 	 * 获取数据库更新脚本文件前缀

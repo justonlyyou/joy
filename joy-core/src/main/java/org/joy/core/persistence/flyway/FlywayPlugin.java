@@ -1,6 +1,6 @@
 package org.joy.core.persistence.flyway;
 
-import org.joy.core.init.service.IJoyPlugin;
+import org.joy.core.init.service.IPlugin;
 import org.joy.core.persistence.flyway.model.po.TSysDbSchemaVersion;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @time 2013年11月13日 下午8:38:27
  */
 @Component
-public class FlywayPlugin implements IJoyPlugin {
+public class FlywayPlugin implements IPlugin {
 
 	@Override
 	public String getName() {

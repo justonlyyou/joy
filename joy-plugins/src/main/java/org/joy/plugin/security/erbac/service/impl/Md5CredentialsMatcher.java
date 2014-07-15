@@ -14,7 +14,7 @@ import org.apache.shiro.subject.PrincipalCollection;
  * @time 2014-5-28 上午10:22:24
  * @since 1.0.0
  */
-public class JoyCredentialsMatcher extends SimpleCredentialsMatcher {
+public class Md5CredentialsMatcher extends SimpleCredentialsMatcher {
 
     @Override
     public boolean doCredentialsMatch(AuthenticationToken authcToken, AuthenticationInfo info) {

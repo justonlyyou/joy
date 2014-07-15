@@ -8,7 +8,7 @@ import java.util.Properties;
  * @time 14-3-17 上午7:15
  * @since 1.0.0
  */
-public interface IJoyPropertiesDao {
+public interface IDbPropertiesDao {
 
     String TABLE_NAME = "t_joy_properties";
     String SCRIPT_PREFIX = "JOY";

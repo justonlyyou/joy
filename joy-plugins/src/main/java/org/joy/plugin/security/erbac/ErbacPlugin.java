@@ -1,6 +1,6 @@
 package org.joy.plugin.security.erbac;
 
-import org.joy.core.init.service.IJoyPlugin;
+import org.joy.core.init.service.IPlugin;
 import org.joy.core.init.support.properties.JoyProperties;
 import org.joy.plugin.security.user.model.po.TUserBasic;
 import org.springframework.stereotype.Component;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @time 2013-2-14 上午10:35:38
  */
 @Component
-public class ErbacPlugin implements IJoyPlugin {
+public class ErbacPlugin implements IPlugin {
 
 	public String getName() {
 		return "扩展的基于角色访问控制";

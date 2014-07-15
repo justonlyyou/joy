@@ -1,6 +1,6 @@
 package org.joy.core.sysres;
 
-import org.joy.core.init.service.IJoyPlugin;
+import org.joy.core.init.service.IPlugin;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @time 2013年11月16日 下午11:46:22
  */
 @Component
-public class SysResPlugin implements IJoyPlugin {
+public class SysResPlugin implements IPlugin {
 
 	@Override
 	public String getSqlMigrationPrefix() {

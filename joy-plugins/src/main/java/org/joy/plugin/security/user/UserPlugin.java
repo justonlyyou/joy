@@ -1,6 +1,6 @@
 package org.joy.plugin.security.user;
 
-import org.joy.core.init.service.IJoyPlugin;
+import org.joy.core.init.service.IPlugin;
 import org.joy.core.init.support.properties.JoyProperties;
 import org.joy.plugin.security.user.model.po.TUserLoginLog;
 import org.springframework.stereotype.Component;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * @time 2013年9月29日 上午1:28:49
  */
 @Component
-public class UserPlugin implements IJoyPlugin {
+public class UserPlugin implements IPlugin {
 
 	@Override
 	public String getName() {

@@ -6,7 +6,7 @@ import org.joy.commons.lang.PackageTool;
 import org.joy.commons.lang.string.StringTool;
 import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
-import org.joy.core.init.service.IJoyPlugin;
+import org.joy.core.init.service.IPlugin;
 import org.joy.core.init.service.ISystemInitService;
 import org.joy.core.init.support.properties.JoyProperties;
 import org.joy.core.spring.utils.CoreBeanFactory;
@@ -22,14 +22,14 @@ import java.util.*;
  * @time 2013-2-3 下午4:13:09
  */
 @Service
-public class JoyPluginsInitializer implements ISystemInitService, BeanPostProcessor {
+public class PluginsInitializer implements ISystemInitService, BeanPostProcessor {
 
-	private final List<IJoyPlugin> components = new ArrayList<IJoyPlugin>();
-	private static final Log logger = LogFactory.getLog(JoyPluginsInitializer.class);
+	private final List<IPlugin> components = new ArrayList<IPlugin>();
+	private static final Log logger = LogFactory.getLog(PluginsInitializer.class);
 
 	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-		if (bean instanceof IJoyPlugin) {
-			register((IJoyPlugin) bean);
+		if (bean instanceof IPlugin) {
+			register((IPlugin) bean);
 		}
 		return bean;
 	}
@@ -40,16 +40,16 @@ public class JoyPluginsInitializer implements ISystemInitService, BeanPostProces
 
 	public void init() {
 		// 按初始化优先级从小到大排序
-		Collections.sort(components, new Comparator<IJoyPlugin>() {
+		Collections.sort(components, new Comparator<IPlugin>() {
 
-			public int compare(IJoyPlugin comp1, IJoyPlugin comp2) {
+			public int compare(IPlugin comp1, IPlugin comp2) {
 				return Integer.valueOf(comp1.getInitPriority()).compareTo(comp2.getInitPriority());
 			}
 
 		});
 		
 		// 初始化平台各插件
-		for (IJoyPlugin component : components) {
+		for (IPlugin component : components) {
 			if (component.isEnabled()) {
 				logger.info("启动JOY平台插件【" + component.getName() + "】...");
 				
@@ -87,7 +87,7 @@ public class JoyPluginsInitializer implements ISystemInitService, BeanPostProces
         }
 	}
 
-	protected void register(IJoyPlugin component) {
+	protected void register(IPlugin component) {
 		components.add(component);
 	}
 
@@ -103,9 +103,9 @@ public class JoyPluginsInitializer implements ISystemInitService, BeanPostProces
 		Set<Class<?>> classes = PackageTool.getClassesInPackage("org.joy.core", true);
 		classes.addAll(PackageTool.getClassesInPackage("org.joy.plugin", true));
 		for (Class<?> clazz : classes) {
-			if (clazz.getName().endsWith("Plugin") && IJoyPlugin.class.isAssignableFrom(clazz) && clazz != IJoyPlugin.class) {
+			if (clazz.getName().endsWith("Plugin") && IPlugin.class.isAssignableFrom(clazz) && clazz != IPlugin.class) {
 				try {
-					IJoyPlugin plugin = (IJoyPlugin) clazz.newInstance();
+					IPlugin plugin = (IPlugin) clazz.newInstance();
 					if(plugin.isEnabled()) {
 						String location = plugin.getCtxConfLocation();
 						sb.append(",").append(location);

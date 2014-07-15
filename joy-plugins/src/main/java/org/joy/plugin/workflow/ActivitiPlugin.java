@@ -1,6 +1,6 @@
 package org.joy.plugin.workflow;
 
-import org.joy.core.init.service.IJoyPlugin;
+import org.joy.core.init.service.IPlugin;
 import org.joy.core.init.support.properties.JoyProperties;
 import org.activiti.engine.ProcessEngines;
 import org.springframework.stereotype.Component;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @time 2013-3-17 下午9:19:27
  */
 @Component
-public class ActivitiPlugin implements IJoyPlugin {
+public class ActivitiPlugin implements IPlugin {
 
 	@Override
 	public String getName() {

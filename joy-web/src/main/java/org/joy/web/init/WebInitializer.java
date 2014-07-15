@@ -3,9 +3,9 @@ package org.joy.web.init;
 import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
 import org.joy.commons.support.ICommand;
-import org.joy.core.init.service.IJoyInitializer;
-import org.joy.core.init.service.impl.JoyInitializer;
-import org.joy.core.init.service.impl.JoyPluginsInitializer;
+import org.joy.core.init.service.IContextInitializer;
+import org.joy.core.init.service.impl.ContextInitializer;
+import org.joy.core.init.service.impl.PluginsInitializer;
 import org.joy.core.init.support.properties.JoyProperties;
 import org.joy.core.sysres.param.service.BaseSystemParameter;
 import org.joy.plugin.monitor.jdbc.jwebap.JwebapJdbcPlugin;
@@ -20,11 +20,11 @@ import javax.servlet.ServletContextEvent;
  * @author Kevice
  * @time 2012-12-28 下午11:57:19
  */
-public class JoyWebInitializer extends ContextLoaderListener {
+public class WebInitializer extends ContextLoaderListener {
 
-	private static final Log logger = LogFactory.getLog(JoyWebInitializer.class);
+	private static final Log logger = LogFactory.getLog(WebInitializer.class);
 
-	private final IJoyInitializer joyInitializer = new JoyInitializer();
+	private final IContextInitializer joyInitializer = new ContextInitializer();
 	
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
@@ -60,14 +60,14 @@ public class JoyWebInitializer extends ContextLoaderListener {
 
 			@Override
 			public void execute() {
-				JoyWebInitializer.super.contextInitialized(event);
+				WebInitializer.super.contextInitialized(event);
 			}
 		});
 	}
 	
 	@Override
 	protected void customizeContext(final ServletContext sc, ConfigurableWebApplicationContext wac) {
-		String contextConfigLocation = JoyPluginsInitializer.getCtxConfLocations();
+		String contextConfigLocation = PluginsInitializer.getCtxConfLocations();
 		wac.setConfigLocation(contextConfigLocation);
         logger.info("准备加载以下spring xml文件：\n" + contextConfigLocation);
 		super.customizeContext(sc, wac);
@@ -84,7 +84,7 @@ public class JoyWebInitializer extends ContextLoaderListener {
 
 			@Override
 			public void execute() {
-				JoyWebInitializer.super.contextDestroyed(event);
+				WebInitializer.super.contextDestroyed(event);
 			}
 		});
 	}

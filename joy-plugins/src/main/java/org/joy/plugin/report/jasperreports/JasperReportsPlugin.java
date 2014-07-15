@@ -1,6 +1,6 @@
 package org.joy.plugin.report.jasperreports;
 
-import org.joy.core.init.service.IJoyPlugin;
+import org.joy.core.init.service.IPlugin;
 import org.joy.core.init.support.properties.JoyProperties;
 import org.springframework.stereotype.Component;
 
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @time 2013-2-27 下午10:39:51
  */
 @Component
-public class JasperReportsPlugin implements IJoyPlugin {
+public class JasperReportsPlugin implements IPlugin {
 
 	@Override
 	public String getName() {

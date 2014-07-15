@@ -1,6 +1,6 @@
 package org.joy.core.persistence.orm.jpa;
 
-import org.joy.core.init.service.IJoyPlugin;
+import org.joy.core.init.service.IPlugin;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @time 2013年11月16日 下午11:44:52
  */
 @Component
-public class JpaPlugin implements IJoyPlugin {
+public class JpaPlugin implements IPlugin {
 
 	@Override
 	public String getSqlMigrationPrefix() {

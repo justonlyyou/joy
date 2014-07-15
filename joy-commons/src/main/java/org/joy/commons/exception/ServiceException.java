@@ -8,7 +8,7 @@ import java.net.ConnectException;
  * @since 1.0.0
  * @author <b>Kevice</b>
  */
-public class ServiceException extends JoyRuntimeException {
+public class ServiceException extends CustomRuntimeException {
 
 	private String url;
 	private int type;

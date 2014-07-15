@@ -1,6 +1,6 @@
 package org.joy.plugin.template.freemarker.web;
 
-import org.joy.core.init.service.IJoyPlugin;
+import org.joy.core.init.service.IPlugin;
 import org.springframework.stereotype.Component;
 
 /**
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @time 2014-7-13 下午21:48:26
  */
 @Component
-public class WebFreeMarkerPlugin implements IJoyPlugin {
+public class WebFreeMarkerPlugin implements IPlugin {
 
     @Override
     public String getSqlMigrationPrefix() {

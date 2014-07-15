@@ -1,6 +1,6 @@
 package org.joy.plugin.persistence.hibernate;
 
-import org.joy.core.init.service.IJoyPlugin;
+import org.joy.core.init.service.IPlugin;
 import org.joy.core.init.support.properties.JoyProperties;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @time 2013年10月3日 下午8:36:42
  */
 @Component
-public class HibernatePlugin implements IJoyPlugin {
+public class HibernatePlugin implements IPlugin {
 
 	@Override
 	public String getName() {

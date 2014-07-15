@@ -1,6 +1,6 @@
 package org.joy.plugin.seqgen;
 
-import org.joy.core.init.service.IJoyPlugin;
+import org.joy.core.init.service.IPlugin;
 import org.joy.core.init.support.properties.JoyProperties;
 import org.joy.plugin.seqgen.model.po.TSysSeqNumRule;
 import org.springframework.stereotype.Component;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @time 2013-2-5 上午12:48:26
  */
 @Component
-public class SeqGenPlugin implements IJoyPlugin {
+public class SeqGenPlugin implements IPlugin {
 
 	public String getName() {
 		return "序列号生成器";
