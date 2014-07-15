@@ -52,6 +52,7 @@
      <logger name="org.joy" level="TRACE" />
      <logger name="org.jwebap.plugin.tracer.jdbc.ProxyPreparedStatement" level="DEBUG" />
      <logger name="org.jwebap.plugin.tracer.jdbc.ProxyStatement" level="DEBUG" />
+     <logger name="org.springframework" level="WARN" />
 
     <root level="WARN">
         <appender-ref ref="Console"/>

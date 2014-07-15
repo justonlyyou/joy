@@ -15,8 +15,8 @@
                     <!---->
 					<Resource driverClassName="com.mysql.jdbc.Driver"
 						maxActive="50" maxIdle="3" maxWait="-1" name="JDBC/JOY" 
-						type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/joy"
-						username="root" password="tangwl"/>
+						type="javax.sql.DataSource" url="jdbc:mysql://sendo:3306/joy"
+						username="joy" password="joy"/>
 
 
                     <!--
