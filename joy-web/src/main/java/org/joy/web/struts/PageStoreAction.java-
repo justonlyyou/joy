@@ -1,0 +1,32 @@
+package org.joy.rp.struts;
+
+import org.joy.core.rp.pagestore.PageStore;
+import org.joy.core.rp.pagestore.PageStoreFactory;
+import com.opensymphony.xwork2.ActionSupport;
+
+/**
+ * 
+ * @author Kevice
+ * @time 2012-6-15 下午10:35:52
+ */
+public class PageStoreAction extends ActionSupport {
+
+	private PageStore pageStore;
+	
+	public PageStoreAction() {
+		pageStore = PageStoreFactory.create();
+	}
+
+	public void pushResult(Object result) {
+		pageStore.setResult(result);
+	}
+
+	public void pushOkMsg(String okMsg) {
+		pageStore.setOkMsg(okMsg);
+	}
+
+	public void pushErrMsg(String errMsg) {
+		pageStore.setErrMsg(errMsg);
+	}
+	
+}

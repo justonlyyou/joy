@@ -1,0 +1,43 @@
+package org.joy.rp.struts;
+
+import org.joy.common.exception.JoyException;
+import org.joy.core.rp.pagestore.PageStoreFactory;
+import org.joy.core.web.struts.consts.StrutsConsts;
+import com.opensymphony.xwork2.ActionInvocation;
+import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
+
+/**
+ * 
+ * @author Kevice
+ * @time 2012-6-16 下午4:35:30
+ */
+public class PageStoreInterceptor extends AbstractInterceptor {
+
+	@Override
+	public String intercept(ActionInvocation inv) throws Exception {
+		Object action = inv.getAction();
+		String result = null;
+		try {
+			result = inv.invokeActionOnly();
+			if (action instanceof PageStoreAction) {
+				Object methodResult = ((JoyActionInvocation) inv).getMethodResult();
+				PageStoreAction pageStoreAction = (PageStoreAction) action;
+				pageStoreAction.pushResult(methodResult);
+				pageStoreAction.pushErrMsg(null);
+				if(result == null) {
+					result = StrutsConsts.SUCCESS;	
+				}
+			}
+		} catch (Exception e) {
+			String errMsg = JoyException.getMsg(e);
+			result = StrutsConsts.FAIL; //TODO
+			if (action instanceof PageStoreAction) {
+				PageStoreAction pageStoreAction = (PageStoreAction) action;
+				PageStoreFactory.curPageStore().setSuccess(false);
+				pageStoreAction.pushErrMsg(errMsg);
+				pageStoreAction.pushOkMsg(null);
+			}
+		}
+		return result;
+	}
+}

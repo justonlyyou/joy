@@ -1,0 +1,46 @@
+package org.joy.rp.struts;
+
+import java.util.Map;
+
+import com.opensymphony.xwork2.DefaultActionInvocation;
+import com.opensymphony.xwork2.Result;
+import com.opensymphony.xwork2.config.entities.ActionConfig;
+
+/**
+ * 
+ * @author Kevice
+ * @time 2012-6-16 下午3:04:42
+ */
+public class JoyActionInvocation extends DefaultActionInvocation {
+	
+	private Object methodResult;
+	
+	public JoyActionInvocation(Map<String, Object> extraContext, boolean pushAction) {
+		super(extraContext, pushAction);
+	}
+
+	protected String saveResult(ActionConfig actionConfig, Object methodResult) {
+		this.methodResult = methodResult;
+		 if (methodResult instanceof Result) {
+	            this.explicitResult = (Result) methodResult;
+
+	            // Wire the result automatically
+	            container.inject(explicitResult);
+	            return null;
+	        } else {
+	        	if (methodResult instanceof String) {
+	        		 return (String) methodResult;
+				} else {
+					 if (methodResult != null) {
+						 container.inject(methodResult);
+					}
+			         return null;
+				}
+	        }
+	 }
+	
+	public Object getMethodResult() {
+		return methodResult;
+	}
+
+}
