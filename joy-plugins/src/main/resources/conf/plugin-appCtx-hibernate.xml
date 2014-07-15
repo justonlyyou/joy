@@ -4,6 +4,6 @@
 		http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-autowire="byName">
 
-	<bean id="hibernateTool" class="com.kvc.joy.plugin.persistence.hibernate.HibernateTool"/>
+	<bean id="hibernateTool" class="org.joy.plugin.persistence.hibernate.HibernateTool"/>
 
 </beans>

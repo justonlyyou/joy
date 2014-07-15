@@ -80,7 +80,7 @@
         <!--<servlet-name>cometDispatcher</servlet-name>-->
 
         <!--comet分发器 -->
-        <!--<servlet-class>com.kvc.joy.plugin.message.comet.web.SocketDispatcherServlet</servlet-class>-->
+        <!--<servlet-class>org.joy.plugin.message.comet.web.SocketDispatcherServlet</servlet-class>-->
 
         <!--让comet服务在servlet容器启动时初始化，可以尽早发现配置错误 -->
         <!--<load-on-startup>2</load-on-startup>-->
@@ -116,7 +116,7 @@
 
     <!-- 定义spring配置  -->
 	<listener>  
-       <listener-class>com.kvc.joy.web.init.JoyWebInitializer</listener-class>  
+       <listener-class>org.joy.web.init.JoyWebInitializer</listener-class>
     </listener>  
 	
 	<listener>
@@ -138,7 +138,11 @@
 			<param-name>contextConfigLocation</param-name>
 			<param-value>classpath*:/conf/springMVC.xml</param-value>
 		</init-param>
-		<load-on-startup>1</load-on-startup>
+        <init-param>
+            <param-name>NoCache</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>springMVC</servlet-name>
@@ -229,7 +233,7 @@
 	<!-- loginfilter
 	<filter>
 		<filter-name>loginfilter</filter-name>
-		<filter-class>com.kvc.joy.core.security.user.support.LoginFilter</filter-class>
+		<filter-class>org.joy.core.security.user.support.LoginFilter</filter-class>
 		<init-param>
 			<param-name>ipZone</param-name>
 			<param-value>
@@ -249,7 +253,7 @@
 	<!-- nocacheFilter 
 	<filter>
 		<filter-name>nocacheFilter</filter-name>
-		<filter-class>com.kvc.joy.core.web.filter.NoCachingFilter</filter-class>
+		<filter-class>org.joy.core.web.filter.NoCachingFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>nocacheFilter</filter-name>
@@ -286,7 +290,7 @@
 	<!-- Axis 过滤器 
 	<filter>
 		<filter-name>Axis Filter</filter-name>
-		<filter-class>com.kvc.joy.core.web.filter.AxisFilter</filter-class>
+		<filter-class>org.joy.core.web.filter.AxisFilter</filter-class>
 		<init-param>
 			<param-name>axisIP</param-name>
 			<param-value>

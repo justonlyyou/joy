@@ -9,12 +9,12 @@
   <display-name>JOY FN JSTL</display-name>
   <tlib-version>1.1</tlib-version>
   <short-name>joyFn</short-name>
-  <uri>http://java.sun.com/jsp/jstl/functionsc</uri>
+  <uri>http://joy.com/jsp/jstl/joyFn</uri>
 
   <function>
     <description>获取平台属性文件(joy.properties)参数值</description>
     <name>getJoyProperty</name>
-    <function-class>com.kvc.joy.core.init.support.properties.JoyProperties</function-class>
+    <function-class>org.joy.core.init.support.properties.JoyProperties</function-class>
     <function-signature>java.lang.String property(java.lang.String)</function-signature>
     <example>${joyFn:getJoyProperty(property)}</example>
   </function>
@@ -22,31 +22,31 @@
   <function>
     <description>获取应用属性文件(app.properties)参数值</description>
     <name>getAppProperty</name>
-    <function-class>com.kvc.joy.core.init.support.properties.AppProperties</function-class>
+    <function-class>org.joy.core.init.support.properties.AppProperties</function-class>
     <function-signature>java.lang.String property(java.lang.String)</function-signature>
     <example>${joyFn:getAppProperty(property)}</example>
   </function>
-  
+
   <function>
     <description>翻译代码</description>
     <name>translateCode</name>
-    <function-class>com.kvc.joy.core.sysres.SysResTool</function-class>
-    <function-signature>java.lang.String translateCode(java.lang.String,java.lang.String,java.lang.String)</function-signature>
+    <function-class>org.joy.core.sysres.SysResTool</function-class>
+    <function-signature>org.joy.core.sysres.code.model.vo.CodeRecord translateCode(java.lang.String,java.lang.String,java.lang.String)</function-signature>
     <example>${joyFn:translateCode(code,tableId,enumClass)}</example>
   </function>
-  
+
   <function>
     <description>返回所有代码及其翻译列表</description>
     <name>getAllCodeAndTrans</name>
-    <function-class>com.kvc.joy.core.sysres.SysResTool</function-class>
+    <function-class>org.joy.core.sysres.SysResTool</function-class>
     <function-signature>java.util.Map getAllCodeAndTrans(java.lang.String,java.lang.String)</function-signature>
     <example>${joyFn:getAllCodeAndTrans(tableId,enumClass)}</example>
   </function>
-  
+
   <function>
     <description>返回代码种类名</description>
     <name>getCodeCategory</name>
-    <function-class>com.kvc.joy.core.sysres.SysResTool</function-class>
+    <function-class>org.joy.core.sysres.SysResTool</function-class>
     <function-signature>java.lang.String getCodeCategory(java.lang.String)</function-signature>
     <example>${joyFn:getCodeCategory(tableId)}</example>
   </function>
@@ -54,15 +54,15 @@
   <function>
     <description>返回指定菜单的路径</description>
     <name>getMenuPath</name>
-    <function-class>com.kvc.joy.core.sysres.SysResTool</function-class>
-    <function-signature>com.kvc.joy.core.sysres.menu.po.TSysMenu getMenuPath(java.lang.String)</function-signature>
+    <function-class>org.joy.core.sysres.SysResTool</function-class>
+    <function-signature>java.util.List getMenuPath(java.lang.String)</function-signature>
     <example>${joyFn:getMenuPath(menuId)}</example>
   </function>
   
   <function>
     <description>格式化日期</description>
     <name>formatDate</name>
-    <function-class>com.kvc.joy.commons.lang.DateTool</function-class>
+    <function-class>org.joy.commons.lang.DateTool</function-class>
     <function-signature>java.lang.String formatDate(java.lang.String,java.lang.String,java.lang.String)</function-signature>
     <example>${joyFn:formatDate(dateStr, inFmt, outFmt)}</example>
   </function>
@@ -70,7 +70,7 @@
   <function>
     <description>返回所有数据源</description>
     <name>getAllDataSrc</name>
-    <function-class>com.kvc.joy.core.sysres.SysResTool</function-class>
+    <function-class>org.joy.core.sysres.SysResTool</function-class>
     <function-signature>java.util.List getAllDataSrc()</function-signature>
     <example>${joyFn:getAllDataSrc()}</example>
   </function>

@@ -4,19 +4,19 @@
            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
        default-autowire="byName">
 
-	<bean id="sysParamService" class="com.kvc.joy.core.sysres.param.service.impl.SysParamService" />
-	<bean id="sysParamCacheService" class="com.kvc.joy.core.sysres.param.service.impl.SysParamCacheService"/>
+	<bean id="sysParamService" class="org.joy.core.sysres.param.service.impl.SysParamService" />
+	<bean id="sysParamCacheService" class="org.joy.core.sysres.param.service.impl.SysParamCacheService"/>
 
-	<bean id="sysCodeService" class="com.kvc.joy.core.sysres.code.service.impl.SysCodeService" />
-	<bean id="sysCodeCacheService" class="com.kvc.joy.core.sysres.code.service.impl.SysCodeCacheService"/>
+	<bean id="sysCodeService" class="org.joy.core.sysres.code.service.impl.SysCodeService" />
+	<bean id="sysCodeCacheService" class="org.joy.core.sysres.code.service.impl.SysCodeCacheService"/>
 
-	<bean id="sysDataSrcService" class="com.kvc.joy.core.sysres.datasrc.service.impl.SysDataSrcService" />
+	<bean id="sysDataSrcService" class="org.joy.core.sysres.datasrc.service.impl.SysDataSrcService" />
 	
 	
 	<!-- 系统菜单服务 -->
-	<bean id="sysMenuService" class="com.kvc.joy.core.sysres.menu.service.impl.SysMenuService" />
+	<bean id="sysMenuService" class="org.joy.core.sysres.menu.service.impl.SysMenuService" />
 	
 	<!-- 系统代码表数据访问对象 -->
-	<bean id="sysCodeTableDao" class="com.kvc.joy.core.sysres.code.dao.TSysCodeTableDao" />
+	<bean id="sysCodeTableDao" class="org.joy.core.sysres.code.dao.TSysCodeTableDao" />
 	
 </beans>

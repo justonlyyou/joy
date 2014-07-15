@@ -6,7 +6,7 @@
     http://www.springframework.org/schema/data/jpa
     http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
-	<!-- <repositories base-package="com.kvc.joy.*."/> -->
+	<!-- <repositories base-package="org.joy.*."/> -->
 	<!-- <context:exclude-filter type="regex" expression=".*SomeRepository" /> -->
 	<!-- <repository id="userRepository" /> -->
 	<!-- </repositories> -->

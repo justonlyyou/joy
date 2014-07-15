@@ -11,6 +11,6 @@
     <!--request:请求uri -->
     <!--handler:socket处理器，socket处理器必须实现org.auto.comet.SocketHandler接口 -->
     <comet request="/test.comet"
-           handler="com.kvc.joy.web.spmvc.modules.plugins.message.comet.TestSocketHandler"/>
+           handler="org.joy.web.spmvc.modules.plugins.message.comet.TestSocketHandler"/>
 
 </auto-comet>

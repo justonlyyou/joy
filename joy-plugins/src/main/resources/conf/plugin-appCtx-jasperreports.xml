@@ -11,7 +11,7 @@
 	<!-- Jasper Report -->
 	<bean id="jasperReportsViewResolver" class="org.springframework.web.servlet.view.jasperreports.JasperReportsViewResolver">
 		<property name="requestContextAttribute" value="rc" />
-		<property name="viewClass" value="com.kvc.joy.plugin.report.jasperreports.web.view.JasperReportsMultiFormatView"/>
+		<property name="viewClass" value="org.joy.plugin.report.jasperreports.web.view.JasperReportsMultiFormatView"/>
 
 		<!-- 查找编译好的jasperReports文件 -->
 		<property name="prefix" value="${plugin.report.jasperreports.jasper.prefix}" />

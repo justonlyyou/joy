@@ -36,7 +36,7 @@
         		<%--<td>数据库类型</td>--%>
         		<%--<td>--%>
         			<%--<form:select path="dbType" cssClass="form-control  input-sm">--%>
-						<%--<joy:codeOptions enumClass="com.kvc.joy.core.persistence.jdbc.support.enums.RdbType" />--%>
+						<%--<joy:codeOptions enumClass="org.joy.core.persistence.jdbc.support.enums.RdbType" />--%>
 					<%--</form:select>--%>
 				<%--</td>--%>
         	<%--</tr>--%>

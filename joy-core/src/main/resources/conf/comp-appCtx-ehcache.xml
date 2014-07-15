@@ -34,8 +34,8 @@
 	<!--<bean id="ehCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean"> <property name="cacheManager"> <ref 
 		local="cacheManager" /> </property> <property name="cacheName"> <value>countryCache</value> </property> </bean> -->
 
-	<!-- <bean id="methodCacheInterceptor" class="com.kvc.joy.comp.cache.ehcache.service.impl.MethodCacheInterceptor"> <property 
-		name="cache"> <ref local="ehCache" /> </property> </bean> <bean id="methodCacheAfterAdvice" class="com.kvc.joy.comp.cache.ehcache.service.MethodCacheAfterAdvice"> 
+	<!-- <bean id="methodCacheInterceptor" class="org.joy.comp.cache.ehcache.service.impl.MethodCacheInterceptor"> <property
+		name="cache"> <ref local="ehCache" /> </property> </bean> <bean id="methodCacheAfterAdvice" class="org.joy.comp.cache.ehcache.service.MethodCacheAfterAdvice">
 		<property name="cache"> <ref local="ehCache" /> </property> </bean> <bean id="methodCachePointCut" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor"> 
 		<property name="advice"> <ref local="methodCacheInterceptor" /> </property> <property name="patterns"> <list> <value>com.testcompany.common.cache.EHCacheComponent.cacheFind*.*</value> 
 		<value>com.testcompany.common.cache.EHCacheComponent.cacheGet*.*</value> </list> </property> </bean> <bean id="methodCachePointCutAdvice" 

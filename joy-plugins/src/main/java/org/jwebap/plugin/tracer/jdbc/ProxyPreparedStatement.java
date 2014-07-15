@@ -1,11 +1,11 @@
 package org.jwebap.plugin.tracer.jdbc;
 
-import com.kvc.joy.commons.lang.string.StringTool;
-import com.kvc.joy.commons.log.Log;
-import com.kvc.joy.commons.log.LogFactory;
-import com.kvc.joy.plugin.monitor.jdbc.jwebap.IPreparedSqlConvertor;
-import com.kvc.joy.plugin.monitor.jdbc.jwebap.PreparedSqlConvertor;
-import com.kvc.joy.plugin.monitor.jdbc.jwebap.model.vo.ParamMsg;
+import org.joy.commons.lang.string.StringTool;
+import org.joy.commons.log.Log;
+import org.joy.commons.log.LogFactory;
+import org.joy.plugin.monitor.jdbc.jwebap.IPreparedSqlConvertor;
+import org.joy.plugin.monitor.jdbc.jwebap.PreparedSqlConvertor;
+import org.joy.plugin.monitor.jdbc.jwebap.model.vo.ParamMsg;
 import org.jwebap.core.Trace;
 
 import java.io.InputStream;

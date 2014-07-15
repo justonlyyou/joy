@@ -68,7 +68,7 @@
 									<td>${p.id}</td>
 									<td>${p.name}</td>
 									<td><joy:codeTrans code="${p.runState}" 
-										enumClass="com.kvc.joy.plugin.schedule.quartz.support.enums.JobRunState" /></td>
+										enumClass="org.joy.plugin.schedule.quartz.support.enums.JobRunState" /></td>
 									<td><joy:timeFormatter timeStr="${p.effectTime}" /></td>
 									<td><joy:timeFormatter timeStr="${p.expireTime}" /></td>
 									<td><joy:timeFormatter timeStr="${p.lastFireTime}" /></td>

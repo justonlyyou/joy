@@ -37,7 +37,8 @@ define(['jqValidate'], function() {
 	                },
 	                success: function(data) {
 	                	if(data == null || data == "") {
-	                		form.commit();
+//                            $(form).commit();
+	                		form.submit();
 	                	} else {
 	                		if(data == "captchaRequire") {
 	                			$(".joy-captcha").removeClass("hide");

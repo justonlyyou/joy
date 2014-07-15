@@ -4,6 +4,6 @@
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- 序列号生成器 -->
-	<bean id="sequenceGenerator" class="com.kvc.joy.plugin.seqgen.service.impl.SequenceGenerator" lazy-init="true"  />
+	<bean id="sequenceGenerator" class="org.joy.plugin.seqgen.service.impl.SequenceGenerator" lazy-init="true"  />
 
 </beans>

@@ -8,7 +8,7 @@
 
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
-	<context:component-scan base-package="com.kvc.joy.**.controller" />
+	<context:component-scan base-package="org.joy.**.controller" />
 
 	<!-- 会自动注册DefaultAnnotationHandlerMapping与AnnotationMethodHandlerAdapter 两个bean -->
 <!-- 	<mvc:annotation-driven conversion-service="conversionService" /> -->
@@ -189,12 +189,12 @@
 	<!-- 使用默认的Servlet来响应静态文件 -->
 	<mvc:default-servlet-handler />
 
-	<bean id="rpe" class="com.kvc.joy.web.spmvc.ResourcePathExposer" init-method="init" />
+	<bean id="rpe" class="org.joy.web.spmvc.ResourcePathExposer" init-method="init" />
 	<!-- 由Spring读出到内存中再响应http -->
 	<mvc:resources mapping="#{rpe.resourceRoot}/**" location="/" cache-period="31536000" />
 
 	<!-- 总错误处理 -->
-	<bean id="exceptionResolver" class="com.kvc.joy.web.spmvc.core.JoyMappingExceptionResolver">
+	<bean id="exceptionResolver" class="org.joy.web.spmvc.core.JoyMappingExceptionResolver">
 		<!-- <property name="defaultErrorView">
 			<value>joy/commons/jsp/error</value>
 		</property>
@@ -207,8 +207,8 @@
 		<property name="exceptionMappings">
 	        <props>
 	          <prop key="org.apache.shiro.authz.UnauthorizedException">joy/commons/jsp/error/403</prop>
-	          <!--<prop key="com.kvc.joy.commons.exception.SystemException">joy/commons/jsp/error/500</prop>   -->
-	          <prop key="com.kvc.joy.commons.exception.ServiceException">joy/commons/jsp/error/error</prop>
+	          <!--<prop key="org.joy.commons.exception.SystemException">joy/commons/jsp/error/500</prop>   -->
+	          <prop key="org.joy.commons.exception.ServiceException">joy/commons/jsp/error/error</prop>
 	          <prop key="java.lang.exception">joy/commons/jsp/error/500</prop>
 	        </props>  
         </property>
@@ -216,11 +216,10 @@
 
 	<!-- 拦截器 -->
     <!--<mvc:interceptors>-->
-        <!--<bean class="com.kvc.joy.web.spmvc.core.JoyWebGlobalInterceptor" />-->
+        <!--<bean class="org.joy.web.spmvc.core.JoyWebGlobalInterceptor" />-->
         <!--<mvc:interceptor>  -->
             <!--<mvc:mapping path="/*" />  -->
-            <!--<bean class="com.kvc.joy.web.spmvc.core.JoyWebGlobalInterceptor" />  -->
+            <!--<bean class="org.joy.web.spmvc.core.JoyWebGlobalInterceptor" />  -->
         <!--</mvc:interceptor>  -->
     <!--</mvc:interceptors>-->
-
 </beans>

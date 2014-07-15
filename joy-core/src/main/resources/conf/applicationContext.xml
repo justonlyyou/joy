@@ -8,7 +8,7 @@
            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
-	<bean class="com.kvc.joy.core.init.support.properties.JoyPropertyPlaceholderConfigurer">
+	<bean class="org.joy.core.init.support.properties.JoyPropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
 				<value>classpath*:/conf/db.properties</value>
@@ -17,8 +17,8 @@
 		</property>
 	</bean>
 
-	<context:component-scan base-package="com.kvc.joy">
-		<context:exclude-filter type="aspectj" expression="com.kvc.joy.**.web" />
+	<context:component-scan base-package="org.joy">
+		<context:exclude-filter type="aspectj" expression="org.joy.**.web" />
 	</context:component-scan>
 
 	<!-- 业务库数据源定义 -->
@@ -29,7 +29,7 @@
 
 	<!-- 定义一个切入点，使事务在它的切入点内有效
 	<aop:config>
-		<aop:pointcut id="crudMethos" expression="execution(* com.kvc.joy.*..service.impl.*.*(..))" />
+		<aop:pointcut id="crudMethos" expression="execution(* org.joy.*..service.impl.*.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="crudMethos" />
 	</aop:config>
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
@@ -58,7 +58,7 @@
 	</bean>
 
 	<!-- 数据源通知，主要为了设置AutoCommit为false -->
-	<bean id="dataSourceAdvice" class="com.kvc.joy.core.persistence.support.DataSourceAdvice">
+	<bean id="dataSourceAdvice" class="org.joy.core.persistence.support.DataSourceAdvice">
 		<property name="autoCommit" value="${db.autoCommit}"/>
 	</bean>
 

@@ -1,8 +1,8 @@
 package org.jwebap.plugin.tracer.jdbc;
 
-import com.kvc.joy.commons.log.Log;
-import com.kvc.joy.commons.log.LogFactory;
-import com.kvc.joy.plugin.monitor.jdbc.jwebap.model.vo.ParamMsg;
+import org.joy.commons.log.Log;
+import org.joy.commons.log.LogFactory;
+import org.joy.plugin.monitor.jdbc.jwebap.model.vo.ParamMsg;
 import org.jwebap.core.Trace;
 
 import java.sql.*;

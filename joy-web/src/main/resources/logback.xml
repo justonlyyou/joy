@@ -34,7 +34,7 @@
       </appender>
        -->
     
-	<appender name="SQL_MONITOR_APPENDER" class="com.kvc.joy.plugin.monitor.jdbc.jwebap.SqlMonitorAppender">
+	<appender name="SQL_MONITOR_APPENDER" class="org.joy.plugin.monitor.jdbc.jwebap.SqlMonitorAppender">
 	</appender>
     
     <!-- Output to Database -->
@@ -49,7 +49,7 @@
       </appender>
      -->
      
-     <logger name="com.kvc.joy" level="TRACE" />
+     <logger name="org.joy" level="TRACE" />
      <logger name="org.jwebap.plugin.tracer.jdbc.ProxyPreparedStatement" level="DEBUG" />
      <logger name="org.jwebap.plugin.tracer.jdbc.ProxyStatement" level="DEBUG" />
 

@@ -5,7 +5,7 @@
        default-autowire="byName">
 
     <!-- JDBC性能监控日志服务 -->
-	<bean id="sysSqlLogService" class="com.kvc.joy.plugin.monitor.jdbc.jwebap.service.impl.SysSqlLogService" />
+	<bean id="sysSqlLogService" class="org.joy.plugin.monitor.jdbc.jwebap.service.impl.SysSqlLogService" />
 
 	<!-- JDBC性能监控日志持久化线程池 -->
 	<bean id="sysSqlLogThreadPool" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">

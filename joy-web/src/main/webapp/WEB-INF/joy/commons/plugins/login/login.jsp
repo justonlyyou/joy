@@ -1,16 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
-<%@ include file="/WEB-INF/joy/commons/include/inc-all.jsp"%>
 
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="登录页面">
-<meta name="author" content="Kevice">
-
-<title>${joyFn:getAppProperty('app.name')}登录</title>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="登录页面">
+    <meta name="author" content="Kevice">
+    <%@ include file="/WEB-INF/joy/commons/include/inc-all.jsp"%>
+    <title>${joyFn:getAppProperty('app.name')}登录</title>
 </head>
 
 <body>
