@@ -10,7 +10,7 @@
 
 	<context:property-placeholder location="classpath*:/conf/quartz.properties" ignore-unresolvable="true" />
 	
-	<bean id="qrtzJobPlanCfgDao" class="com.kvc.joy.plugin.schedule.quartz.dao.TQrtzJobPlanCfgDao" />
+	<bean id="qrtzJobPlanCfgDao" class="org.joy.plugin.schedule.quartz.dao.TQrtzJobPlanCfgDao" />
 	
 
 	<!-- 
@@ -27,9 +27,9 @@
 	
 	<bean id="schedulerFactory" class="org.springframework.scheduling.quartz.SchedulerFactoryBean"/>
 	
-	<bean id="quartzTriggersHolder" class="com.kvc.joy.plugin.schedule.quartz.service.impl.QuartzTriggersHolder"/>
+	<bean id="quartzTriggersHolder" class="org.joy.plugin.schedule.quartz.service.impl.QuartzTriggersHolder"/>
 	
-	<bean id="quartzJobRegistry" class="com.kvc.joy.plugin.schedule.quartz.service.impl.QuartzJobRegistry">
+	<bean id="quartzJobRegistry" class="org.joy.plugin.schedule.quartz.service.impl.QuartzJobRegistry">
 		<property name="quartzTriggersHolder" ref="quartzTriggersHolder"/>
 	</bean>
 

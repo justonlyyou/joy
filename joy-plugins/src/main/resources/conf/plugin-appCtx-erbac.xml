@@ -3,7 +3,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="filterChainDefinition" class="com.kvc.joy.plugin.security.erbac.service.impl.FilterChainDefinition">
+	<bean id="filterChainDefinition" class="org.joy.plugin.security.erbac.service.impl.FilterChainDefinition">
 		<property name="filterChain">
 			<value>
 				/static/** = anon
@@ -27,11 +27,11 @@
 		<property name="filterChainDefinitionMap" ref="filterChainDefinition" />
 	</bean>
 
-	<bean id="shiroDataBaseRealm" class="com.kvc.joy.plugin.security.erbac.service.impl.ShiroDataBaseRealm">
+	<bean id="shiroDataBaseRealm" class="org.joy.plugin.security.erbac.service.impl.ShiroDataBaseRealm">
 		<property name="credentialsMatcher" ref="credentcialsMatcher"/>
 	</bean>
 
-    <bean id="credentcialsMatcher" class="com.kvc.joy.plugin.security.erbac.service.impl.JoyCredentialsMatcher"/>
+    <bean id="credentcialsMatcher" class="org.joy.plugin.security.erbac.service.impl.JoyCredentialsMatcher"/>
 
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
 		<property name="realm" ref="shiroDataBaseRealm" />
@@ -56,9 +56,9 @@
 		<property name="securityManager" ref="securityManager" />
 	</bean>
 
-	<bean id="userPermissionService" class="com.kvc.joy.plugin.security.erbac.service.impl.UserPermissionService" />
+	<bean id="userPermissionService" class="org.joy.plugin.security.erbac.service.impl.UserPermissionService" />
 	
-	<bean id="erbacAuthorityDao" class="com.kvc.joy.plugin.security.erbac.dao.impl.TErbacAuthorityDao" />
+	<bean id="erbacAuthorityDao" class="org.joy.plugin.security.erbac.dao.impl.TErbacAuthorityDao" />
 	
 
 </beans>

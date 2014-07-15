@@ -10,28 +10,28 @@
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<!-- <jar-file>joy-core-1.0.0-SNAPSHOT.jar</jar-file> -->
 		
-      	<class>com.kvc.joy.core.ehcache.model.po.TSysCacheCfg</class>
-      	<class>com.kvc.joy.core.sysres.code.po.TSysMdCodeTableDic</class>
-      	<class>com.kvc.joy.core.sysres.datasrc.model.po.TSysMdDataSrc</class>
-      	<class>com.kvc.joy.core.sysres.menu.po.TSysMenu</class>
-      	<class>com.kvc.joy.core.sysres.param.po.TSysParam</class>
-      	<!-- <class>com.kvc.joy.plugin.mapping.field.po.TSysFieldMapping</class>
-      	<class>com.kvc.joy.plugin.mapping.field.po.TSysFieldMappingRule</class>
-      	<class>com.kvc.joy.plugin.monitor.jdbc.model.po.TSysSqlLog</class>
-      	<class>com.kvc.joy.plugin.schedule.quartz.model.po.TQrtzJobPlanCfg</class>
-      	<class>com.kvc.joy.plugin.seqgen.po.TSysSeqNum</class>
-      	<class>com.kvc.joy.plugin.seqgen.po.TSysSeqNumRule</class>
-      	<class>com.kvc.joy.plugin.seqgen.po.TSysSeqNumStat</class>
-      	<class>com.kvc.joy.plugin.security.login.model.po.TLoginLog</class>
-      	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacAuthority</class>
-      	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacGroup</class>
-      	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacGroupAuth</class>
-      	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacGroupUser</class>
-      	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacOrganization</class>
-      	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacRole</class>
-      	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacRoleAuth</class>
-      	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacUser</class>
-      	<class>com.kvc.joy.plugin.security.erbac.model.po.TErbacUserAuth</class> -->
+      	<class>org.joy.core.ehcache.model.po.TSysCacheCfg</class>
+      	<class>org.joy.core.sysres.code.po.TSysMdCodeTableDic</class>
+      	<class>org.joy.core.sysres.datasrc.model.po.TSysMdDataSrc</class>
+      	<class>org.joy.core.sysres.menu.po.TSysMenu</class>
+      	<class>org.joy.core.sysres.param.po.TSysParam</class>
+      	<!-- <class>org.joy.plugin.mapping.field.po.TSysFieldMapping</class>
+      	<class>org.joy.plugin.mapping.field.po.TSysFieldMappingRule</class>
+      	<class>org.joy.plugin.monitor.jdbc.model.po.TSysSqlLog</class>
+      	<class>org.joy.plugin.schedule.quartz.model.po.TQrtzJobPlanCfg</class>
+      	<class>org.joy.plugin.seqgen.po.TSysSeqNum</class>
+      	<class>org.joy.plugin.seqgen.po.TSysSeqNumRule</class>
+      	<class>org.joy.plugin.seqgen.po.TSysSeqNumStat</class>
+      	<class>org.joy.plugin.security.login.model.po.TLoginLog</class>
+      	<class>org.joy.plugin.security.erbac.model.po.TErbacAuthority</class>
+      	<class>org.joy.plugin.security.erbac.model.po.TErbacGroup</class>
+      	<class>org.joy.plugin.security.erbac.model.po.TErbacGroupAuth</class>
+      	<class>org.joy.plugin.security.erbac.model.po.TErbacGroupUser</class>
+      	<class>org.joy.plugin.security.erbac.model.po.TErbacOrganization</class>
+      	<class>org.joy.plugin.security.erbac.model.po.TErbacRole</class>
+      	<class>org.joy.plugin.security.erbac.model.po.TErbacRoleAuth</class>
+      	<class>org.joy.plugin.security.erbac.model.po.TErbacUser</class>
+      	<class>org.joy.plugin.security.erbac.model.po.TErbacUserAuth</class> -->
         
         <properties>
         <!-- 

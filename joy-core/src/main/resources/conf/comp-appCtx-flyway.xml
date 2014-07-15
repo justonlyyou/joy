@@ -4,7 +4,7 @@
 		http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-autowire="byName">
 
- 	<bean id="rdbObjectsInitService" class="com.kvc.joy.core.persistence.flyway.service.impl.RdbObjectsInitService">
+ 	<bean id="rdbObjectsInitService" class="org.joy.core.persistence.flyway.service.impl.RdbObjectsInitService">
  		<property name="locations" value="${flyway.locations}"/>
  	</bean>
 

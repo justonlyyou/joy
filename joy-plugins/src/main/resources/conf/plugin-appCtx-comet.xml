@@ -5,11 +5,11 @@
 
     <bean id="testComet" class="com.kvc.comet.TestSocketHandler"/>
 
-    <bean id="cometConfigMetadata" class="com.kvc.joy.plugin.message.comet.config.CometConfigMetadata">
+    <bean id="cometConfigMetadata" class="org.joy.plugin.message.comet.config.CometConfigMetadata">
         <property name="timeout" value="60000"></property>
         <property name="properties">
             <props>
-                <prop key="objectFactory">com.kvc.joy.plugin.message.comet.support.SpringObjectFactory</prop>
+                <prop key="objectFactory">org.joy.plugin.message.comet.support.SpringObjectFactory</prop>
             </props>
         </property>
         <property name="handlers">

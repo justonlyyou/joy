@@ -1,4 +1,5 @@
-		<link href="${thirdCtx}/ace/css/bootstrap.min.css" rel="stylesheet" />
+<%@ include file="/WEB-INF/joy/commons/include/inc-taglib.jsp"%>
+        <link href="${thirdCtx}/ace/css/bootstrap.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="${thirdCtx}/ace/css/font-awesome.min.css" />
 		<!--[if IE 7]>
 		  <link rel="stylesheet" href="${thirdCtx}/ace/css/font-awesome-ie7.min.css" />

@@ -12,33 +12,33 @@
 		</property>
 	</bean>
 	
-	<bean id="jdbcTool" class="com.kvc.joy.core.persistence.jdbc.support.utils.JdbcTool"/>
+	<bean id="jdbcTool" class="org.joy.core.persistence.jdbc.support.utils.JdbcTool"/>
 
 	<!-- 关系数据库表元数据加载服务 -->
-	<bean id="mdRdbTableService" class="com.kvc.joy.core.persistence.jdbc.service.impl.MdRdbTableService" />
+	<bean id="mdRdbTableService" class="org.joy.core.persistence.jdbc.service.impl.MdRdbTableService" />
 	
 	<!-- 关系数据库表元数据缓存服务 -->
-	<bean id="mdRdbTableCacheService" class="com.kvc.joy.core.persistence.jdbc.service.impl.MdRdbTableCacheService" 
+	<bean id="mdRdbTableCacheService" class="org.joy.core.persistence.jdbc.service.impl.MdRdbTableCacheService"
 		p:mdRdbTableService-ref="mdRdbTableService" >
 	</bean>
 	
 	<!-- 关系数据库表字段元数据加载服务 -->
-	<bean id="mdRdbColumnService" class="com.kvc.joy.core.persistence.jdbc.service.impl.MdRdbColumnService" />
+	<bean id="mdRdbColumnService" class="org.joy.core.persistence.jdbc.service.impl.MdRdbColumnService" />
 	
 	<!-- 关系数据库表字段元数据缓存服务 -->
-	<bean id="mdRdbColumnCacheService" class="com.kvc.joy.core.persistence.jdbc.service.impl.MdRdbColumnCacheService" 
+	<bean id="mdRdbColumnCacheService" class="org.joy.core.persistence.jdbc.service.impl.MdRdbColumnCacheService"
 		p:mdRdbColumnService-ref="mdRdbColumnService" >
 	</bean>
 	
 	<!-- 关系数据库表主键元数据加载服务 -->
-	<bean id="mdRdbPrimaryKeyService" class="com.kvc.joy.core.persistence.jdbc.service.impl.MdRdbPrimaryKeyService" />
+	<bean id="mdRdbPrimaryKeyService" class="org.joy.core.persistence.jdbc.service.impl.MdRdbPrimaryKeyService" />
 	
 	<!-- 关系数据库表主键元数据缓存服务 -->
-	<bean id="mdRdbPrimaryKeyCacheService" class="com.kvc.joy.core.persistence.jdbc.service.impl.MdRdbPrimaryKeyCacheService" 
+	<bean id="mdRdbPrimaryKeyCacheService" class="org.joy.core.persistence.jdbc.service.impl.MdRdbPrimaryKeyCacheService"
 		p:mdRdbPrimaryKeyService-ref="mdRdbPrimaryKeyService" >
 	</bean>
 	
 	<!-- 关系数据库表结构反向同步服务 -->
-	<bean id="mdRdbAlterReverseSyncService" class="com.kvc.joy.core.persistence.jdbc.service.impl.MdRdbAlterReverseSyncService" />
+	<bean id="mdRdbAlterReverseSyncService" class="org.joy.core.persistence.jdbc.service.impl.MdRdbAlterReverseSyncService" />
 	
 </beans>

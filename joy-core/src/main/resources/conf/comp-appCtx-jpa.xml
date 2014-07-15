@@ -42,7 +42,7 @@
         <constructor-arg ref="transactionManager" />
     </bean>
 	
-	<bean id="jpaTool" class="com.kvc.joy.core.persistence.orm.jpa.JpaTool"/>
+	<bean id="jpaTool" class="org.joy.core.persistence.orm.jpa.JpaTool"/>
 	
     <!-- 
 	<bean name="openEntityManagerInViewInterceptor"
