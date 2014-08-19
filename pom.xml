@@ -13,7 +13,8 @@
 		<module>joy-core</module>
 		<module>joy-plugins</module>
 		<module>joy-web</module>
-		<!-- <module>joy-tools</module> -->
+        <module>joy-fx</module>
+        <!-- <module>joy-tools</module> -->
 		<!-- <module>joy-swing</module> -->
 	</modules>
 
@@ -63,7 +64,7 @@
         <hibernate.jpamodelgen.version>4.3.1.Final</hibernate.jpamodelgen.version>
         <druid.version>1.0.2</druid.version>
         <auto.comet.version>1.0beta</auto.comet.version>
-        <freemarker.version>2.3.20</freemarker.version>
+        <controlsfx.version>8.0.6_20</controlsfx.version>
 
         <plugin.maven.resources.version>2.4</plugin.maven.resources.version>
         <plugin.maven.compiler.version>3.1</plugin.maven.compiler.version>
@@ -311,7 +312,6 @@
                 <scope>provided</scope>
             </dependency>
 
-
 			<!-- plugin -->
 			<dependency>
 				<groupId>org.hibernate</groupId>
@@ -397,6 +397,13 @@
                 <groupId>org.freemarker</groupId>
                 <artifactId>freemarker</artifactId>
                 <version>${freemarker.version}</version>
+            </dependency>
+
+            <!-- fx -->
+            <dependency>
+                <groupId>org.controlsfx</groupId>
+                <artifactId>controlsfx</artifactId>
+                <version>${controlsfx.version}</version>
             </dependency>
 
             <!-- web -->
