@@ -73,7 +73,7 @@ public class EntityCommentAndDefaultValueScanner {
 	private static MdRdbTable scanTableComment(Class<?> clazz) {
 		Table tableAnno = clazz.getAnnotation(Table.class);
 		MdRdbTable table = new MdRdbTable();
-		table.setName(tableAnno.name().toLowerCase());
+		table.setName(tableAnno.name());
 		Comment tableCommentAnno = clazz.getAnnotation(Comment.class);
 		if (tableCommentAnno != null) {
 			String comment = tableCommentAnno.value();
@@ -102,13 +102,13 @@ public class EntityCommentAndDefaultValueScanner {
 						if (columnAnno == null) {
 							JoinColumn joinColumnAnno = mthd.getAnnotation(JoinColumn.class);
 							if (joinColumnAnno != null) {
-								columnName = joinColumnAnno.name().toLowerCase();
+								columnName = joinColumnAnno.name();
 							}
 						} else {
 							columnName = StringTool.lowerCase(columnAnno.name());
 						}
 						if (StringTool.isEmpty(columnName)) {
-							columnName = StringTool.humpToUnderscore(mthd.getName().replaceFirst("^is|^get", "")).toLowerCase();
+							columnName = StringTool.humpToUnderscore(mthd.getName().replaceFirst("^is|^get", ""));
 						}
 						column.setName(columnName);
 

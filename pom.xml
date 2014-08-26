@@ -44,6 +44,7 @@
         <javax.validation.version>1.1.0.CR3</javax.validation.version>
         <javax.persistence.version>2.0.0</javax.persistence.version>
         <ehcache.version>2.8.2</ehcache.version>
+        <h2.version>1.4.181</h2.version>
         <spring.data.commons.version>1.5.0.RELEASE</spring.data.commons.version>
         <spring.data.jpa.version>1.3.0.RELEASE</spring.data.jpa.version>
         <jwebap.version>0.6.1</jwebap.version>
@@ -64,7 +65,7 @@
         <hibernate.jpamodelgen.version>4.3.1.Final</hibernate.jpamodelgen.version>
         <druid.version>1.0.2</druid.version>
         <auto.comet.version>1.0beta</auto.comet.version>
-        <controlsfx.version>8.0.6_20</controlsfx.version>
+        <controlsfx.version>8.0.6</controlsfx.version>
 
         <plugin.maven.resources.version>2.4</plugin.maven.resources.version>
         <plugin.maven.compiler.version>3.1</plugin.maven.compiler.version>
@@ -311,6 +312,13 @@
                 <version>${hibernate.jpamodelgen.version}</version>
                 <scope>provided</scope>
             </dependency>
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
 
 			<!-- plugin -->
 			<dependency>
@@ -391,12 +399,6 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
                 <version>${druid.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.freemarker</groupId>
-                <artifactId>freemarker</artifactId>
-                <version>${freemarker.version}</version>
             </dependency>
 
             <!-- fx -->

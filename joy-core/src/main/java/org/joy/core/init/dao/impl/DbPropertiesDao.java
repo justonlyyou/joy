@@ -12,6 +12,7 @@ import org.joy.core.persistence.jdbc.support.db.DbSupport;
 import org.joy.core.persistence.jdbc.support.db.DbSupportFactory;
 import org.joy.core.persistence.jdbc.support.db.Table;
 import org.joy.core.persistence.jdbc.support.utils.JdbcTool;
+import org.springframework.util.LinkedCaseInsensitiveMap;
 
 import java.sql.Connection;
 import java.text.MessageFormat;
@@ -137,6 +138,7 @@ public class DbPropertiesDao implements IDbPropertiesDao {
         for (Map<String, String> result : maps) {
             properties.setProperty(result.get("property_name"), result.get("property_value"));
         }
+
         log.info("加载到表" + TABLE_NAME + "中的Properties个数为：" + properties.size());
         return properties;
     }

@@ -1,40 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context docBase="..\" path="/joy" reloadable="false">
-					<!-- oracle -->
-					<!--
-                    <Resource name="JDBC/JOY" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:orcl"
-						username="joy" password="tangwl" driverClassName="oracle.jdbc.driver.OracleDriver"
-						maxIdle="3" maxWait="-1" maxActive="50" />
-                    -->
-					<!-- SQL Server -->
-					<!-- <Resource name="JDBC/FRAME" type="javax.sql.DataSource" url="jdbc:sqlserver://localhost:1433;database=frame" 
-						username="kevice" password="tangwl" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
-						maxIdle="3" maxWait="-1" maxActive="50" /> -->
 
-					<!-- MySQL -->
-                    <!---->
-					<Resource driverClassName="com.mysql.jdbc.Driver"
-						maxActive="50" maxIdle="3" maxWait="-1" name="JDBC/JOY" 
-						type="javax.sql.DataSource" url="jdbc:mysql://sendo:3306/joy"
-						username="joy" password="joy"/>
+    <!-- h2 -->
+    <!-- -->
+    <Resource driverClassName="org.h2.jdbcx.JdbcDataSource"
+              maxActive="50" maxIdle="3" maxWait="-1" name="JDBC/JOY"
+              type="javax.sql.DataSource" url="jdbc:h2:file:K:/IdeaProjects/joy/h2/joy;INIT=CREATE SCHEMA IF NOT EXISTS JOY\;SET SCHEMA JOY"
+              username="sa" password=""/>
 
+    <!-- MySQL -->
+    <!--
+    <Resource driverClassName="com.mysql.jdbc.Driver"
+              maxActive="50" maxIdle="3" maxWait="-1" name="JDBC/JOY"
+              type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/joy?createDatabaseIfNotExist=true"
+              username="root" password="tangwl"/>
+    -->
 
-                    <!--
-                    <Resource name="JDBC/JOY"
-                              factory="com.alibaba.druid.pool.DruidDataSourceFactory"
-                              auth="Container"
-                              type="javax.sql.DataSource"
-                              url="jdbc:mysql://localhost:3306/joy"
-                              username="root"
-                              password="FNKUf9TW7do7P9HKqMIA3LnKOi6Biu/cZaxhD160LmerwDo1G6Ik/zXASQd7J08x73PhJJHdY92m0gNvb3Jn+A=="
-                              maxActive="100"
-                              maxIdle="30"
-                              maxWait="10000"
-                              testOnBorrow="false"
-                              initialSize="10"
-                              filters="stat,slf4j,config"
-                              connectionProperties="config.decrypt=true"
-                              />
-                    -->
+    <!-- oracle -->
+    <!--
+    <Resource name="JDBC/JOY" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:orcl"
+        username="joy" password="tangwl" driverClassName="oracle.jdbc.driver.OracleDriver"
+        maxIdle="3" maxWait="-1" maxActive="50" />
+    -->
+
+    <!-- 使用DRUID连接池 -->
+    <!--
+    <Resource name="JDBC/JOY"
+              factory="com.alibaba.druid.pool.DruidDataSourceFactory"
+              auth="Container"
+              type="javax.sql.DataSource"
+              url="jdbc:mysql://localhost:3306/joy"
+              username="root"
+              password="FNKUf9TW7do7P9HKqMIA3LnKOi6Biu/cZaxhD160LmerwDo1G6Ik/zXASQd7J08x73PhJJHdY92m0gNvb3Jn+A=="
+              maxActive="100"
+              maxIdle="30"
+              maxWait="10000"
+              testOnBorrow="false"
+              initialSize="10"
+              filters="stat,slf4j,config"
+              connectionProperties="config.decrypt=true"
+              />
+    -->
 
 </Context>

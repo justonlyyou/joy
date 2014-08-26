@@ -79,22 +79,25 @@ public abstract class Table extends SchemaObject {
 		if (types.length == 0) {
 			types = null;
 		}
-
+        String[] tables = {table.toLowerCase(), table.toUpperCase(), table}; // 处理大小写敏感问题
 		ResultSet resultSet = null;
-		boolean found;
+		boolean found = false;
 		try {
-			resultSet = dbSupport
-					.getConnection()
-					.getMetaData()
-					.getTables(catalog == null ? null : catalog.getName(), schema == null ? null : schema.getName(),
-							table, types);
-			found = resultSet.next();
+            for(String t : tables) {
+                resultSet = dbSupport
+                        .getConnection()
+                        .getMetaData()
+                        .getTables(catalog == null ? null : catalog.getName(), schema == null ? null : schema.getName(), t, types);
+                found = resultSet.next();
+                if (found) {
+                    break;
+                }
+            }
 		} catch (Exception e) {
 			throw new SystemException(e);
 		} finally {
 			JdbcTool.closeResultSet(resultSet);
 		}
-
 		return found;
 	}
 

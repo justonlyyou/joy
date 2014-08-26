@@ -15,6 +15,7 @@ import org.joy.core.sysres.code.model.po.TSysCodeTable;
 import org.joy.core.sysres.code.model.vo.CodeRecord;
 import org.joy.core.sysres.code.service.ISysCodeService;
 import org.joy.core.sysres.datasrc.model.po.TSysDataSrc;
+import org.springframework.util.LinkedCaseInsensitiveMap;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -59,7 +60,7 @@ public class SysCodeService implements ISysCodeService {
 		} else {
 			codes = searchCodes(codeTableId, codeDic);
 		}
-		Map<String, CodeRecord> map = new LinkedHashMap<String, CodeRecord>(codes.size());
+		Map<String, CodeRecord> map = new LinkedCaseInsensitiveMap<CodeRecord>(codes.size());
 		for (CodeRecord codeRecord : codes) {
 			map.put(codeRecord.getCode(), codeRecord);
 		}
@@ -75,9 +76,9 @@ public class SysCodeService implements ISysCodeService {
 		String country = locale.getCountry();
 		String transFieldPrefix = codeDic.getTransField();
 		String transField = transFieldPrefix + "_" + language + "_" + country;
-		String tableName = codeDic.getTableName().toLowerCase();
+		String tableName = codeDic.getTableName();
 		RdbConnection rdbConn = new RdbConnection(codeDic.getDataSrc().getId(), conn);
-		MdRdbColumn column = MdRdbTool.getColumn(rdbConn, tableName, transField.toLowerCase());
+		MdRdbColumn column = MdRdbTool.getColumn(rdbConn, tableName, transField);
 		if (column == null) {
 			transField = transFieldPrefix;
 		}
@@ -109,7 +110,7 @@ public class SysCodeService implements ISysCodeService {
 		} else {
 			codeCategory = codeDic.getTableComment();
 		}
-		String sql = MessageFormat.format(sqlPattern, codeDic.getTableName().toLowerCase(), where, orderByField);
+		String sql = MessageFormat.format(sqlPattern, codeDic.getTableName(), where, orderByField);
 		PreparedStatement statement = null;
 		try {
 			conn = JdbcTool.getConnection(dataSrc);

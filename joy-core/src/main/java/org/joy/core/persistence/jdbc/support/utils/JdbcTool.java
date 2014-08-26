@@ -13,6 +13,7 @@ import org.joy.core.persistence.orm.jpa.JpaTool;
 import org.joy.core.spring.utils.CoreBeanFactory;
 import org.joy.core.sysres.datasrc.model.po.TSysDataSrc;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.util.LinkedCaseInsensitiveMap;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -70,7 +71,7 @@ public class JdbcTool extends BaseJdbcDao {
 			try {
 				return dataSource.getConnection();
 			} catch (SQLException e) {
-				logger.error("通过JNDI：" + jndi + "获取连接出错！");
+				logger.error(e, "通过JNDI：" + jndi + "获取连接出错！");
 			}
 		}
 		return null;
@@ -207,7 +208,7 @@ public class JdbcTool extends BaseJdbcDao {
      *
      * @param query  The query to execute.
      * @param params The query parameters.
-     * @return The query results.
+     * @return The query results. 其中Map为LinkedCaseInsensitiveMap，key大小写不敏感。
      * @throws SQLException when the query execution failed.
      */
     public static List<Map<String, String>> queryForList(Connection conn, String query, String... params) {
@@ -224,7 +225,7 @@ public class JdbcTool extends BaseJdbcDao {
 
             result = new ArrayList<Map<String, String>>();
             while (resultSet.next()) {
-                Map<String, String> rowMap = new HashMap<String, String>();
+                Map<String, String> rowMap = new LinkedCaseInsensitiveMap<String>();
                 for (int i = 1; i <= resultSet.getMetaData().getColumnCount(); i++) {
                     rowMap.put(resultSet.getMetaData().getColumnLabel(i), resultSet.getString(i));
                 }

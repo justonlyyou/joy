@@ -4,6 +4,7 @@ import org.joy.commons.exception.SystemException;
 import org.joy.commons.lang.ArrayTool;
 import org.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
 import org.joy.core.persistence.jdbc.model.vo.MdRdbTable;
+import org.springframework.util.LinkedCaseInsensitiveMap;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -251,15 +252,16 @@ public abstract class DbSupport {
 				tableNameSet.add(tableName.toLowerCase());
 			}
 		}
-		Map<String, String> commentMap = new HashMap<String, String>();
+		Map<String, String> commentMap = new LinkedCaseInsensitiveMap<String>();
 		try {
 			DatabaseMetaData metaData = connection.getMetaData();
-			ResultSet rsTable = metaData.getTables(null, metaData.getUserName(), null, null);
+			ResultSet rsTable = metaData.getTables(null, getCurrentSchema().getName(), null, null);
 			while (rsTable.next()) {
-				String tableName = rsTable.getString("TABLE_NAME").toLowerCase();
+                String table = rsTable.getString("TABLE_NAME");
+				String tableName = table.toLowerCase();
 				if ((tableNameSet == null || tableNameSet.contains(tableName)) && !tableName.startsWith("bin$")) {
 					String remarks = rsTable.getString("REMARKS");
-					commentMap.put(tableName, remarks);
+					commentMap.put(table, remarks);
 				}
 			}
 		} catch (Exception e) {

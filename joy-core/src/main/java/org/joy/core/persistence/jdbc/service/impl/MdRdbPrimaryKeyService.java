@@ -6,6 +6,8 @@ import org.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
 import org.joy.core.persistence.jdbc.model.vo.MdRdbPrimaryKey;
 import org.joy.core.persistence.jdbc.model.vo.RdbConnection;
 import org.joy.core.persistence.jdbc.service.IMdRdbPrimaryKeyService;
+import org.joy.core.persistence.jdbc.support.db.DbSupport;
+import org.joy.core.persistence.jdbc.support.db.DbSupportFactory;
 import org.joy.core.persistence.jdbc.support.utils.MdRdbTool;
 
 import java.sql.Connection;
@@ -28,12 +30,12 @@ public class MdRdbPrimaryKeyService implements IMdRdbPrimaryKeyService {
 	@Override
 	public MdRdbPrimaryKey getPrimaryKey(RdbConnection connection, String tableName) {
 		logger.info("加载表字段主键的元数据信息，datasourceId: " + connection.getDsId() + ", tableName: " + tableName);
-		tableName = tableName.toLowerCase();
 		MdRdbPrimaryKey primaryKey = null;
 		Connection conn = connection.getConnection();
 		try {
-			DatabaseMetaData metaData = conn.getMetaData();
-			List<String> pks = getPrimaryKey(metaData, tableName);
+            DbSupport dbSupport = DbSupportFactory.createDbSupport(conn);
+            DatabaseMetaData metaData = conn.getMetaData();
+			List<String> pks = getPrimaryKey(dbSupport, metaData, tableName);
 			for (String pk : pks) {
 				if (primaryKey == null) {
 					primaryKey = new MdRdbPrimaryKey();
@@ -57,12 +59,19 @@ public class MdRdbPrimaryKeyService implements IMdRdbPrimaryKeyService {
 	 * @throws SQLException
 	 * @time 2012-11-9 上午10:22:21
 	 */
-	static List<String> getPrimaryKey(DatabaseMetaData metaData, String tableName) throws SQLException {
+	static List<String> getPrimaryKey(DbSupport dbSupport, DatabaseMetaData metaData, String tableName) throws SQLException {
 		List<String> pks = new ArrayList<String>(1);
-		ResultSet primaryKeys = metaData.getPrimaryKeys(null, metaData.getUserName(), tableName);
-		while (primaryKeys.next()) {
-			pks.add(primaryKeys.getString("COLUMN_NAME").toLowerCase());
-		}
+        String schema = dbSupport.getCurrentSchema().getName();
+        String[] tables = {tableName.toLowerCase(), tableName.toUpperCase(), tableName};
+        for(String t : tables) {
+            ResultSet primaryKeys = metaData.getPrimaryKeys(null, schema, t);
+            while (primaryKeys.next()) {
+                pks.add(primaryKeys.getString("COLUMN_NAME"));
+            }
+            if (!pks.isEmpty()) {
+                break;
+            }
+        }
 		return pks;
 	}
 

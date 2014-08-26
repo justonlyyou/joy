@@ -8,13 +8,13 @@ import org.joy.core.persistence.jdbc.model.vo.MdRdbTable;
 import org.joy.core.persistence.jdbc.model.vo.RdbConnection;
 import org.joy.core.persistence.jdbc.service.IMdRdbColumnService;
 import org.joy.core.persistence.jdbc.support.MdRdbColumnCommentParser;
+import org.joy.core.persistence.jdbc.support.db.DbSupport;
+import org.joy.core.persistence.jdbc.support.db.DbSupportFactory;
 import org.joy.core.persistence.jdbc.support.utils.MdRdbTool;
+import org.springframework.util.LinkedCaseInsensitiveMap;
 
 import java.math.BigDecimal;
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.*;
 
 /**
@@ -30,15 +30,16 @@ public class MdRdbColumnService implements IMdRdbColumnService {
 	@Override
 	public Map<String, MdRdbColumn> getColumns(RdbConnection connection, String tableName) {
 		logger.info("加载表字段元数据信息，datasourceId: " + connection.getDsId() + ", table: " + tableName);
-		tableName = tableName.toLowerCase();
 		Map<String, MdRdbColumn> columnMap = null;
 		Connection conn = connection.getConnection();
+
 		try {
-			DatabaseMetaData metaData = conn.getMetaData();
-			columnMap = loadColumns(metaData, tableName);
+            DatabaseMetaData metaData = conn.getMetaData();
+            DbSupport dbSupport = DbSupportFactory.createDbSupport(conn);
+            columnMap = loadColumns(dbSupport, metaData, tableName);
 
 			// 设置主键标识
-			List<String> pks = MdRdbPrimaryKeyService.getPrimaryKey(metaData, tableName);
+			List<String> pks = MdRdbPrimaryKeyService.getPrimaryKey(dbSupport, metaData, tableName);
 			for (String pk : pks) {
 				MdRdbColumn column = columnMap.get(pk);
 				column.setKey(true);
@@ -53,20 +54,28 @@ public class MdRdbColumnService implements IMdRdbColumnService {
 		return columnMap;
 	}
 
-	private Map<String, MdRdbColumn> loadColumns(DatabaseMetaData metaData, String tableName)
+	private Map<String, MdRdbColumn> loadColumns(DbSupport dbSupport, DatabaseMetaData metaData, String tableName)
 			throws SQLException {
-		Map<String, MdRdbColumn> columnMap = new LinkedHashMap<String, MdRdbColumn>() {
+		Map<String, MdRdbColumn> columnMap = new LinkedCaseInsensitiveMap<MdRdbColumn>() {
 
 			@Override
 			public Collection<MdRdbColumn> values() {
 				return new ArrayList<MdRdbColumn>(super.values()); // 父类默认返回的集合不是可序列化的
 			}
 		};
-		ResultSet rs = metaData.getColumns(null, metaData.getUserName(), tableName, null);
-		while (rs.next()) {
-			MdRdbColumn column = createColumn(rs);
-			columnMap.put(column.getName().toLowerCase(), column);
-		}
+
+        String schema = dbSupport.getCurrentSchema().getName();
+        String[] tables = {tableName.toLowerCase(), tableName.toUpperCase(), tableName};
+        for (String t : tables) {
+            ResultSet rs = metaData.getColumns(null, schema, t, null);
+            while (rs.next()) {
+                MdRdbColumn column = createColumn(rs);
+                columnMap.put(column.getName(), column);
+            }
+            if(!columnMap.isEmpty()) {
+                break;
+            }
+        }
 		return columnMap;
 	}
 
@@ -82,7 +91,7 @@ public class MdRdbColumnService implements IMdRdbColumnService {
 	private static MdRdbColumn createColumn(ResultSet columns) throws SQLException {
 		MdRdbColumn column = new MdRdbColumn();
 		column.setType(columns.getString("TYPE_NAME"));
-		column.setName(columns.getString("COLUMN_NAME").toLowerCase());
+		column.setName(columns.getString("COLUMN_NAME"));
 		String columnDef = columns.getString("COLUMN_DEF");
 		if (columnDef != null) {
 			columnDef = columnDef.trim();

@@ -5,7 +5,10 @@ import org.joy.commons.log.LogFactory;
 import org.joy.core.persistence.jdbc.model.vo.MdRdbTable;
 import org.joy.core.persistence.jdbc.model.vo.RdbConnection;
 import org.joy.core.persistence.jdbc.service.IMdRdbTableService;
+import org.joy.core.persistence.jdbc.support.db.DbSupport;
 import org.joy.core.persistence.jdbc.support.db.DbSupportFactory;
+import org.joy.core.persistence.jdbc.support.db.Schema;
+import org.springframework.util.LinkedCaseInsensitiveMap;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -29,7 +32,7 @@ public class MdRdbTableService implements IMdRdbTableService {
 	public Map<String, MdRdbTable> getTables(RdbConnection connection) {
 		String dsId = connection.getDsId();
 		logger.info("加载表元数据信息，datasourceId: " + dsId);
-		Map<String, MdRdbTable> tableMap = new LinkedHashMap<String, MdRdbTable>() {
+		Map<String, MdRdbTable> tableMap = new LinkedCaseInsensitiveMap<MdRdbTable>() {
 
 			@Override
 			public Collection<MdRdbTable> values() {
@@ -38,13 +41,14 @@ public class MdRdbTableService implements IMdRdbTableService {
 		};
 		try {
 			Connection conn = connection.getConnection();
-			Map<String, String> tableCommentMap = DbSupportFactory.createDbSupport(conn).getTableComments();
+            DbSupport dbSupport = DbSupportFactory.createDbSupport(conn);
+            Map<String, String> tableCommentMap = dbSupport.getTableComments();
 			DatabaseMetaData metaData = conn.getMetaData();
-			ResultSet rsTable = metaData.getTables(null, metaData.getUserName(), null, null);
+            ResultSet rsTable = metaData.getTables(null, dbSupport.getCurrentSchema().getName(), null, null);
 			while (rsTable.next()) {
-				String tableName = rsTable.getString("TABLE_NAME").toLowerCase();
+				String tableName = rsTable.getString("TABLE_NAME");
 				if (!tableName.startsWith("bin$")) {
-					String tableType = rsTable.getString("TABLE_TYPE").toLowerCase();
+					String tableType = rsTable.getString("TABLE_TYPE");
 					String remarks = tableCommentMap.get(tableName);
 					MdRdbTable mdDbTable = new MdRdbTable(dsId, tableName, remarks, tableType);
 					tableMap.put(tableName, mdDbTable);

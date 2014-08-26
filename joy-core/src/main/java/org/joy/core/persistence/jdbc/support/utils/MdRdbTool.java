@@ -1,5 +1,6 @@
 package org.joy.core.persistence.jdbc.support.utils;
 
+import net.sf.ehcache.CacheException;
 import org.joy.commons.lang.string.StringTool;
 import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
@@ -7,11 +8,10 @@ import org.joy.core.init.support.properties.JoyProperties;
 import org.joy.core.persistence.jdbc.model.vo.*;
 import org.joy.core.persistence.jdbc.support.enums.RdbObjectType;
 import org.joy.core.spring.utils.CoreBeanFactory;
-import net.sf.ehcache.CacheException;
+import org.springframework.util.LinkedCaseInsensitiveMap;
 
 import java.sql.Connection;
 import java.util.HashSet;
-import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
@@ -132,7 +132,7 @@ public class MdRdbTool {
 	 * @time 2013年11月24日 下午10:25:18
 	 */
 	public static Map<String, MdRdbColumn> getColumns(RdbConnection conn, String tableName) {
-		return CoreBeanFactory.getMdRdbColumnCacheService().getColumns(conn, tableName.toLowerCase());
+		return CoreBeanFactory.getMdRdbColumnCacheService().getColumns(conn, tableName);
 	}
 
 	/**
@@ -153,7 +153,7 @@ public class MdRdbTool {
 			dsId = JoyProperties.DB_DATASOURCEID;
 		}
 		Map<String, MdRdbColumn> columns = getColumns(dsId, tableName);
-		return columns.get(columnName.toLowerCase());
+		return columns.get(columnName);
 	}
 	
 	/**
@@ -169,7 +169,7 @@ public class MdRdbTool {
 	 */
 	public static MdRdbColumn getColumn(RdbConnection conn, String tableName, String columnName) {
 		Map<String, MdRdbColumn> columns = getColumns(conn, tableName);
-		return columns.get(columnName.toLowerCase());
+		return columns.get(columnName);
 	}
 
 	/**
@@ -207,7 +207,7 @@ public class MdRdbTool {
 	 * @time 2013年11月24日 下午10:27:14
 	 */
 	public static MdRdbPrimaryKey getPrimaryKey(RdbConnection conn, String tableName) {
-		return CoreBeanFactory.getMdRdbPrimaryKeyCacheService().getPrimaryKey(conn, tableName.toLowerCase());
+		return CoreBeanFactory.getMdRdbPrimaryKeyCacheService().getPrimaryKey(conn, tableName);
 	}
 	
 	/**
@@ -247,7 +247,7 @@ public class MdRdbTool {
 	 */
 	public static MdRdbTable getRelationalObject(RdbConnection conn, String name) {
 		Map<String, MdRdbTable> tableMap = CoreBeanFactory.getMdRdbTableCacheService().getTables(conn);
-		return tableMap.get(name.toLowerCase());
+		return tableMap.get(name);
 	}
 	
 	/**
@@ -294,10 +294,10 @@ public class MdRdbTool {
 				objTypeSet.add(rdbObjectType.getCode());
 			}
 		}
-		Map<String, MdRdbTable> results = new LinkedHashMap<String, MdRdbTable>();
+		Map<String, MdRdbTable> results = new LinkedCaseInsensitiveMap<MdRdbTable>();
 		
 		for (MdRdbTable table : tableMap.values()) {
-			if (objTypeSet.isEmpty() || objTypeSet.contains(table.getType())) {
+			if (objTypeSet.isEmpty() || objTypeSet.contains(table.getType().toLowerCase())) {
 				results.put(table.getName(), table);
 			}
 		}

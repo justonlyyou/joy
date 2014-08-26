@@ -9,6 +9,7 @@ import org.joy.core.persistence.jdbc.support.db.DbSupport;
 import org.joy.core.persistence.jdbc.support.db.Schema;
 import org.joy.core.persistence.jdbc.support.db.SqlStatementBuilder;
 import org.joy.core.persistence.jdbc.support.utils.JdbcTool;
+import org.springframework.util.LinkedCaseInsensitiveMap;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
@@ -169,9 +170,9 @@ public class MySqlDbSupport extends DbSupport {
 			String sql = "Select TABLE_NAME, TABLE_COMMENT from INFORMATION_SCHEMA.TABLES Where table_schema = '"
 					+ getCurrentSchema().getName() + "'" + tableNameCondition;
 			List<Map<String, String>> resultList = JdbcTool.queryForList(connection, sql);
-			Map<String, String> resultMap = new HashMap<String, String>(resultList.size());
+			Map<String, String> resultMap = new LinkedCaseInsensitiveMap<String>(resultList.size());
 			for (Map<String, String> map : resultList) {
-				String tableName = map.get("TABLE_NAME").toLowerCase();
+				String tableName = map.get("TABLE_NAME");
 				String tableComment = map.get("TABLE_COMMENT");
 				resultMap.put(tableName, tableComment);
 			}
