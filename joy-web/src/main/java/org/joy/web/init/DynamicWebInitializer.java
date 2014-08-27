@@ -1,7 +1,6 @@
 package org.joy.web.init;
 
 import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
 
 /**
  * 

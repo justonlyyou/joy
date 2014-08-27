@@ -21,10 +21,6 @@ import org.joy.commons.lang.ClassTool;
 import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
 import org.joy.commons.scanner.support.Resource;
-import org.joy.commons.exception.SystemException;
-import org.joy.commons.lang.ClassTool;
-import org.joy.commons.log.Log;
-import org.joy.commons.scanner.support.Resource;
 
 import java.io.IOException;
 import java.lang.reflect.Modifier;

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <auto-comet xmlns="http://www.auto.org/schema/comet"
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xmlns:spring="http://www.auto.org/schema/comet/spring"
-            xsi:schemaLocation="http://www.auto.org/schema/comet http://www.auto.org/schema/comet/auto-comet-1.0.xsd
-        http://www.auto.org/schema/comet/spring http://www.auto.org/schema/comet/auto-comet-spring-1.0.xsd">
+            xsi:schemaLocation="http://www.auto.org/schema/comet http://www.auto.org/schema/comet/auto-comet-1.0.xsd">
     <!--连接超时配置，单位为分钟。 -->
     <timeout value="120"/>
 

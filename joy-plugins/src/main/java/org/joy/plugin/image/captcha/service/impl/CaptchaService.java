@@ -1,11 +1,11 @@
 package org.joy.plugin.image.captcha.service.impl;
 
 import com.google.code.kaptcha.Producer;
+import org.apache.commons.lang3.StringUtils;
 import org.joy.commons.bean.Pair;
 import org.joy.commons.lang.DateTool;
 import org.joy.core.init.support.properties.JoyProperties;
 import org.joy.plugin.image.captcha.service.ICaptchaService;
-import org.apache.commons.lang3.StringUtils;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;

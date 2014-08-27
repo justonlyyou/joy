@@ -2,7 +2,6 @@ package org.joy.core.init.support.properties;
 
 import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
-import org.joy.commons.scanner.classpath.ClassPathScanner;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
 
 import java.io.IOException;

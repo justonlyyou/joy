@@ -18,9 +18,6 @@ package org.joy.commons.scanner.classpath;
 import org.joy.commons.exception.SystemException;
 import org.joy.commons.io.IoTool;
 import org.joy.commons.scanner.support.Resource;
-import org.joy.commons.exception.SystemException;
-import org.joy.commons.io.IoTool;
-import org.joy.commons.scanner.support.Resource;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;

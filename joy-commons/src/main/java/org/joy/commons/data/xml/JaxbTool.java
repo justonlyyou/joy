@@ -1,7 +1,5 @@
 package org.joy.commons.data.xml;
 
-import org.joy.commons.exception.SystemException;
-import org.joy.commons.lang.ClassTool;
 import org.apache.commons.lang3.StringUtils;
 import org.joy.commons.exception.SystemException;
 import org.joy.commons.lang.ClassTool;

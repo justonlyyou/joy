@@ -3,9 +3,6 @@ package org.joy.commons.collections;
 import org.joy.commons.lang.ArrayTool;
 import org.joy.commons.lang.string.StringTool;
 import org.joy.commons.query.QueryLogicOperator;
-import org.joy.commons.lang.ArrayTool;
-import org.joy.commons.lang.string.StringTool;
-import org.joy.commons.query.QueryLogicOperator;
 
 import java.util.ArrayList;
 import java.util.Arrays;

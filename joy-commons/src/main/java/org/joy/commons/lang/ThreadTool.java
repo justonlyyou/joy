@@ -3,7 +3,6 @@ package org.joy.commons.lang;
 import org.joy.commons.lang.string.StringTool;
 import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
-import org.joy.commons.log.Log;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;

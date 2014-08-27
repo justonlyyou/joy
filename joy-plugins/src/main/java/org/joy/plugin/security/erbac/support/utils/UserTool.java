@@ -1,8 +1,8 @@
 package org.joy.plugin.security.erbac.support.utils;
 
-import org.joy.plugin.security.user.model.po.TUserBasic;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
+import org.joy.plugin.security.user.model.po.TUserBasic;
 
 /**
  * 

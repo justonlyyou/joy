@@ -1,13 +1,13 @@
 package org.joy.commons.collections;
 
+import org.apache.commons.beanutils.PropertyUtils;
+import org.apache.commons.collections.*;
 import org.joy.commons.bean.BeanTool;
 import org.joy.commons.bean.IEntity;
 import org.joy.commons.exception.SystemException;
 import org.joy.commons.lang.ArrayTool;
 import org.joy.commons.lang.reflect.MethodTool;
 import org.joy.commons.lang.string.StringTool;
-import org.apache.commons.beanutils.PropertyUtils;
-import org.apache.commons.collections.*;
 
 import java.util.*;
 

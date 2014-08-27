@@ -1,9 +1,9 @@
 package org.joy.plugin.message.comet.web;
 
+import org.joy.plugin.message.comet.core.SocketHandler;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import org.joy.plugin.message.comet.core.SocketHandler;
 
 /**
  * @author XiaohangHu

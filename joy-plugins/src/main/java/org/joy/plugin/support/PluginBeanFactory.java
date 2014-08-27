@@ -1,6 +1,8 @@
 package org.joy.plugin.support;
 
 import com.google.code.kaptcha.Producer;
+import org.activiti.engine.*;
+import org.apache.shiro.mgt.SecurityManager;
 import org.joy.core.spring.utils.CoreBeanFactory;
 import org.joy.core.spring.utils.SpringBeanTool;
 import org.joy.plugin.image.captcha.service.ICaptchaService;
@@ -12,8 +14,6 @@ import org.joy.plugin.security.user.service.IUserLoginService;
 import org.joy.plugin.security.user.service.IUserLogoutLogService;
 import org.joy.plugin.security.user.service.IUserLogoutService;
 import org.joy.plugin.seqgen.service.ISequenceGenerator;
-import org.activiti.engine.*;
-import org.apache.shiro.mgt.SecurityManager;
 import org.quartz.Scheduler;
 import org.springframework.core.task.TaskExecutor;
 

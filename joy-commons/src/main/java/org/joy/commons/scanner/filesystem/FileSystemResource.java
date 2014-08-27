@@ -19,10 +19,6 @@ import org.joy.commons.exception.SystemException;
 import org.joy.commons.io.IoTool;
 import org.joy.commons.lang.string.StringTool;
 import org.joy.commons.scanner.support.Resource;
-import org.joy.commons.exception.SystemException;
-import org.joy.commons.io.IoTool;
-import org.joy.commons.lang.string.StringTool;
-import org.joy.commons.scanner.support.Resource;
 
 import java.io.*;
 import java.nio.charset.Charset;

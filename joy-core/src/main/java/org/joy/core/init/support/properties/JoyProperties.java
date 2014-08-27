@@ -1,7 +1,6 @@
 package org.joy.core.init.support.properties;
 
 
-import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -15,9 +14,8 @@ public class JoyProperties extends BaseProperties {
     private static Properties dbProperties; // 数据库中存储的properties，不是指db.properties文件中的
 
 	public static String DB_JNDI;
-	public static boolean DB_AUTOCOMMIT;
-	public static String DB_DATASOURCEID;
-    public static String DB_TYPE;
+    public static boolean DB_AUTOCOMMIT;
+    public static String DB_DATASOURCEID;
 
 	public static String JPA_PERSISTENCEXML;
 	public static String JPA_VENDORADAPTERCLASS;
@@ -71,7 +69,6 @@ public class JoyProperties extends BaseProperties {
 		DB_JNDI = getStr("db.jndi");
 		DB_AUTOCOMMIT = getBool("db.autoCommit");
 		DB_DATASOURCEID = getStr("db.dataSourceId");
-        DB_TYPE = getStr("db.type");
 	}
 
     protected void initDbProperties() {

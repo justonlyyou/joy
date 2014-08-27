@@ -2,7 +2,6 @@ package org.joy.commons.log.slf4j;
 
 import org.joy.commons.log.ILogParam;
 import org.joy.commons.log.Log;
-import org.joy.commons.log.Log;
 import org.slf4j.Logger;
 
 import java.text.MessageFormat;

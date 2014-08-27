@@ -5,6 +5,7 @@ import org.joy.core.persistence.jdbc.model.vo.MdRdbTable;
 import org.joy.core.persistence.jdbc.support.db.DbSupport;
 import org.joy.core.persistence.jdbc.support.db.Schema;
 import org.joy.core.persistence.jdbc.support.db.SqlStatementBuilder;
+import org.joy.core.persistence.jdbc.support.enums.RdbType;
 import org.joy.core.persistence.jdbc.support.utils.JdbcTool;
 
 import java.sql.Connection;
@@ -107,5 +108,10 @@ public class OracleDbSupport extends DbSupport {
         }
 		return MessageFormat.format(ALTER_COLUMN_DEFAULT_VALUE_SQL, table.getName(), columnName, defaultValue);
 	}
+
+    @Override
+    public RdbType getDatabaseType() {
+        return RdbType.ORACLE;
+    }
 
 }

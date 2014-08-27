@@ -1,10 +1,10 @@
 package org.joy.commons.collections;
 
-import org.joy.commons.lang.ArrayTool;
 import org.apache.commons.collections.Factory;
 import org.apache.commons.collections.ListUtils;
 import org.apache.commons.collections.Predicate;
 import org.apache.commons.collections.Transformer;
+import org.joy.commons.lang.ArrayTool;
 
 import java.util.*;
 

@@ -5,11 +5,6 @@ import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
 import org.joy.commons.query.sort.Direction;
 import org.joy.commons.query.sort.Order;
-import org.joy.commons.lang.string.StringTool;
-import org.joy.commons.log.Log;
-import org.joy.commons.log.LogFactory;
-import org.joy.commons.query.sort.Direction;
-import org.joy.commons.query.sort.Order;
 
 import java.util.ArrayList;
 import java.util.HashMap;

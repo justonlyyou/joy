@@ -1,5 +1,6 @@
 package org.joy.plugin.security.user.service.impl;
 
+import org.apache.shiro.SecurityUtils;
 import org.joy.core.persistence.orm.jpa.JpaTool;
 import org.joy.plugin.security.user.model.po.TUserLoginLog;
 import org.joy.plugin.security.user.model.po.TUserLogoutLog;
@@ -8,7 +9,6 @@ import org.joy.plugin.security.user.service.IUserLoginLogService;
 import org.joy.plugin.security.user.service.IUserLogoutLogService;
 import org.joy.plugin.security.user.service.IUserLogoutService;
 import org.joy.plugin.security.user.support.enums.LogoutMethod;
-import org.apache.shiro.SecurityUtils;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

@@ -1,7 +1,7 @@
 package org.joy.commons.lang;
 
-import org.joy.commons.lang.string.StringTool;
 import junit.framework.Assert;
+import org.joy.commons.lang.string.StringTool;
 import org.junit.Test;
 
 import java.util.Set;

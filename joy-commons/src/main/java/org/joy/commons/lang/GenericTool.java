@@ -2,8 +2,6 @@ package org.joy.commons.lang;
 
 import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
-import org.joy.commons.log.Log;
-import org.joy.commons.log.LogFactory;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

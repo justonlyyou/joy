@@ -1,6 +1,5 @@
 package org.joy.web.spmvc.core;
 
-import org.joy.commons.exception.ServiceException;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 

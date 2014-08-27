@@ -1,9 +1,9 @@
 package org.joy.commons.support;
 
+import junit.framework.Assert;
 import org.joy.commons.tree.IListToTreeRestrict;
 import org.joy.commons.tree.ListToTreeConvertor;
 import org.joy.commons.tree.TreeNode;
-import junit.framework.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;

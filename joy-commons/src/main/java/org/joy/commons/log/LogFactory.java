@@ -1,7 +1,6 @@
 package org.joy.commons.log;
 
 import org.joy.commons.log.slf4j.Slf4jLogCreator;
-import org.joy.commons.log.slf4j.Slf4jLogCreator;
 
 /**
  * 

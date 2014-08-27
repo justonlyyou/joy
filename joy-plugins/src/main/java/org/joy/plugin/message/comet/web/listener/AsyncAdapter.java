@@ -1,9 +1,8 @@
 package org.joy.plugin.message.comet.web.listener;
 
-import java.io.IOException;
-
 import javax.servlet.AsyncEvent;
 import javax.servlet.AsyncListener;
+import java.io.IOException;
 
 /**
  * @author XiaohangHu

@@ -6,6 +6,7 @@ import org.joy.commons.log.LogFactory;
 import org.joy.core.persistence.jdbc.support.db.DbSupport;
 import org.joy.core.persistence.jdbc.support.db.Schema;
 import org.joy.core.persistence.jdbc.support.db.SqlStatementBuilder;
+import org.joy.core.persistence.jdbc.support.enums.RdbType;
 import org.joy.core.persistence.jdbc.support.utils.JdbcTool;
 
 import java.sql.Connection;
@@ -93,4 +94,9 @@ public class SQLServerDbSupport extends DbSupport {
 		return Types.VARCHAR;
 	}
 
+
+    @Override
+    public RdbType getDatabaseType() {
+        return RdbType.SQLSERVER;
+    }
 }

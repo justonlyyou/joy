@@ -18,7 +18,6 @@ package org.joy.commons.scanner.classpath;
 import org.joy.commons.io.FileTool;
 import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
-import org.joy.commons.log.Log;
 
 import java.io.File;
 import java.io.IOException;

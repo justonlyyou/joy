@@ -1,6 +1,5 @@
 package org.joy.commons.lang.string;
 
-import org.joy.commons.exception.SystemException;
 import org.apache.commons.codec.DecoderException;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.binary.Hex;

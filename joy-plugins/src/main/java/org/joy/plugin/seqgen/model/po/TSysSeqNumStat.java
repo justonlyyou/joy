@@ -1,7 +1,7 @@
 package org.joy.plugin.seqgen.model.po;
 
-import org.joy.core.persistence.support.entity.UuidEntity;
 import org.joy.core.persistence.orm.jpa.annotations.Comment;
+import org.joy.core.persistence.support.entity.UuidEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

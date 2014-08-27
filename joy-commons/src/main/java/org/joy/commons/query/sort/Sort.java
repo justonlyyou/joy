@@ -2,8 +2,6 @@ package org.joy.commons.query.sort;
 
 import org.joy.commons.collections.CollectionTool;
 import org.joy.commons.exception.SystemException;
-import org.joy.commons.collections.CollectionTool;
-import org.joy.commons.exception.SystemException;
 
 import java.io.Serializable;
 import java.util.ArrayList;

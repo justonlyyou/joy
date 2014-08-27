@@ -4,10 +4,11 @@ import com.googlecode.flyway.core.dbsupport.DbSupport;
 import com.googlecode.flyway.core.dbsupport.JdbcTemplate;
 import com.googlecode.flyway.core.dbsupport.Schema;
 import com.googlecode.flyway.core.dbsupport.SqlStatementBuilder;
-import com.googlecode.flyway.core.util.jdbc.JdbcUtils;
 
-import java.sql.*;
-import java.text.MessageFormat;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Types;
 
 /**
  * H2 database specific support

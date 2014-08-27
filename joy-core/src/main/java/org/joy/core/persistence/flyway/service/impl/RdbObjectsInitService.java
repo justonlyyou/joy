@@ -1,11 +1,16 @@
 package org.joy.core.persistence.flyway.service.impl;
 
 import com.googlecode.flyway.core.Flyway;
-import org.joy.core.init.support.properties.JoyProperties;
+import org.joy.commons.exception.SystemException;
 import org.joy.core.persistence.flyway.service.IRdbObjectsInitService;
+import org.joy.core.persistence.jdbc.support.db.DbSupport;
+import org.joy.core.persistence.jdbc.support.db.DbSupportFactory;
+import org.joy.core.persistence.jdbc.support.utils.JdbcTool;
 
 import javax.sql.DataSource;
 import java.io.File;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 /**
  * 
@@ -43,10 +48,28 @@ public class RdbObjectsInitService implements IRdbObjectsInitService {
 
     private String[] processLocations() {
         String[] locs = locations.split(",");
-        for (int i = 0; i < locs.length; i++) {
-            locs[i] += File.separator + JoyProperties.DB_TYPE.toLowerCase();
+        String dbType = getDatabaseType();
+        if (dbType != null) {
+            for (int i = 0; i < locs.length; i++) {
+                locs[i] += File.separator + dbType;
+            }
         }
         return locs;
+    }
+
+    private String getDatabaseType() {
+        Connection conn = null;
+        String dbType = null;
+        try {
+            conn = dataSource.getConnection();
+            DbSupport dbSupport = DbSupportFactory.createDbSupport(conn);
+            dbType = dbSupport.getDatabaseType().getName().toLowerCase();
+        } catch (SQLException e) {
+            throw new SystemException("获取数据库类型出错！", e);
+        } finally {
+            JdbcTool.closeConnection(conn);
+        }
+        return dbType;
     }
 
 	public void setLocations(String locations) {

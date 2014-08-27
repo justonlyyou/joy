@@ -4,10 +4,6 @@ import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
 import org.joy.commons.scanner.classpath.ClassPathScanner;
 import org.joy.commons.scanner.support.Resource;
-import org.joy.commons.log.Log;
-import org.joy.commons.log.LogFactory;
-import org.joy.commons.scanner.classpath.ClassPathScanner;
-import org.joy.commons.scanner.support.Resource;
 
 import java.util.*;
 

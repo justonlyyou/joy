@@ -1,8 +1,8 @@
 package org.joy.commons.collections;
 
+import junit.framework.Assert;
 import org.joy.commons.bean.IEntity;
 import org.joy.commons.bean.Pair;
-import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Test;
 

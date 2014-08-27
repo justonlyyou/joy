@@ -1,10 +1,5 @@
 package org.joy.commons.lang.string;
 
-import org.joy.commons.collections.MapTool;
-import org.joy.commons.log.Log;
-import org.joy.commons.log.LogFactory;
-import org.joy.commons.security.CryptoTool;
-import org.joy.commons.security.DigestTool;
 import org.apache.commons.lang3.ObjectUtils;
 import org.joy.commons.collections.MapTool;
 import org.joy.commons.log.Log;

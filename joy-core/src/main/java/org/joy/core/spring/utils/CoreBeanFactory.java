@@ -7,7 +7,6 @@ import org.joy.core.persistence.jdbc.service.IMdRdbAlterReverseSyncService;
 import org.joy.core.persistence.jdbc.service.IMdRdbColumnService;
 import org.joy.core.persistence.jdbc.service.IMdRdbPrimaryKeyService;
 import org.joy.core.persistence.jdbc.service.IMdRdbTableService;
-import org.joy.core.persistence.orm.jpa.BaseJpaDao;
 import org.joy.core.persistence.orm.jpa.JpaTool;
 import org.joy.core.spring.SpringXmlDynamicLoadService;
 import org.joy.core.sysres.code.service.ISysCodeCacheService;

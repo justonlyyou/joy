@@ -3,7 +3,6 @@ package org.joy.commons.query;
 import org.joy.commons.enums.EnumTool;
 import org.joy.commons.enums.ICodeEnum;
 import org.joy.commons.lang.string.StringTool;
-import org.joy.commons.enums.EnumTool;
 
 import java.io.Serializable;
 

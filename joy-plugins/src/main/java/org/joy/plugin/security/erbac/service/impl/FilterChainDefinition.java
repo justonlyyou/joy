@@ -1,11 +1,11 @@
 package org.joy.plugin.security.erbac.service.impl;
 
+import org.apache.shiro.config.Ini;
+import org.apache.shiro.config.Ini.Section;
 import org.joy.commons.lang.string.StringTool;
 import org.joy.plugin.security.erbac.dao.impl.TErbacAuthorityDao;
 import org.joy.plugin.security.erbac.model.po.TErbacAuthority;
 import org.joy.plugin.security.erbac.support.utils.ShiroPermissionExpTool;
-import org.apache.shiro.config.Ini;
-import org.apache.shiro.config.Ini.Section;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;

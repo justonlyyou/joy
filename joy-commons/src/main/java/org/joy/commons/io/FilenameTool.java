@@ -1,7 +1,5 @@
 package org.joy.commons.io;
 
-import org.joy.commons.enums.CaseSensitivity;
-import org.joy.commons.exception.SystemException;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOCase;

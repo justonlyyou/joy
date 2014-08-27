@@ -1,5 +1,8 @@
 package org.joy.core.ehcache;
 
+import net.sf.ehcache.Cache;
+import net.sf.ehcache.CacheManager;
+import net.sf.ehcache.config.CacheConfiguration;
 import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
 import org.joy.core.ehcache.model.po.TSysCacheCfg;
@@ -7,9 +10,6 @@ import org.joy.core.ehcache.model.po.TSysCacheCfg_;
 import org.joy.core.init.service.IPlugin;
 import org.joy.core.persistence.orm.jpa.JpaTool;
 import org.joy.core.spring.utils.CoreBeanFactory;
-import net.sf.ehcache.Cache;
-import net.sf.ehcache.CacheManager;
-import net.sf.ehcache.config.CacheConfiguration;
 import org.springframework.cache.ehcache.EhCacheCacheManager;
 import org.springframework.stereotype.Component;
 

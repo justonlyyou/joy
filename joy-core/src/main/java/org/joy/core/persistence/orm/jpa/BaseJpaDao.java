@@ -7,13 +7,11 @@ import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
 import org.joy.commons.query.sort.Order;
 
-import javax.annotation.Resource;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public abstract class BaseJpaDao<T> {

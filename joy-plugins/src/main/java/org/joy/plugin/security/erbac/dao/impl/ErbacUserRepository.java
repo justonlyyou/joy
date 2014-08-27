@@ -8,7 +8,10 @@ import org.joy.plugin.security.user.model.po.TUserBasic;
 import org.joy.plugin.security.user.model.po.TUserBasic_;
 
 import javax.persistence.Tuple;
-import javax.persistence.criteria.*;
+import javax.persistence.criteria.CollectionJoin;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.JoinType;
+import javax.persistence.criteria.Root;
 import java.util.*;
 
 

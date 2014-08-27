@@ -10,15 +10,11 @@ import org.joy.commons.support.GroupExecutor;
 import org.joy.core.persistence.support.entity.UuidEntity;
 import org.joy.core.rp.pagestore.PageStore;
 import org.joy.core.spring.utils.CoreBeanFactory;
-import org.springframework.orm.jpa.JpaTransactionManager;
-import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionCallbackWithoutResult;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;

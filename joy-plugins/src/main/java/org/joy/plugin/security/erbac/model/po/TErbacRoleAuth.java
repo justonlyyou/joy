@@ -1,7 +1,7 @@
 package org.joy.plugin.security.erbac.model.po;
 
-import org.joy.core.persistence.support.entity.UuidEntity;
 import org.joy.core.persistence.orm.jpa.annotations.Comment;
+import org.joy.core.persistence.support.entity.UuidEntity;
 import org.joy.plugin.security.erbac.support.enums.AuthorityType;
 
 import javax.persistence.*;

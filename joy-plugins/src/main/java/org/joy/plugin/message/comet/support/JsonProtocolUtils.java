@@ -1,8 +1,8 @@
 package org.joy.plugin.message.comet.support;
 
-import java.io.Serializable;
-
 import org.joy.plugin.message.comet.core.Protocol;
+
+import java.io.Serializable;
 
 /**
  * 

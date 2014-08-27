@@ -4,7 +4,6 @@
 package org.joy.plugin.seqgen.service;
 
 import org.joy.plugin.seqgen.model.po.TSysSeqNum;
-import org.joy.plugin.seqgen.support.SequenceCache;
 
 /**
  * 序列号生成器接口

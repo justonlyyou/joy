@@ -7,7 +7,6 @@ import org.joy.core.persistence.jdbc.model.vo.RdbConnection;
 import org.joy.core.persistence.jdbc.service.IMdRdbTableService;
 import org.joy.core.persistence.jdbc.support.db.DbSupport;
 import org.joy.core.persistence.jdbc.support.db.DbSupportFactory;
-import org.joy.core.persistence.jdbc.support.db.Schema;
 import org.springframework.util.LinkedCaseInsensitiveMap;
 
 import java.sql.Connection;
@@ -15,7 +14,6 @@ import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**

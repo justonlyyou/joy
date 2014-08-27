@@ -1,7 +1,7 @@
 package org.joy.plugin.security.user.model.po;
 
-import org.joy.core.persistence.support.entity.UuidCrudEntity;
 import org.joy.core.persistence.orm.jpa.annotations.Comment;
+import org.joy.core.persistence.support.entity.UuidCrudEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

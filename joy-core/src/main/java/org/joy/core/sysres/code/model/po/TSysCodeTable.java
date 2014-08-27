@@ -1,8 +1,8 @@
 package org.joy.core.sysres.code.model.po;
 
-import org.joy.core.persistence.support.entity.UuidCrudEntity;
 import org.joy.core.persistence.orm.jpa.annotations.Comment;
 import org.joy.core.persistence.orm.jpa.annotations.DefaultValue;
+import org.joy.core.persistence.support.entity.UuidCrudEntity;
 import org.joy.core.sysres.datasrc.model.po.TSysDataSrc;
 
 import javax.persistence.*;

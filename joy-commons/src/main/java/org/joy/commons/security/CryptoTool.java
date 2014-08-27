@@ -1,7 +1,6 @@
 package org.joy.commons.security;
 
 import org.joy.commons.exception.SystemException;
-import org.joy.commons.exception.SystemException;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;

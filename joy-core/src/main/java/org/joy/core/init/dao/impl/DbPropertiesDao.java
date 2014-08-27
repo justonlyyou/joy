@@ -12,7 +12,6 @@ import org.joy.core.persistence.jdbc.support.db.DbSupport;
 import org.joy.core.persistence.jdbc.support.db.DbSupportFactory;
 import org.joy.core.persistence.jdbc.support.db.Table;
 import org.joy.core.persistence.jdbc.support.utils.JdbcTool;
-import org.springframework.util.LinkedCaseInsensitiveMap;
 
 import java.sql.Connection;
 import java.text.MessageFormat;

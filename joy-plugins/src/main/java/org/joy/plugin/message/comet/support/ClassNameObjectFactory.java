@@ -1,10 +1,10 @@
 package org.joy.plugin.message.comet.support;
 
-import javax.servlet.ServletContext;
-
 import org.joy.commons.lang.ClassTool;
 import org.joy.plugin.message.comet.core.ObjectFactory;
 import org.joy.plugin.message.comet.web.ServletContextSetter;
+
+import javax.servlet.ServletContext;
 
 /**
  *

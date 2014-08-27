@@ -8,11 +8,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
+import org.apache.commons.lang3.StringUtils;
 import org.joy.commons.lang.string.StringTool;
 import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
-import org.apache.commons.lang3.StringUtils;
-import org.joy.commons.log.Log;
 
 import java.io.File;
 import java.io.IOException;

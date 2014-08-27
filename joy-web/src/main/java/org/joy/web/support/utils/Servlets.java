@@ -5,8 +5,8 @@
  */
 package org.joy.web.support.utils;
 
-import org.joy.commons.lang.string.EncodeTool;
 import org.apache.commons.lang3.Validate;
+import org.joy.commons.lang.string.EncodeTool;
 
 import javax.servlet.ServletRequest;
 import java.util.Enumeration;

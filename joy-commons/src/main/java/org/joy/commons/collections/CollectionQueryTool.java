@@ -1,16 +1,14 @@
 package org.joy.commons.collections;
 
+import org.josql.Query;
+import org.josql.QueryExecutionException;
+import org.josql.QueryParseException;
 import org.joy.commons.exception.SystemException;
 import org.joy.commons.lang.ArrayTool;
 import org.joy.commons.lang.string.StringTool;
 import org.joy.commons.query.Paging;
 import org.joy.commons.query.QueryLogic;
 import org.joy.commons.query.QueryLogics;
-import org.joy.commons.query.sort.Order;
-import org.josql.Query;
-import org.josql.QueryExecutionException;
-import org.josql.QueryParseException;
-import org.joy.commons.query.Paging;
 import org.joy.commons.query.sort.Order;
 
 import java.text.MessageFormat;

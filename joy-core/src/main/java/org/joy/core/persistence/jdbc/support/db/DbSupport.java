@@ -4,13 +4,13 @@ import org.joy.commons.exception.SystemException;
 import org.joy.commons.lang.ArrayTool;
 import org.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
 import org.joy.core.persistence.jdbc.model.vo.MdRdbTable;
+import org.joy.core.persistence.jdbc.support.enums.RdbType;
 import org.springframework.util.LinkedCaseInsensitiveMap;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -269,5 +269,14 @@ public abstract class DbSupport {
 		}
 		return commentMap;
 	}
+
+    /**
+     * 获取数据库类型的枚举
+     * @return
+     * @since 1.0.0
+     * @author Kevice
+     * @time 2014年8月27日 下午2:38:57
+     */
+    public abstract RdbType getDatabaseType();
 
 }

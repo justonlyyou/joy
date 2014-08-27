@@ -1,7 +1,7 @@
 package org.joy.commons.security;
 
-import org.joy.commons.exception.SystemException;
 import org.apache.commons.lang3.Validate;
+import org.joy.commons.exception.SystemException;
 
 import java.io.IOException;
 import java.io.InputStream;

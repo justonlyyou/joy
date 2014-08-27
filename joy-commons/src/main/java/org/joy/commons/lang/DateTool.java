@@ -1,12 +1,11 @@
 package org.joy.commons.lang;
 
+import org.apache.commons.collections.FastHashMap;
 import org.joy.commons.exception.SystemException;
 import org.joy.commons.lang.string.StringTool;
 import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
 import org.joy.commons.math.NumberTool;
-import org.apache.commons.collections.FastHashMap;
-import org.joy.commons.log.Log;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

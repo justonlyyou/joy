@@ -1,7 +1,7 @@
 package org.joy.commons.security;
 
-import org.joy.commons.lang.string.EncodeTool;
 import junit.framework.Assert;
+import org.joy.commons.lang.string.EncodeTool;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

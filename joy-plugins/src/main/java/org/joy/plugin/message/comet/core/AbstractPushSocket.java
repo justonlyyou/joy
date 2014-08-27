@@ -4,8 +4,8 @@ import org.joy.commons.data.json.JsonTool;
 import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
 import org.joy.plugin.message.comet.listener.SocketEvent;
-import org.joy.plugin.message.comet.support.JsonObject;
 import org.joy.plugin.message.comet.listener.SocketListener;
+import org.joy.plugin.message.comet.support.JsonObject;
 import org.joy.plugin.message.comet.support.JsonProtocolUtils;
 import org.joy.plugin.message.comet.web.listener.AsyncAdapter;
 

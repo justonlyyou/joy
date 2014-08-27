@@ -3,8 +3,8 @@
  */
 package org.joy.commons.lang;
 
-import org.joy.commons.bean.Pair;
 import junit.framework.Assert;
+import org.joy.commons.bean.Pair;
 import org.junit.Test;
 
 import java.lang.reflect.Field;

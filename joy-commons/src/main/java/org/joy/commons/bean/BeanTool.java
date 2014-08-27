@@ -1,11 +1,5 @@
 package org.joy.commons.bean;
 
-import org.joy.commons.exception.ExceptionTool;
-import org.joy.commons.exception.SystemException;
-import org.joy.commons.lang.SerializationTool;
-import org.joy.commons.lang.string.StringTool;
-import org.joy.commons.log.Log;
-import org.joy.commons.log.LogFactory;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.ConvertUtils;
 import org.apache.commons.beanutils.PropertyUtils;
@@ -14,7 +8,9 @@ import org.apache.commons.lang3.SerializationException;
 import org.joy.commons.exception.ExceptionTool;
 import org.joy.commons.exception.SystemException;
 import org.joy.commons.lang.SerializationTool;
+import org.joy.commons.lang.string.StringTool;
 import org.joy.commons.log.Log;
+import org.joy.commons.log.LogFactory;
 
 import java.beans.BeanInfo;
 import java.beans.Introspector;

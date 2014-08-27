@@ -1,11 +1,11 @@
 package org.joy.plugin.message.comet.web;
 
-import java.util.Collection;
-
-import org.joy.plugin.message.comet.core.ObjectFactory;
-import org.joy.plugin.message.comet.core.SocketHandler;
 import org.joy.plugin.message.comet.config.CometConfigMetadata;
 import org.joy.plugin.message.comet.config.CometMetadata;
+import org.joy.plugin.message.comet.core.ObjectFactory;
+import org.joy.plugin.message.comet.core.SocketHandler;
+
+import java.util.Collection;
 
 /**
  * @author XiaohangHu

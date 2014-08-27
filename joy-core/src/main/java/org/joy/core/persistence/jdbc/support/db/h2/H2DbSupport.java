@@ -1,15 +1,18 @@
 package org.joy.core.persistence.jdbc.support.db.h2;
 
-import com.googlecode.flyway.core.dbsupport.JdbcTemplate;
 import org.joy.commons.exception.SystemException;
 import org.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
 import org.joy.core.persistence.jdbc.model.vo.MdRdbTable;
 import org.joy.core.persistence.jdbc.support.db.DbSupport;
 import org.joy.core.persistence.jdbc.support.db.Schema;
 import org.joy.core.persistence.jdbc.support.db.SqlStatementBuilder;
+import org.joy.core.persistence.jdbc.support.enums.RdbType;
 import org.joy.core.persistence.jdbc.support.utils.JdbcTool;
 
-import java.sql.*;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Types;
 import java.text.MessageFormat;
 
 /**
@@ -136,6 +139,11 @@ public class H2DbSupport extends DbSupport {
             defaultValue = "'" + defaultValue + "'";
         }
         return MessageFormat.format(ALTER_COLUMN_DEFAULT_VALUE_SQL, table.getName(), columnName, defaultValue);
+    }
+
+    @Override
+    public RdbType getDatabaseType() {
+        return RdbType.H2;
     }
 
 }

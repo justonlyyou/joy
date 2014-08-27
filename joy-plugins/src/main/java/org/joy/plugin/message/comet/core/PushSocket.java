@@ -1,9 +1,8 @@
 package org.joy.plugin.message.comet.core;
 
-import java.io.Serializable;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.Serializable;
 
 /**
  * PushSocket

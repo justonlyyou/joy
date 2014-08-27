@@ -1,12 +1,12 @@
 package org.joy.plugin.security.erbac.service.impl;
 
-import org.joy.commons.lang.string.StringTool;
-import org.joy.plugin.security.user.model.po.TUserBasic;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authc.credential.SimpleCredentialsMatcher;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.joy.commons.lang.string.StringTool;
+import org.joy.plugin.security.user.model.po.TUserBasic;
 
 /**
  *

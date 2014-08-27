@@ -1,9 +1,9 @@
 package org.joy.plugin.security.user.model.po;
 
 import org.joy.commons.enums.Sex;
-import org.joy.core.persistence.support.entity.UuidCrudEntity;
 import org.joy.core.persistence.orm.jpa.annotations.Comment;
 import org.joy.core.persistence.orm.jpa.annotations.DefaultValue;
+import org.joy.core.persistence.support.entity.UuidCrudEntity;
 import org.joy.plugin.security.erbac.model.po.TErbacGroup;
 import org.joy.plugin.security.erbac.model.po.TErbacRole;
 import org.joy.plugin.security.erbac.model.po.TErbacUserAuth;

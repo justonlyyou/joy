@@ -1,7 +1,7 @@
 package org.joy.commons.bean;
 
-import org.joy.commons.support.ICommand;
 import junit.framework.Assert;
+import org.joy.commons.support.ICommand;
 import org.junit.Test;
 
 /**

@@ -3,7 +3,6 @@ package org.joy.commons.cn;
 import org.joy.commons.enums.Sex;
 import org.joy.commons.lang.CharTool;
 import org.joy.commons.lang.string.StringTool;
-import org.joy.commons.enums.Sex;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

@@ -1,8 +1,8 @@
 package org.joy.plugin.message.comet.core;
 
-import java.util.List;
-
 import org.joy.plugin.message.comet.listener.SocketListener;
+
+import java.util.List;
 
 /**
  * PushSocket：单向推送消息

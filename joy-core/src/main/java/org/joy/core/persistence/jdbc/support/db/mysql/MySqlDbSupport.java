@@ -8,16 +8,15 @@ import org.joy.core.persistence.jdbc.model.vo.MdRdbTable;
 import org.joy.core.persistence.jdbc.support.db.DbSupport;
 import org.joy.core.persistence.jdbc.support.db.Schema;
 import org.joy.core.persistence.jdbc.support.db.SqlStatementBuilder;
+import org.joy.core.persistence.jdbc.support.enums.RdbType;
 import org.joy.core.persistence.jdbc.support.utils.JdbcTool;
 import org.springframework.util.LinkedCaseInsensitiveMap;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.sql.Types;
 import java.text.MessageFormat;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -181,5 +180,10 @@ public class MySqlDbSupport extends DbSupport {
 			throw new SystemException(e);
 		}
 	}
+
+    @Override
+    public RdbType getDatabaseType() {
+        return RdbType.MYSQL;
+    }
 
 }

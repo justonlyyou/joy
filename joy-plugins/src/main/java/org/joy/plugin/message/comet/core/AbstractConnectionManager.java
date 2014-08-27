@@ -1,18 +1,17 @@
 package org.joy.plugin.message.comet.core;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.joy.plugin.message.comet.web.DispatchException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.Serializable;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.joy.plugin.message.comet.web.DispatchException;
 
 /**
  * 该类用于处理各种通信请求，并管理socket

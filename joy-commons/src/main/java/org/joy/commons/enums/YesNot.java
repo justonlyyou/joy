@@ -1,7 +1,6 @@
 package org.joy.commons.enums;
 
 import org.joy.commons.lang.BooleanTool;
-import org.joy.commons.lang.BooleanTool;
 
 import java.util.Map;
 

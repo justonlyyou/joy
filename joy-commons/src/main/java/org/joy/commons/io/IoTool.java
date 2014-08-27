@@ -1,6 +1,5 @@
 package org.joy.commons.io;
 
-import org.joy.commons.exception.SystemException;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.LineIterator;
 import org.joy.commons.exception.SystemException;

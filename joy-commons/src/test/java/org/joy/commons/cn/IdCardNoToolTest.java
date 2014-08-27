@@ -1,7 +1,7 @@
 package org.joy.commons.cn;
 
-import org.joy.commons.enums.Sex;
 import junit.framework.Assert;
+import org.joy.commons.enums.Sex;
 import org.junit.Test;
 
 /**

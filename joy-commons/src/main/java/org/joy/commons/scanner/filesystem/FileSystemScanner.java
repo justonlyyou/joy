@@ -19,9 +19,6 @@ import org.joy.commons.exception.SystemException;
 import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
 import org.joy.commons.scanner.support.Resource;
-import org.joy.commons.exception.SystemException;
-import org.joy.commons.log.Log;
-import org.joy.commons.scanner.support.Resource;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,7 +1,7 @@
 package org.joy.commons.io;
 
-import org.joy.commons.exception.SystemException;
 import org.apache.commons.io.FileSystemUtils;
+import org.joy.commons.exception.SystemException;
 
 /**
  * <p>
