@@ -164,7 +164,7 @@ public class TUserBasic extends UuidCrudEntity  {
 		this.lastLoginTime = lastLoginTime;
 	}
 
-	@Column(length = 1, nullable = false)
+	@Column(name = "ONLINE_STATUS", length = 1, nullable = false)
 	@Comment("在线")
 	@DefaultValue("0")
 	public String getOnline() {

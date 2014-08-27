@@ -61,8 +61,8 @@
              <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
              <property name="hibernate.connection.datasource" value="${db.jndi}"/>
              -->
-             
-             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+             <!--org.hibernate.dialect.MySQL5Dialect-->
+             <!--<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />-->
              
              <property name="hibernate.connection.remarksReporting" value="true" />
              

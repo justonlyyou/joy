@@ -87,7 +87,7 @@ public class DbPropertiesDao implements IDbPropertiesDao {
 
     protected String getVersionUpdateSql(Resource resource) {
         String lastVersion = resource.getFilename().substring(0, 13);
-        String sqlPartern = "UPDATE {0} SET property_value = ''{1}'' WHERE property_name = ''{2}'';";
+        String sqlPartern = "UPDATE {0} SET property_value = ''{1}'' WHERE property_name = ''{2}''";
         return MessageFormat.format(sqlPartern, TABLE_NAME, lastVersion, SCRIPT_VERSION_PROPERTY);
     }
 
@@ -136,7 +136,11 @@ public class DbPropertiesDao implements IDbPropertiesDao {
         String sql = MessageFormat.format(sqlPartern, TABLE_NAME, SCRIPT_VERSION_PROPERTY);
         List<Map<String, String>> maps = JdbcTool.queryForList(connection, sql);
         for (Map<String, String> result : maps) {
-            properties.setProperty(result.get("property_name"), result.get("property_value"));
+            String propertyValue = result.get("property_value");
+            if (propertyValue == null) {
+                propertyValue = "";
+            }
+            properties.setProperty(result.get("property_name"), propertyValue);
         }
 
         log.info("加载到表" + TABLE_NAME + "中的Properties个数为：" + properties.size());

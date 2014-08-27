@@ -140,6 +140,7 @@ public class TSysCacheCfg extends UuidCrudEntity {
 		this.diskPersistent = diskPersistent;
 	}
 
+    @Column(name = "DISK_EXPIRY_THREAD_INTERVAL_S")
 	@Comment(value = "访问磁盘线程活动时间")
 	public int getDiskExpiryThreadIntervalSeconds() {
 		return diskExpiryThreadIntervalSeconds;

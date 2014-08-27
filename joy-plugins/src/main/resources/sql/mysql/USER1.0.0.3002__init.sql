@@ -5,7 +5,7 @@ insert into `t_sys_codes`(`id`,`active`,`built_in`,`create_dept`,`create_time`,`
 values ('JOY_USER_STATUS_10','1','1',null,null,null,null,null,null,'0',null,null,null,null,'10','用户帐号状态','user_status',null,null,'zheng chang',null,'正常',' normal');
 
 /* 初始化用户 */
-insert into `t_user_basic`(`id`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`update_dept`,`update_time`,`update_user`,`user_account`,`remark`,`last_login_time`,`login_count`,`user_name`,`password`,`sex_code`,`status_code`,`active`,`online`)
+insert into `t_user_basic`(`id`,`built_in`,`create_dept`,`create_time`,`create_user`,`delete_dept`,`delete_time`,`delete_user`,`deleted`,`update_dept`,`update_time`,`update_user`,`user_account`,`remark`,`last_login_time`,`login_count`,`user_name`,`password`,`sex_code`,`status_code`,`active`,`online_status`)
 values ('kevice_id',0,null,null,null,null,null,null,0,null,null,null,'kevice',null,null,null,'Kevice','6189808204556b0524045879df1cd739','1','01',1,0);
 
 

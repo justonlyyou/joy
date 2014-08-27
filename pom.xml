@@ -24,7 +24,7 @@
 		<logback.version>1.0.13</logback.version>
 		<jackson.version>2.1.4</jackson.version>
         <json.lib.version>2.4</json.lib.version> <!-- 因为auto-comet需要 -->
-		<hibernate.version>4.2.6.Final</hibernate.version>
+		<hibernate.version>4.3.6.Final</hibernate.version>
 		<activiti.version>5.12</activiti.version>
 		<quartz.version>2.2.1</quartz.version>
         <junit.version>4.8.2</junit.version>

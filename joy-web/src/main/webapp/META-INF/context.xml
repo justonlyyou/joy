@@ -2,19 +2,19 @@
 <Context docBase="..\" path="/joy" reloadable="false">
 
     <!-- h2 -->
-    <!-- -->
+    <!--
     <Resource driverClassName="org.h2.jdbcx.JdbcDataSource"
               maxActive="50" maxIdle="3" maxWait="-1" name="JDBC/JOY"
               type="javax.sql.DataSource" url="jdbc:h2:file:K:/IdeaProjects/joy/h2/joy;INIT=CREATE SCHEMA IF NOT EXISTS JOY\;SET SCHEMA JOY"
               username="sa" password=""/>
+    -->
 
     <!-- MySQL -->
-    <!--
+    <!---->
     <Resource driverClassName="com.mysql.jdbc.Driver"
               maxActive="50" maxIdle="3" maxWait="-1" name="JDBC/JOY"
               type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/joy?createDatabaseIfNotExist=true"
               username="root" password="tangwl"/>
-    -->
 
     <!-- oracle -->
     <!--

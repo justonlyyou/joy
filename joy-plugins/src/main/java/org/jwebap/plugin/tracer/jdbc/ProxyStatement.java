@@ -325,7 +325,7 @@ public class ProxyStatement extends Trace implements Statement {
 			if (!verify(trace)) {
 				return;
 			}
-			ParamMsg message = new ParamMsg(trace.getContent(), trace.getActiveTime());
+			ParamMsg message = new ParamMsg(trace.getContent(), Integer.valueOf(trace.getActiveTime() + ""));
 			logger.debug(message.toString(), message);
 		} catch (Exception e) {
 			logger.error(e, "sql性能监控处理出错 ！");

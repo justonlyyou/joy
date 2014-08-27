@@ -16,10 +16,10 @@ import java.text.MessageFormat;
  */
 public class OracleDbSupport extends DbSupport {
 	
-	private static final String TABLE_COMMENT_SQL = "ALTER TABLE {0} COMMENT ''{1}'';";
-	private static final String ALTER_COLUMN_COMMENT_SQL = "ALTER TABLE {0} CHANGE ''{1}'' COMMENT ''{2}'';";
-	private static final String ALTER_COLUMN_DEFAULT_VALUE_SQL = "ALTER TABLE {0} MODIFY {1} DEFAULT {2};";
-	
+	private static final String TABLE_COMMENT_SQL = "COMMENT ON TABLE {0} IS ''{1}''";
+	private static final String ALTER_COLUMN_COMMENT_SQL = "COMMENT ON COLUMN {0}.{1} IS ''{2}''";
+	private static final String ALTER_COLUMN_DEFAULT_VALUE_SQL = "ALTER TABLE {0} MODIFY {1} DEFAULT {2}";
+
 	/**
 	 * Creates a new instance.
 	 * 
@@ -101,6 +101,10 @@ public class OracleDbSupport extends DbSupport {
 	public String getAlterColumnDefaultValueSql(MdRdbTable table, MdRdbColumn column, MdRdbColumn columnInDb) {
 		String columnName = column.getName();
 		String defaultValue = column.getDefaultValue();
+        String type = columnInDb.getType().toLowerCase();
+        if(type.contains("char")) {
+            defaultValue = "'" + defaultValue + "'";
+        }
 		return MessageFormat.format(ALTER_COLUMN_DEFAULT_VALUE_SQL, table.getName(), columnName, defaultValue);
 	}
 

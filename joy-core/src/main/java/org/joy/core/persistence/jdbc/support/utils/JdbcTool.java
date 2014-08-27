@@ -374,13 +374,14 @@ public class JdbcTool extends BaseJdbcDao {
             statement = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
             conn.setAutoCommit(false);
             for(String sql : sqls) {
-                if (StringTool.isNotBlank(sql)) {
+                if (StringTool.isNotBlank(sql) && !sql.trim().isEmpty()) {
                     statement.addBatch(sql.trim());
                 }
             }
             statement.executeBatch();
             conn.commit();
         } catch (Exception e) {
+            e.printStackTrace();
             throw new SystemException(e);
         } finally {
             JdbcTool.closeStatement(statement);

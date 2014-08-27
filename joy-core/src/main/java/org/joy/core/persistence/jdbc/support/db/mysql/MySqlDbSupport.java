@@ -149,9 +149,9 @@ public class MySqlDbSupport extends DbSupport {
 		String columnName = column.getName();
 		String defaultValue = column.getDefaultValue();
 		String type = columnInDb.getType().toLowerCase();
-		if(type.startsWith("varchar")) {
-			defaultValue = "'" + defaultValue + "'";
-		}
+        if(type.contains("char")) {
+            defaultValue = "'" + defaultValue + "'";
+        }
 		return MessageFormat.format(ALTER_COLUMN_DEFAULT_VALUE_SQL, table.getName(), columnName, defaultValue);
 	}
 	

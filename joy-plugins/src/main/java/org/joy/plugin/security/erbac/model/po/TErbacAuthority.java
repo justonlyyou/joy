@@ -165,7 +165,7 @@ public class TErbacAuthority extends UuidCrudEntity {
 		this.resourceType = resourceType;
 	}
 
-	@Column(nullable = false)
+	@Column(name = "RESOURCE_NAME",nullable = false)
 	@Comment("资源")
 	public String getResource() {
 		return resource;

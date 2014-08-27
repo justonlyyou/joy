@@ -123,7 +123,7 @@ public class TSysSeqNumRule implements IEntity<String> {
 		this.suffix = suffix;
 	}
 
-	@Column(nullable = false)
+    @Column(name = "INCREMENT_VALUE", nullable = false)
 	@Comment("增量值")
 	public int getIncrement() {
 		return increment;

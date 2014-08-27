@@ -356,9 +356,9 @@ public class ProxyPreparedStatement extends ProxyStatement
 			
 			ParamMsg message;
 			if (convertor == null) {
-				message = new ParamMsg(trace.getContent(), trace.getActiveTime());
+				message = new ParamMsg(trace.getContent(), Integer.valueOf(trace.getActiveTime() + ""));
 			} else {
-				message = new ParamMsg(convertor, trace.getActiveTime());
+				message = new ParamMsg(convertor, Integer.valueOf(trace.getActiveTime() + ""));
 			}
 			logger.debug(message.toString(), message);
 		} catch (Exception e) {
