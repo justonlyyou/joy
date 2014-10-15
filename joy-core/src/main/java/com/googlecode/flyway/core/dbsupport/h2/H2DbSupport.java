@@ -50,6 +50,7 @@ public class H2DbSupport extends DbSupport {
 //        return schema;
 //	}
 
+    // modify 原方法总是取到 PUBLIC
     protected String doGetCurrentSchema() throws SQLException {
         String procedure = "{?=call SCHEMA()}";
         CallableStatement cs = jdbcTemplate.getConnection().prepareCall(procedure);
@@ -84,7 +85,7 @@ public class H2DbSupport extends DbSupport {
 	@Override
 	public String doQuote(String identifier) {
 //		return "\"" + identifier + "\"";
-        return identifier; // modify
+        return identifier; // modify 为了不区分大小写
 	}
 
 	@Override

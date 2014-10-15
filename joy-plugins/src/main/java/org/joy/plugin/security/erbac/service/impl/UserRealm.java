@@ -20,7 +20,7 @@ import java.util.List;
  * @time 2013-2-23 下午3:02:24
  * @since 1.0.0
  */
-public class ShiroDataBaseRealm extends AuthorizingRealm {
+public class UserRealm extends AuthorizingRealm {
 
 	@Resource
 	private IUserPermissionService userPermissionService;
@@ -37,6 +37,8 @@ public class ShiroDataBaseRealm extends AuthorizingRealm {
 		List<String> permissions = userPermissionService.getPermissionStringExps(user.getId());
 
 		SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
+//        info.setRoles();
+//        info.setStringPermissions();
 		info.addStringPermissions(permissions);
 		return info;
 	}

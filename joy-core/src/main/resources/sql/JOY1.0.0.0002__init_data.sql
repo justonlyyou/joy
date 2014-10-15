@@ -43,4 +43,7 @@ insert into t_joy_properties values ('plugin.captcha.kaptcha.image.height','90',
 insert into t_joy_properties values ('plugin.captcha.kaptcha.session.key','code','code','');
 insert into t_joy_properties values ('plugin.captcha.kaptcha.textproducer.char.length','4','4','');
 insert into t_joy_properties values ('plugin.captcha.kaptcha.textproducer.font.names','\u5b8b\u4f53,\u6977\u4f53,\u5fae\u8f6f\u96c5\u9ed1','\u5b8b\u4f53,\u6977\u4f53,\u5fae\u8f6f\u96c5\u9ed1','');
-insert into t_joy_properties values ('plugin.comet.enabled','false','false','');
+insert into t_joy_properties values ('plugin.comet.enabled','false','false','是否启用comet插件');
+insert into t_joy_properties values ('plugin.mybatis.enabled','false','false','是否启用MyBatis插件');
+insert into t_joy_properties values ('plugin.mybatis.configLocation','classpath:conf/mybatis-config.xml','classpath:conf/mybatis-config.xml','MyBatis配置文件位置');
+insert into t_joy_properties values ('plugin.mybatis.mapperLocations','classpath:mapper/mysql/**/*Mapper.xml','classpath:mapper/mysql/**/*Mapper.xml','MyBatis映射文件位置');

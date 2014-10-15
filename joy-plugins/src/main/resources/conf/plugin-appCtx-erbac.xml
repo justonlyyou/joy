@@ -27,14 +27,19 @@
 		<property name="filterChainDefinitionMap" ref="filterChainDefinition" />
 	</bean>
 
-	<bean id="shiroDataBaseRealm" class="org.joy.plugin.security.erbac.service.impl.ShiroDataBaseRealm">
+	<bean id="userRealm" class="org.joy.plugin.security.erbac.service.impl.UserRealm">
 		<property name="credentialsMatcher" ref="credentcialsMatcher"/>
+        <property name="cachingEnabled" value="true"/>
 	</bean>
 
     <bean id="credentcialsMatcher" class="org.joy.plugin.security.erbac.service.impl.Md5CredentialsMatcher"/>
 
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
-		<property name="realm" ref="shiroDataBaseRealm" />
+        <property name="realms" >
+            <list>
+                <ref bean="userRealm"/>
+            </list>
+        </property>
 		<property name="cacheManager" ref="cacheManager" />
 	</bean>
 	

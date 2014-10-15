@@ -53,6 +53,7 @@ public class JoyProperties extends BaseProperties {
 	public static String FLYWAY_SQLMIGRATIONPREFIX;
     public static boolean PLUGIN_DRUID_ENABLED;
     public static boolean PLUGIN_COMET_ENABLED;
+    public static boolean PLUGIN_MYBATIS_ENABLED;
 
 	private JoyProperties() {
 	}
@@ -108,6 +109,7 @@ public class JoyProperties extends BaseProperties {
         FLYWAY_SQLMIGRATIONPREFIX = getStr("flyway.sqlMigrationPrefix");
         PLUGIN_DRUID_ENABLED = getBool("plugin.druid.enabled");
         PLUGIN_COMET_ENABLED = getBool("plugin.comet.enabled");
+        PLUGIN_MYBATIS_ENABLED = getBool("plugin.mybatis.enabled");
     }
 
 	@Override

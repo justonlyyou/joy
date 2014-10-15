@@ -59,7 +59,8 @@ public class OracleDbSupport extends DbSupport {
 
     @Override
     public String doQuote(String identifier) {
-        return identifier;
+        //		return "\"" + identifier + "\"";
+        return identifier; // modify 为了不区分大小写
     }
 
     @Override
