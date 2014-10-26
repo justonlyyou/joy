@@ -17,7 +17,7 @@
 						<prop key="kaptcha.image.height">${plugin.captcha.kaptcha.image.height}</prop>
 <!-- 						<prop key="kaptcha.textproducer.char.string">0123456789</prop> -->
 						<prop key="kaptcha.textproducer.char.length">${plugin.captcha.kaptcha.textproducer.char.length}</prop>
-						<prop key="kaptcha.session.key">code</prop>
+						<prop key="kaptcha.session.key">${plugin.captcha.kaptcha.session.key}</prop>
 					</props>
 				</constructor-arg>
 			</bean>
