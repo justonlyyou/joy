@@ -4,18 +4,16 @@
  */
 package org.joy.swing.table.group;
 
-import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Vector;
-import javax.swing.JComponent;
+import org.joy.swing.table.filter.TopTableHeaderUI;
+
+import javax.swing.*;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
-import org.joy.swing.table.filter.TopTableHeaderUI;
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 /**
  * 组合表头的ui

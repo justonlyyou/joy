@@ -4,8 +4,16 @@
  */
 package org.joy.swing.table.filter;
 
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
+import org.joy.commons.lang.DateTool;
+import org.joy.commons.lang.string.I18nTool;
+import org.joy.swing.datechooser.XDateChooser;
+import org.joy.swing.regex.RegexDocument;
+import org.joy.swing.table.RowStringFilter;
+
+import javax.swing.*;
+import javax.swing.RowFilter.ComparisonType;
+import javax.swing.table.TableModel;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -18,21 +26,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-
-import javax.swing.BoxLayout;
-import javax.swing.ButtonGroup;
-import javax.swing.JComboBox;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
-import javax.swing.RowFilter;
-import javax.swing.RowFilter.ComparisonType;
-import javax.swing.table.TableModel;
-
-import org.joy.commons.lang.DateTool;
-import org.joy.commons.lang.string.I18nTool;
-import org.joy.swing.datechooser.XDateChooser;
-import org.joy.swing.regex.RegexDocument;
-import org.joy.swing.table.RowStringFilter;
 
 /**
  * 过滤器编辑器工厂

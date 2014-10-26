@@ -2,10 +2,11 @@ package org.joy.swing.tree;
 
 //~--- JDK imports ------------------------------------------------------------
 
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreePath;
 import java.awt.*;
-import java.awt.dnd.*;
-
-import javax.swing.tree.*;
+import java.awt.dnd.DnDConstants;
 
 /**
  * Class description

@@ -39,6 +39,12 @@ public class GenericTool {
 	 */
 	public static Class<?> getSuperClassGenricType(Class<?> clazz, int index) {
 		Type genType = clazz.getGenericSuperclass();// 得到泛型父类
+        if (genType == null) {
+            Type[] genericInterfaces = clazz.getGenericInterfaces();
+            if (genericInterfaces != null) {
+                genType = genericInterfaces[0];
+            }
+        }
 		// 如果没有实现ParameterizedType接口，即不支持泛型，直接返回Object.class
 		if (genType instanceof ParameterizedType == false) {
 			return Object.class;
@@ -178,7 +184,6 @@ public class GenericTool {
 	 */
 	public static Class<?> getFieldGenericType(Field field, int index) {
 		Type genericFieldType = field.getGenericType();
-
 		if (genericFieldType instanceof ParameterizedType) {
 			ParameterizedType aType = (ParameterizedType) genericFieldType;
 			Type[] fieldArgTypes = aType.getActualTypeArguments();
@@ -197,7 +202,6 @@ public class GenericTool {
 	 * </p>
 	 * 
 	 * @param field 字段
-	 * @param index 泛型参数所在索引, 从0开始.
 	 * @return 泛型参数的实际类型, 如果没有实现ParameterizedType接口，即不支持泛型，将直接返回{@code Object.class}
 	 * @since 1.0.0
 	 * @author calvin

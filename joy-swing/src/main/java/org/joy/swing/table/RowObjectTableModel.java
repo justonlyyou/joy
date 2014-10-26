@@ -1,18 +1,10 @@
 package org.joy.swing.table;
 
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-import java.util.Vector;
+import org.joy.commons.lang.string.StringTool;
 
 import javax.swing.table.AbstractTableModel;
-
-import org.joy.commons.lang.string.StringTool;
+import java.lang.reflect.Method;
+import java.util.*;
 
 /**
  * 基于行对象的表格模型 <br>

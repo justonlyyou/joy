@@ -2,11 +2,11 @@ package org.joy.swing.tree;
 
 //~--- JDK imports ------------------------------------------------------------
 
-import java.awt.datatransfer.*;
-
-import java.util.*;
-
-import javax.swing.tree.*;
+import javax.swing.tree.DefaultMutableTreeNode;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.Transferable;
+import java.awt.datatransfer.UnsupportedFlavorException;
+import java.util.Arrays;
 
 /**
  * Class description

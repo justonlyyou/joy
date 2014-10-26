@@ -22,9 +22,9 @@
 	</context:component-scan>
 
 	<!-- 业务库数据源定义 -->
-	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
-		<property name="jndiName" value="${db.jndi}"/>
-	</bean>
+    <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName" value="${db.jndi}"/>
+    </bean>
 
 
 	<!-- 定义一个切入点，使事务在它的切入点内有效
@@ -57,10 +57,18 @@
 		</property>
 	</bean>
 
-	<!-- 数据源通知，主要为了设置AutoCommit为false -->
+	<!-- 数据源通知，主要为了设置AutoCommit -->
 	<bean id="dataSourceAdvice" class="org.joy.core.persistence.support.DataSourceAdvice">
 		<property name="autoCommit" value="${db.autoCommit}"/>
 	</bean>
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
+        <constructor-arg ref="transactionManager" />
+    </bean>
 
 	<tx:annotation-driven transaction-manager="transactionManager" />
 

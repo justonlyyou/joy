@@ -4,8 +4,7 @@
  */
 package org.joy.swing;
 
-import javax.swing.BoundedRangeModel;
-import javax.swing.JProgressBar;
+import javax.swing.*;
 
 /**
  *

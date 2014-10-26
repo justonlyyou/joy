@@ -1,10 +1,11 @@
 package org.joy.swing.combobox;
 
-import java.util.*;
-
-import javax.swing.MutableComboBoxModel;
-import javax.swing.event.*;
 import org.joy.swing.table.PropertyTableModel;
+
+import javax.swing.*;
+import javax.swing.event.ListDataEvent;
+import javax.swing.event.ListDataListener;
+import java.util.Collection;
 
 /**
  * 一个ComboBox和Table模型的结合体

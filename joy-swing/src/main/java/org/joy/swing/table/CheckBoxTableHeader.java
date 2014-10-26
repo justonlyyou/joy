@@ -2,14 +2,9 @@ package org.joy.swing.table;
 
 //~--- JDK imports ------------------------------------------------------------
 
-import java.awt.Color;
-import java.awt.Component;
-
-import javax.swing.BorderFactory;
-import javax.swing.JCheckBox;
-import javax.swing.JPanel;
-import javax.swing.JTable;
+import javax.swing.*;
 import javax.swing.table.TableCellRenderer;
+import java.awt.*;
 
 /**
  * 能为表格头部生成CheckBox显示方式

@@ -7,6 +7,8 @@ import org.joy.core.spring.utils.CoreBeanFactory;
 import org.joy.core.spring.utils.SpringBeanTool;
 import org.joy.plugin.image.captcha.service.ICaptchaService;
 import org.joy.plugin.monitor.jdbc.jwebap.service.ISysSqlLogService;
+import org.joy.plugin.persistence.mybatis.service.IEntityMappingHolder;
+import org.joy.plugin.persistence.mybatis.service.IMapperManager;
 import org.joy.plugin.schedule.quartz.service.IQuartzJobRegistry;
 import org.joy.plugin.schedule.quartz.service.IQuartzTriggersHolder;
 import org.joy.plugin.security.user.service.IUserLoginLogService;
@@ -117,5 +119,13 @@ public class PluginBeanFactory extends CoreBeanFactory {
 	public static Producer getCaptchaProducer() {
 		return (Producer) SpringBeanTool.getBean("captchaProducer");
 	}
-	
+
+    public static IEntityMappingHolder getEntityMappingHolder() {
+        return (IEntityMappingHolder) SpringBeanTool.getBean("entityMappingHolder");
+    }
+
+    public static IMapperManager getMapperManager() {
+        return (IMapperManager) SpringBeanTool.getBean("mapperManager");
+    }
+
 }

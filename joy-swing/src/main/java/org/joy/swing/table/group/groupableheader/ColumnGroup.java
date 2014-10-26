@@ -4,11 +4,11 @@ package org.joy.swing.table.group.groupableheader;
 
 //~--- non-JDK imports --------------------------------------------------------
 //~--- JDK imports ------------------------------------------------------------
-import java.util.Enumeration;
-import java.util.Vector;
 
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
+import java.util.Enumeration;
+import java.util.Vector;
 
 /**
  * ColumnGroup.

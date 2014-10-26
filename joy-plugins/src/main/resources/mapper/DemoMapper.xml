@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.joy.plugin.persistence.mybatis.UserInfoMapper">
+
+    <!--
+    <resultMap id="TABLE:user_info" type="org.joy.plugin.persistence.mybatis.UserInfo">
+        <result column="ID" jdbcType="INTEGER" property="id" />
+        <result column="birthday" jdbcType="DATE" property="birthday" />
+        <result column="active" jdbcType="BIT" property="active" />
+        <result column="weight" jdbcType="DOUBLE" property="weight" />
+    </resultMap>
+    -->
+
+</mapper>

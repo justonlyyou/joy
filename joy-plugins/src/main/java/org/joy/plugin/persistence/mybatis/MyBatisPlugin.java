@@ -2,9 +2,12 @@ package org.joy.plugin.persistence.mybatis;
 
 import org.joy.core.init.service.IPlugin;
 import org.joy.core.init.support.properties.JoyProperties;
+import org.joy.plugin.support.PluginBeanFactory;
 import org.springframework.stereotype.Component;
 
 /**
+ * MyBatis插件
+ *
  * @since 1.0.0
  * @author Kevice
  * @time 2014年10月15日 下午22:36:42
@@ -34,6 +37,7 @@ public class MyBatisPlugin implements IPlugin {
 
     @Override
     public void startup() {
+        PluginBeanFactory.getMapperManager().manage();
     }
 
     @Override

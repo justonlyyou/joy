@@ -4,8 +4,7 @@
  */
 package org.joy.swing;
 
-import javax.swing.Icon;
-import javax.swing.JLabel;
+import javax.swing.*;
 
 /**
  *

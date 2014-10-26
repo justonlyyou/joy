@@ -1,21 +1,14 @@
 package org.joy.swing;
 
+import org.joy.commons.cn.PinYinTool;
+
+import javax.swing.*;
+import javax.swing.text.Position;
+import javax.swing.tree.TreePath;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.swing.InputMap;
-import javax.swing.JComboBox;
-import javax.swing.JComponent;
-import javax.swing.JList;
-import javax.swing.JTree;
-import javax.swing.KeyStroke;
-import javax.swing.ListModel;
-import javax.swing.text.Position;
-import javax.swing.tree.TreePath;
-
-import org.joy.commons.cn.PinYinTool;
 
 /**
  * 支持对XComboBox, XList, XTree的选项按中文拼音首字母进行过滤

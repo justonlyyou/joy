@@ -2,13 +2,15 @@ package org.joy.swing.tree;
 
 //~--- JDK imports ------------------------------------------------------------
 
-import java.awt.*;
-import java.awt.datatransfer.*;
-import java.awt.dnd.*;
-import java.awt.image.*;
-
 import javax.swing.*;
-import javax.swing.tree.*;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreePath;
+import javax.swing.tree.TreeSelectionModel;
+import java.awt.*;
+import java.awt.datatransfer.Transferable;
+import java.awt.dnd.*;
+import java.awt.image.BufferedImage;
 
 /**
  * Class description

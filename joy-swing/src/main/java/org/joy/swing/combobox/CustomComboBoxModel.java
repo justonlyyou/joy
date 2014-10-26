@@ -3,12 +3,10 @@ package org.joy.swing.combobox;
 
 //~--- JDK imports ------------------------------------------------------------
 
+import javax.swing.*;
 import java.util.Collection;
 import java.util.List;
 import java.util.Vector;
-
-import javax.swing.AbstractListModel;
-import javax.swing.MutableComboBoxModel;
 
 /**
  *

@@ -5,7 +5,7 @@
 
 package org.joy.swing;
 
-import javax.swing.JMenuBar;
+import javax.swing.*;
 
 /**
  *

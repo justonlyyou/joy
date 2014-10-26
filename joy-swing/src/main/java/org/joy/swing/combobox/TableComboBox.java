@@ -3,45 +3,16 @@ package org.joy.swing.combobox;
 //~--- non-JDK imports --------------------------------------------------------
 
 //~--- JDK imports ------------------------------------------------------------
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Cursor;
-import java.awt.Dimension;
-import java.awt.Point;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
 
-import javax.swing.AbstractListModel;
-import javax.swing.ComboBoxEditor;
-import javax.swing.ComboBoxModel;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
-import javax.swing.JComponent;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.JViewport;
-import javax.swing.ListSelectionModel;
-import javax.swing.RowSorter;
-import javax.swing.SortOrder;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
+import org.joy.commons.lang.string.I18nTool;
+import org.joy.swing.XSwingUtil;
+import org.joy.swing.list.CheckBoxListRenderer;
+import org.joy.swing.table.PropertyTableModel;
+import org.joy.swing.table.RowStringFilter;
+import org.joy.swing.table.TableUtil;
+import org.joy.swing.table.XTable;
+
+import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
@@ -52,14 +23,12 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import javax.swing.text.JTextComponent;
-
-import org.joy.commons.lang.string.I18nTool;
-import org.joy.swing.XSwingUtil;
-import org.joy.swing.list.CheckBoxListRenderer;
-import org.joy.swing.table.PropertyTableModel;
-import org.joy.swing.table.RowStringFilter;
-import org.joy.swing.table.TableUtil;
-import org.joy.swing.table.XTable;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * 在ComboBox弹出的面板中内置Table的组件。这个组件支持对视图中的第一列进行过滤。

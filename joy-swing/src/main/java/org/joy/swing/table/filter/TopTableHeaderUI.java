@@ -6,31 +6,10 @@
  */
 package org.joy.swing.table.filter;
 
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Cursor;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Insets;
-import java.awt.LayoutManager;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.event.ActionEvent;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.awt.event.MouseEvent;
-import java.util.Enumeration;
-import java.util.List;
-import javax.swing.AbstractAction;
-import javax.swing.CellRendererPane;
-import javax.swing.InputMap;
-import javax.swing.JComponent;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JViewport;
-import javax.swing.LookAndFeel;
-import javax.swing.RowSorter;
-import javax.swing.SwingUtilities;
+import org.joy.swing.LazyActionMap;
+import sun.swing.DefaultLookup;
+
+import javax.swing.*;
 import javax.swing.event.MouseInputListener;
 import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.TableHeaderUI;
@@ -39,8 +18,13 @@ import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
-import org.joy.swing.LazyActionMap;
-import sun.swing.DefaultLookup;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.MouseEvent;
+import java.util.Enumeration;
+import java.util.List;
 
 /**
  * use

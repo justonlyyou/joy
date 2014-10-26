@@ -1,11 +1,10 @@
 package org.joy.swing.table.group;
 
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.Vector;
-
-import javax.swing.table.TableCellRenderer;
-import javax.swing.table.TableColumn;
 
 /**
  * 简化了的列组信息封装

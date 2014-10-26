@@ -2,13 +2,8 @@ package org.joy.swing.list;
 
 //~--- JDK imports ------------------------------------------------------------
 
-import java.awt.Component;
-
-import javax.swing.DefaultCellEditor;
-import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
-import javax.swing.JList;
-import javax.swing.JTextField;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  *

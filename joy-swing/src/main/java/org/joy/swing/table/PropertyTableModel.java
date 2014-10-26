@@ -4,19 +4,11 @@ package org.joy.swing.table;
 
 //~--- JDK imports ------------------------------------------------------------
 
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.Vector;
+import org.joy.commons.lang.ReflectionTool;
 
 import javax.swing.table.AbstractTableModel;
-
-import org.apache.commons.lang3.reflect.FieldUtils;
-
-import org.joy.commons.lang.ClassTool;
-import org.joy.commons.lang.ReflectionTool;
+import java.lang.reflect.Method;
+import java.util.*;
 
 /**
  * 基于行的表数据模型

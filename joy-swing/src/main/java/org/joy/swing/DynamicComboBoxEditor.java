@@ -1,8 +1,8 @@
 package org.joy.swing;
 
-import javax.swing.plaf.basic.BasicComboBoxEditor;
-
 import org.joy.commons.lang.ReflectionTool;
+
+import javax.swing.plaf.basic.BasicComboBoxEditor;
 
 /**
  * 在JComboBox的编辑框中根据属性的名字显示相应的值

@@ -4,8 +4,8 @@
  */
 package org.joy.swing;
 
-import java.awt.Dimension;
-import javax.swing.JSeparator;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  *

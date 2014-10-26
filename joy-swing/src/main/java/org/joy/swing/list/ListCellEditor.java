@@ -2,10 +2,8 @@ package org.joy.swing.list;
 
 //~--- JDK imports ------------------------------------------------------------
 
-import java.awt.Component;
-
-import javax.swing.CellEditor;
-import javax.swing.JList;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  *

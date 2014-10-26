@@ -4,14 +4,9 @@
  */
 package org.joy.swing.table.filter;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.Insets;
-import javax.swing.JPanel;
-import javax.swing.RowFilter;
-import javax.swing.UIManager;
+import javax.swing.*;
 import javax.swing.border.Border;
+import java.awt.*;
 
 /**
  * 过滤组件

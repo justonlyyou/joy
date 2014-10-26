@@ -2,12 +2,8 @@ package org.joy.swing.table;
 
 //~--- JDK imports ------------------------------------------------------------
 
-import java.awt.Component;
-
-import javax.swing.DefaultCellEditor;
-import javax.swing.JCheckBox;
-import javax.swing.JTable;
-import javax.swing.SwingConstants;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * 使表格CheckBox列可编辑

@@ -62,7 +62,7 @@ public class ContextInitializer implements IContextInitializer {
 		sysInitService.init();
 		
 		initEnums();
-		
+
 		logger.info("done afterContextInit");
 	}
 

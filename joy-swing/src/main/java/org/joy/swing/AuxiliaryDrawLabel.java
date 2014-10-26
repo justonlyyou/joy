@@ -1,15 +1,9 @@
 package org.joy.swing;
 
-import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-
-import javax.swing.JLabel;
-
 import org.joy.commons.lang.string.I18nTool;
+
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * 辅助绘制标签

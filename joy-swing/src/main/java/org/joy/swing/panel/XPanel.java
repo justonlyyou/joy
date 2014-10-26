@@ -4,8 +4,8 @@
  */
 package org.joy.swing.panel;
 
-import java.awt.LayoutManager;
-import javax.swing.JPanel;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  *

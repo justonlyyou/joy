@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-		http://www.springframework.org/schema/beans/spring-beans.xsd"
-       default-autowire="byName">
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
@@ -12,6 +11,24 @@
 
     <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
         <constructor-arg index="0" ref="sqlSessionFactory" />
+    </bean>
+
+    <bean id="myBatisTool" class="org.joy.plugin.persistence.mybatis.MyBatisTool">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+        <property name="entityMappingHolder" ref="entityMappingHolder"/>
+    </bean>
+
+    <bean id="entityMappingHolder" class="org.joy.plugin.persistence.mybatis.service.impl.EntityMappingHolder" init-method="retriveMappingInfo">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+    </bean>
+
+    <bean id="mapperManager" class="org.joy.plugin.persistence.mybatis.service.impl.MapperManager">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+        <property name="returnMapModifier" ref="returnMapModifier"/>
+    </bean>
+
+    <bean id="returnMapModifier" class="org.joy.plugin.persistence.mybatis.service.impl.ReturnMapModifier">
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
     </bean>
 
 </beans>

@@ -5,7 +5,7 @@
 
 package org.joy.swing.pane;
 
-import javax.swing.JDesktopPane;
+import javax.swing.*;
 
 /**
  *

@@ -4,13 +4,13 @@
  */
 package org.joy.swing.datechooser;
 
-import java.util.Date;
-
-import org.joy.commons.lang.DateTool;
 import com.toedter.calendar.IDateEditor;
 import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
 import com.toedter.calendar.JTextFieldDateEditor;
+import org.joy.commons.lang.DateTool;
+
+import java.util.Date;
 /**
  * 这个子类提供的作用是在构造JDateChooser同时调用
  * JDateChooser的cleanup()方法以便清除向MenuSelectionManager注册的changeListener，

@@ -3,13 +3,11 @@ package org.joy.swing.panel;
 
 //~--- JDK imports ------------------------------------------------------------
 
-import java.awt.HeadlessException;
-import java.io.Serializable;
-
-import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
-
 import org.joy.commons.lang.string.I18nTool;
+
+import javax.swing.*;
+import java.awt.*;
+import java.io.Serializable;
 
 /**
  * 实现ChildWindowListener的面板。

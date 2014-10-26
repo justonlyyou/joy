@@ -2,7 +2,7 @@ package org.joy.swing.list;
 
 //~--- JDK imports ------------------------------------------------------------
 
-import javax.swing.ListModel;
+import javax.swing.*;
 
 /**
  *

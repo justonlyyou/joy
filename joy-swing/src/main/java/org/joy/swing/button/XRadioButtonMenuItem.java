@@ -5,7 +5,7 @@
 
 package org.joy.swing.button;
 
-import javax.swing.JRadioButtonMenuItem;
+import javax.swing.*;
 
 /**
  *

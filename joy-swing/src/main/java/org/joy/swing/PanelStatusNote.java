@@ -1,9 +1,9 @@
 package org.joy.swing;
 
-import java.awt.Component;
-
 import org.joy.commons.lang.string.I18nTool;
 import org.joy.swing.panel.BASPanel;
+
+import java.awt.*;
 
 /**
  * 面板状态提示

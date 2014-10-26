@@ -5,7 +5,7 @@
 
 package org.joy.swing.button;
 
-import javax.swing.JToggleButton;
+import javax.swing.*;
 
 /**
  *

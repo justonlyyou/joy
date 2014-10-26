@@ -1,12 +1,13 @@
 /* (swing1.1beta3) */
 package org.joy.swing.table.group.groupableheader;
 
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
+import org.joy.swing.table.XTableHeader;
+
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.JTableHeader;
-import org.joy.swing.table.XTableHeader;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 
 /**  GroupableTableHeader
  * @version 1.0 10/20/98

@@ -2,13 +2,11 @@ package org.joy.swing.regex;
 
 //~--- JDK imports ------------------------------------------------------------
 
-import java.awt.Toolkit;
-
-import java.util.regex.Pattern;
-
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
+import java.awt.*;
+import java.util.regex.Pattern;
 
 /**
  * 支持正则表达式的文本

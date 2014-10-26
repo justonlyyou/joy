@@ -1,16 +1,15 @@
 package org.joy.swing.table.filter;
 
-import java.awt.BorderLayout;
+import org.joy.swing.table.XTable;
+
+import javax.swing.*;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.JTableHeader;
+import java.awt.*;
 import java.util.Date;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JScrollPane;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.table.AbstractTableModel;
-import javax.swing.table.JTableHeader;
-import org.joy.swing.table.XTable;
 
 /**
  *

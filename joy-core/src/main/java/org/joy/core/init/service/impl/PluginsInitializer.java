@@ -28,7 +28,7 @@ public class PluginsInitializer implements ISystemInitService, BeanPostProcessor
 	private static final Log logger = LogFactory.getLog(PluginsInitializer.class);
 
 	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-		if (bean instanceof IPlugin) {
+        if (bean instanceof IPlugin) {
 			register((IPlugin) bean);
 		}
 		return bean;

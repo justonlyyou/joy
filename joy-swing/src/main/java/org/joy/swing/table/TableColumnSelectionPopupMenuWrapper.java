@@ -1,19 +1,14 @@
 package org.joy.swing.table;
 
+import org.joy.commons.lang.string.I18nTool;
+
+import javax.swing.*;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
-import javax.swing.JCheckBoxMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.JPopupMenu;
-import javax.swing.JTable;
-import javax.swing.MenuElement;
-import javax.swing.table.TableColumn;
-import javax.swing.table.TableColumnModel;
-
-import org.joy.commons.lang.string.I18nTool;
 
 /**
  * <title>选择表头显示的列弹出菜单封装器.</title>

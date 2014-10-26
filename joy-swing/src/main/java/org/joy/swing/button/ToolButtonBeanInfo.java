@@ -4,11 +4,12 @@
  */
 package org.joy.swing.button;
 
+import org.joy.swing.XComponentBeanInfo;
+
 import java.beans.PropertyDescriptor;
 import java.beans.PropertyEditorSupport;
 import java.util.ArrayList;
 import java.util.List;
-import org.joy.swing.XComponentBeanInfo;
 
 /**
  *

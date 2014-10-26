@@ -1,7 +1,8 @@
 package org.joy.swing.table;
 
 //~--- JDK imports ------------------------------------------------------------
-import javax.swing.RowFilter;
+
+import javax.swing.*;
 
 /*
  * RowStringFilter.java

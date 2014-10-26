@@ -4,11 +4,11 @@ package org.joy.swing.button;
 
 //~--- JDK imports ------------------------------------------------------------
 
-import java.awt.Dimension;
-
 import org.joy.commons.lang.string.I18nTool;
 import org.joy.swing.SwingUtility;
 import org.joy.swing.XSwingUtil;
+
+import java.awt.*;
 
 /**
  * 工具栏按钮

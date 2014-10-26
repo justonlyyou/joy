@@ -4,12 +4,10 @@
  */
 package org.joy.swing.list;
 
-import java.util.Vector;
-
-import javax.swing.JList;
-import javax.swing.ListModel;
-
 import org.joy.swing.PinYinKeySelectionManager;
+
+import javax.swing.*;
+import java.util.Vector;
 
 /**
  *

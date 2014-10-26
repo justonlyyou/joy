@@ -6,9 +6,9 @@
  */
 package org.joy.swing;
 
-import java.lang.reflect.*;
 import javax.swing.*;
-import javax.swing.plaf.*;
+import javax.swing.plaf.ActionMapUIResource;
+import java.lang.reflect.Method;
 
 /**
  * An ActionMap that populates its contents as necessary. The

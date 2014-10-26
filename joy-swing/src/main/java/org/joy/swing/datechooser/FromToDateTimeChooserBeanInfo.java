@@ -4,14 +4,13 @@
  */
 package org.joy.swing.datechooser;
 
+import org.joy.swing.XComponentBeanInfo;
+
+import javax.swing.*;
 import java.beans.PropertyDescriptor;
 import java.beans.PropertyEditorSupport;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.swing.BoxLayout;
-
-import org.joy.swing.XComponentBeanInfo;
 
 /**
  *

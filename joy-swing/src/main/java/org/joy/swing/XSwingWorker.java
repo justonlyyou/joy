@@ -3,7 +3,7 @@
 package org.joy.swing;
 
 
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 
 /**
  * Improvement version of the javax SwingWorker class to avoid deadlocks. This gives user

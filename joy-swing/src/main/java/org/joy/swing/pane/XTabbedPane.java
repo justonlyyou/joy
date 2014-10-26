@@ -4,7 +4,7 @@
  */
 package org.joy.swing.pane;
 
-import javax.swing.JTabbedPane;
+import javax.swing.*;
 
 /**
  *

@@ -4,8 +4,9 @@
  */
 package org.joy.swing.table.filter;
 
-import java.util.Vector;
 import org.joy.swing.table.group.groupableheader.ColumnGroup;
+
+import java.util.Vector;
 
 /**
  * 表格配置

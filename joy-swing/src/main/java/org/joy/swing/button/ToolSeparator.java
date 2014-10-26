@@ -2,8 +2,9 @@ package org.joy.swing.button;
 
 //~--- JDK imports ------------------------------------------------------------
 
-import java.awt.Dimension;
 import org.joy.swing.XSeparator;
+
+import java.awt.*;
 
 /**
  *

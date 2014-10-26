@@ -4,18 +4,16 @@ package org.joy.swing.dialog;
 
 //~--- JDK imports ------------------------------------------------------------
 
+import org.joy.commons.lang.string.I18nTool;
+import org.joy.swing.SwingUtility;
+
+import javax.swing.*;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
 import java.io.IOException;
-
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
-import javax.swing.filechooser.FileFilter;
-import javax.swing.filechooser.FileNameExtensionFilter;
-
-import org.joy.commons.lang.string.I18nTool;
-import org.joy.swing.SwingUtility;
 
 /**
  * A JFileChooser subclass that provides validating the input directory or file

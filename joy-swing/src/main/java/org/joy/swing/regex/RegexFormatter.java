@@ -5,13 +5,11 @@ package org.joy.swing.regex;
 
 //~--- JDK imports ------------------------------------------------------------
 
+import org.joy.commons.lang.string.I18nTool;
+
+import javax.swing.*;
 import java.text.ParseException;
 import java.util.regex.Pattern;
-
-import javax.swing.JFormattedTextField;
-import javax.swing.JOptionPane;
-
-import org.joy.commons.lang.string.I18nTool;
 
 /**
  * 正则表达式的格式化，可以放入JFormattedTextField的构造器

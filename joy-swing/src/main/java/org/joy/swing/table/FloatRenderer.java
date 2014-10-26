@@ -2,12 +2,10 @@ package org.joy.swing.table;
 
 //~--- JDK imports ------------------------------------------------------------
 
-import java.math.RoundingMode;
-
-import java.text.NumberFormat;
-
-import javax.swing.SwingConstants;
+import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
+import java.math.RoundingMode;
+import java.text.NumberFormat;
 
 /**
  * 表格的要展现Float型的Renderer

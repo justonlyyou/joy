@@ -46,4 +46,4 @@ insert into t_joy_properties values ('plugin.captcha.kaptcha.textproducer.font.n
 insert into t_joy_properties values ('plugin.comet.enabled','false','false','是否启用comet插件');
 insert into t_joy_properties values ('plugin.mybatis.enabled','false','false','是否启用MyBatis插件');
 insert into t_joy_properties values ('plugin.mybatis.configLocation','classpath:conf/mybatis-config.xml','classpath:conf/mybatis-config.xml','MyBatis配置文件位置');
-insert into t_joy_properties values ('plugin.mybatis.mapperLocations','classpath:mapper/mysql/**/*Mapper.xml','classpath:mapper/mysql/**/*Mapper.xml','MyBatis映射文件位置');
+insert into t_joy_properties values ('plugin.mybatis.mapperLocations','classpath:mapper/**/*Mapper.xml','classpath:mapper/**/*Mapper.xml','MyBatis映射文件位置');

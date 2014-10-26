@@ -1,16 +1,12 @@
 package org.joy.swing.button;
 
 //~--- JDK imports ------------------------------------------------------------
-import java.awt.Graphics;
-import java.awt.Insets;
+
+import javax.swing.*;
+import javax.swing.plaf.basic.BasicArrowButton;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
-import javax.swing.SwingConstants;
-import javax.swing.plaf.basic.BasicArrowButton;
 
 /**
  * 有下拉箭头的按钮

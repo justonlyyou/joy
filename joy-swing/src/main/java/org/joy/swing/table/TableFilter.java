@@ -4,10 +4,11 @@
 
 package org.joy.swing.table;
 
-import java.awt.Color;
-import javax.swing.JTable;
-import javax.swing.table.TableRowSorter;
 import org.joy.swing.XSwingUtil;
+
+import javax.swing.*;
+import javax.swing.table.TableRowSorter;
+import java.awt.*;
 
 /**
  *��������

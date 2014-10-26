@@ -1,13 +1,13 @@
 package org.joy.swing.panel;
 
-import java.awt.Component;
-import java.awt.Graphics;
-import java.io.Serializable;
-import javax.swing.JFrame;
-import org.joy.swing.XComponentListener;
 import org.joy.swing.DocWartermarkStatus;
 import org.joy.swing.PanelStatusNote;
 import org.joy.swing.SwingUtility;
+import org.joy.swing.XComponentListener;
+
+import javax.swing.*;
+import java.awt.*;
+import java.io.Serializable;
 
 /**
  * 基本的组件容器

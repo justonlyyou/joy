@@ -4,9 +4,7 @@
  */
 package org.joy.swing.button;
 
-import javax.swing.Action;
-import javax.swing.Icon;
-import javax.swing.JButton;
+import javax.swing.*;
 
 /**
  *

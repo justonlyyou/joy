@@ -4,25 +4,22 @@
  */
 package org.joy.swing.table.filter;
 
+import org.joy.swing.table.XTableHeader;
+import org.joy.swing.table.group.SimpleColumnGroup;
+import org.joy.swing.table.group.SimpleColumnGroup.GroupInfo;
+import org.joy.swing.table.group.TopGroupTableHeadUI;
+
+import javax.swing.*;
+import javax.swing.event.TableColumnModelEvent;
+import javax.swing.plaf.TableHeaderUI;
+import javax.swing.table.*;
+import javax.swing.tree.DefaultTreeModel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.Vector;
-import javax.swing.SwingConstants;
-import javax.swing.event.TableColumnModelEvent;
-import javax.swing.plaf.TableHeaderUI;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.JTableHeader;
-import javax.swing.table.TableCellRenderer;
-import javax.swing.table.TableColumn;
-import javax.swing.table.TableColumnModel;
-import javax.swing.tree.DefaultTreeModel;
-import org.joy.swing.table.XTableHeader;
-import org.joy.swing.table.group.SimpleColumnGroup;
-import org.joy.swing.table.group.SimpleColumnGroup.GroupInfo;
-import org.joy.swing.table.group.TopGroupTableHeadUI;
 
 /**
  * 可安装过虑器并支持组合列的表头。

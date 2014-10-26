@@ -2,14 +2,9 @@ package org.joy.swing;
 
 //~--- JDK imports ------------------------------------------------------------
 
-import java.awt.Color;
-import java.awt.Dimension;
-
+import javax.swing.*;
+import java.awt.*;
 import java.util.Locale;
-
-import javax.swing.BorderFactory;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
 
 /**
  * 单据状态的标签

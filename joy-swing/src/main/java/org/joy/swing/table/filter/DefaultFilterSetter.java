@@ -4,11 +4,10 @@
  */
 package org.joy.swing.table.filter;
 
+import javax.swing.*;
+import javax.swing.table.TableRowSorter;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JTable;
-import javax.swing.RowFilter;
-import javax.swing.table.TableRowSorter;
 
 /**
  * 默认的过滤设置实现，子类可以提供组件的实现。

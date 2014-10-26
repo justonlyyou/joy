@@ -4,15 +4,14 @@
  */
 package org.joy.swing.tree;
 
-import java.util.Hashtable;
-import java.util.Vector;
+import org.joy.swing.PinYinKeySelectionManager;
 
-import javax.swing.JTree;
+import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreeNode;
-
-import org.joy.swing.PinYinKeySelectionManager;
+import java.util.Hashtable;
+import java.util.Vector;
 
 /**
  *

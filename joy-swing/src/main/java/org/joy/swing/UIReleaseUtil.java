@@ -2,41 +2,18 @@ package org.joy.swing;
 
 //~--- JDK imports ------------------------------------------------------------
 
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Window;
-import java.awt.event.ActionListener;
-import java.awt.event.ComponentListener;
-import java.awt.event.ContainerListener;
-import java.awt.event.FocusListener;
-import java.awt.event.HierarchyBoundsListener;
-import java.awt.event.HierarchyListener;
-import java.awt.event.InputMethodListener;
-import java.awt.event.ItemListener;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
-import java.awt.event.MouseWheelListener;
-import java.awt.event.WindowFocusListener;
-import java.awt.event.WindowListener;
-import java.awt.event.WindowStateListener;
-
-import java.beans.PropertyChangeListener;
-import java.beans.VetoableChangeListener;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-
-import java.util.EventListener;
-
-import javax.swing.AbstractButton;
-import javax.swing.ActionMap;
-import javax.swing.JComponent;
-import javax.swing.KeyStroke;
+import javax.swing.*;
 import javax.swing.event.AncestorListener;
 import javax.swing.event.CaretListener;
 import javax.swing.event.ChangeListener;
 import javax.swing.text.JTextComponent;
+import java.awt.*;
+import java.awt.event.*;
+import java.beans.PropertyChangeListener;
+import java.beans.VetoableChangeListener;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+import java.util.EventListener;
 
 /**
  * <p>类型名称: UIReleaseUtil </p>

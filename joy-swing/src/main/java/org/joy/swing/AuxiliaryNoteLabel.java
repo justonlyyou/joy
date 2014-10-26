@@ -1,20 +1,14 @@
 package org.joy.swing;
 
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Cursor;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.LayoutManager;
-import java.awt.Rectangle;
+import org.joy.swing.panel.BASPanel;
+import org.joy.swing.panel.BasePanel;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.JLabel;
-import javax.swing.JProgressBar;
-import org.joy.swing.panel.BASPanel;
-import org.joy.swing.panel.BasePanel;
 
 /**
  * 辅助提示标签

@@ -66,6 +66,9 @@
         <druid.version>1.0.2</druid.version>
         <auto.comet.version>1.0beta</auto.comet.version>
         <controlsfx.version>8.0.6</controlsfx.version>
+        <mybatis.version>3.2.8</mybatis.version>
+        <mybatis-spring.version>1.2.2</mybatis-spring.version>
+        <mybatis-ehcache.version>1.0.3</mybatis-ehcache.version>
 
         <plugin.maven.resources.version>2.4</plugin.maven.resources.version>
         <plugin.maven.compiler.version>3.1</plugin.maven.compiler.version>
@@ -399,6 +402,22 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
                 <version>${druid.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${mybatis-spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-ehcache</artifactId>
+                <version>${mybatis-ehcache.version}</version>
             </dependency>
 
             <!-- fx -->

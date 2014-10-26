@@ -4,9 +4,9 @@
  */
 package org.joy.swing.table;
 
-import java.util.Vector;
-
 import org.jdesktop.swingx.treetable.DefaultTreeTableModel;
+
+import java.util.Vector;
 
 /**
  * 

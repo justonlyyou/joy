@@ -2,33 +2,18 @@ package org.joy.swing.list;
 
 //~--- JDK imports ------------------------------------------------------------
 
+import javax.swing.*;
+import javax.swing.event.CellEditorListener;
+import javax.swing.event.ChangeEvent;
 import java.applet.Applet;
-
-import java.awt.Component;
-import java.awt.KeyboardFocusManager;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.Window;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-
 import java.util.EventObject;
-
-import javax.swing.AbstractAction;
-import javax.swing.CellEditor;
-import javax.swing.JComponent;
-import javax.swing.JList;
-import javax.swing.KeyStroke;
-import javax.swing.ListModel;
-import javax.swing.ListSelectionModel;
-import javax.swing.SwingUtilities;
-import javax.swing.event.CellEditorListener;
-import javax.swing.event.ChangeEvent;
 
 /**
  * 可编辑的JList

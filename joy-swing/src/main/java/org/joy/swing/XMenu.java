@@ -4,8 +4,7 @@
  */
 package org.joy.swing;
 
-import javax.swing.Action;
-import javax.swing.JMenu;
+import javax.swing.*;
 
 /**
  *

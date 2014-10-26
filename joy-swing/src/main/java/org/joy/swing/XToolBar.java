@@ -1,7 +1,7 @@
 package org.joy.swing;
 
-import java.awt.FlowLayout;
-import javax.swing.JToolBar;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * 公共的工具栏

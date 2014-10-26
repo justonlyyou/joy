@@ -1,6 +1,14 @@
 package org.joy.swing;
 
-import java.awt.Component;
+import org.joy.commons.lang.string.I18nTool;
+import org.joy.swing.table.ColourfulTableHeadCellRenderer;
+
+import javax.swing.*;
+import javax.swing.event.EventListenerList;
+import javax.swing.text.Document;
+import javax.swing.text.JTextComponent;
+import javax.swing.text.PlainDocument;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -8,24 +16,6 @@ import java.awt.event.MouseListener;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
-
-import javax.swing.AbstractAction;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
-import javax.swing.JTable;
-import javax.swing.KeyStroke;
-import javax.swing.ListSelectionModel;
-import javax.swing.event.EventListenerList;
-import javax.swing.text.Document;
-import javax.swing.text.JTextComponent;
-import javax.swing.text.PlainDocument;
-
-import org.joy.commons.lang.string.I18nTool;
-import org.joy.swing.table.ColourfulTableHeadCellRenderer;
 
 /**
  * swing工具类

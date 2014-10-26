@@ -4,10 +4,10 @@
  */
 package org.joy.swing.table.filter;
 
-import java.beans.PropertyChangeListener;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
+import java.beans.PropertyChangeListener;
 
 /**
  * 一个列的实现

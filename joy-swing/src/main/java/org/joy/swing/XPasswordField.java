@@ -1,6 +1,6 @@
 package org.joy.swing;
 
-import javax.swing.JPasswordField;
+import javax.swing.*;
 import javax.swing.text.Document;
 
 /**

@@ -1,12 +1,11 @@
 package org.joy.swing.dialog;
 
-import java.awt.Component;
-import java.awt.event.ActionListener;
-
-import javax.swing.CellEditor;
-
 import org.joy.commons.lang.string.I18nTool;
 import org.joy.swing.SwingUtility;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionListener;
 
 /**
  * 批量设置的对话框

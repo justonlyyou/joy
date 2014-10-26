@@ -5,7 +5,7 @@
 
 package org.joy.swing.pane;
 
-import javax.swing.JSplitPane;
+import javax.swing.*;
 
 /**
  *

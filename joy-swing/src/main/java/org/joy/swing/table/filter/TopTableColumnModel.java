@@ -4,11 +4,11 @@
  */
 package org.joy.swing.table.filter;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.JTable;
+import javax.swing.*;
 import javax.swing.table.DefaultTableColumnModel;
 import javax.swing.table.TableColumn;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 表格列模型

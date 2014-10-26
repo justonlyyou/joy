@@ -1,17 +1,9 @@
 package org.joy.swing.combobox;
 
 //~--- JDK imports ------------------------------------------------------------
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
 
-import java.util.Set;
-import javax.swing.AbstractListModel;
-import javax.swing.MutableComboBoxModel;
+import javax.swing.*;
+import java.util.*;
 
 /**
  * Class description

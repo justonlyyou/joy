@@ -2,11 +2,7 @@ package org.joy.swing.list;
 
 //~--- JDK imports ------------------------------------------------------------
 
-import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JTextField;
-import javax.swing.WindowConstants;
+import javax.swing.*;
 
 /**
  *

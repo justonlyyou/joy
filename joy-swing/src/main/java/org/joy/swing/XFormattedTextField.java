@@ -4,9 +4,7 @@
  */
 package org.joy.swing;
 
-import javax.swing.JFormattedTextField;
-import javax.swing.JFormattedTextField.AbstractFormatter;
-import javax.swing.JFormattedTextField.AbstractFormatterFactory;
+ import javax.swing.*;
 
 /**
  *

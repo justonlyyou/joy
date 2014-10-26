@@ -4,11 +4,10 @@
  */
 package org.joy.swing;
 
-import java.net.URL;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 import org.joy.swing.res.img.MarkLocation;
+
+import javax.swing.*;
+import java.net.URL;
 
 /**
  * xswing工程的工具类

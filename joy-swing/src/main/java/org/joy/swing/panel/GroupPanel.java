@@ -2,12 +2,11 @@ package org.joy.swing.panel;
 
 //~--- JDK imports ------------------------------------------------------------
 
-import java.awt.*;
-import java.awt.event.*;
-
-import java.util.*;
-
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 /**
  * <p>Title:OpenSwing </p>

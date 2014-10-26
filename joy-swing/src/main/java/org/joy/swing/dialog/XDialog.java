@@ -4,13 +4,8 @@
  */
 package org.joy.swing.dialog;
 
-import java.awt.Dialog;
-import java.awt.Dialog.ModalityType;
-import java.awt.Frame;
-import java.awt.GraphicsConfiguration;
-import java.awt.Window;
-import javax.swing.JComponent;
-import javax.swing.JDialog;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  *

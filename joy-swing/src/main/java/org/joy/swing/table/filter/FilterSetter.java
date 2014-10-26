@@ -4,7 +4,7 @@
  */
 package org.joy.swing.table.filter;
 
-import javax.swing.RowFilter;
+import javax.swing.*;
 
 /**
  * 提供回调方法，供过滤组件回调。

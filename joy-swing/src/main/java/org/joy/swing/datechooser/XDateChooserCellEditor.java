@@ -1,13 +1,12 @@
 package org.joy.swing.datechooser;
 
-import org.joy.swing.datechooser.XDateChooser;
 import com.toedter.calendar.JDateChooser;
-import java.awt.Component;
-import java.util.Date;
+import org.joy.swing.datechooser.XDateChooser;
 
-import javax.swing.AbstractCellEditor;
-import javax.swing.JTable;
+import javax.swing.*;
 import javax.swing.table.TableCellEditor;
+import java.awt.*;
+import java.util.Date;
 
 /**
  * @author Administrator

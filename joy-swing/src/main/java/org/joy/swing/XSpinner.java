@@ -4,8 +4,7 @@
  */
 package org.joy.swing;
 
-import javax.swing.JSpinner;
-import javax.swing.SpinnerModel;
+import javax.swing.*;
 
 /**
  *

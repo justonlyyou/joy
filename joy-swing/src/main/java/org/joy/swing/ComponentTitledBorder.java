@@ -2,11 +2,10 @@ package org.joy.swing;
 
 //~--- JDK imports ------------------------------------------------------------
 
-import java.awt.*;
-
 import javax.swing.*;
 import javax.swing.border.AbstractBorder;
 import javax.swing.border.Border;
+import java.awt.*;
 
 /**
  * 可以设置组件的边框

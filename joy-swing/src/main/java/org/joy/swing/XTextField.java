@@ -4,7 +4,7 @@
  */
 package org.joy.swing;
 
-import javax.swing.JTextField;
+import javax.swing.*;
 import javax.swing.text.Document;
 
 /**
