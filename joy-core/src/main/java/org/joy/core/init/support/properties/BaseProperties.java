@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
+ * 基本属性操作
  * 
  * @since 1.0.0
  * @author Kevice

@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
+ * 数据库属性占位符配置器
  *
  * @author Kevice
  * @time 14-3-16 下午3:28

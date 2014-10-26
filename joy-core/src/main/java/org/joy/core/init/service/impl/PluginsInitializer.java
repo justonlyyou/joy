@@ -7,7 +7,7 @@ import org.joy.commons.lang.string.StringTool;
 import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
 import org.joy.core.init.service.IPlugin;
-import org.joy.core.init.service.ISystemInitService;
+import org.joy.core.init.service.IInitService;
 import org.joy.core.init.support.properties.JoyProperties;
 import org.joy.core.spring.utils.CoreBeanFactory;
 import org.springframework.beans.BeansException;
@@ -17,12 +17,14 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 
 /**
+ * 插件初始化器
  * 
  * @author Kevice
  * @time 2013-2-3 下午4:13:09
+ * @since 1.0.0
  */
 @Service
-public class PluginsInitializer implements ISystemInitService, BeanPostProcessor {
+public class PluginsInitializer implements IInitService, BeanPostProcessor {
 
 	private final List<IPlugin> components = new ArrayList<IPlugin>();
 	private static final Log logger = LogFactory.getLog(PluginsInitializer.class);
@@ -87,7 +89,12 @@ public class PluginsInitializer implements ISystemInitService, BeanPostProcessor
         }
 	}
 
-	protected void register(IPlugin component) {
+    @Override
+    public int getInitPriority() {
+        return 0;
+    }
+
+    protected void register(IPlugin component) {
 		components.add(component);
 	}
 

@@ -2,9 +2,11 @@ package org.joy.core.init.support.properties;
 
 
 /**
- * 
+ * 应用系统的属性
+ *
  * @author Kevice
  * @time 2012-12-29 上午12:05:15
+ * @since 1.0.0
  */
 public class AppProperties extends BaseProperties {
 

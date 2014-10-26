@@ -1,14 +1,16 @@
 package org.joy.core.init.service;
 
 /**
+ * 插件接口
  * 
  * @author Kevice
  * @time 2013-2-3 下午4:10:27
+ * @since 1.0.0
  */
 public interface IPlugin {
 	
 	/**
-	 * 获取数据库更新脚本文件前缀
+	 * 返回数据库更新脚本文件前缀
 	 * 
 	 * @return
 	 * @since 1.0.0
@@ -18,7 +20,7 @@ public interface IPlugin {
 	String getSqlMigrationPrefix();
 	
 	/**
-	 * 获取持久对象包名(可包含*号通配符)
+	 * 返回持久对象包名(可包含*号通配符)
 	 * 
 	 * @return
 	 * @since 1.0.0
@@ -28,7 +30,7 @@ public interface IPlugin {
 	String getPoPackage();
 	
 	/**
-	 * 
+	 * 返回插件名称
 	 * 
 	 * @return
 	 * @author Kevice
@@ -37,7 +39,7 @@ public interface IPlugin {
 	String getName();
 	
 	/**
-	 * 获取初始化优先级
+	 * 返回初始化优先级
 	 * 
 	 * @return
 	 * @author Kevice
@@ -46,7 +48,7 @@ public interface IPlugin {
 	int getInitPriority();
 	
 	/**
-	 * 
+	 * 启动后执行的操作
 	 * 
 	 * @author Kevice
 	 * @time 2013-2-3 下午4:12:01
@@ -54,7 +56,7 @@ public interface IPlugin {
 	void startup();
 	
 	/**
-	 * 
+	 * 销毁时执行的操作
 	 * 
 	 * @author Kevice
 	 * @time 2013-2-3 下午11:13:43
@@ -62,7 +64,7 @@ public interface IPlugin {
 	void destroy();
 	
 	/**
-	 * 
+	 * 插件是否启用
 	 * 
 	 * @return
 	 * @author Kevice
@@ -71,7 +73,7 @@ public interface IPlugin {
 	boolean isEnabled();
 	
 	/**
-	 * 
+	 * 返回插件的spring配置文件的位置
 	 * 
 	 * @return
 	 * @since 1.0.0

@@ -8,7 +8,7 @@ import org.joy.commons.log.LogFactory;
 import org.joy.commons.support.ICommand;
 import org.joy.core.init.dao.impl.DbPropertiesDao;
 import org.joy.core.init.service.IContextInitializer;
-import org.joy.core.init.service.ISystemInitService;
+import org.joy.core.init.service.IInitService;
 import org.joy.core.init.support.properties.JoyProperties;
 import org.joy.core.spring.utils.SpringBeanTool;
 import org.joy.core.sysres.SysResTool;
@@ -16,10 +16,11 @@ import org.joy.core.sysres.SysResTool;
 import java.util.Properties;
 
 /**
+ * 上下文初始化器
  * 
- * @since 1.0.0
  * @author Kevice
  * @time 2013-4-15 下午11:37:01
+ * @since 1.0.0
  */
 public class ContextInitializer implements IContextInitializer {
 
@@ -55,11 +56,11 @@ public class ContextInitializer implements IContextInitializer {
 			command.execute();
 		}
 		
-		ISystemInitService compStartupService = (ISystemInitService) SpringBeanTool.getBean("pluginsInitializer");
-		compStartupService.init();
+		IInitService pluginsInitializer = (IInitService) SpringBeanTool.getBean("pluginsInitializer");
+        pluginsInitializer.init();
 		
-		ISystemInitService sysInitService = (ISystemInitService) SpringBeanTool.getBean("systemInitializer");
-		sysInitService.init();
+		IInitService serviceInitializer = (IInitService) SpringBeanTool.getBean("serviceInitializer");
+        serviceInitializer.init();
 		
 		initEnums();
 

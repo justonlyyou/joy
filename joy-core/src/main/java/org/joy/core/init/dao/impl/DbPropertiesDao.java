@@ -18,6 +18,8 @@ import java.text.MessageFormat;
 import java.util.*;
 
 /**
+ * 数据库中属性访问对象
+ *
  * @author Kevice
  * @time 14-3-17 上午7:17
  * @since 1.0.0
@@ -27,6 +29,8 @@ public class DbPropertiesDao implements IDbPropertiesDao {
     protected Log log = LogFactory.getLog(DbPropertiesDao.class);
 
     /**
+     * 表t_joy_properties是否存在
+     *
      * @author Kevice
      * @time 14-3-17 上午7:17
      * @since 1.0.0
@@ -40,6 +44,8 @@ public class DbPropertiesDao implements IDbPropertiesDao {
     }
 
     /**
+     * 获取joy基础脚本文件
+     *
      * @author Kevice
      * @time 14-3-17 上午7:17
      * @since 1.0.0
@@ -59,6 +65,8 @@ public class DbPropertiesDao implements IDbPropertiesDao {
     }
 
     /**
+     * 创建表t_joy_properties
+     *
      * @author Kevice
      * @time 14-3-17 上午7:17
      * @since 1.0.0
@@ -71,6 +79,8 @@ public class DbPropertiesDao implements IDbPropertiesDao {
     }
 
     /**
+     * 查找joy基础脚本的版本
+     *
      * @author Kevice
      * @time 14-3-17 上午7:17
      * @since 1.0.0
@@ -91,6 +101,8 @@ public class DbPropertiesDao implements IDbPropertiesDao {
     }
 
     /**
+     * 初始化表t_joy_properties的数据
+     *
      * @author Kevice
      * @time 14-3-17 上午7:17
      * @since 1.0.0
@@ -124,6 +136,8 @@ public class DbPropertiesDao implements IDbPropertiesDao {
     }
 
     /**
+     * 加载表t_joy_properties中的所有属性
+     *
      * @author Kevice
      * @time 14-3-17 上午7:17
      * @since 1.0.0
@@ -147,6 +161,8 @@ public class DbPropertiesDao implements IDbPropertiesDao {
     }
 
     /**
+     * 初始化并加载表t_joy_properties中的所有属性
+     *
      * @author Kevice
      * @time 14-3-17 上午7:17
      * @since 1.0.0

@@ -1,7 +1,7 @@
 package org.joy.core.sysres.param.service.impl;
 
 import org.joy.core.ehcache.support.AbstractEhCacheHolder;
-import org.joy.core.init.service.ISystemInitService;
+import org.joy.core.init.service.IInitService;
 import org.joy.core.sysres.param.model.po.TSysParam;
 import org.joy.core.sysres.param.service.ISysParamCacheService;
 import org.joy.core.sysres.param.service.ISysParamService;
@@ -15,7 +15,7 @@ import java.util.Set;
  * @author Kevice
  * @time 2013-2-8 上午10:58:22
  */
-public class SysParamCacheService extends AbstractEhCacheHolder<String, TSysParam> implements ISysParamCacheService, ISystemInitService {
+public class SysParamCacheService extends AbstractEhCacheHolder<String, TSysParam> implements ISysParamCacheService, IInitService {
 
 	public static final String SYS_PARAM_CACHE = "SYS_PARAM";
 	private ISysParamService sysParamService;

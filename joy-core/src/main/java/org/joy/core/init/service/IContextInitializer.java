@@ -3,6 +3,7 @@ package org.joy.core.init.service;
 import org.joy.commons.support.ICommand;
 
 /**
+ * 上下文初始化器接口
  * 
  * @since 1.0.0
  * @author Kevice
@@ -11,7 +12,7 @@ import org.joy.commons.support.ICommand;
 public interface IContextInitializer {
 	
 	/**
-	 * 
+	 * 初始化前的操作
 	 * 
 	 * @param command
 	 * @since 1.0.0
@@ -21,7 +22,7 @@ public interface IContextInitializer {
 	void beforeContextInit(ICommand command);
 	
 	/**
-	 * 
+	 * 初始化操作
 	 * 
 	 * @param command
 	 * @since 1.0.0
@@ -31,7 +32,7 @@ public interface IContextInitializer {
 	void initContext(ICommand command);
 	
 	/**
-	 * 
+	 * 初始化后的操作
 	 * 
 	 * @param command
 	 * @since 1.0.0
@@ -41,7 +42,7 @@ public interface IContextInitializer {
 	void afterContextInit(ICommand command);
 	
 	/**
-	 * 
+	 * 上下文销毁时的操作
 	 * 
 	 * @param command
 	 * @since 1.0.0

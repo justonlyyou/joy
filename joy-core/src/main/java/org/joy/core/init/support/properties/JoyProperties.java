@@ -4,6 +4,7 @@ package org.joy.core.init.support.properties;
 import java.util.Properties;
 
 /**
+ * 平台属性
  * 
  * @author Kevice
  * @time 2013-2-4 下午10:56:43
