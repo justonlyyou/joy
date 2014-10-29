@@ -14,6 +14,13 @@ import javax.persistence.criteria.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 基本jpa数据访问对象
+ *
+ * @since 1.0.0
+ * @author Kevice
+ * @time 2012-6-19 下午11:39:04
+ */
 public abstract class BaseJpaDao<T> {
 
 	protected static final Log log = LogFactory.getLog(BaseJpaDao.class);
@@ -84,14 +91,21 @@ public abstract class BaseJpaDao<T> {
 	/**
 	 * 查询唯一结果
 	 * 
-	 * @param typedQuery
-	 * @return
+	 * @param typedQuery TypedQuery
+	 * @return T
 	 */
 	protected T uniqueResult(final TypedQuery<T> typedQuery) {
 		List<T> resultList = typedQuery.getResultList();
 		return uniqueResult(resultList);
 	}
 
+    /**
+     * 返回惟一结果
+     *
+     * @param resultList 结果列表
+     * @param <T>
+     * @return T
+     */
 	public static <T> T uniqueResult(final List<T> resultList) {
 		T result = null;
 		if (resultList.size() == 1) {

@@ -11,9 +11,11 @@ import javax.persistence.EntityManager;
 import java.io.Serializable;
 
 /**
+ * JPA实体仓库工厂bean
  * 
  * @author Kevice
  * @time 2012-6-26 下午10:46:39
+ * @since 1.0.0
  */
 public class JpaEntityRepositoryFactoryBean<R extends JpaRepository<T, I>, T extends IEntity<I>, I extends Serializable> extends JpaRepositoryFactoryBean<R, T, I> {
 

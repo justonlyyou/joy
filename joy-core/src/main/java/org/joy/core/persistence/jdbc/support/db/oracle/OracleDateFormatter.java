@@ -5,6 +5,7 @@ import org.joy.core.persistence.jdbc.support.db.IDateFormatter;
 import java.text.MessageFormat;
 
 /**
+ * Oracle日期格式化器
  * 
  * @since 1.0.0
  * @author Kevice

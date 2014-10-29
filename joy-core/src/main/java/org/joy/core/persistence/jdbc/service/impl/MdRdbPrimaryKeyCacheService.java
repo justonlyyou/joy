@@ -6,9 +6,11 @@ import org.joy.core.persistence.jdbc.service.IMdRdbPrimaryKeyService;
 import org.springframework.cache.annotation.Cacheable;
 
 /**
+ * 关系型数据库主键元数据信息缓存服务
  * 
  * @author Kevice
  * @time 2013-2-3 下午9:30:40
+ * @since 1.0.0
  */
 public class MdRdbPrimaryKeyCacheService implements IMdRdbPrimaryKeyService {
 	

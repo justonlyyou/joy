@@ -7,9 +7,11 @@ import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
 /**
- * 
+ * 支持C(创建)、R(读取)、U(更新)、D(删除)操作且主键生成策略是UUID的实体
+ *
  * @author Kevice
  * @time 2012-12-17 下午11:59:02
+ * @since 1.0.0
  */
 @MappedSuperclass
 public class UuidCrudEntity extends UuidEntity implements ICrudEntity<String> {

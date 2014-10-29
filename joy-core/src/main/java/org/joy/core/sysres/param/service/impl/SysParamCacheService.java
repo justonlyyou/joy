@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * 
+ * 系统参数缓存服务
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2013-2-8 上午10:58:22
  */
@@ -64,5 +66,10 @@ public class SysParamCacheService extends AbstractEhCacheHolder<String, TSysPara
     @Override
     public void init() {
         cache(loadAll());
+    }
+
+    @Override
+    public int getInitPriority() {
+        return 0;
     }
 }

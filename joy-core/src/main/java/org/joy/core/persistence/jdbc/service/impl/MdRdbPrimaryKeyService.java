@@ -18,7 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 
+ * 关系型数据库主键元数据信息服务
+ *
  * @since 1.0.0
  * @author Kevice
  * @time 2013-1-2 下午11:50:15

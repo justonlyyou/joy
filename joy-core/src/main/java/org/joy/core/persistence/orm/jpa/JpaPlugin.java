@@ -4,7 +4,8 @@ import org.joy.core.init.service.IPlugin;
 import org.springframework.stereotype.Component;
 
 /**
- * 
+ * jpa插件，提供jpa一些工具类
+ *
  * @since 1.0.0
  * @author Kevice
  * @time 2013年11月16日 下午11:44:52

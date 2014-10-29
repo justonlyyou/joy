@@ -25,7 +25,9 @@ import java.text.MessageFormat;
 import java.util.*;
 
 /**
- * 
+ * 系统代码字典服务
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2013-2-8 下午2:15:46
  */

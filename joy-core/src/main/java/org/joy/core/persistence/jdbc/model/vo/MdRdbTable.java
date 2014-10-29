@@ -6,18 +6,21 @@ import java.io.Serializable;
 import java.util.Collection;
 
 /**
+ * 关系型数据库表元数据信息
  * 
- * @author <b>Kevice</b>
+ * @author Kevice
+ * @time 2012-12-28 下午11:25:31
+ * @since 1.0.0
  */
 public class MdRdbTable implements Comparable<MdRdbTable>, Serializable {
 
 	private static final long serialVersionUID = -8119151332561864994L;
-	private String dsId;
-	private String name;
-	private String comment;
-	private String type;
+	private String dsId; // 数据源id
+	private String name; // 表名
+	private String comment; // 表注释
+	private String type; // 表类型，如：table，view等，见RdbObjectType.class
 //	private MdDbPrimaryKey primaryKey;
-	private Collection<MdRdbColumn> columns;
+	private Collection<MdRdbColumn> columns; // 表中包含的列
 	
 	public MdRdbTable() {
 	}

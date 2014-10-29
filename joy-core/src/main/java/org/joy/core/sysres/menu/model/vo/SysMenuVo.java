@@ -3,6 +3,7 @@ package org.joy.core.sysres.menu.model.vo;
 import org.joy.core.sysres.menu.model.po.TSysMenu;
 
 /**
+ * 系统菜单VO
  * 
  * @since 1.0.0
  * @author Kevice

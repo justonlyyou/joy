@@ -13,9 +13,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * JPA实体仓库
  * 
  * @author Kevice
  * @time 2012-6-26 下午8:57:12
+ * @since 1.0.0
  */
 public class JpaEntityRepository<T extends IEntity<ID>, ID extends Serializable> extends SimpleJpaRepository<T, ID> implements IJpaEntityRepository<T, ID> {
 

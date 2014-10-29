@@ -5,11 +5,18 @@ import org.joy.commons.query.sort.Direction;
 import javax.persistence.criteria.Expression;
 import javax.persistence.metamodel.SingularAttribute;
 
+/**
+ * JPA排序对象
+ *
+ * @author Kevice
+ * @time 2012-6-26 下午10:36:28
+ * @since 1.0.0
+ */
 public class JpaOrder extends org.joy.commons.query.sort.Order {
 
-	private final boolean ascending;
-	private SingularAttribute<?, ?> attribute;
-	private final String propertyName;
+	private final boolean ascending; // 是否升序
+	private SingularAttribute<?, ?> attribute; // 要排序的jpa静态元模型属性
+	private final String propertyName; // 要排序的属性名
 
 	public String toString() {
 		return propertyName + ' ' + (ascending ? "asc" : "desc");

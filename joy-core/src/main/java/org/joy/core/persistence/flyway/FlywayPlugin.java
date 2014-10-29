@@ -5,7 +5,8 @@ import org.joy.core.persistence.flyway.model.po.TSysDbSchemaVersion;
 import org.springframework.stereotype.Component;
 
 /**
- * 
+ * Flyway插件，该插件用于数据库脚本的初始化
+ *
  * @since 1.0.0
  * @author Kevice
  * @time 2013年11月13日 下午8:38:27
@@ -33,7 +34,7 @@ public class FlywayPlugin implements IPlugin {
 
 	@Override
 	public boolean isEnabled() {
-		return true;
+		return true; // 作为核心组件，必须启用
 	}
 
 	@Override

@@ -1,6 +1,3 @@
-/**
- * 
- */
 package org.joy.core.persistence.jdbc.support.enums;
 
 import org.joy.commons.enums.EnumTool;
@@ -8,9 +5,8 @@ import org.joy.commons.enums.ICodeEnum;
 import org.joy.commons.lang.string.StringTool;
 
 /**
- * <p>
- * 
- * </p>
+ * joy支持的关系型数据库类型最大集枚举 <br>
+ * 目前只支持MYSQL，ORACLE，H2
  * 
  * @since 1.0.0
  * @author Kevice

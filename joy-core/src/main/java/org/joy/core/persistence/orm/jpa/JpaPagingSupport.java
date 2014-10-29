@@ -12,16 +12,28 @@ import javax.persistence.criteria.Selection;
 import java.util.List;
 
 /**
- * 
+ * jpa分页查询支持
+ *
  * @author Kevice
  * @time 2012-6-19 下午11:39:04
+ * @since 1.0.0
  */
 public class JpaPagingSupport {
 
 	private JpaPagingSupport() {
 	}
 
-	public static <T, R> List<T> paging(EntityManager em, CriteriaQuery<T> query, Root<R> root, PageStore pageStore) {
+    /**
+     * 分页查询
+     *
+     * @param em 实体管理器
+     * @param query CriteriaQuery
+     * @param root Root
+     * @param pageStore PageStore
+     * @param <T> 实体类
+     * @return 实体列表
+     */
+	public static <T> List<T> paging(EntityManager em, CriteriaQuery<T> query, Root<T> root, PageStore pageStore) {
 		Paging paging = pageStore.getPaging();
 		TypedQuery<T> typedQuery = em.createQuery(query);
 		List<T> resultList = null;

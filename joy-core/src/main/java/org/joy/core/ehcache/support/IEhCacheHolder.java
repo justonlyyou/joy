@@ -6,7 +6,9 @@ import java.util.Set;
 /**
  * EhCache缓存持有者接口
  * 
- * @author <b>Kevice</b>
+ * @author Kevice
+ * @time 2012-5-30 上午10:32:09
+ * @since 1.0.0
  */
 public interface IEhCacheHolder<K, V> {
 
@@ -15,7 +17,7 @@ public interface IEhCacheHolder<K, V> {
 	 * 
 	 * @return 缓存的名称
 	 * @author Kevice
-	 * @date 2012-5-30 上午10:32:09
+	 * @time 2012-5-30 上午10:32:09
 	 */
 	String getCacheName();
 
@@ -25,7 +27,7 @@ public interface IEhCacheHolder<K, V> {
 	 * @param key
 	 * @return
 	 * @author Kevice
-	 * @date 2012-5-30 上午11:22:13
+	 * @time 2012-5-30 上午11:22:13
 	 */
 	V get(K key);
 
@@ -51,7 +53,7 @@ public interface IEhCacheHolder<K, V> {
 	 * 刷新缓存里的所有数据
 	 * 
 	 * @author Kevice
-	 * @date 2012-5-30 上午11:14:54
+	 * @time 2012-5-30 上午11:14:54
 	 */
 	void refresh();
 
@@ -60,7 +62,7 @@ public interface IEhCacheHolder<K, V> {
 	 * 
 	 * @param key
 	 * @author Kevice
-	 * @date 2012-5-30 上午11:21:27
+	 * @time 2012-5-30 上午11:21:27
 	 */
 	void refresh(K key);
 

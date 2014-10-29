@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
+ * 系统代码实体（可存放所有种类的代码字典）
  * 
  * @since 1.0.0
  * @author Kevice

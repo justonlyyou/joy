@@ -16,6 +16,13 @@ import org.joy.core.sysres.menu.service.ISysMenuService;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 系统菜单服务
+ *
+ * @since 1.0.0
+ * @author Kevice
+ * @time 2013年10月5日 下午5:25:18
+ */
 public class SysMenuService implements ISysMenuService {
 
 	protected static final Log logger = LogFactory.getLog(SysMenuService.class);

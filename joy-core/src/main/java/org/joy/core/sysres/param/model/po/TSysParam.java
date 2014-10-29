@@ -8,6 +8,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+/**
+ * 系统参数实体
+ *
+ * @since 1.0.0
+ * @author Kevice
+ * @time 2012-6-8 下午9:26:10
+ */
 @Entity
 @Table(name = "t_sys_param")
 @Comment("系统参数")

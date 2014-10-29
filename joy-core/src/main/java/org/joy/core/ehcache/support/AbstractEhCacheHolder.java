@@ -14,7 +14,9 @@ import java.util.Map.Entry;
 /**
  * 抽象的EhCache缓存持有者
  * 
- * @author <b>Kevice</b>
+ * @author Kevice
+ * @time 2012-5-30 上午11:22:13
+ * @since 1.0.0
  */
 public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V> {
 
@@ -27,7 +29,7 @@ public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V
 	 * @param key
 	 * @return
 	 * @author Kevice
-	 * @date 2012-5-30 上午11:22:13
+	 * @time 2012-5-30 上午11:22:13
 	 */
 	@SuppressWarnings("unchecked")
 	public V get(K key) {
@@ -85,7 +87,7 @@ public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V
 	 * @param key 关键字(能够惟一标识一个实体)
 	 * @return 缓存的实体
 	 * @author Kevice
-	 * @date 2012-5-30 上午10:56:21
+	 * @time 2012-5-30 上午10:56:21
 	 */
 	protected abstract V loadEntity(K key);
 
@@ -102,7 +104,7 @@ public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V
 	 * 刷新缓存里的所有数据
 	 * 
 	 * @author Kevice
-	 * @date 2012-5-30 上午11:14:54
+	 * @time 2012-5-30 上午11:14:54
 	 */
 	public void refresh() {
 		logger.info("刷新缓存：" + getCacheName() + "里的所有数据...");
@@ -114,7 +116,7 @@ public abstract class AbstractEhCacheHolder<K, V> implements IEhCacheHolder<K, V
 	 * 
 	 * @param key
 	 * @author Kevice
-	 * @date 2012-5-30 上午11:21:27
+	 * @time 2012-5-30 上午11:21:27
 	 */
 	public void refresh(K key) {
 		logger.info("刷新缓存：" + getCacheName() + "里key为" + key + "的数据...");

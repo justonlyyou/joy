@@ -4,38 +4,22 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
- * <pre>
- * <b><font color="blue">MdDbColumn</font></b>
- * </pre>
- * 
- * <pre>
- * <b>&nbsp;--描述说明--</b>
- * </pre>
- * 
- * <pre>
- * 
- * </pre>
- * 
- * <pre>
- * <b>--样例--</b>
- *   MdDbColumn obj = new MdDbColumn();
- *   obj.method();
- * </pre>
- * 
- * @author <b>Kevice</b>
+ * 关系型数据库列元数据信息
+ *
+ * @author Kevice
+ * @time 2013-1-3 上午12:19:58
+ * @since 1.0.0
  */
 public class MdRdbColumn implements Serializable {
 
-	public static final String PROP_NAME__name = "name";
-	
-	private String name;
-	private String type;
-	private Boolean nullable;
-	private Integer length;
-	private BigDecimal precision;
-	private String defaultValue;
-	private boolean key; 
-	private MdRdbColumnComment comment;
+	private String name; // 列名
+	private String type; // 列类型名称
+	private Boolean nullable; // 是否可以为空
+	private Integer length; // 最大长度
+	private BigDecimal precision; // 精度
+	private String defaultValue; // 默认值的字符串表示
+	private boolean key; // 是否为主键
+	private MdRdbColumnComment comment; // 列注释信息对象
 	
 
 	public String getName() {

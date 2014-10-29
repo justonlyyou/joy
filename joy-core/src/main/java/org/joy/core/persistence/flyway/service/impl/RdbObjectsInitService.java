@@ -13,7 +13,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
- * 
+ * 关系型数据库对象初始化服务, 利用Flyway对数据库脚本进行初始化或升级
+ *
  * @since 1.0.0
  * @author Kevice
  * @time 2013年11月13日 下午8:27:07
@@ -22,7 +23,8 @@ public class RdbObjectsInitService implements IRdbObjectsInitService {
 
 	private DataSource dataSource;
     /**
-     * 各版本数据库脚本存放的总目录，其下会有如mysql、oracle等目录，这些目录下放的是sql脚本的文件,多个以半角逗号分隔，至少包括"sql"(它是joy内置脚本总目录)
+     * 各版本数据库脚本存放的总目录，其下会有如mysql、oracle等目录，这些目录下放的是sql脚本的文件,
+     * 多个以半角逗号分隔，至少包括"sql"(它是joy内置脚本总目录)
      */
 	private String locations;
 

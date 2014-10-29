@@ -7,18 +7,20 @@ import org.joy.core.persistence.orm.jpa.JpaTool;
 import javax.persistence.Transient;
 
 /**
+ * 封装用户请求和响应结果的对象
  * 
  * @author Kevice
  * @time 2012-6-15 下午10:27:36
+ * @since 1.0.0
  */
 public class PageStore {
 	
-	private Paging paging;
-	private QueryLogics queryLogics;
-	private Object result;
-	private boolean success = true;
-	private String okMsg;
-	private String errMsg;
+	private Paging paging; // 分页信息
+	private QueryLogics queryLogics; // 查询逻辑
+	private Object result; // 查询结果
+	private boolean success = true; // 是否成功
+	private String okMsg; // 成功消息
+	private String errMsg; // 错误消息
 	
 	public Object query(Class<?> entityClass) {
 		return JpaTool.pagingSearch(entityClass, this);

@@ -10,8 +10,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 数据源
- * 
+ * 数据源实体
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2012-6-8 下午9:26:10
  */
@@ -20,21 +21,21 @@ import java.util.Set;
 @Comment("数据源")
 public class TSysDataSrc extends UuidCrudEntity implements IMdRdbDataSrc {
 
-	private String name;
-	private String dbAlias;
-	private String dbType;
-	private String dbName;
-	private String dbUrl;
-	private String jndiName;
-	private String username;
-	private String password;
-	private String parameter;
-	private String charset;
-	private String ipAddress;
-	private String serverPort;
-	private Integer maxConnCount;
-	private Integer minConnCount;
-	private Set<TSysCodeTable> codeDics = new HashSet<TSysCodeTable>(0);
+	private String name; // 名称
+	private String dbAlias; // 别名
+	private String dbType; // 数据库类型
+	private String dbName; // 数据库名称
+	private String dbUrl; // 数据库地址
+	private String jndiName; // jndi名称
+	private String username; // 用户名
+	private String password; // 密码
+	private String parameter; // 参数
+	private String charset; // 字符集
+	private String ipAddress; // ip地址
+	private String serverPort; // 端口
+	private Integer maxConnCount; // 最大连接数
+	private Integer minConnCount; // 最小连接数
+	private Set<TSysCodeTable> codeDics = new HashSet<>(0); // 代码字典集合
 
 	@Column(length = 32, nullable = false)
 	@Comment("名称")

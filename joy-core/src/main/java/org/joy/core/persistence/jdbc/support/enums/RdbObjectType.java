@@ -4,9 +4,11 @@ import org.joy.commons.enums.EnumTool;
 import org.joy.commons.enums.ICodeEnum;
 
 /**
+ * 关系型数据库对象类型枚举
  * 
  * @author Kevice
  * @time 2012-12-28 下午11:32:54
+ * @since 1.0.0
  */
 public enum RdbObjectType implements ICodeEnum {
 

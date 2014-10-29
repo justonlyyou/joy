@@ -24,7 +24,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 
+ * 关系型数据库列元数据信息服务
+ *
  * @since 1.0.0
  * @author Kevice
  * @time 2013-1-2 下午10:38:44

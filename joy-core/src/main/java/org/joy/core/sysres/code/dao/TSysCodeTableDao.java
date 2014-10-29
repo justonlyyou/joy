@@ -11,13 +11,22 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 /**
+ * 代码表注册访问对象
  * 
  * @since 1.0.0
  * @author Kevice
  * @time 2013年12月15日 下午8:23:38
  */
 public class TSysCodeTableDao extends BaseJpaDao<TSysCodeTable> {
-	
+
+    /**
+     * 返回所有分组的代码表
+     *
+     * @return
+     * @since 1.0.0
+     * @author Kevice
+     * @time 2013年12月15日 下午8:23:38
+     */
 	public List<TSysCodeTable>getGroupingCodeTables() {
 		return doQuery(new JPACallBack<TSysCodeTable>() {
 			

@@ -17,7 +17,9 @@ import java.util.*;
 import java.util.Map.Entry;
 
 /**
- * 
+ * 系统资源工具类
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2013-2-7 下午10:29:32
  */
@@ -35,6 +37,7 @@ public class SysResTool {
 	 * @return 系统参数值
 	 * @author Kevice
 	 * @time 2013-2-8 上午11:21:37
+     * @since 1.0.0
 	 */
 	public static String getParamValue(String paramName) {
 		return CoreBeanFactory.getSysParamCacheService().get(paramName).getParamValue();
@@ -45,6 +48,7 @@ public class SysResTool {
 	 * 
 	 * @author Kevice
 	 * @time 2013-2-8 上午11:28:06
+     * @since 1.0.0
 	 */
 	public static void refreshParams() {
 		CoreBeanFactory.getSysParamCacheService().refresh();
@@ -56,6 +60,7 @@ public class SysResTool {
 	 * @param paramName 参数名
 	 * @author Kevice
 	 * @time 2013-2-8 上午11:28:45
+     * @since 1.0.0
 	 */
 	public static void refreshParam(String paramName) {
 		CoreBeanFactory.getSysParamCacheService().refresh(paramName);
@@ -68,6 +73,7 @@ public class SysResTool {
 	 * @return Map<代码值，译文>
 	 * @author Kevice
 	 * @time 2013-2-8 下午8:04:52
+     * @since 1.0.0
 	 */
 	public static Map<String, CodeRecord> getAllCodeAndTrans(String codeTableId) {
 		codeTableId = adaptCodeTableId(codeTableId);
@@ -75,10 +81,10 @@ public class SysResTool {
 	}
 	
 	/**
+	 * 返回指定代码表id对应的代码的分类
 	 * 
-	 * 
-	 * @param codeTableId
-	 * @return
+	 * @param codeTableId 代码表id(所有分类的代码共用一张表时，为分组id)
+	 * @return 代码分类
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年12月24日 下午9:57:10
@@ -93,10 +99,10 @@ public class SysResTool {
 	}
 	
 	/**
+	 * 返回指定代码表id对应的代码
 	 * 
-	 * 
-	 * @param codeTableId
-	 * @return
+	 * @param codeTableId 代码表id(所有分类的代码共用一张表时，为分组id)
+	 * @return Map<代码值，译文>
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年12月9日 上午12:26:45
@@ -113,11 +119,12 @@ public class SysResTool {
 	/**
 	 * 翻译代码
 	 * 
-	 * @param codeTableId 代码表id
+	 * @param codeTableId 代码表id(所有分类的代码共用一张表时，为分组id)
 	 * @param code 代码
 	 * @return 译文
 	 * @author Kevice
 	 * @time 2013-2-8 下午8:07:43
+     * @since 1.0.0
 	 */
 	public static CodeRecord translateCode(String codeTableId, String code) {
 		codeTableId = adaptCodeTableId(codeTableId);

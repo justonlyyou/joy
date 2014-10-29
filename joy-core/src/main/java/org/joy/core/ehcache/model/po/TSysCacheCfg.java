@@ -9,9 +9,11 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
+ * 系统缓存配置实体类
  * 
  * @author Kevice
  * @time 2013-1-2 下午6:57:49
+ * @since 1.0.0
  */
 @Entity
 @Table(name = "t_sys_cache_cfg")

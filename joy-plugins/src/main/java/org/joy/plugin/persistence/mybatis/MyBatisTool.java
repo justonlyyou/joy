@@ -370,7 +370,9 @@ public class MyBatisTool {
             map.put(""+i, conditions.get(i));
         }
         BaseMapper mapper = entityMappingHolder().getMapper(clazz);
-        return mapper._pagingSearch(clazz, pageStore.getPaging(), map, queryLogics.getOrderArray());
+        List result = mapper._pagingSearch(clazz, pageStore.getPaging(), map, queryLogics.getOrderArray());
+        pageStore.setResult(result);
+        return result;
     }
 
     public static int delete(String sqlStatement) {

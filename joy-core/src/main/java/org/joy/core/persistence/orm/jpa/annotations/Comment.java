@@ -3,7 +3,7 @@ package org.joy.core.persistence.orm.jpa.annotations;
 import java.lang.annotation.*;
 
 /**
- * 注释注解
+ * 表或列注释注解
  * 
  * @since 1.0.0
  * @author Kevice

@@ -22,6 +22,7 @@ import java.sql.*;
 import java.util.*;
 
 /**
+ * jdbc工具类(spring bean)
  * 
  * @since 1.0.0
  * @author Kevice
@@ -30,7 +31,7 @@ import java.util.*;
 public class JdbcTool extends BaseJdbcDao {
 
 	protected static final Log logger = LogFactory.getLog(JdbcTool.class);
-	private static final Map<String, DataSource> dataSourceMap = new HashMap<String, DataSource>();
+	private static final Map<String, DataSource> dataSourceMap = new HashMap<>(); // 缓存数据源
 
 	private JdbcTool() {
 	}
@@ -40,10 +41,10 @@ public class JdbcTool extends BaseJdbcDao {
 	}
 
 	/**
+	 * 返回指定数据源id的数据库连接
 	 * 
-	 * 
-	 * @param dsId
-	 * @return
+	 * @param dsId 数据源id
+	 * @return 数据库连接
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年11月10日 下午11:21:39
@@ -57,10 +58,10 @@ public class JdbcTool extends BaseJdbcDao {
 	}
 	
 	/**
+	 * 返回指定jndi的数据库连接
 	 * 
-	 * 
-	 * @param jndi
-	 * @return
+	 * @param jndi jndi名称
+	 * @return 数据库连接
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年11月10日 下午11:19:13
@@ -165,10 +166,10 @@ public class JdbcTool extends BaseJdbcDao {
     }
 
 	/**
-	 * 获取数据源
+	 * 返回指定jndi的数据源
 	 * 
 	 * @param jndi jndi名称
-	 * @return
+	 * @return 数据源
 	 * @author Kevice
      * @since 1.0.0
 	 * @time 2013-2-8 下午2:59:18

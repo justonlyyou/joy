@@ -15,6 +15,7 @@ import java.util.regex.Pattern;
  * 
  * @author Kevice
  * @time 2013-2-5 下午11:44:41
+ * @since 1.0.0
  */
 public class MdRdbColumnCommentParser {
 
@@ -25,6 +26,12 @@ public class MdRdbColumnCommentParser {
 	private MdRdbColumnCommentParser() {
 	}
 
+    /**
+     * 将列注释字符串，按规范解析成MdRdbColumnComment对象
+     *
+     * @param origComment 列注释字符串
+     * @return MdRdbColumnComment对象
+     */
 	public static MdRdbColumnComment parse(String origComment) {
 		MdRdbColumnComment comment = null;
 		if (StringTool.isNotBlank(origComment)) {
@@ -43,6 +50,12 @@ public class MdRdbColumnCommentParser {
 		return comment;
 	}
 
+    /**
+     * 解析列的简要描述
+     *
+     * @param origComment 列注释字符串
+     * @return 列的简要描述
+     */
 	private static String parseBriefDesc(String origComment) {
 		String briefDesc = origComment;
 		int index = origComment.indexOf(SEPARATER);
@@ -52,6 +65,12 @@ public class MdRdbColumnCommentParser {
 		return briefDesc;
 	}
 
+    /**
+     * 解析列的详细描述
+     *
+     * @param origComment 列注释字符串
+     * @return 列的详细描述
+     */
 	private static String parseDetailDesc(String origComment) {
 		String detailDesc = null;
 		boolean existJsonStr = origComment.matches(JSON_REQ_EXP);
@@ -71,6 +90,12 @@ public class MdRdbColumnCommentParser {
 		return detailDesc;
 	}
 
+    /**
+     * 解析其他信息(放在json串中的)
+     *
+     * @param origComment 列注释字符串
+     * @return MdRdbColumnComment对象
+     */
 	private static MdRdbColumnComment parseOthers(String origComment) {
 		Pattern p = Pattern.compile(JSON_REQ_EXP);
 		Matcher m = p.matcher(origComment);

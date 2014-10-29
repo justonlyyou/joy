@@ -6,10 +6,11 @@ import java.lang.reflect.Method;
 import java.sql.Connection;
 
 /**
- * 数据源通知，主要为了设置AutoCommit为false
+ * 数据源通知，主要为了设置AutoCommit
  * 
  * @author Kevice
  * @time 2012-5-29 下午11:25:57
+ * @since 1.0.0
  */
 public class DataSourceAdvice implements AfterReturningAdvice {
 

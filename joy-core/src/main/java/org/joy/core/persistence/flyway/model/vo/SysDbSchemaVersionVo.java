@@ -3,6 +3,7 @@ package org.joy.core.persistence.flyway.model.vo;
 import org.joy.core.persistence.flyway.model.po.TSysDbSchemaVersion;
 
 /**
+ * 数据库脚本升级版本VO
  * 
  * @since 1.0.0
  * @author Kevice

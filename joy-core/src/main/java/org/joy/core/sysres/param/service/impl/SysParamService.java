@@ -12,7 +12,9 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * 
+ * 系统参数服务
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2013-2-7 下午10:37:10
  */

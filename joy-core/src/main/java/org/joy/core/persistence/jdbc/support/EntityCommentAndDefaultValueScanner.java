@@ -18,15 +18,10 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * <p>
- * 关系数据库注释扫描器
- * </p>
- * 
- * <pre>
- * 负责从JPA的实体中的Comment注解中获取数据库表格和字段的注释，还有字段的默认值,
- * 以便用于更新到数据库表中
- * </pre>
- * 
+ * 关系数据库注释扫描器 <br>
+ *
+ * 负责从JPA的实体中的Comment注解中获取数据库表格和字段的注释，还有字段的默认值, 以便用于更新到数据库表中
+ *
  * @since 1.0.0
  * @author Kevice
  * @time 2013-4-10 下午8:24:53
@@ -39,9 +34,10 @@ public class EntityCommentAndDefaultValueScanner {
 	}
 
 	/**
-	 * 
-	 * 
-	 * @return
+	 * 根据JPA实体类包模式串，开始描述JPA实体类，获取这些类上的Comment和DefaultValue注解信息
+	 *
+     * @param pkgs JPA实体类包模式串可变数组
+	 * @return 带有注释和默认值信息的MdRdbTable对象列表
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013-4-12 下午10:56:45
@@ -70,6 +66,12 @@ public class EntityCommentAndDefaultValueScanner {
 		return tableList;
 	}
 
+    /**
+     * 描述表注释
+     *
+     * @param clazz JPA实体类
+     * @return 带有表注释的MdRdbTable对象
+     */
 	private static MdRdbTable scanTableComment(Class<?> clazz) {
 		Table tableAnno = clazz.getAnnotation(Table.class);
 		MdRdbTable table = new MdRdbTable();
@@ -84,6 +86,12 @@ public class EntityCommentAndDefaultValueScanner {
 		return table;
 	}
 
+    /**
+     * 描述列注释和默认值
+     *
+     * @param clazz JPA实体类
+     * @return 带有列注释和默认值的MdRdbColumn对象列表
+     */
 	public static List<MdRdbColumn> scanColumnCommentAndDefaultValue(Class<?> clazz) {
 		List<MdRdbColumn> columns = new ArrayList<MdRdbColumn>();
 		List<Method> methods = MethodTool.getReadMethods(clazz);

@@ -11,9 +11,11 @@ import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.stereotype.Service;
 
 /**
- * 
+ * spring xml配置文件动态加载服务
+ *
  * @author Kevice
  * @time 2013-2-16 下午8:06:55
+ * @since 1.0.0
  */
 @Service
 public class SpringXmlDynamicLoadService implements BeanFactoryAware {

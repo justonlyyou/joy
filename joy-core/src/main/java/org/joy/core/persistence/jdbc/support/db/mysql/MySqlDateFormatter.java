@@ -5,7 +5,8 @@ import org.joy.core.persistence.jdbc.support.db.IDateFormatter;
 import java.text.MessageFormat;
 
 /**
- * 
+ * MySql日期格式化器
+ *
  * @since 1.0.0
  * @author Kevice
  * @time 2013年11月24日 上午11:40:43

@@ -24,6 +24,8 @@ public abstract class DbSupport {
 	 */
 	protected final Connection connection;
 
+    private IDateFormatter dateFormatter;
+
 	/**
 	 */
 	public DbSupport(Connection connection) {
@@ -167,15 +169,15 @@ public abstract class DbSupport {
 	/**
 	 * 给定数据库日期函数和java日期格式，返回日期转为字符串的函数
 	 * 
-	 * @param dbDateFunc
-	 * @param javaDateFormat
-	 * @return
+	 * @param dbDateFunc 数据库日期函数
+     * @param javaDateFormat java日期格式化串
+     * @return 格式化后的日期串
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年11月24日 上午11:23:44
 	 */
 	public String getDateToStringFunction(String dbDateFunc, String javaDateFormat) {
-		throw new UnsupportedOperationException();
+		return getDateFormatter().format(dbDateFunc, javaDateFormat);
 	}
 
 	public Connection getConnection() {
@@ -183,9 +185,9 @@ public abstract class DbSupport {
 	}
 
 	/**
+	 * 返回null的类型
 	 * 
-	 * 
-	 * @return
+	 * @return null的类型
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年11月24日 下午3:55:15
@@ -193,10 +195,10 @@ public abstract class DbSupport {
 	public abstract int getNullType();
 
 	/**
+	 * 返回修改表注释的sql语句
 	 * 
-	 * 
-	 * @param table
-	 * @return
+	 * @param table 表对象
+	 * @return 修改表注释的sql语句
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年11月24日 下午9:06:31
@@ -206,12 +208,12 @@ public abstract class DbSupport {
 	}
 	
 	/**
+	 * 返回修改列注释的sql语句
 	 * 
-	 * 
-	 * @param table
-	 * @param column
-	 * @param columnInDb
-	 * @return
+	 * @param table 表对象
+     * @param column 列对象
+     * @param columnInDb 数据库中的列的对象
+     * @return 修改列注释的sql语句
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年11月24日 下午9:00:09
@@ -221,12 +223,12 @@ public abstract class DbSupport {
 	}
 	
 	/**
+	 * 返回修改表默认值的sql语句
 	 * 
-	 * 
-	 * @param table
-	 * @param column
-	 * @param columnInDb
-	 * @return
+	 * @param table 表对象
+	 * @param column 列对象
+	 * @param columnInDb 数据库中的列的对象
+	 * @return 修改表默认值的sql语句
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年11月24日 下午9:01:33
@@ -236,10 +238,10 @@ public abstract class DbSupport {
 	}
 	
 	/**
+	 * 返回指定表的注释
 	 * 
-	 * 
-	 * @param tableNames
-	 * @return
+	 * @param tableNames 表名可变数组
+	 * @return Map<表名，注释>
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年11月24日 下午9:38:57
@@ -278,5 +280,21 @@ public abstract class DbSupport {
      * @time 2014年8月27日 下午2:38:57
      */
     public abstract RdbType getDatabaseType();
+
+    /**
+     * 创建日期格式化器
+     * @return 日期格式化器
+     */
+    protected IDateFormatter newDataFormatter() {
+        throw new UnsupportedOperationException();
+    }
+
+    private IDateFormatter getDateFormatter() {
+        if(dateFormatter == null) {
+            dateFormatter = newDataFormatter();
+        }
+        return dateFormatter;
+    }
+
 
 }

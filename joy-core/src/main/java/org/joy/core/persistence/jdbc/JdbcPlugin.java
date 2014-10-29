@@ -4,6 +4,7 @@ import org.joy.core.init.service.IPlugin;
 import org.springframework.stereotype.Component;
 
 /**
+ * jdbc插件，提供通过jdbc操作关系型数据库的一些工具，并提供获取关系型数据库元数据信息的服务
  * 
  * @since 1.0.0
  * @author Kevice
@@ -44,7 +45,7 @@ public class JdbcPlugin implements IPlugin {
 
 	@Override
 	public boolean isEnabled() {
-		return true;
+		return true; // 作为核心组件，必须启用
 	}
 	
 	@Override

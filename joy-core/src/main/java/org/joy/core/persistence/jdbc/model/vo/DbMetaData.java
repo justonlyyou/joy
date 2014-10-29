@@ -12,62 +12,60 @@ import java.sql.DatabaseMetaData;
 import java.sql.SQLException;
 
 /**
- * <p>
- * 
- * </p>
- * 
- * @since 1.0.0
+ * 关系型数据库元数据信息
+ *
  * @author Kevice
  * @time 2013-11-10 上午10:49:00
+ * @since 1.0.0
  */
 public class DbMetaData {
 
-	private String databaseProductName;
-	private String driverName;
-	private String userName;
-	private String catalogSeparator;
-	private String catalogTerm;
-	private String databaseProductVersion;
-	private String driverVersion;
-	private String extraNameCharacters;
-	private String identifierQuoteString;
-	private String numericFunctions;
-	private String procedureTerm;
-	private String schemaTerm;
-	private String searchStringEscape;
-	private String sqlKeywords;
-	private String stringFunctions;
-	private String systemFunctions;
-	private String timeDateFunctions;
-	private String url;
-	private String currentSchema;
-	private int databaseMajorVersion;
-	private int databaseMinorVersion;
-	private int defaultTransactionIsolation;
-	private int driverMajorVersion;
-	private int driverMinorVersion;
-	private int maxBinaryLiteralLength;
-	private int maxCatalogNameLength;
-	private int maxCharLiteralLength;
-	private int maxColumnNameLength;
-	private int maxColumnsInGroupBy;
-	private int maxColumnsInIndex;
-	private int maxColumnsInOrderBy;
-	private int maxColumnsInSelect;
-	private int maxColumnsInTable;
-	private int maxConnections;
-	private int maxCursorNameLength;
-	private int maxIndexLength;
-	private int maxProcedureNameLength;
-	private int maxRowSize;
-	private int maxSchemaNameLength;
-	private int maxStatementLength;
-	private int maxStatements;
-	private int maxTableNameLength;
-	private int maxTablesInSelect;
-	private int maxUserNameLength;
-	private int resultSetHoldability;
-	private int sqlStateType;
+	private String databaseProductName; // 数据库产品名称
+	private String driverName; // 驱动名称
+	private String userName; // 用户名
+	private String catalogSeparator; // catalog名称和表名间的分隔符
+	private String catalogTerm; // 数据库厂商对catalog的术语
+	private String databaseProductVersion; // 数据库产品版本
+	private String driverVersion; // 驱动版本
+	private String extraNameCharacters; // 除了数字、字母、下划线外，能当作标识符(非引号中)的字符集
+	private String identifierQuoteString; // 引号(对sql)字符串，如果不支持返回空格
+	private String numericFunctions; // 支持的数学函数列表（以半角逗号分隔）
+	private String procedureTerm; // 数据库厂商对存储过程的术语
+	private String schemaTerm; // 数据库厂商对schema的术语
+	private String searchStringEscape; // 查询时用于转义通配符的字符串
+	private String sqlKeywords; // sql关键字列表（以半角逗号分隔）
+	private String stringFunctions; // 支持字符串处理函数列表（以半角逗号分隔）
+	private String systemFunctions; // 支持系统函数列表（以半角逗号分隔）
+	private String timeDateFunctions; // 支持时间函数列表（以半角逗号分隔）
+	private String url; // 连接地址
+	private String currentSchema; // 当前schema
+	private int databaseMajorVersion; // 数据库主版本号
+	private int databaseMinorVersion; // 数据库小版本号
+	private int defaultTransactionIsolation; // 默认的事务隔离级别
+	private int driverMajorVersion; // 驱动的主版本号
+	private int driverMinorVersion; // 驱动的小版本号
+	private int maxBinaryLiteralLength; // 允许在内嵌二进制字面值中使用的最大十六进制字符数,为零意味着没有限制或限制是未知的
+	private int maxCatalogNameLength; // 目录名称的最大长度
+	private int maxCharLiteralLength; // 字符文字的最大长度
+	private int maxColumnNameLength; // 列名最大长度
+	private int maxColumnsInGroupBy; // 分组的最大列数
+	private int maxColumnsInIndex; // 索引的最大列数
+	private int maxColumnsInOrderBy; // 排序的最大列数
+	private int maxColumnsInSelect; // 一次查询返回的最大列数
+	private int maxColumnsInTable; // 一个表中的最大列数
+	private int maxConnections; // 最大连接数
+	private int maxCursorNameLength; // 油标名称最大长度
+	private int maxIndexLength; // 索引名称最大长度
+	private int maxProcedureNameLength; // 存储过程名称最大长度
+	private int maxRowSize; // 最大行大小
+	private int maxSchemaNameLength; // schema名称最大长度
+	private int maxStatementLength; // 最大的语句长度
+	private int maxStatements; // 最大的语句数
+	private int maxTableNameLength; // 表名最大长度
+	private int maxTablesInSelect; // 一次查询最多的表个数
+	private int maxUserNameLength; // 用户名称最大长度
+	private int resultSetHoldability; // 结果集持久性
+	private int sqlStateType; // sql状态类型
 
 	public DbMetaData() {
 	}

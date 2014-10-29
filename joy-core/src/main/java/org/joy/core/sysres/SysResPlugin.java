@@ -4,6 +4,7 @@ import org.joy.core.init.service.IPlugin;
 import org.springframework.stereotype.Component;
 
 /**
+ * 系统资源插件，提供应用系统运行的基础资源，如：数据源、代码字典、系统参数、菜单等
  * 
  * @since 1.0.0
  * @author Kevice
@@ -42,7 +43,7 @@ public class SysResPlugin implements IPlugin {
 
 	@Override
 	public boolean isEnabled() {
-		return true;
+		return true; // 作为核心组件，必须启用
 	}
 	
 	@Override

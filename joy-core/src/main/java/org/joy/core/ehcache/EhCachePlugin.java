@@ -17,9 +17,11 @@ import javax.persistence.Transient;
 import java.util.List;
 
 /**
+ * EhCache插件，该插件用于管理本地缓存
  * 
  * @author Kevice
  * @time 2013-2-3 下午4:24:32
+ * @since 1.0.0
  */
 @Component
 public class EhCachePlugin implements IPlugin {
@@ -73,9 +75,9 @@ public class EhCachePlugin implements IPlugin {
 		return configuration;
 	}
 
-	@Transient
+	@Override
 	public boolean isEnabled() {
-		return true;
+		return true; // 作为核心组件，必须启用
 	}
 
 	public int getInitPriority() {

@@ -7,6 +7,13 @@ import org.joy.core.persistence.orm.jpa.annotations.DefaultValue;
 
 import javax.persistence.*;
 
+/**
+ * 系统菜单实体
+ *
+ * @since 1.0.0
+ * @author Kevice
+ * @time 2012-6-8 下午9:26:10
+ */
 @Entity
 @Table(name = "t_sys_menu")
 @Comment("系统菜单")
@@ -17,9 +24,9 @@ public class TSysMenu implements IEntity<String>, IListToTreeRestrict<String> {
 	private String parentId; // 父结点编号
 	private String url; // 地址
 	private String orderNum; // 序号
-	private String icon;
-	private String active;
-	private String deleted;
+	private String icon; // 图标地址
+	private String active; // 是否启用
+	private String deleted; // 是否删除
 
 	public TSysMenu() {
 	}

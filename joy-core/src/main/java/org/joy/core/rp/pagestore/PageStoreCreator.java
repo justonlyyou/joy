@@ -12,9 +12,11 @@ import org.joy.commons.query.sort.Sort;
 import java.util.*;
 
 /**
- * 
+ * PageStore创建器
+ *
  * @author Kevice
  * @time 2012-6-21 下午11:29:45
+ * @since 1.0.0
  */
 public class PageStoreCreator {
 

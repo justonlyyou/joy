@@ -13,6 +13,18 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
+/**
+ * 实体管理器延迟加载处理, 使用动态代理AOP结构，来管理EntityManager，这种方案不依赖于容器 <br>
+ * 用于解决以下问题：<br>
+ * 关于级联操作中包含了lazy加载，可以优化加载数据。如果采用EAGER方式加载会耗损很多资源。<br>
+ * 不过在设置了lazy以后，操作的时候可能会出现Session close的问题。<br>
+ *
+ * 参考http://blog.csdn.net/xfworld/article/details/5583449
+ * @author xfworld
+ * @author Kevice
+ * @time 2012-6-26 下午10:36:28
+ * @since 1.0.0
+ */
 @Service
 public class OpenEntityManagerHandler implements InvocationHandler {
 

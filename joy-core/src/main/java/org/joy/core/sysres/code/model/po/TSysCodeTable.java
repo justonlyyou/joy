@@ -7,6 +7,13 @@ import org.joy.core.sysres.datasrc.model.po.TSysDataSrc;
 
 import javax.persistence.*;
 
+/**
+ * 代码表注册实体
+ *
+ * @since 1.0.0
+ * @author Kevice
+ * @time 2012-6-8 下午9:26:10
+ */
 @Entity
 @Table(name = "t_sys_code_table")
 @Comment("代码表注册")

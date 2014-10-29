@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * 关系数据库元数据工具类
+ * 关系型数据库元数据工具类
  * 
  * @since 1.0.0
  * @author Kevice
@@ -30,10 +30,10 @@ public class MdRdbTool {
 	}
 	
 	/**
+	 * 返回指定数据源id的数据库元数据信息
 	 * 
-	 * 
-	 * @param dsId
-	 * @return
+	 * @param dsId 数据源id
+	 * @return 数据库元数据信息
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年11月16日 上午1:05:04
@@ -53,10 +53,11 @@ public class MdRdbTool {
 	}
 	
 	/**
-	 * 
+	 * 返回指定连接对应的数据库元数据信息 <br>
 	 * 注：调用者必须自己负责关闭连接
-	 * @param conn
-	 * @return
+     *
+	 * @param conn jdbc连接
+	 * @return 数据库元数据信息
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年11月16日 上午1:07:38
@@ -72,10 +73,11 @@ public class MdRdbTool {
 	}
 	
 	/**
-	 * 获取给定数据源下的所有表的所有元数据信息
+	 * 返回给定数据源下的数据库中所有表的所有元数据信息 <br>
+     * 注：不包括表中的列信息
 	 * 
 	 * @param dsId 数据源ID
-	 * @return Map<String, MdRdbTable>
+	 * @return Map<表名, MdRdbTable>
 	 * @author Kevice
 	 * @time 2012-11-1 下午5:03:48
 	 */
@@ -84,10 +86,11 @@ public class MdRdbTool {
 	}
 	
 	/**
+	 * 返回给定连接对应的数据库中所有表的所有元数据信息 <br>
+     * 注：不包括表中的列信息
 	 * 
-	 * 
-	 * @param conn
-	 * @return
+	 * @param conn 连接信息
+	 * @return Map<表名, MdRdbTable>
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年11月24日 下午10:21:13
@@ -102,9 +105,10 @@ public class MdRdbTool {
 	 * 
 	 * @param dsId 数据源id
 	 * @param tableName 表名
-	 * @return
+	 * @return Map<列名，MdRdbColumn>
 	 * @author Kevice
 	 * @time 2012-12-18 下午3:16:14
+     * @since 1.0.0
 	 */
 	public static Map<String, MdRdbColumn> getColumns(String dsId, String tableName) {
 		if (StringTool.isBlank(tableName)) {
@@ -122,11 +126,11 @@ public class MdRdbTool {
 	}
 	
 	/**
+	 * 获取表的所有列
 	 * 
-	 * 
-	 * @param conn
-	 * @param tableName
-	 * @return
+	 * @param conn 数据库连接
+	 * @param tableName 表名
+	 * @return Map<列名，MdRdbColumn>
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年11月24日 下午10:25:18
@@ -141,7 +145,7 @@ public class MdRdbTool {
 	 * @param dsId 数据源id
 	 * @param tableName 表名
 	 * @param columnName 列名
-	 * @return
+	 * @return MdRdbColumn
 	 * @author Kevice
 	 * @time 2012-12-18 下午3:21:37
 	 */
@@ -157,12 +161,12 @@ public class MdRdbTool {
 	}
 	
 	/**
+	 * 获取表的某一列
 	 * 
-	 * 
-	 * @param conn
-	 * @param tableName
-	 * @param columnName
-	 * @return
+	 * @param conn 数据库连接
+	 * @param tableName 表名
+	 * @param columnName 列名
+	 * @return MdRdbColumn
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年11月24日 下午10:26:29
@@ -180,6 +184,7 @@ public class MdRdbTool {
 	 * @return 主键对象
 	 * @author Kevice
 	 * @time 2012-12-18 下午3:37:42
+     * @since 1.0.0
 	 */
 	public static MdRdbPrimaryKey getPrimaryKey(String dsId, String tableName) {
 		if (StringTool.isBlank(tableName)) {
@@ -197,11 +202,11 @@ public class MdRdbTool {
 	}
 	
 	/**
+	 * 获取主键
 	 * 
-	 * 
-	 * @param conn
-	 * @param tableName
-	 * @return
+	 * @param conn 数据库连接
+	 * @param tableName 表名
+	 * @return 主键对象
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年11月24日 下午10:27:14
@@ -219,6 +224,7 @@ public class MdRdbTool {
 	 * @author Kevice
 	 * @throws CacheException
 	 * @time 2012-12-14 下午4:54:03
+     * @since 1.0.0
 	 */
 	public static MdRdbTable getRelationalObject(String dsId, String name) {
 		if (StringTool.isBlank(name)) {
@@ -236,11 +242,11 @@ public class MdRdbTool {
 	}
 	
 	/**
+	 * 根据数据库连接、对象名从缓存中取得该对象的元数据信息
 	 * 
-	 * 
-	 * @param conn
-	 * @param name
-	 * @return
+	 * @param conn 数据库连接
+	 * @param name 对象名
+	 * @return 对象的元数据信息
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年11月24日 下午10:28:22
@@ -257,6 +263,7 @@ public class MdRdbTool {
 	 * @param objTypes 对象类型数组
 	 * @return Map<String, MdRdbTable>
 	 * @throws CacheException
+     * @since 1.0.0
 	 * @author Kevice
 	 * @time 2012-12-14 下午5:26:01
 	 */
@@ -273,11 +280,11 @@ public class MdRdbTool {
 	}
 	
 	/**
+	 * 根据数据库连接、对象类型，从缓存中取得对应表的元数据信息
 	 * 
-	 * 
-	 * @param conn
-	 * @param objTypes
-	 * @return
+	 * @param conn 数据库连接
+	 * @param objTypes 对象类型可变数组
+	 * @return Map<对象名, MdRdbTable>
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年11月24日 下午10:30:04

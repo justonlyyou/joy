@@ -8,6 +8,7 @@ import org.springframework.cache.annotation.Cacheable;
 import java.util.Map;
 
 /**
+ * 关系型数据库表元数据信息缓存服务
  * 
  * @since 1.0.0
  * @author Kevice

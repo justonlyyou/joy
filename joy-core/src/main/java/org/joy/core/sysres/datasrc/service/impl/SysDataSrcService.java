@@ -8,6 +8,7 @@ import org.joy.core.sysres.datasrc.service.ISysDataSrcService;
 import java.util.List;
 
 /**
+ * 系统数据源服务
  * 
  * @since 1.0.0
  * @author Kevice

@@ -5,15 +5,16 @@ import org.joy.core.persistence.jdbc.support.utils.JdbcTool;
 import java.sql.Connection;
 
 /**
- * 
+ * 关系型数据库连接元数据信息
+ *
  * @since 1.0.0
  * @author Kevice
  * @time 2013年11月24日 下午10:04:24
  */
 public class RdbConnection {
 
-	private String dsId;
-	private Connection connection;
+	private String dsId; // 数据源id
+	private Connection connection; // 连接对象
 
 	public RdbConnection(String dsId) {
 		this.dsId = dsId;

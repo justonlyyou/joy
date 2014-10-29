@@ -6,6 +6,7 @@ import org.joy.commons.lang.string.StringTool;
 import org.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
 import org.joy.core.persistence.jdbc.model.vo.MdRdbTable;
 import org.joy.core.persistence.jdbc.support.db.DbSupport;
+import org.joy.core.persistence.jdbc.support.db.IDateFormatter;
 import org.joy.core.persistence.jdbc.support.db.Schema;
 import org.joy.core.persistence.jdbc.support.db.SqlStatementBuilder;
 import org.joy.core.persistence.jdbc.support.enums.RdbType;
@@ -97,15 +98,15 @@ public class MySqlDbSupport extends DbSupport {
     }
     
     @Override
-    public String getDateToStringFunction(String dbDateFunc, String javaDateFormat) {
-    	return new MySqlDateFormatter().format(dbDateFunc, javaDateFormat);
-    }
-    
-    @Override
 	public int getNullType() {
 		return Types.VARCHAR;
 	}
-    
+
+    @Override
+    protected IDateFormatter newDataFormatter() {
+        return new MySqlDateFormatter();
+    }
+
     @Override
     public String getAlterTableCommentSql(MdRdbTable table) {
 		String tableName = table.getName();

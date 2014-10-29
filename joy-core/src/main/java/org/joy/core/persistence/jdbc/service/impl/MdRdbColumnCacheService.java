@@ -8,9 +8,11 @@ import org.springframework.cache.annotation.Cacheable;
 import java.util.Map;
 
 /**
+ * 关系型数据库列元数据信息缓存服务
  * 
  * @author Kevice
  * @time 2013-2-3 下午9:28:36
+ * @since 1.0.0
  */
 public class MdRdbColumnCacheService implements IMdRdbColumnService {
 	

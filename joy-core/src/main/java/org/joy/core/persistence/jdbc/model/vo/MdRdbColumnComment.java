@@ -5,10 +5,12 @@ import org.joy.commons.lang.string.StringTool;
 import java.io.Serializable;
 
 /**
- * 列注释 格式：briefDesc, [detailDesc,][ {"codeId":"xxx"}]
+ * 关系型数据库列注释元数据信息, <br>
+ * 格式：briefDesc, [detailDesc,][ {"codeId":"xxx"}]
  * 
  * @author Kevice
  * @time 2013-2-5 下午11:26:43
+ * @since 1.0.0
  */
 public class MdRdbColumnComment implements Serializable {
 

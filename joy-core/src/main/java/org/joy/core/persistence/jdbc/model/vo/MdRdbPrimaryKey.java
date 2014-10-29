@@ -5,14 +5,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 主键
+ * 关系型数据库主键元数据信息
  * 
- * @author <b>Kevice</b>
+ * @author Kevice
+ * @time 2012-12-28 下午11:25:31
+ * @since 1.0.0
  */
 public class MdRdbPrimaryKey implements Serializable {
 
 	private String keyName; // 主键名
-	private List<MdRdbColumn> columns = new ArrayList<MdRdbColumn>(1); // 组成主键的字段列表
+	private List<MdRdbColumn> columns = new ArrayList<>(1); // 组成主键的字段列表
 
 	public MdRdbPrimaryKey() {
 	}

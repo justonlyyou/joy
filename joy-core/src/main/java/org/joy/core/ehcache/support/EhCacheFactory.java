@@ -10,7 +10,9 @@ import java.util.*;
 /**
  * EhCache缓存工厂
  * 
- * @author <b>Kevice</b>
+ * @author Kevice
+ * @time 2012-5-30 下午02:10:57
+ * @since 1.0.0
  */
 public class EhCacheFactory {
 
@@ -42,7 +44,7 @@ public class EhCacheFactory {
 	 * @param key 关键字
 	 * @return 缓存数据对象
 	 * @author Kevice
-	 * @date 2012-5-30 下午02:10:57
+	 * @time 2012-5-30 下午02:10:57
 	 */
 	public static Object getEntity(String cacheName, Object key) {
 		logger.debug("cacheName: " + cacheName + ", key: " + key);
@@ -59,7 +61,7 @@ public class EhCacheFactory {
 	 * @param cacheName 缓存名称
 	 * @return List<缓存数据对象>
 	 * @author Kevice
-	 * @date 2012-5-30 下午02:12:10
+	 * @time 2012-5-30 下午02:12:10
 	 */
 	@SuppressWarnings("unchecked")
 	public static List<Object> getEntities(String cacheName) {
@@ -82,7 +84,7 @@ public class EhCacheFactory {
 	 * @param cacheName 缓存名称
 	 * @param key 关键字
 	 * @author Kevice
-	 * @date 2012-5-30 下午02:27:51
+	 * @time 2012-5-30 下午02:27:51
 	 */
 	public static void refresh(String cacheName, Object key) {
 		logger.debug("刷新缓存，cacheName: " + cacheName + ", key: " + key);
@@ -97,7 +99,7 @@ public class EhCacheFactory {
 	 * 
 	 * @param cacheName 缓存名称
 	 * @author Kevice
-	 * @date 2012-5-30 下午02:29:25
+	 * @time 2012-5-30 下午02:29:25
 	 */
 	public static void refresh(String cacheName) {
 		logger.debug("刷新缓存，cacheName: " + cacheName);
@@ -113,7 +115,7 @@ public class EhCacheFactory {
 	 * @param cacheName 缓存名称
 	 * @return
 	 * @author Kevice
-	 * @date 2012-5-30 下午02:13:32
+	 * @time 2012-5-30 下午02:13:32
 	 */
 	private static IEhCacheHolder getCacheHolder(String cacheName) {
 		IEhCacheHolder cacheHolder = cacheHolderMap.get(cacheName);

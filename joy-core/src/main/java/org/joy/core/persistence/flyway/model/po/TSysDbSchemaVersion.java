@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
+ * 数据库脚本升级版本实体
  * 
  * @since 1.0.0
  * @author Kevice
@@ -16,7 +17,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "t_sys_db_schema_version")
-@Comment("数据库脚本脚本")
+@Comment("数据库脚本升级版本")
 public class TSysDbSchemaVersion implements IEntity<String> {
 
 	private String id;
@@ -146,7 +147,7 @@ public class TSysDbSchemaVersion implements IEntity<String> {
 	}
 
 	@Column(nullable = false)
-	@Comment("耗时")
+	@Comment("耗时(毫秒)")
 	public int getExecutionTime() {
 		return executionTime;
 	}

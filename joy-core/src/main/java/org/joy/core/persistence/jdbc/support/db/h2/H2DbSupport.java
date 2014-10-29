@@ -4,6 +4,7 @@ import org.joy.commons.exception.SystemException;
 import org.joy.core.persistence.jdbc.model.vo.MdRdbColumn;
 import org.joy.core.persistence.jdbc.model.vo.MdRdbTable;
 import org.joy.core.persistence.jdbc.support.db.DbSupport;
+import org.joy.core.persistence.jdbc.support.db.IDateFormatter;
 import org.joy.core.persistence.jdbc.support.db.Schema;
 import org.joy.core.persistence.jdbc.support.db.SqlStatementBuilder;
 import org.joy.core.persistence.jdbc.support.enums.RdbType;
@@ -115,6 +116,16 @@ public class H2DbSupport extends DbSupport {
 	public int getNullType() {
 		return Types.VARCHAR;
 	}
+
+    @Override
+    public String getSysDateFunction() {
+        return "now()";
+    }
+
+    @Override
+    protected IDateFormatter newDataFormatter() {
+        return new H2DateFormatter();
+    }
 
     @Override
     public String getAlterTableCommentSql(MdRdbTable table) {

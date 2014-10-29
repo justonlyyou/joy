@@ -3,6 +3,7 @@ package org.joy.core.sysres.code.model.vo;
 import org.joy.core.sysres.code.model.po.TSysCodes;
 
 /**
+ * 系统代码VO
  * 
  * @since 1.0.0
  * @author Kevice

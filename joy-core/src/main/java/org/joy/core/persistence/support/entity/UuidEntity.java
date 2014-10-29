@@ -14,6 +14,7 @@ import javax.persistence.MappedSuperclass;
  * 
  * @author Kevice
  * @time 2012-6-17 下午9:45:42
+ * @since 1.0.0
  */
 @MappedSuperclass
 public class UuidEntity implements IEntity<String> {
