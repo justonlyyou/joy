@@ -2,7 +2,7 @@ package org.joy.commons.bean;
 
 /**
  * <p>
- * 单个属性的对象
+ * 单个属性的对象 <br>
  * 应用场景如：想从内部类带回基本类型的值
  * </p>
  * 
@@ -20,11 +20,12 @@ package org.joy.commons.bean;
  * </pre>
  * 
  * @since 1.0.0
- * @author <b>Kevice</b>
+ * @author Kevice
+ * @time 2011-12-1 下午9:39:30
  */
 public class Single<T> {
 
-	private T value;
+	private T value; // 元素值
 
 	public Single() {
 	}

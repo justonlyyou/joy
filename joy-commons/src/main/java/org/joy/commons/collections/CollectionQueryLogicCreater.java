@@ -10,19 +10,31 @@ import java.util.Collection;
 import java.util.List;
 
 /**
+ * 集合查询逻辑表达式创建器
  * 
  * @since 1.0.0
  * @author Kevice
  * @time 2013年11月22日 下午10:18:52
  */
-public class CollectionQueryLogicConvertor {
+public class CollectionQueryLogicCreater {
 	
 	private static final String DEFAULT_LOGIC = "1=1";
 
-	private CollectionQueryLogicConvertor() {
+	private CollectionQueryLogicCreater() {
 	}
 
-	public static String convert(String property, Object value, QueryLogicOperator operator) {
+    /**
+     * 拼接条件表达式
+     *
+     * @param property 属性名
+     * @param value 属性值
+     * @param operator 查询逻辑操作符枚举
+     * @return 条件表达式
+     * @since 1.0.0
+     * @author Kevice
+     * @time 2013年11月22日 下午10:18:52
+     */
+	public static String create(String property, Object value, QueryLogicOperator operator) {
 		if (StringTool.isEmpty(property) || operator == null) {
 			return DEFAULT_LOGIC;
 		}
@@ -99,6 +111,16 @@ public class CollectionQueryLogicConvertor {
 		}
 	}
 
+    /**
+     * 对字符串的值添加单引号
+     *
+     * @param value 值
+     * @param <T> 值类型
+     * @return 处理后的值
+     * @since 1.0.0
+     * @author Kevice
+     * @time 2013年11月22日 下午10:18:52
+     */
 	@SuppressWarnings("unchecked")
 	public static <T> T quoteString(T value) {
 		if (value instanceof String) {
@@ -107,6 +129,16 @@ public class CollectionQueryLogicConvertor {
 		return value;
 	}
 
+    /**
+     * 对数组里的字符串值添加单引号
+     *
+     * @param values 值数组
+     * @param <E> 值类型
+     * @return 处理后的值的集合
+     * @since 1.0.0
+     * @author Kevice
+     * @time 2013年11月22日 下午10:18:52
+     */
 	public static <E> Collection<E> quoteStrings(E... values) {
 		if (values == null) {
 			return new ArrayList<E>(0);
@@ -115,6 +147,16 @@ public class CollectionQueryLogicConvertor {
 		return quoteStrings(list);
 	}
 
+    /**
+     * 对集合里的字符串值添加单引号
+     *
+     * @param values 值集合
+     * @param <E> 值类型
+     * @return 处理后的值的集合
+     * @since 1.0.0
+     * @author Kevice
+     * @time 2013年11月22日 下午10:18:52
+     */
 	public static <E> Collection<E> quoteStrings(Collection<E> values) {
 		if (CollectionTool.isEmpty(values) == false) {
 			E e = values.iterator().next();

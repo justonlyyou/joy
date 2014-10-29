@@ -1,7 +1,7 @@
 package org.joy.commons.log;
 
 /**
- * 
+ * 日志记录器
  * 
  * @since 1.0.0
  * @author Kevice
@@ -10,10 +10,10 @@ package org.joy.commons.log;
 public interface Log {
     
 	/**
+	 * 记录调试信息
 	 * 
-	 * 
-	 * @param message
-	 * @param args
+	 * @param message 信息模板(参考MessageFormat类的说明)
+	 * @param args 参数可变数组
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年11月20日 上午1:20:17
@@ -21,10 +21,10 @@ public interface Log {
     void debug(String message, Object... args);
     
     /**
+     * 记录调试信息
      * 
-     * 
-     * @param message
-     * @param param
+     * @param message 信息模板(参考MessageFormat类的说明)
+     * @param param 参数对象
      * @since 1.0.0
      * @author Kevice
      * @time 2013年12月7日 上午10:00:34
@@ -32,10 +32,10 @@ public interface Log {
     void debug(String message, ILogParam param);
     
     /**
+     * 记录提示信息
      * 
-     * 
-     * @param message
-     * @param args
+     * @param message 信息模板(参考MessageFormat类的说明)
+     * @param args  参数可变数组
      * @since 1.0.0
      * @author Kevice
      * @time 2013年11月20日 上午1:20:21
@@ -43,10 +43,10 @@ public interface Log {
     void info(String message, Object... args);
     
     /**
+     * 记录提示信息
      * 
-     * 
-     * @param message
-     * @param param
+     * @param message 信息模板(参考MessageFormat类的说明)
+     * @param param  参数对象
      * @since 1.0.0
      * @author Kevice
      * @time 2013年12月7日 上午10:00:34
@@ -54,10 +54,10 @@ public interface Log {
     void info(String message, ILogParam param);
 
     /**
+     * 记录警告信息
      * 
-     * 
-     * @param message
-     * @param args
+     * @param message 信息模板(参考MessageFormat类的说明)
+     * @param args  参数可变数组
      * @since 1.0.0
      * @author Kevice
      * @time 2013年11月20日 上午1:20:25
@@ -65,10 +65,10 @@ public interface Log {
     void warn(String message, Object... args);
     
     /**
+     * 记录警告信息
      * 
-     * 
-     * @param message
-     * @param param
+     * @param message 信息模板(参考MessageFormat类的说明)
+     * @param param  参数对象
      * @since 1.0.0
      * @author Kevice
      * @time 2013年12月7日 上午10:00:34
@@ -76,10 +76,10 @@ public interface Log {
     void warn(String message, ILogParam param);
 
     /**
+     * 记录错误信息
      * 
-     * 
-     * @param message
-     * @param args
+     * @param message 信息模板(参考MessageFormat类的说明)
+     * @param args  参数可变数组
      * @since 1.0.0
      * @author Kevice
      * @time 2013年11月20日 上午1:20:29
@@ -87,10 +87,10 @@ public interface Log {
     void error(String message, Object... args);
     
     /**
+     * 记录错误信息
      * 
-     * 
-     * @param message
-     * @param param
+     * @param message 信息模板(参考MessageFormat类的说明)
+     * @param param  参数对象
      * @since 1.0.0
      * @author Kevice
      * @time 2013年12月7日 上午10:00:34
@@ -98,11 +98,11 @@ public interface Log {
     void error(String message, ILogParam param);
 
     /**
-     * 
+     * 记录错误信息
      *
      * @param e
-     * @param message
-     * @param args
+     * @param message 信息模板(参考MessageFormat类的说明)
+     * @param args  参数可变数组
      * @since 1.0.0
      * @author Kevice
      * @time 2013年11月20日 上午1:20:32
@@ -110,9 +110,9 @@ public interface Log {
     void error(Throwable e, String message, Object... args);
     
     /**
+     * 记录错误信息
      * 
-     * 
-     * @param e
+     * @param e 异常对象
      * @since 1.0.0
      * @author Kevice
      * @time 2013年11月22日 上午12:12:32
@@ -120,9 +120,9 @@ public interface Log {
     void error(Throwable e);
     
     /**
+     * 是否开启调试级别
      * 
-     * 
-     * @return
+     * @return 是否开启调试级别
      * @since 1.0.0
      * @author Kevice
      * @time 2013年11月20日 上午1:47:18
@@ -130,9 +130,9 @@ public interface Log {
     boolean isDebugEnabled();
     
     /**
+     * 是否开提示级别
      * 
-     * 
-     * @return
+     * @return 是否开提示级别
      * @since 1.0.0
      * @author Kevice
      * @time 2013年11月20日 上午1:47:18
@@ -140,9 +140,9 @@ public interface Log {
     boolean isInfoEnabled();
     
     /**
+     * 是否开启警告级别
      * 
-     * 
-     * @return
+     * @return 是否开启警告级别
      * @since 1.0.0
      * @author Kevice
      * @time 2013年11月20日 上午1:47:18
@@ -150,9 +150,9 @@ public interface Log {
     boolean isWarnEnabled();
     
     /**
+     * 是否开启错误级别
      * 
-     * 
-     * @return
+     * @return 是否开启错误级别
      * @since 1.0.0
      * @author Kevice
      * @time 2013年11月20日 上午1:47:18

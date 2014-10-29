@@ -26,7 +26,8 @@ import java.util.concurrent.locks.ReentrantLock;
  * <p/>
  * This implementation is thread-safe and usable in concurrent environments.
  * 
- * @since 1.0
+ * @since 1.0.0
+ * @time 2013-4-6 上午10:12:53
  */
  class SoftHashMap<K, V> implements Map<K, V> {
 

@@ -29,96 +29,101 @@ import java.nio.charset.Charset;
 
 /**
  * A resource on the classpath.
+ *
+ * @since 1.0.0
  */
 public class ClassPathResource implements Comparable<ClassPathResource>, Resource {
-	/**
-	 * The location of the resource on the classpath.
-	 */
-	private final String location;
+    /**
+     * The location of the resource on the classpath.
+     */
+    private final String location;
 
-	/**
-	 * Creates a new ClassPathResource.
-	 * 
-	 * @param location The location of the resource on the classpath.
-	 */
-	public ClassPathResource(String location) {
-		this.location = location;
-	}
+    /**
+     * Creates a new ClassPathResource.
+     *
+     * @param location The location of the resource on the classpath.
+     * @since 1.0.0
+     */
+    public ClassPathResource(String location) {
+        this.location = location;
+    }
 
-	public String getLocation() {
-		return location;
-	}
+    public String getLocation() {
+        return location;
+    }
 
-	public String getLocationOnDisk() {
-		URL url = getUrl();
-		if (url == null) {
-			throw new SystemException("Unable to location resource on disk: " + location);
-		}
-		try {
-			return URLDecoder.decode(url.getPath(), "UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			throw new SystemException(e, "Unknown encoding: UTF-8");
-		}
-	}
+    public String getLocationOnDisk() {
+        URL url = getUrl();
+        if (url == null) {
+            throw new SystemException("Unable to location resource on disk: " + location);
+        }
+        try {
+            return URLDecoder.decode(url.getPath(), "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            throw new SystemException(e, "Unknown encoding: UTF-8");
+        }
+    }
 
-	/**
-	 * @return The url of this resource.
-	 */
-	private URL getUrl() {
-		return getClassLoader().getResource(location);
-	}
+    /**
+     * @return The url of this resource.
+     * @since 1.0.0
+     */
+    private URL getUrl() {
+        return getClassLoader().getResource(location);
+    }
 
-	/**
-	 * @return The classloader to load the resource with.
-	 */
-	private ClassLoader getClassLoader() {
-		return Thread.currentThread().getContextClassLoader();
-	}
+    /**
+     * @return The classloader to load the resource with.
+     * @since 1.0.0
+     */
+    private ClassLoader getClassLoader() {
+        return Thread.currentThread().getContextClassLoader();
+    }
 
-	public String loadAsString(String encoding) {
-		InputStream inputStream = getClassLoader().getResourceAsStream(location);
-		if (inputStream == null) {
-			throw new SystemException("Unable to obtain inputstream for resource: " + location);
-		}
-		Reader reader = new InputStreamReader(inputStream, Charset.forName(encoding));
-		return IoTool.toString(reader);
-	}
+    public String loadAsString(String encoding) {
+        InputStream inputStream = getClassLoader().getResourceAsStream(location);
+        if (inputStream == null) {
+            throw new SystemException("Unable to obtain inputstream for resource: " + location);
+        }
+        Reader reader = new InputStreamReader(inputStream, Charset.forName(encoding));
+        return IoTool.toString(reader);
+    }
 
-	public byte[] loadAsBytes() {
-		InputStream inputStream = getClassLoader().getResourceAsStream(location);
-		if (inputStream == null) {
-			throw new SystemException("Unable to obtain inputstream for resource: " + location);
-		}
-		return IoTool.toByteArray(inputStream);
-	}
+    public byte[] loadAsBytes() {
+        InputStream inputStream = getClassLoader().getResourceAsStream(location);
+        if (inputStream == null) {
+            throw new SystemException("Unable to obtain inputstream for resource: " + location);
+        }
+        return IoTool.toByteArray(inputStream);
+    }
 
-	public String getFilename() {
-		return location.substring(location.lastIndexOf("/") + 1);
-	}
+    public String getFilename() {
+        return location.substring(location.lastIndexOf("/") + 1);
+    }
 
-	public boolean exists() {
-		return getUrl() != null;
-	}
+    public boolean exists() {
+        return getUrl() != null;
+    }
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-		if (o == null || getClass() != o.getClass())
-			return false;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
 
-		ClassPathResource that = (ClassPathResource) o;
+        ClassPathResource that = (ClassPathResource) o;
 
         return location.equals(that.location);
 
     }
 
-	@Override
-	public int hashCode() {
-		return location.hashCode();
-	}
+    @Override
+    public int hashCode() {
+        return location.hashCode();
+    }
 
-	public int compareTo(ClassPathResource o) {
-		return location.compareTo(o.location);
-	}
+    public int compareTo(ClassPathResource o) {
+        return location.compareTo(o.location);
+    }
 }

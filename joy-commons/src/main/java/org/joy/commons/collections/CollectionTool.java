@@ -15,7 +15,8 @@ import java.util.*;
  * Collection工具类
  * 
  * @since 1.0.0
- * @author <b>Kevice</b>
+ * @author Kevice
+ * @date 2012-5-28 下午02:12:54
  */
 public class CollectionTool {
 

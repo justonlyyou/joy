@@ -71,7 +71,7 @@ public class CollectionQueryTool {
 		}
 
 		String className = beans.iterator().next().getClass().getName();
-		values = CollectionQueryLogicConvertor.quoteStrings(values);
+		values = CollectionQueryLogicCreater.quoteStrings(values);
 		String valueStrs = StringTool.join(values, ",");
 		String sqlPattern = "SELECT * FROM {0} WHERE {1} IN({2})";
 		Query q;
@@ -200,7 +200,7 @@ public class CollectionQueryTool {
 				if (value == null) {
 					where.append(" IS NULL");
 				} else {
-					value = CollectionQueryLogicConvertor.quoteString(value);
+					value = CollectionQueryLogicCreater.quoteString(value);
 					where.append(" = ").append(value);
 				}
 			}
@@ -236,7 +236,7 @@ public class CollectionQueryTool {
 		StringBuilder where = new StringBuilder();
 		List<QueryLogic> conditions = queryLogics.getConditions();
 		for (QueryLogic lgc : conditions) {
-			String logic = CollectionQueryLogicConvertor.convert(lgc.getProperty(), lgc.getValue(), lgc.getOperator());
+			String logic = CollectionQueryLogicCreater.create(lgc.getProperty(), lgc.getValue(), lgc.getOperator());
 			if (StringTool.isNotBlank(logic)) {
 				where.append(" AND ").append(logic);
 			}

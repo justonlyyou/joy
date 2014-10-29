@@ -29,7 +29,7 @@ import java.util.concurrent.ConcurrentMap;
  * 
  * @author Kevice
  * @since 1.0.0
- * @version 2013-01-15
+ * @time 2013-01-15 下午9:22:02
  */
 public class JaxbTool {
 
@@ -55,7 +55,7 @@ public class JaxbTool {
 	/**
 	 * 序列化，按指定编码将bean转为xml
 	 * 
-	 * @param obj 待序列化的根对象
+	 * @param root 待序列化的根对象
 	 * @param encoding 编码名称
 	 * @return 序列化后的xml字符串
 	 * @since 1.0.0
@@ -70,7 +70,7 @@ public class JaxbTool {
 	/**
 	 * 序列化，按指定编码将bean转为xml
 	 * 
-	 * @param obj 待序列化的根对象
+	 * @param root 待序列化的根对象
 	 * @param clazz 类
 	 * @param encoding 编码名称
 	 * @return 序列化后的xml字符串
@@ -91,7 +91,7 @@ public class JaxbTool {
 	/**
 	 * 序列化，特别支持Root Element是Collection的情形.
 	 * 
-	 * @param obj 待序列化的根容器对象
+	 * @param root 待序列化的根容器对象
 	 * @param rootName 根的名称
 	 * @param clazz 类
 	 * @return 序列化后的xml字符串
@@ -106,7 +106,7 @@ public class JaxbTool {
 	/**
 	 * 序列化，按指定编码将bean转为xml, 特别支持Root Element是Collection的情形.
 	 * 
-	 * @param obj 待序列化的根容器对象
+	 * @param root 待序列化的根容器对象
 	 * @param rootName 根的名称
 	 * @param clazz 类
 	 * @param encoding 编码名称

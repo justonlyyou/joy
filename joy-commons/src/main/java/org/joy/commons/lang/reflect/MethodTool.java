@@ -11,10 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * <p>
  * 方法工具类
- * </p>
- * 
+ *
  * @since 1.0.0
  * @author Kevice
  * @time 2013-5-2 下午10:56:28

@@ -1,6 +1,7 @@
 package org.joy.commons.log;
 
 /**
+ * 日志参数接口
  * 
  * @since 1.0.0
  * @author Kevice

@@ -28,6 +28,7 @@ import java.util.jar.JarFile;
 
 /**
  * ClassPathLocationScanner for jar files.
+ * @since 1.0.0
  */
 public class JarFileClassPathLocationScanner implements ClassPathLocationScanner {
     public Set<String> findResourceNames(String location, URL locationUrl) throws IOException {
@@ -46,6 +47,7 @@ public class JarFileClassPathLocationScanner implements ClassPathLocationScanner
      * @param locationUrl The URL of the jar.
      * @return The jar file.
      * @throws IOException when the jar could not be resolved.
+     * @since 1.0.0
      */
     private JarFile getJarFromUrl(URL locationUrl) throws IOException {
         URLConnection con = locationUrl.openConnection();
@@ -86,6 +88,7 @@ public class JarFileClassPathLocationScanner implements ClassPathLocationScanner
      * @param location The location to look under.
      * @return The resource names.
      * @throws java.io.IOException when reading the jar file failed.
+     * @since 1.0.0
      */
     private Set<String> findResourceNamesFromJarFile(JarFile jarFile, String location) {
         Set<String> resourceNames = new TreeSet<String>();

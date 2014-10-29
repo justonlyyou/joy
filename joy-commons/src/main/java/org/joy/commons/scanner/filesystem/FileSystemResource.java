@@ -25,6 +25,7 @@ import java.nio.charset.Charset;
 
 /**
  * A resource on the filesystem.
+ * @since 1.0.0
  */
 public class FileSystemResource implements Resource, Comparable<FileSystemResource> {
     /**
@@ -43,6 +44,7 @@ public class FileSystemResource implements Resource, Comparable<FileSystemResour
 
     /**
      * @return The location of the resource on the classpath.
+     * @since 1.0.0
      */
     public String getLocation() {
         String path = StringTool.replace(location.getPath(), "\\", "/");
@@ -56,6 +58,7 @@ public class FileSystemResource implements Resource, Comparable<FileSystemResour
      * Retrieves the location of this resource on disk.
      *
      * @return The location of this resource on disk.
+     * @since 1.0.0
      */
     public String getLocationOnDisk() {
         return location.getAbsolutePath();
@@ -66,6 +69,7 @@ public class FileSystemResource implements Resource, Comparable<FileSystemResour
      *
      * @param encoding The encoding to use.
      * @return The string contents of the resource.
+     * @since 1.0.0
      */
     public String loadAsString(String encoding) {
         try {
@@ -81,6 +85,7 @@ public class FileSystemResource implements Resource, Comparable<FileSystemResour
      * Loads this resource as a byte array.
      *
      * @return The contents of the resource.
+     * @since 1.0.0
      */
     public byte[] loadAsBytes() {
         try {
@@ -93,6 +98,7 @@ public class FileSystemResource implements Resource, Comparable<FileSystemResour
 
     /**
      * @return The filename of this resource, without the path.
+     * @since 1.0.0
      */
     public String getFilename() {
         return location.getName();
@@ -102,6 +108,7 @@ public class FileSystemResource implements Resource, Comparable<FileSystemResour
      * Checks whether this resource exists.
      *
      * @return {@code true} if it exists, {@code false} if not.
+     * @since 1.0.0
      */
     public boolean exists() {
         return location.exists();

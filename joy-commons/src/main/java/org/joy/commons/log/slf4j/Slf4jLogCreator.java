@@ -5,6 +5,7 @@ import org.joy.commons.log.LogCreator;
 import org.slf4j.LoggerFactory;
 
 /**
+ * slf4j日志记录器创建者
  * 
  * @since 1.0.0
  * @author Kevice

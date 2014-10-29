@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import java.text.MessageFormat;
 
 /**
+ * slf4j日志记录器
  * 
  * @since 1.0.0
  * @author Kevice

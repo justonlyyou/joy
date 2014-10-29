@@ -7,7 +7,9 @@ import org.joy.commons.lang.string.StringTool;
 import java.io.Serializable;
 
 /**
- * 
+ * 查询逻辑操作符枚举
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2012-6-19 下午9:51:19
  */

@@ -17,6 +17,8 @@ package org.joy.commons.scanner.support;
 
 /**
  * A loadable resource.
+ *
+ * @since 1.0.0
  */
 public interface Resource {
     /**
@@ -28,6 +30,7 @@ public interface Resource {
      * Retrieves the location of this resource on disk.
      *
      * @return The location of this resource on disk.
+     * @since 1.0.0
      */
     String getLocationOnDisk();
 
@@ -36,6 +39,7 @@ public interface Resource {
      *
      * @param encoding The encoding to use.
      * @return The string contents of the resource.
+     * @since 1.0.0
      */
     String loadAsString(String encoding);
 
@@ -43,11 +47,13 @@ public interface Resource {
      * Loads this resource as a byte array.
      *
      * @return The contents of the resource.
+     * @since 1.0.0
      */
     byte[] loadAsBytes();
 
     /**
      * @return The filename of this resource, without the path.
+     * @since 1.0.0
      */
     String getFilename();
 
@@ -55,6 +61,7 @@ public interface Resource {
      * Checks whether this resource exists.
      *
      * @return {@code true} if it exists, {@code false} if not.
+     * @since 1.0.0
      */
     boolean exists();
 }

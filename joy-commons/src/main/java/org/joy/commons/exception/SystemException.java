@@ -2,7 +2,7 @@ package org.joy.commons.exception;
 
 
 /**
- * 非业务的系统异常
+ * 非业务的系统异常（面向开发人员）
  * 
  * @since 1.0.0
  * @author Kevice

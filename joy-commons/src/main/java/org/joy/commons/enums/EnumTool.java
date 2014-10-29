@@ -16,6 +16,7 @@ import java.util.Map;
  * 
  * @since 1.0.0
  * @author  <b>Kevice</b>
+ * @time 2013-5-12 下午11:35:02
  */
 public class EnumTool {
 	

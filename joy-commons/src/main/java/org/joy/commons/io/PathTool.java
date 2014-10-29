@@ -3,12 +3,11 @@ package org.joy.commons.io;
 import java.net.URL;
 
 /**
- * <p>
  * 路径工具类
- * </p>
- * 
+ *
  * @since 1.0.0
- * @author <b>Kevice</b>
+ * @author Kevice
+ * @time 2013-5-21 下午10:14:45
  */
 public class PathTool {
 

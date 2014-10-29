@@ -4,10 +4,8 @@ import org.joy.commons.enums.EnumTool;
 import org.joy.commons.enums.ICodeEnum;
 
 /**
- * <p>
  * 中国省份枚举
- * </p>
- * 
+ *
  * @since 1.0.0
  * @author Kevice
  * @time 2013-5-14 下午11:32:46
@@ -49,9 +47,9 @@ public enum Province implements ICodeEnum {
 	XIANG_GANG("81", "香港", "港"),
 	AO_MEN("82", "澳门", "澳");
 	
-	private final String code;
-	private String trans;
-	private final String abbr;
+	private final String code; // 代码
+	private String trans; // 译文
+	private final String abbr; // 简称
 	
 	Province(String code, String trans, String abbr) {
 		this.code = code;

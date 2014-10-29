@@ -3,10 +3,8 @@ package org.joy.commons.enums;
 import java.util.Map;
 
 /**
- * <p>
- * 性别枚举 
- * </p>
- * 
+ * 性别枚举
+ *
  * @since 1.0.0
  * @author Kevice
  * @time 2013-5-1 下午11:20:11

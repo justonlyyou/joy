@@ -12,10 +12,8 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * <p>
  * io操作工具类
- * </p>
- * 
+ *
  * @since 1.0.0
  * @author Kevice
  * @time 2013-4-6 上午10:37:58

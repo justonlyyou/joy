@@ -10,10 +10,8 @@ import java.io.File;
 import java.util.Collection;
 
 /**
- * <p>
  * 文件名工具类
- * </p>
- * 
+ *
  * @since 1.0.0
  * @author Kevice
  * @time 2013-4-6 上午10:39:59

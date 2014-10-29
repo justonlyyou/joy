@@ -7,7 +7,8 @@ import java.util.Map;
  * 时间单位枚举
  * 
  * @since 1.0.0
- * @author <b>Kevice</b>
+ * @author Kevice
+ * @time 2013-5-1 下午11:20:11
  */
 public enum TimeUnit implements ICodeEnum {
 	

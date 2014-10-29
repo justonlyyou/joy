@@ -5,10 +5,8 @@ import org.joy.commons.exception.SystemException;
 import java.lang.reflect.Field;
 
 /**
- * <p>
  * 字段工具类
- * </p>
- * 
+ *
  * @since 1.0.0
  * @author Kevice
  * @time 2013-5-2 下午10:56:14

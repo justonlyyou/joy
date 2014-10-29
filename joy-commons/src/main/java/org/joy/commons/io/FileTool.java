@@ -16,10 +16,8 @@ import java.util.List;
 import java.util.zip.Checksum;
 
 /**
- * <p>
  * 文件工具类
- * </p>
- * 
+ *
  * @since 1.0.0
  * @author Kevice
  * @time 2013-4-6 上午10:37:31

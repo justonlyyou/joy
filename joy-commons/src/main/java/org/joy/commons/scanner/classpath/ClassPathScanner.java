@@ -29,6 +29,7 @@ import java.util.*;
 
 /**
  * ClassPath scanner.
+ * @since 1.0.0
  */
 public class ClassPathScanner {
 
@@ -44,6 +45,7 @@ public class ClassPathScanner {
 	 * @param suffix The suffix of the resource names to match.
 	 * @return The resources that were found.
 	 * @throws IOException when the location could not be scanned.
+     * @since 1.0.0
 	 */
 	public static Resource[] scanForResources(String path, String prefix, String suffix) {
 		LOG.debug("Scanning for classpath resources at '" + path + "' (Prefix: '" + prefix + "', Suffix: '" + suffix
@@ -74,6 +76,7 @@ public class ClassPathScanner {
 	 *            implement.
 	 * @return The non-abstract classes that were found.
 	 * @throws Exception when the location could not be scanned.
+     * @since 1.0.0
 	 */
 	public static Class<?>[] scanForClasses(String location, Class<?> implementedInterface) {
 		LOG.debug("Scanning for classes at '" + location + "' (Implementing: '" + implementedInterface.getName() + "')");
@@ -111,6 +114,7 @@ public class ClassPathScanner {
 	 * 
 	 * @param resourceName The resource name.
 	 * @return The class name.
+     * @since 1.0.0
 	 */
 	private static String toClassName(String resourceName) {
 		String nameWithDots = resourceName.replace("/", ".");
@@ -126,6 +130,7 @@ public class ClassPathScanner {
 	 * @param suffix The filename suffix to match.
 	 * @return The resource names.
 	 * @throws IOException when scanning this location failed.
+     * @since 1.0.0
 	 */
 	private static Set<String> findResourceNames(String path, String prefix, String suffix) throws IOException {
 		Set<String> resourceNames = new TreeSet<String>();
@@ -153,6 +158,7 @@ public class ClassPathScanner {
 	 * @param path The path on the classpath.
 	 * @return The underlying physical URLs.
 	 * @throws IOException when the lookup fails.
+     * @since 1.0.0
 	 */
 	private static List<URL> getLocationUrlsForPath(String path) throws IOException {
 		List<URL> locationUrls = new ArrayList<URL>();
@@ -174,6 +180,7 @@ public class ClassPathScanner {
 	 * 
 	 * @param protocol The protocol of the location url to scan.
 	 * @return The location scanner or {@code null} if it could not be created.
+     * @since 1.0.0
 	 */
 	private static ClassPathLocationScanner createLocationScanner(String protocol) {
 		if ("file".equals(protocol)) {
@@ -203,6 +210,7 @@ public class ClassPathScanner {
 
 	/**
 	 * @return The classloader to use to scan the classpath.
+     * @since 1.0.0
 	 */
 	private static ClassLoader getClassLoader() {
 		return Thread.currentThread().getContextClassLoader();
@@ -216,6 +224,7 @@ public class ClassPathScanner {
 	 * @param prefix The prefix to match.
 	 * @param suffix The suffix to match.
 	 * @return The filtered names set.
+     * @since 1.0.0
 	 */
 	private static Set<String> filterResourceNames(Set<String> resourceNames, String prefix, String suffix) {
 		Set<String> filteredResourceNames = new TreeSet<String>();

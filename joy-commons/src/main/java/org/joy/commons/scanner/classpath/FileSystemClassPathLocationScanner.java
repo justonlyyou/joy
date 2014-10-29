@@ -28,6 +28,7 @@ import java.util.TreeSet;
 
 /**
  * ClassPathLocationScanner for the file system.
+ * @since 1.0.0
  */
 public class FileSystemClassPathLocationScanner implements ClassPathLocationScanner {
 

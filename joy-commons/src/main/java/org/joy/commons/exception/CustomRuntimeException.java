@@ -6,6 +6,7 @@ import org.joy.commons.log.LogFactory;
 import java.text.MessageFormat;
 
 /**
+ * 自定义的运行时异常
  * 
  * @since 1.0.0
  * @author Kevice
@@ -13,7 +14,7 @@ import java.text.MessageFormat;
  */
 public class CustomRuntimeException extends RuntimeException {
 
-	protected String detailMessage;
+	protected String detailMessage; // 详细信息
 	protected static final Log logger = LogFactory.getLog(CustomRuntimeException.class);
 
 	public CustomRuntimeException(String message, Object... args) {

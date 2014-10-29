@@ -12,10 +12,8 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * <p>
  * 文件过滤工具类
- * </p>
- * 
+ *
  * @since 1.0.0
  * @author Kevice
  * @time 2013-5-19 上午10:20:29

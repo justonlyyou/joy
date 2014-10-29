@@ -12,10 +12,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 身份证工具类.
+ * 身份证工具类
  * 
  * @since 1.0.0
  * @author Kevice
+ * @time 2013-5-14 下午10:05:19
  */
 public class IdCardNoTool {
 
@@ -358,7 +359,7 @@ public class IdCardNoTool {
 	/**
 	 * 将身份证的每位和对应位的加权因子相乘之后，再得到和值
 	 * 
-	 * @param iArr
+	 * @param iArr 身份证每位的数组
 	 * @return 身份证编码。
 	 * @since 1.0.0
 	 * @author June
@@ -380,7 +381,7 @@ public class IdCardNoTool {
 	/**
 	 * 将power和值与11取模获得余数进行校验码判断
 	 * 
-	 * @param iSum
+	 * @param iSum power和值
 	 * @return 校验位
 	 * @since 1.0.0
 	 * @author Kevice

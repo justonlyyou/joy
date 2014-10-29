@@ -27,6 +27,7 @@ public class ListToTreeConvertor {
 	 * 
 	 * @param objectList 结点对象列表
 	 * @return List<树根结点>
+     * @since 1.0.0
 	 * @author Kevice
 	 * @time 2012-5-5 下午9:00:33
 	 */

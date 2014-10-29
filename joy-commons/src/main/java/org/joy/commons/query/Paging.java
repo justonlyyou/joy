@@ -4,8 +4,9 @@ import org.joy.commons.query.sort.Sort;
 
 
 /**
- * 分页接口
- * 
+ * 分页信息
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2012-6-5 下午10:34:04
  */
@@ -15,22 +16,22 @@ public class Paging implements java.io.Serializable { // implements Pageable {
 	public static final String KEY_PAGE_NUMBER = "_joy_key__paging_pageNumber";
 	public static final String KEY_OFFSET = "_joy_key__paging_offset";
 
-	private int offset;
-	private int pageNumber = 1;
-	private int pageSize = 10; //TODO
-	private int totalCount;
-	private int pageCount;
+//	private int offset;
+	private int pageNumber = 1; // 当前页码
+	private int pageSize = 10; // 每页记录数 //TODO
+	private int totalCount; // 总记录数
+	private int pageCount; // 总页数
 	private int slider = 1; // 前后显示页面长度
 	private int midLength = 5; // 显示页面长度
-	private int midBeginPage;
-	private int midEndPage;
-	private int first = 1;
-	private int last = 1;
+	private int midBeginPage; // 中间要显示的页的开始页码
+	private int midEndPage; // 中间要显示的页的结束页码
+	private int first = 1; // 首页页码
+	private int last = 1; // 最后一页页码
 	
 	private boolean firstPage;//是否是第一页
 	private boolean lastPage;//是否是最后一页
-	private int nextPage;
-	private int prePage;
+	private int nextPage; // 下一页的页码
+	private int prePage; // 前一页的页码
 	
 	private Sort sort;
 
@@ -94,13 +95,13 @@ public class Paging implements java.io.Serializable { // implements Pageable {
 		
 	}
 
-	public int getOffset() {
-		return offset;
-	}
-
-	public void setOffset(int offset) {
-		this.offset = offset;
-	}
+//	public int getOffset() {
+//		return offset;
+//	}
+//
+//	public void setOffset(int offset) {
+//		this.offset = offset;
+//	}
 
 	public int getPageNumber() {
 		return pageNumber;

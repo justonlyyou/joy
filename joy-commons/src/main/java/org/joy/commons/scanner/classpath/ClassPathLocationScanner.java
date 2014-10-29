@@ -21,6 +21,7 @@ import java.util.Set;
 
 /**
  * Scans for classpath resources in this location.
+ * @since 1.0.0
  */
 public interface ClassPathLocationScanner {
     /**
@@ -30,6 +31,7 @@ public interface ClassPathLocationScanner {
      * @param locationUrl The system-specific physical location URL.
      * @return The system-independent names of the resources on the classpath.
      * @throws IOException when the scanning failed.
+     * @since 1.0.0
      */
     Set<String> findResourceNames(String location, URL locationUrl) throws IOException;
 }

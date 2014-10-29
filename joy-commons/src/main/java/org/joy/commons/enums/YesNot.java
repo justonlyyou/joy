@@ -9,7 +9,8 @@ import java.util.Map;
  * 逻辑真假的枚举
  * 
  * @since 1.0.0
- * @author <b>Kevice</b>
+ * @author Kevice
+ * @time 2013-5-1 下午11:20:11
  */
 public enum YesNot implements ICodeEnum {
 	
@@ -18,9 +19,9 @@ public enum YesNot implements ICodeEnum {
 	
 	public static final String CODE_TABLE_ID = "yes_not";
 	
-	private final boolean bool;
-	private final String binary;
-	private String trans;
+	private final boolean bool; // 布尔值
+	private final String binary; // 二进制对应的字符串值
+	private String trans; // 译文
 	
 	private YesNot(boolean bool, String binary, String trans) {
 		this.bool = bool;

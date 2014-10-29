@@ -12,12 +12,11 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * <p>
  * 异常处理工具类
- * </p>
- * 
+ *
  * @since 1.0.0
- * @author <b>Kevice</b>
+ * @author Kevice
+ * @time 2013-5-13 下午7:36:59
  */
 public class ExceptionTool {
 

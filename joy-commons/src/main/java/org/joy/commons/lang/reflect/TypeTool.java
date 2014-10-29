@@ -7,10 +7,8 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * <p>
  * 类型工具类
- * </p>
- * 
+ *
  * @since 1.0.0
  * @author Kevice
  * @time 2013-5-2 下午10:59:49

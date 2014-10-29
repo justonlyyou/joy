@@ -27,6 +27,7 @@ import java.util.TreeSet;
 
 /**
  * FileSystem scanner.
+ * @since 1.0.0
  */
 public class FileSystemScanner {
 
@@ -42,6 +43,7 @@ public class FileSystemScanner {
 	 * @param suffix The suffix of the resource names to match.
 	 * @return The resources that were found.
 	 * @throws java.io.IOException when the location could not be scanned.
+     * @since 1.0.0
 	 */
 	public Resource[] scanForResources(String path, String prefix, String suffix) throws IOException {
 		LOG.debug("Scanning for filesystem resources at '" + path + "' (Prefix: '" + prefix + "', Suffix: '" + suffix
@@ -71,6 +73,7 @@ public class FileSystemScanner {
 	 * @param suffix The filename suffix to match.
 	 * @return The resource names.
 	 * @throws java.io.IOException when scanning this location failed.
+     * @since 1.0.0
 	 */
 	private Set<String> findResourceNames(String path, String prefix, String suffix) throws IOException {
 		Set<String> resourceNames = findResourceNamesFromFileSystem(path, new File(path));
@@ -84,6 +87,7 @@ public class FileSystemScanner {
 	 * @param folder The folder to look for resources under on disk.
 	 * @return The resource names;
 	 * @throws IOException when the folder could not be read.
+     * @since 1.0.0
 	 */
 	private Set<String> findResourceNamesFromFileSystem(String scanRootLocation, File folder) {
 		LOG.debug("Scanning for resources in path: " + folder.getPath() + " (" + scanRootLocation + ")");
@@ -114,6 +118,7 @@ public class FileSystemScanner {
 	 * @param prefix The prefix to match.
 	 * @param suffix The suffix to match.
 	 * @return The filtered names set.
+     * @since 1.0.0
 	 */
 	private Set<String> filterResourceNames(Set<String> resourceNames, String prefix, String suffix) {
 		Set<String> filteredResourceNames = new TreeSet<String>();

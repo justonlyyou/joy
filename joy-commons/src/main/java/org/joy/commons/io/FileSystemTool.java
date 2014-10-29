@@ -4,10 +4,8 @@ import org.apache.commons.io.FileSystemUtils;
 import org.joy.commons.exception.SystemException;
 
 /**
- * <p>
  * 文件系统工具类
- * </p>
- * 
+ *
  * @since 1.0.0
  * @author Kevice
  * @time 2013-4-6 上午10:40:07

@@ -1,7 +1,7 @@
 package org.joy.commons.log;
 
 /**
- * 
+ * 日志记录器创建者
  * 
  * @since 1.0.0
  * @author Kevice
@@ -10,10 +10,10 @@ package org.joy.commons.log;
 public interface LogCreator {
     
 	/**
+	 * 创建日志记录器
 	 * 
-	 * 
-	 * @param clazz
-	 * @return
+	 * @param clazz 类
+	 * @return 日志记录器
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年11月20日 上午1:20:03

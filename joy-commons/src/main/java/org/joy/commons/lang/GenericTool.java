@@ -12,7 +12,8 @@ import java.util.List;
 
 /**
  * 泛型工具类
- * 
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2012-6-26 下午9:13:34
  */
