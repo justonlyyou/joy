@@ -5,7 +5,7 @@ import org.joy.commons.enums.ICodeEnum;
 import org.joy.core.sysres.SysResTool;
 
 /**
- * ip限制类型
+ * ip限制类型枚举
  *
  * @author Kevice
  * @time 14-2-18 下午9:04

@@ -11,7 +11,9 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 /**
- * 
+ * 权限数据访问接口
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2013-2-23 下午12:40:12
  */

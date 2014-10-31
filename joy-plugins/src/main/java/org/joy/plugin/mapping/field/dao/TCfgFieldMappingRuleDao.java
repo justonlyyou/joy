@@ -9,10 +9,20 @@ import java.util.List;
 /**
  * 字段映射规则数据访问对象
  * 
- * @author <b>Kevice</b>
+ * @since 1.0.0
+ * @author Kevice
+ * @time 2011-12-05 下午 2:00:02
  */
 public class TCfgFieldMappingRuleDao {
 
+    /**
+     * 加载所有字段映射规则
+     *
+     * @return List<TSysFieldMappingRule>
+     * @since 1.0.0
+     * @author Kevice
+     * @time 2011-12-05 下午 2:00:02
+     */
 	public List<TSysFieldMappingRule> loadAllFieldMappingRules() {
 		List<TSysFieldMappingRule> ruleList;
 		try {

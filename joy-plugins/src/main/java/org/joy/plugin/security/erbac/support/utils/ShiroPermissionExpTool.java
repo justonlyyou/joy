@@ -6,7 +6,9 @@ import org.joy.plugin.security.erbac.model.po.TErbacAuthority;
 import org.joy.plugin.security.erbac.model.vo.ErbacPermission;
 
 /**
- * 
+ * shiro权限表达式工具类
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2013-2-22 下午11:38:37
  */
@@ -16,12 +18,13 @@ public class ShiroPermissionExpTool {
 	public static final String PERMISSION_ALL = "*";
 
 	/**
+	 * 创建权限表达式串
 	 * 
-	 * 
-	 * @param domain
-	 * @param action
-	 * @param instance
-	 * @return
+	 * @param domain 资源
+	 * @param action 操作
+	 * @param instance 资源实例
+	 * @return 权限表达式串
+     * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013-2-22 下午11:45:28
 	 */
@@ -33,10 +36,11 @@ public class ShiroPermissionExpTool {
 	}
 	
 	/**
+	 * 创建权限表达式串
 	 * 
-	 * 
-	 * @param authority
-	 * @return
+	 * @param authority 权限信息对象
+	 * @return 权限表达式串
+     * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013-2-23 下午12:17:06
 	 */
@@ -45,10 +49,11 @@ public class ShiroPermissionExpTool {
 	}
 
 	/**
+	 * 创建权限表达式串
 	 * 
-	 * 
-	 * @param permission
-	 * @return
+	 * @param permission 权限表达式对象
+	 * @return 权限表达式串
+     * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013-2-22 下午11:47:29
 	 */
@@ -57,10 +62,11 @@ public class ShiroPermissionExpTool {
 	}
 	
 	/**
+	 * 解析权限表达式串
 	 * 
-	 * 
-	 * @param permissionExp
-	 * @return
+	 * @param permissionExp 权限表达式串
+	 * @return 权限表达式对象
+     * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013-2-23 上午12:01:04
 	 */

@@ -6,7 +6,7 @@ import org.joy.plugin.support.PluginBeanFactory;
 import org.springframework.stereotype.Component;
 
 /**
- * MyBatis插件
+ * MyBatis插件, 封装了MyBatis的常用操作，最主要是能以面向对象的方式使用MyBatis
  *
  * @since 1.0.0
  * @author Kevice

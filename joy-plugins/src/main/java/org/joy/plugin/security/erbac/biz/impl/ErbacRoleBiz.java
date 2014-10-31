@@ -13,6 +13,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 角色服务流程
+ *
+ * @author Kevice
+ * @time 2012-5-3 下午10:21:13
+ * @since 1.0.0
+ */
 @Transactional
 public class ErbacRoleBiz implements IErbacRoleBiz {
 	

@@ -15,6 +15,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
+ * shiro用户权限接入
  * 
  * @author Kevice
  * @time 2013-2-23 下午3:02:24

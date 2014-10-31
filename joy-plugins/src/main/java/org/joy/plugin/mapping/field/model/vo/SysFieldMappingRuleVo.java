@@ -3,6 +3,7 @@ package org.joy.plugin.mapping.field.model.vo;
 import org.joy.plugin.mapping.field.model.po.TSysFieldMappingRule;
 
 /**
+ * 字段映射规则VO
  * 
  * @since 1.0.0
  * @author Kevice

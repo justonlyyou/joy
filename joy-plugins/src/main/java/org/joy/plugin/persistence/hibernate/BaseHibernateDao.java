@@ -16,8 +16,10 @@ import java.util.List;
 
 /**
  * 基于的Hibernate数据访问对象基类
- * 
- * @author <b>Kevice</b>
+ *
+ * @since 1.0.0
+ * @author Kevice
+ * @date 2012-5-16 下午02:17:44
  */
 public abstract class BaseHibernateDao<T> {
 
@@ -26,8 +28,11 @@ public abstract class BaseHibernateDao<T> {
 	/**
 	 * 拼接or查询条件
 	 * 
-	 * @param orCriterions
+	 * @param orCriterions 或条件可变数组
 	 * @return 拼接后的Criterion
+     * @since 1.0.0
+     * @author Kevice
+     * @date 2012-5-16 下午02:17:44
 	 */
 	protected Criterion appendOrCriterions(Criterion... orCriterions) {
 		Criterion orCriterion = null;
@@ -44,8 +49,11 @@ public abstract class BaseHibernateDao<T> {
 	/**
 	 * 拼接and查询条件
 	 * 
-	 * @param andCriterions
+	 * @param andCriterions 与条件可变数组
 	 * @return 拼接后的Criterion
+     * @since 1.0.0
+     * @author Kevice
+     * @date 2012-5-16 下午02:17:44
 	 */
 	protected Criterion appendAndCriterions(Criterion... andCriterions) {
 		Criterion andCriterion = null;
@@ -62,8 +70,11 @@ public abstract class BaseHibernateDao<T> {
 	/**
 	 * 查询唯一结果
 	 * 
-	 * @param criteria
-	 * @return
+	 * @param criteria CriteriaSpecification
+	 * @return 实体对象
+     * @since 1.0.0
+     * @author Kevice
+     * @date 2012-5-16 下午02:17:44
 	 */
 	@SuppressWarnings("unchecked")
 	protected T uniqueResult(CriteriaSpecification criteria) {
@@ -78,6 +89,15 @@ public abstract class BaseHibernateDao<T> {
 		return uniqueResult(resultList);
 	}
 
+    /**
+     * 查询唯一结果
+     *
+     * @param resultList 结果列表
+     * @return 实体对象
+     * @since 1.0.0
+     * @author Kevice
+     * @date 2012-5-16 下午02:17:44
+     */
 	public static <T> T uniqueResult(List<T> resultList) {
 		T result = null;
 		if (resultList.size() == 1) {
@@ -88,14 +108,31 @@ public abstract class BaseHibernateDao<T> {
 		}
 		return result;
 	}
-	
+
+    /**
+     * 执行查询操作
+     *
+     * @param detachedCriteria DetachedCriteria
+     * @return 实体对象列表
+     * @since 1.0.0
+     * @author Kevice
+     * @date 2012-5-16 下午02:17:44
+     */
 	@SuppressWarnings("unchecked")
 	@Transactional
 	public List<T> find(DetachedCriteria detachedCriteria) {
 		Criteria criteria = detachedCriteria.getExecutableCriteria(session());
 		return criteria.list();
 	}
-	
+
+    /**
+     * 返回hibernate session
+     *
+     * @return hibernate session
+     * @since 1.0.0
+     * @author Kevice
+     * @date 2012-5-16 下午02:17:44
+     */
 	public Session session() {
 		return (Session) JpaTool.getEntityMgr().getDelegate();
 //		return JpaUtils.getEntityMgr().unwrap(Session.class);

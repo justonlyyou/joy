@@ -11,7 +11,8 @@ import java.util.Map;
 
 /**
  * 用户服务
- * 
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2012-5-8 下午11:16:04
  */

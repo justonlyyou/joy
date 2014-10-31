@@ -1,13 +1,17 @@
 package org.joy.plugin.monitor.jdbc.jwebap.model.vo;
 
 import org.joy.commons.log.ILogParam;
-import org.joy.plugin.monitor.jdbc.jwebap.IPreparedSqlConvertor;
+import org.joy.plugin.monitor.jdbc.jwebap.service.IPreparedSqlConvertor;
 import org.springframework.util.StringUtils;
 
 import java.util.List;
 
 /**
- * @author <b>Kevice</b>
+ * 参数信息
+ *
+ * @since 1.0.0
+ * @author Kevice
+ * @time 2012-12-15 下午7:09:20
  */
 public class ParamMsg implements ILogParam {
 

@@ -8,6 +8,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+/**
+ * 组id-用户id
+ *
+ * @since 1.0.0
+ * @author Kevice
+ * @time 2012-6-21 上午12:13:24
+ */
 @Entity
 @Table(name = "t_erbac_organization")
 @Comment("组织机构")

@@ -6,6 +6,13 @@ import org.joy.plugin.security.erbac.support.enums.AuthorityType;
 
 import javax.persistence.*;
 
+/**
+ * 角色-权限关联实体
+ *
+ * @since 1.0.0
+ * @author Kevice
+ * @time 2012-6-21 上午12:13:24
+ */
 @Entity
 @Table(name = "t_erbac_role_auth")
 @Comment("角色权限")

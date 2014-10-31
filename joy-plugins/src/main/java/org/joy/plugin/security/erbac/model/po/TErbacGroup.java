@@ -8,6 +8,13 @@ import org.joy.plugin.security.user.model.po.TUserBasic;
 import javax.persistence.*;
 import java.util.Collection;
 
+/**
+ * 组实体
+ *
+ * @since 1.0.0
+ * @author Kevice
+ * @time 2012-6-20 下午8:01:46
+ */
 @Entity
 @Table(name = "t_erbac_group")
 @Comment("组")

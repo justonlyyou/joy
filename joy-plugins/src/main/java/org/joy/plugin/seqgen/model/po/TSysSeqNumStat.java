@@ -8,9 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * 序列号统计对象模型
+ * 序列号统计信息实体
  * 
- * @author <b>Kevice</b>
+ * @since 1.0.0
+ * @author Kevice
+ * @time 2012-5-16 下午02:16:16
  */
 @Entity
 @Table(name = "t_sys_seq_num_stat")

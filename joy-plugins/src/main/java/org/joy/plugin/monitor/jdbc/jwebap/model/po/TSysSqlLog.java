@@ -8,7 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * 
+ * 系统sql执行日志实体
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2012-12-15 下午7:09:20
  */

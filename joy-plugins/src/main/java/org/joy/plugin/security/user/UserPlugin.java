@@ -6,6 +6,7 @@ import org.joy.plugin.security.user.model.po.TUserLoginLog;
 import org.springframework.stereotype.Component;
 
 /**
+ * 用户管理插件
  * 
  * @since 1.0.0
  * @author Kevice

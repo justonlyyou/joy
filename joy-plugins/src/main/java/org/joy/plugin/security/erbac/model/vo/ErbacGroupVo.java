@@ -3,6 +3,7 @@ package org.joy.plugin.security.erbac.model.vo;
 import org.joy.plugin.security.erbac.model.po.TErbacGroup;
 
 /**
+ * 组VO
  * 
  * @since 1.0.0
  * @author Kevice

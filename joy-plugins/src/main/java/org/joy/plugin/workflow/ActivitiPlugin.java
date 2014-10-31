@@ -6,7 +6,9 @@ import org.joy.core.init.support.properties.JoyProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * 
+ * Activiti工作流插件
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2013-3-17 下午9:19:27
  */

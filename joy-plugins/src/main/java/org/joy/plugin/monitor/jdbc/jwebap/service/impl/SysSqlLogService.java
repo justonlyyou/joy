@@ -30,7 +30,7 @@ public class SysSqlLogService implements ISysSqlLogService {
 	/**
 	 * 获取本实例，为了在本类的非事务方法调用事务方法
 	 * 
-	 * @return
+	 * @return 本实例
 	 * @since 1.0.0
 	 * @author Kevice
 	 * @time 2013年10月4日 下午3:48:44

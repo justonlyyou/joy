@@ -12,7 +12,9 @@ import org.quartz.Trigger;
 import static org.quartz.JobBuilder.newJob;
 
 /**
- * 
+ * quartz任务注册
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2013-2-17 下午8:33:29
  */

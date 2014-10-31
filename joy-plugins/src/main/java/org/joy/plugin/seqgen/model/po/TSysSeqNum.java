@@ -7,9 +7,11 @@ import org.joy.core.persistence.orm.jpa.annotations.DefaultValue;
 import javax.persistence.*;
 
 /**
- * 序列号信息对象模型
- * 
- * @author <b>Kevice</b>
+ * 序列号信息实体
+ *
+ * @since 1.0.0
+ * @author Kevice
+ * @time 2012-5-16 下午02:16:16
  */
 @Entity
 @Table(name = "t_sys_seq_num")

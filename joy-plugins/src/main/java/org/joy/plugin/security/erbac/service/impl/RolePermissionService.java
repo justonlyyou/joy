@@ -7,7 +7,9 @@ import org.joy.plugin.security.erbac.service.IRolePermissionService;
 import java.util.List;
 
 /**
- * 
+ * 角色权限服务
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2013-2-23 上午12:09:53
  */

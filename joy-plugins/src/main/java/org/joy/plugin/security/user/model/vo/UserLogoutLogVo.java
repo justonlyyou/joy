@@ -3,6 +3,7 @@ package org.joy.plugin.security.user.model.vo;
 import org.joy.plugin.security.user.model.po.TUserLogoutLog;
 
 /**
+ * 用户登出日志VO
  * 
  * @since 1.0.0
  * @author Kevice

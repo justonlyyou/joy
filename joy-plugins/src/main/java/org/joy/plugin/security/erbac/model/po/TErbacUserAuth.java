@@ -7,6 +7,13 @@ import org.joy.plugin.security.user.model.po.TUserBasic;
 
 import javax.persistence.*;
 
+/**
+ * 用户-权限关联实体
+ *
+ * @since 1.0.0
+ * @author Kevice
+ * @time 2012-6-21 上午12:13:24
+ */
 @Entity
 @Table(name = "t_erbac_user_auth")
 @Comment("用户权限")

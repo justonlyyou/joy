@@ -9,7 +9,9 @@ import org.springframework.stereotype.Component;
 import java.net.URL;
 
 /**
- * 
+ * JwebapJdbc插件，使用jwebap项目的jdbc监控部分，用于sql性能监控和参数填充
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2013-2-5 上午12:39:07
  */

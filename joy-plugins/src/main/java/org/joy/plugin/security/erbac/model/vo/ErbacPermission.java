@@ -4,7 +4,9 @@ import org.joy.plugin.security.erbac.model.po.TErbacAuthority;
 import org.joy.plugin.security.erbac.support.utils.ShiroPermissionExpTool;
 
 /**
- * 
+ * 权限表达式VO
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2013-2-22 下午11:31:49
  */

@@ -7,6 +7,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+/**
+ * 任务调度计划实体
+ *
+ * @author Kevice
+ * @time 2013-2-17 下午6:58:25
+ * @since 1.0.0
+ */
 @Entity
 @Table(name = "t_qrtz_job_plan")
 @Comment("任务调度计划")

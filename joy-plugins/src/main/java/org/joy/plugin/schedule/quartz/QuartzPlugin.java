@@ -11,7 +11,9 @@ import org.quartz.SchedulerException;
 import org.springframework.stereotype.Component;
 
 /**
- * 
+ * quartz插件，封装quartz，使方便管理调度计划
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2013-2-5 上午12:47:00
  */

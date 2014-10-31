@@ -6,8 +6,11 @@ import org.joy.core.persistence.orm.jpa.annotations.Comment;
 import javax.persistence.*;
 
 /**
- * 字段映射信息
- * @author  Kevice
+ * 字段映射信息实体
+ *
+ * @since 1.0.0
+ * @author Kevice
+ * @time 2011-12-05 下午 2:00:02
  */
 @Entity
 @Table(name = "t_sys_field_mapping")
@@ -19,7 +22,7 @@ public class TSysFieldMapping implements IEntity<String> {
 	private String field2; // 对象2的字段
 	private String fieldType; // 字段类型
 	private String remark;   // 字段描述
-	private TSysFieldMappingRule rule;
+	private TSysFieldMappingRule rule; // 映射规则对象
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)

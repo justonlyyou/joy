@@ -5,6 +5,7 @@ import org.joy.commons.enums.ICodeEnum;
 import org.joy.core.sysres.SysResTool;
 
 /**
+ * 登出方式枚举
  * 
  * @since 1.0.0
  * @author Kevice

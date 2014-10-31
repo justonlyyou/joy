@@ -9,6 +9,13 @@ package org.joy.plugin.persistence.mybatis.service;
  */
 public interface IMapperManager {
 
+    /**
+     * 执行管理
+     *
+     * @author Kevice
+     * @time 2014年10月22日 下午17:20:00
+     * @since 1.0.0
+     */
     void manage();
 
 }

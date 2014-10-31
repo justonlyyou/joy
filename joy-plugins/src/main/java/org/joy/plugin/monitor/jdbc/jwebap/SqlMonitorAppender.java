@@ -7,18 +7,26 @@ import org.joy.plugin.support.PluginBeanFactory;
 
 /**
  * 系统sql执行监控Appender
- * 
- * @since 1.0.0
+ *
  * @author Kevice
  * @time 2012-12-15 下午7:04:31
+ * @since 1.0.0
  */
 public class SqlMonitorAppender extends AppenderBase<ILoggingEvent> {
 
-	public void append(ILoggingEvent event) {
-		Object[] args = event.getArgumentArray();
-		if (args != null && args[0] instanceof ParamMsg) {
-			PluginBeanFactory.getSysSqlLogService().saveLog((ParamMsg) args[0]);
-		}
-	}
+    /**
+     * 将执行耗时的sql信息记录到数据库
+     *
+     * @param event 日志事件
+     * @author Kevice
+     * @time 2012-12-15 下午7:04:31
+     * @since 1.0.0
+     */
+    public void append(ILoggingEvent event) {
+        Object[] args = event.getArgumentArray();
+        if (args != null && args[0] instanceof ParamMsg) {
+            PluginBeanFactory.getSysSqlLogService().saveLog((ParamMsg) args[0]);
+        }
+    }
 
 }

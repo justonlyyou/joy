@@ -3,6 +3,7 @@ package org.joy.plugin.seqgen.model.vo;
 import org.joy.plugin.seqgen.model.po.TSysSeqNumRule;
 
 /**
+ * 序列号生成规则VO
  * 
  * @since 1.0.0
  * @author Kevice

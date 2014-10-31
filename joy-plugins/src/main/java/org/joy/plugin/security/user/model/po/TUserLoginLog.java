@@ -10,6 +10,13 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+/**
+ * 用户登录日志实体
+ *
+ * @author Kevice
+ * @time 14-2-16 上午10:44
+ * @since 1.0.0
+ */
 @Entity
 @Table(name = "t_user_login_log")
 @Comment("登陆日志")

@@ -16,7 +16,9 @@ import java.util.*;
 
 
 /**
- * 
+ * 用户基本信息数据访问对象
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2012-6-28 下午7:55:31
  */

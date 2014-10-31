@@ -8,6 +8,13 @@ import org.joy.plugin.security.user.model.po.TUserBasic;
 import javax.persistence.*;
 import java.util.Collection;
 
+/**
+ * 角色实体
+ *
+ * @since 1.0.0
+ * @author Kevice
+ * @time 2012-6-21 上午12:13:24
+ */
 @Entity
 @Table(name = "t_erbac_role")
 @Comment("角色")

@@ -17,6 +17,9 @@ public interface IEntityMappingHolder {
      *
      * @param clazz 实体类
      * @return 表名
+     * @author Kevice
+     * @time 2014年10月22日 下午17:00:00
+     * @since 1.0.0
      */
     String getTableName(Class<? extends IEntity> clazz);
 
@@ -25,6 +28,9 @@ public interface IEntityMappingHolder {
      *
      * @param clazz 实体类
      * @return 主键列名
+     * @author Kevice
+     * @time 2014年10月22日 下午17:00:00
+     * @since 1.0.0
      */
     String getKeyColumnName(Class<? extends IEntity> clazz);
 
@@ -34,6 +40,9 @@ public interface IEntityMappingHolder {
      * @param clazz    实体类
      * @param propertyName 属性名
      * @return 列名
+     * @author Kevice
+     * @time 2014年10月22日 下午17:00:00
+     * @since 1.0.0
      */
     String getColumnName(Class<? extends IEntity> clazz, String propertyName);
 
@@ -43,6 +52,9 @@ public interface IEntityMappingHolder {
      * @param clazz  实体类
      * @param columnName 表的列名
      * @return 属性名
+     * @author Kevice
+     * @time 2014年10月22日 下午17:00:00
+     * @since 1.0.0
      */
     String getPropertyName(Class<? extends IEntity> clazz, String columnName);
 
@@ -51,6 +63,9 @@ public interface IEntityMappingHolder {
      *
      * @param clazz 实体类
      * @return Mapper
+     * @author Kevice
+     * @time 2014年10月22日 下午17:00:00
+     * @since 1.0.0
      */
     BaseMapper getMapper(Class<? extends IEntity> clazz);
 

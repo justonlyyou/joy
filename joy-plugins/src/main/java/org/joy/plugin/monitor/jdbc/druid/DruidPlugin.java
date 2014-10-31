@@ -6,6 +6,8 @@ import org.joy.core.init.support.properties.JoyProperties;
 import org.springframework.stereotype.Component;
 
 /**
+ * druid插件，使用阿里的druid项目，它本质上是个连接池，主要用它jdbc监控和连接密码加密功能
+ *
  * @author Kevice
  * @time 14-2-27 下午9:57
  * @since 1.0.0

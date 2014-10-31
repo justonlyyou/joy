@@ -1,7 +1,8 @@
-package org.joy.plugin.monitor.jdbc.jwebap;
+package org.joy.plugin.monitor.jdbc.jwebap.service.impl;
 
 import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
+import org.joy.plugin.monitor.jdbc.jwebap.service.IPreparedSqlConvertor;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,6 +10,10 @@ import java.util.List;
 
 /**
  * 预编译sql语句转化器，实现将预编译的sql语句转化成完整的sql语句
+ *
+ * @author Kevice
+ * @time 2013-2-5 上午12:39:07
+ * @since 1.0.0
  */
 public class PreparedSqlConvertor implements IPreparedSqlConvertor {
 

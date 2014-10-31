@@ -5,6 +5,7 @@ import org.joy.core.init.support.properties.JoyProperties;
 import org.springframework.stereotype.Component;
 
 /**
+ * 验证码插件
  * 
  * @since 1.0.0
  * @author Kevice

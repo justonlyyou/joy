@@ -14,7 +14,9 @@ import java.text.MessageFormat;
 import java.util.List;
 
 /**
- * 
+ * 权限过滤器链定义
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2013-2-23 上午11:03:56
  */

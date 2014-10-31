@@ -6,7 +6,9 @@ import org.joy.plugin.security.user.model.po.TUserBasic;
 import org.springframework.stereotype.Component;
 
 /**
- * 
+ * 扩展的基于角色的访问控制插件
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2013-2-14 上午10:35:38
  */

@@ -18,411 +18,492 @@ import java.util.*;
 import java.util.Map.Entry;
 
 /**
- * Hibernate工具类
- * 
- * @author <b>Kevice</b>
+ * hibernate工具类(spring bean)
+ *
+ * @author Kevice
+ * @time 2012-5-16 下午02:16:16
+ * @since 1.0.0
  */
 @Transactional
 public class HibernateTool extends BaseHibernateDao {
 
-	// private static Logger logger = Logger.getLogger(HibernateUtils.class);
+    // private static Logger logger = Logger.getLogger(HibernateUtils.class);
 
-	// private HibernateUtils() {
-	// }
+    // private HibernateUtils() {
+    // }
 
-	private static HibernateTool getInstance() {
-		return (HibernateTool) SpringBeanTool.getBean("hibernateTool");
-	}
+    private static HibernateTool getInstance() {
+        return (HibernateTool) SpringBeanTool.getBean("hibernateTool");
+    }
 
-	public static <T> T get(Class<T> clazz, Serializable id) {
-		return getInstance().getObjById(clazz, id);
-	}
+    /**
+     * 返回主键对应的实体
+     *
+     * @param clazz 实体类
+     * @param id    主键值
+     * @param <T>   实体类
+     * @return 实体对象，不存在时返回null
+     * @author Kevice
+     * @time 2012-5-16 下午02:16:16
+     * @since 1.0.0
+     */
+    public static <T> T get(Class<T> clazz, Serializable id) {
+        return (T) getSession().get(clazz, id);
+    }
 
-	public <T> T getObjById(Class<T> clazz, Serializable id) {
-		T result;
-		// try {
-		result = (T) getSession().get(clazz, id);
-		// } catch (ObjectNotFoundException e) {
-		// // 虽然都说用get方法加载不到对象时会返回null，但有时还是抛这个异常了，原因还不明
-		// logger.warn("用session.get()加载对象失败！");
-		// }
-		return result;
-	}
-
-	public static void persist(Object entity) {
-		UuidEntity.setUuid(entity);
+    /**
+     * 持久化实体，如果是UuidEntity的实体，如果没有主键将自动设置
+     *
+     * @param entity 实体对象
+     * @author Kevice
+     * @time 2012-5-16 下午02:16:16
+     * @since 1.0.0
+     */
+    public static void persist(Object entity) {
+        UuidEntity.setUuid(entity);
         getSession().saveOrUpdate(entity);
-	}
+    }
 
+    /**
+     * 持久化实体(带有事务)，如果是UuidEntity的实体，如果没有主键将自动设置
+     *
+     * @param entity 实体对象
+     * @author Kevice
+     * @time 2012-5-16 下午02:16:16
+     * @since 1.0.0
+     */
     @Transactional
     public void persistWithTx(Object entity) {
         persist(entity);
     }
 
+    /**
+     * 持久化实体，如果是UuidEntity的实体，如果没有主键将自动设置
+     *
+     * @param entities 实体对象集合
+     * @author Kevice
+     * @time 2012-5-16 下午02:16:16
+     * @since 1.0.0
+     */
     public static void batchPersist(Collection<?> entities) {
-        for(Object entity : entities) {
+        for (Object entity : entities) {
             persist(entity);
         }
     }
 
+    /**
+     * 持久化实体(带有事务)，如果是UuidEntity的实体，如果没有主键将自动设置
+     *
+     * @param entities 实体对象集合
+     * @author Kevice
+     * @time 2012-5-16 下午02:16:16
+     * @since 1.0.0
+     */
     @Transactional
     public void batchPersistWithTx(Collection<?> entities) {
         batchPersist(entities);
     }
 
-	public static void remove(Object obj) {
-		getInstance().delete(obj);
-	}
+    /**
+     * 删除实体
+     *
+     * @param entity 实体
+     * @author Kevice
+     * @time 2012-5-16 下午02:16:16
+     * @since 1.0.0
+     */
+    public static void remove(Object entity) {
+        getSession().delete(entity);
+    }
 
+    /**
+     * 删除实体(带有事务)
+     *
+     * @param entity 实体
+     * @author Kevice
+     * @time 2012-5-16 下午02:16:16
+     * @since 1.0.0
+     */
     @Transactional
     public void removeWithTx(Object entity) {
         remove(entity);
     }
 
+    /**
+     * 批量删除实体
+     *
+     * @param entities 实体集合
+     * @author Kevice
+     * @time 2012-5-16 下午02:16:16
+     * @since 1.0.0
+     */
     public static void batchRemove(Collection<?> entities) {
-        for(Object entity : entities) {
+        for (Object entity : entities) {
             remove(entity);
         }
     }
 
+    /**
+     * 批量删除实体(带有事务)
+     *
+     * @param entities 实体集合
+     * @author Kevice
+     * @time 2012-5-16 下午02:16:16
+     * @since 1.0.0
+     */
     @Transactional
     public void batchRemoveWithTx(Collection<?> entities) {
         batchRemove(entities);
     }
 
-	public void delete(Object obj) {
-		getSession().delete(obj);
-	}
+    /**
+     * 从session中踢除实体
+     *
+     * @param entity 实体对象
+     * @author Kevice
+     * @time 2012-5-16 下午02:16:16
+     * @since 1.0.0
+     */
+    public static void evict(Object entity) {
+        getSession().evict(entity);
+    }
 
-	public static void evict(Object obj) {
-		getInstance().evictEntity(obj);
-	}
+    /**
+     * 刷新session
+     *
+     * @author Kevice
+     * @time 2012-5-16 下午02:16:16
+     * @since 1.0.0
+     */
+    public static void flush() {
+        getSession().flush();
+    }
 
-	public void evictEntity(Object obj) {
-		getSession().evict(obj);
-	}
+    /**
+     * 刷新实体
+     *
+     * @param entity 实体对象
+     * @author Kevice
+     * @time 2012-5-16 下午02:16:16
+     * @since 1.0.0
+     */
+    public static void refresh(Object entity) {
+        getSession().refresh(entity);
+    }
 
-	public static void flush() {
-		getInstance().flushSession();
-	}
+    /**
+     * 批量保存实体，默认每1000条提交一次并清空缓存
+     *
+     * @param entities 待保存的实体对象集合
+     * @author Kevice
+     * @time 2012-5-16 下午02:16:16
+     * @since 1.0.0
+     */
+    public static void batchSave(Collection<?> entities) {
+        batchSave(entities, 1000);
+    }
 
-	public void flushSession() {
-		getSession().flush();
-	}
+    /**
+     * 批量保存实体，按指定批量大小提交一次并清空缓存
+     *
+     * @param entities  待保存的实体对象集合
+     * @param batchSize 每批大小(多少条刷新一次session)
+     * @author Kevice
+     * @time 2012-5-16 下午02:17:44
+     * @since 1.0.0
+     */
+    public static void batchSave(Collection<?> entities, int batchSize) {
+        // TODO
+        for (Object object : entities) {
+            persist(object);
+        }
+    }
 
-	public static void refresh(Object obj) {
-		getInstance().refreshEntity(obj);
-	}
+    /**
+     * 批量删除实体
+     *
+     * @param entities 待删除的实体对象集合
+     * @author Kevice
+     * @time 2012-5-16 下午02:22:37
+     * @since 1.0.0
+     */
+    public static void batchDelete(Collection<?> entities) {
+        for (Object entity : entities) {
+            remove(entity);
+        }
+    }
 
-	public void refreshEntity(Object obj) {
-		getSession().refresh(obj);
-	}
+    /**
+     * in查询
+     *
+     * @param clazz        实体类
+     * @param propertyName 属性名
+     * @param collection   属性值集合
+     * @return 实体对象列表
+     * @author Kevice
+     * @time 2012-5-16 下午02:22:37
+     * @since 1.0.0
+     */
+    public static <T, E> List<T> inSearch(final Class<T> clazz, final String propertyName, Collection<E> collection) {
+        if (collection == null || collection.isEmpty()) {
+            return new ArrayList<T>(0);
+        }
+        Set<E> set = new HashSet<E>(collection);
+        final List<T> resultList = new ArrayList<T>(set.size());
+        new GroupExecutor<E>(set) {
 
-	/**
-	 * 批量保存对象，默认每1000条提交一次并清空缓存
-	 * 
-	 * @param objects 待保存的对象集合
-	 * @author Kevice
-	 * @date 2012-5-16 下午02:16:16
-	 */
-	public static void batchSave(Collection<?> objects) {
-		batchSave(objects, 1000);
-	}
+            @Override
+            @SuppressWarnings("unchecked")
+            public void groupExecute(List<E> subList) {
+                DetachedCriteria criteria = DetachedCriteria.forClass(clazz);
+                criteria.add(Restrictions.in(propertyName, subList));
+                List<T> subResultList = getInstance().find(criteria);
+                resultList.addAll(subResultList);
+            }
 
-	/**
-	 * 批量保存对象，按指定批量大小提交一次并清空缓存
-	 * 
-	 * @param objects 待保存的对象集合
-	 * @author Kevice
-	 * @date 2012-5-16 下午02:17:44
-	 */
-	public static void batchSave(Collection<?> objects, int batchSize) {
-		// TODO
-		for (Object object : objects) {
-			persist(object);
-		}
-	}
+        }.execute();
+        return resultList;
+    }
 
-	/**
-	 * 批量删除对象
-	 * 
-	 * @param objects 待删除的对象集合
-	 * @author Kevice
-	 * @date 2012-5-16 下午02:22:37
-	 */
-	public static void batchDelete(Collection<?> objects) {
-		for (Object object : objects) {
-			remove(object);
-		}
-	}
+    /**
+     * in查询, 查找主键
+     *
+     * @param clazz      实体类
+     * @param collection 属性值集合
+     * @return 实体对象列表
+     * @author Kevice
+     * @time 2012-5-16 下午02:22:37
+     * @since 1.0.0
+     */
+    @SuppressWarnings("rawtypes")
+    public static <T extends IEntity, E> List<T> inSearch(final Class<T> clazz, Collection<E> collection) {
+        return inSearch(clazz, "id", collection);
+    }
 
-	/**
-	 * in查询
-	 * 
-	 * @param clazz Hibernate模型的类
-	 * @param fieldName 字段名
-	 * @param collection 字段值集合
-	 * @return 指定类名对象的结果列表
-	 */
-	public static <T, E> List<T> inSearch(Class<T> clazz, String fieldName, Collection<E> collection) {
-		return getInstance().in(clazz, fieldName, collection);
-	}
+    /**
+     * 查询实体类所有结果
+     *
+     * @param clazz  实体类
+     * @param orders 排序规则可变数组
+     * @return 实体对象列表
+     * @author Kevice
+     * @time 2012-5-16 下午02:22:37
+     * @since 1.0.0
+     */
+    public static <T> List<T> search(final Class<T> clazz, final Order... orders) {
+        DetachedCriteria criteria = DetachedCriteria.forClass(clazz);
+        addOrder(criteria, orders);
+        return getInstance().find(criteria);
+    }
 
-	public <T, E> List<T> in(final Class<T> clazz, final String fieldName, final Collection<E> collection) {
-		if (collection == null || collection.isEmpty()) {
-			return new ArrayList<T>(0);
-		}
-		Set<E> set = new HashSet<E>(collection);
-		final List<T> resultList = new ArrayList<T>(set.size());
-		new GroupExecutor<E>(set) {
+    /**
+     * 根据类和单个属性查询
+     *
+     * @param clazz         实体类
+     * @param propertyName  属性名
+     * @param propertyValue 属性值
+     * @return 实体对象列表
+     * @author Kevice
+     * @time 2012-5-16 下午02:22:37
+     * @since 1.0.0
+     */
+    public static <T> List<T> search(final Class<T> clazz, final String propertyName, final Object propertyValue) {
+        Map<String, Object> propertyMap = new HashMap<>(1);
+        propertyMap.put(propertyName, propertyValue);
+        return andSearch(clazz, propertyMap);
+    }
 
-			@Override
-			@SuppressWarnings("unchecked")
-			public void groupExecute(List<E> subList) {
-				DetachedCriteria criteria = DetachedCriteria.forClass(clazz);
-				criteria.add(Restrictions.in(fieldName, subList));
-				List<T> subResultList = find(criteria);
-				resultList.addAll(subResultList);
-			}
+    /**
+     * 根据实体类和多个属性查询进行and条件查询
+     *
+     * @param clazz       实体类
+     * @param propertyMap Map<属性名，属性名>
+     * @param orders      排序规则可变数组
+     * @return 实体对象列表
+     * @author Kevice
+     * @time 2012-5-16 下午02:22:37
+     * @since 1.0.0
+     */
+    public static <T> List<T> andSearch(final Class<T> clazz, final Map<String, Object> propertyMap, final Order... orders) {
+        DetachedCriteria criteria = DetachedCriteria.forClass(clazz);
+        for (Entry<String, Object> entry : propertyMap.entrySet()) {
+            Object value = entry.getValue();
+            Criterion criterion;
+            if (value == null) {
+                criterion = Restrictions.isNull(entry.getKey());
+            } else {
+                criterion = Restrictions.eq(entry.getKey(), value);
+            }
+            criteria.add(criterion);
+        }
+        addOrder(criteria, orders);
+        return getInstance().find(criteria);
+    }
 
-		}.execute();
-		return resultList;
-	}
+    /**
+     * 根据实体类和多个属性查询进行or条件查询
+     *
+     * @param clazz       实体类
+     * @param propertyMap Map<属性名，属性名>
+     * @param orders      排序规则可变数组
+     * @return 实体对象列表
+     * @author Kevice
+     * @time 2012-5-16 下午02:22:37
+     * @since 1.0.0
+     */
+    public static <T> List<T> orSearch(final Class<T> clazz, final Map<String, Object> propertyMap, final Order... orders) {
+        DetachedCriteria criteria = DetachedCriteria.forClass(clazz);
+        Criterion[] orCriterions = new Criterion[propertyMap.size()];
+        int i = 0;
+        for (Entry<String, Object> entry : propertyMap.entrySet()) {
+            orCriterions[i] = Restrictions.eq(entry.getKey(), entry.getValue());
+            i++;
+        }
+        criteria.add(getInstance().appendOrCriterions(orCriterions));
+        addOrder(criteria, orders);
+        return getInstance().find(criteria);
+    }
 
-	/**
-	 * in查询, 查找主键
-	 * 
-	 * @param clazz Hibernate模型的类
-	 * @param collection 字段值集合
-	 * @return 指定类名对象的结果列表
-	 */
-	@SuppressWarnings("rawtypes")
-	public static <T extends IEntity, E> List<T> inSearch(final Class<T> clazz, Collection<E> collection) {
-		return inSearch(clazz, "id", collection);
-	}
+    /**
+     * 查询实体类所有结果，返回指定属性的值
+     *
+     * @param clazz        实体类
+     * @param propertyName 属性名
+     * @param orders       排序规则可变数组
+     * @return List<Object>
+     * @author Kevice
+     * @time 2012-5-16 下午02:22:37
+     * @since 1.0.0
+     */
+    @SuppressWarnings({"rawtypes"})
+    public static List search(final Class clazz, final String propertyName, final Order... orders) {
+        List<String> propertyNameList = new ArrayList<String>(1);
+        propertyNameList.add(propertyName);
+        return search(clazz, propertyNameList, orders);
+    }
 
-	/**
-	 * 查询指定类的所有结果
-	 * 
-	 * @param clazz Hibernate模型的类
-	 * @param orders 排序规则
-	 * @return 指定类名对象的结果列表
-	 */
-	public static <T> List<T> search(final Class<T> clazz, final Order... orders) {
-		return getInstance().searchAll(clazz, orders);
-	}
+    /**
+     * 查询实体类所有结果，返回指定属性集合的值
+     *
+     * @param clazz            实体类
+     * @param propertyNameList 属性名称集合
+     * @param orders           排序规则可变数组
+     * @return 单个属性：List<Object>， 多个属性：List<Object[]<>>
+     * @author Kevice
+     * @time 2012-5-16 下午02:22:37
+     * @since 1.0.0
+     */
+    @SuppressWarnings({"rawtypes"})
+    public static List search(final Class<?> clazz, final List<String> propertyNameList, final Order... orders) {
+        DetachedCriteria criteria = DetachedCriteria.forClass(clazz);
+        ProjectionList projectionList = Projections.projectionList();
+        for (String propertyName : propertyNameList) {
+            projectionList.add(Projections.property(propertyName));
+        }
+        addOrder(criteria, orders);
+        criteria.setProjection(projectionList);
+        return getInstance().find(criteria);
+    }
 
-	@SuppressWarnings("unchecked")
-	public <T> List<T> searchAll(final Class<T> clazz, final Order... orders) {
-		DetachedCriteria criteria = DetachedCriteria.forClass(clazz);
-		addOrder(criteria, orders);
-		return find(criteria);
-	}
+    /**
+     * 查询某序列的下一个值
+     *
+     * @param sequence 序列名
+     * @return 序列的下一个值
+     * @author Kevice
+     * @time 2012-5-16 下午02:22:37
+     * @since 1.0.0
+     */
+    public static long querySequence(String sequence) {
+        List<?> resultList = findBySql("select " + sequence + ".nextval from dual");
+        return ((BigDecimal) resultList.get(0)).longValue();
+    }
 
-	/**
-	 * 根据类和单个字段查询
-	 * 
-	 * @param clazz Hibernate模型的类
-	 * @param fieldName 字段名
-	 * @param fieldValue 字段值
-	 * @return 指定类名对象的结果列表
-	 */
-	public static <T> List<T> search(final Class<T> clazz, final String fieldName, final Object fieldValue) {
-		Map<String, Object> fieldMap = new HashMap<String, Object>(1);
-		fieldMap.put(fieldName, fieldValue);
-		return andSearch(clazz, fieldMap);
-	}
+    /**
+     * 通过Sql语句查询
+     *
+     * @param sql sql查询语句
+     * @return 查询结果列表
+     * @author Kevice
+     * @time 2012-5-16 下午02:22:37
+     * @since 1.0.0
+     */
+    public static List<?> findBySql(final String sql) {
+        SQLQuery sqlQuery = getSession().createSQLQuery(sql);
+        return sqlQuery.list();
+    }
 
-	/**
-	 * 根据类和多个字段查询进行and条件查询
-	 * 
-	 * @param clazz Hibernate模型的类
-	 * @param fieldMap Map<字段名，字段名>
-	 * @param orders 排序规则
-	 * @return 指定类名对象的结果列表
-	 */
-	public static <T> List<T> andSearch(final Class<T> clazz, final Map<String, Object> fieldMap, final Order... orders) {
-		return getInstance().andQuery(clazz, fieldMap, orders);
-	}
+    /**
+     * 执行更新或删除的hql语句
+     *
+     * @param hql    更新或删除的hql语句
+     * @param params 参数值可变数组
+     * @return 成功修改或删除的数据条数
+     * @author Kevice
+     * @time 2013年11月2日 下午10:34:06
+     * @since 1.0.0
+     */
+    public static int executeByHql(final String hql, final Object... params) {
+        Query query = getSession().createQuery(hql);
+        if (ArrayTool.isNotEmpty(params)) {
+            for (int i = 0; i < params.length; i++) {
+                query.setParameter(i, params[i]);
+            }
+        }
+        return query.executeUpdate();
+    }
 
-	@SuppressWarnings("unchecked")
-	public <T> List<T> andQuery(final Class<T> clazz, final Map<String, Object> fieldMap, final Order... orders) {
-		DetachedCriteria criteria = DetachedCriteria.forClass(clazz);
-		for (Entry<String, Object> entry : fieldMap.entrySet()) {
-			Object value = entry.getValue();
-			Criterion criterion;
-			if (value == null) {
-				criterion = Restrictions.isNull(entry.getKey());
-			} else {
-				criterion = Restrictions.eq(entry.getKey(), value);
-			}
-			criteria.add(criterion);
-		}
-		addOrder(criteria, orders);
-		return find(criteria);
-	}
+    /**
+     * 执行更新或删除的hql语句
+     *
+     * @param hql    更新或删除的hql语句
+     * @param params 参数名与值的对应关系
+     * @return 成功修改或删除的数据条数
+     * @author Kevice
+     * @time 2013年11月2日 下午10:34:06
+     * @since 1.0.0
+     */
+    public static int executeByHql(final String hql, final Map<String, Object> params) {
+        Query query = getSession().createQuery(hql);
+        if (MapTool.isNotEmpty(params)) {
+            query.setProperties(params);
+        }
+        return query.executeUpdate();
+    }
 
-	/**
-	 * 根据类和多个字段查询进行or条件查询
-	 * 
-	 * @param clazz Hibernate模型的类
-	 * @param fieldMap Map<字段名，字段名>
-	 * @param orders 排序规则
-	 * @return 指定类名对象的结果列表
-	 */
-	public static <T> List<T> orSearch(final Class<T> clazz, final Map<String, Object> fieldMap, final Order... orders) {
-		return getInstance().orQuery(clazz, fieldMap, orders);
-	}
+    /**
+     * 添加排序规则可变数组
+     *
+     * @param criteria Criteria
+     * @param orders   排序规则可变数组
+     * @author Kevice
+     * @time 2012-3-2 下午06:57:03
+     * @since 1.0.0
+     */
+    private static void addOrder(final DetachedCriteria criteria, final Order... orders) {
+        if (orders != null) {
+            for (Order order : orders) {
+                criteria.addOrder(order);
+            }
+        }
+    }
 
-	@SuppressWarnings("unchecked")
-	public <T> List<T> orQuery(final Class<T> clazz, final Map<String, Object> fieldMap, final Order... orders) {
-		DetachedCriteria criteria = DetachedCriteria.forClass(clazz);
-		Criterion[] orCriterions = new Criterion[fieldMap.size()];
-		int i = 0;
-		for (Entry<String, Object> entry : fieldMap.entrySet()) {
-			orCriterions[i] = Restrictions.eq(entry.getKey(), entry.getValue());
-			i++;
-		}
-		criteria.add(getInstance().appendOrCriterions(orCriterions));
-		addOrder(criteria, orders);
-		return find(criteria);
-	}
+    public static Session getSession() {
+        return getInstance().session();
+    }
 
-	/**
-	 * 查询指定类的所有结果，返回指定属性的值
-	 * 
-	 * @param clazz Hibernate模型的类
-	 * @param fieldName 属性名
-	 * @param orders 排序规则
-	 * @return List<Object>
-	 */
-	@SuppressWarnings({ "rawtypes" })
-	public static List search(final Class clazz, final String fieldName, final Order... orders) {
-		List<String> fieldNameList = new ArrayList<String>(1);
-		fieldNameList.add(fieldName);
-		return search(clazz, fieldNameList, orders);
-	}
-
-	/**
-	 * 查询指定类的所有结果，返回指定属性集合的值
-	 * 
-	 * @param clazz Hibernate模型的类
-	 * @param fieldNameList 属性名称集合
-	 * @param orders 排序规则
-	 * @return 单个字段：List<Object>， 多个字段：List<Object[]<>>
-	 */
-	@SuppressWarnings({ "rawtypes" })
-	public static List search(final Class<?> clazz, final List<String> fieldNameList, final Order... orders) {
-		return getInstance().query(clazz, fieldNameList, orders);
-	}
-
-	@SuppressWarnings({ "rawtypes" })
-	public List query(final Class<?> clazz, final List<String> fieldNameList, final Order... orders) {
-		DetachedCriteria criteria = DetachedCriteria.forClass(clazz);
-		ProjectionList projectionList = Projections.projectionList();
-		for (String fieldName : fieldNameList) {
-			projectionList.add(Projections.property(fieldName));
-		}
-		addOrder(criteria, orders);
-		criteria.setProjection(projectionList);
-		return find(criteria);
-	}
-
-	/**
-	 * 查询某序列的下一个值
-	 * 
-	 * @param sequence 序列名
-	 * @return 序列的下一个值
-	 */
-	public static long querySequence(String sequence) {
-		List<?> resultList = findBySql("select " + sequence + ".nextval from dual");
-		return ((BigDecimal) resultList.get(0)).longValue();
-	}
-
-	/**
-	 * 通过Sql语句查询
-	 * 
-	 * @param sql sql查询语句
-	 * @return 查询结果列表
-	 */
-	public static List<?> findBySql(final String sql) {
-		return getInstance().findUsingSql(sql);
-	}
-
-	public List<?> findUsingSql(String sql) {
-		SQLQuery sqlQuery = getSession().createSQLQuery(sql);
-		return sqlQuery.list();
-	}
-
-	/**
-	 * 执行更新或删除的hql语句
-	 * 
-	 * @param hql 更新或删除的hql语句
-	 * @param params 参数值可变数组
-	 * @return 成功修改或删除的数据条数
-	 * @since 1.0.0
-	 * @author Kevice
-	 * @time 2013年11月2日 下午10:34:06
-	 */
-	public static int executeByHql(final String hql, final Object... params) {
-		return getInstance().executeUsingHql(hql, params);
-	}
-
-	public int executeUsingHql(final String hql, final Object... params) {
-		Query query = getSession().createQuery(hql);
-		if (ArrayTool.isNotEmpty(params)) {
-			for (int i = 0; i < params.length; i++) {
-				query.setParameter(i, params[i]);
-			}
-		}
-		return query.executeUpdate();
-	}
-
-	/**
-	 * 执行更新或删除的hql语句
-	 * 
-	 * @param hql 更新或删除的hql语句
-	 * @param params 参数名与值的对应关系
-	 * @return 成功修改或删除的数据条数
-	 * @since 1.0.0
-	 * @author Kevice
-	 * @time 2013年11月2日 下午10:34:06
-	 */
-	public static int executeByHql(final String hql, final Map<String, Object> params) {
-		return getInstance().executeUsingHql(hql, params);
-	}
-
-	public int executeUsingHql(final String hql, final Map<String, Object> params) {
-		Query query = getSession().createQuery(hql);
-		if (MapTool.isNotEmpty(params)) {
-			query.setProperties(params);
-		}
-		return query.executeUpdate();
-	}
-
-	/**
-	 * 添加排序规则
-	 * 
-	 * @param criteria Criteria
-	 * @param orders 排序规则
-	 * @author Kevice
-	 * @date 2012-3-2 下午06:57:03
-	 */
-	private static void addOrder(final DetachedCriteria criteria, final Order... orders) {
-		if (orders != null) {
-			for (Order order : orders) {
-				criteria.addOrder(order);
-			}
-		}
-	}
-
-	public static Session getSession() {
-		return getInstance().session();
-	}
-
-	@SuppressWarnings("rawtypes")
-	public static List findByCriteria(DetachedCriteria detachedCriteria) {
-		return getInstance().find(detachedCriteria);
-	}
+    /**
+     * 根据指定的DetachedCriteria执行查询
+     *
+     * @param detachedCriteria DetachedCriteria
+     * @return List<Object>
+     * @author Kevice
+     * @time 2012-3-2 下午06:57:03
+     * @since 1.0.0
+     */
+    @SuppressWarnings("rawtypes")
+    public static List findByCriteria(DetachedCriteria detachedCriteria) {
+        return getInstance().find(detachedCriteria);
+    }
 
 }

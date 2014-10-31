@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 用户登录日志数据访问对象
  * 
  * @since 1.0.0
  * @author Kevice

@@ -3,7 +3,9 @@ package org.joy.plugin.security.erbac.model.po;
 import java.io.Serializable;
 
 /**
- * 
+ * 组id-用户id
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2012-6-21 上午12:13:24
  */

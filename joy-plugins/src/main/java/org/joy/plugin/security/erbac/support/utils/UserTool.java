@@ -5,6 +5,7 @@ import org.apache.shiro.subject.Subject;
 import org.joy.plugin.security.user.model.po.TUserBasic;
 
 /**
+ * 用户操作工具类
  * 
  * @since 1.0.0
  * @author Kevice

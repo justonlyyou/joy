@@ -3,6 +3,7 @@ package org.joy.plugin.monitor.jdbc.jwebap.model.vo;
 import org.joy.plugin.monitor.jdbc.jwebap.model.po.TSysSqlLog;
 
 /**
+ * 系统sql执行日志VO
  * 
  * @since 1.0.0
  * @author Kevice

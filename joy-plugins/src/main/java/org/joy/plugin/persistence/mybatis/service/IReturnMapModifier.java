@@ -12,6 +12,14 @@ import org.joy.plugin.persistence.mybatis.BaseMapper;
  */
 public interface IReturnMapModifier {
 
+    /**
+     * 执行修改
+     *
+     * @param mapperClass Mapper类
+     * @author Kevice
+     * @time 2014年10月22日 上午11:36:42
+     * @since 1.0.0
+     */
     void modify(Class<? extends BaseMapper> mapperClass);
 
 }

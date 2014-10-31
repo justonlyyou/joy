@@ -3,6 +3,7 @@ package org.joy.plugin.security.erbac.model.vo;
 import org.joy.plugin.security.erbac.model.po.TErbacAuthority;
 
 /**
+ * 权限VO
  * 
  * @since 1.0.0
  * @author Kevice

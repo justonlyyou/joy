@@ -4,6 +4,7 @@ import org.joy.plugin.security.user.model.po.TUserLoginLog;
 import org.joy.plugin.security.user.support.enums.LogoutMethod;
 
 /**
+ * 用户登出服务接口
  * 
  * @since 1.0.0
  * @author Kevice

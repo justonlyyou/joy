@@ -5,7 +5,9 @@ import org.joy.core.init.support.properties.JoyProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * 
+ * JasperReports插件
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2013-2-27 下午10:39:51
  */

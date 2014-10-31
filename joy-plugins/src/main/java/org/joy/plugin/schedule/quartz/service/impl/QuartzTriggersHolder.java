@@ -2,7 +2,7 @@ package org.joy.plugin.schedule.quartz.service.impl;
 
 import org.joy.commons.lang.DateTool;
 import org.joy.commons.lang.string.StringTool;
-import org.joy.plugin.schedule.quartz.dao.TQrtzJobPlanCfgDao;
+import org.joy.plugin.schedule.quartz.dao.TQrtzJobPlanDao;
 import org.joy.plugin.schedule.quartz.model.po.TQrtzJobPlan;
 import org.joy.plugin.schedule.quartz.service.IQuartzTriggersHolder;
 import org.quartz.CronTrigger;
@@ -19,14 +19,16 @@ import static org.quartz.CronScheduleBuilder.cronSchedule;
 import static org.quartz.TriggerBuilder.newTrigger;
 
 /**
- * 
+ * quartz触发器持有者
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2013-2-17 下午6:50:05
  */
 public class QuartzTriggersHolder implements IQuartzTriggersHolder {
 	
 	@Autowired
-	private TQrtzJobPlanCfgDao qrtzJobPlanCfgDao;
+	private TQrtzJobPlanDao qrtzJobPlanCfgDao;
 	private final Map<TriggerKey, Trigger> triggerMap = new HashMap<TriggerKey, Trigger>();
 	
 	public void loadTriggers() {
@@ -48,7 +50,7 @@ public class QuartzTriggersHolder implements IQuartzTriggersHolder {
 		return triggerMap;
 	}
 	
-	public void setQrtzJobPlanCfgDao(TQrtzJobPlanCfgDao qrtzJobPlanCfgDao) {
+	public void setQrtzJobPlanCfgDao(TQrtzJobPlanDao qrtzJobPlanCfgDao) {
 		this.qrtzJobPlanCfgDao = qrtzJobPlanCfgDao;
 	}
 	

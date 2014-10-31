@@ -9,6 +9,7 @@ import org.joy.commons.lang.string.StringTool;
 import org.joy.plugin.security.user.model.po.TUserBasic;
 
 /**
+ * md5凭证匹配器
  *
  * @author Kevice
  * @time 2014-5-28 上午10:22:24

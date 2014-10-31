@@ -12,6 +12,13 @@ import org.joy.plugin.security.erbac.support.enums.UserStatus;
 import javax.persistence.*;
 import java.util.Collection;
 
+/**
+ * 用户基本信息实体
+ *
+ * @author Kevice
+ * @time 14-2-16 上午10:44
+ * @since 1.0.0
+ */
 @Entity
 @Table(name = "t_user_basic")
 @Comment("用户基础信息")

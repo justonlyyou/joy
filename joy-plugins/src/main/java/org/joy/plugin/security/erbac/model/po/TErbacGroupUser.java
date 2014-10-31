@@ -5,7 +5,9 @@ import org.joy.core.persistence.orm.jpa.annotations.Comment;
 import javax.persistence.*;
 
 /**
- * 
+ * 组-用户关联实体
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2012-6-20 下午11:51:45
  */

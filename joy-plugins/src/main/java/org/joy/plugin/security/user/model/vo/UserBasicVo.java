@@ -3,6 +3,7 @@ package org.joy.plugin.security.user.model.vo;
 import org.joy.plugin.security.user.model.po.TUserBasic;
 
 /**
+ * 用户基本信息VO
  * 
  * @since 1.0.0
  * @author Kevice

@@ -5,6 +5,7 @@ import org.joy.core.init.support.properties.JoyProperties;
 import org.springframework.stereotype.Component;
 
 /**
+ * hibernate插件，封装一些hibernate常用操作
  * 
  * @since 1.0.0
  * @author Kevice

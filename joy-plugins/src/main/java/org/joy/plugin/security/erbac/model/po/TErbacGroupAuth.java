@@ -6,6 +6,13 @@ import org.joy.plugin.security.erbac.support.enums.AuthorityType;
 
 import javax.persistence.*;
 
+/**
+ * 组-权限关联实体
+ *
+ * @since 1.0.0
+ * @author Kevice
+ * @time 2012-6-27 下午8:01:46
+ */
 @Entity
 @Table(name="t_erbac_group_auth")
 @Comment("组权限")

@@ -11,6 +11,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 /**
+ * 用户登出日志实体
  * 
  * @since 1.0.0
  * @author Kevice

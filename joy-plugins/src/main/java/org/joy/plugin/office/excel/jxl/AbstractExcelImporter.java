@@ -19,7 +19,10 @@ import java.util.Map;
 
 /**
  * excel数据导入器抽象类
- * @author <b>Kevice</b>
+ *
+ * @since 1.0.0
+ * @author Kevice
+ * @time 2011-11-25 上午9:07:18
  */
 public abstract class AbstractExcelImporter implements IExcelImporter {
 

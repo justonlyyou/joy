@@ -3,8 +3,8 @@ package org.jwebap.plugin.tracer.jdbc;
 import org.joy.commons.lang.string.StringTool;
 import org.joy.commons.log.Log;
 import org.joy.commons.log.LogFactory;
-import org.joy.plugin.monitor.jdbc.jwebap.IPreparedSqlConvertor;
-import org.joy.plugin.monitor.jdbc.jwebap.PreparedSqlConvertor;
+import org.joy.plugin.monitor.jdbc.jwebap.service.IPreparedSqlConvertor;
+import org.joy.plugin.monitor.jdbc.jwebap.service.impl.PreparedSqlConvertor;
 import org.joy.plugin.monitor.jdbc.jwebap.model.vo.ParamMsg;
 import org.jwebap.core.Trace;
 

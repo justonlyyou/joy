@@ -4,6 +4,13 @@ import org.joy.commons.enums.EnumTool;
 import org.joy.commons.enums.ICodeEnum;
 import org.joy.core.sysres.SysResTool;
 
+/**
+ * 用户状态枚举
+ *
+ * @since 1.0.0
+ * @author Kevice
+ * @time 2012-6-20 下午8:01:46
+ */
 public enum UserStatus implements ICodeEnum {
 
 	/** 禁用 */

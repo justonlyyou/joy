@@ -10,7 +10,7 @@
 
 	<context:property-placeholder location="classpath*:/conf/quartz.properties" ignore-unresolvable="true" />
 	
-	<bean id="qrtzJobPlanCfgDao" class="org.joy.plugin.schedule.quartz.dao.TQrtzJobPlanCfgDao" />
+	<bean id="qrtzJobPlanCfgDao" class="org.joy.plugin.schedule.quartz.dao.TQrtzJobPlanDao" />
 	
 
 	<!-- 

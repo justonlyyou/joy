@@ -5,8 +5,11 @@ import org.joy.core.init.support.properties.JoyProperties;
 import org.joy.plugin.seqgen.model.po.TSysSeqNumRule;
 import org.springframework.stereotype.Component;
 
+
 /**
- * 
+ * 序列号生成器插件，能够按配置规则生成序列号
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2013-2-5 上午12:48:26
  */

@@ -7,6 +7,13 @@ import org.joy.plugin.security.erbac.support.enums.AuthResourceType;
 import javax.persistence.*;
 import java.util.Collection;
 
+/**
+ * 权限实体
+ *
+ * @since 1.0.0
+ * @author Kevice
+ * @time 2012-6-20 下午8:01:46
+ */
 @Entity
 @Table(name = "t_erbac_authority")
 @Comment("权限")

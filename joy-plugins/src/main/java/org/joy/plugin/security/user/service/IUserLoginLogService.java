@@ -5,7 +5,8 @@ import org.joy.plugin.security.user.support.vo.UserLoginVo;
 
 /**
  * 登陆日志服务接口
- * 
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2012-6-17 下午9:02:45
  */

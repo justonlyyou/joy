@@ -13,8 +13,8 @@ import java.util.Map;
  */
 public class EntityMappingInfo {
 
-    private Class<? extends IEntity> entityClass;
-    private String tableName;
+    private Class<? extends IEntity> entityClass; // 实体类
+    private String tableName; // 表名
     private Map<String, String> propertyMap; // Map<属性名，列名>
     private Map<String, String> columnMap;  // Map<列名, 属性名>
 

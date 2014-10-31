@@ -3,6 +3,7 @@ package org.joy.plugin.seqgen.model.vo;
 import org.joy.plugin.seqgen.model.po.TSysSeqNum;
 
 /**
+ * 序列号信息VO
  * 
  * @since 1.0.0
  * @author Kevice

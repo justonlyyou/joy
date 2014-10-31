@@ -3,6 +3,7 @@ package org.joy.plugin.security.user.service;
 import org.joy.plugin.security.user.support.enums.LogoutMethod;
 
 /**
+ * 用户登出日志服务接口
  * 
  * @since 1.0.0
  * @author Kevice

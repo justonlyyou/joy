@@ -11,7 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 
+ * 用户权限表达式服务
+ *
+ * @since 1.0.0
  * @author Kevice
  * @time 2013-2-23 上午12:04:19
  */
